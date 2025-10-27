@@ -1,0 +1,1020 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GDP Data Tutorial: Using the FRED API with Python &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gdp-data-tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modeling GDP Growth" href="modeling-gdp-growth.html" />
+    <link rel="prev" title="Measuring the Macroeconomy" href="macro_measuring_the_economy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/gdp-data-tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>GDP Data Tutorial: Using the FRED API with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-macroeconomic-data-using-fred">Downloading Macroeconomic Data using FRED</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-data">Pulling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-and-visualizing-the-data">Describing and visualizing the data</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gdp-data-tutorial-using-the-fred-api-with-python">
+<h1>GDP Data Tutorial: Using the FRED API with Python<a class="headerlink" href="#gdp-data-tutorial-using-the-fred-api-with-python" title="Link to this heading">#</a></h1>
+<section id="downloading-macroeconomic-data-using-fred">
+<h2>Downloading Macroeconomic Data using FRED<a class="headerlink" href="#downloading-macroeconomic-data-using-fred" title="Link to this heading">#</a></h2>
+<p>In this tutorial we will download macroeconomic data from Federal Reserve Economic Data (FRED).  The FRED database contains frequently updated macro data from various sources—most of which are US government agencies.  You can peruse data on their website (<a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a>) and search for specific data series.  However, in this tutorial I’ll show how to access data from their servers directly using an API (application programming interface).</p>
+<p>Let’s work within Python and use the package <code class="docutils literal notranslate"><span class="pre">fredapi</span></code>  (<a class="reference external" href="https://fred.stlouisfed.org/docs/api/fred/">https://fred.stlouisfed.org/docs/api/fred/</a>) which makes use of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and returns FRED data to you in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a structure that contains two-dimensional data and its corresponding labels.  So basically a table.  You can see how to work with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> here: <a class="reference external" href="https://realpython.com/pandas-dataframe/">https://realpython.com/pandas-dataframe/</a>.  Playing with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is only useful after you successfully pull the data from FRED and want to view/query/manipulate the resulting table of data.</p>
+<p>From a Python terminal (in VSCode, Jupyter, etc.) run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">fredapi</span>
+
+</pre></div>
+</div>
+<p>This installs the necessary Python package to contact the FRED servers directly and download data.</p>
+</section>
+<section id="pulling-data">
+<h2>Pulling data<a class="headerlink" href="#pulling-data" title="Link to this heading">#</a></h2>
+<p>First, get an API key from FRED (<a class="reference external" href="https://fred.stlouisfed.org/docs/api/api_key.html">https://fred.stlouisfed.org/docs/api/api_key.html</a>). This allows you to access <code class="docutils literal notranslate"><span class="pre">fredapi</span></code> to pull data.    One you have your API key, create a new Python code file (in VSCode, Jupyter, etc) use this code to pass the API key directly to FRED.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;insert api key here&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can always search for data series on the FRED website <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a>, but sometimes it is more convenient to search programmatically. <code class="docutils literal notranslate"><span class="pre">fredapi</span></code> provides a <code class="docutils literal notranslate"><span class="pre">search()</span></code> method that does a full-text search and returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of results.  For example, suppose that we want to download US GDP data.  Use the search function to find the name of the series:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">InvalidURL</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">results</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">results</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\fredapi\fred.py:406,</span> in <span class="ni">Fred.search</span><span class="nt">(self, text, limit, order_by, sort_order, filter)</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span><span class="sd"> Do a fulltext search for series in the Fred dataset. Returns information about matching series in a DataFrame.</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span><span class="sd"> </span>
+<span class="sd">   (...)    402     a DataFrame containing information about the matching Fred series</span>
+<span class="g g-Whitespace">    </span><span class="mi">403</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span> <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/series/search?search_text=</span><span class="si">%s</span><span class="s2">&amp;&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root_url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>                                             <span class="n">quote_plus</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">406</span> <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__get_search_results</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">order_by</span><span class="p">,</span> <span class="n">sort_order</span><span class="p">,</span> <span class="nb">filter</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span> <span class="k">return</span> <span class="n">info</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\fredapi\fred.py:363,</span> in <span class="ni">Fred.__get_search_results</span><span class="nt">(self, url, limit, order_by, sort_order, filter)</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>     <span class="k">else</span><span class="p">:</span>
+<span class="nn">    361         raise ValueError(&#39;%s is not</span> in <span class="ni">the valid list of sort_order options: %s&#39; % (sort_order, str</span><span class="nt">(sort_order_options)))</span>
+<span class="ne">--&gt; </span><span class="mi">363</span> <span class="n">data</span><span class="p">,</span> <span class="n">num_results_total</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__do_series_search</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">364</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">return</span> <span class="n">data</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\fredapi\fred.py:306,</span> in <span class="ni">Fred.__do_series_search</span><span class="nt">(self, url)</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span> <span class="k">def</span><span class="w"> </span><span class="nf">__do_series_search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="sd">     helper function for making one HTTP request for data, and parsing the returned results into a DataFrame</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">306</span>     <span class="n">root</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__fetch_data</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="n">series_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>     <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\fredapi\fred.py:84,</span> in <span class="ni">Fred.__fetch_data</span><span class="nt">(self, url)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="n">url</span> <span class="o">+=</span> <span class="s1">&#39;&amp;api_key=&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="n">root</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">except</span> <span class="n">HTTPError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:215,</span> in <span class="ni">urlopen</span><span class="nt">(url, data, timeout, cafile, capath, cadefault, context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">opener</span> <span class="o">=</span> <span class="n">_opener</span>
+<span class="ne">--&gt; </span><span class="mi">215</span> <span class="k">return</span> <span class="n">opener</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:515,</span> in <span class="ni">OpenerDirector.open</span><span class="nt">(self, fullurl, data, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>     <span class="n">req</span> <span class="o">=</span> <span class="n">meth</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="n">sys</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="s1">&#39;urllib.Request&#39;</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">full_url</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">515</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span> <span class="c1"># post-process response</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span> <span class="n">meth_name</span> <span class="o">=</span> <span class="n">protocol</span><span class="o">+</span><span class="s2">&quot;_response&quot;</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:532,</span> in <span class="ni">OpenerDirector._open</span><span class="nt">(self, req, data)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span>     <span class="k">return</span> <span class="n">result</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="n">protocol</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">type</span>
+<span class="ne">--&gt; </span><span class="mi">532</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_call_chain</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handle_open</span><span class="p">,</span> <span class="n">protocol</span><span class="p">,</span> <span class="n">protocol</span> <span class="o">+</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>                           <span class="s1">&#39;_open&#39;</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>     <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:492,</span> in <span class="ni">OpenerDirector._call_chain</span><span class="nt">(self, chain, kind, meth_name, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span> <span class="k">for</span> <span class="n">handler</span> <span class="ow">in</span> <span class="n">handlers</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">491</span>     <span class="n">func</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">meth_name</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">492</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">493</span>     <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span>         <span class="k">return</span> <span class="n">result</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:1392,</span> in <span class="ni">HTTPSHandler.https_open</span><span class="nt">(self, req)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1391</span> <span class="k">def</span><span class="w"> </span><span class="nf">https_open</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">req</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1392</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">do_open</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">HTTPSConnection</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1393</span>                         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_context</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py:1344,</span> in <span class="ni">AbstractHTTPHandler.do_open</span><span class="nt">(self, http_class, req, **http_conn_args)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1342</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1343</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1344</span>         <span class="n">h</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">get_method</span><span class="p">(),</span> <span class="n">req</span><span class="o">.</span><span class="n">selector</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1345</span>                   <span class="n">encode_chunked</span><span class="o">=</span><span class="n">req</span><span class="o">.</span><span class="n">has_header</span><span class="p">(</span><span class="s1">&#39;Transfer-encoding&#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">   </span><span class="mi">1346</span>     <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span> <span class="c1"># timeout error</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>         <span class="k">raise</span> <span class="n">URLError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:1336,</span> in <span class="ni">HTTPConnection.request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1333</span> <span class="k">def</span><span class="w"> </span><span class="nf">request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{},</span> <span class="o">*</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1334</span>             <span class="n">encode_chunked</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1335</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Send a complete request to the server.&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1336</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_send_request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">encode_chunked</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:1347,</span> in <span class="ni">HTTPConnection._send_request</span><span class="nt">(self, method, url, body, headers, encode_chunked)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1344</span> <span class="k">if</span> <span class="s1">&#39;accept-encoding&#39;</span> <span class="ow">in</span> <span class="n">header_names</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1345</span>     <span class="n">skips</span><span class="p">[</span><span class="s1">&#39;skip_accept_encoding&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="ne">-&gt; </span><span class="mi">1347</span> <span class="bp">self</span><span class="o">.</span><span class="n">putrequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">skips</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1349</span> <span class="c1"># chunked encoding will happen if HTTP/1.1 is used and either</span>
+<span class="g g-Whitespace">   </span><span class="mi">1350</span> <span class="c1"># the caller passes encode_chunked=True or the following</span>
+<span class="g g-Whitespace">   </span><span class="mi">1351</span> <span class="c1"># conditions hold:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1352</span> <span class="c1"># 1. content-length has not been explicitly set</span>
+<span class="g g-Whitespace">   </span><span class="mi">1353</span> <span class="c1"># 2. the body is a file or iterable, but not a str or bytes-like</span>
+<span class="g g-Whitespace">   </span><span class="mi">1354</span> <span class="c1"># 3. Transfer-Encoding has NOT been explicitly set by the caller</span>
+<span class="g g-Whitespace">   </span><span class="mi">1356</span> <span class="k">if</span> <span class="s1">&#39;content-length&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">header_names</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1357</span>     <span class="c1"># only chunk body if not explicitly set for backwards</span>
+<span class="g g-Whitespace">   </span><span class="mi">1358</span>     <span class="c1"># compatibility, assuming the client code is already handling the</span>
+<span class="g g-Whitespace">   </span><span class="mi">1359</span>     <span class="c1"># chunking</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:1181,</span> in <span class="ni">HTTPConnection.putrequest</span><span class="nt">(self, method, url, skip_host, skip_accept_encoding)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1178</span> <span class="bp">self</span><span class="o">.</span><span class="n">_method</span> <span class="o">=</span> <span class="n">method</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span> <span class="n">url</span> <span class="o">=</span> <span class="n">url</span> <span class="ow">or</span> <span class="s1">&#39;/&#39;</span>
+<span class="ne">-&gt; </span><span class="mi">1181</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_path</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span> <span class="n">request</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_http_vsn_str</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span> <span class="bp">self</span><span class="o">.</span><span class="n">_output</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_encode_request</span><span class="p">(</span><span class="n">request</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:1281,</span> in <span class="ni">HTTPConnection._validate_path</span><span class="nt">(self, url)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="n">match</span> <span class="o">=</span> <span class="n">_contains_disallowed_url_pchar_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span> <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1281</span>     <span class="k">raise</span> <span class="n">InvalidURL</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;URL can&#39;t contain control characters. </span><span class="si">{</span><span class="n">url</span><span class="si">!r}</span><span class="s2"> &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1282</span>                      <span class="sa">f</span><span class="s2">&quot;(found at least </span><span class="si">{</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">!r}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="ne">InvalidURL</span>: URL can&#39;t contain control characters. &#39;/fred/series/search?search_text=GDP&amp;&amp;api_key=insert api key here&#39; (found at least &#39; &#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the results of the search function, we see that ‘GDP’ is the series ID for Gross Domestic Product and ‘GDPPC1’ is the series ID for Real Gross Domestic Product.  Let’s download the nominal GDP series.  (Note: There are several options for pulling specific vintages of data.  The details can be found here: <a class="reference external" href="https://pypi.org/project/fredapi/.">https://pypi.org/project/fredapi/.</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">ngdp</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="describing-and-visualizing-the-data">
+<h2>Describing and visualizing the data<a class="headerlink" href="#describing-and-visualizing-the-data" title="Link to this heading">#</a></h2>
+<p>We now have the data series saved to a variable called <code class="docutils literal notranslate"><span class="pre">ngdp</span></code>.  There are some useful commands using <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> that allows you to view your data series.  The <code class="docutils literal notranslate"><span class="pre">shape</span></code> function returns the size of the data set describing the number of rows and number of columns.  The <code class="docutils literal notranslate"><span class="pre">ndim</span></code> function returns the dimension of your data.  If you want to view the series you assigned to the variable <code class="docutils literal notranslate"><span class="pre">data</span></code>, then you can use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function, which gives the first (default 5) <span class="math notranslate nohighlight">\(n\)</span> rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>; or you can use <code class="docutils literal notranslate"><span class="pre">tail()</span></code> function to give the last (default 5) <span class="math notranslate nohighlight">\(n\)</span> rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function returns basic statistics: the value count, mean, standard deviation, minimum, maximum, and 25th, 50th, and 75th quantiles for the data in a column.  (NOTE: Running the Python code in a Jupyter notebook has some advantages if you want a pretty view of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  This is done in Jupyter’s “DataViewer”.)</p>
+<p>For example, let’s view the most recent quarterly GDP data and compute some descriptive statistics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ngdp</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-04-01    29147.044
+2024-07-01    29511.664
+2024-10-01    29825.182
+2025-01-01    30042.113
+2025-04-01    30485.729
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ngdp</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count      314.000000
+mean      7600.847631
+std       7972.380608
+min        243.164000
+25%        823.054000
+50%       4526.617000
+75%      13278.813500
+max      30485.729000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also visualize the data series using the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.  If it’s not already installed, don’t forget to do that</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+<p>You can now use the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> function to visualize the data.  This function, applied to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> will plot all of the columns with labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">ngdp</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;GDP&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot Nominal GDP</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ngdp</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Nominal GDP&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Nominal GDP&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nominal GDP for the US: 1974-2025&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ae786e476b5285ef963e469c4fe2a38777adf88df059780bd4818e13124b2e48.png" src="_images/ae786e476b5285ef963e469c4fe2a38777adf88df059780bd4818e13124b2e48.png" />
+</div>
+</div>
+<p>A more direct measure of economic prosperity is to measure GDP <em>per capita</em>.  Let’s find that data series and plot it’s trajectory over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;real gdp per capita&#39;</span><span class="p">)</span>
+<span class="n">results</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>realtime_start</th>
+      <th>realtime_end</th>
+      <th>title</th>
+      <th>observation_start</th>
+      <th>observation_end</th>
+      <th>frequency</th>
+      <th>frequency_short</th>
+      <th>units</th>
+      <th>units_short</th>
+      <th>seasonal_adjustment</th>
+      <th>seasonal_adjustment_short</th>
+      <th>last_updated</th>
+      <th>popularity</th>
+      <th>notes</th>
+    </tr>
+    <tr>
+      <th>series id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A939RX0Q048SBEA</th>
+      <td>A939RX0Q048SBEA</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Real gross domestic product per capita</td>
+      <td>1947-01-01</td>
+      <td>2025-04-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>Chained 2017 Dollars</td>
+      <td>Chn. 2017 $</td>
+      <td>Seasonally Adjusted Annual Rate</td>
+      <td>SAAR</td>
+      <td>2025-09-25 07:48:01-05:00</td>
+      <td>80</td>
+      <td>BEA Account Code: A939RX  For more information...</td>
+    </tr>
+    <tr>
+      <th>A229RX0A048NBEA</th>
+      <td>A229RX0A048NBEA</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Real Disposable Personal Income: Per Capita</td>
+      <td>1929-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Chained 2017 Dollars</td>
+      <td>Chn. 2017 $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-09-25 07:47:11-05:00</td>
+      <td>35</td>
+      <td>BEA Account Code: A229RX  For more information...</td>
+    </tr>
+    <tr>
+      <th>A229RX0Q048SBEA</th>
+      <td>A229RX0Q048SBEA</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Real Disposable Personal Income: Per Capita</td>
+      <td>1947-01-01</td>
+      <td>2025-04-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>Chained 2017 Dollars</td>
+      <td>Chn. 2017 $</td>
+      <td>Seasonally Adjusted Annual Rate</td>
+      <td>SAAR</td>
+      <td>2025-09-25 07:48:19-05:00</td>
+      <td>28</td>
+      <td>BEA Account Code: A229RX  For more information...</td>
+    </tr>
+    <tr>
+      <th>NYGDPPCAPKDUSA</th>
+      <td>NYGDPPCAPKDUSA</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Constant GDP per capita for the United States</td>
+      <td>1960-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>2010 U.S. Dollars</td>
+      <td>2010 U.S. $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-07-02 13:56:02-05:00</td>
+      <td>54</td>
+      <td>GDP per capita is gross domestic product divid...</td>
+    </tr>
+    <tr>
+      <th>NYGDPPCAPKDJPN</th>
+      <td>NYGDPPCAPKDJPN</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Constant GDP per capita for Japan</td>
+      <td>1960-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>2010 U.S. Dollars</td>
+      <td>2010 U.S. $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-07-02 13:56:03-05:00</td>
+      <td>50</td>
+      <td>GDP per capita is gross domestic product divid...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>KIPPPGPAA156NUPN</th>
+      <td>KIPPPGPAA156NUPN</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Investment Share of Purchasing Power Parity Co...</td>
+      <td>1950-01-01</td>
+      <td>2010-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent</td>
+      <td>%</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2012-09-17 11:22:31-05:00</td>
+      <td>1</td>
+      <td>For more information and proper citation see h...</td>
+    </tr>
+    <tr>
+      <th>KIPPPGMAA156NUPN</th>
+      <td>KIPPPGMAA156NUPN</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Investment Share of Purchasing Power Parity Co...</td>
+      <td>1950-01-01</td>
+      <td>2010-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent</td>
+      <td>%</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2012-09-17 10:43:16-05:00</td>
+      <td>1</td>
+      <td>For more information and proper citation see h...</td>
+    </tr>
+    <tr>
+      <th>KCPPPGGYA156NUPN</th>
+      <td>KCPPPGGYA156NUPN</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Consumption Share of Purchasing Power Parity C...</td>
+      <td>1970-01-01</td>
+      <td>2010-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent</td>
+      <td>%</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2012-09-17 10:11:58-05:00</td>
+      <td>1</td>
+      <td>For more information and proper citation see h...</td>
+    </tr>
+    <tr>
+      <th>PCRGMP33780</th>
+      <td>PCRGMP33780</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Total Per Capita Real Gross Domestic Product f...</td>
+      <td>2001-01-01</td>
+      <td>2017-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Chained 2009 Dollars</td>
+      <td>Chn. 2009 $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2018-09-18 08:31:48-05:00</td>
+      <td>1</td>
+      <td>The All industry total includes all Private in...</td>
+    </tr>
+    <tr>
+      <th>KIPPPGAMA156NUPN</th>
+      <td>KIPPPGAMA156NUPN</td>
+      <td>2025-09-29</td>
+      <td>2025-09-29</td>
+      <td>Investment Share of Purchasing Power Parity Co...</td>
+      <td>1993-01-01</td>
+      <td>2010-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent</td>
+      <td>%</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2012-09-17 11:34:46-05:00</td>
+      <td>1</td>
+      <td>For more information and proper citation see h...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 15 columns</p>
+</div></div></div>
+</div>
+<p>Our search results show that ‘NYGDPPCAPKDUSA’ is the series ID for real GDP measured in 2010 U.S. Dollars.  We can also see that FRED provides data on GDP per capita for other countries as well.  Let’s download and plot GDP per capita for different countries to measure long-run differences in economic prosperity.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdp_pp_usa</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDUSA&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_chn</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDCHN&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_jpn</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDJPN&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_gbr</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDGBR&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_deu</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDDEU&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_mex</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDMEX&#39;</span><span class="p">)</span>
+<span class="n">gdp_pp_bgd</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;NYGDPPCAPKDBGD&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot per capita GDP for various countries</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_usa</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;USA&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_chn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_jpn</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_gbr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;UK&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_deu</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Germany&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_mex</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Mexico&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">gdp_pp_bgd</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Bangledesh&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot; 2010 Billion US Dollars&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GDP per capita 1960-2024&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/16d6b83a4696e31edc8c71ee87c3727e04fbf8839656196190997961c67e7e3c.png" src="_images/16d6b83a4696e31edc8c71ee87c3727e04fbf8839656196190997961c67e7e3c.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="macro_measuring_the_economy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Measuring the Macroeconomy</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modeling-gdp-growth.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modeling GDP Growth</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-macroeconomic-data-using-fred">Downloading Macroeconomic Data using FRED</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-data">Pulling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-and-visualizing-the-data">Describing and visualizing the data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equilibrium Unemployement &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'equilibrium-unemployment';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Labor Data Tutorial: Using the FRED API with Python" href="labor-data-tutorial.html" />
+    <link rel="prev" title="Solow Model Demonstration" href="Solow_demonstration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Equilibrium Unemployment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="labor-data-tutorial.html">Labor Data Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/equilibrium-unemployment.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Equilibrium Unemployement</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-labor-market">The Labor Market</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-matching-model-of-unemployement">Search and Matching Model of Unemployement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-unemployment">Steady State Unemployment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-empirical-digression-on-the-beveridge-curve">An Empirical Digression on the Beveridge Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-equilibrium-market-tightness">Determining equilibrium market tightness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-statics">Comparative Statics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-natural-rate-of-unemployment">The natural rate of unemployment</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="equilibrium-unemployement">
+<h1>Equilibrium Unemployement<a class="headerlink" href="#equilibrium-unemployement" title="Link to this heading">#</a></h1>
+<section id="the-labor-market">
+<h2>The Labor Market<a class="headerlink" href="#the-labor-market" title="Link to this heading">#</a></h2>
+<p>The <strong>labor market</strong> refers to the process by which workers find jobs, leave jobs, and the resulting wage that firms pay.  When analyzing the labor market, there are some key questions we want to address:</p>
+<ul class="simple">
+<li><p>How are aggregate labor market outcomes—unemployment, job vacancies, and employment—determined as equilibrium phenomena?</p></li>
+<li><p>How are wages determined?</p></li>
+<li><p>What role does the labor market play in explaining business cycles and growth?</p></li>
+</ul>
+<p>One of the defining features of the labor market we emphasize in this chapter is that trade in the labor market is a decentralized, uncoordinated activity that is costly for both firms and workers.  This is very different from the classical supply and demand story that characterizes other markets.  As such, we do not assume that there exists some market clearing price but rather that wages are the outcome of a negotiation between the firm and worker.  The process of finding appropriate employers and employees, negotiating wages, and/or returning to the labor market after an unsatisfactory job called <strong>job creation</strong> and <strong>job destruction</strong>.  These flows of workers finding jobs and losing jobs every month is a normal, dynamic feature of the labor market.</p>
+<figure>
+    <img src="_static/figs_LR/emp_pop_ratio.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>Historically, the share of population who is employed rose dramatically between 1960 and 2000.  Besides this trend, we also observe some cyclical behavior where there exist peaks and troughs.</p>
+<figure>
+    <img src="_static/figs_LR/emp_pop_ratio_sex.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>There is a clear pattern: female employment has been on the rise since the 1950s while male employment has fallen.  There seemed to be a convergence happening until around 2000 at which point the two series begin to comove rather than diverge.</p>
+<figure>
+    <img src="_static/figs_LR/unemp_rates.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>Two stylized facts about unemployment worth noting (in the US):</p>
+<ul class="simple">
+<li><p>Most unemployment spells are relatively short: Each month, about 25 percent of people who are unemployed will find job.  Therefore, the average unemployment spell is about 3 months</p></li>
+<li><p>Most of the total weeks of lost work are accounted for by people who are unemployed for a long period of time: In February 2016, almost 60 percent of the unemployed had been out of work for less than 14 weeks, but more than one quarter had been unemployed for more than 6 months</p></li>
+</ul>
+</section>
+<section id="search-and-matching-model-of-unemployement">
+<h2>Search and Matching Model of Unemployement<a class="headerlink" href="#search-and-matching-model-of-unemployement" title="Link to this heading">#</a></h2>
+<p>Given the dynamic character of the labor market observed in the data, we want to build a model that captures the following features:</p>
+<ul class="simple">
+<li><p>dynamic job creation and job destruction</p></li>
+<li><p>workers finding good jobs and firms finding good workers is not a costless endeavor</p></li>
+<li><p>unemployment always exists and is subject to fluctuations given shocks to the economy</p></li>
+<li><p>wages reflect the bargaining strength of firms/workers and the aggregate state of the labor market</p></li>
+</ul>
+<p>Trade in the labor market is costly because of heterogeneities, frictions, and information imperfections.  Firms and workers have to spend resources before job creation and production can take place.  There is uncertainty about when good jobs arrive to job-seekers, and when good workers arrive to hiring firms.  The labor market does not clear automatically (contrary to a simple supply-and-demand analysis).</p>
+<p>The <strong>matching function</strong> captures the implications of matching frictions without describing their causes explicitly: It gives the number of jobs formed at any moment in time as a function of the number of workers looking for jobs and the number of firms looking for workers.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{M} = m(\mathcal{U},\mathcal{V})
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> is the number of unemployed (workers looking for jobs) and <span class="math notranslate nohighlight">\(\mathcal{V}\)</span> is the number of vacant jobs (firms looking for workers).</p>
+<p>We assume that the matching function is (i) increasing in both <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> and <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>; (ii) concave (diminishing marginal matching); and has constant returns to scale.</p>
+<p>The size of the labor force is <span class="math notranslate nohighlight">\(\mathcal{L}=\mathcal{U} + \mathcal{V}\)</span>.</p>
+<p>What sort of real-world data do we have in mind?  For the US we have:</p>
+<ul class="simple">
+<li><p>Current Population Survey (CPS): asks individuals about their labor market status and compute unemployment statistics.  This data can be easily accessed via FRED.</p></li>
+<li><p>Help Wanted Index (HWI) is published every month by the Conference Board: measures the amount of “help wanted” advertisements published in major newspapers across the United States</p></li>
+<li><p>Job Opening and Labor Turnover Survey (JOLTS): monthly survey conducted by the Bureau of Labor Statistics (BLS) of nearly 16,000 business establishments measuring the amount of job advertisements online</p></li>
+</ul>
+<p>Consider a <strong>Cobb-Douglas matching function</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{M} = A \mathcal{U}^{a}\mathcal{V}^b
+\]</div>
+<p>You can estimate values of <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> that match observable data on unemployment, vacancies, and new jobs.</p>
+<div class="math notranslate nohighlight">
+\[
+\ln \mathcal{M}=\ln A + a \ln \mathcal{U}+b \ln \mathcal{V}
+\]</div>
+<p>Blanchard and Diamond (1990) estimated <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> using U.S. data by regressing the log of monthly national hiring on the log of unemployment and the log of vacancies (using Ordinary Least Squares). They show that one could not reject the hypothesis <span class="math notranslate nohighlight">\(a+b=1\)</span>, implying that CRS is an empirically supported assumption.</p>
+<p>For our model, let’s use the following matching function:</p>
+<div class="math notranslate nohighlight" id="equation-cobb-douglas-matching">
+<span class="eqno">(2)<a class="headerlink" href="#equation-cobb-douglas-matching" title="Link to this equation">#</a></span>\[
+\mathcal{M}=A\mathcal{U}^{1/2}\mathcal{V}^{1/2}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> measures the efficiency of the matching process. A country with widespread access to the Internet and employment agencies may have a higher value of <span class="math notranslate nohighlight">\(A\)</span> than one that lacks such infrastructure. <span class="math notranslate nohighlight">\(A\)</span> is also inversely related to the amount of heterogeneity and specialization in the economy. Economies with high specialization tend to have a lower value of <span class="math notranslate nohighlight">\(A\)</span> because it takes more time for matches to form. <span class="math notranslate nohighlight">\(A\)</span> could also be related to attitudes toward work.  For example, after Covid workers may become more picky about finding jobs that allow them to work from home with would be represented by a lower value of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>The matching function can be used to derive the probability that a worker finds a job and the probability that a firm finds a worker. The matching probability of an unemployed worker is called the <strong>job finding rate</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-job-finding-rate">
+<span class="eqno">(3)<a class="headerlink" href="#equation-job-finding-rate" title="Link to this equation">#</a></span>\[
+f(\theta) \equiv \frac{m(\mathcal{U},\mathcal{V})}{\mathcal{U}} = \frac{A\mathcal{U}^{1/2}\mathcal{V}^{1/2}}{\mathcal{U}}=A\sqrt{\theta}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta = \mathcal{V}/\mathcal{U}\)</span> is a measure of labor market conditions called <strong>market tightness</strong>: the relative number of available jobs to job-seekers. When there is a relatively small number of job-seekers and a large number of vacant jobs to choose from, it is easier for an unemployed worker to find a job.  Conversely, then there is relatively large number of job-seekers competing for few vacant jobs, it is very difficult for an employment worker to find a match.</p>
+<p>During a period of time (a month, for example) a worker finds a job with probability <span class="math notranslate nohighlight">\(f\)</span> and does not find a job with probability <span class="math notranslate nohighlight">\(1-f\)</span>.  The probability of a worker finding a job in the <span class="math notranslate nohighlight">\(n\)</span>th month is therefore <span class="math notranslate nohighlight">\((1-f)^{n-1} f\)</span>.  If we want to find the average number of months it takes for a worker to find a job we compute</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty}n (1-f)^{n-1} f=-1\cdot f \frac{d}{df}\sum_{n=1}^{\infty} (1-f)^{n}=\frac{1}{f}
+\]</div>
+<p>The average duration of unemployment is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{f(\theta)}
+\]</div>
+<p>The matching probability of a firm is called the \textbf{vacancy filling rate}:</p>
+<div class="math notranslate nohighlight" id="equation-vacancy-filling-rate">
+<span class="eqno">(4)<a class="headerlink" href="#equation-vacancy-filling-rate" title="Link to this equation">#</a></span>\[
+q(\theta) \equiv \frac{m(\mathcal{U},\mathcal{V})}{\mathcal{V}} = \frac{A\mathcal{U}^{1/2}\mathcal{V}^{1/2}}{\mathcal{U}}=\frac{A}{\sqrt{\theta}}
+\]</div>
+<p>By the same reasoning applied above the average duration it takes for a firm to fill a job is <span class="math notranslate nohighlight">\(\frac{1}{q(\theta)}\)</span>.</p>
+<p>A tight labor market (high <span class="math notranslate nohighlight">\(\theta\)</span>) means there are many firms searching for few job-seekers.  This makes it difficult for firms to find workers resulting in a long average duration of a vacancy.  Having now characterized the process by which jobs are created, we need to say something about how jobs are destroyed.  Job destruction is modeled as a current match being separated.  For simplicity, let’s assume an exogenous <strong>job separation rate</strong> <span class="math notranslate nohighlight">\(s\)</span>.  Job separations happen because the worker-firm match is not productive forever.  We need not be specific about the reasons why the worker-firm match is no longer valuable.  Some plausible reasons are that there is a negative productivity shock or a negative demand shock which makes the firm unable to generate profits any longer.</p>
+<p>The following figures summarizes the dynamic flows in our labor market:</p>
+<figure>
+    <img src="_static/figs_LR/labor_flows.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>Workers can be in one of two states: unemployed or employed.  Workers move from unemployment to employment at rate <span class="math notranslate nohighlight">\(f\)</span> and move from employment to unemployment at rate <span class="math notranslate nohighlight">\(s\)</span>.  Firms similarly fill vacancies at rate <span class="math notranslate nohighlight">\(q\)</span> and lose workers at rate <span class="math notranslate nohighlight">\(s\)</span>.  We can mathematically represent these flows using an equation which tracks how the umber of unemployed persons changes over time</p>
+<div class="math notranslate nohighlight" id="equation-law-motion-unemployment">
+<span class="eqno">(5)<a class="headerlink" href="#equation-law-motion-unemployment" title="Link to this equation">#</a></span>\[
+\mathcal{U}_{t+1}-\mathcal{U}_t=\underbrace{s\mathcal{E}_t}_{\text{flows in}}-\underbrace{f(\theta) \mathcal{U}_t}_{\text{flows out}}
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{U}_{t+1} = \underbrace{(1-f(\theta))\mathcal{U}_t}_{\text{doesn't find job}} + \underbrace{s\mathcal{E}_t}_{\text{loses job}}
+\]</div>
+<p>Here are empirical measures of the rates at which workers leave unemployment (U2E transitions) and enter unemployment (E2U transitions).  The job finding rate is constructed using data on how the duration of unemployment, while the separation is computed using either data on firm level job separations or is imputed from {eq}’law_motion_unemployment’.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how to construct each of these data series.</p>
+<figure>
+    <img src="_static/figs_LR/job_finding_rate.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_LR/separation_rate.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>The job finding probability is high, averaging 40.5 percent over the post-war period.  It is also highly variable, dropping by about 20 percent during the Great Recession and similarly high magnitudes during other business cycles.  The Covid period saw a abnormal spike in the finding rate because the stock unemployed (on the denominator) was incredibly high in the immediate aftermath of Covid.  Finally, the job finding rate tends to be procyclical–rising and falling in tandem with the business cycle.</p>
+<p>The separation rate is much lower than the finding rate averaging 3.6 percent for the JOLTS series and 2.6 percent for the Shimer series.  Also, the separation rate is much less variable than the finding rate over the business cycle.</p>
+<p>A bathtub serves as a useful metaphor for the behavior of unemployment.  The unemployment rate is the amount of water in a bathtub. Workers who lose their jobs are inflows into unemployment, raising the water level.  Workers who find jobs are outflows from unemployment, lowering the water level.  Consider the following three data series on the US labor market:</p>
+<figure>
+    <img src="_static/figs_LR/labor_flows_data.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Bureau of Labor Statistics.  See <a href="labor-data-tutorial.html">Labor Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>We can trace out the bathtub logic from the data series above. First initial claims peak, then unemployment peaks, then duration peaks.
+First the bathtub fills quickly, then, after some time, it begins to drain; but as it’s happening, those left in the tub have been there longer and longer.</p>
+<section id="steady-state-unemployment">
+<h3>Steady State Unemployment<a class="headerlink" href="#steady-state-unemployment" title="Link to this heading">#</a></h3>
+<p>There exists a steady state unemployment rate where <span class="math notranslate nohighlight">\(\mathcal{U}_{t+1}-\mathcal{U}_t=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+s\mathcal{E}_t &amp;= f(\theta) \mathcal{U}_t \\
+s(\mathcal{L}_t-\mathcal{U}_t)&amp;=f(\theta) \mathcal{U}_t \\
+\end{align*}
+\end{split}\]</div>
+<p>gives a steady state unemployment <em>rate</em></p>
+<div class="math notranslate nohighlight">
+\[
+u \equiv \frac{\mathcal{U}}{\mathcal{L}}=\frac{s}{s+f(\theta)}
+\]</div>
+<p>Using the Cobb-Douglas matching function <a class="reference internal" href="#equation-cobb-douglas-matching">(2)</a>, the steady state unemployment rate</p>
+<div class="math notranslate nohighlight" id="equation-steady-state-u">
+<span class="eqno">(6)<a class="headerlink" href="#equation-steady-state-u" title="Link to this equation">#</a></span>\[
+u = \frac{s}{s+A\sqrt{\theta}}
+\]</div>
+<p>gives a long-run relationship between unemployment and the rates at which jobs are created and destroyed.  This negative relationship between unemployment and vacancies is called the <strong>Beveridge curve</strong>. Our steady state unemployment equation <a class="reference internal" href="#equation-steady-state-u">(6)</a> delivers a negative relationship between vacancies and unemployment.</p>
+<figure>
+    <img src="_static/figs_LR/bc.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The Beveridge curve shows the negative relationship between steady state unemployment and labor market tightness given by {eq}`steady_state_u`.
+    </figcaption>
+</figure>
+<p>Empirically, the Beveridge curve is normally plotted with vacancies on the vertical axis and unemployment on the horizontal axis.  Given the equations from our theory, however, it is more convenient to plot market tightness on the vertical axis and unemployment on the horizontal axis.  Conceptually it makes no difference.  A point on either curve represents a unique combination of unemployment and vacancies.</p>
+<p>Here is a plot of the observed Beveridge curve for the United States from 2000-2019.</p>
+<figure>
+    <img src="_static/figs_LR/bc_data.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The Beveridge curve shows the negative relationship between steady state unemployment and labor market tightness given by \eq`steady_state_u`.
+    </figcaption>
+</figure></section>
+</section>
+<section id="an-empirical-digression-on-the-beveridge-curve">
+<h2>An Empirical Digression on the Beveridge Curve<a class="headerlink" href="#an-empirical-digression-on-the-beveridge-curve" title="Link to this heading">#</a></h2>
+<p>There is a recent paper by Ahn and Crane called <em>Dynamic Beveridge Curve Accounting</em>.  Let’s walk through some of their paper:</p>
+<p>Assume the flow of new hires in a month <span class="math notranslate nohighlight">\(t\)</span> is given by a Cobb-Douglas matching function:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{M}_t = A_t \mathcal{U}_t^{1-\beta}\mathcal{V}_t^{\beta}
+\]</div>
+<p>The job finding probability is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+f_t = A_t (\theta_t)^{\beta}
+\]</div>
+<p>The law of motion for unemployment is</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{U}_{t+1} - \mathcal{U}_t = s_t(1-\mathcal{U}_t)-f_t \mathcal{U}_t
+\]</div>
+<p>Substituting the job finding rate into the law of motion for unemployment gives</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{V}_t = \left[ \frac{s_t(1-\mathcal{U}_t)-\Delta \mathcal{U}_{t+1}}{A_t\mathcal{U}_t^{1-\beta}}\right]^{1/\beta}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta \mathcal{U}_{t+1} = \mathcal{U}_{t+1}-\mathcal{U}_t\)</span>.  If we consider a steady state equilibrium where <span class="math notranslate nohighlight">\(s_t,A_t,\)</span> and <span class="math notranslate nohighlight">\(\mathcal{U}_t\)</span> are constants, then we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{V} = \left[ \frac{s(1-\mathcal{U})}{A\mathcal{U}^{1-\beta}}\right]^{1/\beta}
+\]</div>
+<p>This is exactly the Beveridge curve we learned with a Cobb-Douglas matching function!</p>
+<p>How would you go about estimating the Beveridge curve using real data? First, you need data on unemployment and vacancy rates.  Then, you need to choose parameters for matching efficiency <span class="math notranslate nohighlight">\(A_t\)</span>, separation rate <span class="math notranslate nohighlight">\(s_t\)</span>, and the elasticity of the matching function <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+<p>Here is what the paper by Ahn and Crane do:</p>
+<p>They can directly observe data on unemployment and vacancy rates from Census data and Job Openings and Labor Turnover Survey
+They set the monthly job-finding probability, <span class="math notranslate nohighlight">\(f_t\)</span> using data on the number of short-term unemployed each month</p>
+<div class="math notranslate nohighlight">
+\[
+f_t = 1 - \frac{\text{Unemployed for more than one month}_{t+1}}{\text{Unemployed}_t}
+\]</div>
+<p>They choose <span class="math notranslate nohighlight">\(s_t\)</span> so that the law of motion for unemployed holds exactly</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/trans_probs.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<ul class="simple">
+<li><p>It just remains to estimate <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+<li><p>Run OLS on the matching function</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\ln f_t = \ln A + \beta \ln(\theta_t)+\epsilon_t
+\]</div>
+<div style="text-align: center;">
+<img src="_static/figs_LR/mf_est.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_LR/mf_est2.png" 
+     alt="US uemployment rate" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>The paper goes on to estimate which factors cause the Beveridge curve to shift</p></li>
+<li><p>We won’t go into the details here, but the punchline is: matching efficiency, changes in the job separation rate, and out-of-steady-state dynamics all play important roles in determining the position of the Beveridge curve</p></li>
+<li><p>Okay…back to our model</p></li>
+</ul>
+</section>
+<section id="determining-equilibrium-market-tightness">
+<h2>Determining equilibrium market tightness<a class="headerlink" href="#determining-equilibrium-market-tightness" title="Link to this heading">#</a></h2>
+<p>We know that unemployment is determined by how tight the labor market is, but what determines market tightness <span class="math notranslate nohighlight">\(\theta\)</span>? To answer this question we consider the firms decision to open up vacancies or not.  We make the following assumptions about firms’ decision to create vacancies:</p>
+<ul class="simple">
+<li><p>It is not free to advertise a job.  The firm incurs a <strong>vacancy posting cost</strong> <span class="math notranslate nohighlight">\(\kappa\)</span> every period it advertises an open job</p></li>
+<li><p>Once a job is filled, it produces <strong>output</strong> <span class="math notranslate nohighlight">\(y\)</span> every period until the job is destroyed</p></li>
+<li><p>The worker is paid a <strong>wage</strong> <span class="math notranslate nohighlight">\(w\)</span> each period until the job is destroyed</p></li>
+</ul>
+<p>A firm considers the following sequence of events: First, open a vacancy at cost <span class="math notranslate nohighlight">\(\kappa\)</span>.  Next, with probability <span class="math notranslate nohighlight">\(q(\theta)\)</span> it finds a worker and generates profits <span class="math notranslate nohighlight">\(y-w\)</span> until the job is destroyed; or with probability <span class="math notranslate nohighlight">\(1-q(\theta)\)</span> is doesn’t find a worker leave the vacancy open at cost <span class="math notranslate nohighlight">\(\kappa\)</span>.  Finally, on average, a job lasts <span class="math notranslate nohighlight">\(1/s\)</span> periods.</p>
+<p>A firm optimally opens a vacancy as long as the cost of posting the vacancy is less than the expected present discounted value of the profits from a filled job:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\kappa}{q(\theta)}&lt;\frac{y-w}{s}
+\]</div>
+<p>It takes an average of <span class="math notranslate nohighlight">\(1/q\)</span> periods for a firm to find a worker, and each period it pays the vacancy posting cost <span class="math notranslate nohighlight">\(\kappa\)</span> resulting in expected vacancy posting costs of <span class="math notranslate nohighlight">\(\kappa/q(\theta)\)</span>.  A job lasts for an average of <span class="math notranslate nohighlight">\(1/s\)</span> periods, and each period the firm earns profits <span class="math notranslate nohighlight">\(y-w\)</span> resulting in expected profits of <span class="math notranslate nohighlight">\((y-w)/s\)</span>.  It is optimal for the firm to continue opening vacancies so long as the expected profits of doing so are larger than the expected costs.  If all firms in the economy realize it is profitable to open vacancies then we expect the number of vacancies to rise which causes the labor market to become tighter (<span class="math notranslate nohighlight">\(\uparrow \theta\)</span>).</p>
+<p>On the other hand, if</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\kappa}{q(\theta)}&gt;\frac{y-w}{s}
+\]</div>
+<p>then we expect firms to close vacancies and labor market tightness would fall (<span class="math notranslate nohighlight">\(\downarrow \theta\)</span>). An equilibrium level of labor market tightness is therefore determined where firms have no incentive to either create or close vacancies:</p>
+<div class="math notranslate nohighlight" id="equation-job-creation">
+<span class="eqno">(7)<a class="headerlink" href="#equation-job-creation" title="Link to this equation">#</a></span>\[
+\frac{\kappa}{q(\theta)}=\frac{y-w}{s}
+\]</div>
+<p>We will call <a class="reference internal" href="#equation-job-creation">(7)</a> our <strong>job creation condition</strong>.  We can substitute out the vacancy filling rate <a class="reference internal" href="#equation-vacancy-filling-rate">(4)</a> to write</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = \left[ \frac{A}{\kappa}\left(\frac{y-w}{s} \right) \right]^2
+\]</div>
+<p>With the equilibrium level of market tightness determined by the job creation condition, we can use the Beveridge curve to describe the equilibrium unemployment rate.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\theta &amp;= \left[ \frac{A}{\kappa}\left(\frac{y-w}{s} \right) \right]^2 \\
+u &amp;= \frac{s}{s+A\sqrt{\theta}}
+\end{align*}
+\end{split}\]</div>
+<div style="text-align: center;">
+<img src="_static/figs_LR/equilibrium1.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>To have a good model of the labor market we need an endogenous wage.  However, the wage can’t be determined from standard market-clearing (demand=supply) arguments because workers and firms are meeting in pairs, not a centralized marketplace.  When a firm and worker meet each other they negotiate a wage contract.  We won’t discuss the technical details of how economists model a bargaining process, but we can intuitively describe the issues over which workers and firms bargain and present a wage equation reflecting the solution to the bargaining problem.</p>
+<p>A job contract generates two distinct sources of value for the firm each period until the match is destroyed:  (i) revenue <span class="math notranslate nohighlight">\(y\)</span> from selling output; and (ii) avoiding the cost of advertising a vacancy in the future given by <span class="math notranslate nohighlight">\(f \frac{\kappa}{q}=\theta q \frac{\kappa}{q}=\theta \kappa\)</span>.  The total benefit to a firm of settling on a job contract is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+y+\theta \kappa
+\]</div>
+<p>If an unemployed worker settles on a job contract they sacrifice some benefits <span class="math notranslate nohighlight">\(b\)</span> which could  include unemployment benefits, the value of leisure, home production etc.</p>
+<p>In a negotiation, the wage is bounded below by the worker’s unemployment benefit <span class="math notranslate nohighlight">\(b\)</span> and the value to the firm of forming a match <span class="math notranslate nohighlight">\(y+\theta \kappa\)</span>.  With this in mind let’s propose the following <strong>wage equation</strong>:</p>
+<div class="math notranslate nohighlight" id="equation-wage-equation">
+<span class="eqno">(8)<a class="headerlink" href="#equation-wage-equation" title="Link to this equation">#</a></span>\[
+w = \beta(y+\theta \kappa)+(1-\beta)b
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(0 \leq \beta \leq 1\)</span> represents the relative bargaining power of the worker.  If the worker has all the bargaining power (<span class="math notranslate nohighlight">\(\beta=1\)</span>) then they extract the full value of the mach to the firm <span class="math notranslate nohighlight">\(w=y+\theta \kappa\)</span>.  If the firm has all the bargaining power (<span class="math notranslate nohighlight">\(\beta=0\)</span>) then the wage is driven down to <span class="math notranslate nohighlight">\(w=b\)</span> where the worker is indifferent between remaining unemployed or working. Parameter <span class="math notranslate nohighlight">\(\beta\)</span> is exogenous and may change if, for example, increased labor union activity strengthens workers’ bargaining ability.</p>
+<p>Notice how the state of the labor market, measured by tightness <span class="math notranslate nohighlight">\(\theta\)</span> influences wages. When <span class="math notranslate nohighlight">\(\theta\)</span> is high, it is very difficult for firms to attract workers which gives labor a better bargaining position in the wage negotiation.- When <span class="math notranslate nohighlight">\(\theta\)</span> is high, it is very easy for workers to find another job, which puts firms in a worse bargaining position in the wage negotiation</p>
+<p>The wage equation <a class="reference internal" href="#equation-wage-equation">(8)</a> gives a positive relationship between labor market tightness and wages.  The wage equation <a class="reference internal" href="#equation-wage-equation">(8)</a> and job creation condition <a class="reference internal" href="#equation-job-creation">(7)</a> jointly determine the equilibrium wage and market tightness.  The Beveridge curve <a class="reference internal" href="#equation-steady-state-u">(6)</a> then determines equilibrium unemployment.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\theta &amp;= \left[ \frac{A}{\kappa}\left(\frac{y-w}{s} \right) \right]^2 \\
+w &amp;= \beta(y+\theta \kappa)+(1-\beta)b \\
+u &amp;= \frac{s}{s+A\sqrt{\theta}}
+\end{align*}
+\end{split}\]</div>
+<p>This system of three equation in three unknowns <span class="math notranslate nohighlight">\((\theta,w,\mathcal{U})\)</span> can be represented graphically.  The figure on the left shows the equilibrium combination of <span class="math notranslate nohighlight">\((\theta,w)\)</span> that satisfies both the job creation condition and the wage equation; while the figure on the right shows the equilibrium unemployment rate <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> that obtains with the level of market tightness.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/equilibrium2.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div></section>
+<section id="comparative-statics">
+<h2>Comparative Statics<a class="headerlink" href="#comparative-statics" title="Link to this heading">#</a></h2>
+<p>With the model in hand we can perform some experiments to predict how the labor market responds to different shocks, such as:</p>
+<ul class="simple">
+<li><p>labor market policies that give better unemployment benefits</p></li>
+<li><p>unionization of workers</p></li>
+<li><p>an economic recession</p></li>
+<li><p>an economic boom (AI industry takes off)</p></li>
+<li><p>technological improvements that make it easier to post job advertisements</p></li>
+<li><p>etc…</p></li>
+</ul>
+<p>First, let’s investigate what happens when there is positive productivity shock.  Mathematically, a higher value of <span class="math notranslate nohighlight">\(x\)</span> will affect the job creation condition <a class="reference internal" href="#equation-job-creation">(7)</a> and the bargained wage <a class="reference internal" href="#equation-wage-equation">(8)</a>.  Intuitively, it’s effect on the wage equation comes from workers’ ability to capture a fraction <span class="math notranslate nohighlight">\(\beta\)</span> of the productivity gains; while it’s effect on job creation comes from firms’ ability to earn higher profits with more productive workers thereby incentivizing them to create more vacancies.  More vacancies increase the job finding rate and therefore reduce unemployment.  The net result from the positive productivity shock is therefore higher wages and lower unemployment.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/compstat_x.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>Second, consider an increase in unemployment income <span class="math notranslate nohighlight">\(b\)</span>. Higher unemployment benefits increases workers’ <strong>reservation wage</strong>: the wage which makes then indifferent between working or not.  As a result, firms find it less attractive to create jobs and therefore reduce the number of vacancies.  Fewer vacancies decreases the job finding rate and thus increases unemployment.  The net result is higher wages and higher unemployment (a higher <span class="math notranslate nohighlight">\(\beta\)</span> produces similar results).  Note that we are gnoring any disincentive effects (i.e. in spite of higher unemployment income, the unemployed continue to seek employment with the same effort).</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/compstat_z.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>Third, consider an increase in the separation rate <span class="math notranslate nohighlight">\(s\)</span>.  Higher separation rates mean the life of a job is on average shorter. The job creation curve shifts downward and moves the equilibrium to a lower wage and lower market tightness along the wage curve. This results in higher unemployment, but the shift in the Beveridge curve outward making the effect on job vacancies ambiguous.  The net result is lower wages and higher unemployment.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/compstat_s.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>Fourth, consider a decrease in the efficiency of the matching function <span class="math notranslate nohighlight">\(A\)</span>.  n exogenous decrease in the matching function reflects greater <strong>mismatch</strong> in the labor market—differences in the qualities of jobs and workers, differences in their location, and imperfect information about these and other relevant parameters.  Higher mismatch slows the speed of job creation.  The job creation curve shifts downward reflecting the increase in average hiring costs.  The wage falls as does market tightness. The Beveridge curve shifts outward. The net result is lower wages and greater unemployment.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/compstat_A.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>Fifth, consider an increase in vacancy posting costs <span class="math notranslate nohighlight">\(\gamma\)</span>.  Higher vacancy posting costs reduces the incentive for firms to create new vacancies, so the job creation curve shifts inward. Higher vacancy posting costs are partly passed on to workers through higher wages, so the wage rule shifts outward. Both fewer vacancy creation, and more job seekers lead to lower market tightness; but the net effect on wages is ambiguous. The net result is higher unemployment, but an ambiguous effect on wages.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/compstat_gamma.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div></section>
+<section id="the-natural-rate-of-unemployment">
+<h2>The natural rate of unemployment<a class="headerlink" href="#the-natural-rate-of-unemployment" title="Link to this heading">#</a></h2>
+<p>For the U.S., the Congressional Budget Office (CBO) publishes estimates of the <strong>natural rate of unemployment</strong>. The natural rate of unemployment (NAIRU) is the rate of unemployment arising from all sources except fluctuations in aggregate demand. Estimates of potential GDP are based on the long-term natural rate. (CBO did not make explicit adjustments to the short-term natural rate for structural factors before the recent downturn.) The short-term natural rate incorporates structural factors that are temporarily boosting the natural rate beginning in 2008. The short-term natural rate is used to gauge the amount of current and projected slack in labor markets, which is a key input into CBO’s projections of inflation.”</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/natural_rate.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>The natural rate of unemployment is seen as a long-run equilibrium unemployment rate. We can also use our model to think about short-run dynamics of unemployment when the economy is hit by a macroeconomic shock.  Suppose that the economy experiences a negative shock which temporarily reduces the value of output <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<ul class="simple">
+<li><p>Firms realize lower profits and so close job openings</p></li>
+<li><p>Vacancies immediately drop (<span class="math notranslate nohighlight">\(\downarrow \theta\)</span>) creating a looser labor market</p></li>
+<li><p>Unemployment gradually adjusts, according to our law of motion for unemployment, toward a new lower steady state level</p></li>
+<li><p>Eventually the shock to output dissipates, causing firms to open vacancies, causing unemployment to gradually return to its initial steady state level</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_LR/business_cycle.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>The dynamics in our model give us some perspective on why unemployment goes through cyclical patterns over time</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/bls.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>And why we observe counter-clockwise loops around the Beveridge curve</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/bc_data.png" 
+     alt="US uemployment rate" 
+     width="600">
+</div>
+<p>This is a first glance at business cycles.  We will have much more to say about the dynamics of the macroeconomy when we develop a model of the short-run.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Solow_demonstration.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Solow Model Demonstration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="labor-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Labor Data Tutorial: Using the FRED API with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-labor-market">The Labor Market</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#search-and-matching-model-of-unemployement">Search and Matching Model of Unemployement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#steady-state-unemployment">Steady State Unemployment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-empirical-digression-on-the-beveridge-curve">An Empirical Digression on the Beveridge Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determining-equilibrium-market-tightness">Determining equilibrium market tightness</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-statics">Comparative Statics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-natural-rate-of-unemployment">The natural rate of unemployment</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

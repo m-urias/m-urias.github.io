@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Money, Inflation, and Interest Rates &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'money-and-inflation';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Central Bank Implementation of Monetary Policy" href="central-bank-policy.html" />
+    <link rel="prev" title="Equilibrium Unemployement" href="equilibrium-unemployment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/money-and-inflation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Money, Inflation, and Interest Rates</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantity-theory-of-money">Quantity Theory of Money</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-monetary-facts">Some Monetary Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-equation">Fisher Equation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="money-inflation-and-interest-rates">
+<h1>Money, Inflation, and Interest Rates<a class="headerlink" href="#money-inflation-and-interest-rates" title="Link to this heading">#</a></h1>
+<p>Economist’s meaning of money:</p>
+<ul class="simple">
+<li><p>Anything that is generally accepted in payment for goods and services</p></li>
+<li><p>Not the same as wealth or income</p></li>
+</ul>
+<p>Functions of money:</p>
+<ul class="simple">
+<li><p>Medium of exchange</p></li>
+<li><p>Unit of account</p></li>
+<li><p>Store of value</p></li>
+</ul>
+<p>Evolution of Payments System:</p>
+<ul class="simple">
+<li><p>Precious metals like gold and silver and some other commodities</p></li>
+<li><p>Paper currency (fiat money): instrinsically worthless and inconvertible</p></li>
+<li><p>Checks</p></li>
+<li><p>Electronic means of payment</p></li>
+<li><p>Electronic money: Debit cards, Stored-value cards, Smart cards, E-cash, cryptos</p></li>
+</ul>
+<p>Construct <strong>monetary aggregates</strong> using the concept of liquidity:</p>
+<ul class="simple">
+<li><p>M0 = currency held by nonbank public</p></li>
+<li><p>MB = M0 + reserves</p></li>
+<li><p>M1 = M0 + traveler’s checks + demand deposits + other checkable deposits</p></li>
+<li><p>M2 = M1 + time deposits + money market funds + savings deposits</p></li>
+</ul>
+<p>What measure of money should policymakers and researchers pay attention to?</p>
+<ul class="simple">
+<li><p>if different money aggregates are highly correlated, then it may not matter too much which one we choose</p></li>
+<li><p>if different money aggregates are not synchronized, then one measure of money may give a very different picture of the money supply than another</p></li>
+<li><p>if there is a link between the real economy and money supply, then policymakers must decide which money aggregate is most important</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_MII/aggregates.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/money_aggregates_growth_china.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The measurement of monetary aggregates <span class="math notranslate nohighlight">\(M0,M1,M2\)</span> just uses a simple sum across different assets.</p>
+<ul class="simple">
+<li><p>All assets are treated as perfect substitutes even when clearly are not</p></li>
+<li><p>Example: Cash and demand deposits are used for transaction purposes whereas many interest bearing accounts are used for savings</p></li>
+<li><p>It is better to weight different types of money based on their liquidity in order to extract an aggregate measure of money that reflects transaction purposes</p></li>
+</ul>
+<p>The Divisia index assigns weights to different types of money based on their transaction services</p>
+<p>The <strong>Divisia index</strong> measures the transaction services of assets based on the opportunity cost of holding that asset compared to a benchmark interest bearing asset that is not used for transaction purposes</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(r_i\)</span> be the interest rate on monetary asset <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p>Let <span class="math notranslate nohighlight">\(R\)</span> be the benchmark interest rate (e.g. 3 month time deposit rate) not used for transaction purposes</p></li>
+<li><p>The opportunity cost of holding monetary asset <span class="math notranslate nohighlight">\(i\)</span> is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+p_i = R-r_i
+\]</div>
+<p>which measures of the cost of holding asset <span class="math notranslate nohighlight">\(i\)</span> for its liquidity services</p>
+<p>The actual weight assigned to asset <span class="math notranslate nohighlight">\(i\)</span> is the opportunity cost <span class="math notranslate nohighlight">\(p_i\)</span> multiplied by the amount of asset <span class="math notranslate nohighlight">\(i\)</span> held as a proportion of the cost of all monetary assets:</p>
+<div class="math notranslate nohighlight">
+\[
+s_{it}=\frac{p_{it} M_{it}}{\sum_{i=1}^N p_{it}M_{it}}
+\]</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/divisia.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<section id="quantity-theory-of-money">
+<h2>Quantity Theory of Money<a class="headerlink" href="#quantity-theory-of-money" title="Link to this heading">#</a></h2>
+<p>A useful framework for thinking about the role of money supply in the economy is the \textbf{Quantity Theory of Money}:</p>
+<div class="math notranslate nohighlight">
+\[
+MV = PY
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(M\)</span> is money supply</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> is the velocity of money</p></li>
+<li><p><span class="math notranslate nohighlight">\(P\)</span> is the price level</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> is real GDP</p></li>
+</ul>
+<p>The velocity of money measures how many times one unit of money changes hands over some period of time.</p>
+<div class="math notranslate nohighlight">
+\[
+V = \frac{PY}{M}
+\]</div>
+<p>If the velocity of money is constant, then the quantity theory suggests that nominal GDP is proportional to money supply</p>
+<div class="math notranslate nohighlight">
+\[
+PY = \bar{V}M
+\]</div>
+<p>Furthermore, if you believe that real output does not respond to changes is money supply, then the theory suggests a one-for-one relationship between money and prices</p>
+<div class="math notranslate nohighlight">
+\[
+P \bar{Y}=\bar{V}M
+\]</div>
+<p><strong>Changes in prices (inflation) are due to changes in money supply</strong>.</p>
+<p>Why do we believe that real output does not respond to changes in money supply?  Real output is determined by the factors of production (technology, labor, capital, land, human capital etc.).  This was what our theories about the long-run were saying.  Simply printing more bills does not change the amount of real resources an economy has, and therefore will not impact real production.  If money supply does not affect real variables in the economy, then we have something called <strong>money neutrality</strong>.</p>
+<p>Why do we take velocity to be constant? This is more controversial, but during the time period under which this theory was developed velocity of measured to be quite stable.  Although that is not the case since.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/velocity.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Of course during periods of hyperinflation velocity should increase as people try to quickly get rid of bills deteriorating in value.  But for relatively low inflation rates we think that velocity reflects liquidity preferences among households and firms that does not depend on the total quantity of money or prices.</p>
+<p>What explains the prominent downward trend in velocity in the US after the Great Recession?  I propose (from casual observation) that this is largely due to increase reserve balances in the banking sector:</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/reserves.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The velocity of money will fall when agents in the economy decide to hoard their money</p>
+<ul class="simple">
+<li><p>Households save more</p></li>
+<li><p>Firms increase cash holdings</p></li>
+<li><p>Banks hold more reserves</p></li>
+</ul>
+<p>Although many of these forces may be at work, the unprecedented growth of the Federal Reserve’s balance sheet and the observed increase in reserves makes me think this is an important explanatory variable.
+\vspace{5mm}</p>
+<p>Notice however, that \textit{strictly speaking}, banks’ desire to hold more reserves is not related to money supply.  It reflects banks’ preferences/objectives.  There is another state of the world where the injection of money is not held by banks but rather lent out (probably at lower rates).</p>
+<p>For our purposes, we will continue to assume that real output and velocity are determined by factors unrelated to prices of money supply.
+\vspace{5mm}</p>
+<p>We can write the quantity theory either in levels or growth rates:
+\begin{align*}
+M\bar{V}=P\bar{Y} \
+g_M+\bar{g}_V=g_P+\bar{g}_Y
+\end{align*}
+where I use the bar notation to remind you that these variables are determined by factors outside of the quantity theory (real gdp determined by our long-run model and velocity determined by liquidity preferences).</p>
+<p>The quantity theory in growth rates is useful because it gives us a way of predicting inflation:</p>
+<div class="math notranslate nohighlight">
+\[
+g_P = g_M+\bar{g}_V-\bar{g}_Y
+\]</div>
+<p>A natural question is how well does money supply growth <em>actually</em> explain inflation in the data.  Let’s summarize the results of some empirical studies addressing this question.</p>
+</section>
+<section id="some-monetary-facts">
+<h2>Some Monetary Facts<a class="headerlink" href="#some-monetary-facts" title="Link to this heading">#</a></h2>
+<p>McCandless and Weber (1995) is a highly cited study that measures the long-run correlation between different monetary aggregates, inflation, and real GDP.</p>
+<ul class="simple">
+<li><p>Time series data for 110 countries covering 1960 to 1990</p></li>
+<li><p>For each country, compute the long-run geometric average rate of growth for real GDP, inflation (using consumer prices), and three monetary aggregates (M0,M1,M2).</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{(Reminder about geometric growth)}:y_t=y_0(1+g)^t
+\]</div>
+<ul class="simple">
+<li><p>Compute the coefficient of correlation between money growth, inflation, and real GDP</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{(Reminder about correlation coefficient)}:r = \frac{\text{cov}(x,y)}{\sigma_x \sigma_y}
+\]</div>
+<p>You can access the same data at the following places</p>
+<ul class="simple">
+<li><p>International Monetary Funds \textit{International Financial Statistics}: <a class="reference external" href="https://data.imf.org/">https://data.imf.org/</a></p></li>
+<li><p>Federal Reserve Economic Data: <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a></p></li>
+<li><p>Peoples Bank of China: <a class="reference external" href="http://www.pbc.gov.cn/">http://www.pbc.gov.cn/</a></p></li>
+</ul>
+<p>Fact 1: In the long-run, there is a high (almost unity) correlation between the rate of growth of the money supply and the rate of inflation.  This holds across three definitions of money and across the full sample of countries and two subsamples.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Fact 2: In the long-run, there is no correlation between the growth rates of money and real output.  This holds across all definitions of money, but not for a subsample of OECD countries, where the correlation seems to be positive.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW4.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW5.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Fact 3: In the long-run, there is no correlation between inflation and real output growth.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McW6.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>But, this finding is inconsistent with other studies, so the verdict is still unclear.</p>
+<p>Based on these facts:</p>
+<ul class="simple">
+<li><p>Central banks can adjust long-run inflation rates by adjusting the growth rate of money.</p></li>
+<li><p>We can’t say anything about the central bank’s ability to influence short-term inflation or GDP</p></li>
+<li><p>Hitting specific inflation targets depends on knowing the growth rates of real GDP and velocity</p></li>
+<li><p>Monetary policy has no long-run effects on real GDP</p></li>
+</ul>
+<p>A paper by Borio, Hofmann, and Zakrajsek (2023) measures the relationship between money growth and inflation using more recent data.</p>
+<ul class="simple">
+<li><p>1st variable: ``excess money growth” <span class="math notranslate nohighlight">\(g_M-g_Y\)</span></p></li>
+<li><p>2nd variable: inflation <span class="math notranslate nohighlight">\(g_P\)</span></p></li>
+</ul>
+<p>across a large sample of countries from 1951 to 2021</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/BHZ.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Gertler and Hofmann (2016) wrote a paper called <em>Monetary Facts Revisited</em> using more current data and fancier econometrics to re-evaluate the long-run relationship between money growth and inflation (and also credit growth and financial crises).
+\vspace{5mm}</p>
+<p>To allow for a dynamic lead-lag relationship between money growth and inflation, they use an error-correction model:’</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \pi_{i,t}=\alpha_i+\phi_i(\pi_{i,t-1}-\theta(m-y)_{i,t-1})+\sum_{j=0}^4
+\delta_{i,j}\Delta(m-y)_{i,t-j}+\epsilon_{i,t}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the inflation rate, <span class="math notranslate nohighlight">\((m-y)\)</span> is the growth rate of money supply in excess of real GDP, and <span class="math notranslate nohighlight">\(\alpha_i\)</span> are country fixed effects.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McWR1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/McWR2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>It is important realize that the interest rates you see in the real world are all in units of money.  But of course, inflation erodes the the purchasing power of your money and so nominal interest rates do not tell you how much purchasing power you expect to receive from some investment:</p>
+<ul class="simple">
+<li><p>You lend someone $100 today at an interest rate of 6%</p></li>
+<li><p>In 12 months you receive $106</p></li>
+<li><p>During the last 12 months prices rose by 6%</p></li>
+<li><p>You earned nothing</p></li>
+</ul>
+<p>What really matters for economic decisions is the \textbf{real interest rate}: the rate of return measured in units of goods.</p>
+<p>The Fisher equation says that in equilibrium the gross real rates of return on real and nominal bonds must be the same.
+\vspace{5mm}</p>
+<p>Plan A: Invest in $1 nominal bond today</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(i_{t+1}\)</span> be the one period nominal interest rate</p></li>
+<li><p>The amount you have tomorrow is <span class="math notranslate nohighlight">\((1+i_{t+1})\)</span></p></li>
+</ul>
+<p>Plan B: Take your $1 and convert it into real goods and invest it</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(r_{t+1}\)</span> be the real rate of return</p></li>
+<li><p>The amount you have tomorrow is</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{P_t}(1+r_{t+1})
+\]</div>
+<p>and in terms of money that is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P^e_{t+1}}{P_t}(1+r_{t+1})
+\]</div>
+</section>
+<section id="fisher-equation">
+<h2>Fisher Equation<a class="headerlink" href="#fisher-equation" title="Link to this heading">#</a></h2>
+<p>In equilibrium (no arbitrage) it must be the case that</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_{t+1})=\frac{P^e_{t+1}}{P_t}(1+r_{t+1})
+\]</div>
+<p>Using the notation <span class="math notranslate nohighlight">\(\pi^e_{t+1}\)</span> to denote the expected net inflation rate we have that</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_{t+1})=(1+\pi^e_{t+1})(1+r_{t+1})
+\]</div>
+<p>Often you will see the Fisher equation written in it’s approximate form</p>
+<div class="math notranslate nohighlight">
+\[
+i_{t+1}=r_{t+1}+\pi^e_{t+1}
+\]</div>
+<p>which uses the fact that <span class="math notranslate nohighlight">\(\pi^e_{t+1}r_{t+1} \approx 0\)</span>.</p>
+<p>In this equation we take the real interest rate as exogenous.  Why?<br />
+\vspace{5mm}</p>
+<p>The real interest rate is determined by the real rate of return on capital projects</p>
+<div class="math notranslate nohighlight">
+\[
+r=MPK
+\]</div>
+<p>and this, in turn, depends on real factors.  Again, think of our long-run model.
+\vspace{5mm}</p>
+<p>We are consistently assuming that real variables affect real variables and nominal variables affects nominal variables: the <strong>classical dichotomy</strong>.
+\vspace{5mm}</p>
+<p>Of course this is not realistic, but we have to start simple.</p>
+<p>Taking the real interest rate as exogenous, the Fisher equation predicts a one-for-one relationship between inflation and nominal interest rates:</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = \bar{r}_t+\pi^e_t
+\]</div>
+<p>Another way to use the Fisher equation is to compute the real interest rate, which is of course unobservable!</p>
+<ul class="simple">
+<li><p>We can observe nominal interest rates</p></li>
+<li><p>We can observe inflation</p></li>
+<li><p>We can use the Fisher equation to measure the real interest rate</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_MII/real_interest_rate.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Notice that if the real interest rate where always equal to MPK, then periods of where <span class="math notranslate nohighlight">\(r&lt;0\)</span> would be puzzling.</p>
+<p>It is possible for the real interest rate to temporarily deviate from its equilibrium value MPK.</p>
+<p><strong>Central bank interventions in nominal interest rates can influence real interest rates</strong>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="equilibrium-unemployment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Equilibrium Unemployement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="central-bank-policy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Central Bank Implementation of Monetary Policy</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantity-theory-of-money">Quantity Theory of Money</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-monetary-facts">Some Monetary Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fisher-equation">Fisher Equation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

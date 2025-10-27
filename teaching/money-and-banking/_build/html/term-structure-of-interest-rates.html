@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Term Structure of Interest Rates &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'term-structure-of-interest-rates';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Term Structure of Interest Rates Data Tutorial" href="yield-curve-data-tutorial.html" />
+    <link rel="prev" title="Diamond-Dybvig Model of Banking" href="diamond-dybvig.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Term Structure of Interest Rates</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/term-structure-of-interest-rates.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Term Structure of Interest Rates</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-risk-structure-of-interest-rates">What is the Risk Structure of Interest Rates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-term-structure-of-interest-rates">What is the Term Structure of Interest Rates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-yield-curve">Explaining the yield curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectations-theory">Expectations theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmented-markets-theory">Segmented markets theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidity-premium-theory">Liquidity premium theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-rigorous-treatment-of-expectations-theory">A more rigorous treatment of expectations theory</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="term-structure-of-interest-rates">
+<h1>Term Structure of Interest Rates<a class="headerlink" href="#term-structure-of-interest-rates" title="Link to this heading">#</a></h1>
+<p>Often in economic models we assume that there exists a single interest rate that measures the real return to capital investment.  In reality, however, there are <em>many</em> different interest rates across assets that reflect differences in <strong>risk, liquidity, and maturity</strong> among heterogeneous capital projects.  We restrict our attention to the class of assets called <strong>bonds</strong>, and begin by understanding why bonds with the same term to maturity can have different interest rates.  We then examine how the <em>term to maturity itself</em> influences a bond’s interest rate–this relationship is called the <strong>term structure of interest rates</strong>.</p>
+<p>In addition to being important barometers of the rate of return on capital projects, interest rates are also central to monetary policy.  One key summary statistic which shows how short-term policy rates transmit to longer-term interest rates is the <strong>yield curve</strong>.  The yield curve gives interest rates on the same asset (mostly bonds or other debt instruments) at different maturities. Through open market operations and other instruments (e.g. reserve requirements, discount lending, repo markets), the central bank can influence the shape of the yield curve, especially its short end.  In later sections, we will also describe how central banks implement these policies under the <strong>corridor</strong> and <strong>floor systems</strong> of monetary policy.</p>
+<section id="what-is-the-risk-structure-of-interest-rates">
+<h2>What is the Risk Structure of Interest Rates?<a class="headerlink" href="#what-is-the-risk-structure-of-interest-rates" title="Link to this heading">#</a></h2>
+<p>Interest rates on long-term bonds are crucial for many economic decisions-—such as firms’ investment in plants and equipment or households’ purchases of homes and automobiles.  For this reason, macroeconomists devote substantial attention to understanding how long-term rates are determined and how they interact with short-term rates. For monetary policy analysis this is a crucial topic, as it concerns the link between short-term policy rates and long-term rates.</p>
+<p>The figure below shows long-term bond yields for several types of U.S. bonds:</p>
+<figure>
+    <img src="_static/figs_tsir/bond_yields.png"
+         alt="Long-Term Bond Yields in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Interest rates on different categories of U.S. bonds.
+    </figcaption>
+</figure>
+<p>It is immediately apparent that different categories of bonds yield systematically different yields.  Coporate bonds with lower credit ratings (e.g., Baa) pay a higher interest rates compared to higher rated  (Aaa) bonds, and both typically yield more than U.S. government bonds.  These <strong>yield spreads</strong> reflect compensation for differences in default <strong>risk</strong> and <strong>liquidity</strong>.  In general, investors demand higher yields to hold bonds that are riskier or less liquid.</p>
+<p>There are three main factors that influence the interest rate on debt instruments:</p>
+<ol class="arabic simple">
+<li><p><strong>Risk</strong>:  Some types of debt–such as US Treasury bonds–have very little risk of default.  Other types–like credit cards, corporate bonds, mortgages–differ in the probability of default and in the potential loss to lenders if a default occurs.  <strong>Default</strong> occurs when the issuer of a bond is unable or unwilling to make interest payments or pay off the face value when the bond matures.  The spread between interest rates on bonds with default risk and interest rate on default-free bonds (both of same maturity) is called the <strong>risk premium</strong>.  This spread varies over time with perceptions of creditworthiness and overall market risk.</p></li>
+</ol>
+<figure>
+    <img src="_static/figs_tsir/fig11.png"
+         alt="Long-Term Bond Yields in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Risk premiums: long-term corporate bonds versus U.S. Treasuries.
+    </figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p><strong>Liquidity</strong>:  Some types of debt can be easily traded (e.g. US Treasury bonds) and/or can be quickly and cheaply converted into cash (or reserves).  Corporate bonds, in contrast, may be thinly traded and costly to liquidate, especially during periods of financial stress.  In addition, some debt instruments are readily accepted as <strong>collateral</strong> in financial contracts.  The degree to which an asset is collateralizable largely depends on how quickly one party can liquidate it in the event that the counter-party breaks the contract.  All else equal, a bond that becomes less liquid will experience a fall in demand and thus a lower equilibrium price-—implying a higher yield.</p></li>
+<li><p><strong>Maturity</strong>: Different debt instruments have different maturities—how long the borrower has to pay back. Some instruments (e.g., repos or interbank loans) mature overnight, while others (e.g., government or corporate bonds) may extend decades into the future. The relationship between yields on bonds with identical risk and liquidity but differing maturities is called the <strong>term structure of interest rates</strong>.  When plotted, this relationship forms the <strong>yield curve</strong>.</p></li>
+</ol>
+</section>
+<section id="what-is-the-term-structure-of-interest-rates">
+<h2>What is the Term Structure of Interest Rates?<a class="headerlink" href="#what-is-the-term-structure-of-interest-rates" title="Link to this heading">#</a></h2>
+<p>A <strong>yield curve</strong> plots the yields on bonds with different maturities but the same risk and liquidity characteristics.  Yield curves convey crucial information about market expectations of future interest rates, inflation, and economic activity.  Empirically, several stylized facts hold over most period of time:</p>
+<ul class="simple">
+<li><p>Interest rates on bonds of different maturities move together over time.</p></li>
+<li><p>Yield curves can slope upward, downward, or be flat (but most often are upward sloping)</p></li>
+<li><p>When short-term interest rates are low (high), the yield curve tends to slope upward (downward)</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_tsir/term_structure.png"
+         alt="Long-Term Bond Yields in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Yield curve for US.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_tsir/yield_curve_us.png"
+         alt="Long-Term Bond Yields in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Yield curve for China.
+    </figcaption>
+</figure>
+</section>
+<section id="explaining-the-yield-curve">
+<h2>Explaining the yield curve<a class="headerlink" href="#explaining-the-yield-curve" title="Link to this heading">#</a></h2>
+<p>Three main theories attempt to explain the shape of the yield curve:</p>
+<ol class="arabic simple">
+<li><p>Expectations theory</p></li>
+<li><p>Segmented markets</p></li>
+<li><p>Liquidity premium theory</p></li>
+</ol>
+<section id="expectations-theory">
+<h3>Expectations theory<a class="headerlink" href="#expectations-theory" title="Link to this heading">#</a></h3>
+<p><strong>Expectations theory</strong> says that the interest rate on a long-term bond will equal the <em>average</em> of the short-term interest rates that people expect to occur over the bond’s lifetime. This theory assumes bonds of different maturities are <em>perfect substitutes</em>, so that they must offer the same expected rate of return in equilibrium. This is a simple application of the rate of return equality principle we discussed earlier.</p>
+<p>Consider investing $1 of wealth for a two-period return in one of the following strategies:</p>
+<ul class="simple">
+<li><p>Buy a two-period bond today with yield <span class="math notranslate nohighlight">\(i_{2t}\)</span></p></li>
+<li><p>Buy a one-period bond today with yield <span class="math notranslate nohighlight">\(i_t\)</span>, then reinvest the proceeds in another one-period bond next period expected to yield <span class="math notranslate nohighlight">\(i^e_{t+1}\)</span></p></li>
+</ul>
+<p>For both the one-period bond and two-period bond to exist in equilibrium, investors must be indifferent between the two investment strategies.  This is a consequence of the bonds having identical risk and liquidity characteristics so that they are perfect subsitutes.  If one type of bond yielded a higher expected rate of the return, then there would be zero demand for the alternative bond.</p>
+<p>The expected return to holding a two-period bond is</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_{2t})(1+i_{2t})-1 = 2 i_{2t}+(i_{2t})^2
+\]</div>
+<p>The expected return to holding two one-period bonds is</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_t)(1+i^e_{t+1})-1 = i_t + i^e_{t+1}+i_t(i^e_{t+1})
+\]</div>
+<p>Both bonds will be held only if these expected returns are equal.  Approximately we have that</p>
+<div class="math notranslate nohighlight">
+\[
+2 i_{2t} = i_t + i^e_{t+1} \quad \text{or} \quad i_{2t} = \frac{i_t + i^e_{t+1}}{2}
+\]</div>
+<p>We have shown that the two-period rate must equal the average of the two one-period rates.  Of course we could generalize this to an <span class="math notranslate nohighlight">\(n\)</span>-period bond and say that</p>
+<div class="math notranslate nohighlight">
+\[
+i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+...+i^e_{t+(n-1)}}{n}
+\]</div>
+<p>The shape of the yield curve contains valuable information about how investors expect short-term interest rates to evolve. When the yield curve slopes upward, it suggests that markets anticipate short-term interest rates will rise in the future. Conversely, an inverted yield curve—one that slopes downward—implies that investors expect short-term rates to decline over time. Historically, yield curve inversions have often preceded recessions, as they signal expectations of monetary easing or economic slowdown.</p>
+<p>The expectations theory provides a clear framework for understanding several regularities in bond markets. It explains why interest rates across different maturities tend to move together and why the yield curve typically steepens when short-term rates are low and flattens or inverts when they are high. However, it struggles to account for two important facts. First, yield curves are usually upward sloping, even when short-term rates are not expected to rise. Second, long-term interest rates are, on average, higher than short-term rates over long periods. These limitations motivate alternative theories that introduce risk and market segmentation.</p>
+<p>but does a poor job explaining:</p>
+<ul class="simple">
+<li><p>why they yield curve usually slopes upward</p></li>
+<li><p>the theory would imply that short-term rates are normally expected to rise, but in practice they are just as likely to fall as to rise</p></li>
+</ul>
+</section>
+<section id="segmented-markets-theory">
+<h3>Segmented markets theory<a class="headerlink" href="#segmented-markets-theory" title="Link to this heading">#</a></h3>
+<p>The <strong>segmented markets theory</strong> offers a different perspective by assuming that bonds of different maturities are not substitutes. Instead, each maturity has its own market, with its interest rate determined independently by supply and demand within that maturity segment.</p>
+<p>Investors are assumed to have strong preferences for certain maturities, often favoring short-term bonds because they involve less price volatility and interest-rate risk. As a result, the demand for short-term bonds is higher, driving up their prices and pushing down their yields relative to longer-term bonds. This maturity preference naturally produces a typically upward-sloping yield curve, since investors require higher yields to hold longer-term securities.</p>
+<p>While the segmented markets view explains the usual upward slope of the yield curve, it fails to explain why interest rates of different maturities tend to move together or why the slope of the curve changes systematically with the level of short-term interest rates. For these reasons, the theory provides valuable intuition about market segmentation but cannot fully describe the dynamic behavior of yields over time.</p>
+</section>
+<section id="liquidity-premium-theory">
+<h3>Liquidity premium theory<a class="headerlink" href="#liquidity-premium-theory" title="Link to this heading">#</a></h3>
+<p>The <strong>liquidity premium theory</strong> blends the core ideas of the previous two approaches. It assumes that bonds of different maturities are substitutes, but not perfect substitutes. Investors generally prefer short-term bonds because they are more liquid and less exposed to price risk. Consequently, long-term bonds must offer a liquidity premium (also called a term premium) to compensate investors for the additional risk of holding them.</p>
+<p>Formally, the yield on an <span class="math notranslate nohighlight">\(n\)</span>-period bond at time <span class="math notranslate nohighlight">\(t\)</span> is expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+...+i^e_{t+(n-1)}}{n} + l_{nt}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_{nt}&gt;0\)</span> is the liquidity (term) premium for the <span class="math notranslate nohighlight">\(n\)</span>-period bond at time <span class="math notranslate nohighlight">\(t\)</span>, which is positive and rises with the term to maturity of the bond.</p>
+<p>Even if future short-term interest rates are expected to remain constant, a positive liquidity premium can still generate an upward-sloping yield curve. The steeper the yield curve, the greater either the expected rise in short-term rates or the magnitude of the liquidity premium.</p>
+<p>The liquidity premium theory thus reconciles the strengths of its predecessors. It explains both the co-movement of short- and long-term interest rates and the usual upward slope of the yield curve. Moreover, it accounts for the empirical tendency of yield curves to steepen when short-term rates are low—reflecting optimism about future rate increases—and to flatten or invert when short-term rates are high, often signaling expectations of a slowdown.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Shape of Yield Curve</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Steeply upward sloping</p></td>
+<td><p>Short-term rates expected to rise</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mildly upward sloping</p></td>
+<td><p>Short-term rates expected to remain stable</p></td>
+</tr>
+<tr class="row-even"><td><p>Flat</p></td>
+<td><p>Short-term rates expected to fall slightly</p></td>
+</tr>
+<tr class="row-odd"><td><p>Inverted</p></td>
+<td><p>Short-term rates expected to fall sharply</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Empirical evidence suggests that</p>
+<ul class="simple">
+<li><p>the spread between long-term rates and short-term rates contains information about predicting very short-term interest rate movements (over a few months) and very long-run interest rate movements, but little information about intermediate-term movements.</p></li>
+<li><p>the yield curve also has predictive power in regard to business cycles and inflation</p></li>
+<li><p>an upward sloping yield curve usually indicates loose monetary policy, and an inverted yield curve tight monetary policy</p></li>
+</ul>
+</section>
+<section id="a-more-rigorous-treatment-of-expectations-theory">
+<h3>A more rigorous treatment of expectations theory<a class="headerlink" href="#a-more-rigorous-treatment-of-expectations-theory" title="Link to this heading">#</a></h3>
+<p>In this section I extend the expectations theory to show how the holding period return is a function of a bond’s yield following  <a href="https://www.jstor.org/stable/1833129" target="_blank">Campbell and Shiller (1987)</a>.</p>
+<p>Consider a consol bond (infinite term bond) with coupon payment <span class="math notranslate nohighlight">\(C\)</span> and price <span class="math notranslate nohighlight">\(P_t^L\)</span>.  The yield is defined as the interest rate which equates the price of the bond to its present discounted value of cash flows.  We write</p>
+<div class="math notranslate nohighlight">
+\[
+P_t^L = \sum_{j=1}^\infty \frac{C}{(1+R_{t}^L)^j}=\frac{C}{R_t^L}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_t^L\)</span> is the yield on the consol bond.  The holding period yield on any coupon bond is defined by</p>
+<div class="math notranslate nohighlight">
+\[
+H_{t+1}=\frac{P_{t+1}-P_t+C}{P_t}
+\]</div>
+<p>Therefore, the holding period yield on the consol bond is
+$<span class="math notranslate nohighlight">\(
+H_{t+1}=\frac{(C/R_{t+1}^L)-(C/R_{t}^L)+C}{(C/R_{t}^L)}=\frac{(1/R_{t+1}^L)+1}{(1/R_{t}^L)}-1
+\)</span>$</p>
+<p>It will be convenient to take a first-order Taylor approximation around the steady state <span class="math notranslate nohighlight">\(R_{t}^L=R_{t+1}^L=R^L\)</span>.  The first-order approximation of the ratio <span class="math notranslate nohighlight">\(R_{t}^L/R_{t+1}^L\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+R_{t}^L/R_{t+1}^L &amp;\approx \frac{R^L}{R^L}+\frac{1}{R^L}(R_{t}^L-R^L)-\frac{1}{R^L}(R_{t+1}^L-R^L) \\
+&amp;=1+\frac{R_{t}^L-R_{t+1}^L}{R^L}
+\end{align*}
+\end{split}\]</div>
+<p>Therefore, the approximate holding period yield si
+$<span class="math notranslate nohighlight">\(
+H_{t+1} \approx \frac{R_{t}^L-R_{t+1}^L}{R^L}+R_{t}^L
+\)</span>$</p>
+<p>Our no arbitrage condition equates the holding period yield to the short-term interest rate <span class="math notranslate nohighlight">\(R_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{R_{t}^L-R_{t+1}^L}{R^L}+R_{t}^L = R_t
+\]</div>
+<p>which can be rearranged to show the equilibrium long-term interest rate as a function of the short-term interest rate and expected long-term interest rate</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t}^L=\frac{R_{t+1}^L}{1+R^L}+\frac{R^L}{1+R^L}R_t
+\]</div>
+<p>This difference equation can be solved forward to give the long-term rate as a function of expected short-term rates:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t}^L=\frac{R^L}{1+R^L}\sum_{j=0}^\infty \left(\frac{1}{1+R^L}\right)^j E_t R_{t+j}
+\]</div>
+<p>As we saw in the simple version, the long-rate is an average of future expected short rates.  Here, it is a weighted average where the weights are a function of the steady state interest rate <span class="math notranslate nohighlight">\(R^L\)</span>.  Indeed, these are weights because <span class="math notranslate nohighlight">\(\frac{R^L}{1+R^L}\sum_{j=0}^\infty \left(\frac{1}{1+R^L}\right)^j=1\)</span>.  This derivation has some extra insights though.  The persistence of temporary changes in short-term rates matter for the long-rate.  Suppose, for example, that short-term rates are governed by an AR(1) process <span class="math notranslate nohighlight">\(R_t=\rho R_{t-1}+\epsilon_t\)</span>.  We know that <span class="math notranslate nohighlight">\(E_t R_{t+j}=\rho^j R_t\)</span> so we can write the expectations theory predicted long-term rate as</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t}^L=\frac{R^L}{1+R^L}\sum_{j=0}^\infty \left(\frac{1}{1+R^L}\right)^j \rho^j R_t = \frac{R^L}{1+R^L-\rho}R_t
+\]</div>
+<p>when shocks to the short-term rate are completely transitory <span class="math notranslate nohighlight">\((\rho=0)\)</span>, there is a very small effect on the long-rate.  When shocks are near permanent (<span class="math notranslate nohighlight">\(\rho \rightarrow 1\)</span>), however, there is a one-for-one response to the long-rate.</p>
+<p>We can also derive predictions about the how the spread forecasts future changes in short-term interest rates.  We rewrite the approximate expectations theory to say</p>
+<div class="math notranslate nohighlight">
+\[
+R_t^L-R_t=\sum_{j=1}^\infty E_t \Delta R_{t+j}
+\]</div>
+<p>When the spread is high, short-term rates are expected to increase in the future.  When the spread is low, short-term rates are expected to fall.  Permanent changes changes in short-term rates have no effect on the spread.</p>
+<p>Since it is well known that long rates are higher than predicted by the expectations theory, most empirical studies include a liquidity or risk premium.  We then have</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t}^L=\frac{R^L}{1+R^L}\sum_{j=0}^\infty \left(\frac{1}{1+R^L}\right)^j E_t R_{t+j} + L
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L=\frac{R^L}{1+R^L} \sum_{j=0}^\infty \left(\frac{1}{1+R^L}\right)^j E_t l_{t+j}\)</span> is the liquidity premium.</p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="diamond-dybvig.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diamond-Dybvig Model of Banking</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="yield-curve-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Term Structure of Interest Rates Data Tutorial</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-risk-structure-of-interest-rates">What is the Risk Structure of Interest Rates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-term-structure-of-interest-rates">What is the Term Structure of Interest Rates?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-the-yield-curve">Explaining the yield curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectations-theory">Expectations theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segmented-markets-theory">Segmented markets theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidity-premium-theory">Liquidity premium theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-more-rigorous-treatment-of-expectations-theory">A more rigorous treatment of expectations theory</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

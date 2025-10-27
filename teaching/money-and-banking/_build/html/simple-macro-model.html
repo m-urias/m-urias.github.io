@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A Simple Macro Model of Monetary Policy &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'simple-macro-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Extracting Business Cycles from Time Series Tutorial" href="extracting-business-cycles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/simple-macro-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A Simple Macro Model of Monetary Policy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve">The IS Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-monetary-policy">A Simple Monetary Policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phillip-s-curve">The Phillip’s Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporating-price-shocks">Incorporating Price Shocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-unemployment-to-output">From Unemployment to Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-expectations-and-short-run-dynamics">Adaptive Expectations and Short-Run Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-basic-macro-model">Our Basic Macro Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rules-and-stabilization">Monetary Policy Rules and Stabilization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rule-in-interest-rates">Monetary Policy Rule in Interest Rates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-is-mp-pc-macro-model">Our IS-MP-PC Macro Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-1-an-inflation-shock">Event #1: An Inflation Shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-2-an-aggregate-demand-shock">Event # 2: An Aggregate Demand Shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-3-lowering-the-inflation-target">Event # 3: Lowering the Inflation Target</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inflation-output-loops">Inflation-Output Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-frictions-and-risk-premiums">Financial Frictions and Risk Premiums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectations-and-forward-guidance">Expectations and Forward Guidance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-macro-models">Advanced Macro Models</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-simple-macro-model-of-monetary-policy">
+<h1>A Simple Macro Model of Monetary Policy<a class="headerlink" href="#a-simple-macro-model-of-monetary-policy" title="Link to this heading">#</a></h1>
+<p>We now develop a three-equation model-—commonly known as the IS–PC–MP model—-to describe short-run dynamics in the economy. This framework provides a compact yet powerful way to connect the conduct of monetary policy with real economic activity and inflation dynamics.  In this model, monetary policy influences the short-term real interest rate, which affects aggregate demand and output through investment and other spending channels. The model thus bridges the gap between <a href="olg-banking.html">our earlier OLG model of banking</a> (which explains how banks and reserves underpin interest rate determination) <a href="monetary-policy-systems.html">our model of the interbank market</a>, where the central bank sets the short-term nominal interest rate.</p>
+<p>Here we use a three-equation model, known as the IS-PC-MP model, to describe the short-run dynamics of the economy.  We describe the effects of monetary policy as changes to the short-term real interest rate which in turn affects various components of real output.  This description provides a link between monetary policy conducted through the banking system as described in <a href="olg-banking.html">our OLG model of baking</a> and our <a href="monetary-policy-systems.html">model of the interbank market</a>.  In particular, we describe how changes in the short-term nominal interest rate, as described in our <a href="monetary-policy-systems.html">model of the interbank market</a>, translate into changing the short-term <em>real</em> interest rate, which in turn affects the real economy.</p>
+<p>Changes in nominal interest rates, when prices are slow to adjust, translate into changes in real interest rates that directly influence real activity. Moreover, inflation expectations feed back into actual inflation, which motivates the need for a monetary policy rule—-such as the Taylor rule-—to stabilize output and inflation over the business cycle.</p>
+<p>We proceed by describing each of the three equations one at a time and then analyze the dynamic macreconomic system these three equations constitute.</p>
+<section id="the-is-curve">
+<h2>The IS Curve<a class="headerlink" href="#the-is-curve" title="Link to this heading">#</a></h2>
+<p>The channel through which monetary policy affects short-run output is the real interest rate. The central bank can alter overnight nominal interest rates through open market operations in the reserves market. These short-term nominal rates influence longer-term rates via the yield curve. Because prices are sticky in the short run, nominal rate changes translate into real rate changes-—so that <span class="math notranslate nohighlight">\(R_t \neq r=MPK\)</span>.</p>
+<p>When real interest rates fall, investment becomes more attractive, stimulating aggregate demand and increasing output. Conversely, higher real rates discourage investment and slow the economy.</p>
+<p>This <strong>monetary policy transmission mechanism</strong> is summarized by:</p>
+<div class="math notranslate nohighlight">
+\[
+\downarrow \text{interest rate} \Rightarrow \uparrow \text{investment} \Rightarrow \uparrow \text{output}
+\]</div>
+<p>Although monetary policy also affects other channels—such as consumption, credit spreads, and exchange rates—we focus here on the investment channel for clarity.</p>
+<p>The <strong>IS curve</strong> represents combinations of real interest rates and output levels that are consistent with equilibrium in the goods market.  To build the IS curve, begin with the national accounting identity</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t=C_t+I_t+G_t+EX_t-IM_t
+\]</div>
+<p>which states that the total output of the economy can be used for consumption, investment, government spending, and net exports. We specify “mini theories” for each expenditure component. We assume that, in the short run, consumption, government spending, exports, and imports are each a constant fraction of potential output <span class="math notranslate nohighlight">\(\bar{Y}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+C_t &amp;= a_c \bar{Y}_t \\
+G_t &amp;= a_g \bar{Y}_t \\
+EX_t &amp;= a_{ex} \bar{Y}_t \\
+IM_t &amp;= a_{in} \bar{Y}_t \\
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{Y}_t\)</span> is long-run output determined by fundamental factors—-technology, labor, and capital—-that lie outside our short-run model.</p>
+<p>The theory of investment, however, is a bit different.  We assume that investment responds to the real cost of financing capital projects:</p>
+<div class="math notranslate nohighlight">
+\[
+I_t = a_i\bar{Y}_t+b(R_t-r)\bar{Y}_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_t\)</span> is the short-term real interest rate relative to the long-run real interest rate <span class="math notranslate nohighlight">\(r\)</span>. When current interest rate equals long-run interest rate <span class="math notranslate nohighlight">\(R=r\)</span>, investment is a constant fraction of long-run output <span class="math notranslate nohighlight">\(I_t = a_i \bar{Y}_t\)</span>. When <span class="math notranslate nohighlight">\(R&gt;r\)</span>, financing investment projects is costly so investment decreases below it’s long-run level. When <span class="math notranslate nohighlight">\(R&lt;r\)</span>, financing investment projects is cheap so investment rises above it’s long-run level.  Recall that the long-run real interest rate <span class="math notranslate nohighlight">\(r=MPK\)</span> is, once again, determined by our long-run theories and therefore exogenous with respect to our short-run model.</p>
+<p>Substituting our “mini theories” into the national accounting identity gives:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{Y_t}{\bar{Y}_t}&amp;=\frac{C_t}{\bar{Y}_t}+\frac{I_t}{\bar{Y}_t}+\frac{G_t}{\bar{Y}_t}+\frac{EX_t}{\bar{Y}_t}-\frac{IM_t}{\bar{Y}_t} \\
+\frac{Y_t}{\bar{Y}_t} &amp;= a_c+a_i-b(R_t-r)+a_g+a_{ex}-a_{im} \\
+\underbrace{\frac{Y_t-\bar{Y}_t}{\bar{Y}_t}}_{\tilde{Y}_t} &amp;= \underbrace{ a_c+a_i+a_g+a_{ex}-a_{im}-1}_{a}-b(R_t-r)
+\end{align*}
+\end{split}\]</div>
+<div class="admonition-definition-is-curve admonition">
+<p class="admonition-title">Definition: IS Curve</p>
+<p>:class: definition</p>
+<p>Our <strong>IS curve</strong> shows combinations of the output gap and real interest rate consistent with goods market equilibrium:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_t-r)
+\]</div>
+<p>where  <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span> is the output gap, <span class="math notranslate nohighlight">\(a\)</span> collects the exogenous components of expenditure, and <span class="math notranslate nohighlight">\(b\)</span> measures how sensitive investment (and therefore output) is to changes in the real interest <a class="reference external" href="http://rate.In">rate.In</a> normal times <span class="math notranslate nohighlight">\(a=0\)</span>, but shocks to aggregate demand–such as fiscal stimulus <span class="math notranslate nohighlight">\(\uparrow a_g\)</span> or export surges <span class="math notranslate nohighlight">\(\uparrow a_{ex}\)</span>– cause <span class="math notranslate nohighlight">\(a \neq 0\)</span>.  Monetary policy is summarized by <span class="math notranslate nohighlight">\(R_t\)</span>.</p>
+</div>
+<figure>
+    <img src="_static/figs_smm/is_curve.png"
+         alt="IS Curve"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The IS curve gives an equilibrium relationship between the short-term real interest rate and the output gap.
+    </figcaption>
+</figure>
+<p>The IS curve accommodates two types of shocks:</p>
+<ol class="arabic simple">
+<li><p><strong>Aggregate demand shocks</strong>: Temporary changes in exogenous components of expenditure (<span class="math notranslate nohighlight">\(C,I,G,EX,IM\)</span>) cause shifts in the intercept <span class="math notranslate nohighlight">\(a\)</span>.  A positive shock (<span class="math notranslate nohighlight">\(a&gt;0\)</span>) pushes output above potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span>), while a negative shock (<span class="math notranslate nohighlight">\(a&lt;0\)</span>) pushes output below potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>).  Graphically, these appear as shifts of the IS curve.</p></li>
+<li><p><strong>Interest rate shocks</strong>.  When the central bank alters <span class="math notranslate nohighlight">\(R_t\)</span> away from it’s long-run value, the economy moves <em>along</em> the IS curve.  A rate cut stimulates output and raises output <span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span>m, while a rate hike reduces investment causing <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>.</p></li>
+</ol>
+<p>This framework allows us to trace the real effects of monetary policy, while clearly distinguishing them from other sources of demand-driven fluctuations.  The IS curve captures the aggregate demand channel of monetary policy. Yet, it is not itself a monetary relation-—it shows how spending responds to real rates, regardless of what determines those rates. To close the model, we need an additional relation describing how the central bank sets the nominal interest rate and how inflation expectations link the nominal and real rates.</p>
+</section>
+<section id="a-simple-monetary-policy">
+<h2>A Simple Monetary Policy<a class="headerlink" href="#a-simple-monetary-policy" title="Link to this heading">#</a></h2>
+<p>How do we determine the short-run real interest rate?  For now, we assume that the central bank can target whatever real interest rate it desires. The central bank intervenes in the market for reserves to change the nominal interest rate (recall our discussion in <a href="monetary-policy-systems.html">Monetary Policy Systems</a>.)</p>
+<p>Changes in nominal interest rates influence the real interest rate because we assume that <strong>inflation displays inertia, or stickiness, in the short run</strong></p>
+<div class="math notranslate nohighlight">
+\[
+R_t = i_t-\pi_t
+\]</div>
+<p>Formally, we model monetary policy by saying that <span class="math notranslate nohighlight">\(R_t\)</span> is a <strong>policy variable</strong> determined with complete discretion by the central bank.  We will call this our <strong>MP curve</strong>, although at this stage it is a trivial horizontal line representing whatever value the central bank picks for <span class="math notranslate nohighlight">\(R_t\)</span>. Nevertheless, once the central bank chooses it’s policy for the real interest rate, the IS curve tells us the short-run equilibrium output gap.</p>
+<figure>
+    <img src="_static/figs_smm/is_mp_curve.png"
+         alt="IS Curve"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The MP curve represents the monetary authority choosing the real interest rate $R_t$.  Given $R_t$, the IS curve shows the equilibrium output gap.
+    </figcaption>
+</figure>
+<p>The figure above depicts a <strong>long-run equilibrium</strong> where the short-term real rate equal the long-run real rate, <span class="math notranslate nohighlight">\(R_t=\bar{r}\)</span>, and thus output is at potential, <span class="math notranslate nohighlight">\(\tilde{Y}_t=0\)</span>.</p>
+<p>What distinguishes this short-run description of monetary policy from our long-run models is price rigidity. Prices do not adjust instantaneously to changes in the money supply or the nominal interest rate. Instead, there is a lag between monetary policy actions and their effect on prices.  Eventually, prices do adjust, returning the economy to its long-run equilibrium—-a process captured by the models we studied earlier. In the short run, however, this sluggish adjustment gives monetary policy a powerful influence over real activity.</p>
+</section>
+<section id="the-phillip-s-curve">
+<h2>The Phillip’s Curve<a class="headerlink" href="#the-phillip-s-curve" title="Link to this heading">#</a></h2>
+<p>In 1958, economist A.W. Phillips published a landmark empirical paper that examined the relationship between unemployment and wage growth in the UK.  He discovered that periods of low unemployment were associated with rapid increases in wages, while periods of high unemployment corresponded to slow wage growth. Subsequent studies found similar negative relationships between unemployment and inflation in other countries. This empirical regularity became known as the <em>Phillip’s Curve</em>.</p>
+<p>The intuition behind the Phillips Curve is straightforward. When labor markets are tight—that is, when the unemployment rate is low—firms face difficulty hiring workers and therefore raise wages to attract and retain labor. These higher wage costs are passed on to consumers in the form of higher prices, generating inflation. In contrast, when unemployment is high and labor markets are slack, wage growth slows and inflation tends to ease. During the 1960s, this apparent trade-off between unemployment and inflation was interpreted as a potential policy tool: governments could, in principle, achieve lower unemployment by tolerating somewhat higher inflation.</p>
+<p>However, in 1967, Milton Friedman and Edmund Phelps identified a crucial theoretical flaw in this interpretation. They argued that firms and workers care about real wages—not nominal ones. When people expect prices to rise, they negotiate higher nominal wages in advance to maintain their purchasing power. As a result, both wages and inflation increase one-for-one with expected inflation, in addition to responding to the tightness of the labor market. Friedman and Phelps also introduced the concept of a natural rate of unemployment—the rate consistent with perfectly flexible prices and competitive markets.</p>
+<p>Consider the real wage rate</p>
+<div class="math notranslate nohighlight">
+\[
+w = W/P
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(W\)</span> is a nominal wage rate and <span class="math notranslate nohighlight">\(P\)</span> is the price level.  Or in terms of growth rates</p>
+<div class="math notranslate nohighlight">
+\[
+g_w = g_W-\pi
+\]</div>
+<p>Expansionary monetary policy can temporarily raise output and lower unemployment, leading to higher nominal wage growth. But as workers and firms begin to anticipate inflation, they will increase nominal wages in line with prices to preserve real purchasing power. In the long run, the attempt to sustain unemployment below its natural rate will fail, as inflation expectations adjust upward. Each new round of expansionary policy would be met with higher inflation expectations, causing inflation to accelerate without producing lasting employment gains.  Friedman’s reasoning implied that policymakers could not permanently exploit a trade-off between inflation and unemployment. Attempts to push output above potential (<span class="math notranslate nohighlight">\(\tilde{Y}&gt;0\)</span>) would lead only to accelerating inflation.</p>
+<p>Friedman and Phelps formalized this insight with the <strong>expectations-augmented Phillips Curve</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_t^e - \omega(U_t-U_n)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(U_t\)</span> is the actual unemployment rate, <span class="math notranslate nohighlight">\(U_n\)</span> is the natural rate of unemployment, and <span class="math notranslate nohighlight">\(\pi_t^e\)</span> is expected inflation.  In the long run, expected inflation tends to equal actual inflation–because you can’t continually fool the public–<span class="math notranslate nohighlight">\((\pi_t^e = \pi_t)\)</span>, eliminating the tradeoff.  Nevertheless, in the short run, unexpected inflation can temporarily reduce unemployment below its natural level.</p>
+<p>Starting in the 1970s, the apparent relationship between unemployment and inflation broke down. Periods of low unemployment were accompanied by high and persistent inflation—stagflation—rather than stable trade-offs. This empirical evidence strongly supported the Friedman–Phelps framework, and both economists later received the Nobel Prize in recognition of their contributions. Modern discussions of this concept often refer to the <strong>Non-Accelerating Inflation Rate of Unemployment (NAIRU)</strong>—the unemployment rate consistent with constant inflation.</p>
+<section id="incorporating-price-shocks">
+<h3>Incorporating Price Shocks<a class="headerlink" href="#incorporating-price-shocks" title="Link to this heading">#</a></h3>
+<p>In practice, inflation can also be influenced by supply-side shocks—such as changes in oil prices or import costs—that affect firms’ pricing decisions independently of the labor market. To account for this, the expectations-augmented Phillips Curve is often written as:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_t^e - \omega(U_t-U_n) + \rho
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho\)</span> captures temporary inflationary pressures from price shocks.</p>
+</section>
+<section id="from-unemployment-to-output">
+<h3>From Unemployment to Output<a class="headerlink" href="#from-unemployment-to-output" title="Link to this heading">#</a></h3>
+<p>We can relate inflation to output by recalling that output depends on the number of employed workers:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_t\)</span> is the unemployment rate so <span class="math notranslate nohighlight">\((1-u_t)L_t\)</span> is the number of employed workers in the economy.  Expressing deviations in output relative to potential, the Phillips Curve can equivalently be written in terms of the output gap <span class="math notranslate nohighlight">\(\tilde{Y}\)</span>.:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_t^e - \nu \tilde{Y}_t+ \rho
+\]</div>
+<p>This form of the Phillips curve highlights how inflation depends on both expected inflation and real activity. When output exceeds potential (<span class="math notranslate nohighlight">\(\tilde{Y}&gt;0\)</span>), inflation tends to rise; when output is below potential (<span class="math notranslate nohighlight">\(\tilde{Y}&lt;0\)</span>), inflation declines.</p>
+</section>
+<section id="adaptive-expectations-and-short-run-dynamics">
+<h3>Adaptive Expectations and Short-Run Dynamics<a class="headerlink" href="#adaptive-expectations-and-short-run-dynamics" title="Link to this heading">#</a></h3>
+<p>To introduce interesting dynamics, we assume that agents form adaptive expectations, meaning they base forecasts of future inflation on past observations. In the simplest case, expectations are purely backward-looking:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t^e=\pi_{t-1}
+\]</div>
+<p>Substituting this into the Phillips Curve gives:</p>
+<div class="admonition-definition-phillip-s-curve admonition">
+<p class="admonition-title">Definition: Phillip’s Curve</p>
+<p>:class: definition</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_{t-1} - \nu \tilde{Y}_t+ \rho
+\]</div>
+</div>
+<p>This is the specification used in our short-run macroeconomic model. Inflation today depends on last period’s inflation, the current output gap, and temporary supply shocks.  Later, we will explore alternative expectations mechanisms, including rational expectations, where agents use all available information to forecast inflation.</p>
+</section>
+</section>
+<section id="our-basic-macro-model">
+<h2>Our Basic Macro Model<a class="headerlink" href="#our-basic-macro-model" title="Link to this heading">#</a></h2>
+<div class="definition admonition">
+<p class="admonition-title">Simple Macro Model</p>
+<p>Now we have a simple macro model with three equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}_t &amp;= a-b(R_t-r)\\
+\text{MP Curve}: \quad R_t &amp;= \bar{R}_t \\
+\text{Phillip's Curve}: \quad \Delta \pi_t &amp;= \nu \tilde{Y}_t+o
+\end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>The IS curve determines equilibrium output gap for a given interest rate</p></li>
+<li><p>The MP curve shows that monetary policy chooses the interest rate with complete discretion</p></li>
+<li><p>The PC shows the rate of change in inflation given the output gap</p></li>
+</ul>
+</div>
+<p>We can use this three equation model to investigate some macroeconomic events in history or predict how the economy responds to future shocks.  For example, let’s consider what monetary policy under Paul Volcker did in the 1970s.  During the 1970s inflation in the US was very high (reaching over 12% by 1980), and chairman Paul Volcker was in charge of bringing inflation down.  He implemented contractionary monetary policy:</p>
+<ul class="simple">
+<li><p>Contractionary monetary policy means <span class="math notranslate nohighlight">\(\uparrow R_t\)</span></p></li>
+<li><p>Higher interest rates depress investment demand which generates a negative output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span></p></li>
+<li><p>Negative output gap represents low aggregate demand which causes inflation to decelerate <span class="math notranslate nohighlight">\(\Delta \pi_t &lt;0\)</span></p></li>
+</ul>
+<figure>
+    <img src="_static/figs_smm/is_mp_pc_disinflation.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Contractionary monetary policy shifts the MP curve upward indicating a higher short-term interest rate.  High interest rates depress investment causing short-run output to fall below potential output.  The negative output gap puts downward pressure on prices through the Phillips curve.
+    </figcaption>
+</figure>
+<p>Once inflation reaches the central bank’s target, <span class="math notranslate nohighlight">\(\bar{\pi}\)</span>, then monetary policy can lower the real interest rate back to its long-run level, pull the output gap back to zero, and stabilize inflation.  The impulse response functions for this monetary policy shock are displayed below.</p>
+</section>
+<section id="monetary-policy-rules-and-stabilization">
+<h2>Monetary Policy Rules and Stabilization<a class="headerlink" href="#monetary-policy-rules-and-stabilization" title="Link to this heading">#</a></h2>
+<p>Up to this point, our framework has described how output and inflation evolve in response to monetary policy. Yet, real-world central banks do not simply choose a one-time real interest rate and then passively observe the economy’s response. Instead, they continually update their policies in response to new information about prices, output, and inflation expectations.</p>
+<p>Modern central banks operate under what is often referred to as a <strong>dual mandate</strong>: achieving maximum employment and price stability. These objectives can be represented by a <strong>loss function</strong>, which captures the trade-off between stabilizing output and keeping inflation near its target:</p>
+<div class="math notranslate nohighlight">
+\[
+\min \mathcal{L} = \tilde{Y}_t^2+\phi (\pi_t - \bar{\pi})^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> is the central bank’s inflation target and <span class="math notranslate nohighlight">\(\phi\)</span> measures how much the central bank cares about deviations of inflation from its target relative to the output gap.  Below is a visualization of the loss function:</p>
+<figure>
+    <img src="_static/figs_smm/loss.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>Clearly, loss is minimized (the bottom of the bucket above) when real output is at its long-run level <span class="math notranslate nohighlight">\(\tilde{Y}=0\)</span> and inflation is at its target level <span class="math notranslate nohighlight">\(\bar{pi}=\pi\)</span>.  Deviations from this point create a policy trade-off between maintaining price stability and stabilizing the real economy. The curvature of the loss function represents the degree of this trade-off.  We can better visualize this trade-off by considering level curves (or contour plots) of the loss function–slices through the three-dimensional “loss surface” at different magnitudes of loss.</p>
+<figure>
+    <img src="_static/figs_smm/loss_visual_1.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>The central bank understands that inflation and output are linked through the Phillips Curve. Therefore, its optimization problem can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\min\hspace{2mm} &amp;\mathcal{L} = \tilde{Y}_t^2+\phi (\pi_t - \bar{\pi})^2 \\
+\text{s.t.}&amp; \quad \pi_t = \pi_{t-1}+\nu \tilde{Y}_t + o
+\end{align*}
+\end{split}\]</div>
+<figure>
+    <img src="_static/figs_smm/loss_visual_2.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>When inflation expectations equal the target <span class="math notranslate nohighlight">\((\pi_{t-1}=\bar{\pi})\)</span>, the central bank’s optimal policy produces an output gap of zero.</p>
+<figure>
+    <img src="_static/figs_smm/loss_visual_3.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>If inflation expectations rise above target, the central bank optimally creates a negative output gap—-slowing economic activity to bring inflation down.</p>
+<figure>
+    <img src="_static/figs_smm/loss_visual_4.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>For any given current level of inflation expectations <span class="math notranslate nohighlight">\(\pi_{t-1}\)</span> we can represent the optimal monetary policy response.  The collection of all these optimal responses traces out the MP curve.</p>
+<figure>
+    <img src="_static/figs_smm/loss_visual_5.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>When the central bank places greater weight on inflation stabilization (<span class="math notranslate nohighlight">\(\uparrow \phi\)</span>), the MP curve becomes steeper, reflecting a stronger willingness to create negative output gaps to fight inflation.</p>
+<figure>
+    <img src="_static/figs_smm/loss_visual_6.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Quadratic loss function of the central bank
+    </figcaption>
+</figure>
+<p>An economy in which the output gap has strong influences on inflation has a high <span class="math notranslate nohighlight">\(\nu\)</span> which generates a steeper Phillip’s curve and consequently a flatter MP curve.</p>
+<p>Enough fiddling with graphs, let’s just solve the central bank’s problem mathematically. Substituting the Phillips constraint into the loss function yields:</p>
+<div class="math notranslate nohighlight">
+\[
+\min (\frac{\pi_{t}-\pi_{t-1}-o}{\nu})^2+\phi(\pi_{t}-\bar{\pi})^2
+\]</div>
+<p>Taking the first-order condition gives the optimal monetary policy rule:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t=-\nu \phi(\pi_t-\bar{\pi})
+\]</div>
+<p>We now have a more sophisticated <strong>monetary policy rule</strong> that represents the central bank’s dual objective of stabilizing prices and encouraging the long-run trajectory of the economy given that there exists a short-run equilibrium relationship between inflation and the output gap coming through the Phillips curve. A flatter Phillips curve <span class="math notranslate nohighlight">\(\downarrow \nu\)</span> implies that the central bank will fight inflation less aggressively in that it does not induce such a large negative output gap.  A central bank that cares more about inflation <span class="math notranslate nohighlight">\(\uparrow \phi\)</span> will fight inflation aggressively in that it induces large negative output gaps whenever inflation is above target.</p>
+<p>To make the model more realistic, assume that changes in the interest rate affect output with a one-period lag:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_{t-1}-r)
+\]</div>
+<p>Empirically, investment and consumption respond to policy changes with a delay of one to two quarters. Combining this lagged IS curve with the Phillips and MP curves gives our short-run macro model:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\text{IS Curve}: \quad \tilde{Y}_t &amp;= a-b(R_{t-1}-r)\\
+\text{MP Curve}: \quad \tilde{Y}_t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \\
+\text{Phillip's Curve}: \quad \Delta \pi_t &amp;= \nu \tilde{Y}_t+o
+\end{align}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>The IS curve determines equilibrium output gap for a given interest rate</p></li>
+<li><p>The MP curve shows that monetary policy adjusts interest rates according to a strict rule based on achieving its dual mandate</p></li>
+<li><p>The PC shows the rate of change in inflation given the output gap</p></li>
+</ul>
+<p>These three equations jointly determine short-run fluctuations in output, inflation, and the policy interest rate.</p>
+<section id="monetary-policy-rule-in-interest-rates">
+<h3>Monetary Policy Rule in Interest Rates<a class="headerlink" href="#monetary-policy-rule-in-interest-rates" title="Link to this heading">#</a></h3>
+<p>Let’s clarify how the central bank implements it’s optimal monetary policy rule by adjusting interest rates. Combining the MP rule with the Phillips Curve gives:</p>
+<div class="math notranslate nohighlight">
+\[
+-\left(\frac{1}{\nu \phi}+1 \right)\tilde{Y}_t=\pi_{t-1}+o-\bar{\pi}
+\]</div>
+<p>which represents the solution to the central bank’s problem.  For any observed inflation <span class="math notranslate nohighlight">\(\pi_{t-1}\)</span>, the central bank optimally chooses an interest rate in order to implement output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span>.Substituting the solution to the central bank’s problem into the IS curve gives</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t-1}-r = \frac{a}{b}+\frac{\nu \phi}{b(\nu^2 \phi+1)}(\pi_{t-1}+o-\bar{\pi})
+\]</div>
+<p>This shows how the central bank adjusts the real interest rate in response to deviations of inflation from target.</p>
+<p>For example, with <span class="math notranslate nohighlight">\(a=o=0\)</span> and <span class="math notranslate nohighlight">\(\nu = \phi = b =1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t-1} - r = \frac{1}{2}(\pi_{t-1}-\bar{\pi})
+\]</div>
+<p>meaning that a 1% increase in inflation above the target call for a 0.5% increase in the real rate.</p>
+<p>In practice, we observe nominal interest rates rather than real ones. Using the Fisher relation,</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = \pi^e_t + R_t
+\]</div>
+<p>and assuming adaptive expectations <span class="math notranslate nohighlight">\(\pi_t^e=\pi_{t-1}\)</span> we can write</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = \pi_{t-1}+R_t
+\]</div>
+<p>Substituting the optimal policy rule gives:</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = r+\frac{a}{b}+\pi_{t-1}+\frac{\nu \phi}{b(\nu^2 \phi+1)}(\pi_{t-1}+o-\bar{\pi})
+\]</div>
+<p>Under the simplifying assumptions <span class="math notranslate nohighlight">\(a=o=0\)</span> and <span class="math notranslate nohighlight">\(\nu=\phi=b=1\)</span> we have a simple prediction for the short term nominal interest rate given inflation data</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = r + \pi_{t-1}+\frac{1}{2}(\pi_{t-1}-\bar{\pi})
+\]</div>
+<p>A 1% increase in inflation therefore requires a 1.5% rise in the nominal interest rate—-a policy response often described as “leaning against the wind.” This is obvious in that to manipulate real interest rates, the central bank has to adjust nominal rates by more than inflation.</p>
+<figure>
+    <img src="_static/figs_smm/Taylor_2.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Predicted Fed funds rate for the interest rate rule $i_t = r + \pi_{t-1}+\frac{1}{2}(\pi_{t-1}-\bar{\pi})$ where $r=2\%$ and $\bar{\pi}=2\%$. 
+    </figcaption>
+</figure>
+<p>A very popular monetary policy rule, that has been empirically very accurate for explaining central bank policy around the world, is the <strong>Taylor rule</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi_1, \varphi_2\)</span> captures the objectives of the central bank for fighting inflation versus keeping output on it’s long-run trajectory. Our model generates such a rule naturally when we allow for lags in the Phillips Curve—reflecting the fact that output affects inflation with a delay.</p>
+</section>
+</section>
+<section id="our-is-mp-pc-macro-model">
+<h2>Our IS-MP-PC Macro Model<a class="headerlink" href="#our-is-mp-pc-macro-model" title="Link to this heading">#</a></h2>
+<p>We now have a complete framework linking output, inflation, and monetary policy. The model consists of three equations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}_t &amp;= a-b(R_{t-1}-r)\\
+\text{MP Curve}: \quad \tilde{Y}_t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \\
+\text{Phillip's Curve}: \quad \pi_t &amp;= \pi_{t-1}+\nu \tilde{Y}_t+o
+\end{align*}
+\end{split}\]</div>
+<p>The IS curve determines the equilibrium output gap for a given real interest rate. The MP curve captures how monetary policy adjusts interest rates in pursuit of its dual mandate—stabilizing inflation and output. The Phillips curve describes how inflation evolves over time, rising when output exceeds potential and falling when output is below potential.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_1.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<section id="event-1-an-inflation-shock">
+<h3>Event #1: An Inflation Shock<a class="headerlink" href="#event-1-an-inflation-shock" title="Link to this heading">#</a></h3>
+<p>Suppose that at time <span class="math notranslate nohighlight">\(t=0\)</span>, the economy experiences an increase in the price of oil or another cost shock that raises inflation. Formally, this is represented as a one-period shock <span class="math notranslate nohighlight">\(o&gt;0\)</span> so that</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_0 = \pi_{-1}+\nu \tilde{Y}_0+o
+\]</div>
+<p>Graphically, this corresponds to an upward shift of the Phillip’s curve which crosses the point <span class="math notranslate nohighlight">\((\tilde{Y}_t,\pi_t)=(0,\pi_{-1}+o)\)</span>.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_2.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Initially the economy was at it’s long-run equilibrium. The inflation shock raises current inflation by the magnitude of the shock. Observing <span class="math notranslate nohighlight">\(\pi_0&gt;\bar{\pi}\)</span>, the central bank respondsby setting a interest rate <span class="math notranslate nohighlight">\(R_0\)</span> in order to induce lower future output gap <span class="math notranslate nohighlight">\(\tilde{Y}_1\)</span>. The optimal response is represented graphically by the intersection of the MP curve with the new Phillip’s curve</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_3.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>As time passes, inflation remains above target–say <span class="math notranslate nohighlight">\(\pi_1 &gt; \bar{\pi}\)</span>.  The new inflation rate generates a fresh Phillips curve,</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_2 = \pi_1+\nu \tilde{Y}_1
+\]</div>
+<p>where expected inflation <span class="math notranslate nohighlight">\(\pi_2^e = \pi_1\)</span> lower than before, but still above the long-run target.  Graphically, this curve crosses the point <span class="math notranslate nohighlight">\((\tilde{Y}_1,\pi_2)=(0,\pi_1)\)</span>. The central bank again optimally raises rates to <span class="math notranslate nohighlight">\(R_1\)</span>–this time less aggressively– resulting in a smaller but still negative output gap <span class="math notranslate nohighlight">\(\tilde{Y}_2\)</span>. This iterative process continues: inflation remains above target, the central bank maintains restrictive policy, and output gradually returns to potential.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_4.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_5.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+</section>
+<section id="event-2-an-aggregate-demand-shock">
+<h3>Event # 2: An Aggregate Demand Shock<a class="headerlink" href="#event-2-an-aggregate-demand-shock" title="Link to this heading">#</a></h3>
+<p>Next, suppose that at time <span class="math notranslate nohighlight">\(t=0\)</span>, aggregate demand rises sharply—-for example, due to a surge in exports from an overseas boom. This can be represented as a one-period positive demand shock
+<span class="math notranslate nohighlight">\(a&gt;0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_{t-1}-r)
+\]</div>
+<p>Graphically, the IS curve shifts rightward.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_6.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>At the existing interest rate <span class="math notranslate nohighlight">\(r\)</span>, the positive shock generates a positive output gap <span class="math notranslate nohighlight">\(\tilde{Y}_0&gt;0\)</span> and higher inflation <span class="math notranslate nohighlight">\(\pi_0&gt;\bar{\pi}\)</span>. Observing inflation above target, <span class="math notranslate nohighlight">\(\pi_0 &gt; \bar{\pi}\)</span>—which is graphically illustrated by a new Phillip’s curve—the central bank increases the policy rate to dampen activity.  Knowing that the shock is temporary, it sets a real rate <span class="math notranslate nohighlight">\(R_0\)</span> that returns output to potential once the IS curve shifts back next period. If, however, the shock persisted, the bank would need to raise rates further to contain inflation. (Note that if the aggregate demand shock lasted more than one period, then the IS curve would not shift back to its original position and this would force the central bank to set an even higher interest rate to induce it’s optimal output gap).</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_7.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Over subsequent periods, inflation remains above target and the Phillips curve shifts gradually downward as policy tightens. Output converges back toward potential, and the economy returns to its long-run equilibrium.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_8.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_9.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+</section>
+<section id="event-3-lowering-the-inflation-target">
+<h3>Event # 3: Lowering the Inflation Target<a class="headerlink" href="#event-3-lowering-the-inflation-target" title="Link to this heading">#</a></h3>
+<p>Now consider a change in the central bank’s long-run inflation target—an event akin to the Volcker disinflation of the early 1980s. Formally, this is a reduction in <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> in the MP curve,</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = -\nu \phi(\pi_t-\bar{\pi}')
+\]</div>
+<p>Graphically, the MP curve shifts downward, intersecting the new long-run inflation target <span class="math notranslate nohighlight">\(\bar{\pi}'\)</span>.  At the prevailing inflation rate, <span class="math notranslate nohighlight">\(\pi_0 &gt;\bar{\pi}'\)</span>, so the central bank raises interest rates to induce a negative output gap and lower inflation.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_10.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>As inflation falls, expectations begin to adjust: households and firms observe <span class="math notranslate nohighlight">\(\pi_1\)</span> and revise their forecasts, <span class="math notranslate nohighlight">\(\pi_2^e=\pi_1\)</span>.  The Phillip’s curve shifts downward, the central bank gradually eases policy, and the output gap closes. Eventually, the economy stabilizes at a new equilibrium with lower steady-state inflation.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_11.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_12.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+</section>
+<section id="inflation-output-loops">
+<h3>Inflation-Output Loops<a class="headerlink" href="#inflation-output-loops" title="Link to this heading">#</a></h3>
+<p>Across these scenarios, a consistent dynamic emerges: the economy tends to trace counter-clockwise loops in inflation–output space. Following a positive demand shock, output rises first, inflation follows, and the central bank subsequently tightens policy. Conversely, after a negative demand shock, output and inflation fall together before policy turns expansionary. Inflation shocks trigger similar patterns through monetary tightening or easing. These loops capture the lagged and cyclical nature of stabilization policy.</p>
+<figure>
+    <img src="_static/figs_smm/loops.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+</section>
+<section id="financial-frictions-and-risk-premiums">
+<h3>Financial Frictions and Risk Premiums<a class="headerlink" href="#financial-frictions-and-risk-premiums" title="Link to this heading">#</a></h3>
+<p>To capture financial instability, we can augment the model with a risk premium <span class="math notranslate nohighlight">\(f\)</span> that drives a wedge between the policy rate and the lending rate faced by firms:</p>
+<div class="math notranslate nohighlight">
+\[
+R_t = R_t^{ff} + f
+\]</div>
+<p>Here <span class="math notranslate nohighlight">\(R_t^{ff}\)</span> is the short-term real interest rate set by the central bank, while <span class="math notranslate nohighlight">\(R_t\)</span> is the effective borrowing rate in financial markets. During the 2008–09 financial crisis, for example, even as the Federal Reserve cut its policy rate near zero, the rate faced by firms rose due to heightened risk premiums. Graphically, this can be interpreted as a contractionary shift in the IS curve:</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t=a-b(R_{t-1}^{ff}+f-r)
+\]</div>
+<p>A rise in <span class="math notranslate nohighlight">\(f\)</span> therefore acts like a negative demand shock, reducing output and inflation despite accommodative monetary policy.</p>
+<p>During the financial crises in 2008 and 2009, financial market broke down due to solvency and liquidity reasons and business lending dried up. Even though the Federal Reserve cut interest rates down to near zero, the rate at which firms and households borrow to finance investment was rising instead of falling. We could represent this phenomena in our model as a rise in risk premiums <span class="math notranslate nohighlight">\(\uparrow f\)</span> which causes real lending rates to rise.</p>
+<figure>
+    <img src="_static/figs_smm/spread.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+</section>
+<section id="expectations-and-forward-guidance">
+<h3>Expectations and Forward Guidance<a class="headerlink" href="#expectations-and-forward-guidance" title="Link to this heading">#</a></h3>
+<p>Up to this point, we have assumed that expectations are adaptive—that is, agents forecast future inflation using the most recent observation:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t^e = \pi_{t-1}
+\]</div>
+<p>However, this ignores the central bank’s announced target <span class="math notranslate nohighlight">\(\bar{\pi}\)</span>.</p>
+<p>Consider that the central bank’s announced inflation target <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> does not appear in our equation of how agents form expectations.  A more realistic approach is to assume rational expectations, meaning that households and firms form forecasts based on all available information, including monetary policy commitments. Under rational expectations, the credibility of the central bank becomes crucial: its willingness to fight inflation directly influences inflation expectations.</p>
+<p>We have the following model</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}_t &amp;= a-b(R_{t-1}-r)\\
+\text{MP Curve}: \quad \tilde{Y}_t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \\
+\text{Phillip's Curve}: \quad \pi_t &amp;= \pi_t^e+\nu \tilde{Y}_t+o \\
+\text{Financial Frictions}: \quad R_t &amp;= R_t^{ff} + f
+\end{align*}
+\end{split}\]</div>
+<p>Since actual inflation depends partly on expectations,, credible monetary policy can lower inflation expectations and reduce the short-run output costs of disinflation. If the central bank announces a credible plan to lower long-run inflation from 4% to 2%, then agents may immediately revise expectations to <span class="math notranslate nohighlight">\(\pi_t^e=2\%\)</span>. The Phillips curve shifts downward right away, and the economy reaches the new equilibrium with minimal output loss.</p>
+<figure>
+    <img src="_static/figs_smm/ISMPPC_13.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>This highlights the importance of <strong>forward guidance</strong>—-clear communication about the central bank’s future actions—-and the idea of <strong>constrained discretion</strong>, where the central bank retains short-run flexibility while committing to a long-run target.</p>
+<p>Reality is probably somewhere in between naive expectations (<span class="math notranslate nohighlight">\(\pi_t^e = \pi_{t-1}\)</span>) and rational expectations (<span class="math notranslate nohighlight">\(\pi_t^e = E[\pi_t \vert \text{all information}]\)</span>).  Our models generates two extreme predictions about the dynamics of the macroeconomy so that you can think about reality being some convex combination of those two extremes.  Academic papers which try to model such a reality may assume some form of <strong>dynamic learning</strong> where households and businesses observe a limited set of information and make sophisticated forecasts (like an econometrician would) based on their own model of the economy.</p>
+</section>
+<section id="advanced-macro-models">
+<h3>Advanced Macro Models<a class="headerlink" href="#advanced-macro-models" title="Link to this heading">#</a></h3>
+<p>Modern macroeconomics builds on this framework by introducing <strong>microfoundations</strong>, persistence, and numerical methods. First, each component of the model—the IS curve, Phillips curve, and monetary policy rule—is derived from optimizing behavior under nominal rigidities. Second, shocks are modeled as persistent stochastic processes, such as</p>
+<div class="math notranslate nohighlight">
+\[
+a_t = \rho a_{t-1}+\epsilon_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho=0\)</span> means the shock is temporary, <span class="math notranslate nohighlight">\(\rho=1\)</span> means the shock is permanent, and <span class="math notranslate nohighlight">\(\rho \in (0,1)\)</span> precisely measures the persistence of the shock. Finally, the model is solved computationally, yielding what is known as a <strong>Dynamic Stochastic General Equilibrium (DSGE) model</strong>.</p>
+<p>Writing down such a model is called a <strong>dynamic stochastic general equilibrium model (DSGE)</strong> and is solved numerically.</p>
+<p>Conceptually you can think about combining every model we’ve studied so far (production function, capital accumulation, equilibrium unemployment, IS curve, Phillip’s curve, monetary policy rule) introducing a 1 percent shock of your choice and numerically solving the trajectory of the economy over time.</p>
+<figure>
+    <img src="_static/figs_smm/Smets_Wouters.png"
+         alt="Disinflation under IS-MP-PC model"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>While quantitative estimation of such models is beyond our current scope, the qualitative insights remain central. The IS–MP–PC framework helps us understand short-run dynamics and stabilization policy, the model of reserves explains how the central bank implements interest rates, and the Solow model remains essential for long-run growth analysis.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="extracting-business-cycles.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Extracting Business Cycles from Time Series Tutorial</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve">The IS Curve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-monetary-policy">A Simple Monetary Policy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phillip-s-curve">The Phillip’s Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#incorporating-price-shocks">Incorporating Price Shocks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-unemployment-to-output">From Unemployment to Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-expectations-and-short-run-dynamics">Adaptive Expectations and Short-Run Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-basic-macro-model">Our Basic Macro Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rules-and-stabilization">Monetary Policy Rules and Stabilization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rule-in-interest-rates">Monetary Policy Rule in Interest Rates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#our-is-mp-pc-macro-model">Our IS-MP-PC Macro Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-1-an-inflation-shock">Event #1: An Inflation Shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-2-an-aggregate-demand-shock">Event # 2: An Aggregate Demand Shock</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#event-3-lowering-the-inflation-target">Event # 3: Lowering the Inflation Target</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inflation-output-loops">Inflation-Output Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#financial-frictions-and-risk-premiums">Financial Frictions and Risk Premiums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expectations-and-forward-guidance">Expectations and Forward Guidance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-macro-models">Advanced Macro Models</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

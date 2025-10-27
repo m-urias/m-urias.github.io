@@ -1,0 +1,710 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Government Spending and Monetary Policy &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'government-money';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="An Example of a Monetary OLG Model with A Government Sector" href="olg-government-example.html" />
+    <link rel="prev" title="Empirical Monetary Facts" href="monetary-facts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/government-money.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Government Spending and Monetary Policy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-a-government-into-the-olg-model">Introducing a Government into the OLG model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-consumer-s-problem">The Consumer’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-policy-under-seigniorage-financing">Optimal Policy under Seigniorage Financing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-taxes">Introducing Taxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valuable-government-spending">Valuable Government Spending</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-unpleasant-monetarist-arithmetic">Some unpleasant monetarist arithmetic</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="government-spending-and-monetary-policy">
+<h1>Government Spending and Monetary Policy<a class="headerlink" href="#government-spending-and-monetary-policy" title="Link to this heading">#</a></h1>
+<p>In this section, we extend the overlapping generations (OLG) model by introducing a government sector. We first assume that the government finances its spending entirely through money creation—known as seigniorage—which introduces a fundamental trade-off between generating revenue and inducing inflation. If government purchases are valued by households, there may exist an optimal level of government spending. We then consider alternative sources of government revenue, such as taxation and bond issuance, which open new channels of interaction between fiscal and monetary policy. Finally, we revisit these issues through the lens of <a href="https://www.minneapolisfed.org/research/quarterly-review/some-unpleasant-monetarist-arithmetic" target="_blank">Some <em>Unpleasant Monetarist Arithmetic</em> by Sargent and Wallace (1979).</a></p>
+<section id="introducing-a-government-into-the-olg-model">
+<h2>Introducing a Government into the OLG model<a class="headerlink" href="#introducing-a-government-into-the-olg-model" title="Link to this heading">#</a></h2>
+<p>We begin with the simplest case in which the only source of government revenue is newly printed money, called <strong>seigniorage</strong>.  Government expenditures are assumed not to affect individuals’ consumption choices–spending on national defense or foreign aid, for example, does not alter household’s desired consumption plan.  This assumption allows us to isolate the effects of seigniorage from those of government spending itself.  Later we relax this assumption and allow government spending to directly affect agents optimal consumption plan.</p>
+<p>Let total real government spending be <span class="math notranslate nohighlight">\(G_t\)</span>, so that the government budget constraint is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+G_t &amp;= M_t-M_{t-1} \\ 
+&amp;=\left(1-\frac{1}{z}\right)\nu_t M_t
+\end{align*}
+\end{split}\]</div>
+<p>where the right hand side is the real value of newly printed money when nominal money supply grows at constant rate <span class="math notranslate nohighlight">\(z\)</span>.  Expressed in per capita terms, where <span class="math notranslate nohighlight">\(g_t=G_t/N_t\)</span> is government spending per person, this becomes,</p>
+<div class="math notranslate nohighlight">
+\[
+g_t = \left(1-\frac{1}{z}\right)q_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(q_t \equiv \nu_t M_t/N_t\)</span> represents real money balances.  The key insight is that government spending is limited by the demand for real money balances. Each newly printed bill has an endogenous real value <span class="math notranslate nohighlight">\(\nu_t\)</span> which depends on household demand <span class="math notranslate nohighlight">\(q_t\)</span>.  If money ceases to be valued <span class="math notranslate nohighlight">\(q_t=0\)</span>, then newly printed bills are worthless to the government.</p>
+<section id="the-consumer-s-problem">
+<h3>The Consumer’s Problem<a class="headerlink" href="#the-consumer-s-problem" title="Link to this heading">#</a></h3>
+<p>Market clearing requires that the stationary rate of return on money is <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t=n/z\)</span>.  The lifetime budget constraint facing a consumer is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1}+\frac{z}{n}c_2 \leq y
+\]</div>
+<p>Since the government uses new money for its own spending rather than redistributing it to households (notice the absence of the term <span class="math notranslate nohighlight">\(a\)</span>), seigniorage effectively shrinks the household’s budget set.</p>
+<p>How much spending can the government finance through seigniorage?  Are there limits or is it an infinite source of revenue? Although the government can print as many bills as it likes, their value declines as the money supply expands.  The real value of newly printed bills is <span class="math notranslate nohighlight">\(\left(1-\frac{1}{z}\right)q_t\)</span>.  Although the government can print more and more bills with higher values of <span class="math notranslate nohighlight">\(z\)</span>, this inflation induces households to reduce their real money balances causing <span class="math notranslate nohighlight">\(q\)</span> to fall.  For small inflation rates, raising <span class="math notranslate nohighlight">\(z\)</span> can indeed increase seigniorage, but beyond some point, the decline in real balances <span class="math notranslate nohighlight">\(q_t\)</span> dominates.   This non-monotone relationship between money creation and seigniorage revenue generates a type of <a href="https://link.springer.com/rwe/10.1007/978-1-4614-7883-6_280-2" target="_blank">Laffer curve</a>–a theoretical relationship between tax rates and government revenue, where government revenue rises for low levels of taxation, but eventually declines when taxes become too high.</p>
+<p>We consider a more general version of the decentralized equilibrium with seigniorage in <a href="olg-model-details.html">this example of an OLG economy with a government sector.</a>.  In this example, we do not restrict ourselves to a constant money growth rate, but instead allow the path of money to simply satisfy the governments budgetary requirements.  Furthermore, we consider both stationary and non-stationary equilibria.</p>
+</section>
+<section id="optimal-policy-under-seigniorage-financing">
+<h3>Optimal Policy under Seigniorage Financing<a class="headerlink" href="#optimal-policy-under-seigniorage-financing" title="Link to this heading">#</a></h3>
+<p>What is the optimal fiscal and monetary policy in this case?  When seigniorage is the sole revenue source, fiscal and monetary policy coincide—-they are determined jointly by the growth rate of money supply <span class="math notranslate nohighlight">\(z\)</span>.  A central planner consider’s the following problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max_{c_1,c_2}&amp;u(c_1)+\beta u(c_2) \\
+&amp;\text{s.t.} \quad c_1+c_2/n+g \leq y
+\end{align*}
+\end{split}\]</div>
+<p>The feasibility constraint simply requires that total expenditure is no larger than total output: <span class="math notranslate nohighlight">\(N_t c_{1,t}+N_{t-1}c_{2,t} + G_t \leq N_t y\)</span> or if we use alternative notation to denote aggregate quantities <span class="math notranslate nohighlight">\(C_t+G_t \leq Y_t\)</span>.  Dividing this equation by <span class="math notranslate nohighlight">\(N_t\)</span> reduces it to a per capita feasibility constraint which is precisely what is presented in the planner’s problem above.</p>
+<p>The solution the planner’s problem is straightforward.  Since government spending does not enhance welfare (it is not in the utility function), the optimal government spending is <span class="math notranslate nohighlight">\(g=0\)</span>.  This implies that <span class="math notranslate nohighlight">\(z=1\)</span> from the government budget constraint so that there is no distortion to agents consumption/savings choice coming from inflation–no inflation, no seigniorage, and no government distortion.</p>
+</section>
+<section id="introducing-taxes">
+<h3>Introducing Taxes<a class="headerlink" href="#introducing-taxes" title="Link to this heading">#</a></h3>
+<p>Consider an alternative source of government revenue: taxes.  Suppose that the government levies a lump-sum tax on the young, so that total real tax revenue is <span class="math notranslate nohighlight">\(T=N_t \tau_t\)</span>.  In this case, the government budget constraint bcomes</p>
+<div class="math notranslate nohighlight">
+\[
+G_t = T_t+\left(1-\frac{1}{z}\right)\nu_t M_t
+\]</div>
+<p>or in per capita terms</p>
+<div class="math notranslate nohighlight">
+\[
+g_t = \tau_t +\left(1-\frac{1}{z}\right) \nu_t m_t
+\]</div>
+<p>and the households’ lifetime budget constraint is</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1}+\frac{z}{n}c_2=y-\tau
+\]</div>
+<p>Notice something crucial: the intertemporal trade-off between present and future consumption is unaffected by a <em>lump-sum</em> tax.  It is as if a young person’s income has been reduced, which has no effect on the household’s Euler equation.  Said differently, the slope of the agents budget line is unaffected by a lump-sum tax.  Only inflation <span class="math notranslate nohighlight">\(z\)</span> is relevant for distorting the agent’s intertemporal trade-off.  In this case, the government can still finance its desired level of spending by using only tax revenue <span class="math notranslate nohighlight">\(g=\tau\)</span> and no seigniorage <span class="math notranslate nohighlight">\(z=1\)</span>.  Setting <span class="math notranslate nohighlight">\(z=1\)</span> guarantees that the lifetime budget constraint of the household coincides with that of planner, so that for a fixed level of <span class="math notranslate nohighlight">\(g\)</span> the optimal allocation is achieved.  Of course, if government spending is still not valued by households (not in the utility function), then it is optimal to have <span class="math notranslate nohighlight">\(g=0\)</span>.  Finally, let’s consider the case where government spending is valued by households.</p>
+</section>
+<section id="valuable-government-spending">
+<h3>Valuable Government Spending<a class="headerlink" href="#valuable-government-spending" title="Link to this heading">#</a></h3>
+<p>Suppose that preferences are given by</p>
+<div class="math notranslate nohighlight">
+\[
+u(c_{1,t},c_{2,t+1},g_t)=u(c_{1,t})+\beta u(c_{2,t+1})+\theta u(g_t)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(g_t = G_t/N_t\)</span> is government spending per young person.  Government spending may be on education, infrastructure, law enforcement, street lighting, etc.–any goods which are valued by households.  The parameter <span class="math notranslate nohighlight">\(\theta\)</span> controls how valuable households find these public goods relative to their private consumption.  We will allow the government to finance its expenditure by seigniorage or taxation.</p>
+<p>First, what is the optimal allocation in this economy?  The planner’s problem is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max &amp;u(c_{1,t},c_{2,t+1},g_t) \\
+&amp;\text{s.t.} \quad c_{1,t}+\frac{c_{2,t}}{n}+g_t \leq y
+\end{align*}
+\end{split}\]</div>
+<p>The solution is given by equating the marginal utility across private consumption and public consumption</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{u'(c_{1,t})}{n}=\beta u'(c_{2,t+1})=\theta u'(g_t)
+\]</div>
+<p>and that now resources are wasted so that the feasibility constraint binds.  Plugging the first-order condition into the feasibility constraint gives an implicit equation for optimal government spending</p>
+<div class="math notranslate nohighlight">
+\[
+u'^{-1}[\theta u'(g_t^{pp})]+u'^{-1}[\theta/\beta u'(g_t^{pp})]+u'(g_t^{pp})=y
+\]</div>
+<p>There will exist a positive and unique value of <span class="math notranslate nohighlight">\(g^{pp}\)</span> so long as the utility function satisfies the Inada condition <span class="math notranslate nohighlight">\(\lim_{x\rightarrow 0} u'(x) = \infty\)</span> so that there should always be some positive amount of both private and public consumption.</p>
+<p>Now consider the households’ problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max &amp;u(c_{1,t},c_{2,t+1}) \\
+&amp;\text{s.t.} \quad c_{1,t}+\frac{n}{z}c_{2,t} \leq y - \tau_t
+\end{align*}
+\end{split}\]</div>
+<p>whose Euler equation is</p>
+<div class="math notranslate nohighlight">
+\[
+u'(c_{1,t})\frac{z}{n}=\beta u'(c_{2,t+1})
+\]</div>
+<p>An equilibrium in the decentralized economy is given by <span class="math notranslate nohighlight">\((c_1,c_2,g)\)</span> computed from the Euler equation, the lifetime budget constraint, and the government budget constraint given policy variables <span class="math notranslate nohighlight">\((\tau, z)\)</span>.  Notice that for any <span class="math notranslate nohighlight">\(z \neq 1\)</span> the trade-off between present and future consumption is distorted relative to the planner.  This is clearly demonstrated by comparing the Euler equations.  Therefore, the only chance for <span class="math notranslate nohighlight">\((c_1,c_2)=(c_1^{pp},c_2^{pp})\)</span> is to set <span class="math notranslate nohighlight">\(z=1\)</span>.  Of course, this precludes of seigniorage revenue implying that all government spending is financed by taxes <span class="math notranslate nohighlight">\(g=\tau\)</span>.  But notice that with <span class="math notranslate nohighlight">\(g=\tau\)</span> and <span class="math notranslate nohighlight">\(z=1\)</span> the lifetime budget constraint of the household exactly coincides with that of the planner. Therefore, the decentralized economy can achieve the optimal allocation!</p>
+<p>The main lesson is that using the printing press to finance government budgets introduces a welfare cost of inflation.  If instead lump-sum taxes are used, then these intertemporal distortion does not appear.  Why not use lump-sum taxes for everything?  There are at least two problems. The first concerns equity.  In practice we care about economic inequality, and the burden of a fixed tax is heavier on the poor than the rich.  Second concerns enforcement. There needs to be appropriate bureaucratic apparatus to collect the taxes.  It is extremely easy (and essentially costless) to fire up the printing presses.</p>
+</section>
+</section>
+<section id="some-unpleasant-monetarist-arithmetic">
+<h2>Some unpleasant monetarist arithmetic<a class="headerlink" href="#some-unpleasant-monetarist-arithmetic" title="Link to this heading">#</a></h2>
+<p>This section reviews an important paper on the relationship between fiscal and monetary policy.  <a href="https://www.minneapolisfed.org/research/quarterly-review/some-unpleasant-monetarist-arithmetic" target="_blank">Sargent and Wallace’s (1981)</a> paper <em>Some Unpleasant Monetarist Arithmetic</em> describe a situation where monetary policy has limited control over long-run inflation.  This occurs because the government, committed to a particular path for fiscal deficits, must finance its spending through either money creation or bond issuance.  Tightening monetary policy increases teh growth of interest-bearing government debt, which eventually necessitates higher money supply growth to services the accumulated debt and interest, thereby increasing inflation.</p>
+<p>This is a startling conclusion given conventional wisdom at the time of the paper’s publication was that monetary policy, if it could exert any influence over the economy, could control long-run inflation.  This position is most eloquently presented in 1968 by <a href="https://www.aeaweb.org/aer/top20/58.1.1-17.pdf" target="_blank">Milton Friedman in his presidential address to the AEA</a>.
+Friedman argued that monetary policy cannot permanently influence real output, unemployment, or real interest rates; but can exert substantial control over long-run inflation.  Sargent and Wallace show that that Friedman’s dictum needs certain qualifications.  In particular, economists must explicitly describe the interaction between fiscal and monetary policies.</p>
+<p>The paper defines two different regimes: (i) <strong>dominant monetary policy</strong> or (ii) <strong>dominant fiscal policy</strong>.  Dominant monetary policy means that the monetary authority decides the path of base money so that the amount of seigniorage revenue supplied to the fiscal authority is pre-determined.  The fiscal authority therefore faces spending constraints imposed by the public’s demand for government bonds.  In this regime, monetary policy retains control over inflation.  Dominant fiscal policy instead supposes that the fiscal authority decides its path of budget deficits, thus pre-determining the amount of revenue that must be raised through bond sales and seignorage.  The monetary authority ability to finance government spending is constrained by the demand for government bonds, and must finance the remainder with seignorage.  In this regime, it is possible that monetary policy looses control over inflation: tight monetary policy today may imply high future inflation.</p>
+<p>Relative the government budget constraint described in the OLG model, we add the possibility that the government can raise revenue by issuing government bonds.  We have,</p>
+<div class="math notranslate nohighlight">
+\[
+D_t = \frac{M_t-M_{t-1}}{p_t}+B_t-r_{t-1}B_{t-1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_t\)</span> is the real primary government deficit (the difference between spending and taxes <span class="math notranslate nohighlight">\(G_t-T_t\)</span>), <span class="math notranslate nohighlight">\((M_t-M_{t-1})/\nu_t\)</span> is seigniorage revenue, <span class="math notranslate nohighlight">\(B_t\)</span> is the real value of newly issues bonds, and <span class="math notranslate nohighlight">\(r_{t-1}\)</span> is the real interest rate on previously issued bonds.</p>
+<p>The environment Sargent and Wallace consider is consistent with the assumption underpinning our OLG model.  In particular, there is a common constant growth rate <span class="math notranslate nohighlight">\(n\)</span> for real income and population; a quantity theory demand for base money; and a constant real return on government bonds that exceeds the growth rate of real income (<span class="math notranslate nohighlight">\(r &gt; n\)</span>).</p>
+<p>We describe <strong>fiscal policy</strong> by sequence of deficits <span class="math notranslate nohighlight">\(\{ D_t \}_{t=0}^{\infty}\)</span> and <strong>monetary policy</strong> by a sequence of base money <span class="math notranslate nohighlight">\(\{ M_t \}_{t=0}^{\infty}\)</span>. We assume that policies are announced at <span class="math notranslate nohighlight">\(t=1\)</span> and are perceived to be credible.  <strong>Fiscal dominance</strong> is where <span class="math notranslate nohighlight">\(\{ D_t \}_{t=0}^{\infty}\)</span> is announced first and <span class="math notranslate nohighlight">\(\{ M_t \}_{t=0}^{\infty}\)</span> reacts.  <strong>Monetary dominance</strong> is where <span class="math notranslate nohighlight">\(\{ M_t \}_{t=0}^{\infty}\)</span> is announced first and <span class="math notranslate nohighlight">\(\{ D_t \}_{t=0}^{\infty}\)</span> reacts.</p>
+<p>Here is how we specify alternative time paths for monetary policy:</p>
+<ul class="simple">
+<li><p>take <span class="math notranslate nohighlight">\(M_1\)</span> as given</p></li>
+<li><p>let alternative monetary policies be different choices for growth rate <span class="math notranslate nohighlight">\(z\)</span> of <span class="math notranslate nohighlight">\(M_t\)</span> for <span class="math notranslate nohighlight">\(t=2,3,...,T\)</span></p></li>
+<li><p>for <span class="math notranslate nohighlight">\(t &gt; T\)</span> the path of <span class="math notranslate nohighlight">\(M_t\)</span> is determined by the condition that the stock of real government debt per capita is held constant at whatever level it attains at <span class="math notranslate nohighlight">\(t=T\)</span></p></li>
+<li><p>we say that <span class="math notranslate nohighlight">\(z_A &lt; z_B\)</span> means policy A is tighter than policy B</p></li>
+</ul>
+<p>Our assumptions about a monetarist economy imply that the price level at any time is proportional to the stock of base money per capita,</p>
+<div class="math notranslate nohighlight">
+\[
+p_t = (1/h)\frac{M_t}{N_t}
+\]</div>
+<p>Why?  Recall that money market clearing says <span class="math notranslate nohighlight">\(M_t/p_t = q_t(p_{t+1}/p_t) \cdot N_t\)</span>, where <span class="math notranslate nohighlight">\(q(\cdot)\)</span> is the real money demand function.</p>
+<p>Dividing both sides of the government budget constraint by <span class="math notranslate nohighlight">\(N_t\)</span> and using the quantity theory relationship gives us the per capita form of the consolidated budget constraint,</p>
+<div class="math notranslate nohighlight">
+\[
+d_t = h(1-1/z)+b_t-\frac{r_{t-1}}{n}b_{t-1}
+\]</div>
+<p>The deficit must be financed by some combination of currency creation and interest-bearing debt.  The amount that can raised through currency depends on the monetary authority’s choice of <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p><strong>Proposition 1</strong>: If fiscal policy in the form of the <span class="math notranslate nohighlight">\(D_t\)</span> sequence is taken as given, then tighter current monetary policy implies higher future inflation.</p>
+<ul class="simple">
+<li><p>Step 1: show that inflation after <span class="math notranslate nohighlight">\(T\)</span> increases in <span class="math notranslate nohighlight">\(b_T\)</span></p></li>
+<li><p>Step 2: show that <span class="math notranslate nohighlight">\(b_t\)</span> decreases in <span class="math notranslate nohighlight">\(z\)</span></p></li>
+</ul>
+<p>Tighter monetary policy now implies higher future inflation:</p>
+<p>First we use the consolidated budget constraint (3) for any date <span class="math notranslate nohighlight">\(t &gt; T\)</span>, substituting into it <span class="math notranslate nohighlight">\(b_t=b_{t+1}=b_T\)</span>, and recognize that (2) implies inflation is <span class="math notranslate nohighlight">\(\pi_t \equiv p_t/p_{t-1}=z/n\)</span>.
+$<span class="math notranslate nohighlight">\(
+\Rightarrow \quad 1-\frac{1}{n \cdot \pi} =\frac{1}{h}\left[d_t+b_T\left(\frac{r_{t-1}-n}{n}\right)\right]
+\)</span>$</p>
+<p>which shows a positive relationship between <span class="math notranslate nohighlight">\(b_T\)</span> and <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>Second we compute the entire path of <span class="math notranslate nohighlight">\(b_t\)</span> for <span class="math notranslate nohighlight">\(t = 1,2,...T\)</span> using (3).</p>
+<p>Recall that our budget constraint is a first order difference equation in <span class="math notranslate nohighlight">\(b_t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+b_t = d_t+\frac{r_{t-1}}{n}b_{t-1}-h\left(\frac{z-1}{z}\right)
+\]</div>
+<p>and notice that it has a recursive form,</p>
+<div class="math notranslate nohighlight">
+\[
+b_t = d_t+\frac{r_{t-1}}{n} \left[ d_{t-1}+\frac{r_{t-2}}{n}b_{t-2}-h\left(\frac{z-1}{z}\right) \right] -h\left(\frac{z-1}{z}\right)
+\]</div>
+<p>Iterated substitution leads to</p>
+<div class="math notranslate nohighlight">
+\[
+b_t = \phi_{t,1} b_1 + \sum_{s=2}^t \phi_{t,s}d_s - h\left(\frac{z-1}{z}\right)\sum_{s=2}^{t}\phi_{t,s}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_{t,s}=\prod_{j=s}^{t-1} \left( \frac{r_j}{n}\right)^{t-s}\)</span> and <span class="math notranslate nohighlight">\(\phi_{t,t}=1\)</span>.</p>
+<p>It follows that <span class="math notranslate nohighlight">\(b_T\)</span> is larger the smaller <span class="math notranslate nohighlight">\(z\)</span> is.</p>
+<p>Why? Tighter monetary policy (small <span class="math notranslate nohighlight">\(z\)</span>) generates less seignorage.  For a given <span class="math notranslate nohighlight">\(d_t\)</span> sequence, this increases bond issuances causing <span class="math notranslate nohighlight">\(b_T\)</span> to be large.</p>
+<p>A technical note:
+We begin the sequence <span class="math notranslate nohighlight">\(b_t\)</span> at time <span class="math notranslate nohighlight">\(t=1\)</span> as follows</p>
+<div class="math notranslate nohighlight">
+\[
+b_1 = \frac{\tilde{B}_0}{N_1 \cdot p_1} + \frac{D_1}{N_1} - \frac{M_1-M_0}{N_1 \cdot p_1}
+\]</div>
+<p>Here, in place of <span class="math notranslate nohighlight">\(B_0[1+R_0]\)</span>, we have used <span class="math notranslate nohighlight">\(\tilde{B}_0/p_1\)</span> where <span class="math notranslate nohighlight">\(\tilde{B}_0\)</span> is the nomianl par value of debt issued at <span class="math notranslate nohighlight">\(t=0\)</span>.  Since our economic reasoning begins at period <span class="math notranslate nohighlight">\(t=1\)</span>, we use this substitution to avoid assuming anything about the relationship between acutal and expected inflation from time <span class="math notranslate nohighlight">\(t=0\)</span> to time <span class="math notranslate nohighlight">\(t=1\)</span>.</p>
+<p><strong>Proposition 2</strong>: If fiscal policy in the form of the <span class="math notranslate nohighlight">\(D_t\)</span> sequence is taken as given, then tighter current monetary policy can imply higher inflation now.</p>
+<ul class="simple">
+<li><p>We allow money demand to depend on expected future inflation,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+q_t = q(\pi_t)
+\]</div>
+<ul class="simple">
+<li><p>High rates of money creation in the future tend to raise the current rate of inflation</p></li>
+<li><p>We already showed that tighter money now implies high expected inflation after <span class="math notranslate nohighlight">\(T\)</span> (see proposition 1).</p></li>
+<li><p>The net effect of tighter money now (lower inflation now) and higher expected future inflation (higher inflation now) is ambiguous.</p></li>
+</ul>
+<p>We maintain of the features as before except one: replace equation (2) by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{M_t}{N_t p_t} = \frac{\gamma_1}{2} - \frac{\gamma_2}{2} \frac{p_{t+1}}{p_t}, \quad \gamma_1 &lt; \gamma_2 &lt; 0
+\]</div>
+<p>The full solution is a bit complicated, so it enough for us to just look at some examples…(You can read Appendix B of Sargent and Wallace for the full solution)</p>
+<figure>
+    <img src="_static/figs_olg/monetarist_arithmetic.png"
+         alt="Some monetarist arithmetic"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Sargent and Wallace (1972) show an example where tighter monetary policy implies higher prices and inflation.  Sargent and Wallace us the letter $\theta$ to denote the growth rate of the money supply whereas we use the letter $z$.  In this example, tighter monetary policy fails to reduce inflation in the short-run and the long-run.  
+    </figcaption>
+</figure>
+<p>Conclusions:</p>
+<ul class="simple">
+<li><p>Even in a monetarist economy, dominant fiscal policy produces spillover effects on monetary policy, and can ultimately undermine long-run inflation objectives of the central bank</p></li>
+<li><p>If the monetary authority is tied to the fiscal authority (modeled using a consolidated budget constraint), then long-run inflation may not align with central bank objectives.</p></li>
+<li><p>Central bank independence is crucial in allowing the monetary authority control over long-run inflation.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="monetary-facts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Empirical Monetary Facts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="olg-government-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">An Example of a Monetary OLG Model with A Government Sector</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-a-government-into-the-olg-model">Introducing a Government into the OLG model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-consumer-s-problem">The Consumer’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-policy-under-seigniorage-financing">Optimal Policy under Seigniorage Financing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-taxes">Introducing Taxes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valuable-government-spending">Valuable Government Spending</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#some-unpleasant-monetarist-arithmetic">Some unpleasant monetarist arithmetic</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

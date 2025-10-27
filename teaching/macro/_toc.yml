@@ -1,0 +1,40 @@
+# _toc.yml
+format: jb-book
+root: intro
+parts:
+  - caption: Long-Run
+    chapters:
+      - file: macro_measuring_the_economy
+        title: Measuring the Economy
+        sections:
+          - file: gdp-data-tutorial
+            title: GDP Data Tutorial
+      - file: modeling-gdp-growth
+        title: Modeling GDP Growth
+      - file: solow-model
+        title: The Solow Model of Economic Growth
+        sections:
+          - file: Solow_demonstration
+            title: Solow Model Simulation
+      - file: equilibrium-unemployment
+        title: Equilibrium Unemployment
+        sections:
+          - file: labor-data-tutorial
+            title: Labor Data Tutorial
+          
+  - caption: Money, Inflation, and Interest Rates
+    chapters:
+      - file: money-and-inflation
+        title: Money, Inflation, and Interest Rates
+      - file: central-bank-policy
+        title: Central Bank Implementation of Monetary Policy
+
+  - caption: Short-Run
+    chapters:
+      - file: measuring-business-cycles
+        title: Measuring Business Cycles
+        sections:
+          - file: extracting-business-cycles
+            title: Extracting Business Cycles from Time Series
+      - file: short-run-model
+        title: Short-Run Model of the Macroeconomy

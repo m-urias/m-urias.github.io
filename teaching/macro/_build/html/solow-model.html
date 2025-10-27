@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Solow Model of Economic Growth &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solow-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solow Model Demonstration" href="Solow_demonstration.html" />
+    <link rel="prev" title="Modeling GDP Growth" href="modeling-gdp-growth.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="labor-data-tutorial.html">Labor Data Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/solow-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Solow Model of Economic Growth</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Solow Model of Economic Growth</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-solow-model">Building the Solow model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-function">The Production Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-resource-constraint">The Resource Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-accumulation">Capital Accumulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-savings-and-investment">Modeling Savings and Investment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solow-model-and-its-steady-state">The Solow Model and its Steady State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-solow-model">Evaluating the Solow Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-technological-progress">Introducing Technological Progress</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-experiments-in-the-solow-model">Policy Experiments in the Solow Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-accounting">Growth Accounting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kaldor-growth-facts">Kaldor Growth Facts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-simulation-of-the-solow-model">Numerical Simulation of the Solow Model</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-solow-model-of-economic-growth">
+<h1>The Solow Model of Economic Growth<a class="headerlink" href="#the-solow-model-of-economic-growth" title="Link to this heading">#</a></h1>
+<p>The <strong>Solow-Swan model</strong>–often referred to simply as the <em>Solow model</em>–is a foundational framework in macroeconomics for understanding the sources of long-run economic growth. Developed independently by Robert Solow (1956) and Trevor Swan (1956), this model provides a theoretical explanation for how the accumulation of physical capital, labor force growth, and technological progress determine a country’s economic trajectory.</p>
+<p>At its core, the Solow model emphasizes three forces shaping the path of an economy:</p>
+<ol class="arabic simple">
+<li><p>Capital accumulation (the buildup of physical tools, equipment, and infrastructure),</p></li>
+<li><p>Labor force growth (an expanding workforce),</p></li>
+<li><p>Technological progress (improvements in knowledge and efficiency)</p></li>
+</ol>
+<p>Compared to the simple production function model developed in the last chapter, the Solow model endogenizes the capital stock.  That is, we will have a theory about how capital accumulates over time which in turn drives economic growth.  With this tool in hand, we then investigate to what extent the accumulation of capital can, by itself, deliver sustained economic growth.</p>
+<p>Economic growth is not uniform across countries. Over the past half century, some economies have experienced rapid, sustained increases in living standards, while others have stagnated.  This disparity is not simply a matter of different starting points; it highlights the critical importance of understanding the mechanisms that drive prosperity.</p>
+<div style="text-align: center;">
+<figure>
+    <img src="_static/figs_LR/gdp_growth_world.png" 
+        alt="GDP per capita growth across the world for initial GDP per capita" 
+        width="600">
+    <figcaption style="font-style: italic; margin-left: 8px; text-align: left;">
+    Data is from the  <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023" target="_blank">Maddison Project Database</a>.  See <a href="gdp-data-tutorial.html">GDP Data Tutorial</a> for detailed instructions on how download this data re-create this figure.
+  </figcaption>
+<figure>
+</div>
+<p>Consider the cases of Botswana and Gabon as an example. Both countries were rich in natural resources and had similar levels of GDP per capita in the early 1960s. However, their economic paths diverged dramatically. Botswana leveraged its diamond wealth into a highly successful, stable economy. From 1965 to 2017, its GDP per capita grew at an astonishing average rate of 6.2% per year.  Gabon, despite having vast oil reserves, saw its growth stall. Over the same period, its GDP per capita grew at a much lower average rate of 1.4% per year.</p>
+<p>This stark contrast prompts the question: What factors account for such differences in long-term economic prosperity? While a complete answer involves complex issues like governance, institutions, and policy, the Solow model provides a crucial first step by focusing on the fundamental role of capital accumulation.</p>
+<p>The Solow model provides an abstract representation of an economy’s ability to produce goods and services. A useful way to conceptualize this process is through the following metaphor.  Imagine a large family farm that grows only one crop: corn.  The capital stock of this economy is represented by the farm’s silo, which contains bags of corn seeds. The production process involves the farmers (the labor force) planting some of these kernels in the spring. Over the summer, the seeds grow, and in the autumn, a harvest is collected. This harvest represents the total economic output, or Gross Domestic Product (GDP). A portion of this harvest is consumed by the family to live, while the remaining portion is saved and invested—-that is, it’s put back into the silo as new seeds for the next season. The size of the harvest grows year after year because the family is continuously adding more seeds to the silo. This process of re-investing a portion of the output back into production is the essence of capital accumulation in the Solow model.</p>
+<p>The Solow model explores whether this process of capital accumulation alone can lead to ever-increasing prosperity, or if there are inherent limitations that cause the economy’s growth to slow down over time.</p>
+<section id="building-the-solow-model">
+<h2>Building the Solow model<a class="headerlink" href="#building-the-solow-model" title="Link to this heading">#</a></h2>
+<p>The Solow model rests on a small set of relationships that capture how an economy produces, allocates, and accumulates resources over time. These relationships can be grouped into four components:</p>
+<ol class="arabic simple">
+<li><p>A production function that describes how capital and labor combine to generate output.</p></li>
+<li><p>A resource constraint that allocates output between consumption and investment.</p></li>
+<li><p>A capital accumulation equation that links current investment to future capacity.</p></li>
+<li><p>A savings rule that determines how much of output is set aside for investment.</p></li>
+</ol>
+<p>Taken together, these equations describe the entire trajectory of the economy. Let’s develop them step by step.</p>
+<section id="the-production-function">
+<h3>The Production Function<a class="headerlink" href="#the-production-function" title="Link to this heading">#</a></h3>
+<p>The economy produces final output using capital and labor according to a <strong>production function</strong>.  Here we continue to use the Cobb-Douglas form:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = AK_t^{\alpha}L_t^{1-\alpha}
+\]</div>
+<p>As before, <span class="math notranslate nohighlight">\(Y_t\)</span> is the total output (GDP) in period t. The inputs are capital (<span class="math notranslate nohighlight">\(K_t\)</span>) and labor (<span class="math notranslate nohighlight">\(L_t\)</span>). The term <span class="math notranslate nohighlight">\(A\)</span> represents the level of technology or total factor productivity, and the exponent <span class="math notranslate nohighlight">\(α \in (0,1)\)</span> represents capital’s share of income. From this production function, we can see three potential drivers of economic growth: an increase in the size of the workforce (<span class="math notranslate nohighlight">\(L\)</span>), an increase in the capital stock (<span class="math notranslate nohighlight">\(K_t\)</span>) or an improvement in technology (<span class="math notranslate nohighlight">\(A\)</span>).  However, since the relevant measure for citizens’ economic wellbeing is output <em>per capita</em>, increasing the size of the workforce will not deliver meaningful growth.  We are left with either accumulation of capital or technological advancement as our hope for growing prosperity.</p>
+</section>
+<section id="the-resource-constraint">
+<h3>The Resource Constraint<a class="headerlink" href="#the-resource-constraint" title="Link to this heading">#</a></h3>
+<p>In our economy, output can only be used for one of two purposes: consumption (<span class="math notranslate nohighlight">\(C_t\)</span>) or investment (<span class="math notranslate nohighlight">\(I_t\)</span>). This accounting identity is captured by the <strong>resource constraint</strong> equation:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = I_t+C_t
+\]</div>
+<p>Recall that consumption represents the goods and services that are used by households to satisfy their wants and needs, while investment represents the portion of output that is set aside to build new capital, such as machinery, buildings, and infrastructure.</p>
+</section>
+<section id="capital-accumulation">
+<h3>Capital Accumulation<a class="headerlink" href="#capital-accumulation" title="Link to this heading">#</a></h3>
+<p>The amount of output invested today determines the amount of capital the economy has available to it tomorrow.  Specifically, the capital stock in the next period is equal to the capital from the current period, plus new investment, minus the capital that wears out or becomes obsolete (depreciation).</p>
+<div class="math notranslate nohighlight" id="equation-law-motion-capital">
+<span class="eqno">(1)<a class="headerlink" href="#equation-law-motion-capital" title="Link to this equation">#</a></span>\[
+K_{t+1}=K_t+I_t-\delta K_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta\)</span> is the depreciation rate, a parameter that represents the fraction of the capital stock that depreciates each period.  This is called the <strong>capital accumulation equation</strong>: it determines how much capital the economy has given investment and depreciation.  We can also express this equation in terms of the <em>change</em> in the capital stock:</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta K_{t+1} = I_t-\delta K_t
+\]</div>
+<p>which shows the change in the capital stock is the difference between investment and depreciation.</p>
+</section>
+<section id="modeling-savings-and-investment">
+<h3>Modeling Savings and Investment<a class="headerlink" href="#modeling-savings-and-investment" title="Link to this heading">#</a></h3>
+<p>The Solow model simplifies the decision of how to allocate output by assuming that each period the economy consumes a constant fraction of output and invests the remainder.  This behavior is represented by the equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+C_t &amp;= (1-\bar{s})Y_t \\
+I_t &amp;= \bar{s} Y_t
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{s}\)</span> is the savings rate.  Although unrealistic, the behavioral assumption allows the model to remain very simple while still delivering insight.  More complicated models, such as Real Business Cycle (RBC) models, allow households to choose how much to consume and save; but this level of complexity is outside our current scope of analysis.  Additionally, let’s assume that the technology of the economy and workforce are constant over time:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+A_t &amp;= \bar{A} \\
+L_t &amp;= \bar{L}
+\end{align}
+\end{split}\]</div>
+<p>We will relax these assumptions later, introducing population growth and technological progress.</p>
+</section>
+</section>
+<section id="the-solow-model-and-its-steady-state">
+<h2>The Solow Model and its Steady State<a class="headerlink" href="#the-solow-model-and-its-steady-state" title="Link to this heading">#</a></h2>
+<p>Combining these building blocks yields a system of four equations in four unknowns:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+Y_t &amp;= AK_t^{\alpha}L_t^{1-\alpha} \\
+\Delta K_{t+1} &amp;= I_t-\delta K_t \\
+Y_t &amp;= I_t+C_t \\
+I_t &amp;= \bar{s} Y_t
+\end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Endogenous variables: <span class="math notranslate nohighlight">\(\{Y_t,K_t,I_t,C_t\}\)</span></p></li>
+<li><p>Exogenous variables: <span class="math notranslate nohighlight">\(\{\bar{L},\bar{A}, \bar{K}_0 \}\)</span></p></li>
+<li><p>Parameters: <span class="math notranslate nohighlight">\(\{s,\delta,\alpha\}\)</span></p></li>
+</ul>
+<p>Notice that our equilibrium is <em>dynamic</em>: it shows the entire path of the economy from time <span class="math notranslate nohighlight">\(t=0\)</span> to <span class="math notranslate nohighlight">\(t=1,2,3,...\)</span>. The trajectory of output <span class="math notranslate nohighlight">\(Y_t\)</span> depends on the trajectory of capital <span class="math notranslate nohighlight">\(K_t\)</span>, which in turn depends on investment , which itself is a function of output <span class="math notranslate nohighlight">\(Y_t\)</span>.  To understand the model’s dynamics, it’s helpful to visualize the relationships using a <strong>Solow diagram</strong>.  Combining the capital accumulation equation with the investment equation obtains</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta K_{t+1}=\bar{s}Y_t-\delta K_t
+\]</div>
+<p>which shows that the change in capital is equal to <strong>net investment</strong>: investment less depreciation.  If investment is greater than depreciation, then the capital stock grows. If depreciation is greater than investment, then the capital stock shrinks</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/Solow_1.png" 
+     alt="Capital accumulation" 
+     width="600">
+</div>
+<p>There exists a level of capital such that it will neither grow or shrink over time.  This is called the <strong>steady-state capital stock</strong> and it is a crucial concept in the Solow model.  The steady state is a long-run equilibrium where the capital stock no longer changes (<span class="math notranslate nohighlight">\(\Delta K_{t+1}=0\)</span>). At this point, new investment is exactly equal to the amount of capital that depreciates each period.</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta K_{t+1}=0 \Rightarrow \bar{s}Y_t = \delta K_t
+\]</div>
+<p>Substituting out the production function into this condition we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{s}\bar{A}K_t^{\alpha}\bar{L}^{1-\alpha}=\delta K_t
+\]</div>
+<p>which is solved for the steady state level of capital</p>
+<div class="math notranslate nohighlight">
+\[
+K^{*}=\left( \frac{\bar{s}\bar{A}}{\bar{\delta}}\right)^{\frac{1}{1-\alpha}}\bar{L}
+\]</div>
+<p>Once we know the trajectory of capital <span class="math notranslate nohighlight">\(\{K_t\}_{t=0}^{\infty}\)</span> we know the path for output <span class="math notranslate nohighlight">\(\{Y_t\}_{t=0}^{\infty}\)</span> from our production function</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = \bar{s}\bar{A}K_t^{\alpha}\bar{L}^{1-\alpha}
+\]</div>
+<p>For example, once the economy reaches <span class="math notranslate nohighlight">\(K^{*}\)</span> output will also stop growing and will settle at its steady-state level <span class="math notranslate nohighlight">\(Y^{*}\)</span>.</p>
+<p>We can represent the trajectory of output in our Solow diagram by simply plotting the production function with respect to capital.  Thus, the Solow model predicts that the economy converges to a long-run equilibrium where capital and output are constant over time.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/Solow_2.png" 
+     alt="Solow diagram" 
+     width="600">
+</div>
+<p>Since we already computed steady state capital <span class="math notranslate nohighlight">\(K^*\)</span>, it’s easy to compute steady state output!</p>
+<div class="math notranslate nohighlight">
+\[
+Y^*=\bar{A}(K^*)^{\alpha}\bar{L}^{1-\alpha}=\left( \frac{s}{\delta}\right)^{\frac{\alpha}{1-\alpha}}\bar{A}^{\frac{1}{1-\alpha}}\bar{L}
+\]</div>
+<p>According to our model higher savings rates generates higher steady state capital-to-output: <span class="math notranslate nohighlight">\(\frac{K^*}{L^*}=\frac{\bar{s}}{\bar{\delta}}\)</span></p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/capital_investment.png" 
+     alt="Capital accumulation across the world" 
+     width="600">
+</div>
+<p>The model predicts that an economy will naturally move towards its steady state. This phenomenon is called <em><strong>transition dynamics</strong></em>. If an economy starts with a capital stock below its steady state (<span class="math notranslate nohighlight">\(K_t &lt; K^{*}\)</span>), investment will be greater than depreciation. This will cause the capital stock to grow, and as a result, output will also grow. The growth rate will be highest when the economy is farthest from its steady state and will slow down as it approaches the steady state. Conversely, if an economy starts with a capital stock above its steady state (<span class="math notranslate nohighlight">\(K_t &gt; K^{*}\)</span>), depreciation will exceed investment, causing the capital stock to shrink back towards <span class="math notranslate nohighlight">\(K^{*}\)</span>.</p>
+<p>This powerful insight suggests that poorer countries, with relatively low capital stocks, should grow faster than richer countries, as they have more potential to accumulate capital and “catch up” to their steady states.</p>
+<div style="text-align: center;">
+<figure>
+    <img src="_static/figs_LR/gdp_growth_world_initial_oecd.png" 
+        alt="GDP per capita growth across the world for initial GDP per capita" 
+        width="600">
+    <figcaption style="font-style: italic; margin-left: 8px; text-align: left;">
+    Data is from the  <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023" target="_blank">Maddison Project Database</a>.  See <a href="gdp-data-tutorial.html">GDP Data Tutorial</a> for detailed instructions on how download this data re-create this figure.
+  </figcaption>
+<figure>
+</div>
+<p>Most countries, rich and poor, grow at the same rate suggests that most countries have already reached their steady states.</p>
+<div style="text-align: center;">
+<figure>
+    <img src="_static/figs_LR/gdp_growth_world_initial.png" 
+        alt="GDP per capita growth across the world for initial GDP per capita" 
+        width="600">
+    <figcaption style="font-style: italic; margin-left: 8px; text-align: left;">
+    Data is from the  <a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023" target="_blank">Maddison Project Database</a>.  See <a href="gdp-data-tutorial.html">GDP Data Tutorial</a> for detailed instructions on how download this data re-create this figure.
+  </figcaption>
+<figure>
+</div>
+</section>
+<section id="evaluating-the-solow-model">
+<h2>Evaluating the Solow Model<a class="headerlink" href="#evaluating-the-solow-model" title="Link to this heading">#</a></h2>
+<p>When discussing economic growth, we often care about GDP <em>per capita</em> to more closely measure the standard of living.  In our model this is simply</p>
+<div class="math notranslate nohighlight">
+\[
+y^* \equiv \frac{Y^*}{\bar{L}}=\left( \frac{s}{\delta}\right)^{\frac{\alpha}{1-\alpha}}\bar{A}^{\frac{1}{1-\alpha}}
+\]</div>
+<p>and the steady state level of consumption per capita is simply</p>
+<div class="math notranslate nohighlight">
+\[
+c^*=(1-\bar{s})y^*
+\]</div>
+<p>The basic Solow model provides a framework for understanding economic growth, but its conclusions also highlight its limitations.  The model predicts that in the absence of technological progress, an economy will eventually reach a steady state where GDP per capita is constant. This implies that capital accumulation alone cannot generate sustained long-run growth. While a higher savings rate (<span class="math notranslate nohighlight">\(\bar{s}\)</span>) or a more efficient production process (<span class="math notranslate nohighlight">\(A\)</span>) can lead to a higher steady-state level of output per capita (<span class="math notranslate nohighlight">\(y^{*}\)</span>), it does not change the fact that growth eventually ceases.</p>
+<p>Returning to our earlier case study, differences between Botswana and Gabon can be interpreted through the lens of the Solow model.  Differences in steady state incomes are driven by differences in savings rates, depreciation, and technology.  We can measures these differences by simply taking the ratio of each countries steady state output which decomposes GDP per capita differences into three parts.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{y^*_{\text{Botswana}}}{y^*_{\text{Gabon}}} = \left(\frac{\bar{s}_{\text{Botswana}}}{\bar{s}_{\text{Gabon}}} \right)^{\frac{\alpha}{1-\alpha}}\left(\frac{\bar{\delta}_{\text{Gabon}}}{\bar{\delta}_{\text{Botswana}}} \right)^{\frac{\alpha}{1-\alpha}}\left(\frac{\bar{A}_{\text{Botswana}}}{\bar{As}_{\text{Gabon}}} \right)^{\frac{1}{1-\alpha}}
+\]</div>
+<p>With data on GDP per capita, savings rates, and depreciation rates we can measure the contribution of each component to differences in long-run GDP per capita.</p>
+<div style="text-align: center;">
+<figure>
+    <img src="_static/figs_LR/Botswana_phillipines.png" 
+        alt="GDP per capita growth across the world for initial GDP per capita" 
+        width="600">
+    <figcaption style="font-style: italic; margin-left: 8px; text-align: left;">
+    TBD
+  </figcaption>
+<figure>
+</div>
+<p>Solow predicts that economic growth happens as the economy transitions to it’s steady state. Once it reaches its steady state level, however, GDP per capita is constant at <span class="math notranslate nohighlight">\(y^*\)</span> and consumption is constant at <span class="math notranslate nohighlight">\(c^*\)</span>. Somewhat unsatisfying (but insightful!) conclusion: capital accumulation cannot be a source of <em>sustained long-run growth</em>.  This is the most critical limitation of the basic Solow model. To address this shortcoming in the next chapter we introduce <strong>technological progress</strong> and <strong>population growth</strong>. These additions will transform the model from one of temporary growth to a steady state into a model of sustained growth driven by forces beyond simple capital accumulation.</p>
+</section>
+<section id="introducing-technological-progress">
+<h2>Introducing Technological Progress<a class="headerlink" href="#introducing-technological-progress" title="Link to this heading">#</a></h2>
+<p>Up to now, the Solow model has demonstrated how capital accumulation shapes growth, but with an important limitation: once the economy reaches its steady state, growth stops. In reality, however, modern economies continue to grow in output per person.  One of the key forces driving such growth are technological developments.</p>
+<p>Technological advancement take many forms: new products, better quality, faster communication, more efficient production methods, or entirely new industries. For our purposes, we won’t model <em>how</em> these innovations arise. Instead, we treat technological progress as exogenous-—something that improves automatically over time-—and study its consequences for growth. We will not model (for now) the process by which new technology is created.  Instead, we will take the evolution of technology over time as exogenous and see how it affects economic growth.</p>
+<p>Formally, let the evolution of technology and labor over time be</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+A_{t+1} = (1+g)A_{t}
+L_{t+1}=(1+n)L_t
+\end{align*}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(n\)</span> are the constant growth rates of technology and labor. We also assume that technology is <strong>labor-augmenting</strong>, meaning that it affects the productivity of labor but not capital.  Out is therefore produces according to,</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = F(K_t,A_t L_t)
+\]</div>
+<p>Notice that the combination <span class="math notranslate nohighlight">\(A_t L_t\)</span> enters like “labor measured in efficiency units.”  We call this <strong>effective labor</strong>.  Why do this? If both technology and labor grow without bound, then output <span class="math notranslate nohighlight">\(Y_t\)</span> will also grow without bound. To study long-run equilibrium, we need to normalize by the growing factors. Expressing variables per unit of effective labor allows us to look for a steady state in which output per effective worker is constant, even while raw output and population are growing.</p>
+<p>Also, notice that with a Cobb-Douglas function it really doesn’t matter if technology is labor-augmenting, capital-augmenting, or neutral</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = K_t^{\alpha}(A_t L_t)^{1-\alpha} = (A_t^{\frac{1-\alpha}{\alpha}} K_t)^{\alpha}(L_t)^{1-\alpha}=A_t^{1-\alpha}K_t^{\alpha}L_t^{1-\alpha}
+\]</div>
+<p>but it does matter for other production functions.  For simplicity let’s just write our equations such that productivity is labor augmenting. We will refer to <span class="math notranslate nohighlight">\(A_t L_t\)</span> as the units of <strong>effective labor</strong> and write our model in terms of variables <strong>per effective labor</strong>.  For example, our production function looks like this</p>
+<div class="math notranslate nohighlight">
+\[
+y_t \equiv \frac{Y_t}{A_t L_t}=k_t^{\alpha}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_t=K_t/A_t L_t\)</span> is <strong>capital per effective labor</strong>.  To track how capital per effective worker evolves over time, we simply divide \eq<code class="docutils literal notranslate"><span class="pre">law_motion_capital</span></code> by $A_{t+1}L_{t+1} to convert the equation into units of effective labor.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{K_{t+1}}{A_tL_t}=(1-\delta)\frac{K_t}{A_t L_t}+\frac{I_t}{A_t L_t}
+\]</div>
+<p>notice that the first term doesn’t have a clear interpretation because the time periods are not consistent.  We can make it consistent by substituting out <span class="math notranslate nohighlight">\(A_{t+1} = (1+g)A_{t}\)</span> and <span class="math notranslate nohighlight">\(L_{t+1}=(1+n)L_t\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+k_{t+1}(1+g+n)=(1-\delta)k_t+i_t
+\]</div>
+<p>where I’ve made use of the fact that <span class="math notranslate nohighlight">\(g \times n \approx 0\)</span>.  Here is our Solow model where are variables are expressed per unit of effect labor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y_t &amp;= k_t^{\alpha} \\
+k_{t+1}(1+g+n)&amp;=(1-\delta)k_t+i_t \\
+y_t &amp;= i_t+c_t \\
+i_t = \bar{s}y_t
+\end{align*}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Endogenous variables: <span class="math notranslate nohighlight">\(\{y_t,k_t,i_t,c_t\}\)</span></p></li>
+<li><p>Exogenous variables: <span class="math notranslate nohighlight">\(\{\bar{L}_0,\bar{A}_0, \bar{K}_0 \}\)</span></p></li>
+<li><p>Parameters: <span class="math notranslate nohighlight">\(\{s,\delta\,\alpha,n,g\}\)</span></p></li>
+</ul>
+<p>Let’s work with the law of motion for capital to understand population and technology growth affects the dynamics of our economy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+k_{t+1}+(n+g)k_{t+1}&amp;=k_t-\delta k_t + i_t \\
+k_{t+1}-k_t &amp;= i_t-\delta k_t - (n+g)k_{t+1} \\
+k_{t+1}-k_t &amp;= i_t - \delta k_t - (n+g)k_{t+1} + (n+g)k_t -(n+g)k_t \\
+k_{t+1}-k_t &amp;= i_t - (n+g+\delta) k_t-(n+g)(k_{t+1}-k_t) \\
+k_{t+1}-k_t &amp;= \frac{i_t -(n+g+\delta)k_t}{1+n+g}
+\end{align*}
+\end{split}\]</div>
+<p>The interpretation of this dynamic equation is straightforward: the capital stock grows if actual investment <span class="math notranslate nohighlight">\(i_t\)</span> exceeds <strong>break-even investment</strong> <span class="math notranslate nohighlight">\((n+g+\delta)k_t\)</span>–the amount of investment that must be done just to keep <span class="math notranslate nohighlight">\(k\)</span> at it’s existing level.  The reason there exists break-even investment is that investment in new capital needs to cover depreciation (<span class="math notranslate nohighlight">\(\delta\)</span>), labor force growth (<span class="math notranslate nohighlight">\(n\)</span>), and technological progress (<span class="math notranslate nohighlight">\(g\)</span>).  At the steady state, investment exactly equals break-even investment, leaving <span class="math notranslate nohighlight">\(k_t\)</span> constant over time.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/solow_steady_state.png" 
+     alt="Growth rates in OECD countries" 
+     width="600">
+</div>
+<section id="policy-experiments-in-the-solow-model">
+<h3>Policy Experiments in the Solow Model<a class="headerlink" href="#policy-experiments-in-the-solow-model" title="Link to this heading">#</a></h3>
+<p>With the model in hand, we can perform some experiments to predict how our economy responds to changes in its parameters. A classic example is a change in the savings rate.  Specifically, suppose that households increase the fraction of income they save, raising the savings rate <span class="math notranslate nohighlight">\(\bar{s}\)</span>.</p>
+<p>A higher savings rate increases investment, since <span class="math notranslate nohighlight">\(i_t = \bar{s}y_t\)</span>. At the previous level of capital per effective worker <span class="math notranslate nohighlight">\(k^*\)</span>, investment now exceeds the break-even investment needed to cover depreciation, population growth, and technological progress.  As a result, capital per effective worker begins to grow.  Output rises alongside the capital stock until the economy reaches its new steady state with more capital per effective worker and higher output.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/solow_comps.png" 
+     alt="Solow diagram comparative static for higher savings" 
+     width="500">
+</div>
+<p>From a positive (descriptive) standpoint, more saving leads to more capital and output. But economics also cares about normative questions: is the outcome desirable? To address this, we appeal to the concept of <strong>welfare</strong>–the aggregate utility of all agents in the economy.</p>
+<p>Recall that a <strong>utility function</strong> tells us whether agents prefer one outcome to another, and usually we pay the most attention to consumption.  We always assume <span class="math notranslate nohighlight">\(U'(C)&gt;0\)</span> so that more consumption generates higher welfare, and we usually assume <span class="math notranslate nohighlight">\(U''(C)&lt;0\)</span> so that the extra satisfaction from more consumption diminishes. Since utility is ultimately tied to consumption, welfare maximization in the Solow model boils down to the question: what savings rate maximizes steady-state consumption?</p>
+<p>Recall that steady state consumption is simply a constant fraction <span class="math notranslate nohighlight">\(1-\bar{s}\)</span> of steady state output</p>
+<div class="math notranslate nohighlight">
+\[
+c^* = (1-\bar{s})y^*
+\]</div>
+<p>The tradeoff from saving is obvious: higher <span class="math notranslate nohighlight">\(\bar{s}\)</span> reduces the fraction of output consumed but increases to the total output available.   Mathematically, we can compute the optimal savings rate by simply solving</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{\bar{s}} (1-\bar{s})y^*
+\]</div>
+<p>Using the steady state condition <span class="math notranslate nohighlight">\(\bar{s}y^* = (n+g+\delta)k^*\)</span> and the production function <span class="math notranslate nohighlight">\(y^*=(k^*)^{\alpha}\)</span>, we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{\bar{s}} (k^*)^{\alpha}-(n+g+\delta)k^*
+\]</div>
+<p>The first-order condition to this problem is</p>
+<div class="math notranslate nohighlight">
+\[
+\alpha (k^*)^{\alpha-1}\frac{\partial k^*}{\partial s}-(n+g+\delta)\frac{\partial k^*}{\partial s}=0
+\]</div>
+<p>We have that the capital which maximizes consumption, which we call the <strong>golden rule level of capital</strong>, is given by</p>
+<div class="math notranslate nohighlight">
+\[
+k^*_{GR}=\left( \frac{\alpha}{n+g+\delta} \right)^{\frac{1}{1-\alpha}}
+\]</div>
+<p>Which savings rate generates this optimal level of capital?  Recall that steady state capital is given by</p>
+<div class="math notranslate nohighlight">
+\[
+k^*=\left( \frac{s}{n+g+\delta} \right)^{\frac{1}{1-\alpha}}
+\]</div>
+<p>so clearly <span class="math notranslate nohighlight">\(s_{GR}=\alpha\)</span> is the <strong>golden rule savings rate</strong>!  The golden rule savings rate <span class="math notranslate nohighlight">\(s_{GR}=\alpha\)</span> gives the highest consumption in steady state</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/solow_consumption.png" 
+     alt="Consumption in the Solow model" 
+     width="500">
+</div>
+<p>Let’s reconsider our experiment when the economy increases its savings rate <span class="math notranslate nohighlight">\(\uparrow \bar{s}\)</span>:</p>
+<ul class="simple">
+<li><p>Capital rises</p></li>
+<li><p>Output rises</p></li>
+<li><p>Consumption…</p>
+<ul>
+<li><p>…rises if <span class="math notranslate nohighlight">\(\bar{s}&lt;s_{GR}\)</span></p></li>
+<li><p>…falls if <span class="math notranslate nohighlight">\(\bar{s}&gt;s_{GR}\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p><img src="_static/figs_LR/solow_comps_impulse.png" 
+     alt="Solow impulse responses to savings increase" 
+     width="600"
+     style="center; margin-right: 15px;"></p>
+<p>What about GDP per capita <span class="math notranslate nohighlight">\((Y/L)\)</span>?  We have</p>
+<div class="math notranslate nohighlight">
+\[
+y_t \equiv \frac{Y_t}{A_t L_t}
+\]</div>
+<p>so therefore</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Y_t}{L_t}=A_t y_t
+\]</div>
+<p>at steady state <span class="math notranslate nohighlight">\(y_t=y^*\)</span> GDP per capita grows at rate <span class="math notranslate nohighlight">\(g\)</span>.  So the only source of <em>sustained long-run economic growth</em> is growth in productivity.</p>
+<p>What variables are really being measured by <span class="math notranslate nohighlight">\(A_t\)</span>?  The answer is, anything that affects the output on an economy holding inputs constant:</p>
+<ul class="simple">
+<li><p>technology and human capital</p></li>
+<li><p>institutions: laws, regulations, government policies</p></li>
+<li><p>misallocation: government policies or market environments that inhibit resources to go where they are most productive (e.g. SOEs versus POEs)</p></li>
+<li><p>market frictions: inherent difficulties in matching buyers/sellers</p></li>
+<li><p>capacity utilization: not all resources are being fully utilized at all points in time</p></li>
+</ul>
+<p><img src="_static/figs_LR/lr_exprop.png" 
+     alt="{Protection from expropriation and GDP per person}" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+</section>
+</section>
+<section id="growth-accounting">
+<h2>Growth Accounting<a class="headerlink" href="#growth-accounting" title="Link to this heading">#</a></h2>
+<p>The Solow model identifies two possible sources of variation in output per worker: differences in capital per worker <span class="math notranslate nohighlight">\((K/L)\)</span> and in technology <span class="math notranslate nohighlight">\((A)\)</span>.  To empirically assess their relative importance, economists use an approach called <strong>growth accounting</strong>.  Consider the production function</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = A_t K_t^{\alpha}L_t^{1-\alpha}
+\]</div>
+<p>and re-write it in growth rates</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma_Y = \gamma_A + \alpha \gamma_K + (1-\alpha)\gamma_L
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\gamma_x = \ln x_{t+1}-\ln x_t\)</span>.  Since GDP, capital, and labor are observable in the data, and income shares can be measured, we can decompose GDP growth into the contributions of capital and labor. The remainder, <span class="math notranslate nohighlight">\(\gamma_A\)</span>, captures productivity growth. Because it measures everything we cannot directly observe—-innovation, efficiency gains, institutions, and more—-it is sometimes called a <strong>measure of our ignorance</strong>.</p>
+<section id="kaldor-growth-facts">
+<h3>Kaldor Growth Facts<a class="headerlink" href="#kaldor-growth-facts" title="Link to this heading">#</a></h3>
+<p>How do the predictions of the Solow model compare to patterns observed in the real world?  In 1963, the British economist Nicholas Kaldor made a list of six stylized facts about growth in a single (industrialized) country:</p>
+<ol class="arabic simple">
+<li><p>Output per capita grows over time, and its growth rate does not tend to diminish.</p></li>
+<li><p>Physical capital per worker grows over time.</p></li>
+<li><p>The rate of return to capital is nearly constant.</p></li>
+<li><p>The ratio of physical capital to output is nearly constant.</p></li>
+<li><p>The shares of labour and physical capital in national income are nearly constant.</p></li>
+<li><p>The growth rate of output per worker differs substantially across countries.</p></li>
+</ol>
+<p>Let’s see how well the Solow model lines up with each fact.</p>
+<p><strong>Fact #1: Per capita output grows over time, and its growth rate does not tend to diminish</strong></p>
+<p>In the steady state, output per capita <span class="math notranslate nohighlight">\(\frac{Y}{L}\)</span> grows at rate <span class="math notranslate nohighlight">\(g\)</span>.  Thus, the model predicts sustained growth in living standards—consistent with Kaldor’s observation. (Note that the model does not distinguish between per capita and per worker.)</p>
+<p><strong>Fact #2: Physical capital per worker grows over time</strong></p>
+<p>Similarly, in the steady state, capital per worker <span class="math notranslate nohighlight">\(\frac{K}{L}\)</span> grows at rate <span class="math notranslate nohighlight">\(g\)</span>.  This mirrors the data: both output per worker and capital per worker tend to rise together over time.</p>
+<p><strong>Fact #3: The rate of return to capital is nearly constant</strong></p>
+<p>We haven’t talked about the rate of return to capital, so let’s briefly discuss it now.  If we assume perfect competition, then the rates of returns to factors of production should be equal to their marginal products. For capital this means <span class="math notranslate nohighlight">\( r = MPK = \frac{\partial F(K,AL)}{\partial K}\)</span>.  For the case of the Cobb-Douglas production function this is <span class="math notranslate nohighlight">\(r= \alpha \frac{Y}{K}\)</span>. On the equilibrium trajectory of the Solow economy the rate of return to capital <span class="math notranslate nohighlight">\(r\)</span> will be constant because <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(K\)</span> both grow at rate <span class="math notranslate nohighlight">\(n+g\)</span>.</p>
+<p><strong>Fact #4: The ratio of physical capital to output is nearly constant</strong></p>
+<p>Again, because <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(K\)</span> both grow at rate <span class="math notranslate nohighlight">\(n+g\)</span>, the ratio <span class="math notranslate nohighlight">\(K/Y\)</span> is constant in the Solow model.  Another success.</p>
+<p><strong>Fact #5: The shares of labour and physical capital in national income are nearly constant</strong></p>
+<p>The shares of income going to capital and labor are given by:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{rK}{Y}=\alpha \quad \text{and} \quad \frac{wL}{Y}=1-\alpha
+\]</div>
+<p>With Cobb–Douglas, these shares are fixed parameters, consistent with the empirical observation that labor and capital shares have been remarkably stable over time.</p>
+<p><strong>Fact #6: The growth rate of output per worker differs substantially across countries</strong></p>
+<p>Here the model is less successful. Solow identified two sources of economic growth: capital accumulation and technological progress. This naturally leads us to two possibilities regarding how the model predictions may deviate from the data. It may be that different countries have different (possibly country-specific) technological growth rates or, even if they share the same technological growth rate, different observed growth rates could arise if countries are at different distances from their steady state. Since the model does not explain why technological progress occurs (it as exogenous), it is not clear whether the growth rate could be different across countries.</p>
+<p>Data from 1985–2014 shows that growth rates of output per worker were fairly similar across rich countries, and most of the growth came from technological progress rather than capital accumulation:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>Output per worker (%)</p></th>
+<th class="head"><p>Technological progress (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>France</p></td>
+<td><p>1.3</p></td>
+<td><p>1.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>Japan</p></td>
+<td><p>1.6</p></td>
+<td><p>1.7</p></td>
+</tr>
+<tr class="row-even"><td><p>United Kingdom</p></td>
+<td><p>1.9</p></td>
+<td><p>1.4</p></td>
+</tr>
+<tr class="row-odd"><td><p>United States</p></td>
+<td><p>1.7</p></td>
+<td><p>1.4</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Average</strong></p></td>
+<td><p><strong>1.6</strong></p></td>
+<td><p><strong>1.5</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>China provides an illuminating contrast. Over the period 1978–1995, China was on a balanced growth path as the rate of technological progress was close to the rate of growth of output per worker. Since 1996, although growth of output per worker has remained high, the contribution of technological progress has decreased. - Technological progress comes from productivity growth due to labor transferring from the countryside to cities, and imported technology from more technologically advanced countries</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Period</p></th>
+<th class="head"><p>Output (%)</p></th>
+<th class="head"><p>Output per worker (%)</p></th>
+<th class="head"><p>Technological progress (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1978–1995</p></td>
+<td><p>10.1</p></td>
+<td><p>7.4</p></td>
+<td><p>7.9</p></td>
+</tr>
+<tr class="row-odd"><td><p>1996–2011</p></td>
+<td><p>9.8</p></td>
+<td><p>8.8</p></td>
+<td><p>5.9</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>China’s case highlights both the usefulness and the limits of Solow: it helps organize growth into capital, labor, and productivity, but does not explain why productivity growth slowed after the mid-1990s.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numerical-simulation-of-the-solow-model">
+<h1>Numerical Simulation of the Solow Model<a class="headerlink" href="#numerical-simulation-of-the-solow-model" title="Link to this heading">#</a></h1>
+<p>To see how to simulate the Solow model using Python, please refer to the <a href="Solow_demonstration.html">Solow simulation tutorial</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modeling-gdp-growth.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modeling GDP Growth</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Solow_demonstration.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Solow Model Demonstration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">The Solow Model of Economic Growth</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-solow-model">Building the Solow model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-function">The Production Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-resource-constraint">The Resource Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-accumulation">Capital Accumulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-savings-and-investment">Modeling Savings and Investment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solow-model-and-its-steady-state">The Solow Model and its Steady State</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-solow-model">Evaluating the Solow Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-technological-progress">Introducing Technological Progress</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-experiments-in-the-solow-model">Policy Experiments in the Solow Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-accounting">Growth Accounting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kaldor-growth-facts">Kaldor Growth Facts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-simulation-of-the-solow-model">Numerical Simulation of the Solow Model</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1277 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Bare Bones of Bank Balance Sheets &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'bank-balance-sheets';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Term Structure of Interest Rates" href="term-structure-of-interest-rates.html" />
+    <link rel="prev" title="Diamond-Dybvig Model of Banking" href="diamond-dybvig.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/bank-balance-sheets.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Bare Bones of Bank Balance Sheets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-liabilities-and-bank-capital">Assets, Liabilities, and Bank Capital</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-bank-transactions">Common Bank Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-bank-and-raising-deposits">Starting a Bank and Raising Deposits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-loans">Creating Loans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investing-in-securities">Investing in Securities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidity-management-and-money-markets">Liquidity Management and Money Markets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-adequacy-management">Capital Adequacy Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-bank-balance-sheet">Central Bank Balance Sheet</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-creation-in-a-fractional-reserve-banking-system">Deposit Creation in a Fractional Reserve Banking System</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-bare-bones-of-bank-balance-sheets">
+<h1>The Bare Bones of Bank Balance Sheets<a class="headerlink" href="#the-bare-bones-of-bank-balance-sheets" title="Link to this heading">#</a></h1>
+<p>To understand how banks operate–and how monetary policy works–we will discuss the basic mechanics of bank balance sheets.  We will use T-accounts to discuss how common banking transactions are reflected on the balance sheet.  We build a hypothetical bank from scratch observe how basic banking transactions affect its financial position.  We then aggregate across banks to show the balance sheet for the entire banking sector.  Finally, we discuss the balance sheet of the central bank and how it relates to private banks and creation of liquidity for the entire economy.</p>
+<section id="assets-liabilities-and-bank-capital">
+<h2>Assets, Liabilities, and Bank Capital<a class="headerlink" href="#assets-liabilities-and-bank-capital" title="Link to this heading">#</a></h2>
+<p>Recall the fundamental accounting identity which underpins every company’s balance sheet:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Assets} = \text{Liabilities} + \text{Owner's Equity}
+\]</div>
+<p>Assets are what the bank owns and represent future economic benefits. For a bank, the primary assets are:</p>
+<ul class="simple">
+<li><p>Reserves: Cash in the vault or deposits held at the Central Bank (e.g., the Federal Reserve in the U.S.). This is the most liquid asset.</p></li>
+<li><p>Loans: Funds extended to households and businesses. These are the bank’s most profitable assets, but also carry the highest risk.</p></li>
+<li><p>Securities: Interest-bearing assets like government bonds or Treasury bills. These are held for liquidity and income.</p></li>
+</ul>
+<p>Liabilities are what the bank owes to others. They represent the bank’s main sources of funds:</p>
+<ul class="simple">
+<li><p>Deposits: Funds provided by customers (e.g., checking, savings, time deposits). These are a liability because the bank owes this money back to the depositor.</p></li>
+<li><p>Borrowing: Funds borrowed from other banks (the interbank market) or from the Central Bank (the discount window).</p></li>
+</ul>
+<p>Owner’s equity is the bank’s net worth (often called bank capita)-—the funds contributed by its owners/investors. It acts as a buffer against unexpected losses.</p>
+</section>
+<section id="common-bank-transactions">
+<h2>Common Bank Transactions<a class="headerlink" href="#common-bank-transactions" title="Link to this heading">#</a></h2>
+<p>Recall that modern accounting systems obey the principle of double-entry bookkeeping: every financial transaction is recorded in at least two different accounts with equal and debit and credit entries.  This system is based on the fundamental accounting identity which demand that every transaction has must maintain the identity; hence there must be at least two accounts equally affected to maintain the balance between the left hand side and right hand side of the T-account.</p>
+<section id="starting-a-bank-and-raising-deposits">
+<h3>Starting a Bank and Raising Deposits<a class="headerlink" href="#starting-a-bank-and-raising-deposits" title="Link to this heading">#</a></h3>
+<p>Let’s build a hypothetical bank from scratch. Suppose that a group of investors pool their wealth to start First National Bank (FNB) and put up <span class="math notranslate nohighlight">\(\$1,000,000\)</span> in capital. The bank holds this cash in its vault as reserves.  Recall that the real-world definition of reserves is vault cash plus deposits held with the central bank.  The balance sheet of the newly created FNB is</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves      <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>FNB starts operating and successfully attracts <span class="math notranslate nohighlight">\(\$9,000,000\)</span> in new customer deposits. This injection of <span class="math notranslate nohighlight">\(\$9,000,000\)</span> increases reserves, but deposits also represent a liability to the bank because if depositors request a withdrawal then the bank needs to pay what is demanded from its reserves.  The bank therefore simultaneously debits reserves for <span class="math notranslate nohighlight">\(\$9,000,000\)</span> and credit deposits for <span class="math notranslate nohighlight">\(\$9,000,000\)</span>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The customer’s cash deposit leads to an <strong>increase in the bank’s reserves equal to the increase in demand deposits</strong>.</p>
+</section>
+<section id="creating-loans">
+<h3>Creating Loans<a class="headerlink" href="#creating-loans" title="Link to this heading">#</a></h3>
+<p>In order to make profits, FNB decides to extend a loan of <span class="math notranslate nohighlight">\(\$5,000,000\)</span> to a local business.  The bank does not physically hand over cash or reserves when it gives the business loan. Instead, it creates the loan (an asset) and simultaneously credits the borrower’s checking account (a demand deposit liability).  The resulting balance sheet is</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$14,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>The act of lending creates new money (deposits) in the banking system.</em></p>
+<p>The local business needs to use their newly created deposits to finance business operations (e.g. paying suppliers, workers, rent).  Let’s suppose that the local business uses the full <span class="math notranslate nohighlight">\(\$5,000,000\)</span> of their FNB deposits to pay a supplier, who happens to bank at Second National Bank (SNB). FNB must transfer the reserves to SNB to settle the transaction.  FNB credits its reserves <span class="math notranslate nohighlight">\(\$5,000,000\)</span> and debits deposits <span class="math notranslate nohighlight">\(\$5,000,000\)</span>.  Similarly, SNB debits reserves <span class="math notranslate nohighlight">\(\$5,000,000\)</span> and credits deposits <span class="math notranslate nohighlight">\(\$5,000,000\)</span>.</p>
+<p>First National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Second National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>When a bank receives additional deposits, it gains an equal amount of reserves.  When it loses deposits, it loses an equal amount of reserves.</em>  For the banking system as a whole, total loans increased by <span class="math notranslate nohighlight">\(\$5M\)</span> and total deposits increased by <span class="math notranslate nohighlight">\(\$5M\)</span>. The system’s total reserves are unchanged, they have only been redistributed from FNB to SNB.</p>
+</section>
+<section id="investing-in-securities">
+<h3>Investing in Securities<a class="headerlink" href="#investing-in-securities" title="Link to this heading">#</a></h3>
+<p>To generate additional interest income and hold a liquid, low-risk asset, FNB uses another <span class="math notranslate nohighlight">\(\$2,000,000\)</span> of its remaining reserves to purchase government bonds (securities).  FNB credits reserves for <span class="math notranslate nohighlight">\(\$2,000,000\)</span> and debits securities for <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p>
+<p>First National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$3,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="liquidity-management-and-money-markets">
+<h3>Liquidity Management and Money Markets<a class="headerlink" href="#liquidity-management-and-money-markets" title="Link to this heading">#</a></h3>
+<p>Bank’s make profits by transforming short-term liabilities (deposits) into longer-term assets (loans and securities).  Sometimes it is said that banks are in the business of “borrowing short and lending long” which means that there is always a maturity mismatch between assets and liabilities on its balance sheet.  As such, banks must hold enough reserves for two reasons: (1) there may be an unexpected deposit outflow requiring reserves or (2) there exist reserve requirements imposed by the central bank.  Reserve requirements stipulate the fraction of deposits that must be held as reserves.  A reserve ratio of 100%, for example, would preclude the bank from issuing loans in excess of bank capital (owner’s equity).  Conversely, a reserve ratio of 0% allows the bank to have zero reserves on hand.  In practice, a bank would never do this because they still optimally hold reserves as insurance against deposit outflow risk.  A bank that is unable to pay out its depositors would surely fail.  Any reserve ratio <span class="math notranslate nohighlight">\(rr &lt; 1\)</span> allows the bank to create inside money when they issue new loans.  Such a system is called <strong>fractional reserve banking</strong>.  Reserve requirements are often used as a regulatory measure to guarantee that the banking sector has enough liquid assets to satisfy its liabilities, instill trust in the banking sector, and insure against liquidity shocks.  The quantity of reserves required to be held by law is called <strong>required reserves</strong> and additional reserves the bank voluntarily holds are called <strong>excess reserves</strong>.</p>
+<p>Suppose that FNB is subject to a 10% required reserve ratio and its balance sheet is</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$3,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The bank is required to hold <span class="math notranslate nohighlight">\( \$900,000\)</span> in reserves, so it has <span class="math notranslate nohighlight">\( \$2,100,000\)</span> in excess reserves.  If a deposit outflow of <span class="math notranslate nohighlight">\( \$2,500,000\)</span> occurs, then the bank’s balance sheet becomes</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$500,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$6,500,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Now the bank is required to hold <span class="math notranslate nohighlight">\( \$600,000\)</span> in reserves, but only has <span class="math notranslate nohighlight">\( \$500,000\)</span>!  This illustrates the importance of holding reserves as insurance against deposit outflow risk: if bank has ample excess reserves, a deposit outflow does not necessitate changes in other parts of its balance sheet.  The department within a bank which is responsible for managing an appropriate level of reserves is called <strong>liquidity management</strong>.</p>
+<p>When a bank cannot meet deposit outflows from its reserves, it has four options:</p>
+<ul class="simple">
+<li><p>Borrow reserves from other banks</p></li>
+<li><p>Sell securities</p></li>
+<li><p>Borrow reserves from the central bank</p></li>
+<li><p>Reduce loans</p></li>
+</ul>
+<p>Selling securities before their maturity date (or until a sufficient rate of return has been realized) is very costly.  Similarly, selling off loans at a fraction of their value or calling in loans early is bad for business.  Borrowing from central bank lending facilities is a viable option, but often their is a stigma associated with doing so–it signals the market that the balance sheet of the bank is in bad shape.  The lowest cost source of reserves is the <strong>interbank market</strong>.  The interbank market is a decentralized exchange where financial institutions, primarily commercial banks, borrow and lend unsecured reserves to one another.  These interbank loans are often very short term (overnight), occur at the <strong>interbank rate</strong>, and facilitate liquidity transfers between banks.  In the US the interbank market is called the <strong>Fed Funds market</strong> and the interbank interest rate is called the <strong>Fed Funds rate</strong></p>
+<p>Suppose FNB’s reserves fall too low, and it needs <span class="math notranslate nohighlight">\( \$100,000\)</span> immediately. FNB goes to the interbank market and finds that SNB has excess reserves it is willing to lend at a particular interest rate.  When FNB borrows these reserves from SNB is debits reserves for <span class="math notranslate nohighlight">\( \$100,000\)</span> and credits interbank borrowing for <span class="math notranslate nohighlight">\(\$100,000\)</span></p>
+<p>First National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$600,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$6,500,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p></td>
+<td><p>Interbank borrowing <span class="math notranslate nohighlight">\(\$100,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Similarly, SNB debits interbank loans for <span class="math notranslate nohighlight">\( \$100,000\)</span> and credit reserves for <span class="math notranslate nohighlight">\( \$100,000\)</span></p>
+<p>Second National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$4,900,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$5,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Interbank loans  <span class="math notranslate nohighlight">\( \$100,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Again, notice that the total amount of reserves in the banking system is unchanged.  Interbank activity has simply redistributed reserve holdings across banks.  These reserves are not free for FNB as they have to pay interest to SNB for the overnight loan.  This underscores the importance of holding excess reserves as insurance against the costs associated with unanticipated outflows.  <em>The interbank interest reflects is the price of acquiring liquidity in the banking system.</em></p>
+</section>
+<section id="capital-adequacy-management">
+<h3>Capital Adequacy Management<a class="headerlink" href="#capital-adequacy-management" title="Link to this heading">#</a></h3>
+<p>In addition to liability risk from unanticipated deposit outflows, banks assets are also subject to risk as loans may default or the market value of securities may fall.  Bank capital acts has a financial cushion to absorb such unexpected losses.  Bank capital also affects the rate of return equity holders realize.  It also provides protection to depositors in the case of bank failure and is therefore an important source of public confidence in the banking system.  Maintaining adequate capital levels can help prevent a bank from taking on too much risk by limiting excessive asset growth.  International standards, such as the Basel II framework, provide regulators guidelines for bank capital requirements.</p>
+<p>Let’s consider two banks with different bank capital and see how they respond to negative news about their loan portfolio.  Suppose that High Capital Bank and Low Capital Bank have the following balance sheets:</p>
+<p>High Capital Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans  <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Low Capital Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$400,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans  <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,600,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Suppose that both banks get caught up in the euphoria of the housing market, only to find later than <span class="math notranslate nohighlight">\( \$500,000\)</span> of their housing loans have become worthless.  The bank must write-off the non-performing loans by crediting loans for $500,000<span class="math notranslate nohighlight">\( and debiting bank capital for \$500,000\)</span>.</p>
+<p>High Capital Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$500,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans  <span class="math notranslate nohighlight">\( \$8,500,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Low Capital Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( -\$100,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans  <span class="math notranslate nohighlight">\( \$8,500,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,600,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Low Capital Bank is in trouble.  The value of its assets have fallen below that of its liabilities, and it’s net worth is now negative!  It is <strong>insolvent</strong>: it does not have enough assets to pay off all holders of it’s liabilities.  It may the appear that having ample bank capital is good for the bank.  While this indeed provides more of a financial cushion to prevent default, it is actually bad for the return to equity holders in the bank.</p>
+<p>The return on equity is defined by</p>
+<div class="math notranslate nohighlight">
+\[
+ROE = ROA \times EM
+\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{Return on Equity:}  ROE &amp;= \frac{\text{net profit after taxes}}{\text{equity capital}} \\
+\text{Return on Assets:}  ROA &amp;= \frac{\text{net profit after taxes}}{\text{assets}} \\
+\text{Equity Multiplier:}  EM &amp;= \frac{\text{assets}}{\text{equity capital}}
+\end{align*}
+\end{split}\]</div>
+<p><em>For a given rate of return on assets, the lower the bank capital, the higher the return for the owners of the bank.</em></p>
+<p>The temptation to reduce bank capital is one reason why regulators require capital adequacy standards. Capital requirement for banks take two forms:</p>
+<ul class="simple">
+<li><p>Leverage ratio: the amount of bank capital divided by bank’s total assets</p></li>
+<li><p>Risk-based capital requirement: different types of assets are subject to different leverage ratios</p></li>
+</ul>
+<p>According the Basel Accord, banks must hold at least 8 percent of their risk-weighted assets</p>
+<ul class="simple">
+<li><p>Reserves and government securities (OECD countries) carry zero weight</p></li>
+<li><p>Claims on banks in OECD countries carry 20 percent weight</p></li>
+<li><p>Municipal bonds and residential mortgages carry 50 percent weight</p></li>
+<li><p>Loans to consumers an corporations carry 100 percent weight</p></li>
+<li><p>Off-balance sheet activities—trading financial instruments and generating income from fees—are assigned a credit-equivalent percentage that converts them to on-balance-sheet items</p></li>
+</ul>
+</section>
+<section id="central-bank-balance-sheet">
+<h3>Central Bank Balance Sheet<a class="headerlink" href="#central-bank-balance-sheet" title="Link to this heading">#</a></h3>
+<p>The central bank is the bank for commercial banks.  Its balance sheet looks like</p>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities</p></td>
+<td><p>Currency in circulation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions</p></td>
+<td><p>Reserves</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Currency in circulation: currency notes are IOUs from the central bank to the bearer, but unlike most liabilities, they promise to pay back the bearer solely with central bank notes (they pay off IOUs with other IOUs).</p></li>
+<li><p>Reserves: most banks have an account with the central bank in which they hold deposits.  Reserves consist of those deposits and vault cash.</p></li>
+<li><p>Securities: mostly government securities, but also others.  Buying and selling securities is the main way the central bank influences the supply of reserves.</p></li>
+<li><p>Loans to financial institutions: central bank can make loans to commercial banks or other institutions.</p></li>
+</ul>
+<p>The <strong>monetary base</strong>, or <strong>high-powered money</strong>, is defined as the sum of currency in circulation and reserves</p>
+<div class="math notranslate nohighlight">
+\[
+MB = C + R
+\]</div>
+<p>The central bank controls the monetary base through open market operations—the purchase and sale of securities through primary dealers.</p>
+<p>Suppose that the balance sheet of the entire banking system and the central bank are given by:</p>
+<p>Banking System:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities    <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Currency in circulation <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Reserves    <span class="math notranslate nohighlight">\(\$8,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Suppose that the central bank conducts an open market purchases of <span class="math notranslate nohighlight">\(\$1,000,000\)</span> bonds from a primary dealer.  The primary deal sells the bonds to the central bank in exchange for reserves. The central bank debits securities for <span class="math notranslate nohighlight">\(\$1,000,000\)</span> and credit reserves <span class="math notranslate nohighlight">\(\$1,000,000\)</span> to reflect the acquisition of bonds from primary dealers and the commiserate injection of new reserves into the banking sector.</p>
+<p>Banking System:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$4,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities    <span class="math notranslate nohighlight">\(\$6,000,000\)</span></p></td>
+<td><p>Currency in circulation <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Reserves    <span class="math notranslate nohighlight">\(\$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>The central bank’s open market purchase expands reserves in the banking system by an equal amount.</em>  By definition, the monetary base also expands by an equal amount.</p>
+<p>If instead the central bank conducts an open market sale of <span class="math notranslate nohighlight">\(\$1,000,000\)</span> bonds, then we would have</p>
+<p>Banking System:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities    <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Currency in circulation <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Reserves    <span class="math notranslate nohighlight">\(\$8,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>The central bank’s open market sale reduces reserves in the banking system by an equal amount, and also the monetary base.</em></p>
+<p>The central bank may also affect the monetary base through its lending facilities.  Suppose that the central bank loans <span class="math notranslate nohighlight">\(\$1,000,000\)</span> to FNB.  We then have</p>
+<p>Banking System:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Borrowings from central bank   <span class="math notranslate nohighlight">\(\$1,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities    <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Currency in circulation <span class="math notranslate nohighlight">\(\$2,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions <span class="math notranslate nohighlight">\(\$6,000,000\)</span></p></td>
+<td><p>Reserves    <span class="math notranslate nohighlight">\(\$9,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The central banks lending facility increased the monetary base by <span class="math notranslate nohighlight">\(\$1,000,000\)</span>.  Of course, when the bank pays off the loan the transaction will be reversed and the monetary base contracts by an equal (up to the interest payment) amount.</p>
+<p>Depositors may also affect the aggregate amount of reserves if they convert deposits into cash.  Suppose that during the shopping season the public wants to withdraw <span class="math notranslate nohighlight">\(\$500,000\)</span> cash from the banking system.  The non-bank public realizes an increase in their cash holdings and an equal decrease in their deposits. The banking system and central bank balance sheets now appear as</p>
+<p>Banking System:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$500,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$9,500,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Central Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Securities    <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Currency in circulation <span class="math notranslate nohighlight">\(\$2,500,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans to financial institutions <span class="math notranslate nohighlight">\(\$5,000,000\)</span></p></td>
+<td><p>Reserves    <span class="math notranslate nohighlight">\(\$7,500,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Therefore, even if the central bank does not conduct open market operations, shifts from deposits into currency still affect reserves.  Although reserves are subject to random fluctuations, note that the net effect on the monetary base is zero.  Hence, the monetary base is under more control of the central bank.</p>
+</section>
+</section>
+<section id="deposit-creation-in-a-fractional-reserve-banking-system">
+<h2>Deposit Creation in a Fractional Reserve Banking System<a class="headerlink" href="#deposit-creation-in-a-fractional-reserve-banking-system" title="Link to this heading">#</a></h2>
+<p>Although the central bank has control over open market operations, it does not control desired borrowing by banks.  We can classify the monetary base into three components: part of which the central bank has control over and the other it doesn’t.</p>
+<div class="math notranslate nohighlight">
+\[
+MB = BR + NBR + C
+\]</div>
+<p>The monetary base consists of borrowed reserves (BR), non-borrowed reserves (NBR) and currency (C).</p>
+<p>Consider the balance sheet of FNB:</p>
+<p>First National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$8,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>and suppose that the central bank conducts an open market purchase for <span class="math notranslate nohighlight">\(\$1,000,000\)</span> with FNB:</p>
+<p>First National Bank:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$2,000,000\)</span></p></td>
+<td><p>Bank Capital <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans <span class="math notranslate nohighlight">\( \$8,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Securities <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>After the open market operation the bank finds it has excess reserves of <span class="math notranslate nohighlight">\(\$1,000,000\)</span>.  The bank decides to make a loan equal to excess reserves, thereby creating deposits and increasing M1.  Recall that the business who borrows from the bank will not leave the <span class="math notranslate nohighlight">\(\$1,000,000\)</span> sitting idle in its account, but will purchase goods and services to operate its business.  When the borrower makes these purchases, the <span class="math notranslate nohighlight">\(\$1,000,000\)</span> will leave FNB.  Therefore, <em>a bank cannot safely make a loan for an amount greater than the excess reserves that it has before it makes the loan.</em></p>
+<p>We now track the initial newly created <span class="math notranslate nohighlight">\(\$1,000,000\)</span> deposits by FNB through a competitive banking system.  Let’s assume that Bank A receives the <span class="math notranslate nohighlight">\(\$1,000,000\)</span> deposits (the business who took out the loan paid a supplier who banks with Bank A).  Bank A realizes an increase in its reserves adn deposits:</p>
+<p>Bank A:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Assuming a 10 percent required reserve ratio, Bank A finds itself with <span class="math notranslate nohighlight">\( \$900,000\)</span> excess reserves it can use to create new loans.</p>
+<p>Bank A:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$1,900,000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Loans  <span class="math notranslate nohighlight">\( \$900,000\)</span></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Again, these newly created deposits do not remain in Bank A, but are instead end up in Bank B:</p>
+<p>Bank B:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves  <span class="math notranslate nohighlight">\( \$900,000\)</span></p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$900,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Bank B finds itself with <span class="math notranslate nohighlight">\( \$810,000\)</span> in excess reserves, which it uses to create loans.  These newly created deposits end up at Bank C, and the process iterates.  Because we assume there exists a competitive banking sector, we iterate this deposit creation process infinitely to compute the aggregate amount of new deposits in the banking system:</p>
+<p>Creation of Deposits in the Banking System (assuminig 10% reserve requirement)</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Bank</strong></p></th>
+<th class="head"><p><strong>Increase in Deposits</strong></p></th>
+<th class="head"><p><strong>Increase in Loans</strong></p></th>
+<th class="head"><p><strong>Increase in Reserves</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>First National</p></td>
+<td><p>0</p></td>
+<td><p>$1,000,000$</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>A</p></td>
+<td><p>$1,000,000$</p></td>
+<td><p>$900,000$</p></td>
+<td><p>$100,000$</p></td>
+</tr>
+<tr class="row-even"><td><p>B</p></td>
+<td><p>$900,000$</p></td>
+<td><p>$810,000$</p></td>
+<td><p>$90,000$</p></td>
+</tr>
+<tr class="row-odd"><td><p>C</p></td>
+<td><p>$810,000$</p></td>
+<td><p>$729,000$</p></td>
+<td><p>$81,000$</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>$729,000$</p></td>
+<td><p>$656,100$</p></td>
+<td><p>$72,900$</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-odd"><td><p>—————————–</p></td>
+<td><p>——————————-</p></td>
+<td><p>—————————-</p></td>
+<td><p>————————–</p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p>Demand Deposits <span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \$10,000,000\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( \$1,000,000\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The bank still has excess reserves, and so may desire to loan more.  However, the borrowers took out loans not to leave 100 million sitting idle in its account, but to purchase goods and services from other individuals and firms.  When the borrower makes these purchases, the 100 million of reserves will leave First National Bank.</p>
+<p>The aggregate creation of deposits follows a geometric series</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta D = \Delta R \times [1+(1-rr)+(1-rr)^2+(1-rr)^3+...]
+\]</div>
+<p>Which gives us a simple relationship between the supply of reserves and deposits :</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta D = \frac{1}{rr} \times \Delta R
+\]</div>
+<p>We call <span class="math notranslate nohighlight">\(1/rr\)</span> the <strong>money multiplier</strong>.</p>
+<p>If the bank had instead used excess reserves to purchase securities (not issue loans) the result would be the same.  If the borrower holds cash, then the deposit creation process stops. If the bank holds excess reserves, then there is less deposit creation. Money supply M1 depends on depositors decisions (how much currency to hold) and banks decisions (how much excess reserves to hold) that are outside the control of the central bank.</p>
+<p>We can construct a slightly more advanced relationship between M1 and high powered money.</p>
+<p>Assume that desired holding of currency <span class="math notranslate nohighlight">\(C\)</span> and excess reserves <span class="math notranslate nohighlight">\(ER\)</span> grow proportional with checkable deposits <span class="math notranslate nohighlight">\(D\)</span>:3
+$<span class="math notranslate nohighlight">\(
+\begin{align*}
+c &amp;= C/D = \text{currency ration} \\
+e &amp;= ER/D = \text{excess reserve ratio}
+\end{align*}
+\)</span>$</p>
+<p>We know that total reserves consist of required reserves and excess reserves</p>
+<div class="math notranslate nohighlight">
+\[
+R = RR + ER = (rr \times D) + (e \times D)
+\]</div>
+<p>and the monetary base is currency plus reserves</p>
+<div class="math notranslate nohighlight">
+\[
+MB = R + C = (rr \times D) + (e \times D) + (c \times D)
+\]</div>
+<p>So that deposits are related to the monetary base by</p>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{MB}{rr + e + c}
+\]</div>
+<p>Recall that M1 is defined as deposits plus currency in circulation:</p>
+<div class="math notranslate nohighlight">
+\[
+M1 = D + (c \times D) = (1+c) \times D
+\]</div>
+<p>Substituting out our relationship between deposits and high powered money gives us</p>
+<div class="math notranslate nohighlight">
+\[
+M1 = \frac{1+c}{rr+e+c}MB
+\]</div>
+<p>so the money multiplier is now</p>
+<div class="math notranslate nohighlight">
+\[
+m = \frac{1+c}{rr+e+c}
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="diamond-dybvig.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Diamond-Dybvig Model of Banking</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="term-structure-of-interest-rates.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Term Structure of Interest Rates</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assets-liabilities-and-bank-capital">Assets, Liabilities, and Bank Capital</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-bank-transactions">Common Bank Transactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-bank-and-raising-deposits">Starting a Bank and Raising Deposits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-loans">Creating Loans</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#investing-in-securities">Investing in Securities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidity-management-and-money-markets">Liquidity Management and Money Markets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capital-adequacy-management">Capital Adequacy Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-bank-balance-sheet">Central Bank Balance Sheet</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deposit-creation-in-a-fractional-reserve-banking-system">Deposit Creation in a Fractional Reserve Banking System</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

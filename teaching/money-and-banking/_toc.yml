@@ -1,0 +1,50 @@
+# _toc.yml
+format: jb-book
+root: intro
+parts:
+  - caption: Overlapping Generations Model of Money and Banking
+    chapters:
+      - file: olg_model
+        title: OLG Model of Money, Inflation, and Assets
+        sections:
+          - file: olg-model-details
+            title: Technical Details of our OLG Model
+          - file: olg-expectations
+            title: The Role of Expectations in OLG Dynamics
+          - file: monetary-aggregates-data-tutorial
+            title: Monetary Aggregates Data Tutorial
+          - file: monetary-facts
+            title: Some Empirical Monetary Facts
+      - file: government-money
+        title: Government Spending and Monetary Policy
+      - file: olg-government-example
+        title: An Example of a Monetary OLG Model with a Government
+      - file: olg-banking
+        title: OLG Model of Banking
+      - file: diamond-dybvig
+        title: Diamond-Dybvig Model of Banking
+
+  - caption: Bank Balance Sheets
+    chapters:
+      - file: bank-balance-sheets
+        title: Bare Bones of Bank Balance Sheets
+
+  - caption: Interbank Market and Monetary Policy
+    chapters:
+      - file: term-structure-of-interest-rates
+        title: Term Structure of Interest Rates
+        sections:
+          - file: yield-curve-data-tutorial
+            title: Yield Curve Data Tutorial
+      - file: monetary-policy-systems
+        title: Market for Reserves and Monetary Policy Systems
+
+  - caption: A Simple Model of Monetary Policy Transmission
+    chapters:
+      - file: measuring-business-cycles
+        title: Measuring Business Cycles
+        sections:
+          - file: extracting-business-cycles
+            title: Extracting Business Cycles from Time Series
+      - file: simple-macro-model
+        title: A Simple Macro Model of Monetary Policy

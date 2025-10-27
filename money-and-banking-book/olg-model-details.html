@@ -1,0 +1,954 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OLG Model of Money Details &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'olg-model-details';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Monetary Aggregates Data Tutorial" href="monetary-aggregates-data-tutorial.html" />
+    <link rel="prev" title="Overlapping Generations Model of Money, Inflation, Assets" href="olg_model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/olg-model-details.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OLG Model of Money Details</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-non-monetary-and-stationary-non-stationary-equilibria">Monetary/Non-Monetary and Stationary/Non-Stationary Equilibria</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="olg-model-of-money-details">
+<h1>OLG Model of Money Details<a class="headerlink" href="#olg-model-of-money-details" title="Link to this heading">#</a></h1>
+<p>In this section we investigate some technical details of the OLG model more closely, paying special attention to the existence of non-stationary equilibria.  I present a more general version of the model discussed in our <a href="olg_model.html">simple OLG model of money</a>.</p>
+<section id="monetary-non-monetary-and-stationary-non-stationary-equilibria">
+<h2>Monetary/Non-Monetary and Stationary/Non-Stationary Equilibria<a class="headerlink" href="#monetary-non-monetary-and-stationary-non-stationary-equilibria" title="Link to this heading">#</a></h2>
+<p>Here we review the environment with fiat currency, population growth, and money supply growth.  Whereas our <a href="olg_model.html">simple OLG model of money</a> only considered stationary equilibria where fiat currency was valued, we now also consider an infinite set of non-stationary equilibria as well as the existence of a non-monetary equilibrium.</p>
+<p>Recall the problem facing a young agent at time <span class="math notranslate nohighlight">\(t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max_{c_{1,t},c_{2,t+1}} &amp; u(c_{1,t})+\beta u(c_{2,t+1}) \\
+s.t. \quad &amp;c_{1,t}+\nu_t m_t \leq y \\
+&amp;c_{2,t+1}\leq \nu_{t+1}m_t
+\end{align*}
+\end{split}\]</div>
+<p>Substituting the constraints into the objective function obtains</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{q_t}  u(y-q_t)+\beta u((\nu_{t+1}/\nu_t) q_t)
+\]</div>
+<p>The first order condition for the maximum is</p>
+<div class="math notranslate nohighlight">
+\[
+u'(y-q_t)=\beta (\nu_{t+1}/\nu_t) u'((\nu_{t+1}/\nu_t) q_t)
+\]</div>
+<p>which is an implicit <strong>real money demand function</strong>.  That is to say, for a given rate of return on fiat currency  <span class="math notranslate nohighlight">\((\nu_{t+1}/\nu_t)\)</span>, the above equation shows how many money balances the household wishes to save <span class="math notranslate nohighlight">\(q_t\)</span>.  The exact shape of the money demand function depends on the functional form of utility.</p>
+<p>It remains to determine what is the equilibrium rate of return on money.  Recall that market clearing implies that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\nu_{t+1}}{\nu_t}&amp;=\frac{\frac{N_{t+1}(y-c_{1,t+1})}{M_{t+1}}}{\frac{N_t(y-c_{1,t})}{M_t}}\\
+&amp;=\frac{N_{t+1}}{N_t}\frac{M_t}{M_{t+1}}\frac{q_{t+1}}{q_t}
+\end{align*}
+\end{split}\]</div>
+<p>We take the population <span class="math notranslate nohighlight">\(\{ N_t \}_{t=0}^{\infty}\)</span> and the money supply <span class="math notranslate nohighlight">\(\{ M_t \}_{t=0}^\infty\)</span> as exogenous, so the market clearing equation tells us the equilibrium rate of return on fiat money given real money demand growth <span class="math notranslate nohighlight">\(q_{t+1}/q_t\)</span>.</p>
+<p>Substituting this equilibrium rate of return on fiat currency into the implicit money demand function gives us
+$<span class="math notranslate nohighlight">\(
+u'(y-q_t)=\beta (\frac{N_{t+1}}{N_t}\frac{M_t}{M_{t+1}}\frac{q_{t+1}}{q_t}) u'((\frac{N_{t+1}}{N_t}\frac{M_t}{M_{t+1}}\frac{q_{t+1}}{q_t}) q_t)
+\)</span>$</p>
+<p>which is a first-order difference equation in <span class="math notranslate nohighlight">\(q_t\)</span>.  The solution to this equation gives the equilibrium path of real money demand <span class="math notranslate nohighlight">\(\{ q_t \}_{t=1}^\infty\)</span>.  Once real money demand is determined, equilibrium money values (or prices) are recovered from the market clearing condition, and equilibrium consumption levels are recovered from the period budget constraints.</p>
+<p>To give a concrete example, let’s suppose that the population and money growth grow at a constant rate <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(z\)</span> respectively and that the utility function is CRRA of the following form</p>
+<div class="math notranslate nohighlight">
+\[
+u(c_{1,t},c_{2,t+1})=\frac{c_{1,t}^{1-\eta}}{1-\eta}+\beta \frac{c_{2,t+1}^{1-\eta}}{1-\eta}, \quad \eta&gt;0
+\]</div>
+<p>In this case, the Euler equation for the household is</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{(\nu_{t+1}/\nu_t)q_t}{y-q_t}\right)^{\eta}=\frac{\nu_{t+1}}{\nu_t}
+\]</div>
+<p>Let’s pause here and invesitage the money demand function.  Notice that with CRRA utility we can re-arrange the Euler equation to give a closed form expression for money demand:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{t}=\frac{(\nu_{t+1}/\nu_t)^{\frac{1-\eta}{\eta}}y}{1+(\nu_{t+1}/\nu_t)^{\frac{1-\eta}{\eta}}}
+\]</div>
+<p>Recall that the price level is the inverse of the value of money <span class="math notranslate nohighlight">\(p_t=1/\nu_t\)</span> so we can write our money demand function in terms of inflation <span class="math notranslate nohighlight">\(\pi_{t+1} \equiv p_{t+1}/p_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+q_{t}=\frac{\pi_{t+1}^{\frac{\eta-1}{\eta}}y}{1+\pi_{t+1}^{\frac{\eta-1}{\eta}}}
+\]</div>
+<p>Below we use Python’s <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> packages to plot the money demand function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>                     <span class="c1"># endowment</span>
+<span class="n">etas</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>       <span class="c1"># different values of eta to compare</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  <span class="c1"># inflation rates (gross inflation)</span>
+
+<span class="c1"># Money demand function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">))</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">eta</span> <span class="ow">in</span> <span class="n">etas</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;η = </span><span class="si">{</span><span class="n">eta</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Real Money Demand $q = </span><span class="se">\\</span><span class="s2">frac{</span><span class="se">\\</span><span class="s2">pi^{(η-1)/η}y}{1+</span><span class="se">\\</span><span class="s2">pi^{(η-1)/η}}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Gross Inflation ($</span><span class="se">\\</span><span class="s2">pi_{t+1}$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Real Money Demand ($q_t$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/93a36cb03fd19bd9deb71e8d917425297ffc5969af5dc6e80e78ce0ea9a38533.png" src="_images/93a36cb03fd19bd9deb71e8d917425297ffc5969af5dc6e80e78ce0ea9a38533.png" />
+</div>
+</div>
+<p>Notice that the money demand curve’s slope depends on the parameter <span class="math notranslate nohighlight">\(\eta\)</span>.  With CRRA utility, <span class="math notranslate nohighlight">\(1/\eta\)</span> is the <strong>intertemporal elasticity of substitution</strong>.  It describes agents’ preference for smooth consumption over time.  When the value of <span class="math notranslate nohighlight">\(\eta\)</span> is high agents have a strong desire for smoothing consumption over time; therefore, when inflation rises agents’ increase their holdings of fiat currency to prevent too low consumption when old in the face of less purchasing power.  Conversely, when <span class="math notranslate nohighlight">\(\eta\)</span> is low agents’ reduce money demand when inflation rises because it gives a lower rate of reutrn and they are willing to accept less consumption when old.  In the special case where <span class="math notranslate nohighlight">\(\eta=1\)</span>, we get log utility where inflation has no effect on money demand.  The negative effect on demand from lower rates of return, and the positive effect from the consumption smoothing motive perfectly cancel each other out in this special case.</p>
+<p>We can even derive the elasticity of money demand with respect to inflation to show this relationship explicitly.  Begin with the money demand function</p>
+<div class="math notranslate nohighlight">
+\[
+q(\pi)=\frac{\pi^{1-\sigma}y}{1+\pi^{1-\sigma}}, \quad \text{where} \quad \sigma=1/\eta
+\]</div>
+<p>Take the derivative of <span class="math notranslate nohighlight">\(q\)</span> with respect to <span class="math notranslate nohighlight">\(\pi\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dq}{d\pi}=\frac{y}{(1+\pi^{1-\sigma})^{2}}(1-\sigma)\pi^{-\sigma}
+\]</div>
+<p>The elasiticity is</p>
+<div class="math notranslate nohighlight">
+\[
+\epsilon_{q,\pi}=\frac{dq}{d\pi} \frac{\pi}{q}=\frac{1-\sigma}{1+\pi^{1-\sigma}}
+\]</div>
+<ul class="simple">
+<li><p>When the elasiticity of substition <span class="math notranslate nohighlight">\(\sigma\)</span> is low, <span class="math notranslate nohighlight">\(\epsilon_{q,\pi}&gt;0\)</span> so that money demand rises with inflation.</p></li>
+<li><p>When the elasiticity of substition <span class="math notranslate nohighlight">\(\sigma\)</span> is high, <span class="math notranslate nohighlight">\(\epsilon_{q,\pi}&lt;0\)</span> so that money demand rises with inflation.</p></li>
+<li><p>When the elasiticity of substition <span class="math notranslate nohighlight">\(\sigma=1\)</span>, <span class="math notranslate nohighlight">\(\epsilon_{q,\pi}=0\)</span> so that money demand is independent of inflation.</p></li>
+<li><p>The elasticity falls with inflation <span class="math notranslate nohighlight">\(\pi\)</span>, shown by the term in the denominator.</p></li>
+</ul>
+<p>We will see in REFERENCE HERE, that empirically money demand curves are downward sloping, suggesting that <span class="math notranslate nohighlight">\(\eta&lt;1\)</span> in reality.</p>
+<p>Having described money demand, we now want to see which point on the money demand curve constitutes an equilibrium.  We need to turn to the market clearing condition to find the equilibrium rate of return on money (or inflation rate).</p>
+<p>Market clearing is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\nu_{t+1}}{\nu_t}=\frac{n}{z}\frac{q_{t+1}}{q_t}
+\]</div>
+<p>Notice that if we restricted ourselves to stationary equilibria <span class="math notranslate nohighlight">\(q_t=q_{t+1}\)</span>, then the equilibrium inflation rate is simply <span class="math notranslate nohighlight">\(\pi=z/n\)</span>.  In this case, we could graphically describe the equilibrium as the intersection of the a money demand curve with the equilibrium inflation rate determined by the growth rate of the money supply and population.  In the figure below we assume that <span class="math notranslate nohighlight">\(z=1.05\)</span> and <span class="math notranslate nohighlight">\(n=1.02\)</span> so that equilibrium inflation is 3 percent.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>            <span class="c1"># endowment</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.5</span>          <span class="c1"># CRRA parameter</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">1.05</span>           <span class="c1"># gross money growth rate (e.g. 5%)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1.02</span>           <span class="c1"># gross population growth rate (e.g. 2%)</span>
+<span class="n">pi_star</span> <span class="o">=</span> <span class="n">z</span> <span class="o">/</span> <span class="n">n</span>    <span class="c1"># stationary inflation rate</span>
+
+<span class="c1"># Inflation grid</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Money demand function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">))</span>
+
+<span class="c1"># Compute money demand and steady-state values</span>
+<span class="n">q_vals</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">q_star</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># --- Figure 1: Money demand with steady-state markers ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">q_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\pi^* = z/n = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">q_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">q_star</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$q(\pi^*) = </span><span class="si">{</span><span class="n">q_star</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Stationary Equilibrium: Real Money Demand&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Real Money Demand ($q$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+  plt.plot(pi, q_vals, color=&quot;blue&quot;, label=f&quot;$\eta = {eta}$&quot;)
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  label=f&quot;$\pi^* = z/n = {pi_star:.2f}$&quot;)
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  label=f&quot;$q(\pi^*) = {q_star:.3f}$&quot;)
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  plt.xlabel(&quot;Gross Inflation ($\pi$)&quot;)
+</pre></div>
+</div>
+<img alt="_images/376aba6b2085f13c32a9c4562771ee2e32a00691a043b1c9b0e962a3d8e159dc.png" src="_images/376aba6b2085f13c32a9c4562771ee2e32a00691a043b1c9b0e962a3d8e159dc.png" />
+</div>
+</div>
+<p>Consumption levels can be recovered from the budget constraints:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+c_1&amp;=y-q \\
+c_2&amp;=q/\pi
+\end{align}
+\end{split}\]</div>
+<p>so that aggregate consumption is
+$<span class="math notranslate nohighlight">\(
+C \equiv c_1+c_2=y+\frac{1-\pi}{\pi}q
+\)</span>$</p>
+<p>The figure below plots consumption of the young, old, and aggregate consumption as a function of inflation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>            <span class="c1"># endowment</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.5</span>          <span class="c1"># CRRA parameter</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">1.05</span>           <span class="c1"># gross money growth rate (e.g. 5%)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1.02</span>           <span class="c1"># gross population growth rate (e.g. 2%)</span>
+<span class="n">pi_star</span> <span class="o">=</span> <span class="n">z</span> <span class="o">/</span> <span class="n">n</span>    <span class="c1"># stationary inflation rate</span>
+
+<span class="c1"># Inflation grid</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Money demand function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">pi</span><span class="o">**</span><span class="p">((</span><span class="n">eta</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">eta</span><span class="p">))</span>
+
+<span class="c1"># Compute money demand and steady-state values</span>
+<span class="n">q_vals</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">q_star</span> <span class="o">=</span> <span class="n">q</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Consumption</span>
+<span class="n">c1_vals</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">q_vals</span>          <span class="c1"># young</span>
+<span class="n">c2_vals</span> <span class="o">=</span> <span class="n">q_vals</span> <span class="o">/</span> <span class="n">pi</span>         <span class="c1"># old</span>
+<span class="n">C_vals</span>  <span class="o">=</span> <span class="n">c1_vals</span> <span class="o">+</span> <span class="n">c2_vals</span>   <span class="c1"># aggregate</span>
+<span class="n">c1_star</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">q_star</span>
+<span class="n">c2_star</span> <span class="o">=</span> <span class="n">q_star</span> <span class="o">/</span> <span class="n">pi_star</span>
+<span class="n">C_star</span>  <span class="o">=</span> <span class="n">c1_star</span> <span class="o">+</span> <span class="n">c2_star</span>
+
+<span class="c1"># --- Figure 2: Consumption of young, old, and aggregate ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">c1_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Young consumption $c_</span><span class="si">{1}</span><span class="s2">=y-q$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">c2_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Old consumption $c_</span><span class="si">{2}</span><span class="s2">=q/</span><span class="se">\\</span><span class="s2">pi$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">C_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Aggregate $C=c_1+c_2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\pi^* = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mark steady-state values</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">c1_star</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">c2_star</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">C_star</span><span class="p">],</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>  <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Consumption by Inflation in Steady State&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Consumption&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2984064613.py:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  label=f&quot;$\pi^* = {pi_star:.2f}$&quot;)
+C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2984064613.py:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  plt.xlabel(&quot;Gross Inflation ($\pi$)&quot;)
+</pre></div>
+</div>
+<img alt="_images/852e743b426da174dd6fc8c44d3a0ce816a09729e8744ceac5f93815c4b06514.png" src="_images/852e743b426da174dd6fc8c44d3a0ce816a09729e8744ceac5f93815c4b06514.png" />
+</div>
+</div>
+<p>What we’ve described so far is the <strong>stationary equilibrium</strong>: we assumed that the equilibrium featured <span class="math notranslate nohighlight">\(q_t=q_{t+1}\)</span>.  We now relax that assumption and compute all <strong>non-stationary equilibria</strong> as well.  We continue working with the CRRA utility and constant money supply and population growth rates so that equilibrium rate of return on money is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\nu_{t+1}}{\nu_t}=\frac{n}{z}\frac{q_{t+1}}{q_t}
+\]</div>
+<p>Substituting the market clearing condition into the Euler equation and re-arranging gives the first-order difference equation</p>
+<div class="math notranslate nohighlight">
+\[
+q_{t+1}=\frac{z}{n}\left( \frac{q_t}{(y-q_t)^{\eta}} \right)^{\frac{1}{1-\eta}}
+\]</div>
+<p>Any solution to this first-order difference equation is an equilibrium (including the stationary one we analyzed earlier).  To illustrate the solution to this equation, we use a phase diagram.  A <strong>phase diagram</strong> plots the value of our time <span class="math notranslate nohighlight">\(t+1\)</span> variable on the vertical axis as a function of the time <span class="math notranslate nohighlight">\(t\)</span> value on the horizontal axis.  Below I plot the right hand side of our first-order difference equation, which gives the value for <span class="math notranslate nohighlight">\(q_{t+1}\)</span> as a function of <span class="math notranslate nohighlight">\(q_t\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>      <span class="c1"># endowment</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.5</span>    <span class="c1"># CRRA parameter</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">1.05</span>     <span class="c1"># gross money growth</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1.02</span>     <span class="c1"># gross population growth</span>
+
+<span class="c1"># Define the difference equation: q_{t+1} = (z/n) * ( q_t / (y - q_t)^eta )^{1/(1 - eta)}</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q_next</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q_t</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">q_t</span><span class="p">)</span><span class="o">**</span><span class="n">eta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eta</span><span class="p">))</span>
+
+<span class="c1"># Grid for q_t</span>
+<span class="n">q_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>  <span class="c1"># avoid dividing by zero</span>
+
+<span class="c1"># Compute q_{t+1}</span>
+<span class="n">q_tp1</span> <span class="o">=</span> <span class="n">q_next</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># Compute 45-degree line (steady states)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">q_tp1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$q_{t+1} = f(q_t)$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">q_t</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;45° line ($q_{t+1}=q_t$)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Highlight steady states (where f(q)=q)</span>
+<span class="c1"># We&#39;ll find approximate intersections numerically</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">q_tp1</span> <span class="o">-</span> <span class="n">q_t</span>
+<span class="n">steady_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">diff</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">steady_indices</span><span class="p">:</span>
+    <span class="n">q_ss</span> <span class="o">=</span> <span class="n">q_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">q_ss</span><span class="p">,</span> <span class="n">q_ss</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">q_ss</span><span class="p">,</span> <span class="n">q_ss</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  q*=</span><span class="si">{</span><span class="n">q_ss</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Labels and layout</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Nonstationary Equilibria Phase Diagram&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$q_t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$q_{t+1}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e72763a00e6924c406b48427a6e505f06e1c18eb9300033c82f01bddb23096a7.png" src="_images/e72763a00e6924c406b48427a6e505f06e1c18eb9300033c82f01bddb23096a7.png" />
+</div>
+</div>
+<p>Notice that the intersection of the function <span class="math notranslate nohighlight">\(q_{t+1}=f(q_t)\)</span> with the 45 degree line indicates the same stationary solution we found earlier.  Now what if our economy does not begin at the stationary allocation <span class="math notranslate nohighlight">\(q_0 \neq q^*\)</span>?  What is the equilibrium path for <span class="math notranslate nohighlight">\(q_t\)</span> in such a case?  We can use the phase diagram to plot this non-stationary equilibria.  Suppose, for example, that our initial condition <span class="math notranslate nohighlight">\(q_0=0.40\)</span>.  We can find the equilibrium value of <span class="math notranslate nohighlight">\(q_1\)</span>, but simply finding the value of our function <span class="math notranslate nohighlight">\(q_1=f(q_0)\)</span> located on the vertical axis.  With this value in hand, we use the 45 degree line to plot the value <span class="math notranslate nohighlight">\(q_1\)</span> on the horizontal axis, so we can once again use the line to locate <span class="math notranslate nohighlight">\(q_2=f(q_1)\)</span>.  Iterating in such a way traces out the non-stationary equilibrium path for <span class="math notranslate nohighlight">\(q_t\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mf">1.05</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mf">1.02</span>
+
+<span class="c1"># Difference equation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q_next</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">z</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">q_t</span> <span class="o">/</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">q_t</span><span class="p">)</span><span class="o">**</span><span class="n">eta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eta</span><span class="p">))</span>
+
+<span class="c1"># Grid</span>
+<span class="n">q_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">q_tp1</span> <span class="o">=</span> <span class="n">q_next</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="c1"># Steady states (where q_{t+1} = q_t)</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">q_tp1</span> <span class="o">-</span> <span class="n">q_t</span>
+<span class="n">steady_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">diff</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">!=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">steady_q</span> <span class="o">=</span> <span class="p">[</span><span class="n">q_t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">steady_indices</span><span class="p">]</span>
+
+<span class="c1"># Initial condition and simulation</span>
+<span class="n">q0</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">8</span>  <span class="c1"># number of iterations to display</span>
+<span class="n">q_path</span> <span class="o">=</span> <span class="p">[</span><span class="n">q0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+    <span class="n">q_path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">q_next</span><span class="p">(</span><span class="n">q_path</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="n">eta</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+
+<span class="c1"># --- Plot phase diagram ---</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">q_tp1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$q_{t+1} = f(q_t)$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t</span><span class="p">,</span> <span class="n">q_t</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$45^\circ$ line ($q_{t+1}=q_t$)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mark steady states</span>
+<span class="k">for</span> <span class="n">q_ss</span> <span class="ow">in</span> <span class="n">steady_q</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">q_ss</span><span class="p">,</span> <span class="n">q_ss</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">q_ss</span><span class="p">,</span> <span class="n">q_ss</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;  q*=</span><span class="si">{</span><span class="n">q_ss</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot the trajectory</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">q_path</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">q_now</span><span class="p">,</span> <span class="n">q_next_val</span> <span class="o">=</span> <span class="n">q_path</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">q_path</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Vertical move: (q_t, q_t) → (q_t, q_{t+1})</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">q_now</span><span class="p">,</span> <span class="n">q_now</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">q_next_val</span> <span class="o">-</span> <span class="n">q_now</span><span class="p">,</span>
+              <span class="n">head_width</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">length_includes_head</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Horizontal move: (q_t, q_{t+1}) → (q_{t+1}, q_{t+1})</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">q_path</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">q_now</span><span class="p">,</span> <span class="n">q_next_val</span><span class="p">,</span> <span class="n">q_path</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">q_now</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="n">head_width</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.03</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">length_includes_head</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Mark initial condition</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">q_path</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">q_path</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Initial $q_0$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">q_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">q_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$q_0$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">)</span>
+
+<span class="c1"># Labels and formatting</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Non-Stationary Dynamics of Real Balances&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$q_t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$q_{t+1}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d9a97289f10c029a8f93bf81cf850a5aa835cfb4b14a674b60485f94d029a4a1.png" src="_images/d9a97289f10c029a8f93bf81cf850a5aa835cfb4b14a674b60485f94d029a4a1.png" />
+</div>
+</div>
+<p>Notice that the non-stationary equilibrium converges to the steady state <span class="math notranslate nohighlight">\(q=0\)</span>.  That is, it converges to the <strong>non-monetary equilibrium</strong>: an equilibrium where money has no value so that <span class="math notranslate nohighlight">\(q=0\)</span>.  In fact, for any <span class="math notranslate nohighlight">\(q_0&lt;q^*\)</span>, the non-stationary equilibrium will behave similarly.  Therefore, we say that the stationary monetary equilibrium is <strong>unstable</strong>.</p>
+<p>Notice that the value of our exogenous variables <span class="math notranslate nohighlight">\((y,z,n)\)</span> will shift the curve, but not alter the fundamental dynamics.  Increasing money supply <span class="math notranslate nohighlight">\(z\)</span>,for example, would shift the phase line to the left resulting in a lower value for stationary money balances <span class="math notranslate nohighlight">\(q^*\)</span>.  Nevertheless, any small perturbation causing <span class="math notranslate nohighlight">\(q\)</span> to drop below <span class="math notranslate nohighlight">\(q^*\)</span> would trigger the non-stationary equilibrium which converges to the non-monetary equilibrium.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsolve</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.3</span>
+
+<span class="c1"># Implicit equation: q_{t+1} as function of q_t</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eq</span><span class="p">(</span><span class="n">q_next</span><span class="p">,</span> <span class="n">q_t</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">q_next</span> <span class="o">/</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">q_next</span><span class="p">)</span><span class="o">**</span><span class="n">eta</span> <span class="o">-</span> <span class="n">q_t</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">q_t</span><span class="p">)</span><span class="o">**</span><span class="n">eta</span>
+
+<span class="c1"># Focused q_t range</span>
+<span class="n">q_t_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+<span class="n">q_next_low</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">q_next_high</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Track last solution to ensure continuity</span>
+<span class="n">last_low</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">last_high</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="k">for</span> <span class="n">q_t</span> <span class="ow">in</span> <span class="n">q_t_vals</span><span class="p">:</span>
+    <span class="c1"># Low branch: solve and filter</span>
+    <span class="n">y_low</span><span class="p">,</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">last_low</span> <span class="o">+</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">q_t</span><span class="p">,))</span>
+    <span class="c1"># Keep only reasonable solutions (avoid huge jumps)</span>
+    <span class="k">if</span> <span class="n">y_low</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>  
+        <span class="n">q_next_low</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_low</span><span class="p">)</span>
+        <span class="n">last_low</span> <span class="o">=</span> <span class="n">y_low</span>
+    
+    <span class="c1"># High branch: solve and filter</span>
+    <span class="n">y_high</span><span class="p">,</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">last_high</span> <span class="o">-</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">q_t</span><span class="p">,))</span>
+    <span class="k">if</span> <span class="n">y_high</span> <span class="o">&gt;</span> <span class="mf">0.5</span><span class="p">:</span>  <span class="c1"># avoid unrealistic small spikes</span>
+        <span class="n">q_next_high</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_high</span><span class="p">)</span>
+        <span class="n">last_high</span> <span class="o">=</span> <span class="n">y_high</span>
+
+<span class="c1"># Convert to numpy arrays</span>
+<span class="n">q_next_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q_next_low</span><span class="p">)</span>
+<span class="n">q_next_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q_next_high</span><span class="p">)</span>
+<span class="n">q_t_low</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q_t_vals</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">q_next_low</span><span class="p">)])</span>
+<span class="n">q_t_high</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">q_t_vals</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">q_next_high</span><span class="p">)])</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t_low</span><span class="p">,</span> <span class="n">q_next_low</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Lower branch&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t_high</span><span class="p">,</span> <span class="n">q_next_high</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Upper branch&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_t_vals</span><span class="p">,</span> <span class="n">q_t_vals</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$q_{t+1} = q_t$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">)</span>  
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$q_t$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$q_{t+1}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Backward-Bending Phase Line&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:25: RuntimeWarning: The iteration is not making good progress, as measured by the 
+  improvement from the last ten iterations.
+  y_low, = fsolve(eq, last_low + 1e-6, args=(q_t,))
+C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:32: RuntimeWarning: The iteration is not making good progress, as measured by the 
+  improvement from the last ten iterations.
+  y_high, = fsolve(eq, last_high - 1e-6, args=(q_t,))
+C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:11: RuntimeWarning: invalid value encountered in power
+  return q_next / (alpha + q_next)**eta - q_t / (1 - q_t)**eta
+</pre></div>
+</div>
+<img alt="_images/a99b5babbc22d9f12f59f020e21af3c0581d342c648274cdfc4b02b253972960.png" src="_images/a99b5babbc22d9f12f59f020e21af3c0581d342c648274cdfc4b02b253972960.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="olg_model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overlapping Generations Model of Money, Inflation, Assets</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="monetary-aggregates-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Monetary Aggregates Data Tutorial</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-non-monetary-and-stationary-non-stationary-equilibria">Monetary/Non-Monetary and Stationary/Non-Stationary Equilibria</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

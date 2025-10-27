@@ -1,0 +1,1067 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Labor Data Tutorial: Using the FRED API with Python &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labor-data-tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Money, Inflation, and Interest Rates" href="money-and-inflation.html" />
+    <link rel="prev" title="Equilibrium Unemployement" href="equilibrium-unemployment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Labor Data Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/labor-data-tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Labor Data Tutorial: Using the FRED API with Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-labor-market-data-from-fred">Pulling labor market data from FRED</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="labor-data-tutorial-using-the-fred-api-with-python">
+<h1>Labor Data Tutorial: Using the FRED API with Python<a class="headerlink" href="#labor-data-tutorial-using-the-fred-api-with-python" title="Link to this heading">#</a></h1>
+<section id="pulling-labor-market-data-from-fred">
+<h2>Pulling labor market data from FRED<a class="headerlink" href="#pulling-labor-market-data-from-fred" title="Link to this heading">#</a></h2>
+<p>In this tutorial we download data on the US labor market to characterize the job creation/destruction cycle and the unemployment rate.  We use the same procedures to access FRED API as described in <a href="gdp-data-tutorial.html">GDP Data Tutorial</a>.  Let’s begin by searching for the labor market data we are interested in using <code class="docutils literal notranslate"><span class="pre">fred.search('')</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">fred</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;employment&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>realtime_start</th>
+      <th>realtime_end</th>
+      <th>title</th>
+      <th>observation_start</th>
+      <th>observation_end</th>
+      <th>frequency</th>
+      <th>frequency_short</th>
+      <th>units</th>
+      <th>units_short</th>
+      <th>seasonal_adjustment</th>
+      <th>seasonal_adjustment_short</th>
+      <th>last_updated</th>
+      <th>popularity</th>
+      <th>notes</th>
+    </tr>
+    <tr>
+      <th>series id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PAYEMS</th>
+      <td>PAYEMS</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>All Employees, Total Nonfarm</td>
+      <td>1939-01-01</td>
+      <td>2025-08-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Thousands of Persons</td>
+      <td>Thous. of Persons</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2025-09-05 07:53:01-05:00</td>
+      <td>87</td>
+      <td>All Employees: Total Nonfarm, commonly known a...</td>
+    </tr>
+    <tr>
+      <th>PAYNSA</th>
+      <td>PAYNSA</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>All Employees, Total Nonfarm</td>
+      <td>1939-01-01</td>
+      <td>2025-08-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Thousands of Persons</td>
+      <td>Thous. of Persons</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-09-05 07:52:02-05:00</td>
+      <td>53</td>
+      <td>All Employees: Total Nonfarm, commonly known a...</td>
+    </tr>
+    <tr>
+      <th>LES1252881600Q</th>
+      <td>LES1252881600Q</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Employed full time: Median usual weekly real e...</td>
+      <td>1979-01-01</td>
+      <td>2025-04-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>1982-84 CPI Adjusted Dollars</td>
+      <td>1982-84 CPI Adjusted $</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2025-07-22 09:02:04-05:00</td>
+      <td>80</td>
+      <td>Data measure usual weekly earnings of wage and...</td>
+    </tr>
+    <tr>
+      <th>LEU0252881600A</th>
+      <td>LEU0252881600A</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Employed full time: Median usual weekly real e...</td>
+      <td>1979-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>1982-84 CPI Adjusted Dollars</td>
+      <td>1982-84 CPI Adjusted $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-01-22 09:05:05-06:00</td>
+      <td>41</td>
+      <td>Data measure usual weekly earnings of wage and...</td>
+    </tr>
+    <tr>
+      <th>LEU0252881600Q</th>
+      <td>LEU0252881600Q</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Employed full time: Median usual weekly real e...</td>
+      <td>1979-01-01</td>
+      <td>2025-04-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>1982-84 CPI Adjusted Dollars</td>
+      <td>1982-84 CPI Adjusted $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-07-22 09:03:24-05:00</td>
+      <td>25</td>
+      <td>Data measure usual weekly earnings of wage and...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>IPUMN54L201000000</th>
+      <td>IPUMN54L201000000</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Hours Worked for Professional, Scientific, and...</td>
+      <td>1988-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent Change from Year Ago</td>
+      <td>% Chg. from Yr. Ago</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-04-24 15:25:29-05:00</td>
+      <td>1</td>
+      <td>Labor hours are measured as annual hours worke...</td>
+    </tr>
+    <tr>
+      <th>IPUMN54L200000000</th>
+      <td>IPUMN54L200000000</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Hours Worked for Professional, Scientific, and...</td>
+      <td>1987-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Millions of Hours</td>
+      <td>Mil. of Hours</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-04-24 15:21:15-05:00</td>
+      <td>1</td>
+      <td>Labor hours are measured as annual hours worke...</td>
+    </tr>
+    <tr>
+      <th>IPUMN54L010000000</th>
+      <td>IPUMN54L010000000</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Hours Worked for Professional, Scientific, and...</td>
+      <td>1987-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Index 2017=100</td>
+      <td>Index 2017=100</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-04-24 15:25:29-05:00</td>
+      <td>1</td>
+      <td>Labor hours are measured as annual hours worke...</td>
+    </tr>
+    <tr>
+      <th>IPUAN11331L200000000</th>
+      <td>IPUAN11331L200000000</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Hours Worked for Agriculture, Forestry, Fishin...</td>
+      <td>1987-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Millions of Hours</td>
+      <td>Mil. of Hours</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-04-24 15:33:55-05:00</td>
+      <td>1</td>
+      <td>Labor hours are measured as annual hours worke...</td>
+    </tr>
+    <tr>
+      <th>IPUAN11331L201000000</th>
+      <td>IPUAN11331L201000000</td>
+      <td>2025-10-03</td>
+      <td>2025-10-03</td>
+      <td>Hours Worked for Agriculture, Forestry, Fishin...</td>
+      <td>1988-01-01</td>
+      <td>2024-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent Change from Year Ago</td>
+      <td>% Chg. from Yr. Ago</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-04-24 15:33:55-05:00</td>
+      <td>1</td>
+      <td>Labor hours are measured as annual hours worke...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 15 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">emp_pop_ratio</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;EMRATIO&#39;</span><span class="p">)</span> <span class="c1"># Employment to population ratio</span>
+<span class="n">emp_pop_ratio_male</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;LNS12300001&#39;</span><span class="p">)</span> <span class="c1"># Employment to population ratio men</span>
+<span class="n">emp_pop_ratio_female</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;LNS12300002&#39;</span><span class="p">)</span> <span class="c1"># Employment to population ratio women</span>
+<span class="n">unemp3</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;UNRATE&#39;</span><span class="p">)</span> <span class="c1"># Official unemployment rate</span>
+<span class="n">unemp4</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;U4RATE&#39;</span><span class="p">)</span> <span class="c1"># Unemployed plus discouraged workers</span>
+<span class="n">unemp5</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;U5RATE&#39;</span><span class="p">)</span> <span class="c1"># Unemployed plus discouraged workers plus marginally attached workers</span>
+<span class="n">claims</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;IC4WSA&#39;</span><span class="p">)</span> <span class="c1"># 4-week moving average of initial claims</span>
+<span class="n">unemp_weeks</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;UEMPMEAN&#39;</span><span class="p">)</span> <span class="c1"># Average weeks unemployed</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s begin by visualizing the data on aggregate unemployment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Plot Employment </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">emp_pop_ratio</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Employment to population ratio&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percent&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;US employment-to-population ratio&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4b3e45712d92cc0433d13f00c7a975f81f88b38dba7316573675a3c2b214376d.png" src="_images/4b3e45712d92cc0433d13f00c7a975f81f88b38dba7316573675a3c2b214376d.png" />
+</div>
+</div>
+<p>Historically, the share of population who is employed rose dramatically between 1960 and 2000.  Besides this trend, we also observe some cylical behavior where there exist peaks and troughs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Plot Employment </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">emp_pop_ratio_male</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Employment to population ratio men&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">emp_pop_ratio_female</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Employment to population ratio women&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percent&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;US employment-to-population ratio by sex&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5935c857e9b09401ed0929e5f3d7cad38f105131b028a9b8fc80501a8f40b575.png" src="_images/5935c857e9b09401ed0929e5f3d7cad38f105131b028a9b8fc80501a8f40b575.png" />
+</div>
+</div>
+<p>There is a clear pattern: female employment has been on the rise since the 1950s while male employment has fallen.  There seemed to be a convergence happening until around 2000 at which point the two series begin to comove rather than diverge.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Plot Unemployment</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unemployment rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unemployed plus discouraged workers&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unemployed plus discouraged workers plus marginally attached workers&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percent&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Unemployment rates&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/37d2d100bc47ed6f52a7e2988253892d06090c86a9fb89bd30cf7e4615802a2a.png" src="_images/37d2d100bc47ed6f52a7e2988253892d06090c86a9fb89bd30cf7e4615802a2a.png" />
+</div>
+</div>
+<p>Next we want to demonstrate the bathtub logic.  We want to plot the series…and observe their comovement over the business cycle.  To do so, first we should re-base each series to an index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Choose a base year</span>
+<span class="n">base_year</span> <span class="o">=</span> <span class="s2">&quot;2015&quot;</span>
+
+<span class="c1"># Function to rebase a series</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rebase</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># average over year</span>
+    <span class="k">return</span> <span class="n">series</span> <span class="o">/</span> <span class="n">base</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Rebase each separately</span>
+<span class="n">unemp3_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">unemp3</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+<span class="n">unemp_weeks_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">unemp_weeks</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+<span class="n">claims_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">claims</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+
+<span class="c1"># Plot Employment </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp3_idx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unemployment rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp_weeks_idx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average weeks unemployed&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">claims_idx</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;4 week moving average of initial claims&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Index (Base Year 2015)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;US Labor Market Flows&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/869a909d088167f32622a9b452cda55f6a2ef4fb4d96dcceceff34b53ca0a589.png" src="_images/869a909d088167f32622a9b452cda55f6a2ef4fb4d96dcceceff34b53ca0a589.png" />
+</div>
+</div>
+<p>We can see that Covid caused unprecedented levels of initial claims.  To get a cleaner picture, let’s zoom into the period 1970-2019.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Choose a base year</span>
+<span class="n">base_year</span> <span class="o">=</span> <span class="s2">&quot;2000&quot;</span>
+
+<span class="c1"># Function to rebase a series</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rebase</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>   <span class="c1"># average over year</span>
+    <span class="k">return</span> <span class="n">series</span> <span class="o">/</span> <span class="n">base</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Rebase each separately</span>
+<span class="n">unemp3_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">unemp3</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+<span class="n">unemp_weeks_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">unemp_weeks</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+<span class="n">claims_idx</span> <span class="o">=</span> <span class="n">rebase</span><span class="p">(</span><span class="n">claims</span><span class="p">,</span> <span class="n">base_year</span><span class="p">)</span>
+
+<span class="c1"># Plot Employment </span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1970&quot;</span><span class="p">,</span> <span class="s2">&quot;2019&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp3_idx</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Unemployment rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">unemp_weeks_idx</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Average weeks unemployed&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">claims_idx</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;4 week moving average of initial claims&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Index (Base Year 2000)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;US Labor Market Flows&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/32fe78e8abeb920deebaafe8f1d62d4067c117fa965a523e5ee8b8c13690037c.png" src="_images/32fe78e8abeb920deebaafe8f1d62d4067c117fa965a523e5ee8b8c13690037c.png" />
+</div>
+</div>
+<p>This illustrates the bathtub logic: First claims peak, then unemployment peaks, then duration peaks. First the bathtub fills quickly, then, after some time, it begins to drain; but as it’s happening, those left in the tub have been there longer and longer.</p>
+<p>We can go further and compute the actual rates at which workers transition from being unemployed to being employed.  This <strong>job finding rate from unemployment</strong> (U2E) is a key indicator of labor market flexibility and is used to infer the job finding probability.  Similarly, we can measure the rates at which workers transition from employment to unemployment (E2U) which is the <strong>job separation rate</strong>.  Also, we need a measure of the rate at which vacancies become filled jobs, called the <strong>vacancy filling rate</strong>.</p>
+<p>There are two approaches for computing these rates:</p>
+<ol class="arabic simple">
+<li><p><a href="https://www.bls.gov/jlt/" target="_blank">Job Openings and Labor Turnover Survey</a> (JOLTS) is a program of the <a href="https://www.bls.gov/" target="_blank">Bureau of Labor Statistics</a> (BLS) which collects employer-reported  job flows (vacancies new hires, quits, layoffs, and other separations).  Researchers commonly use the JOLTS hires and total separation series as direct monthly measures of gross flows.  for example, data series with FRED code <code class="docutils literal notranslate"><span class="pre">JTSHIL</span></code> provides the level of monthly hires, while <code class="docutils literal notranslate"><span class="pre">JTSVIL</span></code> gives the total level of monthly vacancies.</p></li>
+<li><p>The <a href="https://www.bls.gov/cps/" target="_blank">Current Population Survey</a> (CPS) is also a program of <a href="https://www.bls.gov/" target="_blank">Bureau of Labor Statistics</a> (BLS) which collects worker-reported job status (employed, unemployed, not in the labor force) as well as more detailed information about the reasons for workers’ job status, demographic characteristics, and wages.
+The rate can be derived from data collected by the  , available on FRED: the “Hired: Total Nonfarm” (JTSHIR) and “Unemployment Level” (UNEMPLOY) series.</p></li>
+</ol>
+<p>First, let’s discuss the job finding rate.  It may be tempting to use the JOLTS data and simply take the ratio of new hires-to-unemployment to find a U2E transition rate.  That is, divide <code class="docutils literal notranslate"><span class="pre">JTSHIL</span></code> by <code class="docutils literal notranslate"><span class="pre">UNEMPLOY</span></code> to find the job finding rate.  However, this is an <strong>incorrect approach</strong>.  The reason is that JOLTS hires include hires of people who were employed in the previous month–i.e., job-to-job transitions–and also hires of people moving from not-in-labor-force into employment.  This approach would give estimates between 50 to 100 percent because unemployment is a small stock relative to employment.  Our concept of the job fining rate corresponds the probability that an unemployed person finds a job within a month.  Therefore, we need an alternative measurement strategy.  That is where the CPS is useful.</p>
+<p>The CPS publishes monthly data on employment, unemployment, and unemployment duration.  We can leverage dat on unemployment duration to compute the job finding rate.  Recall that with a constant job finding probability per month we have that</p>
+<div class="math notranslate nohighlight">
+\[
+f \approx \frac{1}{\text{mean unemployment duration (months)}}
+\]</div>
+<p>The CPS survey asks unemployed workers how long they have been unemployed and tabulates the number of unemployed workers with zero to four weeks duration.  We can therefore construct the monthly average unemployment duration statistic as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+f &amp;\approx 1-\frac{\text{unemployed for more than one month}_{t+1}}{unemployed_t} \\
+&amp;=1-\frac{u_{t+1}-u^s_{t+1}}{u_t}
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_{t}\)</span> is the number of employed persons in month <span class="math notranslate nohighlight">\(t\)</span>, <span class="math notranslate nohighlight">\(u^s_{t+1}\)</span> is the number of short-term unemployed workers–those who are unemployed at month <span class="math notranslate nohighlight">\(t+1\)</span> but held a job at some point in month <span class="math notranslate nohighlight">\(t\)</span>.  This method of of computing the job finding rate was popularized by <a href="https://www.aeaweb.org/articles?id=10.1257/0002828053828572/" target="_blank">Shimer (2005)</a>.  A full description of his data sources, adjustments, and computations can be found in his paper.  For simplicity, we will construct a similar job finding rate series but ignore some technical details.</p>
+<p>First, we need to collect data on unemployment by duration.  Fortunately, these data series are available through FRED.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">unemp_total</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;UNEMPLOY&#39;</span><span class="p">)</span> <span class="c1"># Number of person unemployed</span>
+<span class="n">unemp_short_term</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;UEMPLT5&#39;</span><span class="p">)</span> <span class="c1"># Number of persons unemployed for 5 weeks or less</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that here we use the number of unemployed for less than 5 weeks as our measure of short term unemployed.  Technically, this is not less than one month, as we should use less than 4 weeks, but we continue to use this series since it is readily accessible on FRED.  Additionally, the CPS was redesigned in January 1994 changing how the unemployment duration question was asked so that data before and after 1994 are not directly comparable.  See  <a href="[https://www.bls.gov/cps/" target="_blank](https://www.aeaweb.org/articles?id=10.1257/0002828053828572)">Shimer (2005)</a> for detailed information about how to adjust the series to make them comparable.  Again, we ignore this problem for the sake of simplicity.</p>
+<p>We proceed by computing the job finding rate according to our formula</p>
+<div class="math notranslate nohighlight">
+\[
+f=1-\frac{u_{t+1}-u^s_{t+1}}{u_t}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_t\)</span> is being measured by <code class="docutils literal notranslate"><span class="pre">UNEMPLOY</span></code> and <span class="math notranslate nohighlight">\(u^s_{t}\)</span> is being measured by <code class="docutils literal notranslate"><span class="pre">UEMPLT5</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the job finding rate </span>
+<span class="n">finding_rate</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">unemp_total</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">unemp_short_term</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="n">unemp_total</span> <span class="c1"># Shift the numerator values forward one period to satisfy the formula</span>
+
+<span class="c1"># Plot job finding rate </span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1948&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">finding_rate</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Job finding rate&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Job finding rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Job finding rate in the US (1948-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Compute descriptive statistics for the job finding rate</span>
+<span class="n">finding_rate</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/580ef6072f443fc15fa7b5ef1d4a73e9def8a80f779acee6d4a6783529e87857.png" src="_images/580ef6072f443fc15fa7b5ef1d4a73e9def8a80f779acee6d4a6783529e87857.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    931.000000
+mean       0.405700
+std        0.098814
+min        0.164797
+25%        0.348065
+50%        0.409747
+75%        0.467921
+max        0.656413
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The job finding probability is high, averaging 40.5 percent over the post-war period.  It is also highly variable, dropping by about 20 percent during the Great Recession and similarly high magnitudes during other business cycles.  The Covid period saw a abnormal spike in the finding rate because the stock unemployed (on the denominator) was incredibly high in the immediate aftermath of Covid.  Finally, the job finding rate tends to be procyclical–rising and falling in tandem with the business cycle.</p>
+<p>Now we turn to the job separation rate in order to measure E2U transitions.  There are two ways of measuring this:</p>
+<ol class="arabic simple">
+<li><p><a href="https://www.bls.gov/jlt/" target="_blank">JOLTS</a> provides a direct measure of total monthly separations reported by employers.  These include any reason a worker leaves a job: voluntary quits and involuntary layoffs.  This data series is available on FRED under the ID <code class="docutils literal notranslate"><span class="pre">JTSTSL</span></code>.  JOLTS also directly computes a separation rate by simply dividing the number of separations by total employment.  The resulting series is called <code class="docutils literal notranslate"><span class="pre">JTSTSR</span></code> on FRED.</p></li>
+<li><p>Use the law of motion for unemployment with the job finding rate to find the separation <span class="math notranslate nohighlight">\(s\)</span>.  That is, given data on unemployment, employment, and the job finding rate find the value of <span class="math notranslate nohighlight">\(s_t\)</span> which satisfies <span class="math notranslate nohighlight">\(\mathcal{U}_{t+1}-\mathcal{U}_t=s_t\mathcal{E}_t-f_t\mathcal{U}_t\)</span> exactly.  This is the approach used by <a href="[https://www.bls.gov/cps/" target="_blank](https://www.aeaweb.org/articles?id=10.1257/0002828053828572)">Shimer (2005)</a>.</p></li>
+</ol>
+<p>We can compute and plot the separation rate using both methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">sep_rate_jolts</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;JTSTSR&#39;</span><span class="p">)</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># Number of person unemployed; correct units for comparability with the Shimer method series</span>
+<span class="n">emp_total</span><span class="o">=</span><span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;PAYEMS&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the separation rate using the Shimer method</span>
+
+<span class="n">sep_rate_shimer</span><span class="o">=</span><span class="p">(</span><span class="n">unemp_total</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span><span class="o">-</span><span class="n">unemp_total</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">finding_rate</span><span class="p">))</span><span class="o">/</span><span class="n">emp_total</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot job finding rate </span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1948&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sep_rate_jolts</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Job separation rate JOLTS&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sep_rate_shimer</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Job separation rate Shimer method&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Job separation rate&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Job separation rate in the US (1948-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Descriptive statistics</span>
+<span class="n">sep_rate_jolts</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">sep_rate_shimer</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a93203c8ffa8c66970860d541d01cc6328bc03bf05d0b4d0bde97d4a7791b220.png" src="_images/a93203c8ffa8c66970860d541d01cc6328bc03bf05d0b4d0bde97d4a7791b220.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    931.000000
+mean       0.026231
+std        0.007963
+min        0.012028
+25%        0.020224
+50%        0.025705
+75%        0.031740
+max        0.109359
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>The separation rate is much lower than the finding rate averaging 3.6 percent for the JOLTS series and 2.6 percent for the Shimer series.  Also, the separation rate is much less variable than the finding rate over the business cycle.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="equilibrium-unemployment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Equilibrium Unemployement</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="money-and-inflation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Money, Inflation, and Interest Rates</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-labor-market-data-from-fred">Pulling labor market data from FRED</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

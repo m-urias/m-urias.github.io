@@ -1,0 +1,28 @@
+# Book settings
+title: My Macroeconomics Course
+author: Marshall Urias
+
+# Execution settings
+execute:
+  execute_notebooks: 'auto'
+
+# Master document
+root: macro_measuring_the_economy.ipynb
+
+# HTML settings
+html:
+  extra_navbar: Powered by Jupyter Book
+
+# Ensure images are copied
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_theme_options:
+      navigation_depth: 3
+    # Explicitly tell Sphinx to copy the figs directory
+    html_static_path: ["figs"]
+    html_extra_path: ["figs"]
+    # Custom build
+  extra_extensions:
+    - sphinx.ext.imgconverter
+    - sphinx_design

@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modeling GDP Growth &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modeling-gdp-growth';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Solow Model of Economic Growth" href="solow-model.html" />
+    <link rel="prev" title="GDP Data Tutorial: Using the FRED API with Python" href="gdp-data-tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/modeling-gdp-growth.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modeling GDP Growth</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modeling-gdp-growth">
+<h1>Modeling GDP Growth<a class="headerlink" href="#modeling-gdp-growth" title="Link to this heading">#</a></h1>
+<p>Economic growth brings with it a host of benefits:</p>
+<ul class="simple">
+<li><p>longer life expectancy</p></li>
+<li><p>lower infant mortality rates</p></li>
+<li><p>better education</p></li>
+<li><p>less starvation</p></li>
+<li><p>etc…</p></li>
+</ul>
+<p>We want a simple model that can be used to explain and measure economic growth over a long period of time.  Let’s begin by imagining an economy composed of a single company: a noodle shop. To cook noodles, the owner needs to employ people (\textbf{labor}) and rent some cooking equipment (\textbf{capital}). The more people that work at the shop, or the more equipment the shop rents, the more noodles that can be cooked and served.</p>
+<p>A \textbf{production function} tells us how many bowls of noodles can be produced if <span class="math notranslate nohighlight">\(L\)</span> workers are combined with <span class="math notranslate nohighlight">\(K\)</span> equipment:</p>
+<div class="math notranslate nohighlight">
+\[
+Y = F(K,L) = \bar{A}K^{1/3}L^{2/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{A}&gt;0\)</span> is some parameter that we call <strong>productivity</strong>.  In this example, we could imagine productivity reflecting how skilled the workers are at cooking, or how advanced the equipment is.  A production function can take on any form, but here we restrict our attention to a popular functional form called <strong>the Cobb-Douglas production function</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+Y = \bar{A}K^{\alpha}L^{1-\alpha}
+\]</div>
+<p>We will explore why this function is useful later, but for now let’s just understand some of its properties.  First, let’s understand what the production function says.  Suppose that <span class="math notranslate nohighlight">\(\bar{A}=1\)</span> to make things simple.  If my noodle shop employs 15 workers and 9 cooking equipment then I can produce</p>
+<div class="math notranslate nohighlight">
+\[
+Y = 9^{1/3}15^{2/3} = 12.65
+\]</div>
+<p>bowls of noodles.</p>
+<p><img src="_static/figs_LR/CCD_5.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p>Second, notice that our production function exhibits something called <strong>constant returns to scale</strong>—if we double the amount of each input, then we double the amount of noodles produced.</p>
+<div class="math notranslate nohighlight">
+\[
+F(2K,2L) = (2\times 9)^{1/3} (2 \times 15)^{2/3}=2 \times (9^{1/3}15^{2/3}) = 25.3
+\]</div>
+<p>different production functions could have <strong>increasing returns to scale</strong>—doubling inputs gets more than double the output—or <strong>decreasing returns to scale</strong>—doubling inputs gets less than double the output.  Third, the production function function exhibits <strong>diminishing marginal products</strong>—the extra output we get from increasing one input gradually diminishes. Suppose we want to hire one more person, holding the amount of equipment fixed.  How many more bowls of noodles can we produce with one extra worker?</p>
+<div class="math notranslate nohighlight">
+\[
+MPL = \frac{\partial F(K,L)}{\partial L}=\frac{2}{3}\bar{A}\left(\frac{K}{L} \right)^{1/3} = \frac{2}{3}\left( \frac{Y}{L}\right)
+\]</div>
+<p>where MPL is called the <strong>marginal productivity of labor</strong>.  Of course we could say the same thing about capital:</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = \frac{\partial F(K,L)}{\partial K}=\frac{1}{3}\bar{A}\left(\frac{L}{K} \right)^{2/3} = \frac{1}{3}\left( \frac{Y}{K}\right)
+\]</div>
+<p>where MPK is called the <strong>marginal product of capital</strong>.  Why might the marginal product of labor be diminishing as we add more workers?  Suppose that we have 5 units of equipment.  The first five people we hire should be very productive, but as we add more workers, there is less for them to do with only the five machines among them.  Too many cooks in the kitchen!  If we want to think about an entire economy, instead of a single noodle shop, we can still use our production function:</p>
+<div class="math notranslate nohighlight">
+\[
+Y = \bar{A}K^{1/3}L^{2/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> denotes the number of workers in the economy and <span class="math notranslate nohighlight">\(K\)</span> the amount of equipment.  <span class="math notranslate nohighlight">\(Y\)</span> is the predicted level of real GDP—the number of goods produced by this economy. <span class="math notranslate nohighlight">\(A\)</span> is what we call <strong>total factor productivity</strong> which will reflect many many things (e.g. institutions, technology, market structure).</p>
+<p>What determines if a country is rich or poor? It’s amount of workers, capital, and productivity! In fact, we can use the model to express real GDP per capita</p>
+<div class="math notranslate nohighlight">
+\[
+y \equiv \frac{Y}{L}=\frac{\bar{A}K^{\alpha}L^{1-\alpha}}{L} = \bar{A}k^{1/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k=K/L\)</span> is the amount of capital per person. Real GDP per capita is determined by two things:</p>
+<ul class="simple">
+<li><p>Productivity <span class="math notranslate nohighlight">\(\bar{A}\)</span></p></li>
+<li><p>Capital per person <span class="math notranslate nohighlight">\(k\)</span></p></li>
+</ul>
+<p>We can now use some data on capital per person and real GDP per capita to check how well these prediction hold up empirically.  We want to test whether or not our model prediction</p>
+<div class="math notranslate nohighlight">
+\[
+y=\bar{A}k^{1/3}
+\]</div>
+<p>holds in the data.  For now, let’s assume that <span class="math notranslate nohighlight">\(\bar{A}=1\)</span> for every country, so that GDP per capita should be determined entirely by the amount capital per person in the economy.</p>
+<p><img src="_static/figs_LR/CCD_6.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p><img src="_static/figs_LR/CCD_7.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p><img src="_static/figs_LR/CCD_8.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p>With no difference in productivity, the model predicts smaller differences in income across countries than we observe.  The model predicts that most countries should be substantially richer than they are. We should allow for productivity differences to play a role:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \bar{A}k^{1/3}
+\]</div>
+<p>but unfortunately TFP is not an observable variable.  Instead, we can treat the model as true and use data on GDP per capita to compute the level of TFP for each country:</p>
+<div class="math notranslate nohighlight">
+\[
+\bar{A}=\frac{y}{k^{1/3}}
+\]</div>
+<p>We can think of <span class="math notranslate nohighlight">\(\bar{A}\)</span> as a measure of how big the gap is between our model and the data.  It is often referred to as <code class="docutils literal notranslate"><span class="pre">the</span> <span class="pre">residual&quot;</span> <span class="pre">or</span> </code>a measure of our ignorance.”</p>
+<p><img src="_static/figs_LR/CCD_9.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p><img src="_static/figs_LR/CCD_10.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p><img src="_static/figs_LR/CCD_11.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+<p>In the year 2014, the per capita GDP of five richest countries was 70 times higher than that of the five poorest.  Differences in capital per person explain a factor of about 5 of this difference, while difference in TFP explain a factor of 14:</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\frac{y_{\text{rich}}}{y_{\text{poor}}}}_{70}=\underbrace{\frac{\bar{A}_{\text{rich}}}{\bar{A}_{\text{poor}}}}_{14 \quad\times}\underbrace{\left( \frac{k_{\text{rich}}}{k_{\text{poor}}}\right)}_{5}
+\]</div>
+<p>Since TFP is roughly three times as important as capital per person in this accounting exercise, we say that TFP explain three-quarters o the differences in per capita GDP, while capital per person explains about one-quarter.  There are many possible sources of differences in TFP across countries:</p>
+<ul class="simple">
+<li><p>Human capital: the stock of skills that people accumulate to make them more productive</p></li>
+<li><p>Technology: frontier technology (e.g. AI, software, information technology) improves how an economy can transform its inputs into output</p></li>
+<li><p>Institutions: laws, regulations, government policies</p></li>
+<li><p>Misallocation: government policies or market environments that inhibit resources to go where they are most productive (e.g. SOEs versus POEs)</p></li>
+</ul>
+<p>Key points:</p>
+<ul class="simple">
+<li><p>Per capita GDP will be higher in countries that have high quantities of capital per person and use that capital efficiently.</p></li>
+<li><p>Observed large differences in capital per person only explain about one-third of differences in GDP per capita</p></li>
+<li><p>TFP is very important in explaining cross-country differences in economic performance.</p></li>
+</ul>
+<p>hy do we care about economic growth?  Because GDP per capita is a measure of citizens’ standard of living.
+\vspace{5mm}</p>
+<p>Are there limitations to using GDP to measure <strong>welfare</strong>?</p>
+<ul class="simple">
+<li><p>Inequality: the distribution of income in an economy gives us more information about how the gains from economic growth are enjoyed by different citizens</p></li>
+<li><p>Consumption is what matters: for individuals consumption (not necessarily investment or government spending) is what allows us to enjoy a good or bad standard of living</p></li>
+<li><p>Leisure matters too: why not measure GDP per hour to give a measure for how efficiently workers can generate income?</p></li>
+<li><p>Non-economic measures: life expectancy, infant mortality rates, crime rates, access to medical care etc.</p></li>
+</ul>
+<p><img src="_static/figs_LR/welfare.png" 
+     alt="GDP per capita of seven countries" 
+     width="400"
+     style="center; margin-right: 15px;"></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gdp-data-tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">GDP Data Tutorial: Using the FRED API with Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="solow-model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Solow Model of Economic Growth</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

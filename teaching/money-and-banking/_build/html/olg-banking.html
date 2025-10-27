@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OLG Model of Banking &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'olg-banking';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Diamond-Dybvig Model of Banking" href="diamond-dybvig.html" />
+    <link rel="prev" title="An Example of a Monetary OLG Model with A Government Sector" href="olg-government-example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/olg-banking.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OLG Model of Banking</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-capital-investment-and-private-debt">Long-Term Capital Investment and Private Debt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#private-debt-and-collateral">Private Debt and Collateral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-consumer-s-problem">The Consumer’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-walras-law">Interpretation and Walras’ Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illiquid-capital-and-fiat-money">Illiquid Capital and Fiat Money</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-and-the-role-of-fiat-money">Portfolio Choice and the Role of Fiat Money</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#banking-in-the-olg-economy">Banking in the OLG Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-deposit-contract">The Deposit Contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-with-banks">Portfolio Choice with Banks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-banking-in-the-olg-economy">Central Banking in the OLG Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-banking-sector-balance-sheet">The Banking Sector Balance Sheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#money-market-equilibrium">Money Market Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seigniorage">Seigniorage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-interest-rate">Equilibrium Interest Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-and-money-multipliers">Output and Money Multipliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-banking-lending-facilities">Central Banking Lending Facilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#price-level-and-borrowed-reserves">Price Level and Borrowed Reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endogenous-borrowing-and-the-discount-rate">Endogenous Borrowing and the Discount Rate</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="olg-model-of-banking">
+<h1>OLG Model of Banking<a class="headerlink" href="#olg-model-of-banking" title="Link to this heading">#</a></h1>
+<p>We have considered environments in which assets were perfect substitutes for fiat money and found that when fiat money offers a lower rate of return than other assets, it is not valued in equilibrium. We now explore how fiat money may nonetheless be valued because of its liquidity—its ability to facilitate consumption quickly.</p>
+<p>Building on this, we will show why banks are valuable to the economy: they issue liquid liabilities and reconcile mismatches between the maturities of assets and the liquidity needs of agents. To do so, we modify our overlapping generations (OLG) framework to include the possibility of “early” and “late” consumption. This allows us to highlight how money provides liquidity services and how banks can replicate these services through the creation of inside money.</p>
+<p>First, we introduce a three-period OLG environment to accommodate the notion of “early” versus “late” consumption where there exists a market for private debt.  Second, we show how liquidity constraints give rise to a role for fiat money.  Third, we combine both insights to study the coexistence of inside and outside money.  Lastly, we investigate how monetary policy interacts with the banking sector to affect the real economy.</p>
+<section id="long-term-capital-investment-and-private-debt">
+<h2>Long-Term Capital Investment and Private Debt<a class="headerlink" href="#long-term-capital-investment-and-private-debt" title="Link to this heading">#</a></h2>
+<p>We begin once again  with the frictionless economy, now modified to incorporate “early” and “late” consumption.  Later we will introduce limited commitment so that fiat currency plays a role and yields a liquidity premium relative to other assets.</p>
+<p>The OLG economy now features <em>three-period-lived</em> agents, corresponding to the young, middle-aged, and old. Each agent is endowed with <span class="math notranslate nohighlight">\(y\)</span> units of the consumption good when young but receives nothing thereafter. A production technology allows young agents to transform <span class="math notranslate nohighlight">\(k\)</span> units of output into <span class="math notranslate nohighlight">\(f(k)\)</span> when old–thus capital requires two periods to mature.</p>
+<section id="private-debt-and-collateral">
+<h3>Private Debt and Collateral<a class="headerlink" href="#private-debt-and-collateral" title="Link to this heading">#</a></h3>
+<p>Agents can borrow or lend in a market for private debt, denoted <span class="math notranslate nohighlight">\(a\)</span>, at interest rate <span class="math notranslate nohighlight">\(R\)</span>.  Debt is <em>collateralized</em> by capital,and we assume that capital is perfectly observable and fully seizable in the event of default.  Hence, lenders can verify borrowers’ holdings of capital and are willing to extend credit up to the collateral value.</p>
+<p>At each date <span class="math notranslate nohighlight">\(t\)</span>, the young decide how much to consume and how much to save.  Savings can take the form of either bonds (<span class="math notranslate nohighlight">\(a_t&gt;0\)</span>), yielding a one-period rate of return <span class="math notranslate nohighlight">\(R\)</span>, or capital, giving a two-period return of <span class="math notranslate nohighlight">\(f(k)\)</span>.  The middle-aged generation consumes out of bond returns and may borrow (<span class="math notranslate nohighlight">\(a{t}&lt;0\)</span>) from the current young,while the old generation consumes the output from their capital and repays prior debt.  Borrowing and lending therefore occur across generations, providing motives for borrowing and lending even with identical agents.</p>
+</section>
+<section id="the-consumer-s-problem">
+<h3>The Consumer’s Problem<a class="headerlink" href="#the-consumer-s-problem" title="Link to this heading">#</a></h3>
+<p>Each individual maximizes lifetime utility:</p>
+<div class="math notranslate nohighlight">
+\[
+u(c_{1,t})+\beta u(c_{2,t+1})+\beta^2 u(c_{3,t+2})
+\]</div>
+<p>subject to the period budget constraints given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;\text{young:} \quad &amp;&amp;c_{1,t} + a_{1,t} + k_t  = y_t \\
+&amp;\text{middle-aged:} \quad &amp;&amp;c_{2,t+1} + a_{2,t+1} = Ra_{1,t} \\
+&amp;\text{old:} \quad &amp;&amp;c_{3,t+2} \leq f(k_t) + Ra_{2,t+1}
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{1,t}\)</span> and <span class="math notranslate nohighlight">\(a_{2,t+1}\)</span> denotes net bond-holdings when young and middle-aged, respectively.  We impose <span class="math notranslate nohighlight">\(a_{t+2}=0\)</span> to rule out Ponzi schemes.</p>
+<p>At any date <span class="math notranslate nohighlight">\(t\)</span>, three overlapping generations coexist:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Generation</p></th>
+<th class="head"><p>Life stage</p></th>
+<th class="head"><p>Variable</p></th>
+<th class="head"><p>Budget constraint</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>born at (<span class="math notranslate nohighlight">\(t\)</span>)</p></td>
+<td><p>young</p></td>
+<td><p>chooses <span class="math notranslate nohighlight">\((a_{1,t}, k_t)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{1,t} + a_{1,t} + k_t = y_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>born at (<span class="math notranslate nohighlight">\(t-1\)</span>)</p></td>
+<td><p>middle-aged</p></td>
+<td><p>has <span class="math notranslate nohighlight">\(a_{1,t-1}\)</span> from last period and chooses <span class="math notranslate nohighlight">\(a_{2,t}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{2,t} + a_{2,t} = R a_{1,t-1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>born at (<span class="math notranslate nohighlight">\(t-2\)</span>)</p></td>
+<td><p>old</p></td>
+<td><p>consumes <span class="math notranslate nohighlight">\((f(k_{t-2}) + R a_{2,t-1})\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(c_{3,t} = f(k_{t-2}) + R a_{2,t-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Combining the three constraints yields the lifetime budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+c_1 + R^{-1}c_2 + R^{-2}c_3 \leq y-k+R^{-2}f(k)
+\]</div>
+<p>The agent first chooses <span class="math notranslate nohighlight">\(k\)</span> to maximize lifetime wealth (the right-hand side), and then allocates consumption to maximize lifetime utility.  Maximizing wealth implies,</p>
+<div class="math notranslate nohighlight">
+\[
+f'(k^{*})=R^2
+\]</div>
+<p>Thus, in equilibrium, the marginal product of capital equals the square of the interest rate.  Optimal portfolio choice equates the two-period rate of return on capital with the two-period return on bonds.  Said differently, the equilibrium interest rate satisfies <span class="math notranslate nohighlight">\(R=\sqrt{f'(k)}\)</span>; which equates the one-period return on capital and bonds.  Lifetime wealth is therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+W=y-k^*(R)+R^{-2}f(k^*(R))
+\]</div>
+<p>The choice of <span class="math notranslate nohighlight">\(k^*\)</span> depends only on technology and the interest rate <span class="math notranslate nohighlight">\(R\)</span>, and not on the agent’s utility function.  Utility maximization, taking lifetime wealth as given, yields the familiar Euler equations:</p>
+<div class="math notranslate nohighlight">
+\[
+u'(c_1)=\beta R u'(c_2) = \beta^2 R^2 u'(c_3)
+\]</div>
+<p>which states the marginal utility across every period is equalized.  The Euler equations, in combination with the wealth constraint, characterizes the desired consumption plan <span class="math notranslate nohighlight">\((c_1^*,c_2^*,c_3^*)\)</span>.</p>
+<p>Finally, market clearing requires,</p>
+<div class="math notranslate nohighlight">
+\[
+k^* + c_1^*+c_2^*+c_3^*=y+f(k^*)
+\]</div>
+<p>Total available output (endowment plus capital returns) must equal aggregate consumption and investment. This gives us one equation in one unknown: the equilibrium interest rate <span class="math notranslate nohighlight">\(R^*\)</span>.</p>
+</section>
+<section id="interpretation-and-walras-law">
+<h3>Interpretation and Walras’ Law<a class="headerlink" href="#interpretation-and-walras-law" title="Link to this heading">#</a></h3>
+<p>In this equilibrium, “money” takes the form of private bonds backed by capital returns. Both bonds and capital earn the same equilibrium return <span class="math notranslate nohighlight">\(R^*=(f'(k^*(R^*)))^{1/2}\)</span>.  Let’s investigate an interesting implication of Walras’ law: market clearing in the goods market is equivalent to market clearing in the bond market.</p>
+<p>Summing across all agents’ budget constraints yields:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}​+c_{2,t​}+c_{3,t}​+k_t​+a_{1,t}​+a_{2,t}​=y_t​+f(k_{t−2}​)+R(a_{1,t−1}​+a_{2,t−1​})
+\]</div>
+<p>Rearranging, so that the goods market appear on the left hand side and the bond market appears on the right hand side, we have</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}​+c_{2,t​}+c_{3,t}​+k_t-(y_t+f(k_{t−2}​))=R(a_{1,t−1}​+a_{2,t−1​})-(a_{1,t}+a_{2,t})
+\]</div>
+<p>Goods market clearing demands that the left hand side equal zero, which also implies that <span class="math notranslate nohighlight">\(R(a_{1,t−1}​+a_{2,t−1​})=(a_{1,t}+a_{2,t})\)</span>.  This condition says that net financial flows across generations must be zero: repayments of old debt plus new borrowing must perfectly balance the goods transactions between generations.  We can make this more intuitive by restricting our analysis to steady state where <span class="math notranslate nohighlight">\(a_{1,t}=a_{1,t-1}\)</span> and <span class="math notranslate nohighlight">\(a_{2,t}=a_{2,t-1}\)</span>.  In this case the bond market clearing simplifies to <span class="math notranslate nohighlight">\((1-R)(a_{1,t}+a_{2,t})=0\)</span>.  Since <span class="math notranslate nohighlight">\(R=1\)</span> would be degenerate, the economically meaningful case is</p>
+<div class="math notranslate nohighlight">
+\[
+a_{1,t}+a_{2,t}=0
+\]</div>
+<p>This restores the intuitive bond-market clearing condition — total borrowing equals total lending within a period.</p>
+</section>
+</section>
+<section id="illiquid-capital-and-fiat-money">
+<h2>Illiquid Capital and Fiat Money<a class="headerlink" href="#illiquid-capital-and-fiat-money" title="Link to this heading">#</a></h2>
+<p>We now consider the opposite case of the previous model: suppose that the return to capital investment, <span class="math notranslate nohighlight">\(f(k)\)</span> is <em>noncollateralizable</em>. In other words, the value of an individual’s capital cannot be verified or seized by others. This friction prevents the creation of private credit markets because borrowers could always default without consequence. As a result, the market for private debt collapses.</p>
+<p>Formally, agents now face the constraints <span class="math notranslate nohighlight">\(a_t,a_{t+1} \geq 0\)</span>.  Since no debt would be repaid in equilibrium, there is no incentive to hold or issue private debt, and thus <span class="math notranslate nohighlight">\(a_t=a_{t+1}=0\)</span>. In such an environment, fiat money acquires a role: it becomes the only asset capable of transferring purchasing power across time.</p>
+<p>This setup highlights two distinct motives for holding assets. Fiat money provides liquidity, allowing consumption in the near term, while capital offers a higher rate of return but only after two periods. This captures a realistic feature of modern economies: money is valued not because it yields the highest return, but because it facilitates timely exchange and consumption. Our goal is to build a model in which both fiat money and capital are valued in equilibrium—even though capital dominates money in terms of long-run return.</p>
+<section id="portfolio-choice-and-the-role-of-fiat-money">
+<h3>Portfolio Choice and the Role of Fiat Money<a class="headerlink" href="#portfolio-choice-and-the-role-of-fiat-money" title="Link to this heading">#</a></h3>
+<p>We continue to work with the three-period OLG model introduced earlier, now without private debt. Instead, there exists a constant nominal stock of fiat money, <span class="math notranslate nohighlight">\(M_0\)</span>, initially held by the middle-aged generation.</p>
+<p>Each individual maximizes expected lifetime utility</p>
+<div class="math notranslate nohighlight">
+\[
+u(c_{1,t})+\beta u(c_{2,t+1})+\beta^2 u(c_{3,t+2})
+\]</div>
+<p>subject to the budget constraints,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;\text{young:} \quad &amp;&amp;c_{1,t} + q_t + k_t  = y_t \\
+&amp;\text{middle-aged:} \quad &amp;&amp;c_{2,t+1} + q_{t+1} = (\nu_{t+1}/\nu_t)q_t \\
+&amp;\text{old:} \quad &amp;&amp;c_{3,t+2} \leq f(k_t) + (\nu_{t+2}/\nu_{t+1})q_{t+1}
+\end{align*}
+\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(q_t\)</span> and <span class="math notranslate nohighlight">\(q_{t+1}\)</span> denote real money balances when middle-aged and old, respectively, and <span class="math notranslate nohighlight">\(\nu_t=1/p_t\)</span> is the value of fiat currency.</p>
+<p>The agent faces a tradeoff between two assets: capital is illiquid but yields a high return, whereas fiat money is liquid but yields a low return.  Individuals therefore sell some of their initial endowment for fiat money to finance early consumption. However, they will also hold capital in order to finance late consumption if and only if capital offers a superior rate of return:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(y-c_1-q) &gt; \nu_{t+2}/\nu_{t}
+\]</div>
+<p>The right-hand side represents the two-period gross real return on money.  To simplify the analysis, assume that production is linear</p>
+<div class="math notranslate nohighlight">
+\[
+f(k) = Xk, \quad X &gt;n^2
+\]</div>
+<p>so that capital yields a constant two-period return <span class="math notranslate nohighlight">\(X\)</span>.  The budget constraints then become,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;\text{young:} \quad &amp;&amp;c_{1,t} + q_t + k_t  = y_t \\
+&amp;\text{middle-aged:} \quad &amp;&amp;c_{2,t+1}  = (\nu_{t+1}/\nu_t)q_t \\
+&amp;\text{old:} \quad &amp;&amp;c_{3,t+2} \leq Xk_t
+\end{align*}
+\end{split}\]</div>
+<p>Combining these gives the lifetime budget constraint,</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\frac{\nu_t}{\nu_{t+1}}c_{2,t+1}+\frac{1}{X}c_{3,t+2}\leq y
+\]</div>
+<p>This expression shows that the real rate of transformation between consumption in different stages of life depends on both the rate of return on capital (<span class="math notranslate nohighlight">\(X\)</span>) and the evolution of the value of fiat money (<span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t\)</span>).</p>
+<p>Our model admits a world where money and capital are not perfect substitutes.  Capital’s illiquidity prevents it from serving as a transaction medium, even though it yields a higher return. Fiat money, in contrast, is used more frequently despite its lower yield.</p>
+<p>To formalize this intuition, define <strong>velocity</strong> as the ratio of the value of transactions involving an asset to the total stock of that asset. Fiat money has velocity equal to one, since the entire stock of money is exchanged in each period. Capital, by contrast, has a velocity below one because it is traded less frequently. In a stationary equilibrium, the velocity of capital equals:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{N_tk_t}{N_tk_t+N_{t-1}k_{t-1}}=n/(n+1)&lt;1
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the population growth rate. Thus, fiat money circulates more rapidly than capital, mirroring real-world differences in the liquidity of financial assets.</p>
+</section>
+</section>
+<section id="banking-in-the-olg-economy">
+<h2>Banking in the OLG Economy<a class="headerlink" href="#banking-in-the-olg-economy" title="Link to this heading">#</a></h2>
+<p>We now enrich the model by introducing a special type of institution which can commit to honouring debt contracts: a bank. Because banks can commit to repay, they are able to issue a new form of liquid asset–<strong>inside money</strong>.  Inside money refers to money created by the private sector, such as demand deposits or bank credit, which is backed by private loans. This contrasts with outside money, like fiat currency, which is issued by the government. We will see that the coexistence of inside and outside money depends on profitability and credibility conditions for banks.</p>
+<section id="the-deposit-contract">
+<h3>The Deposit Contract<a class="headerlink" href="#the-deposit-contract" title="Link to this heading">#</a></h3>
+<p>Suppose a bank offers the following deposit contract. In period <span class="math notranslate nohighlight">\(t\)</span>, the bank borrows one unit of good from a young depositor in exchange for a promised rate of return <span class="math notranslate nohighlight">\(n\)</span>. The bank invests that single good into the creation of capital, which yields <span class="math notranslate nohighlight">\(X&gt;n^2 after two periods. To honor its promise at \)</span>t+1<span class="math notranslate nohighlight">\(, the bank borrows from the next generation of young depositors, rolling over its liabilities one period at a time.   Depositors are willing to accept this contract if it offers at least as high a return as fiat currency, \)</span>n\geq n/z<span class="math notranslate nohighlight">\(, where \)</span>z<span class="math notranslate nohighlight">\( is the growth rate of the money supply.  Banks find the arrangement profitable since they earn \)</span>x&gt;n^2$ on their investment.  Consequently, inside money replaces outside money: deposits dominate currency as the preferred liquid asset.</p>
+<figure>
+    <img src="_static/figs_olg/banking.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Business plan of a bank.
+    </figcaption>
+</figure>
+<p>Consumers thus divide their saving between direct investment in capital (to finance consumption when old) and deposits in banks (to finance middle-age consumption).  Deposits are used by the banking sector to finance investment projects.  Although abstract, this description captures some salient features of modern economies.  Most highly liquid assets are not held in physical cash, but rather as deposits with some financial intermediary.  Most transactions occur by digitally debiting or crediting deposit accounts.  Banks value these deposits because they can be used to finance loans to businesses which are capital projects that yield some future rate of return.  Banks indeed have an asset maturity mismatch on their balance sheets where their liabilities (deposits) are short-term and their assets (loans/investments in capital) are long-term.</p>
+<p>Of course, if there exist profits in the business of banking then surely more banks will begin operations.  Absent any barriers, continued entry into the banking business erodes profits until banks offer a one-period interest rate <span class="math notranslate nohighlight">\(r=x\equiv X^{1/2}\)</span>. Hence, in competitive equilibrium, banks earn zero economic profit.</p>
+</section>
+<section id="portfolio-choice-with-banks">
+<h3>Portfolio Choice with Banks<a class="headerlink" href="#portfolio-choice-with-banks" title="Link to this heading">#</a></h3>
+<p>Each household now decides how much to save in bank deposits, <span class="math notranslate nohighlight">\(h_t\)</span>, and in capital, <span class="math notranslate nohighlight">\(k_t\)</span>. Deposits are liquid, providing returns after one period, while capital is illiquid, paying off after two periods. The individual’s problem is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+c_{1,t}+h_t+k_t &amp;\leq y \\
+c_{2,t+1} \leq r h_t \\
+c_{3,t+1} \leq X f(k_t)
+\end{align*}
+\end{split}\]</div>
+<p>An equilibrium consists of a path <span class="math notranslate nohighlight">\(\{c_{1,t},c_{2,t+1},c_{3,t+1},k_t\}_{t=1}^{\infty}\)</span> and a deposit rate <span class="math notranslate nohighlight">\(r\)</span> such that agents maximize utility and banks earn zero profits.</p>
+</section>
+</section>
+<section id="central-banking-in-the-olg-economy">
+<h2>Central Banking in the OLG Economy<a class="headerlink" href="#central-banking-in-the-olg-economy" title="Link to this heading">#</a></h2>
+<p>We now introduce a <strong>central bank</strong> into the model for two reasons.  First, in the previous model fiat currency was not valued in equilibrium once banks existed.  Not only is this counterfactual, but it also implies that prices would have to be expressed in a different unit of account. Introducing a central bank that imposes <strong>reserve requirements</strong> can restore a role for fiat money.  Second, this framework allows us to analyze how policy instruments—money growth, reserve ratios, and lending facilities—affect the economy.</p>
+<section id="the-banking-sector-balance-sheet">
+<h3>The Banking Sector Balance Sheet<a class="headerlink" href="#the-banking-sector-balance-sheet" title="Link to this heading">#</a></h3>
+<p>We continue with our three-period lived OLG environment with banks and illiquid capital, but add a reserve requirement.  Reserves, in practice, are vault cash and deposits held within Federal Reserve banks.  We suppose each bank is required to hold a fraction <span class="math notranslate nohighlight">\(\gamma\)</span> of their deposits as reserves.  The central bank controls both the reserve ratio <span class="math notranslate nohighlight">\(\gamma\)</span> and the growth rate of the money supply <span class="math notranslate nohighlight">\(z\)</span>.  Assume that capital pays return <span class="math notranslate nohighlight">\(X&gt;(n/z)^2\)</span> two periods after its creation.</p>
+<p>Letting total deposits in the banking system be <span class="math notranslate nohighlight">\(H\)</span>, the balance sheet of the banking sector is:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves (<span class="math notranslate nohighlight">\(\gamma H\)</span> )</p></td>
+<td><p>Deposits ( H )</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interest-bearing assets ( <span class="math notranslate nohighlight">\((1-\gamma)H\)</span> )</p></td>
+<td><p>Net worth ( 0 )</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Total assets ( <span class="math notranslate nohighlight">\(H\)</span>)</strong></p></td>
+<td><p><strong>Total liabilities ( <span class="math notranslate nohighlight">\(H\)</span> )</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Banks hold the minimum required reserves <span class="math notranslate nohighlight">\(\gamma H\)</span>, investing the remainder <span class="math notranslate nohighlight">\((1-\gamma)H\)</span> in interest-bearing assets such as capital.</p>
+</section>
+<section id="money-market-equilibrium">
+<h3>Money Market Equilibrium<a class="headerlink" href="#money-market-equilibrium" title="Link to this heading">#</a></h3>
+<p>Only banks hold fiat currency, since deposits dominate currency in return. The demand for fiat money arises entirely from the reserve requirement.  Equilibrium in the money market is therefore,</p>
+<div class="math notranslate nohighlight">
+\[
+\nu_t M_t=\gamma N_t h_t
+\]</div>
+<p>where the right hand side is real money demand by banks to satisfy their reserve requirements and the left hand side is real money supply. Solving for the price level gives,</p>
+<div class="math notranslate nohighlight">
+\[
+p_t=\frac{M_t}{\gamma N_t h_t}
+\]</div>
+<p>A higher reserve requirement or larger deposit base raises demand for reserves, thereby increasing the value of money (i.e., lowering the price level). Thus, the familiar quantity theory relationship holds: a one-time increase in the money supply produces a proportional increase in the price level.</p>
+</section>
+<section id="seigniorage">
+<h3>Seigniorage<a class="headerlink" href="#seigniorage" title="Link to this heading">#</a></h3>
+<p>Since fiat money is not held by households, all newly printed currency accrues to the government as seigniorage revenue:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+S_t&amp;=\nu_t(M_t-M_{t-1})\\
+	&amp;=\nu_t M_t\left(1-\frac{1}{z}\right)\\
+	&amp;=\gamma N_t h_t\left(1-\frac{1}{z}\right)
+\end{align*}
+\end{split}\]</div>
+<p>Seigniorage rises with the reserve requirement <span class="math notranslate nohighlight">\(\gamma\)</span>, the real stock of bank deposits <span class="math notranslate nohighlight">\(N_th_t\)</span>, and the rate of monetary expansion <span class="math notranslate nohighlight">\(z\)</span>.</p>
+</section>
+<section id="equilibrium-interest-rate">
+<h3>Equilibrium Interest Rate<a class="headerlink" href="#equilibrium-interest-rate" title="Link to this heading">#</a></h3>
+<p>A competitive equilibrium requires that banks earn zero profits.  Therefore, the equilibrium deposit rate is the weighted average of the returns on reserves and capital.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+r&amp;=\gamma\frac{n}{z}+(1-\gamma)x\\
+&amp;=x-\gamma\left[x-\frac{n}{z}\right]
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x=X^{1/2}\)</span> is the one-period return on capital. Increases in the reserve ratio or the money growth rate <span class="math notranslate nohighlight">\(z\)</span> reduce return on deposits.</p>
+</section>
+<section id="output-and-money-multipliers">
+<h3>Output and Money Multipliers<a class="headerlink" href="#output-and-money-multipliers" title="Link to this heading">#</a></h3>
+<p>Aggregate output in this economy equals the sum of the endowment of the young and the payoffs from both direct and indirect capital investment:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t=N_ty+N_{t-2}Xk_{t-2}+N_{t-2}X(1-\gamma)h_{t-2}
+\]</div>
+<p>We define the monetary aggregate <span class="math notranslate nohighlight">\(M1\)</span> as the total nominal stock deposits, whereas the stock of reserves is the <strong>monetary base</strong>.  Given reserve ratio <span class="math notranslate nohighlight">\(\gamma\)</span> we have that</p>
+<div class="math notranslate nohighlight">
+\[
+M1_t=\frac{M_t}{\gamma}
+\]</div>
+<p>The term <span class="math notranslate nohighlight">\(1/\gamma\)</span> is the familiar <strong>money multiplier</strong>.  The price level can then be expressed in terms of <span class="math notranslate nohighlight">\(M1\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+p_t=\frac{M_t}{\gamma N_th_t}=\frac{M1_t}{N_th_t}
+\]</div>
+<p>The quantity theory holds if <span class="math notranslate nohighlight">\(N_t h_t\)</span> does not depend on rate of return. If demand for deposits, <span class="math notranslate nohighlight">\(N_th_t\)</span> is affected by the rate of return on deposits, then the change in the price level depends on the tool used to change <span class="math notranslate nohighlight">\(M1\)</span>.  Specifically: a one-time increase in monetary base does not affect <span class="math notranslate nohighlight">\(r\)</span>; permanent increase in monetary base reduces <span class="math notranslate nohighlight">\(r\)</span>; and lower <span class="math notranslate nohighlight">\(\gamma\)</span> increase <span class="math notranslate nohighlight">\(M1\)</span> and raises <span class="math notranslate nohighlight">\(r\)</span>.</p>
+</section>
+<section id="central-banking-lending-facilities">
+<h3>Central Banking Lending Facilities<a class="headerlink" href="#central-banking-lending-facilities" title="Link to this heading">#</a></h3>
+<p>In practice, banks that fall short of their required reserves can obtain funds in several ways: by selling assets, borrowing from other banks in the <strong>interbank market</strong>, or borrowing directly from the central bank via a <strong>lending facility</strong>.  The purpose of central bank lending is to permit banks to meet reserve requirements without precipitously selling off interest-bearing assets.</p>
+<p>Let <span class="math notranslate nohighlight">\(\delta\)</span> denote the fraction of a bank’s reserves financed through central bank borrowing, and <span class="math notranslate nohighlight">\(\Gamma_t^B\)</span> the total nominal amount of borrowed reserves.  Total reserves are then <span class="math notranslate nohighlight">\(M_t+\Gamma_t^B\)</span> implying:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta=\frac{\Gamma_t^B}{\Gamma_t^B+M_t}
+\]</div>
+<p>The balance sheet of the banking sector becomes,</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Assets</strong></p></th>
+<th class="head"><p><strong>Liabilities</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Reserves (<span class="math notranslate nohighlight">\(\gamma H\)</span> )</p></td>
+<td><p>Deposits ( H )</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interest-bearing assets ( <span class="math notranslate nohighlight">\((1-\gamma)H\)</span> )</p></td>
+<td><p>Loan from central bank (<span class="math notranslate nohighlight">\(\delta \gamma H\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Net worth ( 0 )</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Total assets (<span class="math notranslate nohighlight">\(\gamma \delta H+H\)</span>)</strong></p></td>
+<td><p><strong>Total liabilities ( <span class="math notranslate nohighlight">\(\gamma \delta H+H\)</span> )</strong></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="price-level-and-borrowed-reserves">
+<h3>Price Level and Borrowed Reserves<a class="headerlink" href="#price-level-and-borrowed-reserves" title="Link to this heading">#</a></h3>
+<p>The market for reserves now clears when total reserve demand equals the sum of non-borrowed and borrowed reserves:</p>
+<div class="math notranslate nohighlight">
+\[
+\delta \gamma N_th_t+\nu_tM_t=\gamma N_th_t
+\]</div>
+<p>so that the equilibrium price is</p>
+<div class="math notranslate nohighlight">
+\[
+p_t=\frac{M_t}{\gamma(1-\delta)N_th_t}
+\]</div>
+<p>More central bank lending increases the supply of reserves, lowering the value of money (raising the price level). Effectively, lending reduces the “effective” reserve ratio from <span class="math notranslate nohighlight">\(\gamma\)</span> to <span class="math notranslate nohighlight">\(\gamma(1-\delta)\)</span>, allowing greater deposit creation.</p>
+<p>The market for reserves clears when</p>
+<div class="math notranslate nohighlight">
+\[
+\gamma M1_t=\delta \gamma M1_t+M_t
+\]</div>
+<p>so that the money multiplier now becomes</p>
+<div class="math notranslate nohighlight">
+\[
+M1_t=\frac{M_t}{\gamma(1-\delta)}
+\]</div>
+<p>By requiring banks to hold less vault cash and supplying borrowed reserves, it allows banks to issue more deposits per unit of reserves.  Therefore, the money multiplier increases to <span class="math notranslate nohighlight">\(1/(\gamma(1-\delta))\)</span>.</p>
+</section>
+<section id="endogenous-borrowing-and-the-discount-rate">
+<h3>Endogenous Borrowing and the Discount Rate<a class="headerlink" href="#endogenous-borrowing-and-the-discount-rate" title="Link to this heading">#</a></h3>
+<p>In reality, the central bank does not fix <span class="math notranslate nohighlight">\(\delta\)</span> directly.  Instead, it chooses the interest rate on reserve loans (the <strong>discount rate</strong>), call it <span class="math notranslate nohighlight">\(\psi\)</span>, and allows banks to decide how much to borrow.  We can therefore write the equilibrium deposit rate as,</p>
+<div class="math notranslate nohighlight">
+\[
+r=\gamma\frac{n}{z}+[1-\gamma(1-\delta)]x-\psi \delta \gamma
+\]</div>
+<p>But notice that we have knife-edge equilibria with respect to borrowed reserves: if <span class="math notranslate nohighlight">\(\psi&gt;x\)</span>, then no bank borrows; if if <span class="math notranslate nohighlight">\(\psi&lt;x\)</span>, then bank demand unbounded amount of borrowed reserves; and if <span class="math notranslate nohighlight">\(\psi=x\)</span> then banks are indifferent between borrowing or not resulting in indeterminate amount of borrowed reserves and, by extension, the price level.  To obtain a well-defined solution, we can assume diminishing returns to capital: <span class="math notranslate nohighlight">\(f(k)\)</span> where <span class="math notranslate nohighlight">\(f(0)=0, f'(0)=\infty\)</span>, and <span class="math notranslate nohighlight">\(f''(k)&lt;0\)</span>.  In this case, banks borrow reserves up to the point where the marginal return on capital equals the cost of borrowing:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(k)=\psi
+\]</div>
+<p>Since total interest-bearing assets are <span class="math notranslate nohighlight">\(k=\Gamma^B+(1-\gamma)H\)</span>, this condition determines equilibrium borrowing <span class="math notranslate nohighlight">\(\Gamma^B\)</span> and, in turn, <span class="math notranslate nohighlight">\(\delta = \Gamma^B/(\Gamma^B+M)\)</span>.  Substituting these values gives the equilibrium interest rate and deposit holdings consistent with optimal behavior by both banks and households.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="olg-government-example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">An Example of a Monetary OLG Model with A Government Sector</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="diamond-dybvig.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Diamond-Dybvig Model of Banking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-capital-investment-and-private-debt">Long-Term Capital Investment and Private Debt</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#private-debt-and-collateral">Private Debt and Collateral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-consumer-s-problem">The Consumer’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation-and-walras-law">Interpretation and Walras’ Law</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illiquid-capital-and-fiat-money">Illiquid Capital and Fiat Money</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-and-the-role-of-fiat-money">Portfolio Choice and the Role of Fiat Money</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#banking-in-the-olg-economy">Banking in the OLG Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-deposit-contract">The Deposit Contract</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-with-banks">Portfolio Choice with Banks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#central-banking-in-the-olg-economy">Central Banking in the OLG Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-banking-sector-balance-sheet">The Banking Sector Balance Sheet</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#money-market-equilibrium">Money Market Equilibrium</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seigniorage">Seigniorage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-interest-rate">Equilibrium Interest Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-and-money-multipliers">Output and Money Multipliers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#central-banking-lending-facilities">Central Banking Lending Facilities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#price-level-and-borrowed-reserves">Price Level and Borrowed Reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endogenous-borrowing-and-the-discount-rate">Endogenous Borrowing and the Discount Rate</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

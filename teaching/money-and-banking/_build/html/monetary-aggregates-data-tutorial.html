@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Monetary Aggregates Data Tutorial &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'monetary-aggregates-data-tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Empirical Monetary Facts" href="monetary-facts.html" />
+    <link rel="prev" title="OLG Model of Money Details" href="olg-model-details.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/monetary-aggregates-data-tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Monetary Aggregates Data Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-data">Pulling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-and-visualizing-the-data">Describing and visualizing the data</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monetary-aggregates-data-tutorial">
+<h1>Monetary Aggregates Data Tutorial<a class="headerlink" href="#monetary-aggregates-data-tutorial" title="Link to this heading">#</a></h1>
+<p>In this tutorial we will download monetary aggregate data from Federal Reserve Economic Data (FRED).  The FRED database contains frequently updated macro data from various sources—most of which are US government agencies.  You can peruse data on their website (<a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a>) and search for specific data series.  However, in this tutorial I’ll show how to access data from their servers directly using an API (application programming interface).</p>
+<p>Let’s work within Python and use the package <code class="docutils literal notranslate"><span class="pre">fredapi</span></code>  (<a class="reference external" href="https://fred.stlouisfed.org/docs/api/fred/">https://fred.stlouisfed.org/docs/api/fred/</a>) which makes use of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and returns FRED data to you in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a structure that contains two-dimensional data and its corresponding labels.  So basically a table.  You can see how to work with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> here: <a class="reference external" href="https://realpython.com/pandas-dataframe/">https://realpython.com/pandas-dataframe/</a>.  Playing with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is only useful after you successfully pull the data from FRED and want to view/query/manipulate the resulting table of data.</p>
+<p>From a Python terminal (in VSCode, Jupyter, etc.) run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">fredapi</span>
+</pre></div>
+</div>
+<p>This installs the necessary Python package to contact the FRED servers directly and download data.</p>
+<p>According to the Federal Reserve of the US the <strong>money supply</strong> is the total amount of money–cash, coins and balances in bank account–in circulation.  There are several different <strong>monetary aggregates</strong> which measure the money supply.  These monetary aggregates categorize difference assets based on their liquidity.</p>
+<ul class="simple">
+<li><p>Monetary aggregate M0 is currency held by the non-bank public.</p></li>
+<li><p>The <strong>monetary base</strong>, or <strong>MB</strong>, is the sum of M0 and reserve balances, or deposits held by banks and other depository institutions in their accounts at the Federal Reserve.</p></li>
+<li><p>Monetary aggregate <strong>M1</strong> is the sum of M0 and deposits, other checkable deposits (OCDs), and savings deposits (including money market deposit accounts).  Deposits include balances held in checking accounts and other highly liquid deposits used for transactions.  It measures currency held outside of the U.S. Treasury, Federal Reserve Banks, and the vaults of depository institutions.</p></li>
+<li><p>Monetary aggregate <strong>M2</strong> is the sum of M1 and small-denomination time deposits (less than $100,000) and retail money market mutual funds.</p></li>
+<li><p>Monetary aggregate <strong>M3</strong> is the sum of M2 and large-denomination time deposits (greater than $100,000), balances in institutional money market mutual funds, repos issued by depository institutions, and Eurodollars held by US residents at foreign branches of US banks.</p></li>
+</ul>
+<p>Data on the monetary aggregates are released every month in the Federal Reserve’s H.6statistical release, <a href="https://www.federalreserve.gov/releases/h6/current/default.htm" target="_blank">Money Stock Measures</a>.</p>
+<section id="pulling-data">
+<h2>Pulling data<a class="headerlink" href="#pulling-data" title="Link to this heading">#</a></h2>
+<p>First, get an API key from FRED (<a class="reference external" href="https://fred.stlouisfed.org/docs/api/api_key.html">https://fred.stlouisfed.org/docs/api/api_key.html</a>). This allows you to access <code class="docutils literal notranslate"><span class="pre">fredapi</span></code> to pull data.  One you have your API key, create a new Python code file (in VSCode, Jupyter, etc) use this code to pass the API key directly to FRED.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;insert api key here&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can always search for data series on the FRED website <a class="reference external" href="https://fred.stlouisfed.org/">https://fred.stlouisfed.org/</a>, but sometimes it is more convenient to search programmatically. <code class="docutils literal notranslate"><span class="pre">fredapi</span></code> provides a <code class="docutils literal notranslate"><span class="pre">search()</span></code> method that does a full-text search and returns a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> of results.  For example, suppose that we want to download US GDP data.  Use the search function to find the name of the series:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+<span class="n">fred</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;monetary aggregate&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>realtime_start</th>
+      <th>realtime_end</th>
+      <th>title</th>
+      <th>observation_start</th>
+      <th>observation_end</th>
+      <th>frequency</th>
+      <th>frequency_short</th>
+      <th>units</th>
+      <th>units_short</th>
+      <th>seasonal_adjustment</th>
+      <th>seasonal_adjustment_short</th>
+      <th>last_updated</th>
+      <th>popularity</th>
+      <th>notes</th>
+    </tr>
+    <tr>
+      <th>series id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>M2SL</th>
+      <td>M2SL</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>M2</td>
+      <td>1959-01-01</td>
+      <td>2025-08-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Billions of Dollars</td>
+      <td>Bil. of $</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2025-09-23 12:00:50-05:00</td>
+      <td>98</td>
+      <td>announcements (https://www.federalreserve.gov/...</td>
+    </tr>
+    <tr>
+      <th>WM2NS</th>
+      <td>WM2NS</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>M2</td>
+      <td>1980-11-03</td>
+      <td>2025-09-01</td>
+      <td>Weekly, Ending Monday</td>
+      <td>W</td>
+      <td>Billions of Dollars</td>
+      <td>Bil. of $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-09-23 12:00:59-05:00</td>
+      <td>88</td>
+      <td>announcements (https://www.federalreserve.gov/...</td>
+    </tr>
+    <tr>
+      <th>M2NS</th>
+      <td>M2NS</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>M2</td>
+      <td>1959-01-01</td>
+      <td>2025-08-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Billions of Dollars</td>
+      <td>Bil. of $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-09-23 12:00:49-05:00</td>
+      <td>64</td>
+      <td>announcements (https://www.federalreserve.gov/...</td>
+    </tr>
+    <tr>
+      <th>M1SL</th>
+      <td>M1SL</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>M1</td>
+      <td>1959-01-01</td>
+      <td>2025-08-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Billions of Dollars</td>
+      <td>Bil. of $</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2025-09-23 12:00:47-05:00</td>
+      <td>84</td>
+      <td>announcements (https://www.federalreserve.gov/...</td>
+    </tr>
+    <tr>
+      <th>WM1NS</th>
+      <td>WM1NS</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>M1</td>
+      <td>1975-01-06</td>
+      <td>2025-09-01</td>
+      <td>Weekly, Ending Monday</td>
+      <td>W</td>
+      <td>Billions of Dollars</td>
+      <td>Bil. of $</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2025-09-23 12:00:57-05:00</td>
+      <td>68</td>
+      <td>announcements (https://www.federalreserve.gov/...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>MABMBM01EZQ661S</th>
+      <td>MABMBM01EZQ661S</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
+      <td>1970-01-01</td>
+      <td>2013-07-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>Index 2010=1</td>
+      <td>Index 2010=1</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2014-02-05 08:33:02-06:00</td>
+      <td>1</td>
+      <td>OECD descriptor ID: MABMBM01 OECD unit ID: IXO...</td>
+    </tr>
+    <tr>
+      <th>MABMBM01EZQ657S</th>
+      <td>MABMBM01EZQ657S</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
+      <td>1970-04-01</td>
+      <td>2013-07-01</td>
+      <td>Quarterly</td>
+      <td>Q</td>
+      <td>Growth Rate Previous Period</td>
+      <td>Growth Rate Previous Period</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2014-02-05 08:33:02-06:00</td>
+      <td>1</td>
+      <td>OECD descriptor ID: MABMBM01 OECD unit ID: GPS...</td>
+    </tr>
+    <tr>
+      <th>MABMBM01EZA659S</th>
+      <td>MABMBM01EZA659S</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
+      <td>1971-01-01</td>
+      <td>2012-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Growth Rate Same Period Previous Year</td>
+      <td>Growth Rate Same Period Previous Yr.</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2014-02-05 08:33:05-06:00</td>
+      <td>1</td>
+      <td>OECD descriptor ID: MABMBM01 OECD unit ID: GYS...</td>
+    </tr>
+    <tr>
+      <th>MANMNM01USM657S</th>
+      <td>MANMNM01USM657S</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>Narrow Money, Index for the United States (DIS...</td>
+      <td>1959-02-01</td>
+      <td>2013-12-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Growth Rate Previous Period</td>
+      <td>Growth Rate Previous Period</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2014-05-05 09:22:26-05:00</td>
+      <td>1</td>
+      <td>OECD descriptor ID: MANMNM01 OECD unit ID: GPS...</td>
+    </tr>
+    <tr>
+      <th>MANMNM01USM661S</th>
+      <td>MANMNM01USM661S</td>
+      <td>2025-10-23</td>
+      <td>2025-10-23</td>
+      <td>Narrow Money, Index for the United States (DIS...</td>
+      <td>1959-01-01</td>
+      <td>2013-12-01</td>
+      <td>Monthly</td>
+      <td>M</td>
+      <td>Index 2010=1</td>
+      <td>Index 2010=1</td>
+      <td>Seasonally Adjusted</td>
+      <td>SA</td>
+      <td>2014-05-05 09:22:26-05:00</td>
+      <td>1</td>
+      <td>OECD descriptor ID: MANMNM01 OECD unit ID: IXO...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 15 columns</p>
+</div></div></div>
+</div>
+<p>Using the results of the search function, we see that ‘M1SL’ and ‘M2SL’ are the series IDs for monetary aggregate M1 and M2.  Let’s download data for M0, MB, M1, and M2.  (Note: There are several options for pulling specific vintages of data.  The details can be found here: <a class="reference external" href="https://pypi.org/project/fredapi/.">https://pypi.org/project/fredapi/.</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+
+<span class="c1"># Pull monetary aggregate data from Fred</span>
+<span class="n">m0</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;CURRSL&#39;</span><span class="p">)</span>
+<span class="n">mb</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;BOGMBASE&#39;</span><span class="p">)</span>
+<span class="n">m1</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;M1SL&#39;</span><span class="p">)</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;M2SL&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="describing-and-visualizing-the-data">
+<h2>Describing and visualizing the data<a class="headerlink" href="#describing-and-visualizing-the-data" title="Link to this heading">#</a></h2>
+<p>We now have the data series saved variables called <code class="docutils literal notranslate"><span class="pre">m0,</span> <span class="pre">mb,</span> <span class="pre">m1,</span> <span class="pre">m2</span></code>.  There are some useful commands using <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> that allows you to view your data series.  The <code class="docutils literal notranslate"><span class="pre">shape</span></code> function returns the size of the data set describing the number of rows and number of columns.  The <code class="docutils literal notranslate"><span class="pre">ndim</span></code> function returns the dimension of your data.  If you want to view the series you assigned to the variable <code class="docutils literal notranslate"><span class="pre">data</span></code>, then you can use the <code class="docutils literal notranslate"><span class="pre">head()</span></code> function, which gives the first (default 5) <span class="math notranslate nohighlight">\(n\)</span> rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>; or you can use <code class="docutils literal notranslate"><span class="pre">tail()</span></code> function to give the last (default 5) <span class="math notranslate nohighlight">\(n\)</span> rows from a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. The <code class="docutils literal notranslate"><span class="pre">describe()</span></code> function returns basic statistics: the value count, mean, standard deviation, minimum, maximum, and 25th, 50th, and 75th quantiles for the data in a column.  (NOTE: Running the Python code in a Jupyter notebook has some advantages if you want a pretty view of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  This is done in Jupyter’s “DataViewer”.)</p>
+<p>For example, let’s view the most recent monthly values for M2:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m0</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-04-01    2287.8
+2025-05-01    2292.7
+2025-06-01    2300.1
+2025-07-01    2311.4
+2025-08-01    2319.9
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s also visualize the data series using the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> package.  If it’s not already installed, don’t forget to do that</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+<p>You can now use the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> function to visualize the data.  This function, applied to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> will plot all of the columns with labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Plot monetary aggregates</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M0&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mb</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MB&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M2&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Billions of Dollars&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Monetary aggregates for the US: 1947-2025&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a7902a7d719b2cfd8a657963aabacc27fe01f25f1aa5f94c5f365368bde65a35.png" src="_images/a7902a7d719b2cfd8a657963aabacc27fe01f25f1aa5f94c5f365368bde65a35.png" />
+</div>
+</div>
+<p>There is a striking pattern in the data: M1 jumped up immensely in May 2020.  The reason for this is that the Federal Reserve redefined M1 to include savings deposits in May 2020.  On April 24, 2020 the Federal Reserve announced that Regulation D—a requirement that banks hold reserves against checkable deposits, but not savings or money market accounts—would no longer impose limits on the number of transactions or withdrawals permitted on savings deposit accounts.  <a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20200424a.htm" target="_blank">This amendment</a> rendered savings deposits just as liquid as other highly liquid accounts (OCDs) and therefore rightly belong in the definition of M1.  Since May 2020, OCDs and savings deposits are not reported separately but instead reported as their sun under <a href="https://fred.stlouisfed.org/series/MDLNWM" target="_blank">”other liquid deposits”</a>.</p>
+<p>It’s also clear that all monetary aggregates have experienced growth over time.  The Federal Reserve has been consistently increasing the money supply.  The growth rate of MB and M1 appeared smooth until the Great Recession, at which point there was a marked rise in both their level and growth rate.  A similar, even more dramatic, increase occurred red during the COVID-19 recession.</p>
+<p>Let’s compute the year-over-year growth rate of all monetary aggregates to see if any other patterns emerge.  To do so we will build a very simple <code class="docutils literal notranslate"><span class="pre">function</span></code> in Python which computes the 12 month percentage change in our <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>.  We then apply the function to each of our monetary aggregate series and plot the results.  (Of course we could easily have computed the percentage change for each series directly, e.g. <code class="docutils literal notranslate"><span class="pre">m0_yoy=m0.pct_change(periods=12)*100</span></code>, but it’s a good opportunity to learn how to build a <code class="docutils literal notranslate"><span class="pre">function</span></code>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the function to compute the year-over-year growth rate</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_yoy_growth</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># Calculate YoY growth using the value column</span>
+    <span class="n">yoy_series</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="n">periods</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+    <span class="k">return</span> <span class="n">yoy_series</span>
+
+<span class="c1"># Apply the function to each series</span>
+<span class="n">m0_yoy</span> <span class="o">=</span> <span class="n">calculate_yoy_growth</span><span class="p">(</span><span class="n">m0</span><span class="p">)</span>
+<span class="n">mb_yoy</span> <span class="o">=</span> <span class="n">calculate_yoy_growth</span><span class="p">(</span><span class="n">mb</span><span class="p">)</span>
+<span class="n">m1_yoy</span> <span class="o">=</span> <span class="n">calculate_yoy_growth</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
+<span class="n">m2_yoy</span> <span class="o">=</span> <span class="n">calculate_yoy_growth</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
+
+<span class="c1"># Plot the results</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m0_yoy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M0 YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mb_yoy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MB YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m1_yoy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M1 YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m2_yoy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M2 YoY growth&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Monetary aggregate growth rates for the US: 1947-2025&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6d0e8c392416a96b09ab4afe2d2b10972afa5e0c0601fd2e812d4a0596b54ea7.png" src="_images/6d0e8c392416a96b09ab4afe2d2b10972afa5e0c0601fd2e812d4a0596b54ea7.png" />
+</div>
+</div>
+<p>This figure validates our earlier observation that money supply growth was very stable up until the Great Recession.  Let’s compute the average growth rate for each monetary aggregate from 1970 to 2008:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">average_growth_by_period</span><span class="p">(</span><span class="n">df_yoy</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">):</span>
+    <span class="c1"># Filter the data for a specified period</span>
+    <span class="n">period</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_yoy</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_yoy</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">)</span>
+    <span class="c1"># Compute the mean</span>
+    <span class="k">return</span> <span class="n">df_yoy</span><span class="p">[</span><span class="n">period</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">m0_yoy_mean</span><span class="o">=</span><span class="n">average_growth_by_period</span><span class="p">(</span><span class="n">m0_yoy</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">2008</span><span class="p">)</span>
+<span class="n">mb_yoy_mean</span><span class="o">=</span><span class="n">average_growth_by_period</span><span class="p">(</span><span class="n">mb_yoy</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">2008</span><span class="p">)</span>
+<span class="n">m1_yoy_mean</span><span class="o">=</span><span class="n">average_growth_by_period</span><span class="p">(</span><span class="n">m1_yoy</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">2008</span><span class="p">)</span>
+<span class="n">m2_yoy_mean</span><span class="o">=</span><span class="n">average_growth_by_period</span><span class="p">(</span><span class="n">m2_yoy</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">2008</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average Growth Rates (1970-2008)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;M0: </span><span class="si">{</span><span class="n">m0_yoy_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MB: </span><span class="si">{</span><span class="n">mb_yoy_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;M1: </span><span class="si">{</span><span class="n">m1_yoy_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;M2: </span><span class="si">{</span><span class="n">m2_yoy_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average Growth Rates (1970-2008)
+========================================
+M0: 7.64%
+MB: 6.92%
+M1: 5.25%
+M2: 6.95%
+</pre></div>
+</div>
+</div>
+</div>
+<p>Over the period 1970-2008 all monetary aggregates grew somewhere between 5 and 8 percent per year on average.  Now Let’s zoom in to get a clearer perspective:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the yoy growth for a specified period of time</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;2000&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m0_yoy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M0 YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mb_yoy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MB YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m1_yoy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M1 YoY growth&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">m2_yoy</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;M2 YoY growth&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Years&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Monetary aggregate growth rates for the US: 2000-2025&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/49b2f7cc8d1a9a86491731c8e7dd663cf95f51aa31023161170dcabbbecb8aee.png" src="_images/49b2f7cc8d1a9a86491731c8e7dd663cf95f51aa31023161170dcabbbecb8aee.png" />
+</div>
+</div>
+<p>Now we can see that around the Great Recession most of the variability in money supply is from the monetary base.  The reason is that there was a massive injection of reserves to save the financial sector in immediate aftermath of the subprime mortgage crisis.  Since reserves are counted as part of the monetary base, but no other monetary aggregate, we observe much more volatility of this series.  Subsequent actions by the Federal Reserve to manage liquidity via the market for reserves had similar effects on volatility.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="olg-model-details.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OLG Model of Money Details</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="monetary-facts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Empirical Monetary Facts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pulling-data">Pulling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#describing-and-visualizing-the-data">Describing and visualizing the data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Measuring the Macroeconomy &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'macro_measuring_the_economy';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GDP Data Tutorial: Using the FRED API with Python" href="gdp-data-tutorial.html" />
+    <link rel="prev" title="Macroeconomics" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Measuring the Economy</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="labor-data-tutorial.html">Labor Data Tutorial</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/macro_measuring_the_economy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Measuring the Macroeconomy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-size-of-the-economy">Measuring the Size of the Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-added-and-supply-chains">Value Added and Supply Chains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-ways-of-measuring-gdp">Three Ways of Measuring GDP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-economic-output">Categorizing Economic Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-funds">Flow of Funds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-for-prices-real-vs-nominal-gdp">Controlling for Prices: Real vs. Nominal GDP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-gdp-across-countries">Comparing GDP Across Countries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gdp-data">Visualizing GDP Data</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="measuring-the-macroeconomy">
+<h1>Measuring the Macroeconomy<a class="headerlink" href="#measuring-the-macroeconomy" title="Link to this heading">#</a></h1>
+<p>This chapter introduces concepts and data for measuring the economic performance of countries over long periods of time.  We seek to measure the total value of goods and services that a nation produces and how this generates income and wellbeing for its citizens.</p>
+<p>In this chapter we address the following questions:</p>
+<ul class="simple">
+<li><p>How do economists measure economic performance?</p></li>
+<li><p>What variables drive long-term economic growth?</p></li>
+<li><p>Why do countries differ in their levels of prosperity?</p></li>
+</ul>
+<p>By the end of this chapter you should be able to collect and use <strong>macroeconomic data</strong> to summarize <strong>national income</strong>.  We will disentangle the role of price and quantity when measuring the total economic output of a country and discuss what adjustments are necessary to make macroeconomic data comparable across countries.  After we understand how to measure long-run economic performance, subsequent chapters will focus on combining theory and data to <strong>quantify the sources of economic growth</strong>.</p>
+<section id="measuring-the-size-of-the-economy">
+<h2>Measuring the Size of the Economy<a class="headerlink" href="#measuring-the-size-of-the-economy" title="Link to this heading">#</a></h2>
+<p>The most important measure of economic performance is called <strong>gross domestic product</strong>, or <strong>GDP</strong>, which measures the market value of all final goods and services produced within a country over a certain period of time.</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Gross Domestic Product (GDP)</p>
+<p>The total market value of all final goods and services produced within a country over a period of time.</p>
+</div>
+<p>This definition contains three important ideas:</p>
+<ol class="arabic simple">
+<li><p>Market value: Prices provide weights so that we can add apples, smartphones, and airplane tickets together.</p></li>
+<li><p>Final goods and services: We count only goods purchased by the final user to avoid double-counting. For example, the value of flour is not included separately if it is used to bake bread that is sold.</p></li>
+<li><p>Within a country: GDP measures production within national borders, regardless of whether the producer is foreign-owned.</p></li>
+</ol>
+<p>GDP is a broad statistic: it captures the size of the economy, allows comparisons across countries, and provides insights into living standards and economic growth.  Economists, policymakers, businesses, and journalists often refer to GDP because it helps answer key questions:</p>
+<ul class="simple">
+<li><p>Is the economy expanding or contracting?</p></li>
+<li><p>How does a country’s economic output compare to others?</p></li>
+<li><p>Are people, on average, better off than in the past?</p></li>
+</ul>
+<p>GDP is not a perfect measure of welfare, but it provides a useful baseline.</p>
+<div style="text-align: center;">
+<img src="_static/figs_LR/gdp-per-capita.png" 
+     alt="GDP per capita of six countries" 
+     width="800">
+</div>
+<p>The way we compute GDP is to add up the value produced by every firm in the economy.  But even this simple calculation poses important questions:</p>
+<ul class="simple">
+<li><p>How do we separate the value contributed by a singe company from the value contributed by another when most goods involve supply chains?</p></li>
+<li><p>How do we control for changes in prices (which are unrelated to the <em>quantity</em> of goods produced)?</p></li>
+<li><p>Does GDP, which is a measure of production, give us any insight into how much <em>income</em> a country has?</p></li>
+</ul>
+<section id="value-added-and-supply-chains">
+<h3>Value Added and Supply Chains<a class="headerlink" href="#value-added-and-supply-chains" title="Link to this heading">#</a></h3>
+<p>Modern economies are built on complex supply chains. To avoid counting the same production multiple times, economists use the concept of value added:</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Value Added</p>
+<p>The value of a firm’s output minus the value of intermediate goods purchased from other firms.  The phone sells for 40 million yuan, and imported components cost 6 million yuan.</p>
+</div>
+<div class="example admonition">
+<p class="admonition-title">Example: Calculating Value Added for a Phone Manufacturer</p>
+<p>Suppose a company assembles smartphones using parts imported from abroad.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Sales revenue</p></th>
+<th class="head text-right"><p>40,000,000</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Expenses</p></td>
+<td class="text-right"><p>26,000,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Wages</p></td>
+<td class="text-right"><p>20,000,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cost of goods sold</p></td>
+<td class="text-right"><p>6,000,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>————–</p></td>
+<td class="text-right"><p>————–</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Net Income</p></td>
+<td class="text-right"><p>14,000,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>How much does this company contribute to GDP?</p>
+<p>We base GDP on <strong>value added</strong>, not sales.  To compute GDP for a country, we sum the value added of every production unit in the economy.  Notice that we could have also measured value added as the sum of payments to labor and capital:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{value added}= 40 - 6 = 20 + 14 = \text{payments to labor and capital}
+\]</div>
+<p>which shows that the value based on production and income are the same.  More on this later…</p>
+</div>
+</section>
+<section id="three-ways-of-measuring-gdp">
+<h3>Three Ways of Measuring GDP<a class="headerlink" href="#three-ways-of-measuring-gdp" title="Link to this heading">#</a></h3>
+<p>When we compare the GDPs of two countries, we presume that the country with the larger GDP produces more in some useful sense.  Suppose Country A produces 10 billion apples and Country B produces 10 billion durian.  Who produces more?  We use market prices to tell us which goods are more valuable, apples or durian. Things can get tricky when prices do not reflect market forces.  North Korea, for example, does not have market prices so assigning meaningful measure of GDP is difficult. Since every transaction has both a buyer and a seller, we can approach measuring value added from (at least) two directions.</p>
+<p>Example: Imagine a rural economy made up of only farmers and fisherman.  The farmers harvest vegetables while the fishermen catch fish.</p>
+<ul class="simple">
+<li><p>How do we measure GDP for this economy?</p></li>
+<li><p>How do we measure income (GNI) in this economy?</p></li>
+</ul>
+<p>Annual GDP in this economy is the total value of vegetables and fish produced during the year.  Assuming that all the vegetables and fish are sold (perhaps the fisherman buy vegetables, and the farmers buy fish), then the <strong>value of production</strong> must also equals the <strong>value of expenditure</strong>.  Furthermore, since each purchase is money in the pocket of farmers and fishermen, we also have that the annual GDP is equal to <strong>total income</strong> in the economy.</p>
+<p>GDP can be viewed from three complementary perspectives:</p>
+<ol class="arabic simple">
+<li><p>Production approach: Sum of value added across all firms.</p></li>
+<li><p>Expenditure approach: Total spending on final goods and services.</p></li>
+<li><p>Income approach: Total income earned by factors of production.</p></li>
+</ol>
+<p>These three perspectives give rise to a fundamental accounting identity:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{production} = \text{expenditure} = \text{income}
+\]</div>
+<p>We can compute the size of an economy by either measuring the value added market value of goods and services produced, the amount spent on goods and services, or the amount of income earned.</p>
+<p>Here is an example of different types of income:</p>
+<p><img src="_static/figs_LR/CCD_2.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+<p>In practice, small discrepancies arise due to imperfect data, which is why statistical agencies report a “statistical discrepancy.”</p>
+</section>
+<section id="categorizing-economic-output">
+<h3>Categorizing Economic Output<a class="headerlink" href="#categorizing-economic-output" title="Link to this heading">#</a></h3>
+<p>The most common way of categorizing expenditure is into four broad components:</p>
+<ul class="simple">
+<li><p><strong>Consumption</strong> (<span class="math notranslate nohighlight">\(C\)</span>) is spending by households on goods and services (e.g. I buy a Xiaomi 11)</p></li>
+<li><p><strong>Investment</strong> (<span class="math notranslate nohighlight">\(I\)</span>) is business spending on capital goods, plus residential construction and changes in inventories (e.g. construction of a new building or purchasing a new machine)</p></li>
+<li><p><strong>Government spending</strong> (<span class="math notranslate nohighlight">\(G\)</span>) is both consumption and investment done by the government (e.g. defense spending)</p></li>
+<li><p><strong>Net exports</strong> (<span class="math notranslate nohighlight">\(NX\)</span>) is the difference between what a country exports and what it imports</p></li>
+</ul>
+<p>Here’s an example of expenditures for the United States</p>
+<p><img src="_static/figs_LR/CCD_3.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+<p>A fundamental macroeconomic identity relates the value of production to the value of expenditure:</p>
+<div class="definition admonition" id="national-accounting-identity">
+<p class="admonition-title">Definition: National Expenditure Accounting Identify</p>
+<p>The national accounting identity states that a countries total expenditure must equal its total production</p>
+<div class="math notranslate nohighlight">
+\[
+Y = C+I+G+NX
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(Y\)</span> denotes GDP and <span class="math notranslate nohighlight">\(C,I,G,\)</span> and <span class="math notranslate nohighlight">\(NX\)</span> denote the different components of gross national national expenditure (GNE).</p>
+</div>
+<p><img src="_static/figs_LR/gdp_3.png" 
+    alt="Manufacturer example" 
+    align="left" 
+    width="400">
+<img src="_static/figs_LR/gdp_4.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+</section>
+<section id="flow-of-funds">
+<h3>Flow of Funds<a class="headerlink" href="#flow-of-funds" title="Link to this heading">#</a></h3>
+<p>We can also use the national accounting identity to reveal useful information about how much a country saves, which happens to be very relevant for international trade.  We can write</p>
+<div class="math notranslate nohighlight">
+\[
+S \equiv Y-C-G = I + NX
+\]</div>
+<p>where we define national savings to be national income (<span class="math notranslate nohighlight">\(Y\)</span>) less private consumption (<span class="math notranslate nohighlight">\(C\)</span>) and public consumption (<span class="math notranslate nohighlight">\(G\)</span>). This <strong>flow of funds identity</strong></p>
+<div class="definition admonition" id="flow-of-funds-identity">
+<p class="admonition-title">Definition: Flow of Funds Identify</p>
+<p>A nation total savings equals its savings and trade flows</p>
+<div class="math notranslate nohighlight">
+\[
+S = I+NX
+\]</div>
+</div>
+<p>Identify {ref}’flow-of-funds-identity’ reveals something very interesting: a country’s ability to invest and purchase foreign goods is constrained by its savings. We can think of savings <span class="math notranslate nohighlight">\(S=Y-C-G\)</span> as a source of funds use to accumulate new capital (<span class="math notranslate nohighlight">\(I\)</span>) or purchase foreign goods (<span class="math notranslate nohighlight">\(NX\)</span>).</p>
+<p>This identity does <strong>not</strong> imply causality. For example, low savings does not cause low output. These are accounting relationships, not behavioral laws.</p>
+<div class="example admonition">
+<p class="admonition-title">Example: Calculating Value Added for a Phone Manufacturer</p>
+<p>Let’s return to the phone manufacturer</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Sales revenue</p></th>
+<th class="head text-right"><p>40,000,000</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Expenses</p></td>
+<td class="text-right"><p>26,000,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Wages</p></td>
+<td class="text-right"><p>20,000,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cost of goods sold</p></td>
+<td class="text-right"><p>6,000,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>————–</p></td>
+<td class="text-right"><p>————–</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Net Income</p></td>
+<td class="text-right"><p>14,000,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>And now suppose that 10 million of the 40 million in sales are sold abroad; assume that investment and government spending are zero; and assume that this phone manufacturer is the only company in the economy.</p>
+<p>What are GDP, GNE, GNI, S and NX?</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+GDP &amp;= 40 - 6 = 34 \\
+GNE &amp;= 30 + (10-6) = 34 \\
+GNI &amp;= 20 + 14 = 34 \\
+S &amp;= 34-30 = 4 \\
+NX &amp;= 10-6 = 4
+\end{align*}
+\end{split}\]</div>
+</div>
+<ul class="simple">
+<li><p>There is no <em>causal</em> relationship implied by national accounting identities.  For example, you can’t say that low consumption is causing low output based on the identity, because you could as easily say that consumption fell because output fell.  Don’t reach for causal conclusions using identities.</p></li>
+<li><p>GDP excludes the underground economy—economic activities that are not reported.  In some developing economies these underground economies can be quite large.</p></li>
+<li><p>Capital gains are excluded from GDP and savings, because they do not reflect the production and sale of current output.  Interestingly, net worth can rise or fall even when savings is zero.</p></li>
+</ul>
+</section>
+<section id="controlling-for-prices-real-vs-nominal-gdp">
+<h3>Controlling for Prices: Real vs. Nominal GDP<a class="headerlink" href="#controlling-for-prices-real-vs-nominal-gdp" title="Link to this heading">#</a></h3>
+<p>Usually when economists refer to GDP, they are talking about <strong>real GDP</strong>.  Real GDP controls for the effect of changing prices in order to more accurately measure the production of goods and services.  <strong>Nominal GDP</strong>, on the other hand, measures GDP before prices have been controlled for and thus captures the monetary value (as opposed to real value) of production within a country.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{nominal GDP} = \text{price level} \times \text{real GDP}
+\]</div>
+<p>Notice that nominal GDP is affected when prices change, even if the amount of production does not change!  It’s very important to control for changing prices in order to get an accurate measure of the quantity of goods and services produced.</p>
+<p>How do we control for changing prices?  We pick a year, called a **base year&amp;&amp;, and use the <em>same</em> set of prices to compute real GDP over time.  If we want to measure how an economy has growth between 2021 and 2022, then we pick either the 2021 prices or the 2022 prices and use it to compute real GDP in both years.</p>
+<p>Let’s consider our economy of farmers and fisherman with the following activity over two years:</p>
+<p><img src="_static/figs_LR/CCD_4.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+<p>Nominal GDP in this economy would equal</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+NGDP_1 &amp;=(50 \times 5)+(100 \times 3)=550 \\
+NGDP_2 &amp;=(64 \times 6)+(110 \times 1.5)=549
+\end{align*}
+\end{split}\]</div>
+<p>which suggests that the economy has shrunk, but clearly this statistic is imperfect because production of both fish and vegetables increased!</p>
+<p>We can compute real GDP using Date 1 base prices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+RGDP_1 &amp;= (50 \times 5)+(100 \times 3)= 550 \\
+RGDP_2 &amp;= (64 \times 5)+(110 \times 3) = 650
+\end{align*}\end{split}\]</div>
+<p>which correctly shows an increase in production.</p>
+<p>Economists have some fancy names depending on which year you pick to use as base prices:</p>
+<ul class="simple">
+<li><p>Using initial prices is called <strong>Laspeyres index</strong></p></li>
+<li><p>Using current prices is called <strong>Paasche index</strong></p></li>
+<li><p>Using an average of Laspeyres and Paasche is called *<em>chain weighting</em> or the <strong>Fisher index</strong></p></li>
+</ul>
+<p>Suppose we want to use chain-weighting to compute real GDP for our economy.</p>
+<ul class="simple">
+<li><p>Compute growth rates implied by the Laspeyres and Paasceh index</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+\text {Laspeyres:}&amp; \frac{650-550}{550}=18\% \\
+\text {Paasche:}&amp; \frac{714-600}{600}=19\%
+\end{align*}\end{split}\]</div>
+<ul class="simple">
+<li><p>Compute the average of the two growth rates:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{Average} = \frac{18\%+19\%}{2} = 18.5\%
+\]</div>
+<ul class="simple">
+<li><p>Find the level <span class="math notranslate nohighlight">\(x\)</span> such that if it were to grow at 18.5%, it would equal the Date 2 level of nominal GDP</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x \times (1+0.185) = 549 \quad \Rightarrow x = 463
+\]</div>
+<p>so we would say that real GDP at Date 1 was 463.</p>
+<p>Chain weighting is especially useful when evaluating how an economy grows over a long period of time.  In this case, you would apply this chain-weighting procedure for each year (e.g. real GDP in 2022 is computed using prices from 2021 and 2022, real GDP in 2021 is computed using prices from 2020 and 2021 and so on).  Why is it useful?  Imagine you want to compare GDP in 1960 to GDP in 2022.  In 1960 computers were extremely expensive relative to other goods, while in 2022 they are relatively much cheaper.  Using a Laspeyres index (1960 prices) would produce very fast growth for real GDP, while the Paasche index (2022 prices) would produce much slower growth.  Chain weighting gives and average and therefore reduces the impact of extreme movements in relative prices.</p>
+</section>
+<section id="comparing-gdp-across-countries">
+<h3>Comparing GDP Across Countries<a class="headerlink" href="#comparing-gdp-across-countries" title="Link to this heading">#</a></h3>
+<p>Of particular interest to international economics is comparing the economic performance of different countries.  This introduces some additional difficulties…</p>
+<p>Let’s try to compare the national output of China to the United States:</p>
+<p><img src="_static/figs_LR/CCD_12.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="600"></p>
+<p>Obvious problem: the data is in different currencies!  First we need to express GDP in a common currency.  We can do so making using of an \textbf{exchange rate}—the price at which one currency trades for another currency.  Example: The average exchange rate between the Chinese yuan and the U.S. dollar in 2021 was 6.452, which means that $1 can buy 6.452 RMB.</p>
+<p>Using yearly average exchange rates we can plot GDP in a common currency:</p>
+<p><img src="_static/figs_LR/CCD_13.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="600"></p>
+<p>Another problem: we are not controlling for price differences between the two countries.  It’s very likely that local relative prices will differ between the two countries.</p>
+<p>Example: Suppose that food is significantly cheaper in China compared to the U.S. Even if China and the U.S. produce the same quantity of food, so that real food output is identical, there will be differences if we use local prices.</p>
+<p>Instead of using market exchange rates, economists will create a hypothetical currency, called \textbf{international dollars}, and use this as a common unit of measure.  The idea is that a given amount of international dollars should buy roughly the same amount—and quality—of goods and services in any country.  The exchange rates used to translate nominal values into international dollars are purchasing power parity conversion rates, or <strong>PPP conversion factors</strong>.</p>
+<p><strong>Purchasing power</strong> refers to the amount of goods and services a person can buy with their money.</p>
+<p>Example: If a Chinese citizen takes a vacation to Canada, they will probably find that food costs a lot more than at home. That is, 100 RMB is able to purchase less food in Canada than China.</p>
+<p>If we care about measuring economic performance, then we should consider how many goods and services a person can buy with their money \textit{locally}.</p>
+<p><em>The Economist</em> magazine began publishing the <strong>Big Mac Index</strong> in 1986 as a way of measuring how purchasing power varies from country to country.</p>
+<ul class="simple">
+<li><p>First, measure the actual local prices of a Big Mac in different countries.  In 2022, a Big Mac costs 3.69 pounds in Britain, and costs
+5.15 dollars in the United States.</p></li>
+<li><p>Second, compute the implied exchange rate: <span class="math notranslate nohighlight">\(3.69/5.15 = 0.72\)</span>.</p></li>
+<li><p>Third, measure the difference between the implied exchange rate and the actual exchange rate.  In 2022, the exchange rate between the British pound and US dollar was 0.83, therefore the British pound
+is 13% undervalued according to the Big Mac index.</p></li>
+</ul>
+<p>(You can check out <a class="reference external" href="https://www.economist.com/big-mac-index">https://www.economist.com/big-mac-index</a>)</p>
+<p><img src="_static/figs_LR/CCD_14.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+<p>Of course we don’t need to limit ourselves to Big Macs; we can use price data on a broader array of goods and services to measure price level differences across countries.  This is precisely the job of the International Comparison Programme (ICP)—construct price indexes that summarize prices in each country relative to a reference country, typically the United States.</p>
+<p><img src="_static/figs_LR/gdp-price-levels-relative-to-the-us.png" 
+    alt="Manufacturer example" 
+    align="center" 
+    width="400"></p>
+<p>Now we can see how to construct an appropriate measurement used to compare GDP across countries:</p>
+<ul class="simple">
+<li><p>First, convert GDPs into a common currency
+$<span class="math notranslate nohighlight">\(
+NGDP_{\text{China}}^{\text{dollars}}=EX_{\$/rmb} \times NGDP_{\text{China}}^{\text{rmb}}
+\)</span>$</p></li>
+<li><p>Second, adjust for local price differences
+\begin{align*}
+RGDP_{\text{China}}^{\text{U.S. prices}} &amp;=\text{price level}<em>{\text{U.S.}}\times RGDP</em>{\text{China}} \
+&amp;= \text{price level}<em>{\text{U.S.}} \times \frac{NGDP</em>{\text{China}}^{\text{dollars}}}{\text{price level}<em>{\text{China}}} \
+&amp;=\frac{\text{price level}</em>{\text{U.S.}}}{\text{price level}<em>{\text{China}}}\times NGDP</em>{\text{China}}^{\text{dollars}}
+\end{align*}</p></li>
+</ul>
+<p>From the International Comparison Programme (ICP):  “Purchasing power parity exchange rates, or PPPs, are price indexes that summarize prices in each country relative to a numeraire country, typically the United States. These numbers are used to compare living standards across countries, by academics in studies of economic growth, particularly through the Penn World Table, by the World Bank to construct measures of global poverty, by the European Union to redistribute resources, and by the international development community to draw attention to discrepancies between rich and poor countries.”</p>
+<p>(You can check out <a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.KN">https://data.worldbank.org/indicator/NY.GDP.MKTP.KN</a> too see the different measures of GDP for countries)</p>
+<p>Key takeways:</p>
+<ul class="simple">
+<li><p>GDP is the most widely used measure of economic performance and can be measured as production, expenditure, or income.</p></li>
+<li><p>National accounting identities reveal relationships among consumption, investment, savings, and trade, but do not imply causality.</p></li>
+<li><p>Real GDP adjusts for changing prices using index numbers such as Laspeyres, Paasche, and Fisher indices.</p></li>
+<li><p>Cross-country comparisons require PPP adjustments to account for local price differences.</p></li>
+</ul>
+<p>Suggested Exercises</p>
+<ol class="arabic simple">
+<li><p>In a two-good economy (fish and vegetables), compute nominal and real GDP for two years using both Laspeyres and Paasche indices. Which index overstates growth? Why?</p></li>
+<li><p>Suppose a country runs a trade deficit (<span class="math notranslate nohighlight">\(NX&lt;0\)</span>). Use the flow of funds identity to explain what must be happening to savings and investment.</p></li>
+<li><p>Compare GDP per capita between China and the US using both market exchange rates and PPP conversion. Which measure is more appropriate for assessing living standards?</p></li>
+<li><p>Investigate the Big Mac Index for your own country. Is your currency over- or undervalued relative to the dollar?</p></li>
+</ol>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Gross domestic income</th>
+      <th>29001.7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Compensation of employees, paid</td>
+      <td>15049.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Wages and salaries</td>
+      <td>12410.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>To persons</td>
+      <td>12379.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>To the rest of the world</td>
+      <td>30.8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Supplements to wages and salaries</td>
+      <td>2639.1</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Taxes on production and imports</td>
+      <td>1954.7</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Less: Subsidies1</td>
+      <td>94.2</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Net operating surplus</td>
+      <td>7295.4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Private enterprises</td>
+      <td>7342.9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Net interest and miscellaneous payment...</td>
+      <td>611.1</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Business current transfer payments (net)</td>
+      <td>286.4</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Proprietors' income with inventory val...</td>
+      <td>2023.1</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Rental income of persons with capital ...</td>
+      <td>1078.1</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Corporate profits with inventory valua...</td>
+      <td>3344.2</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Taxes on corporate income</td>
+      <td>680.3</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Profits after tax with inventory v...</td>
+      <td>2663.8</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Net dividends</td>
+      <td>1880.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Undistributed corporate profit...</td>
+      <td>783.8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Current surplus of government enterprises1</td>
+      <td>-47.5</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Consumption of fixed capital</td>
+      <td>4796.7</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Private</td>
+      <td>3992.9</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Government</td>
+      <td>803.8</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Addendum:</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Statistical discrepancy</td>
+      <td>296.3</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="visualizing-gdp-data">
+<h2>Visualizing GDP Data<a class="headerlink" href="#visualizing-gdp-data" title="Link to this heading">#</a></h2>
+<p>For a technical deep-dive into how to collect and plot this data yourself, please refer to the <a href="gdp-data-tutorial.html">GDP Data Tutorial</a>.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Macroeconomics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="gdp-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">GDP Data Tutorial: Using the FRED API with Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-size-of-the-economy">Measuring the Size of the Economy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-added-and-supply-chains">Value Added and Supply Chains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#three-ways-of-measuring-gdp">Three Ways of Measuring GDP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorizing-economic-output">Categorizing Economic Output</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-of-funds">Flow of Funds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-for-prices-real-vs-nominal-gdp">Controlling for Prices: Real vs. Nominal GDP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-gdp-across-countries">Comparing GDP Across Countries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-gdp-data">Visualizing GDP Data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

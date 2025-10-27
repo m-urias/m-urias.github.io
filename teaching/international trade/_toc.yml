@@ -1,0 +1,36 @@
+# _toc.yml
+format: jb-book
+root: intro
+parts:
+  - caption: Classical Models of International Trade
+    chapters:
+      - file: ricardian-model
+        title: Ricardian Model of Trade
+      - file: ek_model
+        title: Eaton-Kortum Model of Trade
+      - file: ho-model
+        title: Heckscher-Ohlin Model of Trade
+      - file: specific-factors-model
+        title: Specific Factors Model of Trade
+
+  - caption: New Trade Theory
+    chapters:
+      - file: new-trade-theory
+        title: Economies of Scale and Trade
+      - file: melitz-model
+        title: Inter- and Intra-Industry Trade
+      - file: trade-data-tutorial
+        title: Trade Data Tutorial
+
+  - caption: International Trade Policy
+    chapters:
+      - file: trade-policy
+        title: Tariffs and Trade policy
+
+  - caption:
+    chapters:
+      - file: intertemporal-trade
+        title: Intertemporal Trade and the Current Account
+      - file: small-open-economy
+        title: Small Open Economies and the Current Account
+

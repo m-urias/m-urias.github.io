@@ -1,0 +1,1272 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Term Structure of Interest Rates Data Tutorial &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'yield-curve-data-tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Market for Reserves and Monetary Policy Systems" href="monetary-policy-systems.html" />
+    <link rel="prev" title="Term Structure of Interest Rates" href="term-structure-of-interest-rates.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/yield-curve-data-tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Term Structure of Interest Rates Data Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stylized-facts-about-short-and-long-term-interest-rates">Stylized Facts about Short- and Long-Term Interest Rates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-short-and-long-term-interest-rates">Visualizing Short- and Long-Term Interest Rates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stationarity-of-the-short-and-long-term-rates">Testing for Stationarity of the Short- and Long-Term Rates</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="term-structure-of-interest-rates-data-tutorial">
+<h1>Term Structure of Interest Rates Data Tutorial<a class="headerlink" href="#term-structure-of-interest-rates-data-tutorial" title="Link to this heading">#</a></h1>
+<section id="stylized-facts-about-short-and-long-term-interest-rates">
+<h2>Stylized Facts about Short- and Long-Term Interest Rates<a class="headerlink" href="#stylized-facts-about-short-and-long-term-interest-rates" title="Link to this heading">#</a></h2>
+<p>We begin by presenting some stylized facts about long and short rates.  In this analysis, we use the 30-day T-bill yield for the short rate and the 20-year Treasury bond yield for the long rate.  Specifically, we will use the FRED series <code class="docutils literal notranslate"><span class="pre">DGS1MO</span></code>, which is the market yield on U.S. Treasury securities at 1-month constant maturity[^1], and <code class="docutils literal notranslate"><span class="pre">DGS20</span></code> which is for 20-year Treasury bonds[^2] [^1]: Bond yields quoted “on an investment basis” means that the YTM is based on the bond’s current price relative its par value.  “On a discount basis” expresses yield as a percentage of face value, not the purchase price.  The discount basis is a quicker, but less precise calculation. [2^]: These yields “at constant maturity” is the theoretical yield cased on interpolating the yield curve based on recent values of auctions U.S. Treasury securities.  The 1-month Treasury bill was first introduced in July 2001 in an effort to improve the Treasury’s cash management and strengthen market based interest rates.  Prior to 2001, the shortest regular maturities the Treasury issued were 3-month and 6-month bills.  Our longer time horizon analysis alternatively uses the FRED series <code class="docutils literal notranslate"><span class="pre">TB3MS</span></code> for the 3-month T-bill yield.  Data series <code class="docutils literal notranslate"><span class="pre">DGS20</span></code> has missing observations from 1987 to 1993 because <a href="https://www.treasurydirect.gov/research-center/timeline/bonds/?utm_source=chatgpt.com" target="_blank">the US Treasury discontinued regular issues of these bonds in 1986.</a></p>
+<section id="visualizing-short-and-long-term-interest-rates">
+<h3>Visualizing Short- and Long-Term Interest Rates<a class="headerlink" href="#visualizing-short-and-long-term-interest-rates" title="Link to this heading">#</a></h3>
+<p>Let’s download the data from FRED and plot the series as well as the long-short spread.  Note that the 1-month Treasury yield and 20-year Treasury yield data are daily, whereas the 3-month T-bill yield is monthly.  The code below converts the the 20-year Treasury yield series to monthly values when looking at the longer time horizon.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;9c70445138df124be4928605b7e08bd4&#39;</span><span class="p">)</span>
+
+<span class="n">short_rate</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;DGS1MO&#39;</span><span class="p">)</span>
+<span class="n">short_rate_alt</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;TB3MS&#39;</span><span class="p">)</span>
+<span class="n">long_rate</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="s1">&#39;DGS20&#39;</span><span class="p">)</span>
+<span class="n">spread</span> <span class="o">=</span> <span class="n">long_rate</span><span class="o">-</span><span class="n">short_rate</span>
+<span class="n">spread_alt</span> <span class="o">=</span> <span class="n">long_rate</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;MS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">-</span><span class="n">short_rate_alt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is an important note about appropriately converting the 20-year Treasury yields into months.  Since the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> <code class="docutils literal notranslate"><span class="pre">short_rate_alt</span></code> and <code class="docutils literal notranslate"><span class="pre">long_rate</span></code> have different frequencies, we cannot simply subtract one from the other to get the spread.  First, we need to convert them to same frequency.  We convert <code class="docutils literal notranslate"><span class="pre">long_rate</span></code> into monthly frequency using the function <code class="docutils literal notranslate"><span class="pre">DataFrame.resample()</span></code>.  This groups the data series into bins of a given time frequency (e.g. using “ME” for months), and then applies an aggregation function to each bin.  The aggregation function could take an average, <code class="docutils literal notranslate"><span class="pre">DataFrame.resample(&quot;ME&quot;).mean()</span></code>, the last observation in the bin, <code class="docutils literal notranslate"><span class="pre">DataFrame.resample(&quot;ME).last()</span></code>, or apply no aggregation, <code class="docutils literal notranslate"><span class="pre">DataFrame.resample(&quot;ME)</span></code> (as well as  <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.resample.html" target="_blank">other options</a>too ).  In the code above, we take the first observation of each month for <code class="docutils literal notranslate"><span class="pre">long_rate</span></code> so that it matches the frequency of <code class="docutils literal notranslate"><span class="pre">short_rate_alt</span></code>.  The syntax <code class="docutils literal notranslate"><span class="pre">&quot;MS&quot;</span></code> stands for “month start” whereas <code class="docutils literal notranslate"><span class="pre">&quot;ME&quot;</span></code> stands for “month end.”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot long- and short-rates</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;2001&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">short_rate</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1-month Treasury yield&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">long_rate</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year Treasury yield&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long- and short-term Treasury yields (2001-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8fe268117a0f36a5f3c3c87d71a79162c9e4bcd2b81afceab367ccd16a008cbe.png" src="_images/8fe268117a0f36a5f3c3c87d71a79162c9e4bcd2b81afceab367ccd16a008cbe.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the long-short spread</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;2001&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spread</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year and 1-month Treasury spread&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treasury Yield Spread (2001-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f2e0728531a0a214c49a4fa96b59a5eadff87a736914caed720db0be73e8c6a2.png" src="_images/f2e0728531a0a214c49a4fa96b59a5eadff87a736914caed720db0be73e8c6a2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot long- and short-rates</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1962&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">short_rate_alt</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;3-month Treasury yield&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">long_rate</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year Treasury yield&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long- and short-term Treasury yields (1962-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/20e1fdb95ee1809e3ed08bb65f0ea97c03186b57193976b6db5011ff9f32231b.png" src="_images/20e1fdb95ee1809e3ed08bb65f0ea97c03186b57193976b6db5011ff9f32231b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the long-short spread</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1962&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spread_alt</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year and 3-month Treasury spread&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Treasury Yield Spread (1962-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b2a7ec904d7910baef47e3da6b482ce4d6654af100ac81a2cb1ef1f20d0da91e.png" src="_images/b2a7ec904d7910baef47e3da6b482ce4d6654af100ac81a2cb1ef1f20d0da91e.png" />
+</div>
+</div>
+<p>Casual observation of the figures above suggest that the levels of short- and long-rates vary substantially over time.  The short- and long- rate averaged three percent and four percent, respectively, in the 1960s; then peaked to around 15 percent in the early 1980s; then fell gradually to near zero and 3 percent in the 2010s.  Such variation suggest there exist persistent macroeconomic factors which affect these rates.</p>
+<p>It is also striking that short- and long-rates tend to move in tandem.  Although there are short-term deviations–particularly when the short-rate falls quickly–the two rates strongly comove over the entire sample.</p>
+<p>The spread appears much less variable than the levels of the short- and long-rates.  This is consistent with the levels exhibiting strong comovement.</p>
+<p>We can perform some basic statistical tests of the data series to validate our casual observations and delve a bit deeper into their patterns.  Let’s begin with some descriptive statistics to characterize the mean and variance of the data series.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descriptive statistics for full sample</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive Statistics for 1-month T-bill rate&quot;</span><span class="p">,</span> <span class="n">short_rate</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive Statistics for 3-month T-bill rate&quot;</span><span class="p">,</span> <span class="n">short_rate_alt</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive Statistics for 20-year T-bond rate&quot;</span><span class="p">,</span> <span class="n">long_rate</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive Statistics for spread&quot;</span><span class="p">,</span> <span class="n">spread</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Descriptive Statistics for spread back to 1960&quot;</span><span class="p">,</span> <span class="n">spread_alt</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of variation for 1-month T-bill rate&quot;</span><span class="p">,</span> <span class="n">short_rate</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">/</span><span class="n">short_rate</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of variation for 3-month T-bill rate&quot;</span><span class="p">,</span> <span class="n">short_rate_alt</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">/</span><span class="n">short_rate_alt</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of variation for 20-year T-bill rate&quot;</span><span class="p">,</span> <span class="n">long_rate</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">/</span><span class="n">long_rate</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of variation for spread&quot;</span><span class="p">,</span> <span class="n">spread</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">/</span><span class="n">spread</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of variation for spread back to 1960&quot;</span><span class="p">,</span> <span class="n">spread_alt</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">/</span><span class="n">spread_alt</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Descriptive Statistics for 1-month T-bill rate count    6058.000000
+mean        1.645086
+std         1.829697
+min         0.000000
+25%         0.070000
+50%         0.970000
+75%         2.590000
+max         6.020000
+dtype: float64
+Descriptive Statistics for 3-month T-bill rate count    1101.000000
+mean        3.416966
+std         3.099861
+min         0.010000
+25%         0.380000
+50%         2.930000
+75%         5.220000
+max        16.300000
+dtype: float64
+Descriptive Statistics for 20-year T-bond rate count    14247.000000
+mean         5.861289
+std          2.845837
+min          0.870000
+25%          4.050000
+50%          5.260000
+75%          7.270000
+max         15.780000
+dtype: float64
+Descriptive Statistics for spread count    6058.000000
+mean        2.037813
+std         1.542720
+min        -1.990000
+25%         0.870000
+50%         2.200000
+75%         3.310000
+max         4.730000
+dtype: float64
+Descriptive Statistics for spread back to 1960 count    684.000000
+mean       1.592763
+std        1.459731
+min       -2.940000
+25%        0.540000
+50%        1.550000
+75%        2.720000
+max        4.690000
+dtype: float64
+Coefficient of variation for 1-month T-bill rate 0.8991028850497239
+Coefficient of variation for 3-month T-bill rate 1.1022967315367282
+Coefficient of variation for 20-year T-bill rate 2.059601582211272
+Coefficient of variation for spread 1.3209221155541178
+Coefficient of variation for spread back to 1960 1.0911346659949634
+</pre></div>
+</div>
+</div>
+</div>
+<p>Based on these statistics we can confirm that indeed the short-term interest rate is less volatile than the long-term interest rate.  It’s coefficient of correlation is nearly half.  It also has similar volatility as the spread.  Interestingly, the volatility of all series seems to increase over the more recent history.</p>
+<p>Now we look at comovement of the series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of correlation for 3-month and 20-year Treasury yields&quot;</span><span class="p">,</span> <span class="n">short_rate_alt</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">long_rate</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Coefficient of correlation for 1-month and 20-year Treasury yields&quot;</span><span class="p">,</span> <span class="n">short_rate</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">long_rate</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient of correlation for 3-month and 20-year Treasury yields 0.8975584311404085
+Coefficient of correlation for 1-month and 20-year Treasury yields 0.5480313396929616
+</pre></div>
+</div>
+</div>
+</div>
+<p>Over the longer time horizon the short-rate and long rate have correlation of 0.90 showing that, indeed, the two series strongly comove.  Over the shorter time horizon, from 2001-2025, the correlation is noticeable weaker at 0.55 suggesting that whatever factor is responsible for moving both series has weakened.  This is consistent with the spread being 2.04 percent for the 2001-2025 period compared to 1.59 for the 1960-2025 period.</p>
+</section>
+<section id="testing-for-stationarity-of-the-short-and-long-term-rates">
+<h3>Testing for Stationarity of the Short- and Long-Term Rates<a class="headerlink" href="#testing-for-stationarity-of-the-short-and-long-term-rates" title="Link to this heading">#</a></h3>
+<p>No let’s delve into deeper patterns of the data.  First, let’s investigate whether the series are stationary in first differences.  A data series is stationary if it’s mean, variance, and covariance are independent of time.[^3] [^3]: Technically this is the definition for weak-form stationarity, but it is a sufficient condition for the analysis performed here.  Besides providing an interesting description of the data, stationarity is a necessary assumption for many time series statistical analysis, such as forecasting.</p>
+<p>You can begin to guess whether or not a time series is stationary by casual inspection.  Does it exhibit a constant mean?  If so, the level of the variable plotted over time should appear to have no trend or structural breaks.  Does it exhibit constant variance? If so, the amplitude of the variable plotted over time should appear relatively constant.  Does it exhibit constant covariance?  If so, the length of a cycle, or frequency, should appear constant over time.</p>
+<p>As discussed above, the levels of the short- and long-rate do not appear stationary.  For example, we noted that the means of the data series exhibited clear trends which suggested some macro factor simultaneously affecting both.  We also found that the coefficient of variation differed across the recent two decades compared to the the past six decades; so it seems the series variance is not independent of time either.</p>
+<p>Since we want stationarity for statistical analysis, we need to manipulate our data series so that it becomes stationary.  One simple way of doing this is taking first differences: create a new time series by taking the level at time <span class="math notranslate nohighlight">\(t\)</span> and subsracting its level at time <span class="math notranslate nohighlight">\(t-1\)</span>. That is, take the difference of the original data series with its lag.  This procedure reduces the trend.  Let’s take first-differences of our data and see what it looks like.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Pandas</span></code> provides a <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.diff.html" target="_blank">function</a> <code class="docutils literal notranslate"><span class="pre">DataFrame.diff()</span></code> which does first differencing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Take first differences</span>
+<span class="n">short_rate_diff</span><span class="o">=</span><span class="n">short_rate</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">short_rate_alt_diff</span><span class="o">=</span><span class="n">short_rate_alt</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">long_rate_diff</span><span class="o">=</span><span class="n">long_rate</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">spread_diff</span><span class="o">=</span><span class="n">spread</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+<span class="n">spread_alt_diff</span><span class="o">=</span><span class="n">spread_alt</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first differenced series</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;2001&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">short_rate_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1-month Treasury yield&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">long_rate_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year Treasury yield&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long- and short-term Treasury yields first difference (2001-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/cce529bcd0a8b454a990a0a1e82a40fd17398cdbb72674449a0703a03bd580f4.png" src="_images/cce529bcd0a8b454a990a0a1e82a40fd17398cdbb72674449a0703a03bd580f4.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first differenced series</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1962&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">short_rate_alt_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1-month Treasury yield&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">long_rate_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;20-year Treasury yield&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Long- and short-term Treasury yields first difference (1962-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4c24c01a95f1881910066c784d3e0d33cc882169e09658fbb7cb3b230580443d.png" src="_images/4c24c01a95f1881910066c784d3e0d33cc882169e09658fbb7cb3b230580443d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the first differenced series</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s2">&quot;1962&quot;</span><span class="p">,</span> <span class="s2">&quot;2025&quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spread_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Spread of 1-month T-bill over 20 year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">spread_alt_diff</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">end</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Spread of 3-month T-bill over 20 year&quot;</span><span class="p">)</span>
+
+<span class="c1"># Title the figure and label the axis</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Percentage&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Spread of long- and short-term Treasury yield first difference (1962-2025)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0b60988ac7650adfb2531401a13e1f121870000ad2b0af75186234324bffb508.png" src="_images/0b60988ac7650adfb2531401a13e1f121870000ad2b0af75186234324bffb508.png" />
+</div>
+</div>
+<p>These series appear noticeably more stationary.  Although there is a spike in volatility in the 1980s and 2008 in the short-rate, the mean is now nearly constant around zero.</p>
+<p>Now, we perform some parametric statistical tests to see whether or not our series are indeed stationary.  We will use the Augmented Dickey-Fuller (ADF) test: test the null hypothesis that a unit root is present in an autoregressive model of a time series.  The ADF tests calculate a test statistic, and the p-value associated with this statistic measures the strength of evidence against the null hypothesis. If the p-value is less than a chosen significance level (commonly set at 0.05), you reject the null hypothesis in favor of the alternative hypothesis concluding the time series as stationary.</p>
+<p>Compared to the Dickey-Fuller test, which only uses a simple first-order autoregressive model, the <em>Augmented</em> Dickey-Fuller (ADF) test uses a higher-order autogressive process that includes lagged differences to account for higher-order serial correlation.  Specifically, it uses the model</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta y_t = a_0+a_1 t+a_3 y_{t-1}+\sum_{i} \delta_i \Delta y_{t-i}+\epsilon_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_1\)</span> is a constant, <span class="math notranslate nohighlight">\(a_1\)</span> is the coefficient on a time trend, and <span class="math notranslate nohighlight">\(p\)</span> is the lag order of the AR process.  The null hypothesis of the ADF tes is <span class="math notranslate nohighlight">\(H_0:a_3=0\)</span> which means there exists a unit root.  There are three different types of ADF tests depending on whether you suspect that time series has a time trend or drift:</p>
+<ol class="arabic simple">
+<li><p>Setting <span class="math notranslate nohighlight">\(a_0=a_1=0\)</span> assumes no time trend and no drift</p></li>
+<li><p>Setting <span class="math notranslate nohighlight">\(a_1=0\)</span> assumes no time trend, but allows drift since <span class="math notranslate nohighlight">\(a_0 \neq 0\)</span></p></li>
+<li><p>Allowing <span class="math notranslate nohighlight">\(a_0 \neq 0\)</span> and <span class="math notranslate nohighlight">\(a_1 \neq 0\)</span> allows both a time trend and drift</p></li>
+</ol>
+<p>Which version of the test you use depends on the prior knowledge of the time series and affects the size and power of the test.  Based on our graphs above, the first-differenced series exhibit no time trend or drift so we can run the test assuming <span class="math notranslate nohighlight">\(a_0=a_1=0\)</span>.</p>
+<p>Fortunately, the Python library <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> provides a <a href="https://www.statsmodels.org/dev/generated/statsmodels.tsa.stattools.adfuller.html" target="_blank">function</a> called <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> which performs the ADF test.  The function takes a time series as its input and allows for the specification of the number of lags using the <code class="docutils literal notranslate"><span class="pre">maxlags</span></code> parameter or automatic selection via the <code class="docutils literal notranslate"><span class="pre">autolag</span></code> parameter, with <code class="docutils literal notranslate"><span class="pre">autolag=&quot;AIC&quot;</span></code> being a recommended approach as it selects the optimal lag length by minimizing the Akaike Information Criterion (AIC).  It also allows you to specify which of the three tests to run with the parameter <code class="docutils literal notranslate"><span class="pre">regression</span></code>;  where <code class="docutils literal notranslate"><span class="pre">regression=&quot;c&quot;</span></code> includes only a constant (<span class="math notranslate nohighlight">\(a_0\)</span>), <code class="docutils literal notranslate"><span class="pre">regression=&quot;ct&quot;</span></code> includes a constant and linear trend (<span class="math notranslate nohighlight">\(a_0+a_1 t\)</span>), and <code class="docutils literal notranslate"><span class="pre">regression=&quot;n&quot;</span></code> includes no constant or trend.  The function outputs the ADF test statistic, the p-value, the number of lags used, the number of observations, and the critical values at different significance levels (1%,5%,10%).</p>
+<p>Let’s perform the test on our short- and long-rates.  Before doing so, however, we should do some data cleaning:</p>
+<ul class="simple">
+<li><p>Let’s transform all data into a monthly frequency.  In this tutorial we are more interested in macroeconomic relationships rather than high frequency dynamics.  Thus it is more appropriate to run our statistical tests on monthly data.  Once all our time series on monthly, then we proceed to the ADF test.</p></li>
+<li><p>Since the 20-year Treasury yield series has missing data from 1987 to 1993, we need to run two ADF tests on data prior to 1987 and after 1993.  The ADF test in Python requires a clean numeric array with no missing observations.</p></li>
+</ul>
+<p>We will use the default parameter <code class="docutils literal notranslate"><span class="pre">regression=&quot;c&quot;</span></code> which does not include a time trend.  Whether to include a trend term in the ADF regression depends on prior beliefs about the deterministic properties of the data.  That is, could the series plausibly have a deterministic trend in its mean over time?  An example of a macroeconomic series which very likely has a deterministic trend is GDP or the CPI price level.  GDP tends to grow over time due to productivity growth while the price level grows due to growth in money supply.  For short- and long-term Treasury yields, there is no clear deterministic trend.  Their mean levels shifts with monetary policy regimes and inflation expectations, but not in a smooth time trend.  This is also clear by visual inspection of the series above.</p>
+<p>Also, we will first run the ADF on the monthly series in <em>levels</em>.  This may seem strange because casual inspection suggests the series are all non-stationary, but we will learn something from the results…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert all time series to monthly frequency</span>
+
+<span class="n">long_rate_m</span><span class="o">=</span><span class="n">long_rate</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;MS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">short_rate_m</span><span class="o">=</span><span class="n">short_rate</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;MS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">short_rate_alt_m</span><span class="o">=</span><span class="n">short_rate_alt</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;MS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">spread_alt_m</span><span class="o">=</span><span class="n">long_rate_m</span><span class="o">-</span><span class="n">short_rate_alt_m</span>
+
+<span class="c1"># Create two continuous periods of data on the 20-year yield</span>
+
+<span class="n">long_rate_m_cont_1987</span><span class="o">=</span><span class="n">long_rate_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s2">&quot;1987-01-01&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">long_rate_m_cont_1993</span><span class="o">=</span><span class="n">long_rate_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1987-09-01&quot;</span><span class="p">:]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Only use the 20-year and 3-month spread for convenience</span>
+<span class="c1"># Using the 20-year 1 month spread requires more data cleaning</span>
+
+<span class="n">spread_alt_m_cont_1987</span><span class="o">=</span><span class="n">spread_alt_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s2">&quot;1987-01-01&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">spread_alt_m_cont_1993</span><span class="o">=</span><span class="n">spread_alt_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1987-09-01&quot;</span><span class="p">:]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the statsmodels library</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">adfuller</span>
+
+<span class="c1"># Write a function so that the output from the adfuller function is easier to read</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">adf_test</span><span class="p">(</span><span class="n">timeseries</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results of Dickey-Fuller Test:&quot;</span><span class="p">)</span>
+    <span class="n">dftest</span> <span class="o">=</span> <span class="n">adfuller</span><span class="p">(</span><span class="n">timeseries</span><span class="p">,</span> <span class="n">autolag</span><span class="o">=</span><span class="s2">&quot;AIC&quot;</span><span class="p">)</span>
+    <span class="n">dfoutput</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+        <span class="n">dftest</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Test Statistic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;p-value&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#Lags Used&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Number of Observations Used&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dftest</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">dfoutput</span><span class="p">[</span><span class="s2">&quot;Critical Value (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dfoutput</span><span class="p">)</span>
+
+<span class="c1"># Perform the ADF test</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the long-rate post-1993&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">long_rate_m_cont_1993</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the long-rate pre-1987&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">long_rate_m_cont_1987</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the short-rate 1-month yield&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">short_rate_m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the short-rate 3-month yield&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">short_rate_alt_m</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the spread post-1993&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">spread_alt_m_cont_1993</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the spread pre-1987&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">spread_alt_m_cont_1987</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Results of Dickey-Fuller Test:
+Test Statistic                  -1.674189
+p-value                          0.444458
+#Lags Used                       0.000000
+Number of Observations Used    384.000000
+Critical Value (1%)             -3.447495
+Critical Value (5%)             -2.869096
+Critical Value (10%)            -2.570795
+dtype: float64
+ADF test for the long-rate post-1993 None
+Results of Dickey-Fuller Test:
+Test Statistic                  -1.467534
+p-value                          0.549506
+#Lags Used                       1.000000
+Number of Observations Used    298.000000
+Critical Value (1%)             -3.452486
+Critical Value (5%)             -2.871288
+Critical Value (10%)            -2.571964
+dtype: float64
+ADF test for the long-rate pre-1987 None
+Results of Dickey-Fuller Test:
+Test Statistic                  -3.193203
+p-value                          0.020382
+#Lags Used                      12.000000
+Number of Observations Used    279.000000
+Critical Value (1%)             -3.454008
+Critical Value (5%)             -2.871956
+Critical Value (10%)            -2.572320
+dtype: float64
+ADF test for the short-rate 1-month yield None
+Results of Dickey-Fuller Test:
+Test Statistic                   -2.285456
+p-value                           0.176702
+#Lags Used                       21.000000
+Number of Observations Used    1079.000000
+Critical Value (1%)              -3.436425
+Critical Value (5%)              -2.864222
+Critical Value (10%)             -2.568198
+dtype: float64
+ADF test for the short-rate 3-month yield None
+Results of Dickey-Fuller Test:
+Test Statistic                  -3.408515
+p-value                          0.010672
+#Lags Used                       8.000000
+Number of Observations Used    375.000000
+Critical Value (1%)             -3.447909
+Critical Value (5%)             -2.869278
+Critical Value (10%)            -2.570892
+dtype: float64
+ADF test for the spread post-1993 None
+Results of Dickey-Fuller Test:
+Test Statistic                  -2.804916
+p-value                          0.057575
+#Lags Used                      16.000000
+Number of Observations Used    283.000000
+Critical Value (1%)             -3.453670
+Critical Value (5%)             -2.871808
+Critical Value (10%)            -2.572241
+dtype: float64
+ADF test for the spread pre-1987 None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here is how to interpret the output of the ADF test.  Let’s focus on the long-rate post-1993 as an example.  The p-value is 0.4444 is not less than 0.05, so we fail to reject the null hypothesis.  This means that the long-rate post-1993 is non-stationary.</p>
+<p>Surprisingly, the 1-month Treasury yield and the 20-year over 3-month Treasury spread are found to be stationary.  This contradicts our intuition and prior knowledge about the behavior of these series.  We know that monetary policy systematically alters the mean levels of short-term rates in coincidence with the business cycle.  The core issue is that the ADF assumes that any non-stationarity comes from a <strong>stochastic trend</strong>.  It does not handle structural breaks, policy regime shifts, or time-varying means well.  Our 1-month T-bill yield, for example, doesn’t look nonstationarity because of a random walk–it looks nonstationary because of <strong>regime changes.</strong>  Each regime, representing monetary policy, has its own “mean level” around which short-term rates fluctuate.  The ADF test is not designed to detect that kind of nonstationarity, so it can misleadingly find stationarity because within each regime, the short rate fluctuates around a temporary mean.</p>
+<p>There is a related problem with evaluating the stationarity of short-rates using the ADF test.  Notice that the <code class="docutils literal notranslate"><span class="pre">adfuller</span></code> test chose a lag length of 12 for the 1-month yield, whereas it chose 0 lags for the 20-year rate post-1993 and 1 lag for pre-1987.  The reason is that the lagged differences (<span class="math notranslate nohighlight">\(\Delta y_{t-i}\)</span>) serve to remove serial correlation that could bias the test.  Although the AIC already balances goodness of fit (measured by SSR) with model complexity (measured by the number of parameters), it chooses a long lag length for the short-rate because the short-rate’s dynamics are much more serially correlated, while the long rate’s aren’t.  That’s perfectly plausible economically: short-term rates move more smoothly and have stronger autocorrelation because of how the Fed targets the short end.  Additionally, the AIC penalizes complexity lightly compared to BIC, so it often chooses fairly long lag lengths where there is serial correlation.  If the true data-generating process is highly persistent, but stationary, AIC may overfit small noise patterns in short samples which can cause the ADF test to find spurious stationarity.</p>
+<p>To illustrate the fragility of the ADF test on our short-rate, let’s rerun the test on the 1-month yield with only 4 lags instead of 12:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the statsmodels library</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">adfuller</span>
+
+<span class="c1"># Write a function so that the output from the adfuller function is easier to read</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">adf_test</span><span class="p">(</span><span class="n">timeseries</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Results of Dickey-Fuller Test:&quot;</span><span class="p">)</span>
+    <span class="n">dftest</span> <span class="o">=</span> <span class="n">adfuller</span><span class="p">(</span><span class="n">timeseries</span><span class="p">,</span> <span class="n">maxlag</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">autolag</span><span class="o">=</span><span class="s2">&quot;AIC&quot;</span><span class="p">)</span>
+    <span class="n">dfoutput</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+        <span class="n">dftest</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;Test Statistic&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;p-value&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;#Lags Used&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Number of Observations Used&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dftest</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">dfoutput</span><span class="p">[</span><span class="s2">&quot;Critical Value (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dfoutput</span><span class="p">)</span>
+
+<span class="c1"># Perform the ADF test</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ADF test for the short-rate 1-month yield&quot;</span><span class="p">,</span> <span class="n">adf_test</span><span class="p">(</span><span class="n">short_rate_m</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Results of Dickey-Fuller Test:
+Test Statistic                  -1.937003
+p-value                          0.314859
+#Lags Used                       4.000000
+Number of Observations Used    287.000000
+Critical Value (1%)             -3.453342
+Critical Value (5%)             -2.871664
+Critical Value (10%)            -2.572164
+dtype: float64
+ADF test for the short-rate 1-month yield None
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, indeed, the p-value of 0.31 is larger than 0.05 so that the series is nonstationary.  Because the test result flips quite easily, it likely means that the 1-month yield is highly persistent but not strictly unit-root nonstationary.  This is a somewhat will known finding: short-term rates tend to be near unit root but mildly mean-reverting (especially pre-2008).  Economically, this is not surprising: the short-rate drifts with monetary policy regimes but exhibits some mean reversion.</p>
+<p>With 12 lags, the model is absorbing a lot of serial correlation in the short-run dynamics of the <span class="math notranslate nohighlight">\(\Delta y_{t}\)</span>.  This makes the test statistic on <span class="math notranslate nohighlight">\(y_{t-1}\)</span> more negative (from -1.94 to -3.19) because the residuals are “cleaner” and the regression attributes less of the persistence to the error term.  Using only 4 lags leaves some autocorrelation unmodeled, so the regression attributes more of the persistence to <span class="math notranslate nohighlight">\(y_{t-1}\)</span>, making it look closer to a unit root.</p>
+<p>Let’s delve a bit deeper.  Although a tad tedious, we can better understand the behavior of the short-rate by performing a few more diagnostic tests.  We will check the degree to which the 4-lag model versus the 12-lag model handles serial correlation in the data.  Specifically, we will collect the residuals from the ADF regression and then observe their autocorrelation function (ACF) and partial autocorrelation function (PACF) as well as formerly test whether the residuals are white-noise or not.  We use the <a href="https://www.statsmodels.org/dev/generated/statsmodels.stats.diagnostic.acorr_ljungbox.html" target="_blank">Ljung-Box test</a>, performed with the function <code class="docutils literal notranslate"><span class="pre">acorr-ljungbox</span></code> from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>, to check if there exists serial correlation in the residuals.  The ACF shows the correlation between the series with a lagged version of itself while the PACF shows the additional (marginal) correlation explained by each successive lagged term.  These provide visual evidence of whether or not our residuals exhibit any serial correlation.</p>
+<p>Below we do the following:</p>
+<ol class="arabic simple">
+<li><p>Explicitly write the ADF regression to extract the residuals in the variable called <code class="docutils literal notranslate"><span class="pre">resid</span></code>.  We use 4 lags in the regression.</p></li>
+<li><p>Perform the Ljung-Box test on the residuals.  If the p-value &gt; 0.05, the residuals are approximately white noise.</p></li>
+<li><p>Plot the ACF and PCF using the functions <code class="docutils literal notranslate"><span class="pre">plot_acf</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_pacf</span></code> from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p></li>
+<li><p>Repeat steps 1-3 with a lag length of 12.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">adfuller</span><span class="p">,</span> <span class="n">acf</span><span class="p">,</span> <span class="n">pacf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.diagnostic</span><span class="w"> </span><span class="kn">import</span> <span class="n">acorr_ljungbox</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="c1"># Focus on the 1-month Treasury yield</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">short_rate_m</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Choose the number of lags</span>
+<span class="n">n_lags</span> <span class="o">=</span> <span class="mi">4</span> 
+
+<span class="c1"># Build the ADF regression manually: Δy_t = α + β*y_{t-1} + Σγ_i*Δy_{t-i} + ε_t</span>
+<span class="n">y_diff</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">y_lagged</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_lagged</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_diff</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;y_lag1&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;dy_lag</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">y_reg</span> <span class="o">=</span> <span class="n">y_diff</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y_reg</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">resid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ljung–Box test up to 12 lags</span>
+<span class="n">lb_test</span> <span class="o">=</span> <span class="n">acorr_ljungbox</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># Test whether residual autocorrelation up to lag 12 is jointly zero.  Common for monthly data.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lb_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      lb_stat  lb_pvalue
+12  20.681852   0.055238
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_acf</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;ACF of ADF residuals&quot;</span><span class="p">)</span>
+<span class="n">plot_pacf</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;PACF of ADF residuals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7cee4c36e463f4c81f6d2e0b84c3ac13086d588c9e2dbc1225563324ac3c21de.png" src="_images/7cee4c36e463f4c81f6d2e0b84c3ac13086d588c9e2dbc1225563324ac3c21de.png" />
+</div>
+</div>
+<p>Since the p-value of the Ljung-Box test is 0.055, which is &gt; 0.05, we conclude that the residuals are approximately white noise.  Therefore, the 4 lag specification is adequate to handle the serial correlation in the 1-month yield.  The ACF and PACF plots show that there is virtually no serial correlation in the residuals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">adfuller</span><span class="p">,</span> <span class="n">acf</span><span class="p">,</span> <span class="n">pacf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.diagnostic</span><span class="w"> </span><span class="kn">import</span> <span class="n">acorr_ljungbox</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="c1"># Let&#39;s pick the series you want to test</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">short_rate_m</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Choose the number of lags</span>
+<span class="n">n_lags</span> <span class="o">=</span> <span class="mi">12</span>  <span class="c1"># or 12 for comparison</span>
+
+<span class="c1"># Build the ADF regression manually: Δy_t = α + β*y_{t-1} + Σγ_i*Δy_{t-i} + ε_t</span>
+<span class="n">y_diff</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">y_lagged</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_lagged</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_diff</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;y_lag1&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;dy_lag</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">y_reg</span> <span class="o">=</span> <span class="n">y_diff</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="c1"># Add constant</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y_reg</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">resid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="c1"># --- Print results ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># or, if you only want the R² and key stats:</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R-squared: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adj. R-squared: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">tvalues</span><span class="p">[</span><span class="s1">&#39;y_lag1&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.224
+Model:                            OLS   Adj. R-squared:                  0.186
+Method:                 Least Squares   F-statistic:                     5.895
+Date:                Thu, 23 Oct 2025   Prob (F-statistic):           1.40e-09
+Time:                        14:16:09   Log-Likelihood:                 45.866
+No. Observations:                 279   AIC:                            -63.73
+Df Residuals:                     265   BIC:                            -12.89
+Df Model:                          13                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0425      0.018      2.390      0.018       0.007       0.077
+y_lag1        -0.0251      0.008     -3.193      0.002      -0.041      -0.010
+dy_lag1        0.0635      0.060      1.061      0.290      -0.054       0.181
+dy_lag2        0.0494      0.059      0.831      0.407      -0.068       0.166
+dy_lag3        0.2559      0.060      4.291      0.000       0.138       0.373
+dy_lag4        0.0914      0.061      1.489      0.138      -0.029       0.212
+dy_lag5        0.0159      0.062      0.259      0.796      -0.105       0.137
+dy_lag6       -0.0083      0.061     -0.135      0.893      -0.129       0.113
+dy_lag7        0.1025      0.061      1.674      0.095      -0.018       0.223
+dy_lag8        0.0604      0.061      0.984      0.326      -0.060       0.181
+dy_lag9        0.1403      0.061      2.287      0.023       0.019       0.261
+dy_lag10       0.0139      0.058      0.241      0.810      -0.100       0.128
+dy_lag11      -0.0970      0.058     -1.679      0.094      -0.211       0.017
+dy_lag12       0.1562      0.058      2.684      0.008       0.042       0.271
+==============================================================================
+Omnibus:                      107.141   Durbin-Watson:                   2.017
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1728.163
+Skew:                          -1.078   Prob(JB):                         0.00
+Kurtosis:                      15.001   Cond. No.                         15.5
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+R-squared: 0.2243
+Adj. R-squared: 0.1863
+t-statistic: -3.193
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ljung–Box test up to 12 lags</span>
+<span class="n">lb_test</span> <span class="o">=</span> <span class="n">acorr_ljungbox</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lb_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     lb_stat  lb_pvalue
+12  0.731443   0.999998
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.graphics.tsaplots</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_acf</span><span class="p">,</span> <span class="n">plot_pacf</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plot_acf</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;ACF of ADF residuals&quot;</span><span class="p">)</span>
+<span class="n">plot_pacf</span><span class="p">(</span><span class="n">resid</span><span class="p">,</span> <span class="n">lags</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;PACF of ADF residuals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5fcaf800a0c7d9578b45bf14006682a193991876b4337d376389827efbf68dcc.png" src="_images/5fcaf800a0c7d9578b45bf14006682a193991876b4337d376389827efbf68dcc.png" />
+</div>
+</div>
+<p>Unsurprisingly, the 12-lag structure handles more of the serial correlation as suggested by a p-value of the Ljung-Box test of 0.99 and even less serial correlation displayed in the ACF and PACF plots.  However, we saw that the 4-lag structure was enough to sufficiently handle the serial correlation in the 1-month yield.  Therefore, the 12 lag specification may indeed be overfitting.  As mentioned, this is due to the AIC’s relatively weak penalizing of complexity.</p>
+<p>If the 4-lag structure is adequate, then we can more confidently trust the results of the ADF test with 4 lags, which claimed that the 1-month yield was nonstationary.  This is consistent with our intuition about the behavior of the time series.</p>
+<p>Although cumbersome, this process provides compelling evidence that the 1-month yield displays near-unit-root behavior and motivates us to first-difference the series to be more confident in our statistical tests.  It is well known that short-term rates exhibit high autocorrelation compared to long-rates, and this result is often stated as, “long-rate changes are less predictable that short-rate changes.”  More evidence of the this can be found by observing the R-squared from the ADF regression.  Above, we saw that R-squared of the short-rate ADF test was 0.224, and below we find that it is 0.013 for the long-rate ADF test.  Changes in the long-rate accounts for only 1.3 percent of its variance, while changes in the short-rate account for about 22.4 percent of its variance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">adfuller</span><span class="p">,</span> <span class="n">acf</span><span class="p">,</span> <span class="n">pacf</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.diagnostic</span><span class="w"> </span><span class="kn">import</span> <span class="n">acorr_ljungbox</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="c1"># Let&#39;s pick the series you want to test</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">long_rate_m</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Choose the number of lags</span>
+<span class="n">n_lags</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># or 12 for comparison</span>
+
+<span class="c1"># Build the ADF regression manually: Δy_t = α + β*y_{t-1} + Σγ_i*Δy_{t-i} + ε_t</span>
+<span class="n">y_diff</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">y_lagged</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_lagged</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_diff</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;y_lag1&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;dy_lag</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_lags</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+<span class="n">y_reg</span> <span class="o">=</span> <span class="n">y_diff</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+<span class="c1"># Add constant</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y_reg</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="n">resid</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">resid</span>
+
+<span class="c1"># --- Print results ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># or, if you only want the R² and key stats:</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R-squared: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Adj. R-squared: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">rsquared_adj</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic: </span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">tvalues</span><span class="p">[</span><span class="s1">&#39;y_lag1&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.013
+Model:                            OLS   Adj. R-squared:                  0.006
+Method:                 Least Squares   F-statistic:                     1.797
+Date:                Thu, 23 Oct 2025   Prob (F-statistic):              0.111
+Time:                        14:16:09   Log-Likelihood:                -148.14
+No. Observations:                 680   AIC:                             308.3
+Df Residuals:                     674   BIC:                             335.4
+Df Model:                           5                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0359      0.027      1.356      0.176      -0.016       0.088
+y_lag1        -0.0059      0.004     -1.462      0.144      -0.014       0.002
+dy_lag1        0.0761      0.038      1.976      0.049       0.000       0.152
+dy_lag2       -0.0370      0.039     -0.958      0.338      -0.113       0.039
+dy_lag3       -0.0414      0.039     -1.074      0.283      -0.117       0.034
+dy_lag4        0.0405      0.039      1.052      0.293      -0.035       0.116
+==============================================================================
+Omnibus:                       77.812   Durbin-Watson:                   1.997
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              397.059
+Skew:                          -0.357   Prob(JB):                     6.02e-87
+Kurtosis:                       6.675   Cond. No.                         23.5
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+R-squared: 0.0132
+Adj. R-squared: 0.0058
+t-statistic: -1.462
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since we are taking both the long- and short-rates as being non-stationary, the spread may either be nonstationary or stationary.  If the spread is stationary, then the long-term and short-term rates are cointegrated.  Although I omit the analysis here, the results of the ADF test on the spread are very sensitive in a similar way as the we saw with the 1-month Treasury yield, suggesting it may be a near unit root process.  However, there is also the technical issue that the ADF test on the spread assumes that the cointegrating vector is <span class="math notranslate nohighlight">\((1,-1)\)</span>, since we construct the spread by simply taking <span class="math notranslate nohighlight">\(\text{spread}_t = \text{long-rate}_t-\text{short-rate}_t\)</span>.  If, however, the term premium is not constant over time, then this simple test may give misleading results.  A more robust approach is to use the Engle-Granger test which does not assume the cointegrating vector is <span class="math notranslate nohighlight">\((1,-1)\)</span>.  Instead, it regresses <span class="math notranslate nohighlight">\(\text{long-rate}_t=\alpha+\beta \text{short-rate}_t + u_\)</span>, then runs the ADF test on the residuals <span class="math notranslate nohighlight">\(\hat{u}_t\)</span>.  If <span class="math notranslate nohighlight">\(\hat{u}_t\)</span> is stationary, then the long- and short-rates are cointegrated.</p>
+<p>Rather than construct the residuals ourselves, we run the <a href="https://www.statsmodels.org/dev/generated/statsmodels.stats.diagnostic.acorr_ljungbox.html" target="_blank">Engle-Granger cointegration test</a> using the function <code class="docutils literal notranslate"><span class="pre">coint</span></code> from <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.  This function takes two data series as its inputs and returns a t-statistic and p-value of the unit root test on the residuals.  The Null hypothesis is that there is no cointegration, so if the p-value is below the critical value then we conclude there is a cointegrating relationship.</p>
+<p>Below we</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create two continuous periods of data with the same size on the 20-year yield and 3 month yield</span>
+
+<span class="n">short_rate_alt_m_cont_1987</span><span class="o">=</span><span class="n">short_rate_alt_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1962-01-01&quot;</span><span class="p">:</span><span class="s2">&quot;1986-12-01&quot;</span><span class="p">]</span>
+<span class="n">short_rate_alt_m_cont_1993</span><span class="o">=</span><span class="n">short_rate_alt_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1993-10-01&quot;</span><span class="p">:]</span>
+<span class="n">long_rate_m_cont_1987</span><span class="o">=</span><span class="n">long_rate_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[:</span><span class="s2">&quot;1987-01-01&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">long_rate_m_cont_1993</span><span class="o">=</span><span class="n">long_rate_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;1987-09-01&quot;</span><span class="p">:</span><span class="s2">&quot;2025-09-01&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Also prepare data to test the spread on the 1 month yield</span>
+<span class="n">long_rate_m_cont_2001</span><span class="o">=</span><span class="n">short_rate_m</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;2001-07-01&quot;</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.tsa.stattools</span><span class="w"> </span><span class="kn">import</span> <span class="n">coint</span>
+
+<span class="n">coint_t_1987</span><span class="p">,</span> <span class="n">p_value_1987</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">coint</span><span class="p">(</span><span class="n">long_rate_m_cont_1987</span><span class="p">,</span> <span class="n">short_rate_alt_m_cont_1987</span><span class="p">)</span>
+<span class="n">coint_t_1993</span><span class="p">,</span> <span class="n">p_value_1993</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">coint</span><span class="p">(</span><span class="n">long_rate_m_cont_1993</span><span class="p">,</span> <span class="n">short_rate_alt_m_cont_1993</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Engle–Granger test statistic for pre-1987: </span><span class="si">{</span><span class="n">coint_t_1987</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">p_value_1987</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Engle–Granger test statistic for post-1993: </span><span class="si">{</span><span class="n">coint_t_1993</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p-value: </span><span class="si">{</span><span class="n">p_value_1993</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Engle–Granger test statistic for pre-1987: -3.577, p-value: 0.0262
+Engle–Granger test statistic for post-1993: -2.433, p-value: 0.3092
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interestingly, the results on the Engle-Granger test conclude that the short- and long-rates were cointegrated before 1987, but not cointegrated after 1993.  This likely reflects structural changes in the term premium and monetary policy regimes.  The period post-1993 includes the Great Moderation, QE, ZLB, and big changes in term premia–so its not so surprising that cointegration is not found here.</p>
+<p>These results show a nuanced picture of the relationship between long- and short-rates.  Although the rates tend to comove before 1987, that comovements is not stastically significant after 1993.  Visual inspection of the two series suggests something changed after 2000, when the short-rate became much more volatile relative to the long-rate.  Another way of saying this is that we cannot reject the hypothesis that the spread is non-stationary after 1993.  Term premium become very volatility.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="term-structure-of-interest-rates.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Term Structure of Interest Rates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="monetary-policy-systems.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Market for Reserves and Monetary Policy Systems</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stylized-facts-about-short-and-long-term-interest-rates">Stylized Facts about Short- and Long-Term Interest Rates</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-short-and-long-term-interest-rates">Visualizing Short- and Long-Term Interest Rates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-for-stationarity-of-the-short-and-long-term-rates">Testing for Stationarity of the Short- and Long-Term Rates</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

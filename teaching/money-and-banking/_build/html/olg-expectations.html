@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Role of Expectations in OLG Dynamics &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'olg-expectations';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Monetary Aggregates Data Tutorial" href="monetary-aggregates-data-tutorial.html" />
+    <link rel="prev" title="OLG Model of Money Details" href="olg-model-details.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/olg-expectations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Role of Expectations in OLG Dynamics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-process-for-money-growth-z">Stochastic Process for Money Growth <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-with-stochastic-money-growth">Equilibrium with Stochastic Money Growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-economy-under-different-forecasting-rules">Simulating the Economy Under Different Forecasting Rules</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-role-of-expectations-in-olg-dynamics">
+<h1>The Role of Expectations in OLG Dynamics<a class="headerlink" href="#the-role-of-expectations-in-olg-dynamics" title="Link to this heading">#</a></h1>
+<p>We use our OLG model to introduce how expectations affect the behavior of the economy.  Expectations refer to the way that agents forecast future uncertain variables in the economy.  In our OLG model previously, we had no stochastic (random) variables and therefore there was no forecasting problem to be solved by agents.  This setup implicitly assumed <strong>perfect foresight</strong>–agents can see the entire future path of economic variables.  Here, we introduce a stochastic money supply in order to investigate how agents’ forecasting affects the dynamics of real money demand and inflation.</p>
+<section id="stochastic-process-for-money-growth-z">
+<h2>Stochastic Process for Money Growth <span class="math notranslate nohighlight">\(z\)</span><a class="headerlink" href="#stochastic-process-for-money-growth-z" title="Link to this heading">#</a></h2>
+<p>We allow the growth rate of the money supply <span class="math notranslate nohighlight">\(z_t\)</span> to be a random variable.  It is standard in macroeconomics to suppose that such a state variable is an AR(1) process so we have</p>
+<div class="math notranslate nohighlight">
+\[
+z_{t+1}=(1-\rho)\bar{z}+\rho+\epsilon_{t+1}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{z}\)</span> if the steady state value of money supply growth, <span class="math notranslate nohighlight">\(\epsilon_{t+1}\)</span> is an i.i.d. shock, and <span class="math notranslate nohighlight">\(\rho \in [0,1]\)</span> measures how persist the shocks are.</p>
+</section>
+<section id="equilibrium-with-stochastic-money-growth">
+<h2>Equilibrium with Stochastic Money Growth<a class="headerlink" href="#equilibrium-with-stochastic-money-growth" title="Link to this heading">#</a></h2>
+<p>We consider the same environment as before with a log utility function and a constant population of size 1.  The household’s problem is thus</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max \ln(c_{1,t})+\ln(c_2{t+1})
+c_{1,t}+\nu_t m_t\leq y \\
+c_{2,t+1}\leq \nu_{t+1}^e m_t+{a_{t+1}^e}
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{t+1}^e=\left(z_{t+1}^e-1\right)\nu_{t+1}^e M_t\)</span> is the real value of newly printed money.  Notice the use of the superscript <span class="math notranslate nohighlight">\(e\)</span> to denote <span class="math notranslate nohighlight">\(t+1\)</span> variables.  This is because we want to be explicit that agents need to forecast future values.</p>
+<p>The first-order condition to this problem gives real money demand taking the expected rate of return on money and expected future transfer of newly printed money as given,</p>
+<div class="math notranslate nohighlight">
+\[
+q_{t} =\frac{\beta}{1+\beta}y-\frac{1}{1+\beta}\frac{\nu_t}{\nu_{t+1}^e}a_{t+1}^e
+\]</div>
+<p>Use market clearing <span class="math notranslate nohighlight">\(\nu_t M_t=q_t\)</span> to express the equilibrium value of newly printed money as</p>
+<div class="math notranslate nohighlight">
+\[
+a_{t+1}=\left(z_{t+1}^e-1\right)\frac{\nu_{t+1}^e}{\nu_t}q_t
+\]</div>
+<p>and substitute this into the first-order condition to obtain a real money demand function</p>
+<div class="math notranslate nohighlight">
+\[
+q_t = \frac{\beta y}{\beta+z_{t+1}^e}
+\]</div>
+<p>Notice that agents money demand today depends on what they anticipate the growth rate of the money supply will be.</p>
+<p><em>Actual</em> inflation is given by market clearing which says</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{t+1}=z_{t+1}\frac{q_t}{q_{t+1}}
+\]</div>
+<p>The above two equations characterize the equilibrium in this economy.  The real money demand curve determines <span class="math notranslate nohighlight">\(q_t\)</span> given expectations about money expansion.  Market clearing then determines the actual rate of inflation given real money demand.</p>
+</section>
+<section id="simulating-the-economy-under-different-forecasting-rules">
+<h2>Simulating the Economy Under Different Forecasting Rules<a class="headerlink" href="#simulating-the-economy-under-different-forecasting-rules" title="Link to this heading">#</a></h2>
+<p>We now proceed to simulate the economy under three alternatives:</p>
+<ol class="arabic simple">
+<li><p>Perfect foresight</p></li>
+<li><p>Adaptive expectations</p></li>
+<li><p>Rational expectations</p></li>
+</ol>
+<p>Perfect foresight says that agents perfectly anticpate the entire path of future money supply <span class="math notranslate nohighlight">\(z_{t+1}^e=z_{t+1}\)</span>.  This is equivalent to the deterministic case we considered in our earlier model.</p>
+<p>Adaptive expectations assumes that agents form their forecast based on past experience, adjusting their predictions slows as new information becomes available.  Formally we model this forecasting rule as</p>
+<div class="math notranslate nohighlight">
+\[
+z_{t+1}^e = (1-\lambda)z_t^e+\lambda z_t
+\]</div>
+<p>Agents prediction about the future money supply is based on their past prediction (the first term), and the newly observed actual money supply (the second term).  The parameter <span class="math notranslate nohighlight">\(\lambda\)</span> controls how much agents update their past prediction based on new information.</p>
+<p>Rational expectations assumes that agents know the stochastic process for money supply, but cannot see the future shock.  They only know that, on average, the process follows</p>
+<div class="math notranslate nohighlight">
+\[
+E[z_{t+1}]=(1-\rho)z_t+\rho z_t
+\]</div>
+<p>In the simulation below we generate a deterministic path for <span class="math notranslate nohighlight">\(z_t\)</span> from an AR(1) process with a one-time positive shock at <span class="math notranslate nohighlight">\(t=1\)</span>.  Agents money demand $q_{t+1}(z_{t+1}^e) is then computed under the three alternatives:</p>
+<ol class="arabic simple">
+<li><p>Perfect forsight: <span class="math notranslate nohighlight">\(z_{t+1}^e=z_{t+1}\)</span></p></li>
+<li><p>Adaptive expectations: <span class="math notranslate nohighlight">\(z_{t+1}^e = (1-\lambda)z_t^e+\lambda z_t\)</span></p></li>
+<li><p>Rational expectations : <span class="math notranslate nohighlight">\(z_{t+1}^e=(1-\rho)z_t+\rho z_t\)</span></p></li>
+</ol>
+<p>Given the path for <span class="math notranslate nohighlight">\(q_t\)</span>, we then compute realized inflation from the market clearing condition</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{t+1}=z_{t+1}\frac{q_t}{q_{t+1}}
+\]</div>
+<p>We let <span class="math notranslate nohighlight">\(\beta=.95,y=1,\bar{z}=1.02,\rho=0.5,\lambda=0.5\)</span> and introduce a one-time ten percent shock to money growth <span class="math notranslate nohighlight">\(\epsilon = 0.1\)</span> at time <span class="math notranslate nohighlight">\(t=1\)</span> and simulate the economy fro 30 periods.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># --- Parameters ---</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.95</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">z_bar</span> <span class="o">=</span> <span class="mf">1.02</span>      <span class="c1"># steady-state money growth</span>
+<span class="n">rho</span> <span class="o">=</span> <span class="mf">0.5</span>         <span class="c1"># persistence of z_t</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">30</span>            <span class="c1"># periods</span>
+<span class="n">eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">eps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.1</span>     <span class="c1"># one unexpected shock at t=1</span>
+<span class="n">lambda_ad</span> <span class="o">=</span> <span class="mf">.5</span>   <span class="c1"># adaptive gain</span>
+
+<span class="c1"># --- Generate realized z_t (money growth) ---</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">z</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_bar</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">z_bar</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+
+<span class="c1"># --- EXPECTATIONS ---</span>
+
+<span class="c1"># 1. Perfect foresight (knows full realized path)</span>
+<span class="n">z_pf_e</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># 2. Adaptive expectations</span>
+<span class="n">z_ad_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">z_ad_e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_bar</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">z_ad_e</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">lambda_ad</span><span class="p">)</span> <span class="o">*</span> <span class="n">z_ad_e</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">lambda_ad</span> <span class="o">*</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># 3. Rational expectations (knows AR(1) law, not future shocks)</span>
+<span class="n">z_re_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">z_re_e</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="n">z_bar</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">z</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+<span class="n">z_re_e</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">z_re_e</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># terminal condition</span>
+
+<span class="c1"># --- MONEY DEMAND and INFLATION ---</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">money_demand</span><span class="p">(</span><span class="n">z_exp</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">beta</span> <span class="o">*</span> <span class="n">y</span> <span class="o">/</span> <span class="p">(</span><span class="n">beta</span> <span class="o">+</span> <span class="n">z_exp</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">inflation</span><span class="p">(</span><span class="n">z_real</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">z_real</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*</span> <span class="n">q</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">q</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># Compute series</span>
+<span class="n">q_pf</span> <span class="o">=</span> <span class="n">money_demand</span><span class="p">(</span><span class="n">z_pf_e</span><span class="p">)</span>
+<span class="n">q_ad</span> <span class="o">=</span> <span class="n">money_demand</span><span class="p">(</span><span class="n">z_ad_e</span><span class="p">)</span>
+<span class="n">q_re</span> <span class="o">=</span> <span class="n">money_demand</span><span class="p">(</span><span class="n">z_re_e</span><span class="p">)</span>
+
+<span class="n">pi_pf</span> <span class="o">=</span> <span class="n">inflation</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">q_pf</span><span class="p">)</span>
+<span class="n">pi_ad</span> <span class="o">=</span> <span class="n">inflation</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">q_ad</span><span class="p">)</span>
+<span class="n">pi_re</span> <span class="o">=</span> <span class="n">inflation</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">q_re</span><span class="p">)</span>
+
+<span class="c1"># --- PLOTS ---</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_pf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Perfect foresight&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_ad</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Adaptive (λ=0.3)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q_re</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rational expectations&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Real Money Demand $q_t$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi_pf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Perfect foresight&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi_ad</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Adaptive (λ=0.3)&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi_re</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rational expectations&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Inflation $</span><span class="se">\\</span><span class="s2">pi_{t+1}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># --- Peak differences (optional diagnostics) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Peak |q_pf - q_ad| =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">q_pf</span> <span class="o">-</span> <span class="n">q_ad</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Peak |q_pf - q_re| =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">q_pf</span> <span class="o">-</span> <span class="n">q_re</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Peak |pi_pf - pi_ad| =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pi_pf</span> <span class="o">-</span> <span class="n">pi_ad</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Peak |pi_pf - pi_re| =&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pi_pf</span> <span class="o">-</span> <span class="n">pi_re</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/1e190ca4fd4b13c2044a71ca5ad747f1601ab67237b129908999b06f05d876d0.png" src="_images/1e190ca4fd4b13c2044a71ca5ad747f1601ab67237b129908999b06f05d876d0.png" />
+<img alt="_images/af002e979934405b098eb66a9b3f9fdc109237f4fdde2556a10fb6716932673d.png" src="_images/af002e979934405b098eb66a9b3f9fdc109237f4fdde2556a10fb6716932673d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peak |q_pf - q_ad| = 0.02329630447043829
+Peak |q_pf - q_re| = 0.011359831635337492
+Peak |pi_pf - pi_ad| = 0.05685279187817294
+Peak |pi_pf - pi_re| = 0.02842639593908647
+</pre></div>
+</div>
+</div>
+</div>
+<p>First compare the dynamics of the perfect foresight equilibrium (PFE) with the adaptive expectations equilibrium (AEE).  Under perfect foresight agents perfectly <em>anticipate</em> the entire path of money growth.  Because <span class="math notranslate nohighlight">\(q_t\)</span> depends on the one-step-ahead forecast <span class="math notranslate nohighlight">\(z_{t+1}\)</span>, if agents know <span class="math notranslate nohighlight">\(z_{t+1}\)</span> wills spike and then mean-revert, they will choose <span class="math notranslate nohighlight">\(q_t\)</span> today to reflect that future path.  Hence, the one-time ten percent increase in money growth is fully internalized resulting in a sharp reduction in real money balances, followed by a quick recovery which inherits the exact same dynamics as the AR(1) process for money supply.  Conversely, under AEE agents forecasts update gradually causing a <em>lagged</em> response to real money demand.  At the time of the shock they under-react relative to PFE since their forecast <span class="math notranslate nohighlight">\(z^e\)</span> is lagging actual <span class="math notranslate nohighlight">\(z\)</span>.  Real money demand falls less and gradually recovers as beliefs update.</p>
+<p>Because inflation depends on both current real money demand and future real money demand, the different reactions from PFE and AEE generate different inflation dynamics.  PFE generates a sharp rise in inflation since agents dramatically reduce real balances in reaction to the shock.  AEE realizes less of a spike in inflation because beliefs update slowly.  The difference in peak inflation between PFE adn AEE is about 5 percent.  Inflation then reverts to its steady state level very fast under PFE and slower under AEA.</p>
+<p>Now consider rational expectations equilibrium (REE).  Agents only know the statistical law of motion for money growth (the AR(1) process), but not the actual shocks.  When the shock hits, they only partially adjust their forecast depend on how persistent the shock is.  Compared to PFE, expectations are still forward looking, but restricted by unpredictability of shocks.  Therefore, REE exhibits slower dynamics compared to PFE, but faster compared to AEE.  The peak difference in inflation between REE and PFE is about 3 percent.  This difference is very sensitive to the persistence of the shock process.  If <span class="math notranslate nohighlight">\(\rho\)</span> is small, then <span class="math notranslate nohighlight">\(z_t\)</span> today tells REE agents very little about <span class="math notranslate nohighlight">\(z_{t+1}\)</span>.  Their expectation is therefore a muted version of the realized shock: they underreact more relative to PF.  PF agents see through short-lived shocks immediately, while RE agents learn only through observed data and the known AR(1) law.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="olg-model-details.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">OLG Model of Money Details</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="monetary-aggregates-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Monetary Aggregates Data Tutorial</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-process-for-money-growth-z">Stochastic Process for Money Growth <span class="math notranslate nohighlight">\(z\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-with-stochastic-money-growth">Equilibrium with Stochastic Money Growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-economy-under-different-forecasting-rules">Simulating the Economy Under Different Forecasting Rules</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

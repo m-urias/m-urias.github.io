@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Market for Reserves and Monetary Policy Systems &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'monetary-policy-systems';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Term Structure of Interest Rates Data Tutorial" href="yield-curve-data-tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/monetary-policy-systems.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Market for Reserves and Monetary Policy Systems</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market-for-reserves">The Market for Reserves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-market-operations">Open market operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-reserve-ratio">Required reserve ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discount-lending">Discount lending</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-on-reserves">Interest on reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-the-us">Recent developments in the US</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china-s-monetary-policy-system">China’s monetary policy system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-central-bank-policy-under-floor-and-corridor-systems">A simple model of central bank policy under floor and corridor systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-positive-shock-to-loan-demand">A positive shock to loan demand</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loosening-monetary-policy-in-a-corridor-system">Loosening monetary policy in a corridor system</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-the-fed-s-move-to-a-floor-system">Modeling the Fed’s move to a floor system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-market-for-reserves-and-monetary-policy-systems">
+<h1>The Market for Reserves and Monetary Policy Systems<a class="headerlink" href="#the-market-for-reserves-and-monetary-policy-systems" title="Link to this heading">#</a></h1>
+<section id="the-market-for-reserves">
+<h2>The Market for Reserves<a class="headerlink" href="#the-market-for-reserves" title="Link to this heading">#</a></h2>
+<p>On any given day some banks will have more reserves than they want, and some banks will have less reserves than they want. The <strong>interbank money markets</strong> are where banks borrow and lend reserves to each other using short-term financing arrangements. In the US the interbank money market is called the <strong>Fed Funds Market</strong> and the equilibrium interest rate that banks charge each other for reserves is called the <strong>Fed Funds Rate</strong>.</p>
+<p>Banks demand reserves for two reasons:</p>
+<ol class="arabic simple">
+<li><p>Regulatory requirements: Many central banks require member commercial banks to hold a certain fraction of their liabilities in the form of reserves. This is called the <strong>required reserve ratio</strong>. In China it is usually around 12%.</p></li>
+<li><p>Payments: Banks need to hold reserves to settle payment requests that come through the payments network. Banks must hold the required reserve amount stipulated by law, but will also choose to hold some <strong>excess reserves</strong> as insurance against unanticipated payment requests.</p></li>
+</ol>
+<p>The central bank can manipulate overnight interest rates by intervening in the market for bank reserves. Different monetary policy tools have different affects on the market for reserves, and we will discuss each after providing a theoretical description of the market for reserves.</p>
+<p>First, let’s describe the demand function for bank reserves.  The quantity of reserves demanded by banks equals the sum of required reserves and excess reserves.  There is an opportunity cost of holding excess reserves: the interest rate that could be earned by lending them out (fed funds rate) less the interest earned on excess reserves (<span class="math notranslate nohighlight">\(i_{or}\)</span>).  When the Fed funds rate is high, it very costly to hold excess reserves because those reserves could have been lent out to earn a high rate of return.  When the Fed funds rate is low, it is not so costly for banks to hold excess reserves.  Therefore, there is a <strong>negative relationship between the total demand for bank
+reserves and the overnight lending rate</strong>.</p>
+<p>Second, let’s describe the supply of bank reserves.  The central bank is a monopoly issuer of reserves.  The total supply of reserves equals the sum of nonborrowed reserves (supplied through open market operations) and borrowed reserves (supplied through the discount window). We will denote the cost of borrowing from the Fed is the discount rate <span class="math notranslate nohighlight">\(i_d\)</span>.  If <span class="math notranslate nohighlight">\(i_{ff} &lt; i_d\)</span> then banks will not borrow from the Fed and thus borrowed reserves will be zero. If, on the other hand, <span class="math notranslate nohighlight">\(i_{ff} &gt; i_d\)</span> then banks will want to keep borrowing from the fed and lending out the proceeds.</p>
+<p>Hence, we have a vertical supply curve for reserves–representing the monopoly control of reserves in the banking system by the central bank–and a downward sloping demand curve for reserves.  This demand curve has a horizontal portion where the fed funds rate is equal to the discount rate–indicating the point at which there would be infinite borrowing from the Fed–and another horizontal protion at the interest on excess reserves rate–where the opportunity cost of holding reserves vanishes.</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_1.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Equilibrium in the market for reserves.
+    </figcaption>
+</figure>
+<section id="open-market-operations">
+<h3>Open market operations<a class="headerlink" href="#open-market-operations" title="Link to this heading">#</a></h3>
+<p>Open market operations affect the quantity of non-borrowed reserves in the banking system</p>
+<ul class="simple">
+<li><p>an open market purchase adds non-borrowed reserves</p></li>
+<li><p>an open market sale subtracts non-borrowed reserves</p></li>
+</ul>
+<p>The interest paid on reserves <span class="math notranslate nohighlight">\(i_{or}\)</span> sets a floor for the federal funds rate</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_2.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An open market purchase.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_mps/market_reserves_3.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An open market sale.
+    </figcaption>
+</figure>
+<p>Open market operations fall into two broad categories:</p>
+<ul class="simple">
+<li><p>Dynamic open market operations: intended to change the level of reserves and the monetary base.  These are conduct through the outright security purchases or sales.</p></li>
+<li><p>Defensive open market operations (sterilization): intended to offset movements in other factors that affect reserves and the monetary base.  These are conducted through repos and reverse-repos</p></li>
+</ul>
+</section>
+<section id="required-reserve-ratio">
+<h3>Required reserve ratio<a class="headerlink" href="#required-reserve-ratio" title="Link to this heading">#</a></h3>
+<p>Changing the required reserve ratio affects the quantity of reserves demanded by the banking system</p>
+<ul class="simple">
+<li><p>increasing the reserve ratio increases demand for reserves</p></li>
+<li><p>decreasing the reserve ratio decreases demand for reserves</p></li>
+</ul>
+<p>FIGURE TO BE INSERTED HERE</p>
+</section>
+<section id="discount-lending">
+<h3>Discount lending<a class="headerlink" href="#discount-lending" title="Link to this heading">#</a></h3>
+<p>Changing the discount rate affect the amount of borrowed reserves supplies to the banking system</p>
+<ul class="simple">
+<li><p>reducing the discount rate makes borrowed reserves cheaper</p></li>
+<li><p>increasing the discount rate makes borrowed reserves more expensive</p></li>
+</ul>
+<p>FIGURE HERE</p>
+</section>
+<section id="interest-on-reserves">
+<h3>Interest on reserves<a class="headerlink" href="#interest-on-reserves" title="Link to this heading">#</a></h3>
+<p>Changing the interest paid and reserves affects the amount of non-borrowed reserves demanded by the banking system</p>
+<ul class="simple">
+<li><p>increasing the interest paid on reserves reduces the opportunity cost of holding reserves</p></li>
+<li><p>decreasing the interest paid on reserves increases the opportunity cost of holding reserves</p></li>
+</ul>
+<p>FIGURE HERE</p>
+</section>
+<section id="recent-developments-in-the-us">
+<h3>Recent developments in the US<a class="headerlink" href="#recent-developments-in-the-us" title="Link to this heading">#</a></h3>
+<p>Before 2008, the Federal Reserve operated monetary policy under a \textbf{corridor system}: there was an upper bound and lower bound on where short-term interest rates could go. The upper bound was the discount rate.  If short-term market rates were to rise about the upper bound, banks could borrow at the Fed and lend at the higher market interest rate.  Arbitrage would force these rates down to the borrowing rate at the Fed.  The lower bound was the interest on excess reserves (zero).  The lower bound is binding since banks would rather earn 0 percent holding reserves than a negative return from lending..</p>
+<p>In November 2008, the Fed raised interest on excess reserves (IOER) rate above short-term market interest rates and triggered a shift to a \textbf{floor system}. A floor system removes the opportunity cost to banks of holding excess reserves by offering the banks a deposit rate at the Fed—the IOER rate—that is equal to or abvoe short-term market interest rates. If short-term rates fall below IOER rate, then banks could borrow at those lower rates and park the funds at the Fed.  Arbitrage, then, should cause short-term rates to converge to the IOER rate.  In theory, this allows the Fed to use it’s balance sheet as a tool of monetary policy while still maintaining control over short-term interest rates.</p>
+<p>Under a floor system, monetary policy is not set by a market interest rate, but by an administrative interest rate: the IOER rate.  Monetary policy is not tied to the supply of reserves, but instead to the quantity of reserves demanded by banks which the central bank controls through changes to the IOER. The central bank sets the IOER rate higher enough that banks’ demand for reserves becomes perfectly elastic with respect to inter-bank interest rates. Changes in the IOER rate, rather than open-market operations, is the main instrument of monetary policy</p>
+<p>Prior to the financial crisis the Federal Reserve did not pay interest on excess reserves (the foor on the Fed funds rate was at 0), but in October 2008 the Fed decided to pay a positive interest rate on excess reserves thereby raising the floor. In September 2013 the Fed began a program of taking in money from a wide range of non-bank financial institutions and paying interest. The technical name for this programme is the Overnight Reverse
+Repurchase Agreement Facility (ON RRP). Now the ON RRP rate is the effective floor.  The Fed says, “<em>Any counterparty that can use the ON RRP facility should be unwilling to invest funds overnight with another
+counterparty at a rate below the ON RRP rate, just as any depository institution eligible to earn interest on reserves should be unwilling to invest funds overnight with another counterparty at a rate below the
+interest rate on excess reserves.</em>”</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_4.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An open market sale.
+    </figcaption>
+</figure>
+<p>Why did the US central bank move to a floor system during the Financial crisis? According to Ben Bernanke, “<em>…the risk that our emergency lending, which had the side effect of increasing bank reserves, would lead short-term interest rates to fall below our federal funds target and thereby cause us to lose control of monetary policy…Until this point we had been selling Treasury securities we owned to offset the effect of our [emergency] lending on reserves (the process called sterilization). But as our lending increased, that stopgap response would at some point no longer be possible because we would run out of Treasuries to sell.</em>”</p>
+<p>Some critics worry that the floor system undermines the monetary transmission mechanism and alters bank portfolios away from positive NPV capital projects.</p>
+<p>Here is a summary of the ample reserves system currently in place in the US.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Concept</strong></p></th>
+<th class="head"><p><strong>Fed’s Choice</strong></p></th>
+<th class="head"><p><strong>Role and Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Policy Rate</strong></p></td>
+<td><p>Federal Funds Rate (FFR)</p></td>
+<td><p><strong>The way the Fed conducts monetary policy.</strong> The FOMC sets the target range (or the stance of policy) with the goal of moving the economy toward its dual mandate, as depicted in Figure 1.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Reserve Level</strong></p></td>
+<td><p>Ample</p></td>
+<td><p><strong>Level of reserves in the banking system.</strong> The Fed supplies a level of reserves large enough so that small movements in this level do not influence the FFR. This level of reserves intersects the horizontal region of the demand curve in the money market diagram. This relatively high level implies the tools the Fed relies on for control of interest rates are its administered rates.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Policy Tools</strong></p></td>
+<td><p>Interest on Reserves (IOR)</p></td>
+<td><p><strong>Primary tool of monetary policy implementation.</strong> IOR is an administered rate that acts like a reservation rate for banks and, through arbitrage, helps steer the FFR into the FOMC’s target range.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Overnight Reverse Repurchase Agreement (ON RRP) rate</p></td>
+<td><p><strong>Supplemental tool of monetary policy implementation.</strong> The ON RRP rate is an administered rate that acts like a reservation rate for a large number of financial institutions and helps set a floor for the FFR.</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Discount rate</p></td>
+<td><p><strong>Tool of monetary policy implementation.</strong> The discount rate is an administered rate set above the target range, with the intention to serve as a ceiling for the FFR. “Stigma” of borrowing from the Fed may dampen the effect of being a firm ceiling.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Open Market Operations (OMO)</p></td>
+<td><p><strong>Tool of monetary policy implementation.</strong> OMOs are conducted periodically to maintain ample reserves.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="china-s-monetary-policy-system">
+<h3>China’s monetary policy system<a class="headerlink" href="#china-s-monetary-policy-system" title="Link to this heading">#</a></h3>
+<p>China’s implementation of monetary policy works more like the US prior to the financial crisis. There are scarce reserves. The central bank’s short-term lending facility provides a ceiling on the
+overnight interest rate. Interest on excess reserves provides a floor on the overnight interest rate. The equilibrium interest rate is determined by adjusting the supply of reserves through the repo market
+In addition China makes use of it’s medium term lending facility (MLF) to adjust 1-year rates.</p>
+<p>Here is a figure from a <a href="http://www.pbc.gov.cn/en/3688229/3688335/3730276/4364384/2021102014082914468.pdf" target="_blank">paper</a> by the former Governor of the PBOC Yi Gang on the implementation of China’s monetary policy:</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_7.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An open market sale.
+    </figcaption>
+</figure>
+<p>And here are a list of interest rate the PBOC pays attention to:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Interest rate type</strong></p></th>
+<th class="head"><p><strong>Current rate</strong></p></th>
+<th class="head"><p><strong>Introduction</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Open market operation (OMO) rate</p></td>
+<td><p>7-day reserve repo at 2.2 percent</p></td>
+<td><p>Short-term reverse repo rate</p></td>
+</tr>
+<tr class="row-odd"><td><p>Medium-term lending facility (MLF) rate</p></td>
+<td><p>1-year MLF at 2.95 percent</p></td>
+<td><p>The interest rate at which the central bank lends to the market for medium terms.</p></td>
+</tr>
+<tr class="row-even"><td><p>Standing lending facility (SLF) rate</p></td>
+<td><p>7-day SFL at 3.2 percent (=7-day reverse repo rate +100BP)</p></td>
+<td><p>The interest rate at which the central bank provides short-term capital to financial instiutitions as demanded, which is the cap of the interest rate corridor.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Loan prime rates(LPR)</p></td>
+<td><p>1-year LPR at 3.85 percent; 4.65 percent for maturities of 5 years and above</p></td>
+<td><p>The arithmetic average of loan rates provided for customers of best credit qualities by LPR quoting banks.</p></td>
+</tr>
+<tr class="row-even"><td><p>Benchmark deposit rate</p></td>
+<td><p>Demand deposits at 0.35 percent; 1-year deposits at 1.5 percent</p></td>
+<td><p>Interest rates published by the PBC as a guidance for commercial banks to set interest rates on customer deposits.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interest rate on excess reserves</p></td>
+<td><p>0.35 percent</p></td>
+<td><p>The rate at which the central bank makes interest payments on the excess reserves deposited by financial institutions, which is the floor of the interest rate corridor.</p></td>
+</tr>
+<tr class="row-even"><td><p>Interest rate on required reserves</p></td>
+<td><p>1.62 percent</p></td>
+<td><p>The rate at which the central bank makes interest payments on the required reserves deposited by financial institutions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Shanghai Interbank Offered Rate (Shibor)</p></td>
+<td><p>2 percent overnight; and around 2.35 percent for 3-month maturity</p></td>
+<td><p>The arithmetic average of interbank offered rates quoted by banks with high credit ratings.</p></td>
+</tr>
+<tr class="row-even"><td><p>Government bond yield</p></td>
+<td><p>10-year government bonds yield around 2.85 percent</p></td>
+<td><p>Reference rates for the market-based bond market</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>With these definitions for China’s monetary policy system in mind, I propose a simple model as the following:</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_8.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An open market sale.
+    </figcaption>
+</figure>
+</section>
+<section id="a-simple-model-of-central-bank-policy-under-floor-and-corridor-systems">
+<h3>A simple model of central bank policy under floor and corridor systems<a class="headerlink" href="#a-simple-model-of-central-bank-policy-under-floor-and-corridor-systems" title="Link to this heading">#</a></h3>
+<p>We now build a simple model to demonstrate how the central banks’ operating system interacts with the market for loans.  We assume that the markets for reserves and bank loans are both competitive.  Since this makes banks price takers, the key mechanism linking the markets for reserves and loans is that banks will optimally banks equate the margins on bank reserves and bank loans.</p>
+<p>We continue to use the theoretical model for bank reserves as described above.  The market for loans is described as follows:</p>
+<ul class="simple">
+<li><p>let <span class="math notranslate nohighlight">\(S^*_L\)</span> denote the loan supply schedule based on bank fundamentals like funding costs, capital levels, regulatory requirements, and bank culture.</p></li>
+<li><p>let <span class="math notranslate nohighlight">\(S^0_L\)</span> denote the loan supply schedule reflect the actual supply of loans taking into account the riskiness of borrowers</p></li>
+<li><p>the risk premium creates a wedge between <span class="math notranslate nohighlight">\(S_L^*\)</span> and <span class="math notranslate nohighlight">\(S^0_L\)</span></p></li>
+<li><p>the supply curves are upward sloping for the usual reasons: as the marginal return on loans increases, banks are willing to increase the quantity of loans supplied</p></li>
+<li><p>the demand for bank loans is downward sloping for the usual reasons: as the cost of financing bank loans falls, the quantity of bank loans demanded will rise.</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_mps/market_loans.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Equilibrium in the market for loans.
+    </figcaption>
+</figure>
+<ul class="simple">
+<li><p>the intersection of the ``fundamental” supply curve <span class="math notranslate nohighlight">\(S^*_L\)</span> and the demand curve for loans determines the risk-free short-run interest rate on loans, <span class="math notranslate nohighlight">\(i_{rf}\)</span>.</p></li>
+<li><p>the intersection of the loan supply curve and the demand curve for loans determines the observable loan interest rate <span class="math notranslate nohighlight">\(i_L\)</span></p></li>
+<li><p>the spread between <span class="math notranslate nohighlight">\(i_L\)</span> and <span class="math notranslate nohighlight">\(i_{rf}\)</span> can be viewed as the net interest margin.</p></li>
+</ul>
+<p>Equilibrium in both markets obtain where the overnight interest rate <span class="math notranslate nohighlight">\(i_{ST}\)</span> is equal to the risk-free short-term interest rate <span class="math notranslate nohighlight">\(i_{rf}\)</span>. Said differently, the marginal risk-free return on loans is equal to the marginal cost of funding in equilibrium.</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_1.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Equilibrium in the market for reserves and loans.
+    </figcaption>
+</figure>
+<section id="a-positive-shock-to-loan-demand">
+<h4>A positive shock to loan demand<a class="headerlink" href="#a-positive-shock-to-loan-demand" title="Link to this heading">#</a></h4>
+<p>Let’s use our model to investigate what happnes when there is a sudden surge in demand for bank loans.  After the positive loan demand shock banks realize that higher demand for loans increases the marginal risk-free return on loans. Assuming constant risk premiums, the loan interest rate will proportionally rise from <span class="math notranslate nohighlight">\(i_L\)</span> to <span class="math notranslate nohighlight">\(i_{L}^1\)</span>. The marginal risk-free return on loans exceeds the marginal cost of funding these loans (<span class="math notranslate nohighlight">\(i_{rf}^1 &gt; i^_{ST}\)</span>)so banks respond by increasing the quantity of loans supplied from <span class="math notranslate nohighlight">\(L_0\)</span> to <span class="math notranslate nohighlight">\(L_1\)</span>.</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_2.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Positive loan demand shock.
+    </figcaption>
+</figure>
+<p>As a consequence of the higher equilibrium quantity of loans there is higher demand for bank reserves to meet the now-higher required (and precautionary) reserve amounts. This shifts the demand curve for reserves to the right until the marginal cost of funding loans just equals the marginal risk-free return (<span class="math notranslate nohighlight">\(i_{st}^1 = i_1\)</span>)</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_3.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Adjustment in demand for reserves.
+    </figcaption>
+</figure>
+<p>Note that the quantity of reserves in the banking system is unchanged, but the composition of reserves does change.  As the quantity of loans supplied increases, excess reserves get turned into required reserves.</p>
+</section>
+<section id="loosening-monetary-policy-in-a-corridor-system">
+<h4>Loosening monetary policy in a corridor system<a class="headerlink" href="#loosening-monetary-policy-in-a-corridor-system" title="Link to this heading">#</a></h4>
+<p>Here we consider the central bank conducts an open market purchase to increase the supply the bank reserves. The excess liquidity causes a decline in the interbank interest rate from <span class="math notranslate nohighlight">\(i^1_{ST}\)</span> to <span class="math notranslate nohighlight">\(i^2_{ST} = i^0_{ST}\)</span></p>
+<p>After the central bank lowers the overnight interest rate banks find that their marginal risk-free return on loans is higher than the marginal funding cost <span class="math notranslate nohighlight">\((i^*_1 &gt; i^2_{ST}\)</span>) and banks increase the supply of loans until the marginal conditions are again equalized.</p>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_4.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Open market purchase.
+    </figcaption>
+</figure>
+<p>Note that the increase in supply of reserves initially results in an increase in excess reserves, but as more loans are supplied, some of these excess reserves get turned into required reserves.  The central bank determines the supply of reserves, but the market determines the composition.</p>
+</section>
+<section id="modeling-the-fed-s-move-to-a-floor-system">
+<h4>Modeling the Fed’s move to a floor system<a class="headerlink" href="#modeling-the-fed-s-move-to-a-floor-system" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Before the financial crisis the Federal Reserve of the US set a target rate for <span class="math notranslate nohighlight">\(i^0_{ST}\)</span> (according to a Taylor rule)</p></li>
+<li><p>To achieve the target rate the Fed endogenously adjusted the supply of reserves to changes in demand for reserves</p></li>
+<li><p>The market for bank loans drove activity in the market for bank reserves, and the Fed responded to offset shifts in reserve demand to achieve its target rate</p></li>
+</ul>
+<p>The Fed moved to a floor system in November 2008:</p>
+<ul class="simple">
+<li><p>the recession caused a sharp decline in loan demand causing a leftward shift from <span class="math notranslate nohighlight">\(D^1_L\)</span> to <span class="math notranslate nohighlight">\(D^2_L\)</span></p></li>
+<li><p>the marginal risk-free return on loans fell from <span class="math notranslate nohighlight">\(i_1^*\)</span> to <span class="math notranslate nohighlight">\(i^*_2\)</span> and the loan interest rate fell from <span class="math notranslate nohighlight">\(i^1_L\)</span> to <span class="math notranslate nohighlight">\(i^2_L\)</span></p></li>
+<li><p>the marginal cost of funding loans exceeded the marginal risk-free return (<span class="math notranslate nohighlight">\(i_{ST} &gt; i_2^*\)</span>) and banks responded by reducing the quantity of loans supplied from <span class="math notranslate nohighlight">\(L_1\)</span> to <span class="math notranslate nohighlight">\(L_2\)</span></p></li>
+<li><p>now there is less demand for bank reserves causing <span class="math notranslate nohighlight">\(i_{ST}\)</span> to start declining</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_5.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Open market purchase.
+    </figcaption>
+</figure>
+<ul class="simple">
+<li><p>in November 2008 the Fed began paying IOER at a rate higher than comparable short-term interest rates (<span class="math notranslate nohighlight">\(IOER &gt; i_{ST}\)</span>)</p></li>
+<li><p>the IOER rate in late 2008 got almost 90 basis points over the 1-month treasury bill yield, 60 basis points over the repo rate, and 40 basis points over the overnight dollar Libor rate</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_6.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Open market purchase.
+    </figcaption>
+</figure>
+<ul class="simple">
+<li><p>at the end of 2008 and beginning of 2009 the Fed began expanding the supply of bank reserves using large-scale asset purchased (LSAPs).</p></li>
+<li><p>this was an unconventional monetary policy tool used to inject massive liquidity into the financial system that dramatically increase the size of the Fed’s balance sheet</p></li>
+<li><p>by setting <span class="math notranslate nohighlight">\(IOER^2\)</span> above <span class="math notranslate nohighlight">\(i_{ST}\)</span> the Fed created a buffer so that if <span class="math notranslate nohighlight">\(i_{ST}\)</span> were to suddenly rise, the Fed could still maintain its floor system</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_mps/market_reserves_loans_7.png"
+         alt="Market for Reserves Equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+   Open market purchase.
+    </figcaption>
+</figure>
+<p>Some critiques of the floor system:</p>
+<ul class="simple">
+<li><p>Setting the IOER rate above other short-term interest rates may include setting the IOER above the natural interest rate and inadvertently tightening the stance of monetary policy</p></li>
+<li><p>The floor system may influence banks’ portfolios toward reserves and away from other assets</p></li>
+<li><p>The IOER rate spread effectively creates a quasi-liquidity trap above the zero lower bound</p></li>
+</ul>
+<p>{Costs of a floor system}
+Banks may reduce lending given a positive return on excess reserves:</p>
+<ul class="simple">
+<li><p>once <span class="math notranslate nohighlight">\(IOER_2 &gt; i_{ST} = i^*_2\)</span>) the marginal cost of funding is higher than the risk-free marginal return on bank lending</p></li>
+<li><p>the production cost of loans have risen, and this incentivizes banks to reduce the supply loans they provide</p></li>
+<li><p>the loan supply curve shifts left until the marginal cost of funding equals the risk-free marginal return on loans (<span class="math notranslate nohighlight">\(IOER^2 = i_3^*\)</span>)</p></li>
+<li><p>the equilibrium quantity of loans fall from <span class="math notranslate nohighlight">\(L_2\)</span> to <span class="math notranslate nohighlight">\(L_3\)</span></p></li>
+</ul>
+<p>\begin{figure}
+\includegraphics[scale=.40]{fig26}
+\end{figure}</p>
+<p>\begin{figure}
+\includegraphics[scale=.40]{fig27}
+\end{figure}</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="yield-curve-data-tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Term Structure of Interest Rates Data Tutorial</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market-for-reserves">The Market for Reserves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-market-operations">Open market operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-reserve-ratio">Required reserve ratio</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discount-lending">Discount lending</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interest-on-reserves">Interest on reserves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-developments-in-the-us">Recent developments in the US</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#china-s-monetary-policy-system">China’s monetary policy system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-central-bank-policy-under-floor-and-corridor-systems">A simple model of central bank policy under floor and corridor systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-positive-shock-to-loan-demand">A positive shock to loan demand</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loosening-monetary-policy-in-a-corridor-system">Loosening monetary policy in a corridor system</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-the-fed-s-move-to-a-floor-system">Modeling the Fed’s move to a floor system</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

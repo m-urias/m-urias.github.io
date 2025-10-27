@@ -1,0 +1,1050 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Overlapping Generations Model of Money, Inflation, Assets &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'olg_model (DESKTOP-8E9UFPN's conflicted copy 2025-10-22)';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/olg_model (DESKTOP-8E9UFPN's conflicted copy 2025-10-22).ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Overlapping Generations Model of Money, Inflation, Assets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#olg-model-of-money">OLG Model of Money</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wicksell-s-triangle">Wicksell’s Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-economy-with-record-keeping">An Economy with Record Keeping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-fiat-money">Introducing Fiat Money</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimality-of-a-monetary-equilibrium">Optimality of a monetary equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#money-inflation-and-assets">Money, Inflation, and Assets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#money-coexisting-with-alternative-assets">Money Coexisting with Alternative Assets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-olg-model-with-capital">An OLG Model with Capital</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fisher-equation">The Fisher Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-allocation-in-our-olg-economy">Optimal allocation in our OLG economy</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="overlapping-generations-model-of-money-inflation-assets">
+<h1>Overlapping Generations Model of Money, Inflation, Assets<a class="headerlink" href="#overlapping-generations-model-of-money-inflation-assets" title="Link to this heading">#</a></h1>
+<section id="olg-model-of-money">
+<h2>OLG Model of Money<a class="headerlink" href="#olg-model-of-money" title="Link to this heading">#</a></h2>
+<p>First, we motivate the need for currency in an economy.  Second, we develop a model with credit.  Third, we show how fiat money can overcome the frictions inherent in an economy with imperfect commitment.</p>
+<section id="wicksell-s-triangle">
+<h3>Wicksell’s Triangle<a class="headerlink" href="#wicksell-s-triangle" title="Link to this heading">#</a></h3>
+<p>Consider an economy with three people: A, B, and C (Ann, Bill, and Charlie); three time periods: 1, 2, 3 (morning, afternoon, night); and three time-dated goods: <span class="math notranslate nohighlight">\(c_1,c_2,c_3\)</span>.  Assume preferences and endowments such that everyone strictly prefers a good held by someone else:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+U_A &amp;= \beta c_3 + c_1 \quad  \text{and} \quad (y_1,y_2,y_3)=(0,0,y) \\
+U_B &amp;= \beta c_1 + c_2 \quad  \text{and} \quad (y_1,y_2,y_3)=(y,0,0) \\
+U_c &amp;= \beta c_2 + c_3 \quad  \text{and} \quad (y_1,y_2,y_3)=(0,y,0) \\
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta \in (0,1) \)</span> is discount factor.  For example, Ann most prefers morning bread <span class="math notranslate nohighlight">\(c_1\)</span>, but also enjoys her own evening bread <span class="math notranslate nohighlight">\(c_3\)</span> albeit only a fraction <span class="math notranslate nohighlight">\(\beta\)</span> as much.</p>
+<p>Although stylized, this structure highlights the trading frictions that give rise to some medium of exchange.  In particular, notice that there are no bilateral mutually beneficial trades.  That is, we cannot find any pair of agents where there is a double coincidence of wants.  If we pair Ann and Bill, for example, Ann wants the morning bread which Bill can produce, but Bill doesn’t want the night bread that Ann produces.  Every pairwise combination yields the same problem. Without trade autarkic utility is <span class="math notranslate nohighlight">\(\beta y\)</span>: each person only eats the bread they can produce.  If, however, bread could be allocated to those who most value it, then each agent could realize utility <span class="math notranslate nohighlight">\(y\)</span>.  This discrepancy between Pareto utility–that which is socially optimal–and autarkic utility demonstrates that there exist multilateral gains from trade.  Given lack of double coincidence of wants, the problem is this: What trading arrangement achieves Pareto utility <span class="math notranslate nohighlight">\(y\)</span>?</p>
+<p>The following figure proposes such a trading arrangement.  Charlie produces afternoon bread and gives it Bill.  Bill gives his morning bread to Ann.  And Ann gives her night bread to Charlie.  Everyone gets the good they most desire.  But notice that this trading arrangement is feasible only if Bill can <em>credibly promise</em> to engage in this multilateral exchange after receiving the afternoon bread from Charlie.  Is this a reasonable assumption?</p>
+<figure>
+    <img src="_static/figs_olg/wicksell2.png"
+         alt="Wicksell's triangle"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Wicksell's triangle demonstrates that there exist multilateral gains from trade but no bilateral gains from trade.
+    </figcaption>
+</figure>
+<p>Notice from the preferences that Bill still enjoys his own morning bread, albeit less than Charlie’s afternoon bread.  After receiving afternoon bread from Charlie, why should Bill not simply take it and also eat his own morning bread?  We could imagine that when Charlie and Bill meet, Bill says something like, “Hey Charlie, you give me your afternoon bread now and I <em>promise</em> to deliver my morning bread to Ann, so you can get your night bread from her later.”  But once Charlie hands over the bread to Bill, Bill may simply renege on his promise and enjoy his own bread too!  Charlie is no fool, he anticipates this and therefore refuses to trade with Bill in the first place thereby shutting down the entire multilateral trading arrangement.</p>
+<p>There is no feasible multilateral arrangement if agents cannot credibly keep their promises.  Or using economic language, if there is <strong>lack of commitment</strong>.  Besides an interesting theoretical conundrum, this problem strikes as being a very realistic friction in real world interactions.  Why should we believe someone’s promise if there is there is only benefit and no cost of them reneging on said promise.  In this example, we have not mentions any punishment to Bill, or any outside enforcement of the aggreement struck by the three parties.  In there absence, Bill should never keep is promise and everyone understands that; thereby destroying any chance of a multilateral trading arrangement.  This small economy is doomed to autarky.</p>
+<p>Classical economic models implicitly assume that there exists <strong>perfect commitment</strong>: all agents make promises that are always kept.  One example of this assumption manifest are Arrow-Debreu securities.</p>
+<p>An interesting corollary to this example is this: Lack of double coincidence of wants is not sufficient to generate need for money.  Many textbooks motivate the need for currency by citing lack of double coincidence of wants.  The story is often told that once there exists lack of double coincidence of wants then currency arrives to save the day.  But this story is too simple.  Lack of double coincidence of wants is necessary but not sufficient.  There also must be lack of commitment.  After all, Wickell’s triangle provides an example where there is lack of double coincidence of wants, but if agents can extend each other “credit” (a promise to deliver a future trade), then the Pareto optimal allocation can be achieved.  If we forced there to exist only multilateral gains from trade, then it is possible that Charlie would accept morning bread from Bill even though he doesn’t want it, because it knows that he can trade morning bread with Ann for night bread later.  In this case, morning bread circulates a medium of exchange!  Charlie values it not because he wants to eat it, but because he expects to be able to use it to execute a trade later.</p>
+<p>To understand the role that credit and liquid assets play in an economy, we must take seriously the reality of lack of commitment.  Our goal in developing the overlapping generations (OLG) model is to show how <strong>fiat money</strong> can improve economic allocations.  To give money a role to play, our model must acknowledge the trading frictions which prevent barter trades. We understand why fiat money is valuable if we understand the frictions it overcomes.</p>
+<p>With this in mind, we proceed as follows: First, we develop an OLG economy without frictions to identify what is Pareto optimal allocation in our environment.  Second, we introduce trading frictions which prevent the economy from obtaining a good allocation.  Third, we introduce fiat currency and show that it valuable because it facilitate good allocations.</p>
+</section>
+<section id="an-economy-with-record-keeping">
+<h3>An Economy with Record Keeping<a class="headerlink" href="#an-economy-with-record-keeping" title="Link to this heading">#</a></h3>
+<p>We begin by specifying the environment which characterizes our <strong>overlapping generations model</strong> (OLG).</p>
+<p><strong>Agents and timing:</strong> Time is infinite and discrete: <span class="math notranslate nohighlight">\(t=1, 2, 3, \ldots\)</span>.  The number <span class="math notranslate nohighlight">\(N_t\)</span> of agents are born in period <span class="math notranslate nohighlight">\(t\)</span> and live for two periods. We say a person born in period <span class="math notranslate nohighlight">\(t\)</span> is young in period <span class="math notranslate nohighlight">\(t\)</span> and old in period <span class="math notranslate nohighlight">\(t+1\)</span>.  Agents die at the end of old age.  Additionally, there exist some <em>initial old</em> <span class="math notranslate nohighlight">\(N_0\)</span> in period 1, who live for just one period.</p>
+<p><strong>Goods:</strong> There is one nonstorable good; meaning that it perishes at the end of the period in which it was produced.  This good cannot be saved over time. Young agents work to produce <span class="math notranslate nohighlight">\(y\)</span> units of the good, while the old cannot work.</p>
+<figure>
+    <img src="_static/figs_olg/endowment_patterns.png"
+         alt="OLG endowment pattern"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The endowment pattern in our OLG economy.
+    </figcaption>
+</figure>
+<p><strong>Preferences:</strong> We specify the preferences over young and old consumption <span class="math notranslate nohighlight">\((c_{1,t}, c_{2,t+1})\)</span> in terms of a <strong>utility function</strong> <span class="math notranslate nohighlight">\(u(\cdot):\mathbb{R^+}\to \mathbb{R}\)</span>.  We assume that <span class="math notranslate nohighlight">\(u(\cdot)\)</span> is increasing, differentiable, and concave.</p>
+<p>Notice the fundamental problem that exists in this stylized environment: agents value consumption when old but are unable to produce any goods.  The only way that an old person can obtain consumption is if they trade with a young person who <em>can</em> produce goods.  But what can the old exchange with the young?  They have nothing.  Can the old <em>promise</em> to repay the young person later?  Certainly not: the old will be dead.  This economic environment delivers both lack of double coincidence of wants and lack of commitment.  Although highly stylized, it is a wonderful environment in which to explore the ramifications key frictions that give money a valuable role in the economy.</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Feasible Allocations</p>
+<p>An <strong>allocation</strong> is the consumption of young and old in each period:</p>
+<div class="math notranslate nohighlight">
+\[ \{c_{1,t},c_{2,t} \}_{t=1}^{\infty} \]</div>
+<p>An allocation is <strong>feasible</strong> if</p>
+<div class="math notranslate nohighlight">
+\[ \underbrace{N_t c_{1,t}+N_{t-1}c_{2,t}}_{\text{consumption in period $t$}} \leq \underbrace{N_t y}_{\text{output in period $t$}} \]</div>
+</div>
+<p>Notice that the description of our economy is <em>dynamic</em>.  We specify the entire path of consumption for both young and old agents into the infinite future.  The feasibility constraint simply states that the economy cannot eat more than it produces.  At time <span class="math notranslate nohighlight">\(t\)</span> there exist <span class="math notranslate nohighlight">\(N_t\)</span> young individuals (born this period) and <span class="math notranslate nohighlight">\(N_{t-1}\)</span> old individuals (born last period).  Once we specify the amount each generation consumes <span class="math notranslate nohighlight">\((c_{1,t},c_{2,t})\)</span> we know aggregate consumption <span class="math notranslate nohighlight">\(C_{1,t}+C_{2,t}=N_t c_{1,t}+N_{t-1}c_{2,t}\)</span>.  This aggregate consumption can be no larger than the total output that the young generation produces <span class="math notranslate nohighlight">\(Y_t=N_t y\)</span>.</p>
+<p>For simplicity let’s assume a constant population growth rate <span class="math notranslate nohighlight">\(n=N_t/N_{t-1}\)</span>.  Then the feasibility constraint is given by</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\frac{c_{2,t}}{n} \leq y
+\]</div>
+<p>The figure below plots the feasibility set for a constant population growth rate <span class="math notranslate nohighlight">\(n\)</span>:</p>
+<figure>
+    <img src="_static/figs_olg/feasible_set2.png"
+         alt="Feasible allocations"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The set of feasible allocations with a constant population growth rate $n$.
+    </figcaption>
+</figure>
+<p>Having defined which allocations are feasible, we now investigate which allocations are good.  That is, which allocation maximizes the welfare of society?  To tackle this problem, we introduce the construct of the <strong>social planner</strong>.  The social planner is a hypothetical agent whose goal is to maximize the welfare of society.  Clearly no such person exists in reality, but we appeal to this fiction in order have a well defined <em>best allocation</em>.  We need such a benchmark by which to judge the allocations that a decentralized economy can achieve.</p>
+<p>The problem of the central planner who wants to maximize welfare is given by,</p>
+<div class="math notranslate nohighlight" id="equation-central-planner-problem">
+<span class="eqno">()<a class="headerlink" href="#equation-central-planner-problem" title="Link to this equation">#</a></span>\[
+\max_{c_1,c_2} u(c_1,c_2) \quad \text{s.t.}\quad c_1+\frac{c_2}{n}\leq y
+\]</div>
+<p>We refer to this allocation as the <strong>golden rule allocation</strong>: that which maximizes welfare. Graphically, the solution to the planner’s problem is simple: it is the point of tangency between the feasible set line and agents’ indifference curve.</p>
+<figure>
+    <img src="_static/figs_olg/golden_rule2.png"
+         alt="Golden rule allocation"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Golden rule allocation.
+    </figcaption>
+</figure>
+<p>We denote this best outcome for the economy by <span class="math notranslate nohighlight">\((c_1^*,c_2^*)\)</span>.  Can the economy achieve the golden rule allocation through <strong>decentralized trades</strong>?	If each agent acts in its own self interest, what sort of allocations can this economy generate?  To model decentralized trades, we consider <strong>competitive equilibria</strong>.  Competitive equilibria have three defining features:</p>
+<ol class="arabic simple">
+<li><p>Individuals make mutually beneficial trades</p></li>
+<li><p>Individuals take prices as given</p></li>
+<li><p>Markets clear</p></li>
+</ol>
+<p>Before introducing trading frictions, let’s describe an environment where agents can engage in trades without money.  Instead of perfect commitment, we assume there exists some record keeping technology.  The record is a ledger which records all the trades in the economy.  We assume, for now, that this record keeping technology is perfect and costless.</p>
+<p>With record keeping, consider the following trading arrangement:</p>
+<ol class="arabic simple">
+<li><p>A young person gives up goods to an old person in exchange for a record of the transfer.  The consumption given to an old person is denoted <span class="math notranslate nohighlight">\(\Phi_t\)</span>, so that the <strong>budget constraint of the young</strong> is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\Phi_t\leq y
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>When old, the person shows the record of transfer and acquires consumption goods by receiving a transfer <span class="math notranslate nohighlight">\(\Phi_{t+1}^R\)</span>.  The <strong>budget constraint of the old</strong> is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+c_{2,t+1}\leq \Phi_{t+1}^R
+\]</div>
+<p>In this proposed inter-generational trading arrangement, a young person pays effectively pays <span class="math notranslate nohighlight">\(\Phi_t\)</span> to goods when young to obtain <span class="math notranslate nohighlight">\(\Phi_{t+1}^R\)</span> goods when old.  We can define a new variable <span class="math notranslate nohighlight">\(x\)</span> to denote the implicit rate of return on the young person’s “purchase of a receipt”:</p>
+<div class="math notranslate nohighlight">
+\[
+\Phi_t x_{t+1}=\Phi_{t+1}^R
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(x_{t+1}\)</span> is the rate of return.  With this variable in hand, we can define the <strong>lifetime budget constraint</strong> facing a young person by combining the two period budget constraints:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\frac{c_{2,t+1}}{x_{t+1}}\leq y
+\]</div>
+<p>The lefthand side is the lifetime present value of consumption while the righthand side is the lifetime present value of income.  The figure below illustrates the consumption/savings decision of every agent:</p>
+<figure>
+    <img src="_static/figs_olg/record_keeping.png"
+         alt="Equilibrium with record keeping"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Consumption/savings decision with record keeping.
+    </figcaption>
+</figure>
+<p>Notice that the rate of return <span class="math notranslate nohighlight">\(x_{t+1}\)</span> serves as a discount rate when discounting future consumption.  It remains to find the equilibrium value for this rate of return.  In computing it, we will assume <strong>stationarity</strong> and <strong>perfect foresight</strong>.  Stationary equilibria are those which do not depend on time: <span class="math notranslate nohighlight">\((c_{1,t},c_{2,t}) = (c_1,c_2)\)</span>.  Perfect foresight says that agents perceive all available information and there is no uncertainty.</p>
+<p>We appeal to market clearing to write</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{N_{t-1}x_t\Phi_{t-1}}_{\text{demand for transfers}}=\underbrace{N_t(y-c_{1t})}_{\text{supply of transfers}}
+\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[
+x_t=\frac{N_t(y-c_{1,t})}{N_{t-1}\Phi_{t-1}}
+\]</div>
+<p>Using <span class="math notranslate nohighlight">\(\Phi_{t}=y-c_{1,t}\)</span> and stationarity <span class="math notranslate nohighlight">\(c_{1,t}=c_1 \forall t\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+x_t=\frac{N_t}{N_{t-1}}=n
+\]</div>
+<p>The equilibrium rate of return on gifts the old is equal to the population growth rate.</p>
+<p>We’ve now computed the equilibrium of this record-keeping economy.  Is this record-keeping equilibrium efficient? If the planner’s problem coincides with the decentralized equilibrium, then the solution is said to be <strong>efficient</strong>.</p>
+<p>The budget line in the decentralized economy</p>
+<div class="math notranslate nohighlight">
+\[
+c_1 + \frac{c_2}{n} = y
+\]</div>
+<p>is identical to the planner’s.</p>
+<p>Perfect record keeping can implement the golden rule allocation!</p>
+<p>Let’s investigate in more depth why the allocation we computed is indeed an <em>equilibrium</em> outcome.  That is, is it in every agents own self interest to give gifts to the old in exchange for a receipt which entitled them to consumption when old?  Are there any profitable alternative actions agents can take?  Consider the implicit game and enforcement in our environment.  Young people at time <span class="math notranslate nohighlight">\(t\)</span> take the actions of future young people as given.  They cannot persuade or compel them to take any particular action.  We imagine there exist two actions: transfer <span class="math notranslate nohighlight">\(\Phi=c_2^*\)</span> to the old generation or don’t. If the young person expects <span class="math notranslate nohighlight">\(\Phi^R=c_2^*\)</span> as the action chosen by next period’s young person, then the transfer when young is justified as a best response.  Therefore, record keeping can sustain punishment that makes <span class="math notranslate nohighlight">\((c_1^*, c_2^*)\)</span> into a Nash equilibrium</p>
+<p>Thus far we have delivered the following results:</p>
+<ul class="simple">
+<li><p>The OLG environment temporally separates agents so that there is no double coincidence of wants.</p></li>
+<li><p>Record keeping enables punishment for a person who does not participate in the intergenerational transfer program</p></li>
+<li><p>Record keeping acts as a social accounting system, where trading history provides incentives to the young to trade with the old</p></li>
+<li><p>Record keeping allows the decentralized economy to achieve the golden rule allocation (best feasible allocation).</p></li>
+</ul>
+</section>
+<section id="introducing-fiat-money">
+<h3>Introducing Fiat Money<a class="headerlink" href="#introducing-fiat-money" title="Link to this heading">#</a></h3>
+<p>Having described an economy with record keeping, we now want to investigate how the economy behaves in its absence.  Suppose that record keeping is too costly (e.g. young people can fake trading with old people to obtain goods when they are old).   A young person at time <span class="math notranslate nohighlight">\(t\)</span> can only trade with young people of the same generation or old people of the previous generation.  Trading with the young is pointless, since there is no double coincidence of wants, and the old are not around the following period.  In this case, autarky is the only possible equilibrium without any other policy or institution.  The young consume their entire endowment when young and nothing when old.  Clearly a bad outcome. Can fiat currency improve welfare? If so, what determines the the value of fiat currency?</p>
+<div class="admonition-definition-fiat-money admonition">
+<p class="admonition-title">Definition: Fiat Money</p>
+<p>:class: definition</p>
+<p><strong>Fiat money</strong> has two defining characteristics.</p>
+<ul class="simple">
+<li><p>Inconvertibility: cannot convert fiat money into anything else.</p></li>
+<li><p>Instrinsic uselessness: never wanted for its own sake or used in a production process.</p></li>
+</ul>
+</div>
+<p>Can pieces of paper with no inherent worth improve the allocation of our economy? To begin, consider a fixed supply <span class="math notranslate nohighlight">\(M\)</span> of fiat money which is uniformly distributed among the initial old so that each person begins with <span class="math notranslate nohighlight">\(M/N\)</span> units of fiat money.</p>
+<p>Because fiat money, by definition, is not backed by any real asset its value is entirely derived from its expected future value.  Fiat money has no value if it is known with certainty that it has no value at any future date <span class="math notranslate nohighlight">\(T\)</span>.  If agents know that it is certainly worthless at time <span class="math notranslate nohighlight">\(T\)</span>, then no one would be willing to hold it at time <span class="math notranslate nohighlight">\(T-1\)</span>.  Ergo, it has no value at time <span class="math notranslate nohighlight">\(T-1\)</span>.  Similarly, if fiat money has no value at time <span class="math notranslate nohighlight">\(T-1\)</span> then no one is willing to hold it at time <span class="math notranslate nohighlight">\(T-2\)</span>.  By induction, we can see that fiat money will have no value in the present if there exists any finite date <span class="math notranslate nohighlight">\(T\)</span> in the future where it certainly has no value.  In this case, the only equilibrium allocation is autarky.  Therefore, a priori we suppose that money has positive value in all future periods and this value is denoted by <span class="math notranslate nohighlight">\(\nu_t\)</span>.  It remains to be seen if there exists equilibria with <span class="math notranslate nohighlight">\(\nu_t&gt;0\)</span>.</p>
+<p>It is worth recognizing now that if the value of one unit of fiat currency is <span class="math notranslate nohighlight">\(\nu_t\)</span>, then the <strong>price</strong> of one unit of good must be <span class="math notranslate nohighlight">\(p_t=1/\nu_t\)</span>.  Therefore, if we say that money has value we can equivalently say <span class="math notranslate nohighlight">\(\nu_t&gt;0\)</span> or <span class="math notranslate nohighlight">\(p_t &lt;\infty\)</span>.</p>
+<p>When describing the equilibrium, it is convenient to work with a variable called <strong>real money balances</strong>.  Real money balance is simply the real value (measured in units of consumption good) of a given stock of fiat money.  Mathematically, it is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+q_t\equiv \nu_t m_t
+\]</div>
+<p>We now specify the problem facing a young agent.  A young agent chooses how much to consume and how much to save (in fiat currency) to maximize lifetime utility.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\max_{c_{1,t},c_{2,t+1}} &amp; u(c_{1,t},c_{2,t+1}) \\
+s.t. \quad &amp;c_{1,t}+\nu_t m_t \leq y \\
+&amp;c_{2,t+1}\leq \nu_{t+1}m_t
+\end{align*}
+\end{split}\]</div>
+<p>The money market must clear every period to satisfy a competitive equilibrium</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{\nu_t M_t}_{\text{suppy}}=\underbrace{N_t(y-c_{1,t})}_{\text{demand}} \quad \forall t
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\nu_t=\frac{N_t(y-c_{1,t})}{M_t}
+\]</div>
+<div class="admonition-definition-monetary-equilibrium admonition">
+<p class="admonition-title">Definition: Monetary Equilibrium</p>
+<p>:class: definition</p>
+<p>A <strong>monetary equilibrium</strong> is a consumption path <span class="math notranslate nohighlight">\(\{c_{1,t},c_{2,t} \}_{t=1}^{\infty}\)</span> and sequence of nominal prices <span class="math notranslate nohighlight">\(\{p_t\}_{t=1}^{\infty}\)</span> such that <span class="math notranslate nohighlight">\(p_t &lt; \infty\)</span> for all <span class="math notranslate nohighlight">\(t\)</span> where agents are behaving optimally and markets clear.</p>
+</div>
+<div class="admonition-definition-stationary-monetary-equilibrium admonition">
+<p class="admonition-title">Definition: Stationary Monetary Equilibrium</p>
+<p>:class: definition</p>
+<p>A <strong>stationary</strong> monetary equilibrium is a monetary equilibrium where the consumption path does not change over time <span class="math notranslate nohighlight">\((c_{1,t},c_{2,t+1})=(c_1,c_2)\)</span>.</p>
+</div>
+<p>The <strong>rate of return on money</strong> measures how the value of money changes over time:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\nu_{t+1}}{\nu_t}&amp;=\frac{\frac{N_{t+1}(y-c_{1,t+1})}{M_{t+1}}}{\frac{N_t(y-c_{1,t})}{M_t}}\\
+&amp;=\frac{N_{t+1}/M_{t+1}}{N_t/M_t}\\
+\end{align*}
+\end{split}\]</div>
+<p>In a stationary equilibrium with a constant population and money supply</p>
+<div class="math notranslate nohighlight">
+\[
+\nu_{t+1}=\nu_t
+\]</div>
+<p>The <strong>quantity theory of money</strong> predicts that price level is exactly proportional to quantity of money.  Let’s investigate whether or not our OLG model supports this claim or not.</p>
+<p>The price level is</p>
+<div class="math notranslate nohighlight">
+\[
+p = \frac{1}{\nu}=\frac{M}{N(y-c_1)}
+\]</div>
+<p>Hence, price level is proportional to money stock.</p>
+<p>In this environment, money is also <strong>neutral</strong>: consumption <span class="math notranslate nohighlight">\((c_1, c_2)\)</span> does not depend on <span class="math notranslate nohighlight">\(M\)</span>.</p>
+<p>What role is fiat money playing in our economy?  Fiat currency allows people to trade for goods they desire despite an absence of double coincidence of wants. Young people sell some of their goods for fiat money and use this money to buy goods when they are old. Fiat money is intrinsically useless—it is not consumed and it does not produce anything that can be consumed—but has value because it allows agents to execute trades.  Fiat money serves a similar function as record keeping—according to Kocherlakota ``money is memory.”</p>
+</section>
+<section id="optimality-of-a-monetary-equilibrium">
+<h3>Optimality of a monetary equilibrium<a class="headerlink" href="#optimality-of-a-monetary-equilibrium" title="Link to this heading">#</a></h3>
+<p>Having identified the monetary equilibrium of our economy, we can now ask to what extent it is a “good equilibrium.”  That is, to what degree does it deliver maximum welfare to the citizens?  To measure this, we need only compare the allocation of the decentralized monetary economy to that of the central planner.  The central planner, after all, maximizes welfare by definition; thereby serving as a benchmark by which to judge the outcomes of decentralized equilibria.  We can simplify the problem even further.  Since the decentralized economy and the planner’s problem share the same objective function—to maximize utility—we can guarantee the two solutions coincide if and only if the constraint of the optimization problems are the same.  Said plainly, does the feasibility line of the planner coincide with the budget line of the decentralized equilibrium?  If so, then the decentralized monetary economy achieves the Pareto optimal outcomes.  If not, then the planner could improve on the allocation.</p>
+<p>Recall that the rate of return on money with a constant stock of fiat currency is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\nu_{t+1}}{\nu_t}=\frac{N_{t+1}}{N_t}=n
+\]</div>
+<p>The agent’s budget line is therefore</p>
+<div class="math notranslate nohighlight">
+\[
+c_1 + \frac{c_2}{n} \leq y
+\]</div>
+<p>which coincides with social planner! Hence the decentralized monetary economy implements golden rule!</p>
+<p>What did we do?</p>
+<ul class="simple">
+<li><p>We gave the initial old worthless pieces of paper and generated an efficient outcome!</p></li>
+<li><p>In our model, fiat money improves the allocation of resources.</p></li>
+</ul>
+</section>
+</section>
+<section id="money-inflation-and-assets">
+<h2>Money, Inflation, and Assets<a class="headerlink" href="#money-inflation-and-assets" title="Link to this heading">#</a></h2>
+<p>In our simple model thus far, we have shown how money is <strong>essential</strong>: it improves the allocation of the decentralized economy relative to its absence.  Now we want to investigate how the decentralized economy responds to changes in the supply of fiat money.  How are economic decisions altered?  Is there an optimal stock or growth rate of fiat money?  Can the government use fiat money to create revenue for itself?  How is inflation affected by changes in the supply of money?  Can money coexist with alternative assets?</p>
+<p>This questions lay at the heart of perennial questions in macroeconomics related to inflation, interest rates, liquidity and central bank policy.  It is important to develop a rigorous model of the long-run relationships between these concepts before delving into their details later.</p>
+<p>Consider some empirical stylized facts about the money supply for the United States:</p>
+<figure>
+    <img src="_static/figs_olg/us_monetary_aggregates.png"
+         alt="Money supply in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Federal Reserve.  See <a href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_olg/china_monetary_aggregates.png"
+         alt="Money supply in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Data is from the Federal Reserve.  See <a href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
+    </figcaption>
+</figure>
+<p>How do we measure money? Which assets can be called ``money”?</p>
+<p>According to the Federal Reserve of the US the <strong>money supply</strong> is the total amount of money–cash, coins and balances in bank account–in circulation.  There are several different <strong>monetary aggregates</strong> which measure the money supply.  These monetary aggregates categorize difference assets based on their liquidity.</p>
+<ul class="simple">
+<li><p>Monetary aggregate M0 is currency held by the non-bank public.</p></li>
+<li><p>The <strong>monetary base</strong>, or <strong>MB</strong>, is the sum of M0 and reserve balances, or deposits held by banks and other depository institutions in their accounts at the Federal Reserve.</p></li>
+<li><p>Monetary aggregate <strong>M1</strong> is the sum of M0 and deposits, and other checkable deposits (OCDs).  Deposits include balances held in checking accounts and other highly liquid deposits used for transactions.  It measures currency held outside of the U.S. Treasury, Federal Reserve Banks, and the vaults of depository institutions.</p></li>
+<li><p>Monetary aggregate <strong>M2</strong> is the sum of M1 and small-denomination time deposits (less than $100,000) and retail money market mutual funds.</p></li>
+<li><p>Monetary aggregate <strong>M3</strong> is the sum of M2 and large-denomination time deposits (greater than $100,000), balances in institutional money market mutual funds, repos issued by depository institutions, and Eurodollars held by US residents at foreign branches of US banks.</p></li>
+</ul>
+<p>Data on the monetary aggregates are released every month in the Federal Reserve’s H.6statistical release, <a href="https://www.federalreserve.gov/releases/h6/current/default.htm" target="_blank">Money Stock Measures</a>.</p>
+<p>When introducing newly printed money into our OLG model, we will assume a constant money supply growth rate so that <span class="math notranslate nohighlight">\(M_t=zM_{t-1}\)</span>.  In principle, there can be any path for the money supply <span class="math notranslate nohighlight">\(\{M_t\}_{t=1}^{\infty}\)</span> we like, as it is an exogenous variable.  But given that we want to characterize our equilibrium on pen and paper, we stick with the constant money supply growth rate <span class="math notranslate nohighlight">\(z\)</span>.  Therefore,  newly printed fiat money is given by the expression</p>
+<div class="math notranslate nohighlight">
+\[
+M_t-M_{t-1}=\left(1-\frac{1}{z}\right)M_t
+\]</div>
+<p>We further assume that new money is transferred lump-sum to each old person and worth <span class="math notranslate nohighlight">\(a_t\)</span> units of the consumption good.  The aggregate amount of newly printed money therefore satisfies</p>
+<div class="math notranslate nohighlight">
+\[
+N_{t-1}a_t=\left(1-\frac{1}{z}\right)\nu_t M_t
+\]</div>
+<p>where the lefthand side is the total real value of money distributed to the old and the righthand side is the total real value of new printed money.</p>
+<p>When agents make their consumption/savings decision, they realize the transfer from the government of newly printed money when old.  This is reflected in their old period budget constraint,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c_{1,t}+\nu_t m_t\leq y \\
+c_{2,t+1}\leq \nu_{t+1}m_t+\textcolor{blue}{a_{t+1}}
+\end{split}\]</div>
+<p>The period budget constraints are combined to obtain the lifetime budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\frac{\nu_t}{\nu_{t+1}}c_{2,t+1}\leq y+\frac{\nu_t}{\nu_{t+1}}\textcolor{blue}{a_{t+1}}
+\]</div>
+<p>The figure below shows the decentralized allocation with money supply growth.  Notice that agents take the rate of return on money <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t\)</span> <em>as given</em>.  Any individuals decision about how much money to save has no effect its equilibrium rate of return.  An individual agent is simply too small relative to the entire money market.  So what we have found so far is the optimal consumption/savings decision for any given rate of return on fiat money.  It now remains to compute the <em>equilibrium rate of return</em> on money so we can find the <em>equilibrium allocation</em> of decentralized economy.</p>
+<figure>
+    <img src="_static/figs_olg/budget_line_inflation.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Optimal consumption/savings decision of agent with money supply growth.
+    </figcaption>
+</figure>
+<p>The rate of return of fiat money in stationary equilibrium with constant population is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\nu_{t+1}}{\nu_t}=\frac{N_{t+1}(y-c_1)/M_{t+1}}{N_t(y-c_1)/M_t}=\frac{M_t}{M_{t+1}}=\frac{1}{z}
+\]</div>
+<p>Notice that the gross inflation rate equals money growth rate</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p_{t+1}}{p_t}=\frac{\nu_t}{\nu_{t+1}}=z
+\]</div>
+<p>The figure below shows the equilibrium of the decentralized economy, where we have substituted out <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t=1/z\)</span> and the equilibrium value for <span class="math notranslate nohighlight">\(a_{t+1}\)</span></p>
+<figure>
+    <img src="_static/figs_olg/equilibrium_inflation.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Equilibrium with money supply growth.
+    </figcaption>
+</figure>
+<p>\begin{quote}
+Inflation is always and everywhere a monetary phenomenon
+\end{quote}
+–Milton Friedman</p>
+<ul class="simple">
+<li><p>In this model, inflation and money growth coincide</p></li>
+<li><p>Can factors besides money growth influence inflation?</p></li>
+<li><p>Government spending shocks and supply shocks can produce short-run inflation but not sustained inflation</p></li>
+<li><p>Example: spike in oil prices raises general goods prices; however, after the initial shock, prices are stable</p></li>
+</ul>
+<p>Newly printed money lowers the value of of existing money, serving as a tax on money holders.</p>
+<ul class="simple">
+<li><p>Higher growth rate of money decreases savings</p></li>
+<li><p>Higher growth rate of money distorts the tradeoff agents see between consumption today and consumption tomorrow</p></li>
+<li><p>Inflation tax should incentivize agents to seek alternative assets…we will add this to the model in a bit</p></li>
+</ul>
+<p>Intuitively, we know that if inflation effectively taxes agents (and there is no negative externality associated with fiat currency), then the equilibrium should be inefficient.</p>
+<ul class="simple">
+<li><p>Feasible set is still <span class="math notranslate nohighlight">\(c_1 + c_2 \leq y\)</span> (printing money is costless), which differs from budget set</p></li>
+<li><p>Hence, equilibrium is inefficient</p></li>
+<li><p>Inflation distorts the intertemporal trade-off between young and old consumption</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_olg/inefficiency_inflation.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Point $A$ is preferable to $(c_1^*,c_2^*)$ but is unaffordable because rate of return on money is too low
+    </figcaption>
+</figure>
+<p>Welfare cost of inflation</p>
+<ul class="simple">
+<li><p>Inflation does not destroy any goods but induces a suboptimal combination of <span class="math notranslate nohighlight">\((c_1, c_2)\)</span></p></li>
+<li><p>Drop in value of fiat money also reduces value of money balances of initial old</p></li>
+<li><p>More generally, inflation induces people to consume fewer cash goods and more non-cash goods</p></li>
+<li><p>In a production economy, inflation can discourage production of cash goods and hence reduce output</p></li>
+</ul>
+<p>Golden rule monetary policy in a growing economy:
+Suppose population grows at rate <span class="math notranslate nohighlight">\(n\)</span>: <span class="math notranslate nohighlight">\(N_{t+1}=nN_t\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\nu_{t+1}}{\nu_t}=\frac{N_{t+1}}{N_t}\frac{M_t}{M_{t+1}}=\frac{n}{z}
+\]</div>
+<p>Lifetime budget constraint</p>
+<div class="math notranslate nohighlight">
+\[
+c_1+\frac{z}{n}c_2\leq y+\frac{z}{n}a
+\]</div>
+<p>Feasibility constraint is <span class="math notranslate nohighlight">\(c_1+c_2/n\leq y\)</span> so the decentralized equilibrium is inefficient.</p>
+<figure>
+    <img src="_static/figs_olg/equilibrium_inflation_popgrowth.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Equilibrium with inflation and population growth.
+    </figcaption>
+</figure>
+<p>Economists have argued that the central bank should maintain a constant price level in order to stabilize the economy.</p>
+<ul class="simple">
+<li><p>Since <span class="math notranslate nohighlight">\(p_{t+1}/p_t=z/n\)</span>, fixing the price level requires <span class="math notranslate nohighlight">\(n=z\)</span>: expand money at the same rate as population growth</p></li>
+<li><p>Implies that budget set is <span class="math notranslate nohighlight">\(c_1+c_2\leq y+a\)</span></p></li>
+<li><p>But feasibility constraint is still <span class="math notranslate nohighlight">\(c_1+c_2/n\leq y\)</span></p></li>
+</ul>
+<p>This is a poor policy prescription.</p>
+<ul class="simple">
+<li><p>With <span class="math notranslate nohighlight">\(z=n\)</span> a person receives one more good tomorrow for each good is sacrifices today</p></li>
+<li><p>This is not the true state of the economy: the economy can offer <span class="math notranslate nohighlight">\(n\)</span> goods to the old for each good sacrificed by the young</p></li>
+<li><p>The true tradeoff faced by the economy is not reflected in the individual’s budget constraint causing a misallocation of consumption over time</p></li>
+</ul>
+<p>The best policy is that which maximizes welfare and reaches the golden rule allocation.</p>
+<ul class="simple">
+<li><p>Golden rule is to maintain a fixed stock of fiat money regardless of population growth (<span class="math notranslate nohighlight">\(z=1\)</span>)</p></li>
+<li><p>With population growth, this implies \textit{deflation}</p></li>
+<li><p>Intuition: a growing economy offers <span class="math notranslate nohighlight">\(n\)</span> goods to the old in exchange for each good sacrificed when  young, but this message is not incorporated into budgets at a constant price level</p></li>
+</ul>
+</section>
+<section id="money-coexisting-with-alternative-assets">
+<h2>Money Coexisting with Alternative Assets<a class="headerlink" href="#money-coexisting-with-alternative-assets" title="Link to this heading">#</a></h2>
+<p>Our model thus far only allows individuals to consume at a later time by holding fiat money.  Fiat money is the only store of value.  In reality, individuals hold many assets in their portfolio.  How can we replicate this obvious fact within our theoretical environment?</p>
+<p>We introduce one alternative asset available to agents: capital.  Capital differs from fiat money in that it is <strong>productive</strong> and must be <strong>produced</strong> (in contrast to land and natural resources)</p>
+<p>The U.S. <a href="https://www.bea.gov/" target="_blank">Bureau of Economic Analysis (BEA)</a> categorizes capital stock into several broad types based on the nature of the assets. These include private fixed assets, government fixed assets, and consumer durable goods.  <strong>Private fixed assets</strong> consist of equipment and structures, including owner-occupied housing, located in the United States and owned by private business or nonprofit institutions.  Within private fixed assets, BEA further classifies capital stock by type, including equipment, structures, and intellectual property products. <strong>Government fixed assets</strong> include equipment and structures owned by federal, state, and local government entities, with coverage extending worldwide for national defense equipment and U.S. embassies.  <strong>Consumer durable goods</strong> are items purchased by households for non-business use with a life expectancy of at least three years, such as cars, household appliances, and furniture.</p>
+<p>The <a href="https://www.bea.gov/resources/learning-center/definitions-and-introduction-fixed-assets" target="_blank">definition</a> and a <a href="https://www.bea.gov/itable/fixed-assets" target="_blank">complete accounting</a> is provided by the BEA is available on their website.  Here I list some private fixed assets to give you an idea of what we have in mind when economists say “capital”:</p>
+<p>| Capital Stock Examples                        |                                                   |                                           |
+| ——————————————— |                                                   |                                           |
+| <strong>PCs</strong>                                       |  <strong>Steam engines</strong>                                |   <strong>Household furniture</strong>                 |
+| <strong>Printers</strong>                                  |  <strong>Internal combustion engines</strong>                  |   <strong>Construction tractors</strong>               |
+| <strong>Terminals</strong>                                 |  <strong>Metalworking machinery</strong>                       |   <strong>Mining and oilfield machinery</strong>       |
+| <strong>Tape drives</strong>                               |  <strong>Light trucks (including utility vehicles)</strong>    |   <strong>Household appliances</strong>                |
+| <strong>Storage devices</strong>                           |  <strong>Autos</strong>                                        |   <strong>Warehouses</strong>                          |<br />
+| <strong>System integrators</strong>                        |  <strong>Aircraft</strong>                                     |                                           |
+| <strong>Electro medical instruments</strong>               |  <strong>Ships and boats</strong>                              |                                           |
+| <strong>Photocopy and related equipment</strong>           |  <strong>Railroad equipment</strong>                           |                                           |
+| <strong>Office and accounting equipment</strong>           |  <strong>Farm tractors</strong>                                |                                           |</p>
+<figure>
+    <img src="_static/figs_olg/investment_capital_stock.png"
+         alt="Money supply in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Equilibrium with inflation and population growth.
+    </figcaption>
+</figure>
+<section id="an-olg-model-with-capital">
+<h3>An OLG Model with Capital<a class="headerlink" href="#an-olg-model-with-capital" title="Link to this heading">#</a></h3>
+<p>To begin, let’s assume that capital is the <em>only</em> asset in our OLG environment.  Because capital has productive uses, it allows the old to produce some amount of capital.  For each unit of capital saved when young <span class="math notranslate nohighlight">\(k_t\)</span>, it allows the old to produce <span class="math notranslate nohighlight">\(x k_t\)</span> units of consumption good.  For simplicity, we assume that capital completely depreciates at the end of the period in which it is used.  We will relax this assumption later.</p>
+<p>With capital available as an investment, the period budget constraints are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;c_{1,t}+k_t \leq y \\
+&amp;c_{2,t+1}\leq x k_t
+\end{align*}
+\end{split}\]</div>
+<p>which are combined into the lifetime budget constraint</p>
+<div class="math notranslate nohighlight">
+\[
+c_{1,t}+\frac{c_{2,t+1}}{x}\leq y
+\]</div>
+<figure>
+    <img src="_static/figs_olg/capital_choice.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Equilibrium with inflation and population growth.
+    </figcaption>
+</figure>
+<p>Can capital, or other assets such as debt, coexist alongside money in equilibrium?  There is a fundamental economic/financial principle called <strong>rate of return dominance</strong>.  Said simply, if two assets are perfect substitutes then they will be held if and only if their rates of return are equal.  In reality two assets are almost never <em>perfect</em> substitutes as they differ in terms of the risk or liquidity.  However,  if two assets were indeed perfect substitutes, then both are held in a portfolio only if they provide the same rate of return.  If one asset held a higher rate of return than another, then the individuals would simply allocate all of their wealth to the high-return asset.</p>
+<p>In the environment we’ve described thus far, capital and fiat money are indeed perfect substitutes.  We have not introduced any randomness to our model, so they are both risk free assets.  We have not introduced any frictions (e.g. informational, search) which would render the assets with different liquidity.  In our case, both capital and fiat currency can coexist if and only if they provide the same rate of return,</p>
+<div class="math notranslate nohighlight">
+\[
+\nu_{t+1}/\nu_t=x
+\]</div>
+<p>This is a somewhat unsatisfactory result given that the rate of return on capital <span class="math notranslate nohighlight">\(x\)</span> is exogenous.  That is, capital and fiat currency can only coexist if the modeler chooses the value of <span class="math notranslate nohighlight">\(x\)</span> to exactly coincide with <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t\)</span>.  Furthermore, any small perterbation in either rate of return would result in zero demand for the lower return asset.</p>
+<p>To generalize our model and allow more than a knife edge case of assets co-existing, we allow the rate of return on capital to be endogenous.  To do so, assume that output is produced using capital according to a production function <span class="math notranslate nohighlight">\(f(k)\)</span>.  Moreover, assume that this production function is concave so that the marginal product of capital <span class="math notranslate nohighlight">\(f'(k)\)</span> is diminishing with respect to the stock of capital.</p>
+<figure>
+    <img src="_static/figs_olg/production_function.png"
+         alt="Money supply in the US"
+         width="250"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Concave production technology.
+    </figcaption>
+</figure>
+<p>When both fiat currency and capital exist and potential savings vehicles, we know the equilibrium rate of return on money is <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t=n/z\)</span> and the equilibrium rate of return on capital is <span class="math notranslate nohighlight">\(f'(k^*)\)</span> where <span class="math notranslate nohighlight">\(k^*\)</span> is agents’ choice of savings in the form of capital.  Since both assets are still perfect substitutes, they are both valued is and only if</p>
+<div class="math notranslate nohighlight">
+\[
+f'(k^*)=\frac{n}{z}
+\]</div>
+<p>Since the population growth rate <span class="math notranslate nohighlight">\(n\)</span> and the money supply growth rate <span class="math notranslate nohighlight">\(z\)</span> are exogenous (chosen by the central bank or government according to criteria outside the scope of the present model), agents will choose to accumulate capital up until the point its marginal return is equal to the rate of return on fiat money.</p>
+<p>Consider the effects of a permanent increase in money growth from <span class="math notranslate nohighlight">\(z\)</span> to <span class="math notranslate nohighlight">\(z'\)</span>. This policy lowers rate of return on fiat money from <span class="math notranslate nohighlight">\(n/z\)</span> to <span class="math notranslate nohighlight">\(n/z'\)</span> and induces people to hold capital instead of money.  They simply chase the higher return asset.  Of course as they accumulate more capital it’s rate of return falls until it is, once again, equal the rate of return on money <span class="math notranslate nohighlight">\(f'(k^*)=\frac{n}{z'}\)</span>.  This theoretical substitution of capital for money in reaction to higher anticipated inflation is called the <strong>Tobin effect</strong>. A larger capital stock increases output in the following period</p>
+<div class="math notranslate nohighlight">
+\[
+GDP_t=N_ty+N_{t-1}f(k_{t-1})
+\]</div>
+<p>This suggests that the central bank/government can stimulate output by introducing inflation.  However, there are at least two issues with this policy</p>
+<ul class="simple">
+<li><p>Capital stock may not be at optimal level (rate of return may be too low)–higher output does not necessarily raise welfare</p></li>
+<li><p>Measuring the magnitude of the Tobin effect in real economies is difficult.  There exist endogeneity problems and possibly a non-linear relationship.</p></li>
+</ul>
+<p>Nonetheless, this is one theoretical explanation for why deviations from the Friedman rule can be optimal (Altermatt, Wipf 2022).</p>
+</section>
+<section id="the-fisher-equation">
+<h3>The Fisher Equation<a class="headerlink" href="#the-fisher-equation" title="Link to this heading">#</a></h3>
+<p>In order to discuss how inflation and interest rates affect our real economy, it is useful to discuss the <strong>Fisher equation</strong>.  Named after economist Irving Fisher, this equation describes the relationship between nominal interest rates, real interest rates, and inflation.  All financial contracts are expressed in nominal terms–dollars, for example, in the US.  When a business want to borrow money from a bank, the loan contract specifies the interest payments in dollars.  However, we have already seen that the real value of those dollars can change over time when the money supply grows.  The Fisher equation corrects the nominal rate for inflation.</p>
+<p>Let <span class="math notranslate nohighlight">\(i_t\)</span> denote gross nominal interest rate in period <span class="math notranslate nohighlight">\(t\)</span> (in units of money), <span class="math notranslate nohighlight">\(r_t\)</span> be gross real interest rate (in units of goods), and <span class="math notranslate nohighlight">\(p_t\)</span> be the price of a good in fiat money.  The Fisher equation says,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+i_t&amp;=r_tp_{t+1}/p_t\\
+i_t&amp;=r_t(1+\pi_t)\\
+(i_t-1)&amp;=(r_t-1) + \pi_t + (r_t-1)\pi_t\\
+i_t-1&amp;\approx r_t-1 + \pi_t
+\end{align*}
+\end{split}\]</div>
+<p>The last line follows from <span class="math notranslate nohighlight">\(r_{t}\pi_t\)</span> is a very small value, so a useful approximation of the Fisher equation is that the nominal interest rate is equal to the real interest rate plus the inflation rate.</p>
+<p>The Fisher equation can be understood as a no-arbitrage condition between nominal and real bonds.</p>
+<p>Applying the Fisher equation to our OLG model we have that</p>
+<div class="math notranslate nohighlight">
+\[
+i_t-1 = r_t-1 + \frac{z}{n}-1
+\]</div>
+<p>since the equilibrium inflation rate in our model is <span class="math notranslate nohighlight">\(\pi_t=\frac{\nu_t}{\nu_{t+1}}-1=\frac{z}{n}-1\)</span>.  Often it is assumed that the real-interest rate is determined by forces outside the control of monetary policy.  This is an example of the classical dichotomy which posts that real variables (e.g. output, employment) and nominal variables (e.g. money supply, prices) are determined separately.  The real interest rate is thought to be determined by the level of technology and capital stock.  Consider a macro model like Solow where the equilibrium interest rate is equal to the marginal product of capital <span class="math notranslate nohighlight">\(r=f'(k)\)</span>.  The real rate of return on capital projects is independent of money supply or the price level.  If this assumption is true, then the Fisher equation implies that the nominal interest rate and inflation move one-for-one with each other.  That is, if the central bank increases the growth rate of the money supply inducing inflation, the nominal interest rate should rise by exactly the same magnitude as inflation.</p>
+<figure>
+    <img src="_static/figs_olg/inflation_interest_rates.png"
+         alt="Money supply in the US"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    1-year inflation and nominal interest rate.
+    </figcaption>
+</figure>
+<p>The figure above shows that the nominal interest rate and inflation do not move one-for-one.  The different between the two–the real interest rate–varies substantially over time.  One popular explanation is that prices are sticky in the short-run.  This means that monetary policy does not immediately affect inflation, so changes in the nominal interest rate cause changes in the real interest rate.  Given enough time, inflation manifests in response to the policy and the real interest rate returns to its natural level.  There is a lot of evidence that this story carries water, but we do not yet have the tools in hand to incorporate nominal rigidities into our model.  Instead, we will work within the environment already described to posit an alternative explanation as to why nominal rates and inflation do not move one-for-one.</p>
+<p>We continue to suppose that output is produced from capital according to an increasing and concave function <span class="math notranslate nohighlight">\(f(k)\)</span> and households can either save in capital or fiat currency.  Rate of return equality demands that both assets must provide the same return in equilibrium.  If the central bank increases inflation via faster money growth, then households optimally respond by substituting capital for fiat money.  Inflation lowers the return to fiat money so households shift their portfolio of assets away from fiat money and towards capital.  But since capital is subject to diminishing marginal returns, this lowers the rate of return on capital–or the real interest rate. Nominal interest rate thus responds less than one-for-one to rise in anticipated inflation.</p>
+</section>
+<section id="optimal-allocation-in-our-olg-economy">
+<h3>Optimal allocation in our OLG economy<a class="headerlink" href="#optimal-allocation-in-our-olg-economy" title="Link to this heading">#</a></h3>
+<p>Having described the equilibrium of our economy, we now ask what is the optimal allocation?  In particular: How much capital <em>should</em> the economy accumulate?  Can the free market achieve the optimal allocation?</p>
+<p>We continue to assume that capital and fiat money are both available to households, and output is produced according to <span class="math notranslate nohighlight">\(f(k)\)</span>. Recall that when discussing optimality, we are imagining a hypothetical social planner who is not subject to the frictions inherent in the decentralized marketplace, and instead can allocate resources however they like.  The only constraint is that they cannot conjure resources from nothing–<em>ex nihilo nihil fit</em>.  The planner is subject of a feasibility constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+N_t c_{1,t}+N_{t-1}c_{2,t}+N_tk_t\leq N_ty+N_{t-1}f(k_{t-1})
+\]</div>
+<p>where total consumption and investment cannot exceed total output.  Aggregate consumption consists of those <span class="math notranslate nohighlight">\(N_t\)</span> individuals born today consuming <span class="math notranslate nohighlight">\(c_{1,t}\)</span> and <span class="math notranslate nohighlight">\(N_{t-1}\)</span> old individuals born yesterday consuming <span class="math notranslate nohighlight">\(c_{2,t}\)</span>. Aggregate output is the endowment <span class="math notranslate nohighlight">\(y\)</span> of each <span class="math notranslate nohighlight">\(N_t\)</span> young born today plus the production of the <span class="math notranslate nohighlight">\(N_{t-1}\)</span> old who accumulated <span class="math notranslate nohighlight">\(k_{t-1}\)</span> units of capital yesterday.  Total investment is simply the amount of capital <span class="math notranslate nohighlight">\(k_t\)</span> that <span class="math notranslate nohighlight">\(N_t\)</span> young people choose to save today.  Notice that if we denote aggregate consumption by <span class="math notranslate nohighlight">\(C\)</span>, aggregate investment by <span class="math notranslate nohighlight">\(I\)</span>, and aggregate output by <span class="math notranslate nohighlight">\(Y\)</span> we get a very familiar looking equation:</p>
+<div class="math notranslate nohighlight">
+\[
+C+I=Y
+\]</div>
+<p>This is our national income accounting identity!  The absence of government spending <span class="math notranslate nohighlight">\(G\)</span> should not be surprising, since we have not including any such thing in our OLG environment.  Later we will include a government sector and recover the all too familiar macro identity.</p>
+<p>To solve the planner’s problem, we first divide the feasibility constraint by <span class="math notranslate nohighlight">\(N_t\)</span>, to express everything in per capita terms, and consider only stationary allocations:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+c_1+\frac{c_2}{n}+k\leq y + \frac{f(k)}{n}\\
+c_1+\frac{c_2}{n}\leq y + \left[\frac{f(k)}{n}-k\right]
+\end{align*}
+\end{split}\]</div>
+<p>The right hand side represents output net of costs of investment.  The planner finds the optimal allocation in two steps: first maximize output net of investment, then maximize welfare by choosing the distribution of consumption among the young and old based on preferences.  Maximizing output net of investment immediately obtains the optimality condition <span class="math notranslate nohighlight">\(f'(k)=n\)</span>.  Capital should be accumulated until its marginal product is precisely equal to the population growth rate.  Intuitively, this is because the marginal return on each units of investment is <span class="math notranslate nohighlight">\(f'(k)/n\)</span>, the marginal product of capital deflated by the population growth rate, while the marginal cost of each unit of investment is the forgone consumption of one unit.</p>
+<p>Since the real interest rate is defined as <span class="math notranslate nohighlight">\(f'(k)=r\)</span>, we simply need to check whether or not the real interest rate equals the population growth rate. If <span class="math notranslate nohighlight">\(f'(k)&lt;n\)</span> then there capital over-accumulation, while if <span class="math notranslate nohighlight">\(f'(k)&gt;n\)</span> there is capital under-accumulation.  In the decentralized economy there is nothing which guarantees that <span class="math notranslate nohighlight">\(f'(k)=n\)</span>, so it is almost surely inefficient.</p>
+<p>What type of policies can correct this inefficiency.  First, a constant stock of fiat money prevents capital over-accumulation.  If the central bank chooses <span class="math notranslate nohighlight">\(z=1\)</span>, then the equilibrium features <span class="math notranslate nohighlight">\(f'(k)=n\)</span> which is exactly the optimality condition.  So in this economy the optimal monetary policy is to choose a constant money supply.  Alternative policies, which we do not go into detail here include: Social security (taxing young to pay old people) reduces capital for saving and can prevent capital over-accumulation. Opposite transfer scheme (taxing old to pay young) encourages capital if there is under-accumulation</p>
+<p>Although we’ve made progress in explaining why real-world households hold both fiat money and alternative assets, there is a deeper question we’ve yet to contend with: in reality, fiat money has a lower rate of return than capital or private debt. Why is fiat money still valued? We will address this question more seriously when discussing banks.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#olg-model-of-money">OLG Model of Money</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wicksell-s-triangle">Wicksell’s Triangle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-economy-with-record-keeping">An Economy with Record Keeping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-fiat-money">Introducing Fiat Money</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimality-of-a-monetary-equilibrium">Optimality of a monetary equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#money-inflation-and-assets">Money, Inflation, and Assets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#money-coexisting-with-alternative-assets">Money Coexisting with Alternative Assets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-olg-model-with-capital">An OLG Model with Capital</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fisher-equation">The Fisher Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-allocation-in-our-olg-economy">Optimal allocation in our OLG economy</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

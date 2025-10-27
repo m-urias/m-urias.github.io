@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Central Bank Implementation of Monetary Policy &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'central-bank-policy';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Measuring Business Cycles" href="measuring-business-cycles.html" />
+    <link rel="prev" title="Money, Inflation, and Interest Rates" href="money-and-inflation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="short-run-model.html">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/central-bank-policy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Central Bank Implementation of Monetary Policy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market-for-reserves">The Market for Reserves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-structure-of-interest-rates">Term Structure of Interest Rates</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="central-bank-implementation-of-monetary-policy">
+<h1>Central Bank Implementation of Monetary Policy<a class="headerlink" href="#central-bank-implementation-of-monetary-policy" title="Link to this heading">#</a></h1>
+<section id="the-market-for-reserves">
+<h2>The Market for Reserves<a class="headerlink" href="#the-market-for-reserves" title="Link to this heading">#</a></h2>
+<p>Central banks manipulate overnight interest rates by intervening in the market for bank reserves.</p>
+<p>Banks demand reserves for two reasons:</p>
+<ul class="simple">
+<li><p>Regulatory requirements: Many central banks require member commercial banks to hold a certain fraction of their liabilities in the form of reserves.  This is called the <strong>required reserve ratio</strong>.  In China it is usually around 12%.</p></li>
+<li><p>Payments:  Banks need to hold reserves to settle payment requests that come through the payments network.</p></li>
+</ul>
+<p>Banks must hold the required <strong>reserve amount</strong> stipulated by law, but will also choose to hold some <strong>excess reserves</strong> as insurance against unanticipated payment requests.</p>
+<p>On any given day some banks will have more reserves than they want, and some banks will have less reserves than they want.</p>
+<p>The interbank money markets are where banks borrow and lend reserves to each other using short-term financing arrangements.</p>
+<p>In the US the interbank money market is called the <strong>Fed Funds Market</strong> and the equilibrium interest rate that banks charge each other for reserves is called the <strong>Fed Funds Rate</strong>.</p>
+<p>The Fed funds rate (or any interbank lending rate) reflects the opportunity cost of holding excess reserves:</p>
+<ul class="simple">
+<li><p>When the Fed funds rate is high, it very costly to hold excess reserves because those reserves could have been lent out to earn a high rate of return</p></li>
+<li><p>When the Fed funds rate is low, it is not so costly for banks to hold excess reserves</p></li>
+</ul>
+<p><strong>There is a negative relationship between the total demand for bank reserves and the overnight lending rate.</strong></p>
+<p>Central banks have monetary policy tools which help them keep the short-term interest rate inside a target range:</p>
+<ul class="simple">
+<li><p>Discount window: Central banks can lend reserves to commercial banks and decide the interest rate to charge for these reserves.  This ``discount rate” places a <strong>ceiling</strong> on the Fed funds rate since banks would never choose to borrow in the interbank market at a higher rate.</p></li>
+<li><p>Interest on excess reserves: Central banks can pay interest to commercial banks on their excess reserve balances.  This places a <strong>floor</strong> on the Fed funds rate because banks would never lend out reserves at a rate below the interest rate they could earn by simply holding reserve balances.  The opportunity cost of holding excess reserves is gone.</p></li>
+</ul>
+<p>The central bank completely controls the amount of reserves in the banking system.</p>
+<p>The primary tool central banks use to adjust the supply of reserves is <strong>open market operations</strong>.</p>
+<ul class="simple">
+<li><p>The central bank can sell government bonds from its balance sheet in order to remove reserves from the banking system.</p></li>
+<li><p>The central bank can purchase government bonds from commercial banks in order to add reserves to the banking system.</p></li>
+</ul>
+<p><strong>The central bank completely controls the supply of reserves and by adjusting this supply can target overnight interest rates in the market for reserves</strong>.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_1.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_2.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_3.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>Prior to the financial crisis the Federal Reserve did not pay interest on excess reserves (the floor on the Fed funds rate was at 0), but in October 2008 the Fed decided to pay a positive interest rate on excess reserves thereby raising the floor.</p></li>
+<li><p>In September 2013 the Fed began a program of taking
+in money from a wide range of non-bank financial institutions and paying interest. The technical name for this programme is the Overnight Reverse Repurchase Agreement Facility (ON RRP). Now the ON RRP rate is the effective floor.</p></li>
+</ul>
+<p>The Fed says, Any counterparty that can use the ON RRP facility should be unwilling to invest funds overnight with another counterparty at a rate below the ON RRP rate, just as any depository institution eligible to earn interest on reserves should be unwilling to invest funds overnight with another counterparty at a rate below the interest rate on excess reserves.</p>
+<p>Since the financial crisis, the Federal Reserve has been providing <strong>ample reserves</strong> which implies that the equilibrium overnight interest rate is near its floor—interest on excess reserves.</p>
+<p>The ON RRP facility provides extra control over the Fed funds rate in such an ample reserve system.</p>
+<p>Since the financial crisis, choosing the administrative rates—interest on excess reserves (IOER) and ON RRP—are the most important tools of the Federal Reserve.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_6.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_5.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<p>{Monetary Policy in China}
+China’s implementation of monetary policy works more like the US prior to the financial crisis.</p>
+<ul class="simple">
+<li><p>There are scarce reserves</p></li>
+<li><p>The central bank’s short-term lending facility provides a ceiling on the overnight interest rate</p></li>
+<li><p>Interest on excess reserves provides a floor on the overnight interest rate</p></li>
+<li><p>The equilibrium interest rate is determined by adjusting the supply of reserves through the repo market</p></li>
+</ul>
+<p>In addition China makes use of it’s medium term lending facility to adjust 1-year rates.</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_7.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_9.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_6.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/market_reserves_8.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<p>To summarize, there are two basic environments under which monetary policy manipulates short-term interest rates:</p>
+<ul class="simple">
+<li><p>Scarce reserves (China): Open market operations change the supply of reserves in the banking system thereby adjusting the equilibrium interbank interest rate.</p></li>
+<li><p>Ample reserves (US post 2008): Reserves are ample so that open market operations don’t move interest rates much.  Instead, administrative rates IOER and ON RRP are used to adjust the equilibrium interbank interest rate.</p></li>
+</ul>
+<p>Now we have a basic idea of how central banks manipulate short-term interest rates, but how do short-term interest rates translate into long term interest rates which are more relevant for savings and investment decisions?</p>
+</section>
+<section id="term-structure-of-interest-rates">
+<h2>Term Structure of Interest Rates<a class="headerlink" href="#term-structure-of-interest-rates" title="Link to this heading">#</a></h2>
+<p>What is the Term Structure of Interest Rates?</p>
+<ul class="simple">
+<li><p>Often in economic models we assume that there exists one interest rate that measures the real return to capital investments.</p></li>
+<li><p>In reality, there exist many different interest rates among a class of assets that reflect differences in the <strong>risk, liquidity, and maturity</strong> on heterogeneous capital projects.</p></li>
+<li><p>We will focus on the class of assets called bonds, and identify why bonds with the same term to maturity have different interest rates.</p></li>
+<li><p>Then we look at why the bond’s term to maturity also affects its interest rate, which is called the <strong>term structure of interest rates</strong>.</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_MII/bond_yields.png" 
+     alt="Long-Term Bond Yields in the US" 
+     width="400">
+</div>
+<p>{Maturity, Default, and Liquidity Risk}
+There are three main factors that influence the interest rate on a particular type of debt instrument:</p>
+<ul class="simple">
+<li><p><strong>Risk</strong>:</p></li>
+<li><p>Some types of debt (e.g. government bonds for the US) have very little risk of default.  Other types of debt (e.g. credit cards, corporate bonds, mortgages) differ in the probability of default and thus how much the lender will lose if there is a default.</p></li>
+<li><p>Default occurs when the issuer of a bond is unable or unwilling to make interest payments when the promised or pay off the face value when the bond matures.</p></li>
+<li><p>The spread between interest rates on bonds with default risk and interest rate on default-free bonds (both of same maturity) is called the <strong>risk premium</strong>.</p></li>
+</ul>
+<p>{Maturity, Default, and Liquidity Risk}</p>
+<div style="text-align: center;">
+<img src="_static/figs_MII/fig11.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>{Maturity, Default, and Liquidity Risk}
+Liquidity:</p>
+<ul class="simple">
+<li><p>Some types of debt can be easily traded (e.g. government bonds for the US) and/or
+can be quickly and cheaply converted into cash (or reserves).  Other debt varies in its ease of finding a trade (e.g. corporate bonds) so it can be costly to sell these bonds in an emergency.</p></li>
+<li><p>Some types of debt are readily accepted as <strong>collateral</strong> in financial contracts.  The degree to which an asset is collateralizable largely depends on how quickly one party can liquidate it in the event that the counter-party breaks the contract.</p></li>
+<li><p>Other things equal, a decrease in liquidity of a bond will reduce the demand for that bond and lower its equilibrium price.</p></li>
+</ul>
+<p>{Maturity, Default, and Liquidity Risk}
+Maturity:</p>
+<ul class="simple">
+<li><p>Different types of debt have different maturities—how long the borrower has to pay back.</p></li>
+<li><p>Some debt is overnight (e.g. repos, interbank loans) while other debt can be many decades (e.g. long-term government debt).</p></li>
+<li><p>The relationship between the yield on bonds with differing terms to maturity but the same risk and liquidity characteristics is called a yield curve.</p></li>
+</ul>
+<p>A plot of the yields on bonds with different maturities but the same risk and liquidity characteristics is called a yield curve.</p>
+<ul class="simple">
+<li><p>Interest rates on bonds of different maturities move together over time.</p></li>
+<li><p>Yield curves can slope upward, downward, or be flat (but most often are upward sloping)</p></li>
+<li><p>When short-term interest rates are low (high), the yield curve tends to slope upward (downward)</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_MII/fig4.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_MII/china-yield-curve.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>{Explaining the yield curve}
+We will describe three theories to explain the term structure of interest rates:</p>
+<ul class="simple">
+<li><p>expectations theory</p></li>
+<li><p>segmented markets</p></li>
+<li><p>liquidity premium theory</p></li>
+</ul>
+<p><strong>Expectations theory</strong> says that the interest rate on a long-term bond will equal the average of the short-term interest rates that people expect to occur over the life of the long-term bond.</p>
+<ul class="simple">
+<li><p>it assumes bonds of different maturities are <em>perfect substitutes</em></p></li>
+<li><p>if they are perfect substitutes, then the must give the same rate of return</p></li>
+<li><p>this is a simple application of the <em>rate of return equality principle</em> we discussed already</p></li>
+</ul>
+<p>Consider investing $1 of wealth in either</p>
+<ul class="simple">
+<li><p>a two-period bond</p></li>
+<li><p>two one-period bonds</p></li>
+</ul>
+<p>Define the following</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(i_t = \)</span> today’s interest rate on a one-period bond</p></li>
+<li><p><span class="math notranslate nohighlight">\(i^e_{t+1} = \)</span> interest rate on a one-period bond expected for tomorrow</p></li>
+<li><p><span class="math notranslate nohighlight">\(i_{2t} = \)</span> today’s interest rate on a two-period bond</p></li>
+</ul>
+<p>The expected return to holding a two-period bond is</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_{2t})(1+i_{2t})-1 = 2 i_{2t}+(i_{2t})^2
+\]</div>
+<p>The expected return to holding two one-period bonds is</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_t)(1+i^e_{t+1})-1 = i_t + i^e_{t+1}+i_t(i^e_{t+1})
+\]</div>
+<p>Both bonds will be held only if these expected returns are equal.  Approximately we have that</p>
+<div class="math notranslate nohighlight">
+\[
+2 i_{2t} = i_t + i^e_{t+1} \quad \text{or} \quad i_{2t} = \frac{i_t + i^e_{t+1}}{2}
+\]</div>
+<p>We have shown that the two-period rate must equal the average of the two one-period rates.  Of course we could generalize this to an <span class="math notranslate nohighlight">\(n\)</span>-period bond and say that</p>
+<div class="math notranslate nohighlight">
+\[
+i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+...+i^e_{t+(n-1)}}{n}
+\]</div>
+<ul class="simple">
+<li><p>When the yield curve is upward sloping, short-term interest rates are expected to rise</p></li>
+<li><p>When the yield curve is inverted, short-term interest rates are expected to fall</p></li>
+</ul>
+<p>Expectations theory does a good job explaining:</p>
+<ul class="simple">
+<li><p>interest rates on bonds with different maturities move together</p></li>
+<li><p>yield curve tend to slope upward when short-term rates are low, and be inverted with short-term rates are higher</p></li>
+<li><p>short-term rates are more volatile than long-term rates</p></li>
+</ul>
+<p>but does a poor job explaining:</p>
+<ul class="simple">
+<li><p>why they yield curve usually slopes upward</p></li>
+<li><p>the theory would imply that short-term rates are normally expected to rise, but in practice they are just as likely to fall as to rise</p></li>
+</ul>
+<p><strong>Segmented markets theory</strong> views different-maturity bonds as completely separate and segmented.  The interest rate on a bond is determined by the supply and demand for that bond, and is not affected by the expected returns on other bonds with different maturities.</p>
+<ul class="simple">
+<li><p>bonds with different maturities are not substitutes</p></li>
+<li><p>investors want to match the maturity of the bond to the desired holding period (for discount bonds this means investors face no risk)</p></li>
+</ul>
+<p>Segmented markets theory can explain:</p>
+<ul class="simple">
+<li><p>why the yield curve usually slopes upward: risk averse investors prefer a short holding period with a short-term bond that has less interest rate risk so the demand for short-term bonds is relatively more than long-term bonds</p></li>
+</ul>
+<p>Segmented markets theory cannot explain:</p>
+<ul class="simple">
+<li><p>why interest rates on bonds with different maturities move together: if the bond markets are segmented then there is no reason why changes in demand/supply of one bond maturities should affect others</p></li>
+<li><p>why yield curves tend to slope upward (downward) when short-term rates are low (high): there is no clear theory for how the level of short-term rates affect the demand/supply of short- versus long-term bonds.</p></li>
+</ul>
+<p>The <strong>liquidity premium theory</strong> says that the interest rate on a long-term bond will equal an average of short-term rates expected to occur over the life of the bond plus a liquidity premium (also called a term premium) that responds to supply and demand conditions for that bond.</p>
+<ul class="simple">
+<li><p>bonds with different maturities are substitutes, but not perfect substitutes.</p></li>
+<li><p>investors tend to hold short-term bonds because they are subject to less liquidity risk</p></li>
+<li><p>investors must be compensated a positive liquidity premium to hold long-term bonds</p></li>
+</ul>
+<p>The liquidity premium theory is written as</p>
+<div class="math notranslate nohighlight">
+\[
+i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+...+i^e_{t+(n-1)}}{n} + l_{nt}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(l_{nt}\)</span> is the liquidity (term) premium for the <span class="math notranslate nohighlight">\(n\)</span>-period bond at time <span class="math notranslate nohighlight">\(t\)</span>, which is positive and rises with the term to maturity of the bond, <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Liquidity premium theory does a good job at explaining:</p>
+<ul class="simple">
+<li><p>interest rates on bonds with different maturities move together (same logic as the expectations theory)</p></li>
+<li><p>why yield curves tend to slope upward when short-term rates are low: investors expect short-term rates to rise when they are relatively low, and the liquidity premium says that the yield curve will be even more steep than under expectations theory</p></li>
+<li><p>yield curves usually slope upward: the liquidity premium says that even if short-term rates are expected to stay the same, the long-term interest rates will be higher than short-term interest rates.</p></li>
+<li><p>a steep upward sloping yield curve says that investors expect short-term rates to rise in the future</p></li>
+<li><p>a moderately upward sloping yield curve says that short-term rates are not expected to rise or fall much</p></li>
+<li><p>a flat yield curve says that short-term rates are expected to fall moderately in the future</p></li>
+<li><p>a steep inverted yield curve says that short-term rates are expected to fall sharply in the future</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_MII/fig5.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Empirical evidence suggests that</p>
+<ul class="simple">
+<li><p>the spread between long-term rates and short-term rates contains information about predicting very short-term interest rate movements (over a few months) and very long-run interest rate movements, but little information about intermediate-term movements.</p></li>
+<li><p>the yield curve also has predictive power in regard to business cycles and inflation</p></li>
+<li><p>an upward sloping yield curve usually indicates loose monetary policy, and an inverted yield curve tight monetary policy</p></li>
+</ul>
+<p>Central Bank Policy and Interest Rates</p>
+<ul class="simple">
+<li><p>Rates on longer-term government bonds have a key influence on mortgage rates, corporate debt, etc. For instance, the ten-year Treasury rate is used as a benchmark for US fixed-rate mortgages.</p></li>
+<li><p>Central banks control overnight interest rates.</p></li>
+<li><p>Liquidity premium theory of interest rates explains how the central bank’s control over short-term interest rates translate into long-term interest rates</p></li>
+<li><p>The theory also explains why <strong>forward guidance</strong>—central banks giving the public guidance on what they plan to do in the future—is an important part of monetary policy.</p></li>
+</ul>
+<p>Summary of Key Ideas
+In the long-run:</p>
+<ul class="simple">
+<li><p>Central banks can use growth in money supply to control inflation</p></li>
+<li><p>Central banks cannot use growth in money supply to stimulate GDP growth</p></li>
+<li><p>The Fisher equation tells us nominal interest rates should be rising when inflation is rising</p></li>
+</ul>
+<p>In the short-run:</p>
+<ul class="simple">
+<li><p>The central bank intervenes in the banking sector to manipulate short-term interest rates</p></li>
+<li><p>Short-term interest rates translate into longer-term interest rates through the yield curve</p></li>
+<li><p>The central bank may be able to influence real interest rates temporarily which in turn can affect real economic decisions by households, firms, and the government.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="money-and-inflation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Money, Inflation, and Interest Rates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="measuring-business-cycles.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Measuring Business Cycles</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-market-for-reserves">The Market for Reserves</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#term-structure-of-interest-rates">Term Structure of Interest Rates</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

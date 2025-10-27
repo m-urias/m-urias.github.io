@@ -1,0 +1,1607 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>A Short-Run Model of the Macroeconomy &#8212; My Macroeconomics Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'short-run-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Measuring Business Cycles" href="measuring-business-cycles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomics Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Long-Run</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="macro_measuring_the_economy.html">Measuring the Economy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdp-data-tutorial.html">GDP Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="modeling-gdp-growth.html">Modeling GDP Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solow-model.html">The Solow Model of Economic Growth</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Money, Inflation, and Interest Rates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="money-and-inflation.html">Money, Inflation, and Interest Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="central-bank-policy.html">Central Bank Implementation of Monetary Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Short-Run</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Short-Run Model of the Macroeconomy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/short-run-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>A Short-Run Model of the Macroeconomy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve">The IS Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-consumption">A Digression on our Mini Theories: Consumption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-investment">A Digression on our Mini Theories: Investment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-government-spending">A Digression on our Mini Theories: Government Spending</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-net-export">A Digression on our Mini Theories: Net Export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-monetary-policy-in-our-macroeconomy">A Simple Monetary Policy in our Macroeconomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phillips-curve">The Phillips Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#our-basic-macro-model">Our Basic Macro Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rules-and-stabalizing-the-economy">Monetary Policy Rules and Stabalizing the Economy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3-equation-macro-model">A 3-Equation Macro Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-macro-models">Advanced Macro Models</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="a-short-run-model-of-the-macroeconomy">
+<h1>A Short-Run Model of the Macroeconomy<a class="headerlink" href="#a-short-run-model-of-the-macroeconomy" title="Link to this heading">#</a></h1>
+<section id="the-is-curve">
+<h2>The IS Curve<a class="headerlink" href="#the-is-curve" title="Link to this heading">#</a></h2>
+<p>The key channel through which short-run output will be affected in our model is through changes in the real interest rate:</p>
+<ul class="simple">
+<li><p>The central bank can intervene in the market for reserves to manipulate overnight nominal interest rates</p></li>
+<li><p>Changes in overnight nominal interest rates translate into changes to longer term nominal interest rates via the yield curve</p></li>
+<li><p>Changes in nominal interest rates translate into changes into real interest rates in the short-run because prices respond with a lag (this is why <span class="math notranslate nohighlight">\(r\neq MPK\)</span> in the short-run)</p></li>
+<li><p>Changes in the real interest rate affect investment decisions and therefore aggregate output</p></li>
+</ul>
+<p>Our simple \textbf{monetary policy transmission mechanism}:</p>
+<div class="math notranslate nohighlight">
+\[
+\downarrow \text{interest rate} \Rightarrow \uparrow \text{investment} \Rightarrow \uparrow \text{output}
+\]</div>
+<p>Of course there are other ways that monetary policy can affect the real economy, but we will restrict our attention to this channel.</p>
+<p>The **IS curve **represents a short-run equilibrium in the goods market wherein higher interest rates are associated with lower levels of output due to less investment.</p>
+<p>Now let’s build the IS curve…</p>
+<p>Begin with the national accounting identify</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t=C_t+I_t+G_t+EX_t-IM_t
+\]</div>
+<p>which says that the total output of the economy can be used for consumption, investment, government spending, and net exports.</p>
+<p>Now we want to develop a ‘’mini theory’ for each component on national expenditure</p>
+<p>We assume (for now) that consumption, government spending, exports and imports are all a constant fraction of long-run output
+\begin{align*}
+C_t &amp;= a_c \bar{Y}_t \
+G_t &amp;= a_g \bar{Y}<em>t \
+EX_t &amp;= a</em>{ex} \bar{Y}<em>t \
+IM_t &amp;= a</em>{in} \bar{Y}_t \
+\end{align*}
+where <span class="math notranslate nohighlight">\(\bar{Y}_t\)</span> denotes the level of long-run, or potential, output.  Remember that <span class="math notranslate nohighlight">\(\bar{Y}_t\)</span> is determined outside of the short-run model: it is determined by Solow/Romer/Equilibrium Unemployment.</p>
+<p>The theory of investment is a bit different.</p>
+<div class="math notranslate nohighlight">
+\[
+I_t = a_i\bar{Y}_t+b(R_t-r)\bar{Y}_t
+\]</div>
+<p>which says that short-run investment depends on the short-term real interest rate <span class="math notranslate nohighlight">\(R_t\)</span> relative to the long-run real interest rate <span class="math notranslate nohighlight">\(r\)</span></p>
+<ul class="simple">
+<li><p>If current interest rate equals long-run interest rate <span class="math notranslate nohighlight">\(R=r\)</span> then investment is just a constant fraction of long-run output <span class="math notranslate nohighlight">\(I_t = a_i \bar{Y}_t\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R&gt;r\)</span> then financing investment projects is  costly so investment decreases below it’s long-run level.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R&lt;r\)</span> then financing investment projects is cheap so investment rises above it’s long-run level.</p></li>
+<li><p>Recall that the long-run real interest rate <span class="math notranslate nohighlight">\(r=MPK\)</span> is, once again, determined by our long-run theories and therefore exogenous with respect to our short-run model.</p></li>
+</ul>
+<p>Now we can substitute our ‘’mini theories” into the national accounting identity:
+\begin{align*}
+\frac{Y_t}{\bar{Y}_t}&amp;=\frac{C_t}{\bar{Y}_t}+\frac{I_t}{\bar{Y}_t}+\frac{G_t}{\bar{Y}_t}+\frac{EX_t}{\bar{Y}<em>t}-\frac{IM_t}{\bar{Y}<em>t} \
+\frac{Y_t}{\bar{Y}<em>t} &amp;= a_c+a_i-b(R_t-r)+a_g+a</em>{ex}-a</em>{im} \
+\underbrace{\frac{Y_t-\bar{Y}<em>t}{\bar{Y}<em>t}}</em>{\tilde{Y}<em>t} &amp;= \underbrace{ a_c+a_i+a_g+a</em>{ex}-a</em>{im}-1}</em>{a}-b(R_t-r)
+\end{align*}</p>
+<p>Our IS curve is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_t-r)
+\]</div>
+<ul class="simple">
+<li><p>The lefthand side is the percentage deviation of current GDP from potential GDP</p></li>
+<li><p>The parameter <span class="math notranslate nohighlight">\(a\)</span> includes all the exogenous components of expenditure.  Notice that <span class="math notranslate nohighlight">\(a=0\)</span> in normal times.  Although certain \textbf{economic shocks} (e.g. fiscal stimulate <span class="math notranslate nohighlight">\(\uparrow a_g\)</span>) could cause <span class="math notranslate nohighlight">\(a \neq 0\)</span>.</p></li>
+<li><p>The parameter <span class="math notranslate nohighlight">\(b\)</span> measures how sensitive investment, and therefore short-run output, is to changes in the real interest rate</p></li>
+<li><p>Monetary policy is summarized by <span class="math notranslate nohighlight">\(R_t\)</span></p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_curve.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Two possible shocks to consider:</p>
+<ul class="simple">
+<li><p>Aggregate demand shocks: Any event which temporarily alters the exogenous component of <span class="math notranslate nohighlight">\(C,I,G,EX,IM\)</span>.  Positive shocks cause <span class="math notranslate nohighlight">\(a&gt;0 \Rightarrow \tilde{Y}_t&gt;0\)</span> temporarily while negative shocks cause <span class="math notranslate nohighlight">\(a&lt;0 \Rightarrow \tilde{Y}_t&lt;0\)</span>.  Graphically, this will appear as \textit{shifts} of the IS curve.</p></li>
+<li><p>Interest rate shocks: Monetary policy decides to alter <span class="math notranslate nohighlight">\(R_t\)</span> away from it’s long-run value.  Lowering the interest rate stimulates investment and causes <span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span> temporarily, while raising the interest rate reduces investment causing <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>.  Graphically, this will appear as \textit{movement along} the IS curve.</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_curve_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_curve_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<section id="a-digression-on-our-mini-theories-consumption">
+<h3>A Digression on our Mini Theories: Consumption<a class="headerlink" href="#a-digression-on-our-mini-theories-consumption" title="Link to this heading">#</a></h3>
+<p>How do economists think about households’ decision to consume versus save?</p>
+<ul class="simple">
+<li><p>Households care about their satisfaction, called \textbf{utility}, over their entire lifetime</p></li>
+<li><p>Households forecast their future income in order to make consumption decisions today</p></li>
+<li><p>What matters for your consumption/savings choice is the expected present value of your lifetime income</p></li>
+</ul>
+<p>Consider a simple model where an individual makes a decision about how much to consume when young versus when old.</p>
+<p>An individuals lifetime utility is given by</p>
+<div class="math notranslate nohighlight">
+\[
+U = u(c_y)+\beta u(c_o)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\((c_y,c_o)\)</span> the amount of consumption when young and old respectively and <span class="math notranslate nohighlight">\(\beta \in (0,1)\)</span> is a subjective discount factor reflecting how patient this individual is.</p>
+<p>Of course, the amount of consumption you can enjoy in each period of your life is constrained by income:
+\begin{align*}
+c_{\text{y}}+s_{\text{y}}=y_{\text{y}} \
+c_{\text{o}} = y_{\text{o}}+(1+R)s_{\text{y}}
+\end{align*}
+where <span class="math notranslate nohighlight">\(R\)</span> is the market interest rate that you can earn on your savings.</p>
+<p>The problem that an individual solves is
+\begin{align*}
+\max \hspace{2mm} &amp;u(c_y)+\beta u(c_o) \
+\text{s.t.} \quad &amp;\underbrace{c_y + \frac{c_o}{1+R}}<em>{\text{PV of consumption}}=\underbrace{y_y+\frac{y_o}{1+R}}</em>{\text{PV of income}}
+\end{align*}</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/consumption.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The optimal amount of consumption when young and old is given by</p>
+<div class="math notranslate nohighlight">
+\[
+u'(c_y)=\beta(1+R)u'(c_o)
+\]</div>
+<p>which is called the \textbf{Euler equation}: it says that an individual must be indifferent between consuming one more unit today versus saving that unit and consuming it in the future.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(u'(c_y) &gt; \beta(1+R)u'(c_o)\)</span> then the marginal value of consuming when young is higher than the marginal value of saving and consuming later.  So the individual should consume more when young.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(u'(c_y) &gt; \beta(1+R)u'(c_o)\)</span> then the marginal value of saving income today, earning a rate of return, and consuming when old is higher than the marginal value of consuming when young.  So the individuals should save more and consume less when young.</p></li>
+<li><p>Only when <span class="math notranslate nohighlight">\(u'(c_y) = \beta(1+R)u'(c_o)\)</span> is the individuals behaving optimally and therefore has no reason to alter it’s consumption plan.</p></li>
+</ul>
+<p>In general, a higher interest rate <span class="math notranslate nohighlight">\(R\)</span> increases the marginal value of savings and therefore reduces consumption today.</p>
+<p>However, consider the following utility function</p>
+<div class="math notranslate nohighlight">
+\[
+u(c) = \ln c
+\]</div>
+<p>With this utility function the Euler equation becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{c_o}{c_y}=\beta (1+R)
+\]</div>
+<p>And substituting this back into our lifetime budget constraint obtains
+\begin{align*}
+c_y = \frac{1}{1+\beta}[y_y+\frac{y_o}{1+R}] \
+c_o = \frac{\beta}{1+\beta}(1+R)[y_y+\frac{y_o}{1+R}]
+\end{align*}</p>
+<p>Notice that with log utility the desired amount of consumption when young is simply a constant fraction of expected lifetime income.  If we use the notation <span class="math notranslate nohighlight">\(\bar{Y}\)</span> to denoted expected lifetime income then we have</p>
+<div class="math notranslate nohighlight">
+\[
+c_y = \frac{1}{1+\beta}\bar{Y}
+\]</div>
+<p>which is exactly what our mini-theory said about consumption:</p>
+<div class="math notranslate nohighlight">
+\[
+C_t = a_c \bar{Y}_t
+\]</div>
+<p>The key lesson, and the one embodied in our mini theory, is that current consumption depends on the present value of lifetime income and not on current income.  This is sometimes called the \textbf{permanent-income hypothesis}.</p>
+<p>In general, changes in the interest rate alter the the present expected value of lifetime income and therefore alter present consumption.  If we wanted to include this channel into our mini theory we could write</p>
+<div class="math notranslate nohighlight">
+\[
+C_t = a_c \bar{Y}_t-b_c(R_t-r)\bar{Y}_t
+\]</div>
+<p>(You should try to derive a modified IS curve using this mini-theory for consumption).</p>
+</section>
+<section id="a-digression-on-our-mini-theories-investment">
+<h3>A Digression on our Mini Theories: Investment<a class="headerlink" href="#a-digression-on-our-mini-theories-investment" title="Link to this heading">#</a></h3>
+<p>How do economists think about investment?</p>
+<ul class="simple">
+<li><p>Firms purchase capital goods to produce output that they can sell in the marketplace.</p></li>
+<li><p>We assume that firms maximize their expected lifetime profits.</p></li>
+<li><p>We don’t always have to solve a profit maximization problem.  Instead we can appeal to the notion of arbitrage (or ‘’thinking on the margin’’) to deduce when a firm is optimally investing</p></li>
+</ul>
+<p>Consider investing in equipment (e.g. stove and a portable cart) to start my noodle business in Pingshan.  I have two alternative uses of my money:</p>
+<ul class="simple">
+<li><p>Put my money in Pingan bank and earn interest rate <span class="math notranslate nohighlight">\(R\)</span></p></li>
+<li><p>Buy equipment for my business.  Let the price of equipment be given by <span class="math notranslate nohighlight">\(p_k\)</span>.</p></li>
+</ul>
+<p>If I’m maximizing my personal wealth, then at the margin both alternatives should yield the same return</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{R \times p_k}_{\text{return from bank account}} = \underbrace{MPK+\Delta p_k}_{\text{return from capital}}
+\]</div>
+<p>For clarity, let’s normalize <span class="math notranslate nohighlight">\(p_k=1\)</span> so that we have</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = R-\Delta p_k
+\]</div>
+<p>which says that I should invest in capital up until the point at which the marginal product of capital is equal to the difference between the interest rate and the capital gain (or loss).</p>
+<p>Another reason why my equipment will fall in value over time is due to depreciation.  As I use my equipment over time, the wear and tear gradually decreases it’s market value.  We can account for this by writing</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = \underbrace{R + \delta - \Delta p_k}_{\text{user cost of capital}}
+\]</div>
+<p>The \textbf{user cost of capital} is the total cost to a firm of using one more unit of capital.</p>
+<p>Notice that if there is no capital gains or depreciation then we are back to our standard condition that</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = R
+\]</div>
+<p>Consider the introduction of a tax <span class="math notranslate nohighlight">\(\tau\)</span> on business income.</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{R}_{\text{cost of funds}} = \underbrace{(1-\tau)MPK-\delta+\Delta p_k}_{\text{return from investing in capital}}
+\]</div>
+<p>The business income tax raises the user cost of capital</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = \underbrace{\frac{R+\delta-\Delta p_k}{1-\tau}}_{\text{user cost of capital}}
+\]</div>
+<p>Because extra output produced by capital is taxed, the marginal product of capital must be that much higher in order for the investment to be profitable.</p>
+<p>How do we get from desired capital to investment?</p>
+<p>Suppose output is produced according to the production function</p>
+<div class="math notranslate nohighlight">
+\[
+Y = AK^{1/3}L^{2/3}
+\]</div>
+<p>so that the marginal product of capital is</p>
+<div class="math notranslate nohighlight">
+\[
+MPK = \frac{1}{3}\frac{Y}{K}
+\]</div>
+<p>Letting <span class="math notranslate nohighlight">\(r\)</span> denote the user cost of capital we have that firm’s optimal capital stock is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Y}{K} = 3r
+\]</div>
+<p>Capital evolves over time according to</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta K_{t+1}=I_t-\delta K_t
+\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta K_{t+1}}{K_{t}}=\frac{I_t}{Y_t}\frac{Y_t}{K_t}-\delta
+\]</div>
+<p>Finally, substitute out the optimal capital <span class="math notranslate nohighlight">\(Y/K=3r\)</span> and solve for the investment rate</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{I_t}{Y_t}=\frac{g_K+\delta}{3r}
+\]</div>
+<p>This equation says that the optimal investment rate depends on:</p>
+<ul class="simple">
+<li><p>the growth rate of the capital stock <span class="math notranslate nohighlight">\(\Delta K_{t+1}/K_t=g_K\)</span></p></li>
+<li><p>The depreciation rate <span class="math notranslate nohighlight">\(\delta\)</span></p></li>
+<li><p>The user cost of capital <span class="math notranslate nohighlight">\(r\)</span></p></li>
+</ul>
+<p>How does this relate to what we’ve studied so far?</p>
+<p>Recall that in Solow we took the investment rate as exogenous</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{I_t}{Y_t}=s
+\]</div>
+<p>Now we have a simple theory about where that investment rate comes from.  This answers some questions about what type of events might alter the savings rate (an increase in corporate taxes for example).</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{I_t}{Y_t}=\frac{g_K+\delta}{3r}, \quad r=\frac{R+\delta-\Delta p_k}{1-\tau}
+\]</div>
+<p>But wait…there’s more!</p>
+<ul class="simple">
+<li><p>Our consumption Euler equation pins down the long-run interest rate <span class="math notranslate nohighlight">\(R\)</span></p></li>
+<li><p>Our Solow model pins down the long-run growth rate of output and capital</p></li>
+<li><p>Our condition that <span class="math notranslate nohighlight">\(MPK = r\)</span> pins down the capital-output ratio</p></li>
+<li><p>Our optimal investment rule <span class="math notranslate nohighlight">\(I/Y=(g_k+\delta)/3r\)</span> pins down the investment-output ratio and therefore also the consumption-output ratio (since <span class="math notranslate nohighlight">\(Y_t=C_t+I_t\)</span>).</p></li>
+</ul>
+</section>
+<section id="a-digression-on-our-mini-theories-government-spending">
+<h3>A Digression on our Mini Theories: Government Spending<a class="headerlink" href="#a-digression-on-our-mini-theories-government-spending" title="Link to this heading">#</a></h3>
+<p>The most important concept for thinking about fiscal policies is the government budget constraint</p>
+<div class="math notranslate nohighlight">
+\[
+G_t+(1+i_t)B_t=T_t+B_{t+1}+\Delta M_{t+1}
+\]</div>
+<p>which says the government spending and interest payment on Treasury bonds have to be paid using taxes, bonds, or seigniorage revenue.
+To understand the \textit{dynamic} constraint the government is subject to, consider that the government budget constraint has to hold at all point in time.  In particular it is true that</p>
+<div class="math notranslate nohighlight">
+\[
+G_{t+1}+(1+i_{t+1})B_{t+1}=T_{t+1}+B_{t+2}+\Delta M_{t+2}
+\]</div>
+<p>or rearranged,</p>
+<div class="math notranslate nohighlight">
+\[
+B_{t+1}=\frac{T_{t+1}+B_{t+2}+\Delta M_{t+2}-G_{t+1}}{1+i_{t+1}}
+\]</div>
+<p>Since the budget constraint must hold at time <span class="math notranslate nohighlight">\(t\)</span> and time <span class="math notranslate nohighlight">\(t+1\)</span> we can combine them by substituting <span class="math notranslate nohighlight">\(B_{t+1}\)</span> above into our time <span class="math notranslate nohighlight">\(t\)</span> budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[
+G_t+(1+i_t)B_t=T_t+\Delta M_{t+1}+\frac{T_{t+1}+B_{t+2}+\Delta M_{t+2}-G_{t+1}}{1+i_{t+1}}
+\]</div>
+<p>Or course the government budget constraint also has to hold at time <span class="math notranslate nohighlight">\(t+2\)</span> which gives us</p>
+<div class="math notranslate nohighlight">
+\[
+B_{t+2}=\frac{T_{t+2}+B_{t+3}+\Delta M_{t+3}-G_{t+2}}{1+i_{t+2}}
+\]</div>
+<p>which can again be substituted out to give
+\begin{align*}
+&amp;G_t+(1+i_t)B_t= \
+&amp;T_t+\Delta M_{t+1}+\frac{T_{t+1}+\Delta M_{t+2}-G_{t+1}}{1+i_{t+1}}+\frac{T_{t+2}+B_{t+3}+\Delta M_{t+3}-G_{t+2}}{(1+i_{t+1})(1+i_{t+2})}
+\end{align*}</p>
+<p>Continuing process over and over again eventually gives</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{(1+i_t)B_t}_{\text{PV of initial debt}} + \underbrace{\sum_{s=t}^\infty R_{t,s} G_s}_{\text{PV of government spending}} = \underbrace{\sum_{s=t}^\infty R_{t,s} T_s}_{\text{PV of tax revenue}} + \underbrace{\sum_{s=t}^\infty R_{t,s} \Delta M_{s+1}}_{\text{PV of seigniorage}}
+\]</div>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(R_{t,s}=\frac{1}{\prod_{\nu=t+1}^s (1+r_{\nu})}\)</span> is the market discount factor</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lim_{s \rightarrow \infty} R_{t,s} B_s =0\)</span> to rule out asset bubble in government bonds</p></li>
+</ul>
+<p>The important lesson is this: although the government never has to run a balanced budget in any given year, it does have to run a balanced budget in the present value sense.</p>
+<ul class="simple">
+<li><p>The amount that the government can borrow is limited by the amount it can credibly expect to pay back.</p></li>
+<li><p>The amount that it can pay back depends on the growth rate of the economy, since GDP is in some sense the total potential tax base.</p></li>
+<li><p>If the economy is growing very fast then the debt-to-GDP ratio will decline for a given path of government spending</p></li>
+<li><p>If the economy is growing more slowly than expected, then future tax revenue is less certain and will almost certainly cause the yield on the bond to increase</p></li>
+</ul>
+<p>Here is the way we are thinking about government spending in our mini theory:</p>
+<ul class="simple">
+<li><p>When the economy is on it’s long-run equilibrium (balance growth path if you like) then the present discounted value of GDP is given by <span class="math notranslate nohighlight">\(\sum_{s=t}^{\infty}\bar{Y}_s/(1+r)^s\)</span></p></li>
+<li><p>This effectively determined the present value of tax revenue and therefore the present value of feasible government spending</p></li>
+<li><p>This long-run level of government spending is <span class="math notranslate nohighlight">\(G_t=a_g \bar{Y}_t\)</span></p></li>
+<li><p>Of course the government may wish to increase or decrease spending (<span class="math notranslate nohighlight">\(\uparrow \downarrow a_g\)</span>), but this can only happen temporarily since the government budget constraint must be satisfied in the present value sense.</p></li>
+</ul>
+</section>
+<section id="a-digression-on-our-mini-theories-net-export">
+<h3>A Digression on our Mini Theories: Net Export<a class="headerlink" href="#a-digression-on-our-mini-theories-net-export" title="Link to this heading">#</a></h3>
+<p>In the long-run, we expect arbitrage in goods markets to guarantee that identical goods have the same price in any two countries</p>
+<div class="math notranslate nohighlight">
+\[
+1=\underbrace{q^g_{US/EUR}}=\underbrace{E_{\$/€}P^g_{EUR}} \times \hspace{-15mm}\underbrace{\frac{1}{P^g_{US}}}
+\]</div>
+<p>This is called the <strong>law of one price</strong>.  Of course we are abstracting from trade costs, but this is a reasonable starting point.  (Recall the Big-Mac index we discussed at the beginning of the course).</p>
+<p>Rather than considering a single good, we could imagine a bundle of goods should cost the same between two countries in which case we could write</p>
+<div class="math notranslate nohighlight">
+\[
+1=q_{US/EUR}=\frac{E_{\$/€}P_{EUR}}{P_{US}}
+\]</div>
+<p>This is called <strong>absolute purchasing power parity</strong> (PPP).</p>
+<p>Absolute PPP says that the nominal exchange rate is determined by the ratio of price levels:</p>
+<div class="math notranslate nohighlight">
+\[
+E_{\$/€} = \frac{P_{US}}{P_{EUR}}
+\]</div>
+<p>\textbf{Relative PPP} says that the rate of depreciation depends on the difference between the inflation rates of two countries</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta E_{\$/€}}{E_{\$/€}}=\pi_{US}-\pi_{EUR}
+\]</div>
+<p>These two theories empirically do reasonably well in the long-run, but not in the short-run.  This is a long-run theory of exchange rates.</p>
+<p>We already developed some tools to delve a bit deeper into this long-run theory of exchange rates.</p>
+<p>Use the quantity theory of money to say</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\Delta E_{\$/€}}{E_{\$/€}}=\pi_{US}-\pi_{EUR} = (g^{US}_M-g^{US}_Y)-(g^{EUR}_M-g^{EUR}_Y)
+\]</div>
+<p>which says that long-run changes in the nominal exchange rate are driven by differences in growth rates of the money supply and growth rates of GDP between two countries.</p>
+<p>A short-run theory of exchange rates comes from uncovered interest rate parity (UIP)</p>
+<div class="math notranslate nohighlight">
+\[
+(1+i_{\$})=(1+i_{€})\frac{E^e_{\$/€}}{E_{\$/€}}
+\]</div>
+<p>which says that holding dollar deposits in the US must give the same rate or return as converting dollars to Euros and holding deposits in the EU and then converting them back to dollars.</p>
+<p>Uncovered interest rate parity is convenient to use in an approximate form</p>
+<div class="math notranslate nohighlight">
+\[
+i_{\$}=i_{€}+\frac{\Delta E^e_{\$/€}}{E_{\$/€}}
+\]</div>
+<p>which says that the expected depreciation of a currency depends on the nominal interest rate differential between two countries.</p>
+<p>In a long-run equilibrium we have both relative PPP and UIP holding
+\begin{align*}
+\frac{\Delta E_{$/€}}{E_{$/€}}&amp;=\pi_{US}-\pi_{EUR} \
+\frac{\Delta E^e_{$/€}}{E_{$/€}} &amp;= i_{$}-i_{€}
+\end{align*}
+so that</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_{US}-\pi_{EUR}=i_{\$}-i_{€}
+\]</div>
+<p>which implies that</p>
+<div class="math notranslate nohighlight">
+\[
+r^e_{US}=r^e_{EUR}
+\]</div>
+<p>In the long-run real interest rates between countries should equalize!</p>
+<p>In the short-run, however, we think that prices don’t adjust instantaneously so that PPP need not hold.  Therefore, changes in the nominal exchange rate can affect the real exchange rate</p>
+<div class="math notranslate nohighlight">
+\[
+q_{US/EUR}=\frac{E_{\$/€}P_{EUR}}{P_{US}}
+\]</div>
+<p>Consider this chain of reasoning:</p>
+<ul class="simple">
+<li><p>The central bank increases the nominal interest rate <span class="math notranslate nohighlight">\(i_{\$}\)</span></p></li>
+<li><p>In the short-run this will also increase the real interest rate above it’s long-run level <span class="math notranslate nohighlight">\(R&gt;r\)</span></p></li>
+<li><p>The high rate of return attracts financial flows to the US causing the dollar to appreciate via UIP</p></li>
+<li><p>Because prices don’t adjust immediately, the real exchange rate appreciates as well meaning that goods in the US are relatively more expensive</p></li>
+<li><p>Relatively more expensive US goods causes US exports to decline and imports to increase</p></li>
+</ul>
+<p>If we wanted to incorporate these effects into our mini theory we could write</p>
+<p>\begin{align*}
+NX_t &amp;= a_{nx}\bar{Y}<em>t-b</em>{nx}(R_t-r)\bar{Y}<em>t+b</em>{nx}(R_t^w-r)\bar{Y}<em>t \
+&amp;=a</em>{nx}\bar{Y}<em>t-b</em>{nx}(R_t-R^w_t)\bar{Y}_t
+\end{align*}
+(You should try to derive a modified IS curve using this mini-theory for net exports.)</p>
+<p>Notice that in the long-run <span class="math notranslate nohighlight">\(R_t=r=R_t^w\)</span> and we have that net exports to output is at it’s constant level <span class="math notranslate nohighlight">\(a_{nx}\)</span> determined by theories from trade outside of our macro model.</p>
+</section>
+<section id="a-simple-monetary-policy-in-our-macroeconomy">
+<h3>A Simple Monetary Policy in our Macroeconomy<a class="headerlink" href="#a-simple-monetary-policy-in-our-macroeconomy" title="Link to this heading">#</a></h3>
+<p>We have an IS curve that gives us an equilibrium relationship between the output gap and the real interest rate.</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t=a-b(R_t-r)
+\]</div>
+<p>How do we determine the short-run real interest rate?</p>
+<p>We assume that the central bank can target whatever real interest rate it would like.</p>
+<ul class="simple">
+<li><p>The central bank intervenes in the market for reserves to change the nominal interest rate (recall our model of the market for reserves)</p></li>
+<li><p>Changes in nominal interest rates influence the real interest rate because we assume that \textbf{inflation displays inertia, or stickiness, in the short run}</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+R_t = i_t-\pi_t
+\]</div>
+<p>Formally, we model monetary policy by saying that <span class="math notranslate nohighlight">\(R_t\)</span> is a policy variable determined with complete discretion by the central bank.</p>
+<p>We will call this our <strong>MP curve</strong>, although for now it is a trivial curve since it is just whatever value the central bank picks for <span class="math notranslate nohighlight">\(R_t\)</span>.</p>
+<p>Nevertheless, once the central bank chooses it’s policy for the real interest rate, the IS curve tells us the short-run equilibrium output gap.</p>
+<p>Our model of the short-run so far:
+\begin{align*}
+\text \quad \tilde{Y}_t&amp;=a-b(R_t-r) \
+\text{MP Curve} \quad R_t &amp;= \bar{R}_t
+\end{align*}</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/trend_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_MP_1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_MP_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/IS_MP_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+</section>
+<section id="the-phillips-curve">
+<h3>The Phillips Curve<a class="headerlink" href="#the-phillips-curve" title="Link to this heading">#</a></h3>
+<p>In 1958, economist A.W. Phillips published a famous empirical paper that examined the relationship between unemployment and wage growth in the UK.  He found that periods of low unemployment were associated with rapid rises in wages, whereas periods of high unemployment were associated with low growth in wages. Other economists found that this negative correlation between unemployment and inflation exists in many countries, and was dubbed the <em>Phillip’s Curve</em>.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_1958.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>We already developed a theory to think about this relationship…</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/compstat_x.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The idea behind the Phillips curve is that when labor markets are <em>tight</em>—unemployment rate is low—firms have difficulty hiring workers and raise wages to attract labor.  The rise in wages is passed on in the form of higher prices, which increases inflation.  The Phillips curve implied that policymakers could trade-off inflation for lower unemployment, and was very influential in the 1960s.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_inflation.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>In 1967, Milton Friedman and Edmund Phelps pointed out a severe theoretical flaw in the Phillps curve analysis: firms care about <em>real</em> wages, not <em>nominal</em> wages.  When workers and firms expect the price level to be rising, they will adjust nominal wages upward so that the real wage does not decrease: wages and overall inflation will rise one-for-one with increases in expected inflation, as well as respond to tightness in the labor market.  The Friedman-Phelps analysis also postulated the existence of a <strong>natural rate of unemployment</strong>: the unemployment rate that would exist with perfectly flexible prices and competitive markets.</p>
+<p>From Milton Friedman’s 1967 AEA address:</p>
+<p>“At any moment of time, there is some level of unemployment which has the property that it is consistent with equilibrium in the structure of real wage rates. At that level of unemployment, real wage rates are tending on the average to rise at a ``normal” secular rate.”</p>
+<p>This is easy to understand in the context of our model on equilibrium unemployment.</p>
+<ul class="simple">
+<li><p>The unemployment rate consistent with a steady state wage is the steady state unemployment rate…</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+u = \frac{s}{s+f(\theta)}
+\]</div>
+<ul class="simple">
+<li><p>…and from our Solow model we know GDP per capita can grow over time (the balanced growth path) if technological progress occurs…</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+g_{Y/L}=g
+\]</div>
+<ul class="simple">
+<li><p>…so along a balanced growth path the steady state unemployment rate produces a ``normal” rise in real wages.</p></li>
+</ul>
+<p>From Milton Friedman’s 1967 AEA address:</p>
+<p>“A lower level of unemployment is an indication that there is an excess demand for labor that will produce upward pressure on real wage rates. A higher level of unemployment is an indication that there is an excess supply of labor that will produce downward pressure on real wage rates…The``natural rate of unemployment” in other words, is the level that would be ground out by the Walrasian system of general equilibrium equations, provided there is imbedded in them the actual structural characteristics of the labor and commodity markets, including market imperfections.”</p>
+<p>We saw the relationship between “excess demand for labor” or “excess supply for labor” and it’s impact on the wage before:</p>
+<div class="math notranslate nohighlight">
+\[
+w = \beta(y+\theta \kappa)+(1-\beta)b
+\]</div>
+<ul class="simple">
+<li><p>Excess demand for labor indicates a tight labor market (<span class="math notranslate nohighlight">\(\uparrow \theta\)</span>) which puts upward pressure on wages</p></li>
+<li><p>Excess supply of labor indicates a loose labor market (<span class="math notranslate nohighlight">\(\downarrow \theta\)</span>) which puts downward pressure on wages</p></li>
+</ul>
+<p>From Milton Friedman’s 1967 AEA address:</p>
+<p>“You will recognize the close similarity between this statement and the celebrated Phillips Curve. The similarity is not coincidental. Phillips’ analysis of the relation between unemployment and wage change is deservedly celebrated as an important and original contribution. But, unfortunately, it contains a basic defect—the failure to distinguish between nominal wages and real wages.”</p>
+<p>From Milton Friedman’s 1967 AEA address:</p>
+<p>“Implicitly, Phillips wrote his article for a world in which everyone anticipated that nominal prices would be stable and in which that anticipation remained unshaken and immutable whatever happened to actual prices and wages. Suppose, by contrast, that everyone anticipates that prices will rise at a rate of more than 75 per cent a year … Then wages must rise at that rate simply to keep real wages unchanged. An excess supply of labor will be reflected in a less rapid rise in nominal wages than in anticipated prices, not in an absolute decline in wages.”</p>
+<ul class="simple">
+<li><p>During the sample period that Phillips used, 1861-1913 and up to 1950, inflation was very low</p></li>
+<li><p>Most people did not anticipate substantial inflation</p></li>
+<li><p>The inflation that occurred between 1860 and 1950 was the same amount that occurred between 1970-1979</p></li>
+<li><p>Milton Friedman points out that it is real wages which matter, not nominal wages (just like in our model).  So if people expect inflation in the future, they will increase nominal wages and this does not reflect excess demand for labor</p></li>
+</ul>
+<p>The wage rate we studied in our model of the labor market was</p>
+<div class="math notranslate nohighlight">
+\[
+w = W/P
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(W\)</span> is a nominal wage rate and <span class="math notranslate nohighlight">\(P\)</span> is the price level.  Or in terms of growth rates</p>
+<div class="math notranslate nohighlight">
+\[
+g_w = g_W-\pi
+\]</div>
+<p>Expansionary monetary policy may temporarily increase output (leading to higher wages) but eventually leads to inflation—and people know that!  Firms and households will expect inflation and therefore increase nominal wages at the same rate of inflation in order to keep real wages the same.</p>
+<p>From Milton Friedman’s 1967 AEA address:</p>
+<p>“Restate Phillips’ analysis in terms of the rate of change of real wages—and even more precisely, anticipated real wages—and it all falls into place.”</p>
+<p>Friedman argued that policy attempts to keep unemployment below it’s natural rate were doomed to fail:</p>
+<ul class="simple">
+<li><p>Expansionary monetary policy would initially cause an increase in expenditure and output</p></li>
+<li><p>Workers will start to anticipate higher prices and demand higher nominal wages which puts upward pressure on unemployment</p></li>
+<li><p>In order to keep unemployment below the natural rate monetary policy would need another round of expansionary policies, but this would be accompanied by even higher inflation expectations</p></li>
+<li><p>Efforts to keep output above potential for a sustained period of time would lead to accelerating inflation</p></li>
+<li><p>If Friedman’s reasoning is correct, than attempts to exploit the original Phillips curve are doomed to fail: the Phillips curve relationship in the data should break down.</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The expectations-augmented Phillips curve shows that the negative correlation between unemployment and inflation breaks down when the unemployment rate remains at or below the natural rate of unemployment. Starting in the 1970s, after a period of very low unemployment rates, the negative correlation between unemployment and inflation disappeared.  It seems Friedman and Phelps were right! (they both got Nobel Prizes).  Today, many policymakers talk about the \textbf{non-accelerating inflation rate of unemployment (NAIRU)}: the unemployment rate at which inflation is constant.</p>
+<p>The Friedman reasoning suggested a Phillips curve that looks like this:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_t^e - \omega(U_t-U_n)
+\]</div>
+<p>which became known as the \textit{expectations-augmented Phillips curve}.</p>
+<ul class="simple">
+<li><p>There is long-run unemployment determined by fundamentals <span class="math notranslate nohighlight">\(U_n\)</span></p></li>
+<li><p>In the long-run, expected inflation will gravitate toward realized inflation.  You can’t continually fool the public so <span class="math notranslate nohighlight">\(\pi^e_t \approx \pi_t\)</span></p></li>
+<li><p>There is a short-run trade-off between unemployment and inflation</p></li>
+</ul>
+<p>Let’s take a naive approach to inflation expectations for simplicity</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t ^e= \pi_{t-1}
+\]</div>
+<p>In this case our Phillips curve is</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_{t-1}-\omega(U_t-U_n) \qquad \text{or} \qquad \Delta \pi_t = -\omega(U_t-U_n)
+\]</div>
+<ul class="simple">
+<li><p>When unemployment is below its long-run level, firms are producing more than their long-run output and prices rise by more than usual</p></li>
+<li><p>When unemployment is above its long-run level, firms are producing less than their long-run output and prices rise more slowly</p></li>
+<li><p>When unemployment is at its long-run level, the economy is neither booming nor slumping and the inflation rate remains steady (NAIRU)</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_4.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/natural rate.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>How does the CBO estimate the NAIRU?  A more realistic assumption about inflation expectations is that they are formed by some weighted average of historical observations</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t^e =\sum_{i=1}^T \beta_i \pi_{t-i} , \quad \sum_{i=1}^T \beta_{i}=1
+\]</div>
+<p>so that the expectations augmented Phillips curve is</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \sum_{i=1}^T \beta_i \pi_{t-i}-\omega(U_t-U_n)
+\]</div>
+<p>You can run a regression of current inflation on past inflation and unemployment</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t =\alpha + \sum_{i=1}^T \beta_i \pi_{t-i}-\omega U_t + \epsilon_t
+\]</div>
+<p>where the intercept term is <span class="math notranslate nohighlight">\(\alpha = \omega U_n\)</span>.  So we have an estimate NAIRU given by</p>
+<div class="math notranslate nohighlight">
+\[
+U_n = \frac{\alpha}{\omega}
+\]</div>
+<p>There still exist supply shocks that can move inflation in the short-run that are independent of the labor market.  Often the Phillips curve includes these price shocks</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \pi_t = -\omega(U_t-U_n)+o
+\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(\rho\)</span> is equal to zero in the absence of shocks.  Something like the oil price shocks in the 1970s would be modeled as <span class="math notranslate nohighlight">\(\rho&gt;0\)</span>.</p>
+<p>In economic models, it is the Phillips curve that serves as an \textit{aggregate supply curve} showing the relationship between equilibrium inflation and GDP.</p>
+<p>We know there is an obvious relationship between GDP and unemployment which could (if you’re so inclined) be modeled simply by our production function</p>
+<div class="math notranslate nohighlight">
+\[
+Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\((1-u_t)L_t\)</span> is the number of employed workers in the economy.</p>
+<p>The Phillips curve that we will use in our short-run model of the macroeconomy is written as</p>
+<div class="math notranslate nohighlight">
+\[
+\Delta \pi_t = \nu \tilde{Y}_t+o
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\Delta \pi_t = \pi_t - \pi_{t-1}\)</span> is the one-period change in inflation</p></li>
+<li><p><span class="math notranslate nohighlight">\(tilde{Y}_t\)</span> is the output gap</p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho\)</span> is a price shock</p></li>
+</ul>
+<p>Often sources of inflation are categorized in two ways:</p>
+<ul class="simple">
+<li><p>Cost-push inflation: results from negative supply shocks or a push for wage hikes that are beyond those justified by productivity gains</p></li>
+<li><p>Demand-pull inflation: results when policy makers pursue policies that increase aggregate demand</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_Curve_Jones.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Phillips_oil.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+</section>
+<section id="our-basic-macro-model">
+<h3>Our Basic Macro Model<a class="headerlink" href="#our-basic-macro-model" title="Link to this heading">#</a></h3>
+<p>Now we have a macro model with three equations:</p>
+<p>\begin{align*}
+\text{IS Curve]}: \quad \tilde{Y}_t &amp;= a-b(R_t-r)\
+\text{MP Curve}: \quad R_t &amp;= \bar{R}_t \
+\text{Phillip’s Curve}: \quad \Delta \pi_t &amp;= \nu \tilde{Y}_t+o
+\end{align*}</p>
+<ul class="simple">
+<li><p>The IS curve determines equilibrium output gap for a given interest rate</p></li>
+<li><p>The MP curve shows that monetary policy chooses the interest rate with complete discretion</p></li>
+<li><p>The PC shows the rate of change in inflation given the output gap</p></li>
+</ul>
+<p>We can use this three equation model to investigate some macroeconomic events in history or predict how the economy responds to future shocks.</p>
+<p>For example, let’s consider what monetary policy under Paul Volcker did in the 1970s.  During the 1970s inflation was very high (reaching over 12% by 1980), and chairman Paul Volcker was in charge of bringing inflation down.  He implemented contractionary monetary policy:</p>
+<ul class="simple">
+<li><p>Contractionary monetary policy means <span class="math notranslate nohighlight">\(\uparrow R_t\)</span></p></li>
+<li><p>Higher interest rates depress investment demand which generates a negative output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span></p></li>
+<li><p>Negative output gap represents low aggregate demand which causes inflation to decelerate <span class="math notranslate nohighlight">\(\Delta \pi_t &lt;0\)</span></p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/experiment_1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/experiment_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/experiment_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>There are several other policy experiments you should try on your own:</p>
+<ul class="simple">
+<li><p>Changes to aggregate demand <span class="math notranslate nohighlight">\(a \neq 0\)</span> (e.g. amazing progress in AI spurs a boom in investment <span class="math notranslate nohighlight">\(a&gt;0\)</span>)</p></li>
+<li><p>Changes to the natural rate of interest <span class="math notranslate nohighlight">\(\uparrow \downarrow r\)</span> (e.g. a permanent increase in corporate taxes increases the user cost of capital causing a decline in the natural rate of interest <span class="math notranslate nohighlight">\(\downarrow r\)</span>)</p></li>
+<li><p>Price shocks <span class="math notranslate nohighlight">\(o \neq 0\)</span> (e.g. a shortage of microchip imports causing the price of microchips and all electronic goods that use microchips to temporarily increase <span class="math notranslate nohighlight">\(o&gt;0\)</span>).</p></li>
+<li><p>Changes to the sensitivity of investment demand to interest rates <span class="math notranslate nohighlight">\(\uparrow \downarrow b\)</span> (e.g. regulatory requirements on business loans become more strict making it more difficult for entrepreneurs to acquire bank credit <span class="math notranslate nohighlight">\(\downarrow b\)</span>).</p></li>
+<li><p>Changes to the slope of the PC <span class="math notranslate nohighlight">\(\uparrow \downarrow \nu\)</span> (e.g. industries become more concentrated generating higher market power for firms and markups <span class="math notranslate nohighlight">\(\uparrow \nu\)</span>).</p></li>
+</ul>
+</section>
+</section>
+<section id="monetary-policy-rules-and-stabalizing-the-economy">
+<h2>Monetary Policy Rules and Stabalizing the Economy<a class="headerlink" href="#monetary-policy-rules-and-stabalizing-the-economy" title="Link to this heading">#</a></h2>
+<p>Most central banks have a dual mandate: maximum employment and price stability.</p>
+<p>Law of the People’s Republic of China on the People’s Bank of China, Article 3 says: “ aim of monetary policies shall be to maintain the stability of the value of the currency and thereby promote economic growth.”</p>
+<p>We can represent the central banks goals by considering it minimizing a \textbf{loss function}:</p>
+<div class="math notranslate nohighlight">
+\[
+\min \mathcal{L} = \tilde{Y}_t^2+\phi (\pi_t - \bar{\pi})^2
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> is the inflation target and <span class="math notranslate nohighlight">\(\phi\)</span> represents how much the central bank cares about inflation deviating from the target relative to the output gap.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \tilde{Y}_t^2+\phi (\pi_t - \bar{\pi})^2
+\]</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = \tilde{Y}_t^2+\phi (\pi_t - \bar{\pi})^2
+\]</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>The central bank realizes that there is an equilibrium relationship between the output gap and inflation (the Phillips curve!) that it must acknowledge when setting policy.
+\begin{align*}
+\min\hspace{2mm} &amp;\mathcal{L} = \tilde{Y}<em>t^2+\phi (\pi_t - \bar{\pi})^2 \
+\text{s.t.}&amp; \quad \pi_t = \pi</em>{t-1}+\nu \tilde{Y}_t + o
+\end{align*}</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>When inflation expectations are at the inflation target the central bank optimally has an output gap of zero.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>When inflation expectations are above the inflation target the central bank optimally creates a negative output gap in order to slow down the economy and decrease inflation.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_4.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>For any given current level of inflation expectations <span class="math notranslate nohighlight">\(\pi_{t-1}\)</span> we can represent the optimal monetary policy response.  The collection of all these optimal responses is the MP curve.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_5.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>A central bank that cares more about managing inflation has a large value of <span class="math notranslate nohighlight">\(\phi\)</span> which generates a steeper MP curve indicating it is willing to create large negative output gaps to fight inflation.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loss_visual_6.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>An economy in which the output gap has strong influences on inflation has a high <span class="math notranslate nohighlight">\(\nu\)</span> which generates a steeper Phillip’s curve and consequently a flatter MP curve.</p>
+<p>Enough fiddling with graphs, let’s just solve the central bank’s problem mathematically.</p>
+<p>Substitute the constraint into the objective function</p>
+<div class="math notranslate nohighlight">
+\[
+\min (\frac{\pi_{t}-\pi_{t-1}-o}{\nu})^2+\phi(\pi_{t}-\bar{\pi})^2
+\]</div>
+<p>The first-order condition to this unconstrained problem gives</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t=-\nu \phi(\pi_t-\bar{\pi})
+\]</div>
+<p>which represents the \textbf{optimal monetary policy rule}.</p>
+<p>We now have a more sophisticated \textbf{monetary policy rule} that represents the central bank’s dual objective of stabilizing prices and encouraging the long-run trajectory of the economy given that there exists a short-run equilibrium relationship between inflation and the output gap coming through the Phillips curve.</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t=-\nu \phi(\pi_t-\bar{\pi})
+\]</div>
+<ul class="simple">
+<li><p>A flatter Phillips curve <span class="math notranslate nohighlight">\(\downarrow \nu\)</span> implies that the central bank will fight inflation less aggressively in that it does not induce such a large negative output gap.</p></li>
+<li><p>A central bank that cares more about inflation <span class="math notranslate nohighlight">\(\uparrow \phi\)</span> will fight inflation aggressively in that it induces large negative output gaps whenever inflation is above target.</p></li>
+</ul>
+<p>Make one final adjustment to our model that is more realistic: changes in the interest rate affect investment demand with a one-period lag.</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_{t-1}-r)
+\]</div>
+<p>There are empirical studies on the effects of monetary policy which suggest that macro variables like consumption, investment, and output respond to interest rate changes with a 1 to 2 quarter lag.</p>
+<p>Our macro model is now given by these three equations:
+\begin{align}
+\text{IS Curve}: \quad \tilde{Y}<em>t &amp;= a-b(R</em>{t-1}-r)\
+\text{MP Curve}: \quad \tilde{Y}_t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \
+\text{Phillip’s Curve}: \quad \Delta \pi_t &amp;= \nu \tilde{Y}_t+o
+\end{align}</p>
+<ul class="simple">
+<li><p>The IS curve determines equilibrium output gap for a given interest rate</p></li>
+<li><p>The MP curve shows that monetary policy adjusts interest rates according to a strict rule based on achieving its dual mandate</p></li>
+<li><p>The PC shows the rate of change in inflation given the output gap</p></li>
+</ul>
+<p>Let’s clarify how the central bank implements it’s optimal monetary policy rule by adjusting interest rates.</p>
+<p>Combine the monetary policy rule (2) with the Phillip’s curve (3) to write</p>
+<div class="math notranslate nohighlight">
+\[
+-\left(\frac{1}{\nu \phi}+1 \right)\tilde{Y}_t=\pi_{t-1}+o-\bar{\pi}
+\]</div>
+<p>which represents the solution to the central bank’s problem.  For any observed inflation <span class="math notranslate nohighlight">\(\pi_{t-1}\)</span>, the central bank optimally chooses an interest rate in order to implement output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span>.</p>
+<p>Substitute the solution to the central bank’s problem into the IS curve to write</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t-1}-r = \frac{a}{b}+\frac{\nu \phi}{b(\nu^2 \phi+1)}(\pi_{t-1}+o-\bar{\pi})
+\]</div>
+<p>This shows which interest rate the central bank chooses in order to implement it’s desired output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span>.</p>
+<p>Consider <span class="math notranslate nohighlight">\(a=o=0\)</span> and <span class="math notranslate nohighlight">\(\nu = \phi = b =1\)</span> as an example:</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t-1} - r = \frac{1}{2}(\pi_{t-1}-\bar{\pi})
+\]</div>
+<p>which says that for a 1% increase in inflation above the target, the central bank should increase the real interest rate by 0.5%.</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t-1}-r = \frac{a}{b}+\frac{\nu \phi}{b(\nu^2 \phi+1)}(\pi_{t-1}+o-\bar{\pi})
+\]</div>
+<ul class="simple">
+<li><p>As <span class="math notranslate nohighlight">\(\phi\)</span> increases, the central bank responds more to inflation</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(\nu\)</span> increases, the central bank responds less to inflation</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(b\)</span> increases,  the central bank responds less to inflation</p></li>
+</ul>
+<p>Lastly, when we observe central bank policy we don’t see <span class="math notranslate nohighlight">\(R_t\)</span>.  Rather, we see the nominal interest rate <span class="math notranslate nohighlight">\(i_t\)</span>.  How do you understand our monetary policy rule in terms of observable data?</p>
+<p>Use the Fisher equation</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = \pi^e_t + R_t
+\]</div>
+<p>and recall that for our macro model we assume that <span class="math notranslate nohighlight">\(\pi_t^e=\pi_{t-1}\)</span> so we can write</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = \pi_{t-1}+R_t
+\]</div>
+<p>Now our monetary policy interest rate rule becomes</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = r+\frac{a}{b}+\pi_{t-1}+\frac{\nu \phi}{b(\nu^2 \phi+1)}(\pi_{t-1}+o-\bar{\pi})
+\]</div>
+<p>For simplicity consider <span class="math notranslate nohighlight">\(a=o=0\)</span> and <span class="math notranslate nohighlight">\(\nu=\phi=b=1\)</span> so that we have a simple prediction for the short term nominal interest rate given inflation data</p>
+<div class="math notranslate nohighlight">
+\[
+i_t = r + \pi_{t-1}+\frac{1}{2}(\pi_{t-1}-\bar{\pi})
+\]</div>
+<p>Notice that a 1% increase in inflation demand that the central bank raise the nominal interest rate by 1.5%.  The principle that the central bank must fight 1 unit rise inflation with a larger than 1 unit rise in the nominal interest rate is sometimes called \textbf{leaning against the wind}.  This is obvious in that to manipulate real interest rates, the central bank has to adjust nominal rates by more than inflation.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Taylor_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Predicted Fed funds rate for the interest rate rule <span class="math notranslate nohighlight">\(i_t = r + \pi_{t-1}+\frac{1}{2}(\pi_{t-1}-\bar{\pi})\)</span> where <span class="math notranslate nohighlight">\(r=2\%\)</span> and <span class="math notranslate nohighlight">\(\bar{\pi}=2\%\)</span>.</p>
+<p>A very popular monetary policy rule, that has been empirically very accurate for explaining central bank policy around the world, is the Taylor rule:</p>
+<div class="math notranslate nohighlight">
+\[
+R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\varphi_1, \varphi_2\)</span> captures the objectives of the central bank for fighting inflation versus keeping output on it’s long-run trajectory.</p>
+<p>We can derive such a Taylor rule in our model if we assume that output affects inflation with a one-period lag in the Phillip’s Curve.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Taylor_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Predicted Fed funds rate for the interest rate rule <span class="math notranslate nohighlight">\(i_t = r + \pi_{t-1}+\frac{1}{2}(\pi_{t-1}-\bar{\pi})+\frac{1}{2}\tilde{Y}_t\)</span> where <span class="math notranslate nohighlight">\(r=2\%\)</span> and <span class="math notranslate nohighlight">\(\bar{\pi}=2\%\)</span>.</p>
+</section>
+<section id="a-3-equation-macro-model">
+<h2>A 3-Equation Macro Model<a class="headerlink" href="#a-3-equation-macro-model" title="Link to this heading">#</a></h2>
+<p>Our macro model is given by these three equations:
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}<em>t &amp;= a-b(R</em>{t-1}-r)\
+\text{MP Curve}: \quad \tilde{Y}<em>t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \
+\text{Phillip’s Curve}: \quad \pi_t &amp;= \pi</em>{t-1}+\nu \tilde{Y}_t+o
+\end{align*}</p>
+<ul class="simple">
+<li><p>The IS curve determines equilibrium output gap for a given interest rate</p></li>
+<li><p>The MP curve shows that monetary policy adjusts interest rates according to a strict rule based on achieving its dual mandate</p></li>
+<li><p>The PC shows the rate of change in inflation given the output gap</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_1.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Event #1: An Inflation Shock</p>
+<ul class="simple">
+<li><p>Suppose that at time <span class="math notranslate nohighlight">\(t=0\)</span> the economy gets hit with a shock, such as an increase in the price of oil, that raises the inflation rate</p></li>
+<li><p>Mathematically this is <span class="math notranslate nohighlight">\(o&gt;0\)</span> for one period</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\pi_0 = \pi_{-1}+\nu \tilde{Y}_0+o
+\]</div>
+<ul class="simple">
+<li><p>Graphically this is represented by an upward shift of the Phillip’s curve which crosses the point <span class="math notranslate nohighlight">\((\tilde{Y}_t,\pi_t)=(0,\pi_{-1}+o)\)</span></p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_2.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>Initially the economy was at it’s long-run equilibrium</p></li>
+<li><p>The inflation shock increases the current inflation rate by the magnitude of the shock</p></li>
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_0&gt;\bar{\pi}\)</span> and will respond by setting an interest rate <span class="math notranslate nohighlight">\(R_0\)</span> in order to induce an optimal output gap <span class="math notranslate nohighlight">\(\tilde{Y}_1\)</span> next period</p></li>
+<li><p>The optimal response of the central bank is graphically indicated by the intersection of the MP curve with the new Phillip’s curve</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_3.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_1 &gt; \bar{\pi}\)</span></p></li>
+<li><p>Mathematically this new level of inflation <span class="math notranslate nohighlight">\(\pi_1\)</span> generates a new Phillip’s curve</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\pi_2 = \pi_1+\nu \tilde{Y}_1
+\]</div>
+<p>where inflation expectations <span class="math notranslate nohighlight">\(\pi_2^e = \pi_1\)</span> are lower than before, but still above the long-run inflation target</p>
+<ul class="simple">
+<li><p>Graphically this is represented by a Phillip’s curve which crosses the point <span class="math notranslate nohighlight">\((\tilde{Y}_1,\pi_2)=(0,\pi_1)\)</span></p></li>
+<li><p>Again, the central bank optimally responds by setting an interest rate <span class="math notranslate nohighlight">\(R_1\)</span> which is lower than <span class="math notranslate nohighlight">\(R_0\)</span> but still higher that <span class="math notranslate nohighlight">\(r\)</span> in order to induce an output gap <span class="math notranslate nohighlight">\(\tilde{Y}_2\)</span> which is smaller than <span class="math notranslate nohighlight">\(\tilde{Y}_1\)</span> but still negative</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_4.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_2 &gt; \bar{\pi}\)</span></p></li>
+<li><p>The logic iterates…</p></li>
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_3 &gt; \bar{\pi}\)</span></p></li>
+<li><p>The logic iterates…</p></li>
+<li><p>And so on, and so on until eventually the economy will return to it’s long-run equilibrium</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_5.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Event # 2: An Aggregate Demand Shock</p>
+<ul class="simple">
+<li><p>Suppose that at time <span class="math notranslate nohighlight">\(t=0\)</span> the economy gets hit with a shock, such as an economic boom in Europe creates an increase in exports from the U.S., that raises aggregate demand</p></li>
+<li><p>Mathematically this is <span class="math notranslate nohighlight">\(a&gt;0\)</span> for one period</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_{t-1}-r)
+\]</div>
+<ul class="simple">
+<li><p>Graphically this is represented by a rightward shift of the IS curve</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_6.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>At the existing interest rate <span class="math notranslate nohighlight">\(r\)</span> the positive shock to aggregate demand generates a positive output gap <span class="math notranslate nohighlight">\(\tilde{Y}_0&gt;0\)</span> and consequently higher inflation <span class="math notranslate nohighlight">\(\pi_0&gt;\bar{\pi}\)</span>.</p></li>
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_0 &gt; \bar{\pi}\)</span>—which is graphically illustrated by a new Phillip’s curve—and therefore optimally increases the interest rate</p></li>
+<li><p>Since the shock is temporary, the central bank knows the IS curve will shift back to its original position in the next period, and therefore set’s an interest rate <span class="math notranslate nohighlight">\(R_0\)</span> in order to achieve the optimal output gap</p></li>
+<li><p>(Note that if the aggregate demand shock lasted more than one period, then the IS curve would not shift back to its original position and this would force the central bank to set an even higher interest rate to induce it’s optimal output gap).</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_7.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>The central bank observes <span class="math notranslate nohighlight">\(\pi_1&gt;\bar{\pi}\)</span>—represented by a new Phillip’s curve—and optimally responds by setting <span class="math notranslate nohighlight">\(R_1\)</span> to induce <span class="math notranslate nohighlight">\(\tilde{Y}_2\)</span></p></li>
+<li><p>This logic iterates…until we get back to the long-run equilibrium.</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_8.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_9.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Event # 3: Lowering the Inflation Target</p>
+<ul class="simple">
+<li><p>Suppose that the central bank wants to bring down long-run inflation (Volcker in the 1980s)</p></li>
+<li><p>Mathematically this is a reduction in <span class="math notranslate nohighlight">\(\bar{\pi}\)</span></p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = -\nu \phi(\pi_t-\bar{\pi})
+\]</div>
+<ul class="simple">
+<li><p>Graphically this a downward shift of the MP curve such that is crosses the point <span class="math notranslate nohighlight">\((\tilde{Y}_t,\pi_t)=(0,\bar{\pi}')\)</span> where <span class="math notranslate nohighlight">\(\bar{\pi}'\)</span> is the new lower long-run inflation target</p></li>
+<li><p>At the prevailing inflation rate inflation is now above the inflation target <span class="math notranslate nohighlight">\(\pi_0&gt;\bar{\pi}'\)</span> so the central bank raises interest rates in order to induce a negative output gap</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_10.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<ul class="simple">
+<li><p>Everyone in the economy observes <span class="math notranslate nohighlight">\(\pi_1\)</span> is which forms they’re expectations for inflation next period <span class="math notranslate nohighlight">\(\pi_2^e=\pi_1\)</span> represented by a downward shift of the Phillip’s curve.</p></li>
+<li><p>The central bank optimally allows the interest rate to fall in order to shrink the output gap</p></li>
+<li><p>Inflation expectations adjust again…the central bank allows interest rates to come down again…the output gap shrinks…until eventually we establish a long-run equilibrium with lower steady state inflation rate</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_11.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_12.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>Whether our economy was hit by an inflation shock or an aggregate demand shock there is a robust pattern coming out of our model: there should be counter-clockwise inflation output loops.</p>
+<ul class="simple">
+<li><p>Positive aggregate demand shock: Output increases, inflation increases, central bank reduces output, reducing inflation over time.</p></li>
+<li><p>Negative aggregate demand shock: Output decreases, inflation decreases, central bank increases output, increasing inflation over time.</p></li>
+<li><p>Positive inflation shock: Inflation increases, central bank reduces output, reducing inflation over time</p></li>
+<li><p>Negative inflation shock: Inflation decreases, central bank increases output, increasing inflation over time.</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/loops.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>One ingredient that has been very important in macro models since the financial recession is some way of capturing shocks to the financial sector.</p>
+<p>One very simple way (not sufficient for serious policy but okay for now) to think about financial crises, is to say that there exists sharp increase in risk premiums that causes interest rates to rise</p>
+<div class="math notranslate nohighlight">
+\[
+R_t = R_t^{ff} + f
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(R_t\)</span> is the short-term real interest rate at which firms borrow in financial markets, <span class="math notranslate nohighlight">\(R_t^{ff}\)</span> short-term real interest rate chosen by the central bank, and <span class="math notranslate nohighlight">\(f\)</span> is an exogenous risk premium.</p>
+<p>During the financial crises in 2008 and 2009, financial market broke down due to solvency and liquidity reasons and business lending dried up.</p>
+<p>Even though the Federal Reserve cut interest rates down to near zero, the rate at which firms and households borrow to finance investment was rising instead of falling.</p>
+<p>We could represent this phenomena in our model as a rise in risk premiums <span class="math notranslate nohighlight">\(\uparrow f\)</span> which causes real lending rates to rise.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/spread.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>If we wanted to talk about shocks to financial markets in our macro model, we could add this equation:
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}<em>t &amp;= a-b(R</em>{t-1}-r)\
+\text{MP Curve}: \quad \tilde{Y}<em>t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \
+\text{Phillip’s Curve}: \quad \pi_t &amp;= \pi</em>{t-1}+\nu \tilde{Y}_t+o \
+\text{Financial Frictions}: \quad R_t &amp;= R_t^{ff} + f
+\end{align*}
+But actually this is not difficult since we could incorporate these financial frictions into our IS curve</p>
+<div class="math notranslate nohighlight">
+\[
+\tilde{Y}_t = a-b(R_{t-1}^{ff}+f-r)
+\]</div>
+<p>so that shocks to risk premiums would appear exactly as a negative shock to aggregate demand.</p>
+<p>There is one more key idea to explore in our macro model: the role of expectations.</p>
+<p>Up until now we have assumed that agents’ forecast of the future is based on historical data</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t^e = \pi_{t-1}
+\]</div>
+<p>Consider that the central bank’s announced inflation target <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> does not appear in our equation of how agents form expectations.</p>
+<p>This is not reasonable recognizing that is one of the most important advancements in macroeconomics for which Robert Lucas was credited with a Nobel Prize.</p>
+<p><strong>Rational expectations</strong> assumed that people make use of all available information to make their best forecast of future economic variables.</p>
+<p>In the presence of rational expectations, the central bank’s willingness to fight inflation becomes a crucial determinant of expected inflation.</p>
+<p>Since actual inflation is influenced by inflation expectations</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_t = \pi_t^e+\nu \tilde{Y}_t
+\]</div>
+<p>policymakers can try to influence those expectations in order to reduce the costs of maintaining an inflation target.</p>
+<p>Consider our macro model with rational expectations
+\begin{align*}
+\text{IS Curve}: \quad \tilde{Y}<em>t &amp;= a-b(R</em>{t-1}-r)\
+\text{MP Curve}: \quad \tilde{Y}_t &amp;= -\nu \phi(\pi_t-\bar{\pi}) \
+\text{Phillip’s Curve}: \quad \pi_t &amp;= \pi_t^e+\nu \tilde{Y}_t+o \
+\text{Financial Frictions}: \quad R_t &amp;= R_t^{ff} + f
+\end{align*}
+and suppose that the central bank announces that it wishes to lower long-run inflation from 4% to 2%.</p>
+<ul class="simple">
+<li><p>If the central bank has some credibility, then firms and households will believe that the central bank will take action to enact it’s monetary policy of <span class="math notranslate nohighlight">\(\bar{\pi}=2\%\)</span>.</p></li>
+<li><p>That is, people will adjust their expectations of future inflation to be in line with the central bank’s policy announcement</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\pi_t^e = 2\%
+\]</div>
+<ul class="simple">
+<li><p>This causes the Phillip’s curve to shift down immediately to the new inflation target and the economy achieves a new long-run equilibrium without a costly recession</p></li>
+</ul>
+<div style="text-align: center;">
+<img src="_static/figs_SR/ISMPPC_13.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>This highlights the importance of <strong>forward guidance</strong>: the central bank’s communication of what actions it plans to enact given future macroeconomic data.</p>
+<p>A growing list of countries—the US, EU, Japan, UK, Australia, Brazil, Canada, New Zealand, and Sweden among them—announced a medium- to long-term inflation target to stabilize inflation expectations.</p>
+<p>This is an example of <strong>constrained discretion</strong>: the central bank has the flexibility to respond to shocks in the short as it sees fit (perhaps deviating from a Taylor rule) but maintains a commitment to a particular inflation rate in the long-run.</p>
+<p>Reality is probably somewhere in between naive expectations (<span class="math notranslate nohighlight">\(\pi_t^e = \pi_{t-1}\)</span>) and rational expectations (<span class="math notranslate nohighlight">\(\pi_t^e = E[\pi_t \vert \text{all information}]\)</span>).</p>
+<p>Our model generates two extreme predictions about the dynamics of the macroeconomy so that you can think about reality being some convex combination of those two extremes.</p>
+<p>Academic papers which try to model such a reality may assume some form of \textbf{dynamic learning} where households and businesses observe a limited set of information and make sophisticated forecasts (like an econometrician would) based on their own model of the economy.</p>
+<section id="advanced-macro-models">
+<h3>Advanced Macro Models<a class="headerlink" href="#advanced-macro-models" title="Link to this heading">#</a></h3>
+<p>To go beyond what we’ve learned in class toward frontier research in macro there are three preliminary steps:</p>
+<ul class="simple">
+<li><p>Provide <strong>microfoundations</strong> for each element of the IS curve and nominal rigidities</p></li>
+<li><p>Formalize the extent to which shocks are temporary versus permanent.  This can be done very simply by assume that shocks follow an AR(1) process</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+a_t = \rho a_{t-1}+\epsilon_t
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho=0\)</span> means the shock is temporary, <span class="math notranslate nohighlight">\(\rho=1\)</span> means the shock is permanent <span class="math notranslate nohighlight">\(\rho \in (0,1)\)</span> precisely measures the persistence of the shock.</p>
+<ul class="simple">
+<li><p>Learn some coding to solve the model</p></li>
+</ul>
+<p>Writing down such a model is called a \textbf{dynamic stochastic general equilibrium model (DSGE)} and is solved numerically.</p>
+<p>Conceptually you can think about combining every model we’ve studied so far (production function, capital accumulation, equilibrium unemployment, IS curve, Phillip’s curve, monetary policy rule) introducing a 1 percent shock of your choice and numerically solving the trajectory of the economy over time.</p>
+<div style="text-align: center;">
+<img src="_static/figs_SR/Smets_Wouters.png" 
+     alt="GDP growth across countries" 
+     width="400">
+</div>
+<p>While estimating <em>quantitative</em> responses of the economy to various shocks is beyond the scope of this course, our class does allow us to estimate the \textit{qualitative} responses.</p>
+<ul class="simple">
+<li><p>Our theory of equilibrium unemployment and the IS-PC-MP model is most useful for thinking about short-term dynamics of the economy</p></li>
+<li><p>Our model of the market for reserves tells us how the central bank actually influences interest rates</p></li>
+<li><p>Our theory from Solow is most useful for thinking about the long-run growth prospects of a country</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="measuring-business-cycles.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Measuring Business Cycles</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve">The IS Curve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-consumption">A Digression on our Mini Theories: Consumption</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-investment">A Digression on our Mini Theories: Investment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-government-spending">A Digression on our Mini Theories: Government Spending</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-digression-on-our-mini-theories-net-export">A Digression on our Mini Theories: Net Export</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-monetary-policy-in-our-macroeconomy">A Simple Monetary Policy in our Macroeconomy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-phillips-curve">The Phillips Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#our-basic-macro-model">Our Basic Macro Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monetary-policy-rules-and-stabalizing-the-economy">Monetary Policy Rules and Stabalizing the Economy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-3-equation-macro-model">A 3-Equation Macro Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-macro-models">Advanced Macro Models</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
