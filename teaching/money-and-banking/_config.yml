@@ -12,6 +12,7 @@ root: intro.md
 # HTML settings
 html:
   extra_navbar: Powered by Jupyter Book
+  baseurl: /
 
 # Ensure images are copied
 sphinx:
