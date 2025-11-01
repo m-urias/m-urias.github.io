@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'yield-curve-data-tutorial';</script>
+    <link rel="canonical" href="/yield-curve-data-tutorial.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="The Market for Reserves and Monetary Policy Systems" href="monetary-policy-systems.html" />
@@ -171,6 +172,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
@@ -180,6 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
@@ -187,6 +193,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
 </ul>
 
     </div>
@@ -396,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8fe268117a0f36a5f3c3c87d71a79162c9e4bcd2b81afceab367ccd16a008cbe.png" src="_images/8fe268117a0f36a5f3c3c87d71a79162c9e4bcd2b81afceab367ccd16a008cbe.png" />
+<img alt="_images/33733623843d4f228e22ba40d6cf734f6a2e4edfdda2df3a10ddbe0ab00eac64.png" src="_images/33733623843d4f228e22ba40d6cf734f6a2e4edfdda2df3a10ddbe0ab00eac64.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -417,7 +431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f2e0728531a0a214c49a4fa96b59a5eadff87a736914caed720db0be73e8c6a2.png" src="_images/f2e0728531a0a214c49a4fa96b59a5eadff87a736914caed720db0be73e8c6a2.png" />
+<img alt="_images/af26dd4e7359a2613f7c1bfdc872323dead301488870637b20cef7c9d467e1f5.png" src="_images/af26dd4e7359a2613f7c1bfdc872323dead301488870637b20cef7c9d467e1f5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -440,7 +454,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/20e1fdb95ee1809e3ed08bb65f0ea97c03186b57193976b6db5011ff9f32231b.png" src="_images/20e1fdb95ee1809e3ed08bb65f0ea97c03186b57193976b6db5011ff9f32231b.png" />
+<img alt="_images/b8de7d52358518d167ef9cc68d2416bf356040f2a374be21d8b9aa8509c3afc2.png" src="_images/b8de7d52358518d167ef9cc68d2416bf356040f2a374be21d8b9aa8509c3afc2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -487,13 +501,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Descriptive Statistics for 1-month T-bill rate count    6058.000000
-mean        1.645086
-std         1.829697
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Descriptive Statistics for 1-month T-bill rate count    6065.000000
+mean        1.647899
+std         1.830514
 min         0.000000
 25%         0.070000
 50%         0.970000
-75%         2.590000
+75%         2.600000
 max         6.020000
 dtype: float64
 Descriptive Statistics for 3-month T-bill rate count    1101.000000
@@ -505,20 +519,20 @@ min         0.010000
 75%         5.220000
 max        16.300000
 dtype: float64
-Descriptive Statistics for 20-year T-bond rate count    14247.000000
-mean         5.861289
-std          2.845837
+Descriptive Statistics for 20-year T-bond rate count    14254.000000
+mean         5.860652
+std          2.845283
 min          0.870000
 25%          4.050000
-50%          5.260000
+50%          5.255000
 75%          7.270000
 max         15.780000
 dtype: float64
-Descriptive Statistics for spread count    6058.000000
-mean        2.037813
-std         1.542720
+Descriptive Statistics for spread count    6065.000000
+mean        2.036015
+std         1.542738
 min        -1.990000
-25%         0.870000
+25%         0.860000
 50%         2.200000
 75%         3.310000
 max         4.730000
@@ -532,10 +546,10 @@ min       -2.940000
 75%        2.720000
 max        4.690000
 dtype: float64
-Coefficient of variation for 1-month T-bill rate 0.8991028850497239
+Coefficient of variation for 1-month T-bill rate 0.9002388689004578
 Coefficient of variation for 3-month T-bill rate 1.1022967315367282
-Coefficient of variation for 20-year T-bill rate 2.059601582211272
-Coefficient of variation for spread 1.3209221155541178
+Coefficient of variation for 20-year T-bill rate 2.0597780314730127
+Coefficient of variation for spread 1.319741318078159
 Coefficient of variation for spread back to 1960 1.0911346659949634
 </pre></div>
 </div>
@@ -552,7 +566,7 @@ Coefficient of variation for spread back to 1960 1.0911346659949634
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Coefficient of correlation for 3-month and 20-year Treasury yields 0.8975584311404085
-Coefficient of correlation for 1-month and 20-year Treasury yields 0.5480313396929616
+Coefficient of correlation for 1-month and 20-year Treasury yields 0.5484284640814442
 </pre></div>
 </div>
 </div>
@@ -598,7 +612,7 @@ Coefficient of correlation for 1-month and 20-year Treasury yields 0.54803133969
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/cce529bcd0a8b454a990a0a1e82a40fd17398cdbb72674449a0703a03bd580f4.png" src="_images/cce529bcd0a8b454a990a0a1e82a40fd17398cdbb72674449a0703a03bd580f4.png" />
+<img alt="_images/313fa3455b9e2d22965d828b0c73c3f8bd0bbe89ba3eb2d88c6fed237868c893.png" src="_images/313fa3455b9e2d22965d828b0c73c3f8bd0bbe89ba3eb2d88c6fed237868c893.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -621,7 +635,7 @@ Coefficient of correlation for 1-month and 20-year Treasury yields 0.54803133969
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4c24c01a95f1881910066c784d3e0d33cc882169e09658fbb7cb3b230580443d.png" src="_images/4c24c01a95f1881910066c784d3e0d33cc882169e09658fbb7cb3b230580443d.png" />
+<img alt="_images/62b3c87e6be271271fff07a8d272867154c09924c719acfa5deb60d2998aca55.png" src="_images/62b3c87e6be271271fff07a8d272867154c09924c719acfa5deb60d2998aca55.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -644,7 +658,7 @@ Coefficient of correlation for 1-month and 20-year Treasury yields 0.54803133969
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0b60988ac7650adfb2531401a13e1f121870000ad2b0af75186234324bffb508.png" src="_images/0b60988ac7650adfb2531401a13e1f121870000ad2b0af75186234324bffb508.png" />
+<img alt="_images/175fec17bd01810ef1759b6219a53d7345de9dcf72c1c872c921a24bd611a5d0.png" src="_images/175fec17bd01810ef1759b6219a53d7345de9dcf72c1c872c921a24bd611a5d0.png" />
 </div>
 </div>
 <p>These series appear noticeably more stationary.  Although there is a spike in volatility in the 1980s and 2008 in the short-rate, the mean is now nearly constant around zero.</p>
@@ -955,8 +969,8 @@ ADF test for the short-rate 1-month yield None
 Dep. Variable:                      y   R-squared:                       0.224
 Model:                            OLS   Adj. R-squared:                  0.186
 Method:                 Least Squares   F-statistic:                     5.895
-Date:                Thu, 23 Oct 2025   Prob (F-statistic):           1.40e-09
-Time:                        14:16:09   Log-Likelihood:                 45.866
+Date:                Sat, 01 Nov 2025   Prob (F-statistic):           1.40e-09
+Time:                        08:56:01   Log-Likelihood:                 45.866
 No. Observations:                 279   AIC:                            -63.73
 Df Residuals:                     265   BIC:                            -12.89
 Df Model:                          13                                         
@@ -1072,8 +1086,8 @@ t-statistic: -3.193
 Dep. Variable:                      y   R-squared:                       0.013
 Model:                            OLS   Adj. R-squared:                  0.006
 Method:                 Least Squares   F-statistic:                     1.797
-Date:                Thu, 23 Oct 2025   Prob (F-statistic):              0.111
-Time:                        14:16:09   Log-Likelihood:                -148.14
+Date:                Sat, 01 Nov 2025   Prob (F-statistic):              0.111
+Time:                        08:56:01   Log-Likelihood:                -148.14
 No. Observations:                 680   AIC:                             308.3
 Df Residuals:                     674   BIC:                             335.4
 Df Model:                           5                                         

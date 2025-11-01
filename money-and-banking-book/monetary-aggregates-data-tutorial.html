@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -60,10 +60,11 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'monetary-aggregates-data-tutorial';</script>
+    <link rel="canonical" href="/monetary-aggregates-data-tutorial.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Empirical Monetary Facts" href="monetary-facts.html" />
-    <link rel="prev" title="OLG Model of Money Details" href="olg-model-details.html" />
+    <link rel="prev" title="The Role of Expectations in OLG Dynamics" href="olg-expectations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,6 +172,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Monetary Aggregates Data Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
@@ -180,6 +182,10 @@
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -187,6 +193,14 @@
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
 </ul>
 
     </div>
@@ -445,90 +459,90 @@ document.write(`
     <tr>
       <th>M2SL</th>
       <td>M2SL</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
       <td>M2</td>
       <td>1959-01-01</td>
-      <td>2025-08-01</td>
+      <td>2025-09-01</td>
       <td>Monthly</td>
       <td>M</td>
       <td>Billions of Dollars</td>
       <td>Bil. of $</td>
       <td>Seasonally Adjusted</td>
       <td>SA</td>
-      <td>2025-09-23 12:00:50-05:00</td>
+      <td>2025-10-28 12:01:48-05:00</td>
       <td>98</td>
       <td>announcements (https://www.federalreserve.gov/...</td>
     </tr>
     <tr>
       <th>WM2NS</th>
       <td>WM2NS</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
       <td>M2</td>
       <td>1980-11-03</td>
-      <td>2025-09-01</td>
+      <td>2025-10-06</td>
       <td>Weekly, Ending Monday</td>
       <td>W</td>
       <td>Billions of Dollars</td>
       <td>Bil. of $</td>
       <td>Not Seasonally Adjusted</td>
       <td>NSA</td>
-      <td>2025-09-23 12:00:59-05:00</td>
+      <td>2025-10-28 12:01:56-05:00</td>
       <td>88</td>
       <td>announcements (https://www.federalreserve.gov/...</td>
     </tr>
     <tr>
       <th>M2NS</th>
       <td>M2NS</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
       <td>M2</td>
       <td>1959-01-01</td>
-      <td>2025-08-01</td>
+      <td>2025-09-01</td>
       <td>Monthly</td>
       <td>M</td>
       <td>Billions of Dollars</td>
       <td>Bil. of $</td>
       <td>Not Seasonally Adjusted</td>
       <td>NSA</td>
-      <td>2025-09-23 12:00:49-05:00</td>
+      <td>2025-10-28 12:01:46-05:00</td>
       <td>64</td>
       <td>announcements (https://www.federalreserve.gov/...</td>
     </tr>
     <tr>
       <th>M1SL</th>
       <td>M1SL</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
       <td>M1</td>
       <td>1959-01-01</td>
-      <td>2025-08-01</td>
+      <td>2025-09-01</td>
       <td>Monthly</td>
       <td>M</td>
       <td>Billions of Dollars</td>
       <td>Bil. of $</td>
       <td>Seasonally Adjusted</td>
       <td>SA</td>
-      <td>2025-09-23 12:00:47-05:00</td>
+      <td>2025-10-28 12:01:43-05:00</td>
       <td>84</td>
       <td>announcements (https://www.federalreserve.gov/...</td>
     </tr>
     <tr>
       <th>WM1NS</th>
       <td>WM1NS</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
       <td>M1</td>
       <td>1975-01-06</td>
-      <td>2025-09-01</td>
+      <td>2025-10-06</td>
       <td>Weekly, Ending Monday</td>
       <td>W</td>
       <td>Billions of Dollars</td>
       <td>Bil. of $</td>
       <td>Not Seasonally Adjusted</td>
       <td>NSA</td>
-      <td>2025-09-23 12:00:57-05:00</td>
+      <td>2025-10-28 12:01:53-05:00</td>
       <td>68</td>
       <td>announcements (https://www.federalreserve.gov/...</td>
     </tr>
@@ -551,94 +565,94 @@ document.write(`
       <td>...</td>
     </tr>
     <tr>
-      <th>MABMBM01EZQ661S</th>
-      <td>MABMBM01EZQ661S</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
-      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
-      <td>1970-01-01</td>
-      <td>2013-07-01</td>
+      <th>DMIHHPNFCUKQ</th>
+      <td>DMIHHPNFCUKQ</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
+      <td>Divisia Money Index: Household Sector and Priv...</td>
+      <td>1977-01-01</td>
+      <td>2016-10-01</td>
       <td>Quarterly</td>
       <td>Q</td>
-      <td>Index 2010=1</td>
-      <td>Index 2010=1</td>
+      <td>Index 1977:Q1=100</td>
+      <td>Index 1977:Q1=100</td>
       <td>Seasonally Adjusted</td>
       <td>SA</td>
-      <td>2014-02-05 08:33:02-06:00</td>
-      <td>1</td>
-      <td>OECD descriptor ID: MABMBM01 OECD unit ID: IXO...</td>
+      <td>2017-06-09 08:53:54-05:00</td>
+      <td>2</td>
+      <td>This series was constructed by the Bank of Eng...</td>
     </tr>
     <tr>
-      <th>MABMBM01EZQ657S</th>
-      <td>MABMBM01EZQ657S</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
-      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
-      <td>1970-04-01</td>
-      <td>2013-07-01</td>
-      <td>Quarterly</td>
-      <td>Q</td>
-      <td>Growth Rate Previous Period</td>
-      <td>Growth Rate Previous Period</td>
-      <td>Seasonally Adjusted</td>
-      <td>SA</td>
-      <td>2014-02-05 08:33:02-06:00</td>
-      <td>1</td>
-      <td>OECD descriptor ID: MABMBM01 OECD unit ID: GPS...</td>
-    </tr>
-    <tr>
-      <th>MABMBM01EZA659S</th>
-      <td>MABMBM01EZA659S</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
-      <td>Broad Money, Index for the Euro Area (DISCONTI...</td>
-      <td>1971-01-01</td>
-      <td>2012-01-01</td>
+      <th>KAZFMBPCHPT</th>
+      <td>KAZFMBPCHPT</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
+      <td>Broad Money for Kazakhstan</td>
+      <td>2000-01-01</td>
+      <td>2025-01-01</td>
       <td>Annual</td>
       <td>A</td>
-      <td>Growth Rate Same Period Previous Year</td>
-      <td>Growth Rate Same Period Previous Yr.</td>
+      <td>Percent Change</td>
+      <td>% Chg.</td>
       <td>Not Seasonally Adjusted</td>
       <td>NSA</td>
-      <td>2014-02-05 08:33:05-06:00</td>
-      <td>1</td>
-      <td>OECD descriptor ID: MABMBM01 OECD unit ID: GYS...</td>
+      <td>2024-11-06 10:12:01-06:00</td>
+      <td>2</td>
+      <td>Observations for the current and future years ...</td>
     </tr>
     <tr>
-      <th>MANMNM01USM657S</th>
-      <td>MANMNM01USM657S</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
-      <td>Narrow Money, Index for the United States (DIS...</td>
-      <td>1959-02-01</td>
-      <td>2013-12-01</td>
+      <th>MAM1A2CAM189S</th>
+      <td>MAM1A2CAM189S</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
+      <td>M1, Alternate Definition 2 for Canada</td>
+      <td>1975-03-01</td>
+      <td>2017-04-01</td>
       <td>Monthly</td>
       <td>M</td>
-      <td>Growth Rate Previous Period</td>
-      <td>Growth Rate Previous Period</td>
+      <td>National Currency</td>
+      <td>National Currency</td>
       <td>Seasonally Adjusted</td>
       <td>SA</td>
-      <td>2014-05-05 09:22:26-05:00</td>
-      <td>1</td>
-      <td>OECD descriptor ID: MANMNM01 OECD unit ID: GPS...</td>
+      <td>2017-08-01 14:41:24-05:00</td>
+      <td>2</td>
+      <td>Notes regarding this series can be found in In...</td>
     </tr>
     <tr>
-      <th>MANMNM01USM661S</th>
-      <td>MANMNM01USM661S</td>
-      <td>2025-10-23</td>
-      <td>2025-10-23</td>
-      <td>Narrow Money, Index for the United States (DIS...</td>
-      <td>1959-01-01</td>
-      <td>2013-12-01</td>
+      <th>EGYFMBPCHPT</th>
+      <td>EGYFMBPCHPT</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
+      <td>Broad Money for Egypt</td>
+      <td>2000-01-01</td>
+      <td>2025-01-01</td>
+      <td>Annual</td>
+      <td>A</td>
+      <td>Percent Change</td>
+      <td>% Chg.</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2024-11-06 10:11:54-06:00</td>
+      <td>2</td>
+      <td>Observations for the current and future years ...</td>
+    </tr>
+    <tr>
+      <th>MYAGM3TRM189N</th>
+      <td>MYAGM3TRM189N</td>
+      <td>2025-10-31</td>
+      <td>2025-10-31</td>
+      <td>M3 for Turkey</td>
+      <td>1986-01-01</td>
+      <td>2017-06-01</td>
       <td>Monthly</td>
       <td>M</td>
-      <td>Index 2010=1</td>
-      <td>Index 2010=1</td>
-      <td>Seasonally Adjusted</td>
-      <td>SA</td>
-      <td>2014-05-05 09:22:26-05:00</td>
-      <td>1</td>
-      <td>OECD descriptor ID: MANMNM01 OECD unit ID: IXO...</td>
+      <td>National Currency</td>
+      <td>National Currency</td>
+      <td>Not Seasonally Adjusted</td>
+      <td>NSA</td>
+      <td>2019-04-29 07:02:15-05:00</td>
+      <td>2</td>
+      <td>M3 comprises M2, deposits of government agenci...</td>
     </tr>
   </tbody>
 </table>
@@ -674,11 +688,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-04-01    2287.8
-2025-05-01    2292.7
-2025-06-01    2300.1
-2025-07-01    2311.4
-2025-08-01    2319.9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-05-01    2292.3
+2025-06-01    2299.6
+2025-07-01    2311.3
+2025-08-01    2319.6
+2025-09-01    2326.3
 dtype: float64
 </pre></div>
 </div>
@@ -712,7 +726,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a7902a7d719b2cfd8a657963aabacc27fe01f25f1aa5f94c5f365368bde65a35.png" src="_images/a7902a7d719b2cfd8a657963aabacc27fe01f25f1aa5f94c5f365368bde65a35.png" />
+<img alt="_images/66ba2fca02d1a5beaafabedc8f65b083b5bdde08f8e8e87f051a08ed980b562e.png" src="_images/66ba2fca02d1a5beaafabedc8f65b083b5bdde08f8e8e87f051a08ed980b562e.png" />
 </div>
 </div>
 <p>There is a striking pattern in the data: M1 jumped up immensely in May 2020.  The reason for this is that the Federal Reserve redefined M1 to include savings deposits in May 2020.  On April 24, 2020 the Federal Reserve announced that Regulation D—a requirement that banks hold reserves against checkable deposits, but not savings or money market accounts—would no longer impose limits on the number of transactions or withdrawals permitted on savings deposit accounts.  <a href="https://www.federalreserve.gov/newsevents/pressreleases/bcreg20200424a.htm" target="_blank">This amendment</a> rendered savings deposits just as liquid as other highly liquid accounts (OCDs) and therefore rightly belong in the definition of M1.  Since May 2020, OCDs and savings deposits are not reported separately but instead reported as their sun under <a href="https://fred.stlouisfed.org/series/MDLNWM" target="_blank">”other liquid deposits”</a>.</p>
@@ -750,7 +764,7 @@ dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6d0e8c392416a96b09ab4afe2d2b10972afa5e0c0601fd2e812d4a0596b54ea7.png" src="_images/6d0e8c392416a96b09ab4afe2d2b10972afa5e0c0601fd2e812d4a0596b54ea7.png" />
+<img alt="_images/c37a5b65dec1f4b326f0490b607e7454c7b3460737c032881e4aa7aa98c37f42.png" src="_images/c37a5b65dec1f4b326f0490b607e7454c7b3460737c032881e4aa7aa98c37f42.png" />
 </div>
 </div>
 <p>This figure validates our earlier observation that money supply growth was very stable up until the Great Recession.  Let’s compute the average growth rate for each monetary aggregate from 1970 to 2008:</p>
@@ -785,7 +799,7 @@ dtype: float64
 M0: 7.64%
 MB: 6.92%
 M1: 5.25%
-M2: 6.95%
+M2: 6.94%
 </pre></div>
 </div>
 </div>
@@ -812,7 +826,7 @@ M2: 6.95%
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/49b2f7cc8d1a9a86491731c8e7dd663cf95f51aa31023161170dcabbbecb8aee.png" src="_images/49b2f7cc8d1a9a86491731c8e7dd663cf95f51aa31023161170dcabbbecb8aee.png" />
+<img alt="_images/9abfdba665240271f59c88b6162263f4168ac1de5357b5a0bb818984f489d7ef.png" src="_images/9abfdba665240271f59c88b6162263f4168ac1de5357b5a0bb818984f489d7ef.png" />
 </div>
 </div>
 <p>Now we can see that around the Great Recession most of the variability in money supply is from the monetary base.  The reason is that there was a massive injection of reserves to save the financial sector in immediate aftermath of the subprime mortgage crisis.  Since reserves are counted as part of the monetary base, but no other monetary aggregate, we observe much more volatility of this series.  Subsequent actions by the Federal Reserve to manage liquidity via the market for reserves had similar effects on volatility.</p>
@@ -850,12 +864,12 @@ M2: 6.95%
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="olg-model-details.html"
+       href="olg-expectations.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">OLG Model of Money Details</p>
+        <p class="prev-next-title">The Role of Expectations in OLG Dynamics</p>
       </div>
     </a>
     <a class="right-next"
