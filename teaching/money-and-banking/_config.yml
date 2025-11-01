@@ -12,7 +12,7 @@ root: intro.md
 # HTML settings
 html:
   extra_navbar: Powered by Jupyter Book
-  baseurl: /
+  baseurl: /money-and-banking-book/
 
 # Ensure images are copied
 sphinx:
