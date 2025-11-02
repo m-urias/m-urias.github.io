@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,8 +177,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -358,6 +360,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-asset-market">Competitive Asset Market</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banks">Banks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bank-runs">Bank Runs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -373,7 +376,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="diamond-dybvig-model-of-banking">
 <h1>Diamond-Dybvig Model of Banking<a class="headerlink" href="#diamond-dybvig-model-of-banking" title="Link to this heading">#</a></h1>
-<p>Why do financial intermediaries exist?  Household can lend to non-financial firms directly in stock or bond markets, yet still most securities are traded indirectly via intermediaries rather than directly. Financial intermediaries (banks) should then beat the market in some way.</p>
+<p>Why do financial intermediaries exist?  Households can lend to firms directly in stock or bond markets, yet still most securities are traded indirectly via intermediaries rather than directly. Financial intermediaries (banks) should then beat the market in some way.</p>
 <p>Our focus is on banks as liquidity providers: they issue liquid assets (deposits) while financing illiquid ones (loans).  Banks can improve on the competitive market by providing better <strong>risk sharing</strong> among people with different liquidity needs. Banks hold a substantial amount of <strong>liquidity risk</strong> due to <strong>maturity mismatch</strong> between the liability and asset sides of their balance sheet.</p>
 <p><a href="https://www.bu.edu/econ/files/2012/01/DD83jpe.pdf" target="_blank">Diamond and Dybvig developed a model</a> which shows that banks can create deposit contracts that do better than competitive exchange markets, however are also subject to self-fulfilling panics resulting in bank runs.  Diamond and Dybvig, along with former Fed chair Ben Bernanke, were award the 2022 Nobel Prize in Economics for their work on this model.</p>
 <section id="portfolio-choice-under-uncertainty">
@@ -462,7 +465,7 @@ c_2 = (1-x) + xr_2 = 1+x(r_2-1)
 <figure>
     <img src="_static/figs_dd/budget_line.png"
          alt="US employment to population ratio"
-         width="250"
+         width="2000"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Budget line of a consumer facing uncertainty.
@@ -475,7 +478,7 @@ c_2 = (1-x) + xr_2 = 1+x(r_2-1)
 <figure>
     <img src="_static/figs_dd/portfolio_choice_autarky.png"
          alt="US employment to population ratio"
-         width="250"
+         width="200"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Portfolio choice of a consumer under autarky
@@ -516,7 +519,7 @@ c_2 = (1-x) + xr_2 = 1+x(r_2-1)
 <figure>
     <img src="_static/figs_dd/portfolio_choice_autarky.png"
          alt="US employment to population ratio"
-         width="250"
+         width="200"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Optimal consumption plan.
@@ -564,7 +567,7 @@ c_2 = (\frac{(1-x)}{p}+x)r_2
 <figure>
     <img src="_static/figs_dd/asset_market.png"
          alt="US employment to population ratio"
-         width="250"
+         width="200"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     The allocation under a competitive asset market dominates any allocation under autarky.
@@ -609,7 +612,7 @@ Ru'(R) &amp;= u'(1) + \int_{1}^{R}\frac{\partial c u'(c)}{\partial c}dc \\
 <figure>
     <img src="_static/figs_dd/fig5.png"
          alt="US employment to population ratio"
-         width="250"
+         width="150"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -642,7 +645,7 @@ r_1 x + y &lt; x+y &lt;c_1^B
 <p>The bank becomes insolvent given that it can pay back just a fraction of what it promised to depositors. Since all assets must be liquidated in <span class="math notranslate nohighlight">\(t=1\)</span>, nothing remains at <span class="math notranslate nohighlight">\(t=2\)</span> for an inattentive latecomer depositor.</p>
 <p>A bank run is a coordination failure among patient types:</p>
 <figure>
-    <img src="_static/figs_dd/game.png"
+    <img src="_static/figs_dd/fig6.png"
          alt="US employment to population ratio"
          width="250"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -661,17 +664,7 @@ r_1 x + y &lt; x+y &lt;c_1^B
 <p><strong>Article 3</strong>: For the purpose of this Regulation, the term “deposit insurance” means the system under which institutional policyholders pay insurance premiums to the deposit insurance fund management institution, forming a deposit insurance fund, and the deposit insurance fund management institution pays the insured deposits to depositors and take necessary measures to maintain the safety of deposits and the deposit insurance fund.</p>
 <p>If the government insures depositors against all losses, depositors will no longer care about their bank’s exposure to risk.  Banks seeking depositors must therefore offer the highest rates of return they can find, which incentivizes them to hold a riskier portfolio of assets.</p>
 <p>Deposit insurance will induce banks to take greater risks than they would if all the risks were borne by the shareholders and depositors of the bank—this is the <strong>moral hazard problem</strong> of insurance.</p>
-<p>When banks attract investors as shareholders, depositors are more protected than losses even when bank assets are risky.]</p>
-<figure>
-    <img src="_static/figs_dd/fig7.png"
-         alt="US employment to population ratio"
-         width="250"
-         style="display: block; margin-left: auto; margin-right: auto;">
-    <figcaption style="font-style: italic; text-align: left;">
-    A bank run is a Nash equilibrium.
-    </figcaption>
-</figure>
-<p>If a bank suffers a sudden loss, it will be subtracted from the bank’s net worth and not from deposits.  Only after net worth falls to zero will depositors lose anything.</p>
+<p>When banks attract investors as shareholders, depositors are more protected than losses even when bank assets are risky. If a bank suffers a sudden loss, it will be subtracted from the bank’s net worth and not from deposits.  Only after net worth falls to zero will depositors lose anything.</p>
 <p>We already saw that ROE is positively related to leverage</p>
 <div class="math notranslate nohighlight">
 \[
@@ -679,7 +672,9 @@ r_1 x + y &lt; x+y &lt;c_1^B
 \]</div>
 <p>so there is an incentive to boost leverage which puts more risk on depositors.</p>
 <p>Bank regulators impose <strong>capital requirements</strong> to force banks to maintain a net worth no less than some fraction of their risk-weighted assets.  Basel III is the latest international standard for bank regulations that stipulate how banks should measure their risk, and what capital is required given those risks.</p>
-<p>{Conclusion}</p>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The Diamond-Dybvig model shows that banks can accomplish perfect risk-sharing by transforming illiquid assets into liquid deposits</p></li>
 <li><p>This maturity mismatch on the bank balance sheet, however, can generate bank runs driven by self-fulfilling beliefs</p></li>
@@ -762,6 +757,7 @@ r_1 x + y &lt; x+y &lt;c_1^B
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-asset-market">Competitive Asset Market</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banks">Banks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bank-runs">Bank Runs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>

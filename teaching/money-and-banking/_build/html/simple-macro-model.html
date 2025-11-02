@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -176,8 +176,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -384,15 +386,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="a-simple-macro-model-of-monetary-policy">
 <h1>A Simple Macro Model of Monetary Policy<a class="headerlink" href="#a-simple-macro-model-of-monetary-policy" title="Link to this heading">#</a></h1>
-<p>We now develop a three-equation model-—commonly known as the IS–PC–MP model—-to describe short-run dynamics in the economy. This framework provides a compact yet powerful way to connect the conduct of monetary policy with real economic activity and inflation dynamics.  In this model, monetary policy influences the short-term real interest rate, which affects aggregate demand and output through investment and other spending channels. The model thus bridges the gap between <a href="olg-banking.html">our earlier OLG model of banking</a> (which explains how banks and reserves underpin interest rate determination) <a href="monetary-policy-systems.html">our model of the interbank market</a>, where the central bank sets the short-term nominal interest rate.</p>
-<p>Here we use a three-equation model, known as the IS-PC-MP model, to describe the short-run dynamics of the economy.  We describe the effects of monetary policy as changes to the short-term real interest rate which in turn affects various components of real output.  This description provides a link between monetary policy conducted through the banking system as described in <a href="olg-banking.html">our OLG model of baking</a> and our <a href="monetary-policy-systems.html">model of the interbank market</a>.  In particular, we describe how changes in the short-term nominal interest rate, as described in our <a href="monetary-policy-systems.html">model of the interbank market</a>, translate into changing the short-term <em>real</em> interest rate, which in turn affects the real economy.</p>
-<p>Changes in nominal interest rates, when prices are slow to adjust, translate into changes in real interest rates that directly influence real activity. Moreover, inflation expectations feed back into actual inflation, which motivates the need for a monetary policy rule—-such as the Taylor rule-—to stabilize output and inflation over the business cycle.</p>
+<p>We now develop a three-equation model-commonly known as the IS–PC–MP model-to describe short-run dynamics in the economy. This framework provides a compact yet powerful way to connect the conduct of monetary policy with real economic activity and inflation dynamics.  In this model, monetary policy influences the short-term real interest rate, which affects aggregate demand and output through investment and other spending channels. The model thus bridges the gap between our earlier<a href="olg-banking.html">OLG model of banking</a>, showing how banks and reserves underpin interest rate determination, and our model of the<a href="monetary-policy-systems.html">interbank market</a> where the central bank sets the short-term nominal interest rate. Changes in nominal interest rates, when prices are slow to adjust, translate into changes in real interest rates that directly influence real activity. Moreover, inflation expectations can feedback into actual inflation, which motivates the need for a monetary policy rule—such as the Taylor rule-to stabilize output and inflation over the business cycle.</p>
 <p>We proceed by describing each of the three equations one at a time and then analyze the dynamic macreconomic system these three equations constitute.</p>
 <section id="the-is-curve">
 <h2>The IS Curve<a class="headerlink" href="#the-is-curve" title="Link to this heading">#</a></h2>
-<p>The channel through which monetary policy affects short-run output is the real interest rate. The central bank can alter overnight nominal interest rates through open market operations in the reserves market. These short-term nominal rates influence longer-term rates via the yield curve. Because prices are sticky in the short run, nominal rate changes translate into real rate changes-—so that <span class="math notranslate nohighlight">\(R_t \neq r=MPK\)</span>.</p>
-<p>When real interest rates fall, investment becomes more attractive, stimulating aggregate demand and increasing output. Conversely, higher real rates discourage investment and slow the economy.</p>
-<p>This <strong>monetary policy transmission mechanism</strong> is summarized by:</p>
+<p>The channel through which monetary policy affects short-run output is the real interest rate. The central bank can alter overnight nominal interest rates through open market operations in the reserves market, which in turn influences longer-term nominal rates via the yield curve. If prices are sticky in the short run, nominal rate changes translate into real rate changes-so that <span class="math notranslate nohighlight">\(R_t \neq r=MPK\)</span>.</p>
+<p>When real interest rates fall, investment becomes more attractive, stimulating aggregate demand and increasing output. Conversely, higher real rates discourage investment and slow the economy.  This <strong>monetary policy transmission mechanism</strong> is summarized by:</p>
 <div class="math notranslate nohighlight">
 \[
 \downarrow \text{interest rate} \Rightarrow \uparrow \text{investment} \Rightarrow \uparrow \text{output}
@@ -419,7 +418,7 @@ IM_t &amp;= a_{in} \bar{Y}_t \\
 \[
 I_t = a_i\bar{Y}_t+b(R_t-r)\bar{Y}_t
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(R_t\)</span> is the short-term real interest rate relative to the long-run real interest rate <span class="math notranslate nohighlight">\(r\)</span>. When current interest rate equals long-run interest rate <span class="math notranslate nohighlight">\(R=r\)</span>, investment is a constant fraction of long-run output <span class="math notranslate nohighlight">\(I_t = a_i \bar{Y}_t\)</span>. When <span class="math notranslate nohighlight">\(R&gt;r\)</span>, financing investment projects is costly so investment decreases below it’s long-run level. When <span class="math notranslate nohighlight">\(R&lt;r\)</span>, financing investment projects is cheap so investment rises above it’s long-run level.  Recall that the long-run real interest rate <span class="math notranslate nohighlight">\(r=MPK\)</span> is, once again, determined by our long-run theories and therefore exogenous with respect to our short-run model.</p>
+<p>where <span class="math notranslate nohighlight">\(R_t\)</span> is the short-term real interest rate relative to the long-run real interest rate <span class="math notranslate nohighlight">\(r\)</span>. When the current interest rate equals long-run interest rate <span class="math notranslate nohighlight">\(R=r\)</span>, investment is at its long-run level <span class="math notranslate nohighlight">\(I_t = a_i \bar{Y}_t\)</span>. When <span class="math notranslate nohighlight">\(R&gt;r\)</span>, financing investment projects is costly so investment decreases below it’s long-run level. When <span class="math notranslate nohighlight">\(R&lt;r\)</span>, financing investment projects is cheap so investment rises above it’s long-run level.  Recall that the long-run real interest rate <span class="math notranslate nohighlight">\(r=MPK\)</span> is determined by long-run theories and therefore exogenous with respect to our short-run model.</p>
 <p>Substituting our “mini theories” into the national accounting identity gives:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -429,36 +428,34 @@ I_t = a_i\bar{Y}_t+b(R_t-r)\bar{Y}_t
 \underbrace{\frac{Y_t-\bar{Y}_t}{\bar{Y}_t}}_{\tilde{Y}_t} &amp;= \underbrace{ a_c+a_i+a_g+a_{ex}-a_{im}-1}_{a}-b(R_t-r)
 \end{align*}
 \end{split}\]</div>
-<div class="admonition-definition-is-curve admonition">
+<div class="definition admonition">
 <p class="admonition-title">Definition: IS Curve</p>
-<p>:class: definition</p>
 <p>Our <strong>IS curve</strong> shows combinations of the output gap and real interest rate consistent with goods market equilibrium:</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{Y}_t = a-b(R_t-r)
 \]</div>
-<p>where  <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span> is the output gap, <span class="math notranslate nohighlight">\(a\)</span> collects the exogenous components of expenditure, and <span class="math notranslate nohighlight">\(b\)</span> measures how sensitive investment (and therefore output) is to changes in the real interest <a class="reference external" href="http://rate.In">rate.In</a> normal times <span class="math notranslate nohighlight">\(a=0\)</span>, but shocks to aggregate demand–such as fiscal stimulus <span class="math notranslate nohighlight">\(\uparrow a_g\)</span> or export surges <span class="math notranslate nohighlight">\(\uparrow a_{ex}\)</span>– cause <span class="math notranslate nohighlight">\(a \neq 0\)</span>.  Monetary policy is summarized by <span class="math notranslate nohighlight">\(R_t\)</span>.</p>
+<p>where  <span class="math notranslate nohighlight">\(\tilde{Y}_t\)</span> is the output gap, <span class="math notranslate nohighlight">\(a\)</span> collects the exogenous components of expenditure, and <span class="math notranslate nohighlight">\(b\)</span> measures how sensitive investment (and therefore output) is to changes in the real interest rate.  In normal times <span class="math notranslate nohighlight">\(a=0\)</span>, but shocks to aggregate demand-such as fiscal stimulus <span class="math notranslate nohighlight">\(\uparrow a_g\)</span> or export surges <span class="math notranslate nohighlight">\(\uparrow a_{ex}\)</span>-cause <span class="math notranslate nohighlight">\(a \neq 0\)</span>.  Monetary policy is summarized by <span class="math notranslate nohighlight">\(R_t\)</span>.</p>
 </div>
 <figure>
     <img src="_static/figs_smm/is_curve.png"
          alt="IS Curve"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    The IS curve gives an equilibrium relationship between the short-term real interest rate and the output gap.
+    The IS curve illustrates an equilibrium relationship between the short-term real interest rate and the output gap.  It is downward sloping because higher (lower) real interest rates depress (stimulate) investment which in turn affects aggregate output.  The shape and slope of the IS curve is determined by how sensitive investment is to changes in the real interest rate.
     </figcaption>
 </figure>
 <p>The IS curve accommodates two types of shocks:</p>
 <ol class="arabic simple">
-<li><p><strong>Aggregate demand shocks</strong>: Temporary changes in exogenous components of expenditure (<span class="math notranslate nohighlight">\(C,I,G,EX,IM\)</span>) cause shifts in the intercept <span class="math notranslate nohighlight">\(a\)</span>.  A positive shock (<span class="math notranslate nohighlight">\(a&gt;0\)</span>) pushes output above potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span>), while a negative shock (<span class="math notranslate nohighlight">\(a&lt;0\)</span>) pushes output below potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>).  Graphically, these appear as shifts of the IS curve.</p></li>
+<li><p><strong>Aggregate demand shocks</strong>: Temporary changes in exogenous components of expenditure (<span class="math notranslate nohighlight">\(C, I, G, EX, IM\)</span>) cause shifts in the intercept <span class="math notranslate nohighlight">\(a\)</span>.  A positive shock (<span class="math notranslate nohighlight">\(a&gt;0\)</span>) pushes output above potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span>), while a negative shock (<span class="math notranslate nohighlight">\(a&lt;0\)</span>) pushes output below potential (<span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>).  Graphically, these appear as shifts of the IS curve.</p></li>
 <li><p><strong>Interest rate shocks</strong>.  When the central bank alters <span class="math notranslate nohighlight">\(R_t\)</span> away from it’s long-run value, the economy moves <em>along</em> the IS curve.  A rate cut stimulates output and raises output <span class="math notranslate nohighlight">\(\tilde{Y}_t&gt;0\)</span>m, while a rate hike reduces investment causing <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span>.</p></li>
 </ol>
-<p>This framework allows us to trace the real effects of monetary policy, while clearly distinguishing them from other sources of demand-driven fluctuations.  The IS curve captures the aggregate demand channel of monetary policy. Yet, it is not itself a monetary relation-—it shows how spending responds to real rates, regardless of what determines those rates. To close the model, we need an additional relation describing how the central bank sets the nominal interest rate and how inflation expectations link the nominal and real rates.</p>
+<p>This framework allows us to trace the real effects of monetary policy while clearly distinguishing them from other sources of demand-driven fluctuations.  The IS curve captures the aggregate demand channel of monetary policy. Yet, it is not itself a monetary relation-it shows how spending responds to real rates regardless of what determines those rates. To close the model, we need an additional relation describing how the central bank sets the nominal interest rate and how inflation expectations link the nominal and real rates.</p>
 </section>
 <section id="a-simple-monetary-policy">
 <h2>A Simple Monetary Policy<a class="headerlink" href="#a-simple-monetary-policy" title="Link to this heading">#</a></h2>
-<p>How do we determine the short-run real interest rate?  For now, we assume that the central bank can target whatever real interest rate it desires. The central bank intervenes in the market for reserves to change the nominal interest rate (recall our discussion in <a href="monetary-policy-systems.html">Monetary Policy Systems</a>.)</p>
-<p>Changes in nominal interest rates influence the real interest rate because we assume that <strong>inflation displays inertia, or stickiness, in the short run</strong></p>
+<p>How do we determine the short-run real interest rate?  For now, assume that the central bank can target whatever real interest rate it desires. The central bank intervenes in the market for reserves to change the nominal interest rate (recall our discussion in <a href="monetary-policy-systems.html">Monetary Policy Systems</a>), then changes in nominal interest rates influence the real interest rate because we assume that <strong>inflation displays inertia, or stickiness, in the short run</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
 R_t = i_t-\pi_t
@@ -467,19 +464,19 @@ R_t = i_t-\pi_t
 <figure>
     <img src="_static/figs_smm/is_mp_curve.png"
          alt="IS Curve"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    The MP curve represents the monetary authority choosing the real interest rate $R_t$.  Given $R_t$, the IS curve shows the equilibrium output gap.
+    The MP curve represents the monetary authority choosing real interest rate $R_t$.  Given $R_t$, the IS curve shows equilibrium output gap.  A long-run equilibrium occurs where the current interest rate equals the long-run rate $R_t=\bar{r}$ and therefore the output gap is zero $\tilde{Y}_t=0$.  
     </figcaption>
 </figure>
-<p>The figure above depicts a <strong>long-run equilibrium</strong> where the short-term real rate equal the long-run real rate, <span class="math notranslate nohighlight">\(R_t=\bar{r}\)</span>, and thus output is at potential, <span class="math notranslate nohighlight">\(\tilde{Y}_t=0\)</span>.</p>
-<p>What distinguishes this short-run description of monetary policy from our long-run models is price rigidity. Prices do not adjust instantaneously to changes in the money supply or the nominal interest rate. Instead, there is a lag between monetary policy actions and their effect on prices.  Eventually, prices do adjust, returning the economy to its long-run equilibrium—-a process captured by the models we studied earlier. In the short run, however, this sluggish adjustment gives monetary policy a powerful influence over real activity.</p>
+<p>The figure above depicts a <strong>long-run equilibrium</strong> where the short-term real rate equal the long-run real rate, <span class="math notranslate nohighlight">\(R_t=\bar{r}\)</span>, and thus output is at potential, <span class="math notranslate nohighlight">\(\tilde{Y}_t=0\)</span>.  Any monetary policy shocks which cause <span class="math notranslate nohighlight">\(R_t \neq r\)</span> result in movement along the IS curve where <span class="math notranslate nohighlight">\(\tilde{Y}_t \neq 0\)</span>.  An <strong>expansionary monetary policy shock</strong> would be represented by an interest rate cut resulting in a positive output gap: the central bank stimulates the economy to operate above potential.  A <strong>contractionary monetary policy shock</strong> is an interest rate hick resulting in a negative output gap.</p>
+<p>What distinguishes this short-run description of monetary policy from our long-run models is price rigidity. Prices do not adjust instantaneously to changes in the money supply or the nominal interest rate. Instead, there is a lag between monetary policy actions and their effect on prices.  Eventually, prices do adjust, returning the economy to its long-run equilibrium-a process captured by the models we studied earlier. In the short run, however, this sluggish adjustment gives monetary policy powerful influence over real activity.</p>
 </section>
 <section id="the-phillip-s-curve">
 <h2>The Phillip’s Curve<a class="headerlink" href="#the-phillip-s-curve" title="Link to this heading">#</a></h2>
-<p>In 1958, economist A.W. Phillips published a landmark empirical paper that examined the relationship between unemployment and wage growth in the UK.  He discovered that periods of low unemployment were associated with rapid increases in wages, while periods of high unemployment corresponded to slow wage growth. Subsequent studies found similar negative relationships between unemployment and inflation in other countries. This empirical regularity became known as the <em>Phillip’s Curve</em>.</p>
-<p>The intuition behind the Phillips Curve is straightforward. When labor markets are tight—that is, when the unemployment rate is low—firms face difficulty hiring workers and therefore raise wages to attract and retain labor. These higher wage costs are passed on to consumers in the form of higher prices, generating inflation. In contrast, when unemployment is high and labor markets are slack, wage growth slows and inflation tends to ease. During the 1960s, this apparent trade-off between unemployment and inflation was interpreted as a potential policy tool: governments could, in principle, achieve lower unemployment by tolerating somewhat higher inflation.</p>
+<p>In 1958, economist A.W. Phillips published a landmark empirical paper that examined the relationship between unemployment and wage growth in the UK.  He discovered that periods of low unemployment were associated with rapid increases in wages, while periods of high unemployment corresponded to slow wage growth. Subsequent studies found similar negative relationships between unemployment and inflation in other countries-an empirical regularity which became known as the <em>Phillip’s Curve</em>.</p>
+<p>The intuition behind the Phillips Curve is straightforward. When labor markets are tight—when the unemployment rate is low—firms face difficulty hiring workers and therefore raise wages to attract and retain labor. These higher wage costs are passed on to consumers in the form of higher prices, generating inflation. In contrast, when unemployment is high and labor markets are slack, wage growth slows and inflation tends to ease. During the 1960s, this apparent trade-off between unemployment and inflation was interpreted as a potential policy tool: governments could, in principle, achieve lower unemployment by tolerating somewhat higher inflation.</p>
 <p>However, in 1967, Milton Friedman and Edmund Phelps identified a crucial theoretical flaw in this interpretation. They argued that firms and workers care about real wages—not nominal ones. When people expect prices to rise, they negotiate higher nominal wages in advance to maintain their purchasing power. As a result, both wages and inflation increase one-for-one with expected inflation, in addition to responding to the tightness of the labor market. Friedman and Phelps also introduced the concept of a natural rate of unemployment—the rate consistent with perfectly flexible prices and competitive markets.</p>
 <p>Consider the real wage rate</p>
 <div class="math notranslate nohighlight">
@@ -498,10 +495,10 @@ g_w = g_W-\pi
 \pi_t = \pi_t^e - \omega(U_t-U_n)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(U_t\)</span> is the actual unemployment rate, <span class="math notranslate nohighlight">\(U_n\)</span> is the natural rate of unemployment, and <span class="math notranslate nohighlight">\(\pi_t^e\)</span> is expected inflation.  In the long run, expected inflation tends to equal actual inflation–because you can’t continually fool the public–<span class="math notranslate nohighlight">\((\pi_t^e = \pi_t)\)</span>, eliminating the tradeoff.  Nevertheless, in the short run, unexpected inflation can temporarily reduce unemployment below its natural level.</p>
-<p>Starting in the 1970s, the apparent relationship between unemployment and inflation broke down. Periods of low unemployment were accompanied by high and persistent inflation—stagflation—rather than stable trade-offs. This empirical evidence strongly supported the Friedman–Phelps framework, and both economists later received the Nobel Prize in recognition of their contributions. Modern discussions of this concept often refer to the <strong>Non-Accelerating Inflation Rate of Unemployment (NAIRU)</strong>—the unemployment rate consistent with constant inflation.</p>
+<p>Starting in the 1970s, the apparent relationship between unemployment and inflation broke down. Periods of low unemployment were accompanied by high and persistent inflation—stagflation—rather than stable trade-offs. This empirical evidence strongly supported the Friedman–Phelps framework, and both economists later received the Nobel Prize in recognition of their contributions. Modern discussions of this concept often refer to the <strong>Non-Accelerating Inflation Rate of Unemployment (NAIRU)</strong>—the unemployment rate consistent with constant inflation-which is synonymous with the natural rate of unemployment in our model.</p>
 <section id="incorporating-price-shocks">
 <h3>Incorporating Price Shocks<a class="headerlink" href="#incorporating-price-shocks" title="Link to this heading">#</a></h3>
-<p>In practice, inflation can also be influenced by supply-side shocks—such as changes in oil prices or import costs—that affect firms’ pricing decisions independently of the labor market. To account for this, the expectations-augmented Phillips Curve is often written as:</p>
+<p>In practice, inflation can also be influenced by supply-side shocks such as changes in oil prices or import costs that affect firms’ pricing decisions independently of the labor market. To account for this, the expectations-augmented Phillips Curve is often written as:</p>
 <div class="math notranslate nohighlight">
 \[
 \pi_t = \pi_t^e - \omega(U_t-U_n) + \rho
@@ -510,7 +507,7 @@ g_w = g_W-\pi
 </section>
 <section id="from-unemployment-to-output">
 <h3>From Unemployment to Output<a class="headerlink" href="#from-unemployment-to-output" title="Link to this heading">#</a></h3>
-<p>We can relate inflation to output by recalling that output depends on the number of employed workers:</p>
+<p>We can relate inflation to output by recognizing that output depends on the number of employed workers:</p>
 <div class="math notranslate nohighlight">
 \[
 Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
@@ -529,14 +526,14 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 \[
 \pi_t^e=\pi_{t-1}
 \]</div>
-<p>Substituting this into the Phillips Curve gives:</p>
-<div class="admonition-definition-phillip-s-curve admonition">
+<p>Substituting this into the Phillips Curve gives</p>
+<div class="definition admonition">
 <p class="admonition-title">Definition: Phillip’s Curve</p>
-<p>:class: definition</p>
-<div class="math notranslate nohighlight">
-\[
+<p>The expectations augmented Phillip’s Curve:
+$<span class="math notranslate nohighlight">\(
 \pi_t = \pi_{t-1} - \nu \tilde{Y}_t+ \rho
-\]</div>
+\)</span>$</p>
+<p>where agents expectation of future inflation is based on past inflation <span class="math notranslate nohighlight">\(\pi_t^e=\pi_{t-1}\)</span>.</p>
 </div>
 <p>This is the specification used in our short-run macroeconomic model. Inflation today depends on last period’s inflation, the current output gap, and temporary supply shocks.  Later, we will explore alternative expectations mechanisms, including rational expectations, where agents use all available information to forecast inflation.</p>
 </section>
@@ -545,7 +542,7 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 <h2>Our Basic Macro Model<a class="headerlink" href="#our-basic-macro-model" title="Link to this heading">#</a></h2>
 <div class="definition admonition">
 <p class="admonition-title">Simple Macro Model</p>
-<p>Now we have a simple macro model with three equations:</p>
+<p>We have a simple macro model with three equations:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -560,7 +557,7 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 <li><p>The PC shows the rate of change in inflation given the output gap</p></li>
 </ul>
 </div>
-<p>We can use this three equation model to investigate some macroeconomic events in history or predict how the economy responds to future shocks.  For example, let’s consider what monetary policy under Paul Volcker did in the 1970s.  During the 1970s inflation in the US was very high (reaching over 12% by 1980), and chairman Paul Volcker was in charge of bringing inflation down.  He implemented contractionary monetary policy:</p>
+<p>We use this three equation model to investigate some macroeconomic events in history and predict how the economy responds to future shocks.  For example, let’s consider what monetary policy under Paul Volcker did in the 1970s.  During the 1970s inflation in the US was very high (reaching over 12% by 1980), and chairman Paul Volcker was in charge of bringing inflation down.  He implemented contractionary monetary policy:</p>
 <ul class="simple">
 <li><p>Contractionary monetary policy means <span class="math notranslate nohighlight">\(\uparrow R_t\)</span></p></li>
 <li><p>Higher interest rates depress investment demand which generates a negative output gap <span class="math notranslate nohighlight">\(\tilde{Y}_t&lt;0\)</span></p></li>
@@ -595,14 +592,14 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
     Quadratic loss function of the central bank
     </figcaption>
 </figure>
-<p>Clearly, loss is minimized (the bottom of the bucket above) when real output is at its long-run level <span class="math notranslate nohighlight">\(\tilde{Y}=0\)</span> and inflation is at its target level <span class="math notranslate nohighlight">\(\bar{pi}=\pi\)</span>.  Deviations from this point create a policy trade-off between maintaining price stability and stabilizing the real economy. The curvature of the loss function represents the degree of this trade-off.  We can better visualize this trade-off by considering level curves (or contour plots) of the loss function–slices through the three-dimensional “loss surface” at different magnitudes of loss.</p>
+<p>Clearly, loss is minimized (the bottom of the bucket above) when real output is at its long-run level <span class="math notranslate nohighlight">\(\tilde{Y}=0\)</span> and inflation is at its target level <span class="math notranslate nohighlight">\(\bar{\pi}=\pi\)</span>.  Deviations from this point create a policy trade-off between maintaining price stability and stabilizing the real economy. The curvature of the loss function represents the degree of this trade-off.  We can better visualize this trade-off by considering level curves (or contour plots) of the loss function–slices through the three-dimensional “loss surface” at different magnitudes of loss.</p>
 <figure>
     <img src="_static/figs_smm/loss_visual_1.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    Contour plot of the central banks' quadratic loss function.
     </figcaption>
 </figure>
 <p>The central bank understands that inflation and output are linked through the Phillips Curve. Therefore, its optimization problem can be expressed as:</p>
@@ -616,50 +613,50 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 <figure>
     <img src="_static/figs_smm/loss_visual_2.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    The central bank's problem: minimize loss while acknowledging the relationship between inflation and output represented by the Phillip's curve.  If inflation expectations are at the central bank's target, then they can achieve a zero output gap.
     </figcaption>
 </figure>
 <p>When inflation expectations equal the target <span class="math notranslate nohighlight">\((\pi_{t-1}=\bar{\pi})\)</span>, the central bank’s optimal policy produces an output gap of zero.</p>
 <figure>
     <img src="_static/figs_smm/loss_visual_3.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    The central bank's problem: minimize loss while acknowledging the relationship between inflation and output represented by the Phillip's curve.  Here, inflation expectations are above the central banks target, necessitating a negative output gap.
     </figcaption>
 </figure>
-<p>If inflation expectations rise above target, the central bank optimally creates a negative output gap—-slowing economic activity to bring inflation down.</p>
+<p>If inflation expectations rise above target, the central bank optimally creates a negative output gap—slowing economic activity to bring inflation down.</p>
 <figure>
     <img src="_static/figs_smm/loss_visual_4.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    The MP curve is the collection of optimal monetary responses for any given level of inflation expectations.
     </figcaption>
 </figure>
 <p>For any given current level of inflation expectations <span class="math notranslate nohighlight">\(\pi_{t-1}\)</span> we can represent the optimal monetary policy response.  The collection of all these optimal responses traces out the MP curve.</p>
 <figure>
     <img src="_static/figs_smm/loss_visual_5.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    Paying more attention to stabilizing inflation alters the shape of the loss function, and stretches the contour plots.  Optimal monetary responses, represented by the MP curve, show that the central bank is more willing to induce large output gaps in order to stabilize inflation.
     </figcaption>
 </figure>
-<p>When the central bank places greater weight on inflation stabilization (<span class="math notranslate nohighlight">\(\uparrow \phi\)</span>), the MP curve becomes steeper, reflecting a stronger willingness to create negative output gaps to fight inflation.</p>
+<p>When the central bank places greater weight on inflation stabilization (<span class="math notranslate nohighlight">\(\uparrow \phi\)</span>), the MP curve becomes flatter, reflecting a stronger willingness to create negative output gaps to fight inflation.  Conversely, if the central bank cared more output keeping output along its long-run trend then the MP curve becomes steeper: the central bank accepts inflation to deviate from its target in order to maintain stable output.</p>
 <figure>
     <img src="_static/figs_smm/loss_visual_6.png"
          alt="Disinflation under IS-MP-PC model"
          width="250"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
-    Quadratic loss function of the central bank
+    The Phillip's curve itself influences the shape of the MP curve.  An economy in which the output gap has strong influences on inflation has a high $\nu$ which generates a steeper Phillip's curve and consequently a flatter MP curve.
     </figcaption>
 </figure>
 <p>An economy in which the output gap has strong influences on inflation has a high <span class="math notranslate nohighlight">\(\nu\)</span> which generates a steeper Phillip’s curve and consequently a flatter MP curve.</p>
@@ -673,13 +670,17 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 \[
 \tilde{Y}_t=-\nu \phi(\pi_t-\bar{\pi})
 \]</div>
-<p>We now have a more sophisticated <strong>monetary policy rule</strong> that represents the central bank’s dual objective of stabilizing prices and encouraging the long-run trajectory of the economy given that there exists a short-run equilibrium relationship between inflation and the output gap coming through the Phillips curve. A flatter Phillips curve <span class="math notranslate nohighlight">\(\downarrow \nu\)</span> implies that the central bank will fight inflation less aggressively in that it does not induce such a large negative output gap.  A central bank that cares more about inflation <span class="math notranslate nohighlight">\(\uparrow \phi\)</span> will fight inflation aggressively in that it induces large negative output gaps whenever inflation is above target.</p>
+<p>Compared to our model where the central bank chooses the interest rate with complete discretion, we now have a more sophisticated <strong>monetary policy rule</strong> that represents the central bank’s dual objective of stabilizing prices and encouraging the long-run trajectory of the economy given that there exists a short-run equilibrium relationship between inflation and the output gap coming through the Phillips curve. A flatter Phillips curve <span class="math notranslate nohighlight">\(\downarrow \nu\)</span> implies that the central bank will fight inflation less aggressively in that it does not induce such a large negative output gap.  A central bank that cares more about inflation <span class="math notranslate nohighlight">\(\uparrow \phi\)</span> will fight inflation aggressively in that it induces large negative output gaps whenever inflation is above target.</p>
 <p>To make the model more realistic, assume that changes in the interest rate affect output with a one-period lag:</p>
 <div class="math notranslate nohighlight">
 \[
 \tilde{Y}_t = a-b(R_{t-1}-r)
 \]</div>
-<p>Empirically, investment and consumption respond to policy changes with a delay of one to two quarters. Combining this lagged IS curve with the Phillips and MP curves gives our short-run macro model:</p>
+<p>Empirically, investment and consumption respond to policy changes with a delay of one to two quarters.</p>
+<p>Combining this lagged IS curve with the Phillips and MP curves gives our short-run macro model:</p>
+<div class="definition admonition">
+<p class="admonition-title">Simple Macro Model</p>
+<p>Three equation macro model with monetary policy rule:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -693,10 +694,12 @@ Y_t = A_t K_t^{1/3}((1-u_t)L_t)^{2/3}
 <li><p>The MP curve shows that monetary policy adjusts interest rates according to a strict rule based on achieving its dual mandate</p></li>
 <li><p>The PC shows the rate of change in inflation given the output gap</p></li>
 </ul>
+</div>
 <p>These three equations jointly determine short-run fluctuations in output, inflation, and the policy interest rate.</p>
 <section id="monetary-policy-rule-in-interest-rates">
 <h3>Monetary Policy Rule in Interest Rates<a class="headerlink" href="#monetary-policy-rule-in-interest-rates" title="Link to this heading">#</a></h3>
-<p>Let’s clarify how the central bank implements it’s optimal monetary policy rule by adjusting interest rates. Combining the MP rule with the Phillips Curve gives:</p>
+<p>Let’s clarify how the central bank implements it’s optimal monetary policy rule by adjusting interest rates.</p>
+<p>Combining the MP rule with the Phillips Curve gives:</p>
 <div class="math notranslate nohighlight">
 \[
 -\left(\frac{1}{\nu \phi}+1 \right)\tilde{Y}_t=\pi_{t-1}+o-\bar{\pi}
@@ -766,7 +769,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_1.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -782,7 +785,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_2.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -791,7 +794,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_3.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -805,7 +808,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_4.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -813,7 +816,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_5.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -831,7 +834,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_6.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -840,7 +843,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_7.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -849,7 +852,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_8.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -857,7 +860,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_9.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -874,7 +877,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_10.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -883,7 +886,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_11.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -891,7 +894,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/ISMPPC_12.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -903,7 +906,7 @@ R_t - r = \varphi_1(\pi_t-\bar{\pi})+\varphi_2\tilde{Y}_t
 <figure>
     <img src="_static/figs_smm/loops.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -926,7 +929,7 @@ R_t = R_t^{ff} + f
 <figure>
     <img src="_static/figs_smm/spread.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -955,7 +958,7 @@ R_t = R_t^{ff} + f
 <figure>
     <img src="_static/figs_smm/ISMPPC_13.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>
@@ -976,7 +979,7 @@ a_t = \rho a_{t-1}+\epsilon_t
 <figure>
     <img src="_static/figs_smm/Smets_Wouters.png"
          alt="Disinflation under IS-MP-PC model"
-         width="250"
+         width="100"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     </figcaption>

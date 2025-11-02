@@ -17,8 +17,9 @@ parts:
             title: Some Empirical Monetary Facts
       - file: government-money
         title: Government Spending and Monetary Policy
-      - file: olg-government-example
-        title: An Example of a Monetary OLG Model with a Government
+        sections:
+          - file: olg-government-example
+            title: An Example of a Monetary OLG Model with a Government
       - file: olg-banking
         title: OLG Model of Banking
       - file: diamond-dybvig

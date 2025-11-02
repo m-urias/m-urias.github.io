@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,8 +177,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -371,7 +373,7 @@ document.write(`
 <p>We allow the growth rate of the money supply <span class="math notranslate nohighlight">\(z_t\)</span> to be a random variable.  It is standard in macroeconomics to suppose that such a state variable is an AR(1) process so we have</p>
 <div class="math notranslate nohighlight">
 \[
-z_{t+1}=(1-\rho)\bar{z}+\rho+\epsilon_{t+1}
+z_{t+1}=(1-\rho)\bar{z}+\rho z_t+\epsilon_{t+1}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{z}\)</span> if the steady state value of money supply growth, <span class="math notranslate nohighlight">\(\epsilon_{t+1}\)</span> is an i.i.d. shock, and <span class="math notranslate nohighlight">\(\rho \in [0,1]\)</span> measures how persist the shocks are.</p>
 </section>
@@ -381,7 +383,7 @@ z_{t+1}=(1-\rho)\bar{z}+\rho+\epsilon_{t+1}
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
-\max \ln(c_{1,t})+\ln(c_2{t+1})
+\max \ln(c_{1,t})+\ln(c_{2,t+1})
 c_{1,t}+\nu_t m_t\leq y \\
 c_{2,t+1}\leq \nu_{t+1}^e m_t+{a_{t+1}^e}
 \end{align*}
@@ -430,7 +432,7 @@ z_{t+1}^e = (1-\lambda)z_t^e+\lambda z_t
 \[
 E[z_{t+1}]=(1-\rho)z_t+\rho z_t
 \]</div>
-<p>In the simulation below we generate a deterministic path for <span class="math notranslate nohighlight">\(z_t\)</span> from an AR(1) process with a one-time positive shock at <span class="math notranslate nohighlight">\(t=1\)</span>.  Agents money demand $q_{t+1}(z_{t+1}^e) is then computed under the three alternatives:</p>
+<p>In the simulation below we generate a deterministic path for <span class="math notranslate nohighlight">\(z_t\)</span> from an AR(1) process with a one-time positive shock at <span class="math notranslate nohighlight">\(t=1\)</span>.  Agents money demand <span class="math notranslate nohighlight">\(q_{t+1}(z_{t+1}^e)\)</span> is then computed under the three alternatives:</p>
 <ol class="arabic simple">
 <li><p>Perfect forsight: <span class="math notranslate nohighlight">\(z_{t+1}^e=z_{t+1}\)</span></p></li>
 <li><p>Adaptive expectations: <span class="math notranslate nohighlight">\(z_{t+1}^e = (1-\lambda)z_t^e+\lambda z_t\)</span></p></li>
@@ -546,9 +548,9 @@ Peak |pi_pf - pi_re| = 0.02842639593908647
 </div>
 </div>
 </div>
-<p>First compare the dynamics of the perfect foresight equilibrium (PFE) with the adaptive expectations equilibrium (AEE).  Under perfect foresight agents perfectly <em>anticipate</em> the entire path of money growth.  Because <span class="math notranslate nohighlight">\(q_t\)</span> depends on the one-step-ahead forecast <span class="math notranslate nohighlight">\(z_{t+1}\)</span>, if agents know <span class="math notranslate nohighlight">\(z_{t+1}\)</span> wills spike and then mean-revert, they will choose <span class="math notranslate nohighlight">\(q_t\)</span> today to reflect that future path.  Hence, the one-time ten percent increase in money growth is fully internalized resulting in a sharp reduction in real money balances, followed by a quick recovery which inherits the exact same dynamics as the AR(1) process for money supply.  Conversely, under AEE agents forecasts update gradually causing a <em>lagged</em> response to real money demand.  At the time of the shock they under-react relative to PFE since their forecast <span class="math notranslate nohighlight">\(z^e\)</span> is lagging actual <span class="math notranslate nohighlight">\(z\)</span>.  Real money demand falls less and gradually recovers as beliefs update.</p>
+<p>First compare the dynamics of the perfect foresight equilibrium (PFE) with the adaptive expectations equilibrium (AEE).  Under PFE agents perfectly <em>anticipate</em> the entire path of money growth.  Because <span class="math notranslate nohighlight">\(q_t\)</span> depends on the one-step-ahead forecast <span class="math notranslate nohighlight">\(z_{t+1}\)</span>, if agents know <span class="math notranslate nohighlight">\(z_{t+1}\)</span> will spike and then mean-revert, they will choose <span class="math notranslate nohighlight">\(q_t\)</span> today to reflect that future path.  Hence, the one-time ten percent increase in money growth is fully internalized resulting in a sharp reduction in real money balances, followed by a quick recovery which inherits the exact same dynamics as the AR(1) process for money supply.  Conversely, under AEE agents’ forecasts update gradually causing a <em>lagged</em> response to real money demand.  At the time of the shock they under-react relative to PFE since their forecast <span class="math notranslate nohighlight">\(z^e\)</span> is lagging actual <span class="math notranslate nohighlight">\(z\)</span>.  Real money demand falls less and gradually recovers as beliefs update.</p>
 <p>Because inflation depends on both current real money demand and future real money demand, the different reactions from PFE and AEE generate different inflation dynamics.  PFE generates a sharp rise in inflation since agents dramatically reduce real balances in reaction to the shock.  AEE realizes less of a spike in inflation because beliefs update slowly.  The difference in peak inflation between PFE adn AEE is about 5 percent.  Inflation then reverts to its steady state level very fast under PFE and slower under AEA.</p>
-<p>Now consider rational expectations equilibrium (REE).  Agents only know the statistical law of motion for money growth (the AR(1) process), but not the actual shocks.  When the shock hits, they only partially adjust their forecast depend on how persistent the shock is.  Compared to PFE, expectations are still forward looking, but restricted by unpredictability of shocks.  Therefore, REE exhibits slower dynamics compared to PFE, but faster compared to AEE.  The peak difference in inflation between REE and PFE is about 3 percent.  This difference is very sensitive to the persistence of the shock process.  If <span class="math notranslate nohighlight">\(\rho\)</span> is small, then <span class="math notranslate nohighlight">\(z_t\)</span> today tells REE agents very little about <span class="math notranslate nohighlight">\(z_{t+1}\)</span>.  Their expectation is therefore a muted version of the realized shock: they underreact more relative to PF.  PF agents see through short-lived shocks immediately, while RE agents learn only through observed data and the known AR(1) law.</p>
+<p>Now consider rational expectations equilibrium (REE).  Agents only know the statistical law of motion for money growth (the AR(1) process), but not the actual shocks.  When the shock hits, they only partially adjust their forecast depending on how persistent the shock is.  Compared to PFE, expectations are still forward looking, but restricted by the unpredictability of shocks.  Therefore, REE exhibits slower dynamics compared to PFE, but faster compared to AEE.  The peak difference in inflation between REE and PFE is about 3 percent.  This difference is very sensitive to the persistence of the shock process.  If <span class="math notranslate nohighlight">\(\rho\)</span> is small, then <span class="math notranslate nohighlight">\(z_t\)</span> today tells REE agents very little about <span class="math notranslate nohighlight">\(z_{t+1}\)</span>.  Their expectation is therefore a muted version of the realized shock: they underreact more relative to PF.  PF agents see through short-lived shocks immediately, while RE agents learn only through observed data and the known AR(1) law.</p>
 </section>
 </section>
 

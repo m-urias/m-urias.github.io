@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -178,8 +178,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -350,10 +352,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overlapping-generations-model-of-money-inflation-and-assets">Overlapping Generations Model of Money, Inflation, and Assets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interbank-market-and-monetary-policy">Interbank Market and Monetary Policy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-monetary-policy-transmission">A Simple Model of Monetary Policy Transmission</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overlapping-generations-model-of-money-inflation-and-assets">Overlapping Generations Model of Money, Inflation, and Assets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interbank-market-and-monetary-policy">Interbank Market and Monetary Policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-monetary-policy-transmission">A Simple Model of Monetary Policy Transmission</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -367,36 +372,58 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="money-and-banking">
 <h1>Money and Banking<a class="headerlink" href="#money-and-banking" title="Link to this heading">#</a></h1>
-<p>Welcome to the Money and Banking course site.  Included here are lectures and data tutorials.  Lectures provide theoretical models related to money, assets, banking, and monetary policy.  Data tutorials are intended to show students what economic databases are publicly available, how to acquire data, and how to analyze the data using Python.</p>
+<p>Welcome to my Money and Banking course site.  Included here are lectures and data tutorials for my class presented in a Jupyter Book.  Lectures provide theoretical models related to money, assets, banking, and monetary policy.  Data tutorials are intended to show students what economic databases are publicly available, how to acquire data, and how to analyze the data using Python.</p>
+<section id="course-overview">
+<h2>Course Overview<a class="headerlink" href="#course-overview" title="Link to this heading">#</a></h2>
+<p>This course focuses on monetary theory, financial intermediation, and central bank policy. The first part of the curriculum develops a theoretical framework used to explain the
+existence of money and banks. Our theory demonstrates key relationships between the availability of liquid assets, inflation, output, and regulations imposed on banks. Second, we discuss the real world business of banking which includes deposit creation, fractional reserve banking, and the interbank market. Third, we discuss the role of central banks in modern economies and analyze the conduct of monetary policy through tools such as the reserve requirement, lending facilities, short-term interest rates, and quantitative easing.</p>
+<p>Below is a table of contents for the course content.  This table of contents can also be conveniently navigated on the left hand panel.</p>
 <section id="overlapping-generations-model-of-money-inflation-and-assets">
-<h2>Overlapping Generations Model of Money, Inflation, and Assets<a class="headerlink" href="#overlapping-generations-model-of-money-inflation-and-assets" title="Link to this heading">#</a></h2>
+<h3>Overlapping Generations Model of Money, Inflation, and Assets<a class="headerlink" href="#overlapping-generations-model-of-money-inflation-and-assets" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#olg-model.ipynb"><span class="xref myst">OLG Model of Money</span></a> – Foundational relationships between money, inflation, and interest rates.</p></li>
+<li><p><a class="reference internal" href="olg_model.html"><span class="std std-doc">OLG Model of Money</span></a> – This lecture introduces the overlapping generations (OLG) framework and explores what features of an economy are necessary to give rise to fiat currency.  We then analyze under what conditions fiat currency has value and explore long-run relationships between money, inflation, and interest rates.  We also consider the degree to which fiat currency can coexist with alternative interest-bearing assets and discuss optimal monetary policy.</p>
+<ul>
+<li><p><a class="reference internal" href="olg-model-details.html"><span class="std std-doc">Technical Details of our OLG model</span></a> - We explore properties of the money demand function derived under our OLG model and provide examples of stationary and non-stationary equilibria. We also discuss the local stability of monetary and non-monetary equilibria.</p></li>
+<li><p><a class="reference internal" href="olg-expectations.html"><span class="std std-doc">The Role of Expectations in OLG Dynamics</span></a> - We show how our monetary equilibria behaves differently under three different forecasting rules: perfect foresight, adaptive expectations, and rational expectations.</p></li>
+<li><p><a class="reference internal" href="monetary-aggregates-data-tutorial.html"><span class="std std-doc">Monetary Aggregates Data Turorial</span></a> - We show how to download data from the Federal Reserve Economic Data (FRED) using an API in Python and then provide descriptive statistics for monetary aggregates in the US.</p></li>
+<li><p><a class="reference internal" href="monetary-facts.html"><span class="std std-doc">Some Empirical Monetary Facts</span></a> - We analyze the empirical relationship between money, inflation, and output using Python.</p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="government-money.html"><span class="std std-doc">Government Spending and Monetary Policy</span></a> - We introduce a government sector into the OLG model in order to explore the trade-offs between printing money for government revenue and providing public goods.  We also discuss the seminal paper by Sargent and Wallace that explore the degree to which monetary policy remains effective when interacting with a fiscal authority.
+<a class="reference internal" href="olg-government-example.html"><span class="std std-doc">An Example of a Monetary OLG Model with a Government</span></a> - We explore a numerical example of our OLG economy with a government to show a Laffer curve relationship between money creation and government revenue, multiplicity of equilibria, and the dynamics of the economy toward a stable monetary equilibria as well as a monetary collapse.</p></li>
 <li><p><a class="reference internal" href="olg-banking.html"><span class="std std-doc">OLG Model of Banking</span></a> – Foundational relationships between inside money, outside money, and monetary policy.</p></li>
-<li><p><a class="reference internal" href="government-money.html"><span class="std std-doc">Government Spending and Monetary Policy</span></a> - Introduction to the relationship between the central banks control over inflation in the presence of a fiscal authority.</p></li>
-<li><p><a class="reference internal" href="monetary-facts.html"><span class="std std-doc">Empirical Monetary Facts</span></a> - An overview of statistical relationships between money supply, inflation, and output.</p></li>
+<li><p><a class="reference internal" href="monetary-facts.html"><span class="std std-doc">Empirical Monetary Facts</span></a> - We describe how banks provide liquidity to households in our OLG model.  We explore the relationship between bank deposits and fiat currency as well as how central bank policies can effect nominal and real variables in our economy.</p></li>
+<li><p><a class="reference internal" href="diamond-dybvig.html"><span class="std std-doc">Diamond-Dybvig Model of Banking</span></a> - We discuss liquidity role of banks from the perspective of Diamond and Dybvig.  We identify how banks provide insurance against liquidity shocks and why bank runs can be an equilibrium phenomena.</p></li>
 </ul>
 </section>
 <section id="interbank-market-and-monetary-policy">
-<h2>Interbank Market and Monetary Policy<a class="headerlink" href="#interbank-market-and-monetary-policy" title="Link to this heading">#</a></h2>
+<h3>Interbank Market and Monetary Policy<a class="headerlink" href="#interbank-market-and-monetary-policy" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="term-structure-of-interest-rates.html"><span class="std std-doc">Term Structure of Interest Rates</span></a> - An introduction to the term structure of interest rates.</p></li>
-<li><p><a class="reference internal" href="monetary-policy-systems.html"><span class="std std-doc">Monetary Policy Systems</span></a> - A model of the floor versus corridor systems of monetary policy.</p></li>
+<li><p><a class="reference internal" href="bank-balance-sheets.html"><span class="std std-doc">Bank Balance Sheets</span></a> - We review how banks record common transactions in their balance sheet.  We use T-accounts to discuss how a hypothetical bank starts operations, generates profits through creating loans and investing in securities, and engages in open market operations with the central bank.  We also discuss the importance of reserves and capital adequacy standards for maintaining stability in the banking system.</p></li>
+<li><p><a class="reference internal" href="term-structure-of-interest-rates.html"><span class="std std-doc">Term Structure of Interest Rates</span></a> - An introduction to the term structure of interest rates.  Our primary theory is the liquidity augmented expectations theory of the term structure of interest rates.
+-<a class="reference internal" href="yield-curve-data-tutorial.html"><span class="std std-doc">Yield Curve Data Tutorial</span></a> - We use Python to analyze relationships between short- and long-rates implies by our theory of the term structure.</p></li>
+<li><p><a class="reference internal" href="monetary-policy-systems.html"><span class="std std-doc">Monetary Policy Systems</span></a> - We build a model of the interbank market for reserves and discuss how the US and China conduct monetary policy by interventions in this market.  We also elucidate the different between the floor and corridor monetary policy systems.</p></li>
 </ul>
 </section>
 <section id="a-simple-model-of-monetary-policy-transmission">
-<h2>A Simple Model of Monetary Policy Transmission<a class="headerlink" href="#a-simple-model-of-monetary-policy-transmission" title="Link to this heading">#</a></h2>
+<h3>A Simple Model of Monetary Policy Transmission<a class="headerlink" href="#a-simple-model-of-monetary-policy-transmission" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#macro-model.ipynb"><span class="xref myst">A Macro Model of Monetary Policy Transmission</span></a> - A simple three equation macro model that shows the effects of monetary policy.</p></li>
+<li><p><a class="reference internal" href="measuring-business-cycles.html"><span class="std std-doc">Measuring Business Cycles</span></a> - We define the difference between short-run and long-run within an economic context.</p>
+<ul>
+<li><p><a class="reference internal" href="extracting-business-cycles.html"><span class="std std-doc">Extracting Business Cycles from Time Series</span></a> - We review the statistical methods of filtering and use Python to extract business cycles from data on real GDP for the US.</p></li>
 </ul>
-<hr class="docutils" />
+</li>
+<li><p><a class="reference internal" href="#macro-model.ipynb"><span class="xref myst">A Macro Model of Monetary Policy Transmission</span></a> - We build a simple three equation macro model (IS-MP-PC) that shows the effects of monetary policy.  Our model is demonstrates the short-run dynamics of the economy and includes an optimal monetary policy rule (e.g. a Taylor rule) which responds to economic conditions in real-time.</p></li>
+</ul>
 </section>
+<hr class="docutils" />
 <section id="resources">
-<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h2>
+<h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="#../money%20and%20banking/syllabus.pdf"><span class="xref myst">Syllabus (PDF)</span></a></p></li>
 <li><p><a class="reference internal" href="#../assets/readings.html"><span class="xref myst">Additional readings</span></a></p></li>
 </ul>
+</section>
 </section>
 <hr class="docutils" />
 <div class="toctree-wrapper compound">
@@ -464,10 +491,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overlapping-generations-model-of-money-inflation-and-assets">Overlapping Generations Model of Money, Inflation, and Assets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interbank-market-and-monetary-policy">Interbank Market and Monetary Policy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-monetary-policy-transmission">A Simple Model of Monetary Policy Transmission</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overlapping-generations-model-of-money-inflation-and-assets">Overlapping Generations Model of Money, Inflation, and Assets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interbank-market-and-monetary-policy">Interbank Market and Monetary Policy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-model-of-monetary-policy-transmission">A Simple Model of Monetary Policy Transmission</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

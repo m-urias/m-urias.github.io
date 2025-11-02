@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,8 +177,10 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -364,28 +366,64 @@ document.write(`
 \text{(correlation coefficient)}:r = \frac{\text{cov}(x,y)}{\sigma_x \sigma_y}
 \]</div>
 <p>Based on their study, McCandless and Weber claim there are three monetary facts that hold across countries over the long-run.</p>
-<p><strong>Fact 1: In the long-run, there is a high (almost unity) correlation between the rate of growth of the money supply and the rate of inflation.  This holds across three definitions of money and across the full sample of countries and two subsamples.</strong>
-\begin{figure}
-\includegraphics[scale=0.3]{McW1}
-\end{figure}</p>
-<p>\begin{figure}
-\includegraphics[scale=0.35]{McW2}
-\end{figure}</p>
-<p><strong>Fact 2: In the long-run, there is no correlation between the growth rates of money and real output.  This holds across all definitions of money, but not for a subsample of OECD countries, where the correlation seems to be positive.</strong>
-\begin{figure}
-\includegraphics[scale=0.3]{McW3}
-\end{figure}</p>
-<p>\begin{figure}
-\includegraphics[scale=0.35]{McW4}
-\end{figure}</p>
-<p>\begin{figure}
-\includegraphics[scale=0.35]{McW5}
-\end{figure}</p>
-<p><strong>Fact 3: In the long-run, there is no correlation between inflation and real output growth.</strong>
-\begin{figure}
-\includegraphics[scale=0.3]{McW6}
-\end{figure}
-But, this finding is inconsistent with other studies, so the verdict is still unclear.</p>
+<p><strong>Fact 1: In the long-run, there is a high (almost unity) correlation between the rate of growth of the money supply and the rate of inflation.  This holds across three definitions of money and across the full sample of countries and two subsamples.</strong></p>
+<figure>
+    <img src="_static/figs_LR/McW1.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_LR/McW2.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<p><strong>Fact 2: In the long-run, there is no correlation between the growth rates of money and real output.  This holds across all definitions of money, but not for a subsample of OECD countries, where the correlation seems to be positive.</strong></p>
+<figure>
+    <img src="_static/figs_LR/McW3.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_LR/McW4.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_LR/McW5.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<p><strong>Fact 3: In the long-run, there is no correlation between inflation and real output growth.</strong></p>
+<figure>
+    <img src="_static/figs_LR/McW6.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Source: <a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a>.
+    </figcaption>
+</figure>
+<p>But, this finding is inconsistent with other studies, so the verdict is still unclear.</p>
 <p>Based on these facts, we can draw the following conclusions:</p>
 <ul class="simple">
 <li><p>Central banks can adjust long-run inflation rates by adjusting the growth rate of money.</p></li>
@@ -451,427 +489,13 @@ But, this finding is inconsistent with other studies, so the verdict is still un
 <li><p>Time Period: “All”</p></li>
 </ul>
 <p>For a complete description of the definitions of these data series, see the  <a href="https://www.imf.org/en/Data/Manuals-and-Guides#real-sector" target="_blank">IMF’s Statistics Manuals and Guides</a>.  For monetary data specifically, go to <a href="https://www.imf.org/~/media/Files/Data/Guides/mfsmcg-final.ashx" target="_blank">Monetary and Financial Statistics Manual and Compilation Guide (MFSMCG)</a>; page 179 of this guide discusses the definitions of money used by the IMF datasets.  You’ll notice that the IMF’s definition of broad money does not precisely coincide with the US’s definition of M2, but for international comparability we stick with the IMF’s broad money aggregate.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="n">df_gdp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_GDP.xlsx&quot;</span><span class="p">)</span>
-<span class="n">df_cpi_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_consumer_prices.xlsx&quot;</span><span class="p">)</span>
-<span class="n">df_magg_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_monetary_aggregates.xlsx&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="c1"># File path</span>
-<span class="n">FILE_GDP</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_GDP.xlsx&quot;</span>
-
-<span class="c1"># The header row is the 1st row (index 0) in your cleaned Excel file.</span>
-<span class="n">HEADER_ROW</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="n">METADATA_COLS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;INDICATOR&#39;</span><span class="p">,</span> <span class="s1">&#39;PRICE_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;S_ADJUSTMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;TYPE_OF_TRANSFORMATION&#39;</span><span class="p">,</span> <span class="s1">&#39;FREQUENCY&#39;</span><span class="p">]</span>
-
-
-<span class="c1"># Filtering parameters for Nominal GDP</span>
-<span class="c1"># Use current prices, not seasonally adjusted, domestic currency</span>
-<span class="n">NOMINAL_GDP_FILTERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;PRICE_TYPE&#39;</span><span class="p">:</span> <span class="s1">&#39;Current prices&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;S_ADJUSTMENT&#39;</span><span class="p">:</span> <span class="s1">&#39;Not seasonally adjusted (NSA)&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;TYPE_OF_TRANSFORMATION&#39;</span><span class="p">:</span> <span class="s1">&#39;Domestic currency&#39;</span>
-<span class="p">}</span>
-
-<span class="c1"># Define the output column name for the nominal series</span>
-<span class="n">INDICATOR_NAME</span> <span class="o">=</span> <span class="s1">&#39;Nominal_GDP&#39;</span>
-
-
-<span class="c1"># --- Core Processing Function ---</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">clean_gdp_and_calculate_growth</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">filter_params</span><span class="p">,</span> <span class="n">indicator_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Loads, cleans, filters for the required GDP series, converts to annual totals, </span>
-<span class="sd">    and calculates annual log-difference growth rates for all countries.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Processing GDP Data: </span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># 1. Load the data with the correct header row</span>
-    <span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">HEADER_ROW</span><span class="p">)</span>
-    
-    <span class="c1"># 2. Filter for the desired series type (Nominal GDP in this case)</span>
-    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">filter_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="c1"># Using .astype(str).str.strip() to handle potential whitespace issues</span>
-        <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">df_filtered</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">value</span><span class="p">]</span> 
-        
-    <span class="k">if</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Warning: No data found for </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> after applying filters: </span><span class="si">{</span><span class="n">filter_params</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-    <span class="c1"># 3. Melt the DataFrame from wide to long format</span>
-    <span class="n">id_vars</span> <span class="o">=</span> <span class="n">METADATA_COLS</span>
-    <span class="n">value_vars</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">id_vars</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    
-    <span class="n">df_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-        <span class="n">df_filtered</span><span class="p">,</span>
-        <span class="n">id_vars</span><span class="o">=</span><span class="n">id_vars</span><span class="p">,</span>
-        <span class="n">value_vars</span><span class="o">=</span><span class="n">value_vars</span><span class="p">,</span>
-        <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">,</span>
-        <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">])</span>
-    
-    <span class="c1"># 4. Prepare for Annual Aggregation</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># 5. Aggregate Quarterly Data to Annual Total (sum)</span>
-    <span class="n">df_annual</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">df_annual</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">indicator_name</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># 6. Calculate Log-Difference Annual Growth Rate</span>
-    <span class="n">growth_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s1">_Growth&#39;</span>
-    <span class="n">df_annual</span><span class="p">[</span><span class="n">growth_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_annual</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">)[</span><span class="n">indicator_name</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span><span class="o">.</span><span class="n">diff</span><span class="p">())</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># 7. Final Clean-up and Display</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_annual</span><span class="p">[[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">growth_col</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1961</span><span class="p">]</span> <span class="c1"># Drop 1960 because growth is NaN</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> Processing Complete.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Years of Growth Data (1961+): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Countries Processed: </span><span class="si">{</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">df_final</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
-
-<span class="c1"># --- Execute ---</span>
-<span class="n">df_nominal_gdp_growth</span> <span class="o">=</span> <span class="n">clean_gdp_and_calculate_growth</span><span class="p">(</span>
-    <span class="n">FILE_GDP</span><span class="p">,</span> 
-    <span class="n">NOMINAL_GDP_FILTERS</span><span class="p">,</span> 
-    <span class="n">INDICATOR_NAME</span>
-<span class="p">)</span>
-
-<span class="c1"># --- Output Summary ---</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">df_nominal_gdp_growth</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;             Sample Output (Nominal GDP Growth)             &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-    
-    <span class="c1"># Show United States data, which should now start in 1961</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">United States Sample (1961-1965):&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df_nominal_gdp_growth</span><span class="p">[</span><span class="n">df_nominal_gdp_growth</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;United States&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">❌ Failed to produce the final Nominal GDP growth DataFrame.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Processing GDP Data: IMF_GDP.xlsx ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Nominal_GDP Processing Complete.
-Total Years of Growth Data (1961+): 2833
-Total Countries Processed: 109
-
-======================================================================
-             Sample Output (Nominal GDP Growth)             
-======================================================================
-
-United States Sample (1961-1965):
-      COUNTRY Year  Nominal_GDP_Growth
-United States 1961            3.590496
-United States 1962            7.156476
-United States 1963            5.403585
-United States 1964            7.115447
-United States 1965            8.110856
-----------------------------------------------------------------------
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="c1"># --- File Path and Setup ---</span>
-<span class="n">FILE_CPI</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_consumer_prices.xlsx&quot;</span>
-
-<span class="c1"># The header row is the 1st row (index 0).</span>
-<span class="n">HEADER_ROW</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="c1"># Note the slightly different metadata columns for this file</span>
-<span class="n">METADATA_COLS_CPI</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;INDEX_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;COICOP_1999&#39;</span><span class="p">,</span> <span class="s1">&#39;TYPE_OF_TRANSFORMATION&#39;</span><span class="p">,</span> <span class="s1">&#39;FREQUENCY&#39;</span><span class="p">]</span>
-
-
-<span class="c1"># --- Filtering Parameters for CPI (Inflation) ---</span>
-<span class="c1"># Goal: Consumer prices, All Items, Index level (using user-provided exact strings)</span>
-<span class="n">CPI_FILTERS</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;INDEX_TYPE&#39;</span><span class="p">:</span> <span class="s1">&#39;Consumer price index (CPI)&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;COICOP_1999&#39;</span><span class="p">:</span> <span class="s1">&#39;All Items&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;TYPE_OF_TRANSFORMATION&#39;</span><span class="p">:</span> <span class="s1">&#39;Index&#39;</span>
-<span class="p">}</span>
-
-<span class="c1"># Define the output column name</span>
-<span class="n">INDICATOR_NAME_CPI</span> <span class="o">=</span> <span class="s1">&#39;CPI_Index&#39;</span>
-
-
-<span class="c1"># --- Core Processing Function for CPI ---</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">clean_cpi_and_calculate_growth</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">filter_params</span><span class="p">,</span> <span class="n">indicator_name</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Loads, cleans, filters for the CPI series using exact user-provided strings, </span>
-<span class="sd">    converts to annual averages, and calculates the annual inflation rate (CPI growth).</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Processing CPI Data: </span><span class="si">{</span><span class="n">file_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># 1. Load the data with the correct header row</span>
-    <span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">HEADER_ROW</span><span class="p">)</span>
-    
-    <span class="c1"># 2. Filter for the desired series type (CPI Index)</span>
-    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">filter_params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="c1"># Use str.strip() to handle possible trailing spaces in the Excel data</span>
-        <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">df_filtered</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">value</span><span class="p">]</span> 
-        
-    <span class="k">if</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Warning: No data found for </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> after applying filters: </span><span class="si">{</span><span class="n">filter_params</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   If this fails, double-check the case sensitivity and exact wording in your Excel file.&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-    <span class="c1"># 3. Melt the DataFrame from wide to long format</span>
-    <span class="n">id_vars</span> <span class="o">=</span> <span class="n">METADATA_COLS_CPI</span>
-    <span class="n">value_vars</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">id_vars</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    
-    <span class="n">df_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-        <span class="n">df_filtered</span><span class="p">,</span>
-        <span class="n">id_vars</span><span class="o">=</span><span class="n">id_vars</span><span class="p">,</span>
-        <span class="n">value_vars</span><span class="o">=</span><span class="n">value_vars</span><span class="p">,</span>
-        <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">,</span>
-        <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">])</span>
-    
-    <span class="c1"># 4. Prepare for Annual Aggregation</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># 5. Aggregate Monthly/Quarterly Data to Annual Average (mean)</span>
-    <span class="c1"># The mean is the correct aggregation for an index used to compute inflation</span>
-    <span class="n">df_annual</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">df_annual</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">indicator_name</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># 6. Calculate Log-Difference Annual Growth Rate (Inflation)</span>
-    <span class="n">growth_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s1">_Growth&#39;</span>
-    <span class="n">df_annual</span><span class="p">[</span><span class="n">growth_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_annual</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">)[</span><span class="n">indicator_name</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span><span class="o">.</span><span class="n">diff</span><span class="p">())</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># 7. Final Clean-up and Display</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_annual</span><span class="p">[[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">growth_col</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1961</span><span class="p">]</span> 
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> Processing Complete.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Years of Growth Data (1961+): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df_final</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total Countries Processed: </span><span class="si">{</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">df_final</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
-
-<span class="c1"># --- Execute ---</span>
-<span class="n">df_cpi_growth</span> <span class="o">=</span> <span class="n">clean_cpi_and_calculate_growth</span><span class="p">(</span>
-    <span class="n">FILE_CPI</span><span class="p">,</span> 
-    <span class="n">CPI_FILTERS</span><span class="p">,</span> 
-    <span class="n">INDICATOR_NAME_CPI</span>
-<span class="p">)</span>
-
-<span class="c1"># --- Output Summary ---</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">df_cpi_growth</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;             Sample Output (CPI Growth / Inflation)             &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">70</span><span class="p">)</span>
-    
-    <span class="c1"># Show United States data</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">United States Sample (1961-1965):&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df_cpi_growth</span><span class="p">[</span><span class="n">df_cpi_growth</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;United States&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">70</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">❌ Failed to produce the final CPI growth DataFrame.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Processing CPI Data: IMF_consumer_prices.xlsx ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ CPI_Index Processing Complete.
-Total Years of Growth Data (1961+): 5333
-Total Countries Processed: 195
-
-======================================================================
-             Sample Output (CPI Growth / Inflation)             
-======================================================================
-
-United States Sample (1961-1965):
-      COUNTRY Year  CPI_Index_Growth
-United States 1961          1.065032
-United States 1962          1.191645
-United States 1963          1.232048
-United States 1964          1.270803
-United States 1965          1.572737
-----------------------------------------------------------------------
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
-
-<span class="c1"># --- File Path and Setup ---</span>
-<span class="n">FILE_MAGG</span> <span class="o">=</span> <span class="s2">&quot;C:/Users/XPS/Dropbox/Website/Money and Banking/IMF_monetary_aggregates.xlsx&quot;</span>
-
-<span class="c1"># The header row is the 1st row (index 0).</span>
-<span class="n">HEADER_ROW</span> <span class="o">=</span> <span class="mi">0</span> 
-<span class="c1"># Note the metadata columns for this file</span>
-<span class="n">METADATA_COLS_MAGG</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DATASET&#39;</span><span class="p">,</span> <span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;INDICATOR&#39;</span><span class="p">,</span> <span class="s1">&#39;UNIT&#39;</span><span class="p">,</span> <span class="s1">&#39;FREQUENCY&#39;</span><span class="p">]</span>
-
-
-<span class="c1"># --- Filtering Parameters for Monetary Aggregates ---</span>
-<span class="c1"># We use the INDICATOR column to filter for the three required series.</span>
-<span class="n">MONETARY_SERIES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;M2_Broad&#39;</span><span class="p">:</span> <span class="s1">&#39;Broad Money&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;M1_Narrow&#39;</span><span class="p">:</span> <span class="s1">&#39;National Definitions of Money, Narrow&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;M0_Base&#39;</span><span class="p">:</span> <span class="s1">&#39;National Definitions of Money, Base&#39;</span>
-<span class="p">}</span>
-
-
-<span class="c1"># --- Core Processing Function for Monetary Aggregates ---</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">clean_monetary_and_calculate_growth</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">indicator_name</span><span class="p">,</span> <span class="n">filter_value</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Loads, cleans, filters for a single monetary aggregate, converts to </span>
-<span class="sd">    annual averages, and calculates the annual growth rate.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- Processing Monetary Aggregate: </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
-    
-    <span class="c1"># 1. Load the data with the correct header row</span>
-    <span class="n">df_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">HEADER_ROW</span><span class="p">)</span>
-    
-    <span class="c1"># 2. Filter for the desired single series</span>
-    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_raw</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="c1"># Filter only on the INDICATOR column using the exact string</span>
-    <span class="n">df_filtered</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="p">[</span><span class="n">df_filtered</span><span class="p">[</span><span class="s1">&#39;INDICATOR&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="o">==</span> <span class="n">filter_value</span><span class="p">]</span>
-        
-    <span class="k">if</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Warning: No data found for </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> using filter: &#39;</span><span class="si">{</span><span class="n">filter_value</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-
-    <span class="c1"># 3. Melt the DataFrame from wide to long format</span>
-    <span class="n">id_vars</span> <span class="o">=</span> <span class="n">METADATA_COLS_MAGG</span>
-    <span class="n">value_vars</span> <span class="o">=</span> <span class="n">df_filtered</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">id_vars</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-    
-    <span class="n">df_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
-        <span class="n">df_filtered</span><span class="p">,</span>
-        <span class="n">id_vars</span><span class="o">=</span><span class="n">id_vars</span><span class="p">,</span>
-        <span class="n">value_vars</span><span class="o">=</span><span class="n">value_vars</span><span class="p">,</span>
-        <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">,</span>
-        <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;Value&#39;</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">])</span>
-    
-    <span class="c1"># 4. Prepare for Annual Aggregation</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Date_Period&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>
-    <span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_long</span><span class="p">[</span><span class="s1">&#39;Value&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># 5. Aggregate Monthly/Quarterly Data to Annual Average (mean)</span>
-    <span class="n">df_annual</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-    <span class="n">df_annual</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Value&#39;</span><span class="p">:</span> <span class="n">indicator_name</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    
-    <span class="c1"># 6. Calculate Log-Difference Annual Growth Rate</span>
-    <span class="n">growth_col</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s1">_Growth&#39;</span>
-    <span class="n">df_annual</span><span class="p">[</span><span class="n">growth_col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_annual</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">)[</span><span class="n">indicator_name</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">))</span><span class="o">.</span><span class="n">diff</span><span class="p">())</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># 7. Final Clean-up and Return Growth Column</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_annual</span><span class="p">[[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">growth_col</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-    <span class="n">df_final</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">1961</span><span class="p">]</span> 
-    
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ </span><span class="si">{</span><span class="n">indicator_name</span><span class="si">}</span><span class="s2"> Processing Complete. Countries with data: </span><span class="si">{</span><span class="n">df_final</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">df_final</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">])</span>
-
-
-<span class="c1"># --- Execute All Monetary Aggregates and Combine ---</span>
-
-<span class="n">monetary_dfs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_val</span> <span class="ow">in</span> <span class="n">MONETARY_SERIES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="n">df_growth</span> <span class="o">=</span> <span class="n">clean_monetary_and_calculate_growth</span><span class="p">(</span><span class="n">FILE_MAGG</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">filter_val</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">df_growth</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
-        <span class="n">monetary_dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df_growth</span><span class="p">)</span>
-
-<span class="c1"># Combine the three monetary dataframes (M0, M1, M2)</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">monetary_dfs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="c1"># Use reduce to sequentially merge the three monetary dataframes on COUNTRY and Year</span>
-    <span class="n">df_magg_growth</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">),</span>
-        <span class="n">monetary_dfs</span>
-    <span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;             ✅ Combined Monetary Aggregates Growth Database             &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">80</span><span class="p">)</span>
-    
-    <span class="c1"># Show United States data</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">United States Sample (1961-1965):&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df_magg_growth</span><span class="p">[</span><span class="n">df_magg_growth</span><span class="p">[</span><span class="s1">&#39;COUNTRY&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;United States&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Summary of Columns:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df_magg_growth</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">80</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">❌ FATAL: No monetary aggregate dataframes could be created. Please check the INDICATOR filter strings.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Processing Monetary Aggregate: M2_Broad ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ M2_Broad Processing Complete. Countries with data: 144
---- Processing Monetary Aggregate: M1_Narrow ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>❌ Warning: No data found for M1_Narrow using filter: &#39;National Definitions of Money, Narrow&#39;
---- Processing Monetary Aggregate: M0_Base ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>❌ Warning: No data found for M0_Base using filter: &#39;National Definitions of Money, Base&#39;
-
-================================================================================
-             ✅ Combined Monetary Aggregates Growth Database             
-================================================================================
-
-United States Sample (1961-1965):
-      COUNTRY Year  M2_Broad_Growth
-United States 2002         1.926339
-United States 2003         5.423656
-United States 2004         4.688977
-United States 2005         6.147100
-United States 2006         8.814931
-
-Summary of Columns:
-[&#39;COUNTRY&#39;, &#39;Year&#39;, &#39;M2_Broad_Growth&#39;]
---------------------------------------------------------------------------------
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+<p>After having downloaded the above data locally, we first clean and merge the data into a single <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> containing the annual growth rates for nominal GDP, real GDP, CPI index, monetary base, aggregate M1, and aggregate M2 for the years 2002 - 2024.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -1044,27 +668,18 @@ Summary of Columns:
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Processing: Nominal_GDP from IMF_GDP ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ Nominal_GDP Processing Complete. Countries: 109
+✅ Nominal_GDP Processing Complete. Countries: 109
 --- Processing: CPI_Index from IMF_consumer_prices ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ CPI_Index Processing Complete. Countries: 195
+✅ CPI_Index Processing Complete. Countries: 195
 --- Processing: M2_Broad from IMF_monetary_aggregates ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ M2_Broad Processing Complete. Countries: 144
+✅ M2_Broad Processing Complete. Countries: 144
 --- Processing: M1_Narrow from IMF_monetary_aggregates ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ M1_Narrow Processing Complete. Countries: 139
+✅ M1_Narrow Processing Complete. Countries: 139
 --- Processing: M0_Base from IMF_monetary_aggregates ---
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>✅ M0_Base Processing Complete. Countries: 100
+✅ M0_Base Processing Complete. Countries: 100
 
 
 ==========================================================================================
@@ -1094,7 +709,12 @@ Final Columns:
 </div>
 </div>
 <p>Now we compute the correlation between each monetary aggregate and inflation.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ----------------------------------------------------------------------</span>
 <span class="c1"># --- 6. CORRELATION TEST: Money Growth vs. Inflation ---</span>
@@ -1129,6 +749,7 @@ Final Columns:
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>==================================================
 CORRELATION RESULTS: Money Growth vs. Inflation (2002-2025)
@@ -1142,8 +763,13 @@ Total Country-Year Observations Used: 673
 </div>
 </div>
 </div>
-<p>The results are very different from McCandless and Weber</p>
-<div class="cell docutils container">
+<p>The results are very different from McCandless and Weber.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
@@ -1191,6 +817,7 @@ Total Country-Year Observations Used: 673
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m2_inflation_scatter.png
 </pre></div>
@@ -1198,7 +825,13 @@ Total Country-Year Observations Used: 673
 <img alt="_images/540b0305c497dfd234bc3b7be1e89ac3db46df2bc39762eac8638180410feaf2.png" src="_images/540b0305c497dfd234bc3b7be1e89ac3db46df2bc39762eac8638180410feaf2.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<p>We now compute the correlation between money growth and real GDP.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming df_master is available in your environment</span>
 
@@ -1229,6 +862,7 @@ Total Country-Year Observations Used: 673
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
 CORRELATION RESULTS: Money Growth vs. Real GDP Growth (2002-2025)
@@ -1243,7 +877,12 @@ Total Country-Year Observations Used: 673
 </div>
 </div>
 <p>Similar results as McCandless and Weber. There does not seem to be any meaningful correlation between real output and money growth.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming df_master is available in your environment</span>
 
@@ -1278,6 +917,7 @@ Total Country-Year Observations Used: 673
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>m2_realgdp_scatter.png
 </pre></div>
@@ -1285,7 +925,13 @@ Total Country-Year Observations Used: 673
 <img alt="_images/def3654788c4996023cc7ebc39529b41fca4752b73c0b26af7adf364f946d0c2.png" src="_images/def3654788c4996023cc7ebc39529b41fca4752b73c0b26af7adf364f946d0c2.png" />
 </div>
 </div>
-<div class="cell docutils container">
+<p>Lastly we compute the correlation between inflation and real GDP.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming df_master is available in your environment</span>
 
@@ -1310,6 +956,7 @@ Total Country-Year Observations Used: 673
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>============================================================
 CORRELATION RESULT: Inflation vs. Real GDP Growth (2002-2025)
@@ -1322,7 +969,12 @@ Total Country-Year Observations Used: 2032
 </div>
 </div>
 <p>Similar with McCandless and Weber.  No correlation between inflation and output growth.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Assuming df_master is available in your environment</span>
 
@@ -1357,32 +1009,40 @@ Total Country-Year Observations Used: 2032
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>inflation_realgdp_scatter.png
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <img alt="_images/ab01fe9e9ad6e5b75327863584d5bbd4c1cd951a02f69ed1f1c96c4db4b9113a.png" src="_images/ab01fe9e9ad6e5b75327863584d5bbd4c1cd951a02f69ed1f1c96c4db4b9113a.png" />
 </div>
 </div>
-<p>{Monetary Facts Revisited}
-Gertler and Hofmann (2016) wrote a paper called \textit{Monetary Facts Revisited} using more current data and fancier econometrics to re-evaluate the long-run relationship between money growth and inflation (and also credit growth and financial crises).</p>
-<p>To allow for a dynamic lead-lag relationship between money growth and inflation, they use an error-correction model:’
-$<span class="math notranslate nohighlight">\(
+<p>Gertler and Hofmann (2016) wrote a paper called <em>Monetary Facts Revisited</em> using more current data and fancier econometrics to re-evaluate the long-run relationship between money growth and inflation (and also credit growth and financial crises).</p>
+<p>To allow for a dynamic lead-lag relationship between money growth and inflation, they use an error-correction model:</p>
+<div class="math notranslate nohighlight">
+\[
 \Delta \pi_{i,t}=\alpha_i+\phi_i(\pi_{i,t-1}-\theta(m-y)_{i,t-1})+\sum_{j=0}^4
 \delta_{i,j}\Delta(m-y)_{i,t-j}+\epsilon_{i,t}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>\pi<span class="math notranslate nohighlight">\( is the inflation rate, \)</span>(m-y)<span class="math notranslate nohighlight">\( is the growth rate of money supply in excess of real GDP, and \)</span>\alpha_i$ are country fixed effects.</p>
-<p>{Monetary Facts Revisited}
-\begin{figure}
-\includegraphics[scale=0.35]{McWR1}
-\end{figure}</p>
-<p>{Monetary Facts Revisited}
-\begin{figure}
-\includegraphics[scale=0.35]{McWR2}
-\end{figure}</p>
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the inflation rate, <span class="math notranslate nohighlight">\((m-y)\)</span> is the growth rate of money supply in excess of real GDP, and <span class="math notranslate nohighlight">\(\alpha_i\)</span> are country fixed effects.</p>
+<figure>
+    <img src="_static/figs_LR/McWR1.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_LR/McWR2.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    
+    </figcaption>
+</figure>
 </section>
 
     <script type="text/x-thebe-config">
