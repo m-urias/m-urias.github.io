@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,8 +177,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -373,7 +375,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="the-bare-bones-of-bank-balance-sheets">
 <h1>The Bare Bones of Bank Balance Sheets<a class="headerlink" href="#the-bare-bones-of-bank-balance-sheets" title="Link to this heading">#</a></h1>
-<p>To understand how banks operate–and how monetary policy works–we will discuss the basic mechanics of bank balance sheets.  We will use T-accounts to discuss how common banking transactions are reflected on the balance sheet.  We build a hypothetical bank from scratch observe how basic banking transactions affect its financial position.  We then aggregate across banks to show the balance sheet for the entire banking sector.  Finally, we discuss the balance sheet of the central bank and how it relates to private banks and creation of liquidity for the entire economy.</p>
+<p>To understand how banks operate–and how monetary policy works–we use T-accounts to show how common banking transactions are reflected on the balance sheet.  We build a hypothetical bank from scratch and observe how basic banking transactions affect its financial position.  We then aggregate across banks to show the balance sheet for the entire banking sector.  Finally, we discuss the balance sheet of the central bank and how it relates to private banks and creation of liquidity for the entire economy.</p>
 <section id="assets-liabilities-and-bank-capital">
 <h2>Assets, Liabilities, and Bank Capital<a class="headerlink" href="#assets-liabilities-and-bank-capital" title="Link to this heading">#</a></h2>
 <p>Recall the fundamental accounting identity which underpins every company’s balance sheet:</p>
@@ -1106,13 +1108,14 @@ MB = BR + NBR + C
 <p>We call <span class="math notranslate nohighlight">\(1/rr\)</span> the <strong>money multiplier</strong>.</p>
 <p>If the bank had instead used excess reserves to purchase securities (not issue loans) the result would be the same.  If the borrower holds cash, then the deposit creation process stops. If the bank holds excess reserves, then there is less deposit creation. Money supply M1 depends on depositors decisions (how much currency to hold) and banks decisions (how much excess reserves to hold) that are outside the control of the central bank.</p>
 <p>We can construct a slightly more advanced relationship between M1 and high powered money.</p>
-<p>Assume that desired holding of currency <span class="math notranslate nohighlight">\(C\)</span> and excess reserves <span class="math notranslate nohighlight">\(ER\)</span> grow proportional with checkable deposits <span class="math notranslate nohighlight">\(D\)</span>:3
-$<span class="math notranslate nohighlight">\(
+<p>Assume that desired holding of currency <span class="math notranslate nohighlight">\(C\)</span> and excess reserves <span class="math notranslate nohighlight">\(ER\)</span> grow proportional with checkable deposits <span class="math notranslate nohighlight">\(D\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
 c &amp;= C/D = \text{currency ration} \\
 e &amp;= ER/D = \text{excess reserve ratio}
 \end{align*}
-\)</span>$</p>
+\end{split}\]</div>
 <p>We know that total reserves consist of required reserves and excess reserves</p>
 <div class="math notranslate nohighlight">
 \[

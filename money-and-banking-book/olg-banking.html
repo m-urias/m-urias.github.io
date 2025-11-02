@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -177,8 +177,10 @@
 <li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">OLG Model of Banking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
 </ul>
@@ -556,11 +558,11 @@ c_{1,t}+\frac{\nu_t}{\nu_{t+1}}c_{2,t+1}+\frac{1}{X}c_{3,t+2}\leq y
 <p>We now enrich the model by introducing a special type of institution which can commit to honouring debt contracts: a bank. Because banks can commit to repay, they are able to issue a new form of liquid asset–<strong>inside money</strong>.  Inside money refers to money created by the private sector, such as demand deposits or bank credit, which is backed by private loans. This contrasts with outside money, like fiat currency, which is issued by the government. We will see that the coexistence of inside and outside money depends on profitability and credibility conditions for banks.</p>
 <section id="the-deposit-contract">
 <h3>The Deposit Contract<a class="headerlink" href="#the-deposit-contract" title="Link to this heading">#</a></h3>
-<p>Suppose a bank offers the following deposit contract. In period <span class="math notranslate nohighlight">\(t\)</span>, the bank borrows one unit of good from a young depositor in exchange for a promised rate of return <span class="math notranslate nohighlight">\(n\)</span>. The bank invests that single good into the creation of capital, which yields <span class="math notranslate nohighlight">\(X&gt;n^2 after two periods. To honor its promise at \)</span>t+1<span class="math notranslate nohighlight">\(, the bank borrows from the next generation of young depositors, rolling over its liabilities one period at a time.   Depositors are willing to accept this contract if it offers at least as high a return as fiat currency, \)</span>n\geq n/z<span class="math notranslate nohighlight">\(, where \)</span>z<span class="math notranslate nohighlight">\( is the growth rate of the money supply.  Banks find the arrangement profitable since they earn \)</span>x&gt;n^2$ on their investment.  Consequently, inside money replaces outside money: deposits dominate currency as the preferred liquid asset.</p>
+<p>Suppose a bank offers the following deposit contract. In period <span class="math notranslate nohighlight">\(t\)</span>, the bank borrows one unit of good from a young depositor in exchange for a promised rate of return <span class="math notranslate nohighlight">\(n\)</span>. The bank invests that single good into the creation of capital, which yields <span class="math notranslate nohighlight">\(X&gt;n^2\)</span> after two periods. To honor its promise at <span class="math notranslate nohighlight">\(t+1\)</span>, the bank borrows from the next generation of young depositors, rolling over its liabilities one period at a time.   Depositors are willing to accept this contract if it offers at least as high a return as fiat currency, <span class="math notranslate nohighlight">\(n\geq n/z\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the growth rate of the money supply.  Banks find the arrangement profitable since they earn <span class="math notranslate nohighlight">\(x&gt;n^2\)</span> on their investment.  Consequently, inside money replaces outside money: deposits dominate currency as the preferred liquid asset.</p>
 <figure>
-    <img src="_static/figs_olg/banking.png"
+    <img src="_static/figs_olg/banking.jpg"
          alt="US employment to population ratio"
-         width="600"
+         width="400"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Business plan of a bank.
