@@ -11,8 +11,17 @@ root: intro.md
 
 # HTML settings
 html:
-  extra_navbar: Powered by Jupyter Book
-  baseurl: /money-and-banking-book/
+  extra_navbar: Powered by Jupyter Book   # Will be displayed underneath the left navbar
+  baseurl: /money-and-banking-book/   # The base URL where your book will be hosted
+  use_analytics: true
+  google_analytics_id: "G-S9LGY107SZ"
+
+# Allow viewers to launch an interactive Jupyter session
+launch_buttons:
+  notebook_interface: "jupyterlab"
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
 
 # Ensure images are copied
 sphinx:
@@ -26,6 +35,7 @@ sphinx:
     # Allow hidden code blocks
     nb_execution_show_tb: True
     # Custom build
+    html_show_copyright: false
   extra_extensions:
     - sphinx.ext.imgconverter
     - sphinx_design

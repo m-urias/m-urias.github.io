@@ -1,6 +1,8 @@
 # Money and Banking
 
-Welcome to my Money and Banking course site.  Included here are lectures and data tutorials for my class presented in a Jupyter Book.  Lectures provide theoretical models related to money, assets, banking, and monetary policy.  Data tutorials are intended to show students what economic databases are publicly available, how to acquire data, and how to analyze the data using Python.  
+**By [Marshall Urias](https://m-urias.github.io) 🚀**
+
+Welcome to my Money and Banking course site.  Included here are lectures and data tutorials presented in a Jupyter Book.  Lectures provide theoretical models related to money, assets, banking, and monetary policy.  Data tutorials are intended to show students what economic databases are publicly available, how to acquire data, and how to analyze the data using Python.  
 
 ## Course Overview
 
