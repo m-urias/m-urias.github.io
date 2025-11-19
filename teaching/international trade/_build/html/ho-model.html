@@ -1,0 +1,1241 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Heckscher-Ohlin Model of Trade &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ho-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spcific Factors Model" href="specific-factors-model.html" />
+    <link rel="prev" title="Ricardian Model of International Trade" href="ricardian-model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ho-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Heckscher-Ohlin Model of Trade</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-model">The Heckscher-Ohlin Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-tests-of-the-heckscher-ohlin-theory">Empirical Tests of the Heckscher-Ohlin Theory</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-heckscher-ohlin-model-of-trade">
+<h1>The Heckscher-Ohlin Model of Trade<a class="headerlink" href="#the-heckscher-ohlin-model-of-trade" title="Link to this heading">#</a></h1>
+<p>The Ricardian model assumes the source of comparative advantage is differences in labor productivity.  In the real world, however, trade also reflects differences in a countries’ resources. For example, Canada exports forest products to the United States not because its lumberjacks are more productive relative to the US, but because Canada has more forested land per capital than the United States.</p>
+<p>Key Questions:</p>
+<ul class="simple">
+<li><p>How can countries with identical technology and preferences can gain from trade?</p></li>
+<li><p>Who are the winners and losers from international trade?</p></li>
+<li><p>What predictions of the model are consistent with empirical evidence?</p></li>
+</ul>
+<p>To explain the role of resources in international trade, we develop an economic model that shows that comparative advantage is influenced by the interaction of</p>
+<ul class="simple">
+<li><p>the relative \textbf{abundance} of resources and</p></li>
+<li><p>how \textbf{intensively} a country’s technology uses resources to produce goods</p></li>
+</ul>
+<p>We will observe that trade effects the \textbf{distribution of income} within a country: some people are made better off from trade, and some are made worse off.</p>
+<section id="the-heckscher-ohlin-model">
+<h2>The Heckscher-Ohlin Model<a class="headerlink" href="#the-heckscher-ohlin-model" title="Link to this heading">#</a></h2>
+<p>2 x 2 x 2 Model:</p>
+<ul class="simple">
+<li><p>Two countries: Home and Foreign</p></li>
+<li><p>Two goods: <span class="math notranslate nohighlight">\(i = 1,2\)</span></p></li>
+<li><p>Two factors: labor (<span class="math notranslate nohighlight">\(L, L^*\)</span>) and capital (<span class="math notranslate nohighlight">\(K,K^*\)</span>)</p></li>
+</ul>
+<p><strong>Production function</strong> describes how factors are transformed into goods</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = f_i(L_i,K_i)
+\]</div>
+<p>The production functions are assumed to be increasing, concave, and homogeneous of degree one.</p>
+<p>Assume that labor and capital are fully mobile between the two industries, but immobile across countries.</p>
+<figure>
+    <img src="_static/figs_ho/ho_1.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Production function representation.
+    </figcaption>
+</figure>
+<p>Let’s introduce some extra notation that is useful:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_{K1} \equiv\)</span> capital used to produce one unit of good 1</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_{L1} \equiv\)</span> labor used to produce one unit of good 1</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_{K2} \equiv\)</span> capital used to produce one unit of good 2</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_{L2} \equiv\)</span> labor used to produce one unit of good 2</p></li>
+</ul>
+<p>Although these are similar to unit input requirements defined in the Ricardian model (for labor at least), there is an important difference: we are talking about the quantity of capital or labor \textit{used} in production, not the amount of capital or labor \textit{required}.</p>
+<p>Remember that when there are two inputs, producers have some choice about what combination to use them in to create goods.  The profit maximizing choice <span class="math notranslate nohighlight">\((a_{Ki},a_{Li})\)</span> will depend on the input price <span class="math notranslate nohighlight">\((w,r)\)</span>.</p>
+<p>Assume that preferences are identical and homothetic across countries so that relative demand is a function of relative price only,</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{y_1}{y_2} \right)^d = f\left(\frac{p_1}{p_2} \right) \quad \text{where} \quad f'(\cdot) &lt;0
+\]</div>
+<p>Goods market and labor market are perfectly competitive.</p>
+<ul class="simple">
+<li><p>Workers will be paid a wage rate equal to its marginal product of labor, and capital owners will be paid a rental rate equal to its marginal product of capital.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+w = MPL \quad \text{and} \quad r = MPK
+\]</div>
+<ul class="simple">
+<li><p>Firms set marginal cost equal to price which equals average cost so that economic profits are zero.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+p = MC = AC
+\]</div>
+<p>An Example:
+Let’s consider an economy where the technology is such that there is \textit{no possibility of substituting labor for capital or vice versa}.</p>
+<ul class="simple">
+<li><p>Two goods: Cloth (C) and Food (F)</p></li>
+<li><p>Production of C required 2 work-hours and 2 machine-hours</p></li>
+<li><p>Production of F required 1 work-hour and 3 machine hours</p></li>
+<li><p>Let the economy have 3,000 machine hours and 2,000 work hours</p></li>
+</ul>
+<p>We write:</p>
+<div class="math notranslate nohighlight">
+\[
+a_{KC}=2, \quad a_{LC}=2, \quad a_{KF}=3, \quad a_{LF}=1
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+L=2000, \quad K=3000
+\]</div>
+<p>In this special case of no factor substitution, the economy’s PPF is derived from the constraints on capital and labor</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{Capital:}&amp; \quad a_{KC} y_C + a_{KF} y_F \leq K \quad \Rightarrow 2y_C + 3y_F \leq 3000 \\
+\text{Labor:}&amp; \quad a_{LC} y_C + a_{LF} y_F \leq L  \quad \Rightarrow 2y_C + y_F \leq 2000
+\end{align*}
+\end{split}\]</div>
+<p>The economy is must obey <strong>both</strong> constraints.</p>
+<figure>
+    <img src="_static/figs_ho/ho_3.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>When the economy is producing mostly food, the opportunity cost of cloth is <span class="math notranslate nohighlight">\(2/3\)</span>).  When the economy is producing mostly cloth, the opportunity cost of cloth is <span class="math notranslate nohighlight">\(2\)</span>.  The opportunity cost of producing cloth changes when the economy’s mix of production shifts.</p>
+<p>{Production Possibilities Frontier}
+Now let’s make the model more realistic and allow the possibility of substituting capital for labor and vice versa in production.</p>
+<figure>
+    <img src="_static/figs_ho/ho_2.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Labor and capital can be used in any combination across industries so long as the resource constraint is satisfied</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;L_1 + L_2 \leq L \\
+&amp;K_1 + K_2 \leq K
+\end{align*}
+\end{split}\]</div>
+<p>Possible production plans are given by the following program</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\max y_2 = f_2(L_2,K_2) \qquad \text{s.t.} \quad y_1 = f_1(L_1,K_1) 
+\end{align*}
+\]</div>
+<p>Where on the PPF does the economy actually produce? It depends on <strong>goods prices</strong>: the economy will always produce at the point that maximizes the value of production.</p>
+<ul class="simple">
+<li><p>If the price of good 1 is relatively high, the economy will produce more of good 1 and less of good 2</p></li>
+<li><p>If the price of good 2 is relatively high, the economy will produce more of good 2 and less of good 1</p></li>
+</ul>
+<p>The value of production (GDP) is given by</p>
+<div class="math notranslate nohighlight">
+\[
+Y = p_1 y_2 + p_2 y_2
+\]</div>
+<p>Formally, the gross domestic production (GDP) for the economy is given by</p>
+<div class="math notranslate nohighlight">
+\[
+G(p_1,p_2,L,K) = \max_{y_1,y_2} \hspace{2mm} p_1 y_1 + p_2 y_t \qquad \text{s.t.} \quad y_2 = h(y_1,L,K)
+\]</div>
+<p>The first order condition for this problem is,</p>
+<div class="math notranslate nohighlight">
+\[
+p = \frac{p_1}{p_2} = -\frac{\partial h}{\partial y_1} = -\frac{\partial y_2}{\partial y_1}
+\]</div>
+<p>(We will show that this must be the case for a competitive market in a worksheet.)</p>
+<p>Given goods prices, the equilibrium production plan will maximize total output.</p>
+<figure>
+    <img src="_static/figs_ho/ho_prod.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Given a level of production, firms still have a choice about what combination of capital (<span class="math notranslate nohighlight">\(K\)</span>) and labor (<span class="math notranslate nohighlight">\(L\)</span>) they want to use to produce each good.  That is, they still need to choose <span class="math notranslate nohighlight">\((a_{1L},a_{2L},a_{1K},a_{2K}\)</span>).</p>
+<p>What combination of inputs do produces actually use?  It depends on <strong>factor prices</strong>: producers will minimize cost by using more of the factor that is relatively cheaper.</p>
+<ul class="simple">
+<li><p>If capital rental rates (<span class="math notranslate nohighlight">\(r\)</span>) are high and wages (<span class="math notranslate nohighlight">\(w\)</span>) low, producers will choose to use relatively little capital and a lot of labor</p></li>
+<li><p>If wages are low and rental rates are high, producers will choose to use relatively little labor and a lot of capital</p></li>
+</ul>
+<p>It will be convenient to work with the \textbf{unit cost functions} which are dual to the production functions,</p>
+<div class="math notranslate nohighlight">
+\[
+c_i(w,r) = \min_{L_i,K_i \geq 0} \hspace{2mm} \{wL_i + rK_i \vert f_i(L_i,K_i) \geq 1\}
+\]</div>
+<p>Tells us the minimum cost to produce one unit of output.</p>
+<figure>
+    <img src="_static/figs_ho/fig6.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>We will write the <em>solution</em> to the minimization problem above as,</p>
+<div class="math notranslate nohighlight">
+\[
+c_i(w,r) = w a_{iL} + r a_{iK}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{iL}\)</span> is the optimal choice for <span class="math notranslate nohighlight">\(L_i\)</span> and <span class="math notranslate nohighlight">\(a_{iK}\)</span> is the optimal choice for <span class="math notranslate nohighlight">\(K_i\)</span>.</p>
+<p>For any given factor prices <span class="math notranslate nohighlight">\((w,r)\)</span>, we can find the cost minimizing combination of labor and capital <span class="math notranslate nohighlight">\((a_{iL},a_{iK})\)</span>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_5.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>As drawn in the previous example, the input choice curve for good 1 is shifted out compare to good 2.  This means that for any relative factor prices good 1 requires relatively more labor than capital compared to good 2.</p>
+<ul class="simple">
+<li><p>Good 1 is <strong>labor-intensive</strong></p></li>
+<li><p>Good 2 is <strong>capital-intensive</strong></p></li>
+</ul>
+<p>Mathematically we recognize that this implies</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{1L}}{a_{1K}}&gt;\frac{a_{2L}}{a_{2K}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> a good cannot be both capital- and labor-intensive.</p>
+<p>Notice that our definition of <strong>intensity</strong> relies on the ratio of labor to capital used in production, not the ratio of labor or capital to output.</p>
+<div class="admonition-definition-intensity admonition">
+<p class="admonition-title">Definition: Intensity</p>
+<p>:class: definition</p>
+<p>Good 1 is said to be labor intensive if</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{1L}}{a_{1K}}&gt;\frac{a_{2L}}{a_{2K}}
+\]</div>
+<p>it must then be that Good 2 is capital intensive since</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{2K}}{a_{2L}}&gt;\frac{a_{1K}}{a_{1L}}
+\]</div>
+</div>
+<p>There is a connection between the prices of goods and the prices of inputs.  Due to free entry under perfect competition equilibrium profits must equal zero,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+p_1 &amp;= c_1(w,r) \\
+p_2 &amp;= c_2(w,r)
+\end{align}
+\end{split}\]</div>
+<p>There must be full employment of factors in equilibrium,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+&amp;\underbrace{a_{1L}y_1}_{L_1} + \underbrace{a_{2L}y_2}_{L_2} = L \\
+&amp;\underbrace{a_{1K}y_1}_{K_1} + \underbrace{a_{2K}y_2}_{K_2} = K
+\end{align}
+\end{split}\]</div>
+<div class="admonition-definition-intensity admonition">
+<p class="admonition-title">Definition: Intensity</p>
+<p>:class: definition</p>
+<p>An equilibrium is a set of goods prices <span class="math notranslate nohighlight">\((p_1,p_2)\)</span>, factor prices <span class="math notranslate nohighlight">\((w,r)\)</span> and outputs <span class="math notranslate nohighlight">\((y_1,y_2)\)</span> such that profits are zero and factors are fully employed.</p>
+</div>
+<p><strong>Factor Price Insensitivity</strong>: So long as both goods are produced, and factor intensity reversals (FIRs) do not occur, then each price vector <span class="math notranslate nohighlight">\((p_1,p_2)\)</span> corresponds to unique factor prices <span class="math notranslate nohighlight">\((w,r)\)</span>.  If FIRs do occur, then an equilibrium can only be determined by also using the full employment conditions.</p>
+<figure>
+    <img src="_static/figs_ho/fig7.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_ho/fig8.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>With no FIRs, We can say that there is a one-to-one relationship between the ratio of the wage rate to the rental rate <span class="math notranslate nohighlight">\((w/r)\)</span> and the ratio of the goods prices <span class="math notranslate nohighlight">\((p_1/p_2)\)</span>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_6.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>We have the following logic to connect goods prices and factor prices:</p>
+<ul class="simple">
+<li><p>Suppose the relative goods price is <span class="math notranslate nohighlight">\(p_1/p_2\)</span></p></li>
+<li><p>From the <span class="math notranslate nohighlight">\(FG\)</span> curve we know what is the competitive wage to rental rate <span class="math notranslate nohighlight">\(w/r\)</span></p></li>
+<li><p>Given <span class="math notranslate nohighlight">\(w/r\)</span>, from the <span class="math notranslate nohighlight">\(FI_i\)</span> curves we know what the input choices of producers are going to be <span class="math notranslate nohighlight">\(\frac{a_{2K}}{a_{2L}}&gt;\frac{a_{1K}}{a_{1L}}\)</span></p></li>
+</ul>
+<p>(Note that this logic employs two standard economic theories: perfect competition guarantees zero economic profits, and cost minimization guarantees produces pick the least expensive mix of inputs.)</p>
+<figure>
+    <img src="_static/figs_ho/ho_7.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>We already have an insight about how goods prices affect the distribution of income in the economy.</p>
+<div class="admonition-stolper-samuelson-theorem admonition">
+<p class="admonition-title">Stolper-Samuelson Theorem</p>
+<p>:class: definition</p>
+<p>An increase in the relative price of a good will increase the real return to the factor used intensively in that good, and reduce the real return to the other factor.</p>
+</div>
+<p>If we think that trade will affect relative goods prices, then we should suspect that trade will affect the distribution of income too…</p>
+<p>Begin with zero profit conditions,</p>
+<div class="math notranslate nohighlight">
+\[
+p_i = w a_{iL} + r a_{iK}
+\]</div>
+<p>Totally differentiate to obtain,</p>
+<div class="math notranslate nohighlight">
+\[
+dp_i = a_{iL}dw + a_{iK} dr.
+\]</div>
+<p>Judiciously multiply by one and divide by the price</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dp_i}{p_i}=\frac{w a_{iL}}{c_i}\frac{dw}{w}+\frac{r a_{iK}}{c_i}\frac{dr}{r}
+\]</div>
+<p>which is useful because it allows us to express variables in terms of percentage changes (<span class="math notranslate nohighlight">\(d ln x = dx/x\)</span>) and cost shares</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta_{iL}=\frac{w a_{iL}}{c_i}\)</span> is the cost share of labor in industry <span class="math notranslate nohighlight">\(i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_{iK}=\frac{r a_{iK}}{c_i}\)</span> is the cost share of capital in industry <span class="math notranslate nohighlight">\(i\)</span></p></li>
+</ul>
+<p>We have that</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p}_i=\theta_{iL}\hat{w}+\theta_{iK}\hat{r}
+\]</div>
+<p>which is a two-by-two system of linear equations which can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+\hat{p}_1 \\
+\hat{p}_2
+\end{pmatrix}
+= \begin{pmatrix}
+\theta_{1L} &amp; \theta_{1K} \\
+\theta_{2L} &amp; \theta_{2k}
+\end{pmatrix}
+\begin{pmatrix}
+\hat{w} \\
+\hat{r}
+\end{pmatrix}
+\end{split}\]</div>
+<p>using Cramer’s rule we have that,
+\begin{align*}
+\hat{w} &amp;= \frac{\theta_{2K}\hat{p}<em>1-\theta</em>{1K}\hat{p}<em>2}{\lvert \Theta \rvert} = \frac{(\theta</em>{2K}-\theta_{1K})\hat{p}<em>1+\theta</em>{1K}(\hat{p}<em>1-\hat{p}<em>2)}{\theta</em>{2K}-\theta</em>{1K}} \
+\hat{r} &amp;= \frac{\theta_{1L}\hat{p}<em>2-\theta</em>{2L}\hat{p_1}}{\lvert \Theta \rvert} = \frac{(\theta_{1L}-\theta_{2L})\hat{p}<em>2-\theta</em>{2L}(\hat{p}<em>1-\hat{p}<em>2)}{\theta</em>{1L}-\theta</em>{2L}}
+\end{align*}</p>
+<p>Suppose that sector 1 is labor intensive</p>
+<div class="math notranslate nohighlight">
+\[
+\theta_{1L}&gt;\theta_{2L}
+\]</div>
+<p>so that <span class="math notranslate nohighlight">\(\lvert \Theta \rvert&gt;0\)</span>; and suppose that the relative price of good 1 increases</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p_1}&gt;\hat{p}_2
+\]</div>
+<p>Then we have that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\hat{w} &gt; \hat{p}_1 \\
+\hat{r} &lt; \hat{p}_2
+\end{align*}
+\end{split}\]</div>
+<p>which shows that wages increase by more than the price of good 1, so we can say that the \textit{real wage} has indeed increased.  Conversely, the \textit{real return to capital} has fallen.</p>
+<p>The last ingredient of our model is to understand the relationship between a countries resources (<span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(K\)</span>) and the output it produces.</p>
+<p>We already established the following:</p>
+<ul class="simple">
+<li><p>At a given relative goods price <span class="math notranslate nohighlight">\(p_1/p_2\)</span>, we know there is an equilibrium wage to rental rate <span class="math notranslate nohighlight">\(w/r\)</span></p></li>
+<li><p>At a given wage to rental rate, there is an optimal mix of labor to capital employed in each sector <span class="math notranslate nohighlight">\((a_{iL}/a_{iK})\)</span>.</p></li>
+</ul>
+<p>Now let’s assume that the labor force grows <span class="math notranslate nohighlight">\(\uparrow L\)</span>.  How can the economy accommodate the extra labor and maintain the optimal mix of inputs <span class="math notranslate nohighlight">\((a_{iL}/a_{iK})\)</span>?  Let’s continue with the example where good 1 is labor intensive.  Then an increase in the workforce <span class="math notranslate nohighlight">\(\uparrow L\)</span> can be accommodated by allocating more labor <em>and</em> capital to the production of good 1. This way, the producer’s mix of labor to capital remains unchanged, even though the economy now has a greater supply of labor relative to capital than before.  As labor and capital move toward good 1 sector, the economy produces more of good 1 and less of good 2.</p>
+<figure>
+    <img src="_static/figs_ho/fig15.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<div class="admonition-rybzynski-theorem admonition">
+<p class="admonition-title">Rybzynski Theorem</p>
+<p>:class: definition</p>
+<p>If relative goods prices are constant and if both commodities continue to be produced, an increase in a factor endowment will increase the output of the industry using it intensively, and decrease the output of the other industry.</p>
+</div>
+<figure>
+    <img src="_static/figs_ho/fig16.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Mathematical Proof
+Begin with full employment conditions,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+a_{1L} y_1 + a_{2L} y_2 = L \\
+a_{1K} y_1 + a_{2K} y_2 = K
+\end{align*}
+\end{split}\]</div>
+<p>Totally differentiate to obtain,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+a_{1L}dy_1 + a_{2L} dy_2 = dL \\
+a_{1K}dy_1 + a_{2K} dy_2 = dK
+\end{align*}
+\end{split}\]</div>
+<p>We now have the following system,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+dL \\
+dK
+\end{pmatrix}
+= \begin{pmatrix}
+a_{1L} &amp; a_{2L} \\
+a_{1K} &amp; a_{2K}
+\end{pmatrix}
+\begin{pmatrix}
+dy_1 \\
+dy_2
+\end{pmatrix}
+\end{split}\]</div>
+<p>using Cramer’s rule we have that,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{dy_1}{dL} &amp;= \frac{a_{2K}}{a_{1L}a_{2K}-a_{2L}a_{1K}} \\
+\frac{dy_2}{dL} &amp; = \frac{-a_{1K}}{a_{1L}a_{2K}-a_{2L}a_{1K}}
+\end{align*}
+\end{split}\]</div>
+<p>Without loss of generality assume that industry 1 is labor intesntive</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{1L}}{a_{1K}} &gt; \frac{a_{2L}}{a_{2K}}
+\]</div>
+<p>then we have that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy_1}{dL} &gt; 0, \quad \frac{dy_2}{dL} &lt;0
+\]</div>
+<p>Generally, an economy will tend to be relatively effective at producing goods that are intensive in the factors with which the country is relatively well endowed.</p>
+<p>Finally we can look at the effects of international trade on this economy.  We assume that Home and Foreign has the same preferences and the same technology.  We allow for Home and Foreign to have <em>different resources</em>.  Let’s assume that Home has a higher ratio of labor to capital than Foreign does.</p>
+<ul class="simple">
+<li><p>Home is <strong>labor abundant</strong></p></li>
+<li><p>Foreign is <strong>capital abundant</strong></p></li>
+</ul>
+<p>and we’ll continue to assume that good 1 is <strong>labor intensive</strong> and good 2 is <strong>capital intensive</strong>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_9.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Since good 1 is labor intensive, Home's PPF is shifted out more in the direction of good 1 than good 2.  Since $(p_1/p_2)^H<(p_1/p_2)^F$ Home has a comparative advantage in the production of good 1.
+    </figcaption>
+</figure>
+<p>We know that international trade will equalize relative goods prices…</p>
+<figure>
+    <img src="_static/figs_ho/ho_8.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+For any world price, Home will produce a higher ratio of good 1 to good 2 than foreign because it is labor abundant, and good 1 is labor intensive.  Home will have a larger relative supply of good 1
+    </figcaption>
+</figure>
+<p>We just saw that at any world price, Home will have a larger <em>relative supply</em> of good 1 because Home is labor abundant and good 1 is labor intensive.  By the same reasoning, Foreign will have a larger relative supply of good 2 because Foreign is capital abundant and good 2 is capital intensive.</p>
+<figure>
+    <img src="_static/figs_ho/ho_10.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+The autarky equilibrium prices show that Home has a comparative advantage in good 1, and Foreign has a comparative advantage in good 2.  International trade will cause the relative price of good 1 to rise at Home, and fall in Foreign.  The equilibrium free trade will lie in between the autarky prices.
+    </figcaption>
+</figure>
+<p>Heckscher-Ohlin Theorem: Home becomes an exporter of good 1 because it is labor abundant and because the production of good 1 is labor intensive.  Foreign becomes an exporter of good 2 because it is capital abundant and because the production of good 2 is capital intensive.</p>
+<div class="admonition-heckscher-ohlin-theorem admonition">
+<p class="admonition-title">Heckscher-Ohlin Theorem</p>
+<p>:class: definition</p>
+<p>Each country will export the good that uses its abundant factor intensively.</p>
+</div>
+<p>In the more realistic case with multiple countries, factors of production, and numbers of goods, we can say something more general: <em>Countries tend to export goods whose production is intensive in factors with which the countries are abundantly endowed.</em></p>
+<p>Trade and the Distribution of Income
+We just saw how trade will cause relative prices to converge, so that Home (who has a comparative advantage in good 1) will realize in increase in the relative price of good 1, while Foreign (who has a comparative advantage in good 2) while realize a decrease in the relative price of good 1.</p>
+<p>A rise in the price of good 1…</p>
+<ul class="simple">
+<li><p>…raises the purchasing power of labor in terms of both goods</p></li>
+<li><p>…decreases the purchasing power of capital in terms of both goods</p></li>
+</ul>
+<p>In Home, laborers benefit from trade while capital owners are hurt.  In Foreign, capital owners benefit from trade while laborers are hurt.</p>
+<p>Trade has important consequences for the distribution of income within a country.</p>
+<div class="admonition-hecksher-ohlin-s-prediction-on-the-distribution-of-income admonition">
+<p class="admonition-title">Hecksher-Ohlin’s prediction on the distribution of income</p>
+<p>:class: definition</p>
+<p>Owners of a country’s abundant factors gain from trade, but owners of a country’s scarce factors lose.</p>
+</div>
+<p>Opening to trade still expands an economy’s consumption possibilities, representing aggregate gains from trade, but it’s not obvious how to practically distribute these gains to <em>both</em> factors.</p>
+<p>Recall that trade tensions between the US and China largely arose from claims that manufacturing workers in the US were hurt by import competition from China.  Compared with the rest of the world, the US is abundantly endowed with high-skilled labor while low-skilled labor is relatively scarce.  This means that international trade has the potential to make low-skilled workers in the US worse off—not just temporarily, but permanently.  Clearly the manufacturing sector in the US has an incentive to protect its industry from import competition, but this would come at the expense of aggregate gains from trade for the country as a whole.</p>
+<p>Factor Price Equalization
+We just saw how trade impacts the distribution of income <em>within</em> a country.  What about <em>between</em> countries?</p>
+<p>In the absence of trade, labor-abundant Home would have a power relative price of good 1 than capital-abundant Foreign, and the difference in relative prices of <em>goods</em> would be reflected in  a difference in the relative price of <em>factors</em>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_11.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>When Home and Foreign trade, the relative price of goods converges.  Therefore, the relative factor prices converge too!</p>
+<div class="admonition-factor-price-equalization-theorem admonition">
+<p class="admonition-title">Factor Price Equalization Theorem</p>
+<p>:class: definition</p>
+<p>Free trade tends to equalize factor prices between countries.</p>
+</div>
+<p>Although Home has a higher ratio of labor to capital than Foreign, once they trade with each other, the wage and rental rate are the same in both countries.</p>
+<p>When Home and Foreign trade, more is happening than a simple exchange of goods.</p>
+<ul class="simple">
+<li><p>In an indirect way, the two countries are effectively trading factors of production</p></li>
+<li><p>Home is letting Foreign use some of its abundant labor, not by selling labor, but by trading goods produced with a high ratio of labor to capital for goods produced with a low labor-capital ratio.</p></li>
+<li><p>Labor is \textbf{embodied} in Home exports more than its imports</p></li>
+<li><p>Capital is embodied in Foreign exports more than its imports</p></li>
+</ul>
+<p>In reality, factor price equalization does not occur.  Why? The model makes some stark assumptions:</p>
+<ul class="simple">
+<li><p>technologies are the same in each country</p></li>
+<li><p>transportation of goods is costless so that goods prices are the same in each country</p></li>
+<li><p>both countries produce both goods</p></li>
+</ul>
+<p>In reality, none of these assumption are likely to hold.</p>
+<p>The Hechscher-Ohlin model reveals an important source of mutually beneficial trade: differences in factor abundance.  Even if we don’t observe factor price equalization in reality, it doesn’t mean that differences in resources don’t matter for trade.  It could simply mean that a better model of trade has to relax some of the strong assumption Heckscher and Ohlin made.</p>
+<p>We can still try to use data on international trade to test whether or not the mechanism Hecksher and Ohlin is observed in reality.</p>
+</section>
+<section id="empirical-tests-of-the-heckscher-ohlin-theory">
+<h2>Empirical Tests of the Heckscher-Ohlin Theory<a class="headerlink" href="#empirical-tests-of-the-heckscher-ohlin-theory" title="Link to this heading">#</a></h2>
+<p>{Empirical Tests of HO Theory}
+Until recently, the US had a reputation for possessing much more capital per person than other countries.</p>
+<p>According to the HO theory, the US should export goods that are relatively capital intensive and import goods that are relatively labor-intensive.</p>
+<p>If we had data that showed the relationship the amount of capital and labor embodied in US imports and exports, then we could test the prediction of the theory.</p>
+<p>{Empirical Tests of HO Theory}
+Economists Wassily Leontif was the first to conduct such a study (published in 1953) using data on the 25 years following World War II.</p>
+<p>Leontif used input-output tables for the US to compute the amount of capital and labor embodied in the exports and imports of goods…</p>
+<p>{Empirical Tests of HO Theory}
+\begin{figure}
+\centering
+\includegraphics[scale=.45]{ho_12}
+\end{figure}</p>
+<p>{Empirical Tests of HO Theory}
+Leontif found that the ratio of capital to labor embodied in US exports was actually less than imports.</p>
+<p>This is the opposite of what HO would predict!</p>
+<p>This famous result is known as the \textbf{Leontif paradox}</p>
+<p>{Empirical Tests of HO Theory}
+There are several reasons why the prediction of HO model could fail:</p>
+<ul class="simple">
+<li><p>technologies are not the same in the US and elsewhere</p></li>
+<li><p>Leontif ignores other factors like human capital and land</p></li>
+<li><p>the US was not engaged if \textit{free} trade</p></li>
+</ul>
+<p>More importantly, Leontif was actually using the incorrect test.</p>
+<p>{Empirical Tests of HO Theory}
+Leamer (1980) formalized the correct test of the Heckscher-Ohlin model.<br />
+We want to develop a test for the HO model.</p>
+<ul class="simple">
+<li><p>Many countries <span class="math notranslate nohighlight">\(i=1,...,C\)</span></p></li>
+<li><p>Many industries <span class="math notranslate nohighlight">\(j=1,...,N\)</span></p></li>
+<li><p>Many factors <span class="math notranslate nohighlight">\(k = 1,...,M\)</span></p></li>
+</ul>
+<p>Let the <span class="math notranslate nohighlight">\((M \times N)\)</span> matrix <span class="math notranslate nohighlight">\(A = [a_{jk}]'\)</span> denote the amounts of factor <span class="math notranslate nohighlight">\(k\)</span> required to produce one unit of good <span class="math notranslate nohighlight">\(j\)</span>.</p>
+<p>Example:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+a_{1L} &amp; a_{2L} \\
+a_{1K} &amp; a_{2K}
+\end{pmatrix}
+\end{split}\]</div>
+<p>{Heckscher-Ohlin-Vaneck}
+Let the <span class="math notranslate nohighlight">\((N \times 1)\)</span> matrix <span class="math notranslate nohighlight">\(Y^i\)</span> denote the amount of ouptut in each industry for each country <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>Let the <span class="math notranslate nohighlight">\( (N \times 1)\)</span> matrix <span class="math notranslate nohighlight">\(D^i\)</span> denote the amount demanded for each good.</p>
+<p>The \textbf{factor content of trade} is given by,</p>
+<div class="math notranslate nohighlight">
+\[
+F^i \equiv A\underbrace{(Y^i-D^i)}_{\text{net exports}}
+\]</div>
+<p>An individual component of this matrix is <span class="math notranslate nohighlight">\(F_k^i\)</span>.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(F_k^i &gt;0\)</span> then the factor is exported</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(F_k^i &lt;0\)</span> then the factor is imported</p></li>
+</ul>
+<p>{Heckscher-Ohlin-Vaneck}
+We want to relate the factor content of trade to endowments.</p>
+<p>Full-employment condition says that all endowments of a country must be used in the production of goods:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{endowment vector:}\hspace{5mm} V^i = AY^i
+\]</div>
+<p>Identical and homothetic preferences with balanced trade imply that consumption in any country is proportional to its share of world GDP:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{consumption vector:}\hspace{5mm} AD^i = s^i AD^w = s^iAY^w = s^i V^w
+\]</div>
+<p>{Heckscher-Ohlin-Vaneck}
+\begin{tcolorbox}
+Heckscher-Ohline-Vaneck (HOV) theorem: The factor content of trade in factor <span class="math notranslate nohighlight">\(k\)</span> should be positive (<span class="math notranslate nohighlight">\(F^i_k &gt; 0\)</span>) if that factor is abundant (<span class="math notranslate nohighlight">\(V_k^i/V_k^w &gt; s^i\)</span>), and conversely negative (<span class="math notranslate nohighlight">\(F^i_k &lt; 0\)</span>) if that factor is scarce (<span class="math notranslate nohighlight">\(V_k^i/V_k^w &lt; s^i\)</span>).
+\end{tcolorbox}</p>
+<p>{Resolving the Leontif Paradox}
+Let’s revisit Leontif’s test where there are only two factors:
+\begin{align*}
+&amp;F_k^i = K^i - s^iK^w \
+&amp;F_l^i = L^i - s^iL^w
+\end{align*}
+If the US is capital abundant, relative to labor, then the HOV theorem predicts:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{K^{US}}{L^{US}} &gt; \frac{K^{US}-F_{k}^{US}}{L^{US}-F_{L}^{US}}
+\]</div>
+<p>The capital/labor ratio embodied in production for the US should exceed the capital/labor ratio embodied in consumption.</p>
+<p>{Heckscher-Ohlin-Vaneck}
+PROOF:
+From (i) our definition of the factor content of trade; (ii) identical homothetic preferences; and (iii) market clearing we have that</p>
+<div class="math notranslate nohighlight">
+\[
+K^w = \frac{K^i-F_k^i}{s^i} \quad \text{and} \quad L^w = \frac{L^i-F_l^i}{s^i}
+\]</div>
+<p>It follows that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{K^i}{K^w} = s^i \frac{K^i}{K^i-F_k^i} \quad \text{and} \quad \frac{L^i}{L^w} = s^i  \frac{L^i}{L^i-F^i_l}
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(K^i/K^w &gt; L^i/L^w\)</span> then it must be that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{K^i}{K^i-F_k^i} &gt; \frac{L^i}{L^i-F^i_l}
+\]</div>
+<p>{Partial Tests of HOV}
+The HOV theorem tells us how to do a test of the theory</p>
+<div class="math notranslate nohighlight">
+\[
+F^i \equiv A T^i = V^i-s^i V^W
+\]</div>
+<ul class="simple">
+<li><p>compute the left-hand side using data on trade <span class="math notranslate nohighlight">\(T^i\)</span> and technology <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p>compute the right-hand side using data on endowments <span class="math notranslate nohighlight">\(V^i\)</span> and <span class="math notranslate nohighlight">\(V^w\)</span></p></li>
+<li><p>compare how well the two sides match up</p></li>
+</ul>
+<p>{Partial Tests of HOV}
+There are two ways to test how well the HOV theory performs:</p>
+<ul class="simple">
+<li><p>Sign test: <span class="math notranslate nohighlight">\(\text{sign}(F_k^i) = \text{sign}(V^i_k-s^i V_k^w)\)</span></p></li>
+<li><p>Rank test: <span class="math notranslate nohighlight">\(F_k^i &gt; F_l^i \Leftrightarrow (V_k^i - s^i V_k^w) &gt; (V^i_l-s^i V_l^w)\)</span></p></li>
+</ul>
+<p>for <span class="math notranslate nohighlight">\(\quad i=1,...,C; k=1,...,M\)</span></p>
+<p>Of course, you can perform these tests by running the regression</p>
+<div class="math notranslate nohighlight">
+\[
+F_k^i = \alpha_k + \beta_k(V_k^i-s^i V_f^w)+\varepsilon_k^i
+\]</div>
+<p>and observing the sign and magnitude of <span class="math notranslate nohighlight">\(\beta_k\)</span> coefficients.</p>
+<p>{Why Leontif’s test was wrong}
+Consider this example (courtesy of ChatGPT):</p>
+<ul class="simple">
+<li><p>\textbf{Two goods:} Machinery (M), Textiles (T)</p></li>
+<li><p>\textbf{Two factors:} Capital (K), Labor (L)</p></li>
+<li><p>\textbf{Country:} U.S. (capital-abundant)</p></li>
+</ul>
+<p>\medskip
+\textbf{Input coefficients (units per $1M output):}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Good &amp; Capital &amp; Labor &amp; K/L Ratio \
+\midrule
+Machinery (Exported) &amp; 300 &amp; 100 &amp; 3.0 \
+Textiles (Imported) &amp; 600 &amp; 100 &amp; 6.0 \
+\bottomrule
+\end{tabular}
+\end{center}</p>
+<p>{Leontief’s Method: Per-unit Comparison}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Compare capital-labor ratio of export vs. import goods
+- Machinery: $K/L = 3.0$
+- Textiles: $K/L = 6.0$
+</pre></div>
+</div>
+<p>\begin{block}{Conclusion}
+U.S. appears to import more capital-intensive goods than it exports.\
+<span class="math notranslate nohighlight">\(\Rightarrow\)</span> Leontief Paradox
+\end{block}</p>
+<p>{The HOV Approach: Factor Content of Trade}
+Suppose:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- U.S. exports \$2M of Machinery
+- U.S. imports \$1M of Textiles
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+T = 
+\begin{bmatrix}
+2 \\
+-1
+\end{bmatrix}, \quad
+A = 
+\begin{bmatrix}
+300 &amp; 600 \\
+100 &amp; 100
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A T =
+\begin{bmatrix}
+(2)(300) + (-1)(600) \\
+(2)(100) + (-1)(100)
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 \\
+100
+\end{bmatrix}
+\end{split}\]</div>
+<p>{HOV Interpretation}
+\textbf{Net factor exports:}</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Capital: 0
+- Labor: 100 units
+</pre></div>
+</div>
+<p>\begin{block}{Finding}
+The U.S. is effectively exporting labor, not capital — consistent with Leontief’s finding.
+\end{block}</p>
+<p>{New Scenario: Larger Export Volume}
+Suppose:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Export \$10M of Machinery
+- Import \$2M of Textiles
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+T = 
+\begin{bmatrix}
+10 \\
+-2
+\end{bmatrix}
+\quad \Rightarrow \quad
+A T = 
+\begin{bmatrix}
+(10)(300) - (2)(600) \\
+(10)(100) - (2)(100)
+\end{bmatrix}
+=
+\begin{bmatrix}
+1800 \\
+800
+\end{bmatrix}
+\end{split}\]</div>
+<p>\begin{block}{Finding}
+So the U.S. is exporting both capital and labor — but more capital than before. The overall export bundle is capital-abundant, despite the lower capital-labor ratio per good.
+\end{block}</p>
+<p>{Why HOV is Better}
+Leontief’s method misses the scale of trade and makes inferences based solely on intensity, not on quantities. The HOV approach corrects this by looking at the total factor content of trade, which is what the H-O theory actually predicts.</p>
+<p>{Empirical Tests of HO Theory}
+A study by Bowen, Leamer, and Sveikauskas extended Leontif’s test to 27 countries and 12 factors of production.</p>
+<p>For each country and factor they tested whether or not the factor content of trade matched the HO prediction.</p>
+<p>The prediction was correct in only 61 percent of cases.  The Leontif paradox is still there.</p>
+<p>{Empirical Tests of HO Theory}</p>
+<p>Trefler (1995) used 33 countries and 9 factors to test both the direction of factor content of trade and the magnitude</p>
+<ul class="simple">
+<li><p>the sign test was consistent with HO 50 percent of cases</p></li>
+<li><p>the rank test was consistent with HO 60 percent of cases</p></li>
+</ul>
+<p>Trefler performs several diagnostic tests on the data and determines that the assumption of equal technologies across countries is especially bad.</p>
+<p>{Empirical Tests of HO Theory}
+Davis and Weinstein (2001) show that if you relax the assumption of common technology, as well as countries producing the same set of goods and costless trade, then the predictions of the model are much better:
+\begin{figure}
+\centering
+\includegraphics[scale=.50]{ho_13}
+\end{figure}</p>
+<p>{Empirical Tests of HO Theory}
+We can see how the predictive failure of the HO model rested on particular assumptions built into the purest version of the model.</p>
+<p>When those assumptions are dropped, the predictive power of the model is vastly improved.</p>
+<p>You can decide for yourself whether it is really the HO model at that point.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ricardian-model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ricardian Model of International Trade</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="specific-factors-model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spcific Factors Model</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-model">The Heckscher-Ohlin Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-tests-of-the-heckscher-ohlin-theory">Empirical Tests of the Heckscher-Ohlin Theory</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

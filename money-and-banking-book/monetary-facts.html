@@ -368,7 +368,7 @@ document.write(`
 <p>Based on their study, McCandless and Weber claim there are three monetary facts that hold across countries over the long-run.</p>
 <p><strong>Fact 1: In the long-run, there is a high (almost unity) correlation between the rate of growth of the money supply and the rate of inflation.  This holds across three definitions of money and across the full sample of countries and two subsamples.</strong></p>
 <figure>
-    <img src="_static/figs_LR/McW1.png"
+    <img src="_static/figs_olg/McW1.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -377,7 +377,7 @@ document.write(`
     </figcaption>
 </figure>
 <figure>
-    <img src="_static/figs_LR/McW2.png"
+    <img src="_static/figs_olg/McW2.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -387,7 +387,7 @@ document.write(`
 </figure>
 <p><strong>Fact 2: In the long-run, there is no correlation between the growth rates of money and real output.  This holds across all definitions of money, but not for a subsample of OECD countries, where the correlation seems to be positive.</strong></p>
 <figure>
-    <img src="_static/figs_LR/McW3.png"
+    <img src="_static/figs_olg/McW3.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -396,7 +396,7 @@ document.write(`
     </figcaption>
 </figure>
 <figure>
-    <img src="_static/figs_LR/McW4.png"
+    <img src="_static/figs_olg/McW4.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -405,7 +405,7 @@ document.write(`
     </figcaption>
 </figure>
 <figure>
-    <img src="_static/figs_LR/McW5.png"
+    <img src="_static/figs_olg/McW5.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -415,7 +415,7 @@ document.write(`
 </figure>
 <p><strong>Fact 3: In the long-run, there is no correlation between inflation and real output growth.</strong></p>
 <figure>
-    <img src="_static/figs_LR/McW6.png"
+    <img src="_static/figs_olg/McW6.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -431,8 +431,8 @@ document.write(`
 <li><p>Hitting specific inflation targets depends on knowing the growth rates of real GDP and velocity</p></li>
 <li><p>Monetary policy has no long-run effects on real GDP</p></li>
 </ul>
-<p><a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a> represent one paper among many which use cross country analysis over long period of time to discern “monetary facts”.  We will discuss two other papers using this method: <a href="https://www.jstor.org/stable/24738170" target="_blank">Teles, Uhlig, and Valle e Azevedo (2016)</a> and <a href="https://www.sciencedirect.com/science/article/abs/pii/S0261560618302274" target="_blank">Gertler and Hofmann (2018)</a>.</p>
-<p>There are also two other methods used.  One, represented by <a href="https://www.nber.org/system/files/chapters/c11452/c11452.pdf" target="_blank">Sargent (1982)</a>, examine specific episodes of high inflation to find commonalities which suggest monetary facts.  The last method is the strategy proposed by <a href="https://www.bu.edu/econ/files/2011/01/Lucas2illustrations1.pdf" target="_blank">Lucas (1982)</a>, which uses a filter to remove the effect of transitory reactions to shocks to distill the long-run movements associated with low frequency movements.</p>
+<p><a href="https://www.minneapolisfed.org/research/quarterly-review/some-monetary-facts" target="_blank">McCandless and Weber (1995)</a> represent one paper among many which use cross country analysis over a long period of time to discern “monetary facts”.  We will discuss two other papers using this method: <a href="https://www.jstor.org/stable/24738170" target="_blank">Teles, Uhlig, and Valle e Azevedo (2016)</a> and <a href="https://www.sciencedirect.com/science/article/abs/pii/S0261560618302274" target="_blank">Gertler and Hofmann (2018)</a>.</p>
+<p>There are also two other methods used in the literature for obtaining monetary facts.  One, represented by <a href="https://www.nber.org/system/files/chapters/c11452/c11452.pdf" target="_blank">Sargent (1982)</a>, examine specific episodes of high inflation to find commonalities which suggest monetary facts.  The last method is the strategy proposed by <a href="https://www.bu.edu/econ/files/2011/01/Lucas2illustrations1.pdf" target="_blank">Lucas (1982)</a>, which uses a filter to remove the effect of transitory reactions to shocks to distill the long-run movements associated with low frequency movements.</p>
 <p>Before discussing these additional papers, we first replicate the method from McCandless and Weber (1995), but use data beginning from 2001.  When McCandless and Weber wrote their paper, they used the IMF’s International Financial Statistics (IFS) to get data on GDP, prices, and monetary aggregates.  The IMF has since moved those series into a separate datasets called National Economic Accounts (NEA) and Monetary and Financial Statistics (MFS).  Acquiring monetary aggregates from 1960-1990 for many countries from the IMF is difficult.  Instead we simply focus on the modern period where the data is readily available from the IMF.  Also, we can compare how the monetary facts found by McCandless and Weber compare across these two sample periods.</p>
 <p>We construct our data series using the International Monetary Fund’s (IMF) database accessed via their online  <a href="https://data.imf.org/en/Data-Explorer" target="_blank">Data Explorer</a>.</p>
 <p>For data on <strong>GDP</strong>, after navigating to the IMF’s <a href="https://data.imf.org/en/Data-Explorer" target="_blank">Data Explorer</a>, select the following:</p>
@@ -1017,16 +1017,18 @@ Total Country-Year Observations Used: 2032
 <img alt="_images/ab01fe9e9ad6e5b75327863584d5bbd4c1cd951a02f69ed1f1c96c4db4b9113a.png" src="_images/ab01fe9e9ad6e5b75327863584d5bbd4c1cd951a02f69ed1f1c96c4db4b9113a.png" />
 </div>
 </div>
-<p>Gertler and Hofmann (2016) wrote a paper called <em>Monetary Facts Revisited</em> using more current data and fancier econometrics to re-evaluate the long-run relationship between money growth and inflation (and also credit growth and financial crises).</p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0261560618302274" target="_blank">Gertler and Hofmann (2016)</a> wrote a paper called <em>Monetary Facts Revisited</em> using more current data and fancier econometrics to re-evaluate the long-run relationship between money growth and inflation (and also credit growth and financial crises).</p>
 <p>To allow for a dynamic lead-lag relationship between money growth and inflation, they use an error-correction model:</p>
 <div class="math notranslate nohighlight">
 \[
 \Delta \pi_{i,t}=\alpha_i+\phi_i(\pi_{i,t-1}-\theta(m-y)_{i,t-1})+\sum_{j=0}^4
 \delta_{i,j}\Delta(m-y)_{i,t-j}+\epsilon_{i,t}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the inflation rate, <span class="math notranslate nohighlight">\((m-y)\)</span> is the growth rate of money supply in excess of real GDP, and <span class="math notranslate nohighlight">\(\alpha_i\)</span> are country fixed effects.</p>
+<p>where <span class="math notranslate nohighlight">\(\pi\)</span> is the inflation rate, <span class="math notranslate nohighlight">\((m-y)\)</span> is the growth rate of money supply in excess of real GDP, and <span class="math notranslate nohighlight">\(\alpha_i\)</span> are country fixed effects.  They use five lags of excess money growth and one lag of inflation, thus allowing for long lead-lag relationships between these variables.</p>
+<p>Notice that the second term appearing in the regression is simply the quantity theory <span class="math notranslate nohighlight">\(MV=PY\)</span> written in terms of growth rates <span class="math notranslate nohighlight">\(\pi = m-y+v\)</span> which predicts a one-for-one relationship between inflation and the growth rate of money is excess of GDP for a given change in velocity.  Therefore, if the quantity theory is true the coefficient <span class="math notranslate nohighlight">\(\theta\)</span> should equal 1.  Fluctuations in the velocity are absorbed by country-fixed effects <span class="math notranslate nohighlight">\(\alpha_i\)</span> and the error term <span class="math notranslate nohighlight">\(\epsilon_{i,t}\)</span>.  The third term captures country-specific short-run dynamics.</p>
+<p>Here are the results from the regression:</p>
 <figure>
-    <img src="_static/figs_LR/McWR1.png"
+    <img src="_static/figs_olg/McWR1.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -1035,7 +1037,7 @@ Total Country-Year Observations Used: 2032
     </figcaption>
 </figure>
 <figure>
-    <img src="_static/figs_LR/McWR2.png"
+    <img src="_static/figs_olg/McWR2.png"
          alt="US employment to population ratio"
          width="600"
          style="display: block; margin-left: auto; margin-right: auto;">
@@ -1043,6 +1045,7 @@ Total Country-Year Observations Used: 2032
     
     </figcaption>
 </figure>
+<p>Over the entire sample, there is indeed a near one-for-one relationship between money growth and inflation (<span class="math notranslate nohighlight">\(\theta =0.96\)</span>).  The significant error correction term further validates that there is a long-run relationship between these two variables.  However, these relationship seems to have weakened over time as shown in the shrinking coefficient over more recent time periods.  The authors suggest that these sub-samples are relevant because of the financial liberalization and disinflation that occurred in the mid-1980s and early 1990s.  The data suggest that modern structural changes have weakened the quantity theory relationship.</p>
 </section>
 
     <script type="text/x-thebe-config">

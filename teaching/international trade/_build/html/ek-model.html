@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Eaton and Kortum Model of Trade &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ek-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ek-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Eaton and Kortum Model of Trade</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="eaton-and-kortum-model-of-trade">
+<h1>Eaton and Kortum Model of Trade<a class="headerlink" href="#eaton-and-kortum-model-of-trade" title="Link to this heading">#</a></h1>
+<p>{Motivation}
+Eaton and Kortum (2002) identify four stylized facts that theories of international trade cannot adequately explain:
+\begin{enumerate}</p>
+<ul class="simple">
+<li><p>trade diminishes dramatically with distance</p></li>
+<li><p>prices vary across locations</p></li>
+<li><p>factor reward are far from equal across countries</p></li>
+<li><p>countries’ relative productivities vary substantially across industries
+\end{enumerate}
+Facts (1) and (2) suggest that geography matters for predicting the value of trade.  Facts (3) and (4) suggest that technologies differ across countries.</p></li>
+</ul>
+<p>{Motivation}
+Also, Ricardian models before EK were not well suited for empirical analysis.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Determinisitic comparative advantage: productivities are known and patterns of specialization are rigid; no intensive margin of trade
+- We don&#39;t observe the full distribution of productivities across all goods in each country, so we can&#39;t get model-implied trade shares to compare with data
+- No heterogeniety within sectors: each good was homogenous which ignored firm-level heterogeneity
+</pre></div>
+</div>
+<p>One main innovation of EK is that it can generate closed-form expressions for bilateral trade shares based on Ricardian forces.</p>
+<p>{Motivation}
+What do Eaton and Kortum do?
+\vspace{5mm}</p>
+<p>``\textit{We develop a Ricardian trade model that incorporates realistic geographic features into general equilibrium.  It delivers simple structural equations for bilateral trade with parameters relating to absolute advantage, to comparative advantage, and to geographic barriers.}</p>
+<p>{Gravity}
+The key paper which is builds on is Dornbusch, Fischer, and Samuelson (1977), which was the continuum of goods Ricardian model we studies in class.
+\vspace{5mm}</p>
+<p>Eaton and Kortum add:</p>
+<ul class="simple">
+<li><p>Multiple countries</p></li>
+<li><p>Technological heterogeniety</p></li>
+<li><p>Geographic barriers</p></li>
+</ul>
+<p>{Gravity}
+The reason that we think geography is important, is because there is a long-standing robust empirical finding that predicts the value of trade between two countries based on their size and distance
+[
+T_{ij} = \frac{ A \times Y_i \times Y_j}{D_{ij}}
+]
+is called a \textbf{gravity equation}.  It says the the value of trade between country <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span> is proportional to the product of the two countries’ GDPs and diminishes with the distance between the two countries.</p>
+<p>{Gravity}
+\begin{figure}
+\includegraphics[scale=.55]{fig1}
+\centering
+\end{figure}
+(from Head and Mayer 2014)</p>
+<p>{Motivation}
+\begin{figure}
+\includegraphics[scale=.55]{fig2}
+\centering
+\end{figure}
+(from Head and Mayer 2014)</p>
+<p>{Motivation}
+One of the contributions of EK is that gravity equations arise structurally
+\vspace{5mm}</p>
+<p>Structural gravity equations can also be derived in other classes of models; including classical trade models (Heckscher-Ohlin + Ricardo) and new trade models like Chaney (2008) and Melitz.</p>
+<p>{Environment}</p>
+<ul class="simple">
+<li><p>Many countries <span class="math notranslate nohighlight">\(i=1,...,N\)</span></p></li>
+<li><p>Continuum of goods <span class="math notranslate nohighlight">\(j \in [0,1]\)</span></p></li>
+<li><p>Countries have access to different technologies so that the productivity of country <span class="math notranslate nohighlight">\(i\)</span> in producing good <span class="math notranslate nohighlight">\(j\)</span> is given by <span class="math notranslate nohighlight">\(z_i(j)\)</span></p></li>
+<li><p>Good are produced with a bundle of inputs whose price is homogeneous within countries <span class="math notranslate nohighlight">\(c_i\)</span></p></li>
+<li><p>There exist iceberg trade costs <span class="math notranslate nohighlight">\(d_{ni} \geq 1\)</span> which capture geographic barriers</p></li>
+</ul>
+<p>{Environment}
+Consumers choose to purchase individual goods in amounts <span class="math notranslate nohighlight">\(Q(j)\)</span> with the aim of maximizing CES utility
+[
+U = \left( \int_0^1 Q(j)^{(\sigma-1)/\sigma}dj\right)^{\sigma/(\sigma-1)}
+]</p>
+<p>{Environment}
+Just as in Ricardo, the cost of producing good <span class="math notranslate nohighlight">\(j\)</span> is <span class="math notranslate nohighlight">\(c_i/z_i(j)\)</span>, where <span class="math notranslate nohighlight">\(z\)</span> is the inverse of unit labor requirement.
+\vspace{5mm}</p>
+<p>With geographic barriers, the cost of delivering a unit of good <span class="math notranslate nohighlight">\(j\)</span> produced in country <span class="math notranslate nohighlight">\(i\)</span> to country <span class="math notranslate nohighlight">\(n\)</span> costs
+[
+p_{ni}(j) = \left( \frac{c_i}{z_i(j)}\right)d_{ni}
+]<br />
+where we continue to assume perfect competition so that this is the price a buyer in country <span class="math notranslate nohighlight">\(n\)</span> could pay for good <span class="math notranslate nohighlight">\(j\)</span> imported from country <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>{Environment}
+Since there are multiple countries, buyers will purchase good <span class="math notranslate nohighlight">\(j\)</span> from the country that produces it at the lowest cost.  So the price a buyer actually pays for good <span class="math notranslate nohighlight">\(j\)</span> is
+[
+p_n(j) = \min {p_{ni}(j); i=1,…,N }
+]</p>
+<p>{Production Technology}
+EK have a fancy way of modeling technology that allow them to generate structural equations that relate trade values to model parameters for an arbitrary number of countries.
+\vspace{5mm}</p>
+<p>Stochastic technology where <span class="math notranslate nohighlight">\(z_i(j)\)</span> is draw from a country specific distribution <span class="math notranslate nohighlight">\(F_i(z)\)</span> which is independent across goods and countries.
+\vspace{5mm}</p>
+<p>By law of large numbers, <span class="math notranslate nohighlight">\(F_i(z)\)</span> is also the fraction of goods for which country <span class="math notranslate nohighlight">\(i\)</span>’s productivity is below <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>{Production Technology}
+Since productivity <span class="math notranslate nohighlight">\(z_i(j)\)</span> is a r.v., so too is the cost of purchasing good <span class="math notranslate nohighlight">\(j\)</span> from country <span class="math notranslate nohighlight">\(i\)</span>
+[
+p_{ni}(j) = \frac{c_i d_{ni}}{Z_i(j)}
+]
+and therefore the price that the buyer will actually choose is also a r.v.
+[
+P_n(j) = \min {p_{ni}(j); i=1,…,N }
+]
+The liklihood that country <span class="math notranslate nohighlight">\(i\)</span> supplies a particular good <span class="math notranslate nohighlight">\(j\)</span> to country <span class="math notranslate nohighlight">\(n\)</span> is the probability <span class="math notranslate nohighlight">\(\pi_{ni}(j)\)</span> that <span class="math notranslate nohighlight">\(i\)</span>’s price turns out to be the lowest.</p>
+<p>{Production Technology}
+EK assume that <span class="math notranslate nohighlight">\(F_i(z)\)</span> is Frechet distributed so that the expression for <span class="math notranslate nohighlight">\(\pi_{ni}\)</span> is simple and the distribution of prices can be computed.
+[
+F_i(z) = e^{-T_iz^{-\theta}}, \quad T_i&gt;0,\theta&gt;1
+]
+where <span class="math notranslate nohighlight">\(T_i\)</span> is a country specific parameter that governs location and <span class="math notranslate nohighlight">\(\theta\)</span> is a common parameter which governs dispersion.</p>
+<ul class="simple">
+<li><p>Bigger <span class="math notranslate nohighlight">\(T_i\)</span> (‘technology’/absolute advantage) implies higher productivity draws are more likely</p></li>
+<li><p>Bigger <span class="math notranslate nohighlight">\(\theta\)</span> (‘heterogeneity’/comparative advantage) implies less variability</p></li>
+</ul>
+<p>{Production Technology}
+For clarity, let’s understand this modeling choice of stochastic productivity within the continuum of goods model we studied earlier.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- We had technology $A(z) = a^*(z)/a(z)$
+- You can show, using the ratio of Frechet random variables, that in EK 
+$$
+A(z)=\frac{T_1}{T_2}^{1/\theta}\left(\frac{1-z}{z}\right)^{1/\theta}
+$$
+- Changes in parameter $T$ shift the $A(Z)$ curve while changes in $\theta$ change the slope
+</pre></div>
+</div>
+<p>{Production Technology}
+We can compute the distribution of prices now:
+\begin{align*}
+G_{ni}(p)=Pr[p_{ni}(j)&lt;p] &amp;= Pr\left[\frac{c_i d_{ni}}{Z_i(j)}\right] \
+&amp;=Pr\left[\frac{c_i d_{ni}}{p} &lt; Z_i(j)\right] \
+&amp;=1-F_i\left(\frac{c_i d_{ni}}{p}\right) \
+&amp;= 1-e^{-[T_i(c_i d_{ni})^{-\theta}]p^{\theta}}
+\end{align*}</p>
+<p>{Production Technology}
+And we can compute the distribution of prices for what country <span class="math notranslate nohighlight">\(n\)</span> actually buys.  That is, distribution for
+[
+p_n(j) = \min {p_{ni}(j); i=1,…,N }
+]
+Intuition: The probability that at least one <span class="math notranslate nohighlight">\(p_{ni}\)</span> is smaller than <span class="math notranslate nohighlight">\(p\)</span> is equal to the complement probability that all <span class="math notranslate nohighlight">\(p_{ni}\)</span> are greater than <span class="math notranslate nohighlight">\(p\)</span>.  So we have that
+\begin{align*}
+G_n(p) &amp;= 1-\prod_i [1-G_{ni}(p)] \
+&amp;=1-e^{-\Phi_n p^\theta}
+\end{align*}
+where <span class="math notranslate nohighlight">\(\Phi_n =\sum_{i=1}^N T_i (c_i d_{ni})^{-\theta}\)</span> is a parameter that summarizes
+\begin{enumerate}</p>
+<ul class="simple">
+<li><p>states of technology around the world</p></li>
+<li><p>input costs around the world</p></li>
+<li><p>geographic barriers around the work
+\end{enumerate}</p></li>
+</ul>
+<p>{Production Technology}
+There are some general lessons from this price distribution:</p>
+<ul class="simple">
+<li><p>Prices tend to be lower the better is technology <span class="math notranslate nohighlight">\(\uparrow T_i\)</span></p></li>
+<li><p>Prices tend to be lower the lower are input prices <span class="math notranslate nohighlight">\(\downarrow c_i\)</span></p></li>
+<li><p>Prices tend to be lower the less are geographic barriers <span class="math notranslate nohighlight">\(\downarrow d_{in}\)</span></p></li>
+</ul>
+<p>{Production Technology}</p>
+<ul class="simple">
+<li><p>In the extreme case of free trade (<span class="math notranslate nohighlight">\(d_{in} \rightarrow 1\)</span>), price parameter <span class="math notranslate nohighlight">\(\Phi\)</span> is the same everywhere and the law of one price holds</p></li>
+<li><p>In the extreme case of autarky (<span class="math notranslate nohighlight">\(d_{in}\rightarrow \infty\)</span>), we have <span class="math notranslate nohighlight">\(\Phi_n=T_n c_n^{\theta}\)</span>: country <span class="math notranslate nohighlight">\(n\)</span>’s state of technology weighted by its input cost</p></li>
+</ul>
+<p>{Production Technology}
+EK can now compute the probability that country <span class="math notranslate nohighlight">\(i\)</span> provides the good at the lowest price in country <span class="math notranslate nohighlight">\(n\)</span>
+\begin{align*}
+\pi_{ni} &amp;= Pr[P_{ni}(j) \leq \min {P_{ns}(j); s \neq i }] \
+&amp;= \int_0^{\infty} \prod_{s \neq i}[1-G_{ns}(p)]dG_{ni}(p) \
+&amp; =\frac{T_i (c_i d_{ni})^{-\theta}}{\Phi_n}
+\end{align*}
+by the law of large numbers this is also the fraction of goods that country <span class="math notranslate nohighlight">\(n\)</span> buys from country <span class="math notranslate nohighlight">\(i\)</span></p>
+<p>{Trade Flows, and Gravity}
+The fraction of goods that country <span class="math notranslate nohighlight">\(n\)</span> buys from country <span class="math notranslate nohighlight">\(i\)</span>, given by <span class="math notranslate nohighlight">\(\pi_{ni}\)</span> is also the fraction of its expenditure on goods from country <span class="math notranslate nohighlight">\(i\)</span>
+[
+\frac{X_{ni}}{X_n} = \frac{T_i (c_i d_{ni})^{-\theta}}{\Phi_n} = \frac{T_i (c_i d_{ni})^{-\theta}}{\sum_{i=1}^N T_i (c_i d_{ni})^{-\theta}}
+]
+which we can use to write the exporter’s total sales <span class="math notranslate nohighlight">\(Q_i\)</span>
+[
+Q_i = \sum_{m=1}^{N}X_{mi} = T_i c_i^{-\theta}\sum_{m=1}^N \frac{d_{mi}^{-\theta }X_{m}}{\Phi_m}
+]</p>
+<p>{Trade Flows, and Gravity}
+You can show that the price index for the CES aggregator is given by
+[
+p_n = \gamma \Phi_n^{-1/\theta}
+]
+which is used to write the following expression for country <span class="math notranslate nohighlight">\(n\)</span> imports from country <span class="math notranslate nohighlight">\(i\)</span>
+[
+X_{ni}=\frac{\left( d_{ni}/p_n\right)^{-\theta}X_n}{\sum_{m=1}^{N}\left( d_{mi}/p_m\right)^{-\theta}X_m}Q_i
+]
+which is a standard gravity equation where both exporter’s total sales <span class="math notranslate nohighlight">\(Q_i\)</span> and importer’s total purchases <span class="math notranslate nohighlight">\(X_n\)</span> enter with unit elasticity.  This linearity crucially depends on the functional forms of technology.</p>
+<p>{Trade Flows, and Gravity}
+[
+X_{ni}=\frac{\left( d_{ni}/p_n\right)^{-\theta}X_n}{\sum_{m=1}^{N}\left( d_{mi}/p_m\right)^{-\theta}X_m}Q_i
+]</p>
+<ul class="simple">
+<li><p>Geographic barrier <span class="math notranslate nohighlight">\(d_{mi}\)</span> is deflated by the importer’s price level <span class="math notranslate nohighlight">\(p_m\)</span></p></li>
+<li><p>Tougher competition in country <span class="math notranslate nohighlight">\(m\)</span> reduces <span class="math notranslate nohighlight">\(p_m\)</span>, reducing importer <span class="math notranslate nohighlight">\(i's\)</span> access in the same way as a higher geographic barrier</p></li>
+<li><p>We can interpret the term <span class="math notranslate nohighlight">\((d_{mi}/p_m)^{-\theta}X_m\)</span> as the market size of destination <span class="math notranslate nohighlight">\(m\)</span> as perceived by country <span class="math notranslate nohighlight">\(i\)</span>.</p></li>
+<li><p>The denominator is therefore the total world market from <span class="math notranslate nohighlight">\(i's\)</span> perspective</p></li>
+</ul>
+<p>{Trade Flows, and Gravity}
+There are some key differences in terms of how EK’s bilateral trade volumes behave differently from monopolistically competitive environments:</p>
+<ul class="simple">
+<li><p>Trade costs affect bilateral trade through the technology parameter <span class="math notranslate nohighlight">\(\theta\)</span> rather than a preference parameter <span class="math notranslate nohighlight">\(\sigma\)</span></p></li>
+<li><p>Bilateral trade responds at the extensive margin rather than the intensive margin: as a source becomes more expensive it exports a narrower range of goods; different from monopolistic competition where the range of goods is unaffected by less is traded.</p></li>
+</ul>
+<p>{Trade Flows, and Gravity}
+After normalizing by exporters share at home we have
+[
+\frac{X_{ni}/X_n}{X_{ii}/X_i}=\frac{\Phi_i}{\Phi_n}d_{ni}^{-\theta}=\left( \frac{P_i d_{ni}}{P_n}\right)^{-\theta}
+]</p>
+<ul class="simple">
+<li><p>the left side can be constructed using trade data and gross output data (EK use a sample of 19 OECD countries)</p></li>
+<li><p>The right side can use data on geographic distance and retail prices, and then estimate the impact of comparative advantage through <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+</ul>
+<p>{Trade Flows, and Gravity}
+[
+\frac{X_{ni}/X_n}{X_{ii}/X_i}=\frac{\Phi_i}{\Phi_n}d_{ni}^{-\theta}=\left( \frac{p_i d_{ni}}{p_n}\right)^{-\theta}
+]</p>
+<ul class="simple">
+<li><p>As prices in market <span class="math notranslate nohighlight">\(n\)</span> fall relative to prices in market <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i\)</span>’s share in <span class="math notranslate nohighlight">\(n\)</span> declines</p></li>
+<li><p>As <span class="math notranslate nohighlight">\(n\)</span> becomes more isolated from <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(i\)</span>’s share in <span class="math notranslate nohighlight">\(n\)</span> declines</p></li>
+<li><p>As comparative advantage weakens (higher <span class="math notranslate nohighlight">\(\theta\)</span>), import shares become more elastic</p></li>
+</ul>
+<p>{Trade Flows and Distance}
+\begin{figure}
+\includegraphics[scale=.5]{EK_1}
+\centering
+\end{figure}</p>
+<p>{Trade Flows and Distance}
+A simple negative correlation between trade and distance is provocative, but subject to major limitations</p>
+<ul class="simple">
+<li><p>Ignores the price indices in the gravity equation</p></li>
+<li><p>Omits information on comparative advantage <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+<li><p>Distance may not be a good proxy for trade costs</p></li>
+</ul>
+<p>The observed correlation could arise under strong comparative advantage (low <span class="math notranslate nohighlight">\(\theta\)</span>) if trade costs rise rapidly with distance; or under high <span class="math notranslate nohighlight">\(\theta\)</span> where comparative advantage is weak.
+\vspace{5mm}</p>
+<p>Need to identify <span class="math notranslate nohighlight">\(\theta\)</span> for cleaner insights.</p>
+<p>{Trade Flows and Prices}
+To identify <span class="math notranslate nohighlight">\(\theta\)</span>, use price data to measure the term
+[
+\frac{p_i d_{ni}}{p_n}
+]
+The exact measurements of relative prices used in the paper can be found on page 1753, but for our purposes it’s enough to just think of the righthandside of the normalized gravity equation.</p>
+<p>{Trade Flows and Prices}
+\begin{figure}
+\includegraphics[scale=.5]{EK_2}
+\centering
+\end{figure}</p>
+<p>{Trade Flows and Prices}</p>
+<ul class="simple">
+<li><p>Correlation coefficient of -0.40 confirms the negative relationship between prices and trade predicted by the theory</p></li>
+<li><p>Since the model implies no intercept term, the parameter <span class="math notranslate nohighlight">\(\theta\)</span> is simply the slope coefficient of a log linear regression of the lefthandside on the righthandside gravity equation
+[
+\hat{\theta}=-8.03
+]
+which implies a standard deviation in efficiency (for a given <span class="math notranslate nohighlight">\(T\)</span>) of 15%.</p></li>
+</ul>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+At this point, we have a gravity equation that can quantitatively show the impact of comparative advantage versus geographic barriers in impacting trade.
+\vspace{5mm}</p>
+<p>EK go further and close the model by solving for factor prices and then estimate the resulting trade flows for manufacturing sector trying to find an estimate for <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+I omit the details (pagers 1755-1759), but include the updated gravity equation for reference:
+[
+\frac{X_{ni}}{X_n}=T_i \left( \frac{\gamma d_{ni}w_i^{\beta}p_i^{1-\beta}}{p_n}\right)^{-\theta}
+]
+where <span class="math notranslate nohighlight">\(\gamma\)</span> is the parameter from CES preferences, <span class="math notranslate nohighlight">\(\beta\)</span> is labor share from a Cobb-Douglas production function, <span class="math notranslate nohighlight">\(w\)</span> is the wage rate.</p>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+EK then incorporate the following information:</p>
+<ul class="simple">
+<li><p>Use <span class="math notranslate nohighlight">\(\beta=.21\)</span> which is the average labor share in manufacturing in their sample</p></li>
+<li><p>Estimate <span class="math notranslate nohighlight">\(d_{ni}\)</span> using a linear regression on distance, border effects, shared language, belonging to a trading area, and country fixed effects (See equation (29) in the paper for the exact regression specification)</p></li>
+<li><p>Capture <span class="math notranslate nohighlight">\(T_i\)</span> and <span class="math notranslate nohighlight">\(w_i\)</span> as source-country dummy variables <span class="math notranslate nohighlight">\(S_i\)</span> which is a measure of a country’s competitiveness</p></li>
+<li><p>Allow for asymmetric trade costs between country pairs (see equation 30 for details)</p></li>
+</ul>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+\begin{figure}
+\includegraphics[scale=.31]{EK_4}
+\centering
+\end{figure}</p>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+In general, the estimate of <span class="math notranslate nohighlight">\(\theta\)</span> is sensitive the methodology you use.</p>
+<ul class="simple">
+<li><p>Method of moments</p></li>
+<li><p>Simulated method of moments</p></li>
+<li><p>Generalized least squares</p></li>
+<li><p>OLS</p></li>
+<li><p>Using sectoral data on bilateral trade and import penetration</p></li>
+<li><p>Difference in difference</p></li>
+</ul>
+<p>{Identifying Comparative Advantage <span class="math notranslate nohighlight">\(\theta\)</span>}
+\begin{figure}
+\includegraphics[scale=.5]{EK_3}
+\centering
+\end{figure}</p>
+<p>{Counterfactual Exercises}
+With a structural model, you can run counterfactual experiments:</p>
+<ul class="simple">
+<li><p>What are the welfare gains from trade?</p></li>
+<li><p>What is the impact of tariffs?</p></li>
+<li><p>How much does trade spread the benefit of local improvements in technology?</p></li>
+<li><p>How does specialization affect the volatility of GDP?</p></li>
+</ul>
+<p>{Counterfactual Exercises}
+Here I show the effects from moving to autarky <span class="math notranslate nohighlight">\(d_{ni} \rightarrow \infty\)</span>, moving to free trade <span class="math notranslate nohighlight">\(d_{ni} \rightarrow 1\)</span> and removing all tariffs.
+\vspace{5mm}</p>
+<p>Tariffs simply affect the measured distance coefficient
+[
+d_{ni}^\tau=(1+\tau_{ni})d_{ni}
+]
+EK assume everyone charges 5% initially, and then removes the tariffs.</p>
+<p>{Counterfactual Exercises}
+\begin{figure}
+\includegraphics[scale=.45]{EK_5}
+\centering
+\end{figure}</p>
+<p>{Conclusion}</p>
+<ul class="simple">
+<li><p>A clever and parsimonious way of introducing Ricardian forces into a multi-country model</p></li>
+<li><p>Delivers a structural gravity equation which can be used to estimate different countries comparative advantage and the role that geographic barriers play</p></li>
+<li><p>Analytical solutions rely on some key assumptions: Frechet distribution, variance of productivity is the same across industries</p></li>
+<li><p>Estimation results are sensitive to the estimation strategy</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,653 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Spcific Factors Model &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'specific-factors-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="New Trade Theory" href="new-trade-theory.html" />
+    <link rel="prev" title="The Heckscher-Ohlin Model of Trade" href="ho-model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Specific Factors Model of Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/specific-factors-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Spcific Factors Model</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="spcific-factors-model">
+<h1>Spcific Factors Model<a class="headerlink" href="#spcific-factors-model" title="Link to this heading">#</a></h1>
+<p>The Heckscher-Ohlin model is useful in identifying how international trade may alter the distribution of income within a country \textit{permanently} (long-run effect).</p>
+<p>There are reasons to suspect that the affects on income could be different in the short-run.</p>
+<p>In economics, we often define the short-run as being a period of time in which factors are not easily shifted among production activities.</p>
+<p>If resources cannot move immediately or costlessly from one industry to another, then the effects of trade on incomes should be different from what we observe in the long-run.</p>
+<p>{Specific Factors Model}
+The \textbf{specific factors model} is similar to HO, except that we want to remove the assumption that all factors are freely mobile between sectors.</p>
+<p>We can think about this as a short-run version of HO theory.</p>
+<p>{Environment - Countries, Goods Factors}
+<span class="math notranslate nohighlight">\(2 \times 2 \times 3\)</span> model:</p>
+<ul class="simple">
+<li><p>Two countries: Home and Foreign</p></li>
+<li><p>Two goods: <span class="math notranslate nohighlight">\(i=1,2\)</span></p></li>
+<li><p>Three factors: labor (<span class="math notranslate nohighlight">\(L,L^*)\)</span> capital, <span class="math notranslate nohighlight">\((K,K^*)\)</span>, and land <span class="math notranslate nohighlight">\((T,T^*)\)</span>.</p></li>
+</ul>
+<p>We assume that labor is a mobile factor that can move between sectors, but capital and land are \textbf{specific factors} that are used only in the production of one good</p>
+<p>{Environment - Technology and Market Structure}
+We will assume that good 1 required capital and labor, while good 2 requires land and labor.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y_1 &amp;= f_1(K,L_1) \\
+y_2 &amp;= f_2(T,L_2)
+\end{align*}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(L_1+L_2=L\)</span>.</p>
+<p>We continue to assume that all market are competitive.</p>
+<figure>
+    <img src="_static/figs_ho/sp_1.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Why is the production possibilities frontier curved?  Diminishing returns to labor in each sector cause the opportunity cost to rise when an economy produces more of a good.</p>
+<p>The opportunity cost of producing one unit of good 1 is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{MPL_2}{MPL_1}
+\]</div>
+<p>How much labor is actually employed in each sector?</p>
+<p>Firms demand labor up until the point at which the value of an extra worker is exactly equal to the wage they must be paid:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+MPL_1 \times p_1 = w \\
+MPL_2 \times p_2 = w
+\end{align*}
+\end{split}\]</div>
+<p>Remember that the supply of labor is fixed at <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_15.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>So long as both goods are produced we must have that</p>
+<div class="math notranslate nohighlight">
+\[
+MPL_1 \times p_1 = MPL_2 \times p_2
+\]</div>
+<p>so that the economy must be producing at a point such that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{MPL_2}{MPL_1} = - \frac{p_1}{p_2}
+\]</div>
+<figure>
+    <img src="_static/figs_ho/ho_16.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>We are now prepared to run some experiments to see what happens to the distribution of income when goods prices changes.</p>
+<p>We’ll perform two experiments:</p>
+<ul class="simple">
+<li><p>an equal proportional change in prices</p></li>
+<li><p>a change in relative prices</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_ho/ho_17.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Both goods prices increase in the same proportion
+    </figcaption>
+</figure>
+<p>When both prices change in the same proportion, no real change occurs.</p>
+<ul class="simple">
+<li><p>the wage rate (<span class="math notranslate nohighlight">\(w\)</span>) rises in the same proportion as prices</p></li>
+<li><p>the \textit{real} wage (<span class="math notranslate nohighlight">\(w/p_1,w/p_2\)</span>) doesn’t change</p></li>
+<li><p>the real incomes of capital owners and landowners also remain the same</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_ho/ho_18.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Price of good 1 increases causing labor to shift from good 2 sector to good 1 sector.
+    </figcaption>
+</figure>
+<p>When only the price of good 1 increases, there is a change in the wage rate as labor chasing the higher value sector.</p>
+<ul class="simple">
+<li><p>labor shifts away from good 2 sector and toward good 1</p></li>
+<li><p>the wage rate increases, but not by as much as the price of good 1 since more employment results in diminishing marginal product of labor</p></li>
+<li><p>the output of good 2 sector increases, and the output of good 1 sector falls</p></li>
+</ul>
+<figure>
+    <img src="_static/figs_ho/ho_18.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+After an increase in the relative price of good 1, labor shifts toward good 1 sector causing an increase in good 1 output and a decrease in good 2 output.
+    </figcaption>
+</figure>
+<p>When the relative price of good 1 rises, what is the impact on the distribution of income?</p>
+<ul class="simple">
+<li><p>Owners of capital (specific to good 1) are better off, because the extra labor used in good 1 sector raises the marginal product of capital</p></li>
+<li><p>Landowners (specific to good 2) are worse off, because the loss of labor in good 2 sector decreases the marginal product of land</p></li>
+<li><p>We cannot say whether workers are better or worse off, because it depends on the relative importance of cloth and food in workers’ consumption</p></li>
+</ul>
+<p>Example: Prices, Wages, and Labor
+Suppose that the production technology for both sectors is Cobb Douglas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y_1 &amp;= A_1K^{\alpha_1}L^{1-\alpha_1} \\
+y_2 &amp;= A_2T^{\alpha_2}L^{1-\alpha_2}
+\end{align*}
+\end{split}\]</div>
+<p>The marginal products are therefore</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+MPL_1 &amp;= (1-\alpha_1)A_1(K/L_1)^{\alpha_1} \\
+MPL_2 &amp;= (1-\alpha_2)A_2(T/L_2)^{\alpha_2} \\
+MPK &amp;= \alpha_1 A_1 (L_1/K)^{1-\alpha_1} \\
+MPT &amp;= \alpha_2 A_2 (L_2/T)^{1-\alpha_2}
+\end{align*}
+\end{split}\]</div>
+<p>If labor is reallocated away from good 2 and toward good 1 then we have that <span class="math notranslate nohighlight">\(MPL_1 \downarrow, MPL_2 \uparrow, MPK \uparrow, MPT \downarrow\)</span>.  We can say that if the relative price of good 1 goes up, then the real income to capital owners increases and the real income to land owners decreases.  We can’t say anything definitive about labor because the <em>real</em> wage is measured in terms of both good 1 and good 2</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{w}{p_1}, \quad \frac{w}{p_2}
+\]</div>
+<p>so whether or not labor is better off or not depends on the relative importance of good 1 and good 2 in their consumption basket.</p>
+<p>Now that we understand how changes in goods prices affects the distribution of income, we are prepared to make a statement about how international trade affects the distribution of income.  We know that the world relative price is determined by the intersection of world relative demand and world relative supply…</p>
+<figure>
+    <img src="_static/figs_ho/ho_10.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>Opening up to trade increases the relative supply of good <span class="math notranslate nohighlight">\(i\)</span> in an economy whose relatie supply of good <span class="math notranslate nohighlight">\(i\)</span> is larger than for the world as a whole.</p>
+<div class="admonition-specific-factors-model-prediction-for-the-distribution-of-income admonition">
+<p class="admonition-title">Specific factors model prediction for the distribution of income</p>
+<p>:class: definition</p>
+<p>International trade benefits the factor that is specific to the export sector of each country, but hurts the factor that is specific to the import-competing sectors.  Trade has ambiguous effects on mobile factors.</p>
+</div>
+<p>Trade benefits the country as a whole because it certainly allows the economy to consume more than it would under autarky. In theory, it possible to redistribute income so that everyone gains from trade.  In reality redistribution is hard to implement, and so there are usually winners and loser from trade. Our short-run model of trade tells us that those who stand to lose from trade are the immobile factors in the import-competing sector.  In reality this includes not only capital, but also a portion of the labor force in those import-competing sectors. Given enough time, those workers can transition from eh import-competing sector to the export-sector, but in the short-run they are likely to suffer. For example, production workers in the apparel sector in the US in 2015 received an average wage about 30 percent lower than the average wage for all production workers. Most economists still favor free trade despite the short-run losses it can impose on import-competing sectors. It is better to allow trade and compensate those who are hurt by it than to prohibit trade. There exist ``safety net” policies like unemployment benefits, and subsidized retraining and relocation programs that can help.</p>
+<p>Example: Trade and the Distribution of Income
+The sugar industry in the US is very organized and was able to acquire protections against import-competition. Over the past 30 years, the average price of sugar in the US has been about twice the average price on the world market. A 2015 study by the US General Accounting Office estimated that this distorted price distortion cost $3.5 billion to consumers, or about $30 per household. The benefits of import restriction is highly concentrated in a small number of producers: seventeen sugar cane farms generate more than half of the profits for the whole sugar cane industry. Those producers are organized in trade associations that actively lobby on their members’ behalf, and make large campaign donations.  Consumers, on the other hand, are generally unaware of the cost and $30 is not enough to incentivize them to organize. Sugar import restriction do save jobs in the sugar industry, but the cost is extremely high: over $3 million per job saved. Sugar import restrictions also reduce employment in other sectors that rely on large quantities of sugar in their production processes. In response to high sugar prices in the US, many candy-making firms have shifted their production sites to Canada.  On net, the sugar restrictions generate employment <em>losses</em> for US workers.</p>
+<figure>
+    <img src="_static/figs_ho/ho_20.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+There is no obvious correlation between unemployment and imports for the U.S.
+    </figcaption>
+</figure>
+<p>What about the impact of trade on unemployment in the manufacturing sector specifically?  Many studies have cited China as the major import competitor to US manufacturing firms:</p>
+<ul class="simple">
+<li><p>U.S. industries that compete most heavily with Chinese imports tend to suffer the most employment losses</p></li>
+<li><p>high cost of employment losses, especially for workers with relatively lower education and skills</p></li>
+<li><p>long unemployment spells and large drops in wages when they find alternative employment</p></li>
+<li><p>prolonged negative consequences for regions that rely on manufacturing firms</p></li>
+</ul>
+<p>The job losses are mitigated by increases in employment in the export oriented sectors and by other employers who benefit from cheaper imported intermediate goods. Can we claim that on net Chinese imports hurt American workers?</p>
+<figure>
+    <img src="_static/figs_ho/ho_21.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+There is no clear evidence that import competition from China hurt manufacturing employment on net in the US.
+    </figcaption>
+</figure>
+<p>This doesn’t minimize the hurt felt by workers, particularly lower income and skill, in import competing firms. One example of a redistribution program is the U.S. Trade Adjustment Assistance program which provides extended unemployment coverage (1 extra year) and tuition reimabursement (for new job skill acquisitions) to workers who are displaced by a plant closure due to import competition.</p>
+<p>Two critiques:</p>
+<ul class="simple">
+<li><p>Relatively few workers are able to qualify</p></li>
+<li><p>The program discriminates against workers who are displaced due to economic forces other than trade</p></li>
+</ul>
+<p>{Summary}
+Key lessons:</p>
+<ul class="simple">
+<li><p>In the long-run trade tends to benefit the factor which is abundant, and hurt the factor that is scarce</p></li>
+<li><p>In the short-run trade tends to benefit the factor that is specific to the export sector, and hurt the fact that is specific to the import-competing sector</p></li>
+<li><p>Free trade still benefits both countries in aggregate, even though there are affects on the distribution of income within a country</p></li>
+<li><p>The groups that are hurt by trade typically are organized and attempt to gain political influence to implement protectionist policies</p></li>
+<li><p>Economists tend to favor free trade and support programs that help those groups that were hurt</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ho-model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Heckscher-Ohlin Model of Trade</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="new-trade-theory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">New Trade Theory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

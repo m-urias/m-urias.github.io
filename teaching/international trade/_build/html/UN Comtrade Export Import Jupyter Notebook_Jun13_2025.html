@@ -1,0 +1,1336 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UN Comtrade Export Import Jupyter Notebook_Jun13_2025';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UN Comtrade Export Import Jupyter Notebook_Jun13_2025.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Here we do the following:</p>
+<ul class="simple">
+<li><p>Fetch data on total imports and exports between China and the rest of the world for each year 2000-2022</p></li>
+<li><p>Compute the sum of exports and imports for each year</p></li>
+<li><p>Import data on China’s GDP from the World Bank (I simply imported a CSV file of GDP values)</p></li>
+<li><p>Compute the statistic (X+M)/Y for each year</p></li>
+</ul>
+<p>(Note: It is most appropriate to use GDP in current dollars for this exercise.  This is because UN Comtrade data is calculated in current US dollar values using average annual exchange rates.  To ensure our trade data and GDP data do not mix up nominal versus real values, we want both to be expressed in current US dollars.)</p>
+<p>Step 1: Import the necessary libraries into our Python environment.  The library <code class="docutils literal notranslate"><span class="pre">comtradeapicall</span></code> allows us to communicate with the UN Comtrade API so that we can directly access this database .  You specify the type of data you want using <code class="docutils literal notranslate"><span class="pre">Selection</span> <span class="pre">Criteria</span></code> which are the list of specifications immediately following the use of <code class="docutils literal notranslate"><span class="pre">comtradeapicall</span></code> command in the codes below.  You can find detailed descriptions of <code class="docutils literal notranslate"><span class="pre">Section</span> <span class="pre">Criteria</span></code> in the documentation here: <a class="reference external" href="https://pypi.org/project/comtradeapicall/">https://pypi.org/project/comtradeapicall/</a>.  We also use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library which is great for data analysis: <a class="reference external" href="https://pandas.pydata.org/">https://pandas.pydata.org/</a>.  We’ll use it to organize the data we get from UN Comtrade into a neat table called a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, which is similar to a spreadsheet.  We also use the library <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> which is useful for making plots to visualize the data, and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> which is built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and provides more visually appealing plots.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: Import the necessary libraries into our Python environment.</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">comtradeapicall</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Step 2: Building a function to fetch trade data.  We want to fetch trade data for various countries over various years.  Instead of writing new code of every different data query, we create a function: a block of code that performs a specific task and can be called whenever needed.  We will call our function <code class="docutils literal notranslate"><span class="pre">fetch_trade_data</span></code>, and it takes three pieces of information: <code class="docutils literal notranslate"><span class="pre">reporter_code</span></code> (what country do we want data?); <code class="docutils literal notranslate"><span class="pre">year</span></code> (what year do we want data?); and <code class="docutils literal notranslate"><span class="pre">flow_code</span></code> (do we want imports <code class="docutils literal notranslate"><span class="pre">M</span></code> or exports <code class="docutils literal notranslate"><span class="pre">X</span></code>?).  Within the same function we convert the raw data into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  This is where our <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library is useful.  We want to convert the raw data from UN Comtrade into an easy to read/manipulate spreadsheet-like table.  Once we have the data in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, we can then easily view and manipulate the data.</p>
+<p>In this example, we fetch total import and export values for China from 2000-2023.  We therefore set <code class="docutils literal notranslate"><span class="pre">reporter_code</span></code> to value <code class="docutils literal notranslate"><span class="pre">156</span></code>; <code class="docutils literal notranslate"><span class="pre">flow_code</span></code> to values <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">M</span></code>; and then loop over <code class="docutils literal notranslate"><span class="pre">year</span></code> from values 2000 to 2022.  You can replace these three arguments in the <code class="docutils literal notranslate"><span class="pre">fetch_trade_data</span></code> function to collect whatever data you’re interested in.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 2: This function fetches trade data (imports or exports) for a specific country, for a specific year from the UN Comtrade database and converts it into a DataFrame.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fetch_trade_data</span><span class="p">(</span><span class="n">reporter_code</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">flow_code</span><span class="p">):</span>
+        <span class="n">mydf</span> <span class="o">=</span> <span class="n">comtradeapicall</span><span class="o">.</span><span class="n">previewFinalData</span><span class="p">(</span>
+        <span class="n">typeCode</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>       <span class="c1"># &#39;C&#39; for Commodities</span>
+        <span class="n">freqCode</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>       <span class="c1"># &#39;A&#39; for Annual data</span>
+        <span class="n">clCode</span><span class="o">=</span><span class="s1">&#39;HS&#39;</span><span class="p">,</span>        <span class="c1"># &#39;HS&#39; for Harmonized System (goods classification)</span>
+        <span class="n">period</span><span class="o">=</span><span class="n">year</span><span class="p">,</span>        <span class="c1"># The year we&#39;re looking for</span>
+        <span class="n">reporterCode</span><span class="o">=</span><span class="n">reporter_code</span><span class="p">,</span>  <span class="c1"># The code for our selected country</span>
+        <span class="n">cmdCode</span><span class="o">=</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">,</span>    <span class="c1"># All commodities</span>
+        <span class="n">flowCode</span><span class="o">=</span><span class="n">flow_code</span><span class="p">,</span> <span class="c1"># &#39;M&#39; for imports or &#39;X&#39; for exports</span>
+        <span class="n">partnerCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>   <span class="c1"># All trading partners</span>
+        <span class="n">partner2Code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">customsCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">motCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">maxRecords</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>    <span class="c1"># Max number of records to get</span>
+        <span class="n">format_output</span><span class="o">=</span><span class="s1">&#39;JSON&#39;</span><span class="p">,</span> <span class="c1"># Get data in a web-friendly JSON format</span>
+        <span class="n">aggregateBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">breakdownMode</span><span class="o">=</span><span class="s1">&#39;classic&#39;</span><span class="p">,</span>
+        <span class="n">countOnly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">includeDesc</span><span class="o">=</span><span class="kc">True</span>    <span class="c1"># Include descriptions (like country names)</span>
+    <span class="p">)</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mydf</span><span class="p">)</span>
+
+
+    <span class="c1"># Filter out &#39;World&#39; and &#39;China&#39; from the data</span>
+        <span class="n">reporter_country_name</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;reporterDesc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">df_clean</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;partnerDesc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;World&#39;</span><span class="p">,</span> <span class="n">reporter_country_name</span><span class="p">])]</span>
+
+    <span class="c1"># Since we are fetching data for Sum the &#39;primaryValue&#39; column to get the total trade value.</span>
+        <span class="k">return</span> <span class="n">df_clean</span>
+
+<span class="c1"># Create an empty list to store all the detailed trade information we&#39;re about to collect</span>
+<span class="n">all_trade_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Collect data by iterating through years 2000 to 2022</span>
+<span class="n">selected_reporter_code</span> <span class="o">=</span> <span class="s1">&#39;156&#39;</span> <span class="c1"># China</span>
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">2023</span><span class="p">):</span>
+    <span class="n">year_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching total trade data for </span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2"> in year: </span><span class="si">{</span><span class="n">year_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Fetch partner-level data for imports for the current year</span>
+    <span class="n">imports_partner</span> <span class="o">=</span> <span class="n">fetch_trade_data</span><span class="p">(</span><span class="n">selected_reporter_code</span><span class="p">,</span> <span class="n">year_str</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span>
+    <span class="n">imports_partner</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">year</span> <span class="c1"># Add a &#39;Year&#39; column</span>
+    <span class="n">imports_partner</span><span class="p">[</span><span class="s1">&#39;Flow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Imports&#39;</span> <span class="c1"># Add a &#39;Flow&#39; column</span>
+    <span class="n">all_trade_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imports_partner</span><span class="p">)</span> <span class="c1"># Add to our list</span>
+
+    <span class="c1"># Fetch partner-level data for exports for the current year</span>
+    <span class="n">exports_partner</span> <span class="o">=</span> <span class="n">fetch_trade_data</span><span class="p">(</span><span class="n">selected_reporter_code</span><span class="p">,</span> <span class="n">year_str</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">)</span>
+    <span class="n">exports_partner</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">year</span> <span class="c1"># Add a &#39;Year&#39; column</span>
+    <span class="n">exports_partner</span><span class="p">[</span><span class="s1">&#39;Flow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Exports&#39;</span> <span class="c1"># Add a &#39;Flow&#39; column</span>
+    <span class="n">all_trade_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">exports_partner</span><span class="p">)</span> <span class="c1"># Add to our list</span>
+
+<span class="c1"># Combine all the individual DataFrames into one large DataFrame</span>
+<span class="n">all_trade_partner</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_trade_data</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All detailed trade data for Reporter Code </span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2"> (2000-2022) fetched and combined:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Optionally, save the master detailed DataFrame to a CSV file</span>
+<span class="n">output_path_all_detailed</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;C:\Users\XPS\Dropbox\Website\International Trade\data\</span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2">_all_trade_partner_2000_2022.csv&quot;</span>
+<span class="n">all_trade_partner</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path_all_detailed</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All detailed trade data saved to: </span><span class="si">{</span><span class="n">output_path_all_detailed</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching total trade data for 156 in year: 2000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching total trade data for 156 in year: 2001
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching total trade data for 156 in year: 2002
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fetching total trade data for 156 in year: 2003
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">50</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="n">all_trade_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">imports_partner</span><span class="p">)</span> <span class="c1"># Add to our list</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span> <span class="c1"># Fetch partner-level data for exports for the current year</span>
+<span class="ne">---&gt; </span><span class="mi">50</span> <span class="n">exports_partner</span> <span class="o">=</span> <span class="n">fetch_trade_data</span><span class="p">(</span><span class="n">selected_reporter_code</span><span class="p">,</span> <span class="n">year_str</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="n">exports_partner</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">year</span> <span class="c1"># Add a &#39;Year&#39; column</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="n">exports_partner</span><span class="p">[</span><span class="s1">&#39;Flow&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Exports&#39;</span> <span class="c1"># Add a &#39;Flow&#39; column</span>
+
+<span class="nn">Cell In[2], line 4,</span> in <span class="ni">fetch_trade_data</span><span class="nt">(reporter_code, year, flow_code)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span><span class="w"> </span><span class="nf">fetch_trade_data</span><span class="p">(</span><span class="n">reporter_code</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">flow_code</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>         <span class="n">mydf</span> <span class="o">=</span> <span class="n">comtradeapicall</span><span class="o">.</span><span class="n">previewFinalData</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">typeCode</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>       <span class="c1"># &#39;C&#39; for Commodities</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">freqCode</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>       <span class="c1"># &#39;A&#39; for Annual data</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">clCode</span><span class="o">=</span><span class="s1">&#39;HS&#39;</span><span class="p">,</span>        <span class="c1"># &#39;HS&#39; for Harmonized System (goods classification)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="n">period</span><span class="o">=</span><span class="n">year</span><span class="p">,</span>        <span class="c1"># The year we&#39;re looking for</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">reporterCode</span><span class="o">=</span><span class="n">reporter_code</span><span class="p">,</span>  <span class="c1"># The code for our selected country</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>         <span class="n">cmdCode</span><span class="o">=</span><span class="s1">&#39;TOTAL&#39;</span><span class="p">,</span>    <span class="c1"># All commodities</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">flowCode</span><span class="o">=</span><span class="n">flow_code</span><span class="p">,</span> <span class="c1"># &#39;M&#39; for imports or &#39;X&#39; for exports</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="n">partnerCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>   <span class="c1"># All trading partners</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="n">partner2Code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="n">customsCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span>         <span class="n">motCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>         <span class="n">maxRecords</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>    <span class="c1"># Max number of records to get</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="n">format_output</span><span class="o">=</span><span class="s1">&#39;JSON&#39;</span><span class="p">,</span> <span class="c1"># Get data in a web-friendly JSON format</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">aggregateBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="n">breakdownMode</span><span class="o">=</span><span class="s1">&#39;classic&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>         <span class="n">countOnly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="n">includeDesc</span><span class="o">=</span><span class="kc">True</span>    <span class="c1"># Include descriptions (like country names)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mydf</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="c1"># Filter out &#39;World&#39; and &#39;China&#39; from the data</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtradeapicall\PreviewGet.py:66,</span> in <span class="ni">previewFinalData</span><span class="nt">(typeCode, freqCode, clCode, period, reporterCode, cmdCode, flowCode, partnerCode, partner2Code, customsCode, motCode, maxRecords, format_output, aggregateBy, breakdownMode, countOnly, includeDesc, proxy_url)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span><span class="w"> </span><span class="nf">previewFinalData</span><span class="p">(</span><span class="n">typeCode</span><span class="p">,</span> <span class="n">freqCode</span><span class="p">,</span> <span class="n">clCode</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">reporterCode</span><span class="p">,</span> <span class="n">cmdCode</span><span class="p">,</span> <span class="n">flowCode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span>                      <span class="n">partnerCode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>                      <span class="n">partner2Code</span><span class="p">,</span> <span class="n">customsCode</span><span class="p">,</span> <span class="n">motCode</span><span class="p">,</span> <span class="n">maxRecords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">format_output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>                      <span class="n">aggregateBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">breakdownMode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">countOnly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">includeDesc</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">proxy_url</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">66</span>     <span class="k">return</span> <span class="n">getPreviewData</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;FINAL&#39;</span><span class="p">,</span> <span class="n">typeCode</span><span class="p">,</span> <span class="n">freqCode</span><span class="p">,</span> <span class="n">clCode</span><span class="p">,</span> <span class="n">period</span><span class="p">,</span> <span class="n">reporterCode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>                           <span class="n">cmdCode</span><span class="p">,</span> <span class="n">flowCode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>                           <span class="n">partnerCode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>                           <span class="n">partner2Code</span><span class="p">,</span> <span class="n">customsCode</span><span class="p">,</span> <span class="n">motCode</span><span class="p">,</span> <span class="n">maxRecords</span><span class="p">,</span> <span class="n">format_output</span><span class="p">,</span> <span class="n">aggregateBy</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="n">breakdownMode</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>                           <span class="n">countOnly</span><span class="p">,</span> <span class="n">includeDesc</span><span class="p">,</span> <span class="n">proxy_url</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\comtradeapicall\PreviewGet.py:46,</span> in <span class="ni">getPreviewData</span><span class="nt">(subscription_key, tradeDataType, typeCode, freqCode, clCode, period, reporterCode, cmdCode, flowCode, partnerCode, partner2Code, customsCode, motCode, maxRecords, format_output, aggregateBy, breakdownMode, countOnly, includeDesc, proxy_url)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">46</span>         <span class="n">resp</span> <span class="o">=</span> <span class="n">http</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">baseURL</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span>         <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>             <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\_request_methods.py:135,</span> in <span class="ni">RequestMethods.request</span><span class="nt">(self, method, url, body, fields, headers, json, **urlopen_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="n">urlopen_kw</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">body</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_encode_url_methods</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">135</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_encode_url</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">136</span>         <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>         <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>         <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span>  <span class="c1"># type: ignore[arg-type]</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>         <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>         <span class="o">**</span><span class="n">urlopen_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_encode_body</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span>         <span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="n">fields</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="o">**</span><span class="n">urlopen_kw</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\_request_methods.py:182,</span> in <span class="ni">RequestMethods.request_encode_url</span><span class="nt">(self, method, url, fields, headers, **urlopen_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="k">if</span> <span class="n">fields</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>     <span class="n">url</span> <span class="o">+=</span> <span class="s2">&quot;?&quot;</span> <span class="o">+</span> <span class="n">urlencode</span><span class="p">(</span><span class="n">fields</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">182</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">extra_kw</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\poolmanager.py:443,</span> in <span class="ni">PoolManager.urlopen</span><span class="nt">(self, method, url, redirect, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">443</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">request_uri</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span> <span class="n">redirect_location</span> <span class="o">=</span> <span class="n">redirect</span> <span class="ow">and</span> <span class="n">response</span><span class="o">.</span><span class="n">get_redirect_location</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">446</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">redirect_location</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:787,</span> in <span class="ni">HTTPConnectionPool.urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">784</span> <span class="n">response_conn</span> <span class="o">=</span> <span class="n">conn</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">release_conn</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">786</span> <span class="c1"># Make the request on the HTTPConnection object</span>
+<span class="ne">--&gt; </span><span class="mi">787</span> <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">788</span>     <span class="n">conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="n">method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="n">url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">791</span>     <span class="n">timeout</span><span class="o">=</span><span class="n">timeout_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span>     <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span>     <span class="n">chunked</span><span class="o">=</span><span class="n">chunked</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="n">retries</span><span class="o">=</span><span class="n">retries</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">796</span>     <span class="n">response_conn</span><span class="o">=</span><span class="n">response_conn</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">preload_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">799</span>     <span class="o">**</span><span class="n">response_kw</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">800</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">802</span> <span class="c1"># Everything went great!</span>
+<span class="g g-Whitespace">    </span><span class="mi">803</span> <span class="n">clean_exit</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:534,</span> in <span class="ni">HTTPConnectionPool._make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span> <span class="c1"># Receive the response from the server</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">534</span>     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">getresponse</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> <span class="k">except</span> <span class="p">(</span><span class="n">BaseSSLError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_raise_timeout</span><span class="p">(</span><span class="n">err</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout_value</span><span class="o">=</span><span class="n">read_timeout</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py:530,</span> in <span class="ni">HTTPConnection.getresponse</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>     <span class="n">log</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">522</span>         <span class="s2">&quot;Failed to parse headers (url=</span><span class="si">%s</span><span class="s2">): </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">523</span>         <span class="n">_url_from_connection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resp_options</span><span class="o">.</span><span class="n">request_url</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span>         <span class="n">hpe</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span>         <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">526</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">528</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">HTTPHeaderDict</span><span class="p">(</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">530</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HTTPResponse</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">body</span><span class="o">=</span><span class="n">httplib_response</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span>     <span class="n">status</span><span class="o">=</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">status</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span>     <span class="n">version</span><span class="o">=</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span>     <span class="n">version_string</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;_http_vsn_str&quot;</span><span class="p">,</span> <span class="s2">&quot;HTTP/?&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>     <span class="n">reason</span><span class="o">=</span><span class="n">httplib_response</span><span class="o">.</span><span class="n">reason</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="n">preload_content</span><span class="o">=</span><span class="n">resp_options</span><span class="o">.</span><span class="n">preload_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="n">decode_content</span><span class="o">=</span><span class="n">resp_options</span><span class="o">.</span><span class="n">decode_content</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span>     <span class="n">original_response</span><span class="o">=</span><span class="n">httplib_response</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="n">enforce_content_length</span><span class="o">=</span><span class="n">resp_options</span><span class="o">.</span><span class="n">enforce_content_length</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">541</span>     <span class="n">request_method</span><span class="o">=</span><span class="n">resp_options</span><span class="o">.</span><span class="n">request_method</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">request_url</span><span class="o">=</span><span class="n">resp_options</span><span class="o">.</span><span class="n">request_url</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">sock_shutdown</span><span class="o">=</span><span class="n">_shutdown</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span> <span class="k">return</span> <span class="n">response</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\response.py:639,</span> in <span class="ni">HTTPResponse.__init__</span><span class="nt">(self, body, headers, status, version, version_string, reason, preload_content, decode_content, original_response, pool, connection, msg, retries, enforce_content_length, request_method, request_url, auto_close, sock_shutdown)</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span> <span class="c1"># If requested, preload the body.</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span> <span class="k">if</span> <span class="n">preload_content</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_body</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">639</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_body</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">decode_content</span><span class="o">=</span><span class="n">decode_content</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\response.py:955,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt, decode_content, cache_content)</span>
+<span class="g g-Whitespace">    </span><span class="mi">952</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decoded_buffer</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_decoded_buffer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">955</span> <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_raw_read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span> <span class="n">flush_decoder</span> <span class="o">=</span> <span class="n">amt</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="p">(</span><span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">959</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">data</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_decoded_buffer</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\response.py:879,</span> in <span class="ni">HTTPResponse._raw_read</span><span class="nt">(self, amt, read1)</span>
+<span class="g g-Whitespace">    </span><span class="mi">876</span> <span class="n">fp_closed</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="p">,</span> <span class="s2">&quot;closed&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">878</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_error_catcher</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">879</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp_read</span><span class="p">(</span><span class="n">amt</span><span class="p">,</span> <span class="n">read1</span><span class="o">=</span><span class="n">read1</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">fp_closed</span> <span class="k">else</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">880</span>     <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">data</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">881</span>         <span class="c1"># Platform-specific: Buggy versions of Python.</span>
+<span class="g g-Whitespace">    </span><span class="mi">882</span>         <span class="c1"># Close the connection when no data is returned</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">887</span>         <span class="c1"># not properly close the connection in all cases. There is</span>
+<span class="g g-Whitespace">    </span><span class="mi">888</span>         <span class="c1"># no harm in redundantly calling close.</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\response.py:862,</span> in <span class="ni">HTTPResponse._fp_read</span><span class="nt">(self, amt, read1)</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read1</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read1</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="c1"># StringIO doesn&#39;t like amt=None</span>
+<span class="ne">--&gt; </span><span class="mi">862</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:473,</span> in <span class="ni">HTTPResponse.read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>     <span class="k">return</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunked</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">473</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_read_chunked</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">475</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">476</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">amt</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">length</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span>         <span class="c1"># clip the read to the &quot;end of response&quot;</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:601,</span> in <span class="ni">HTTPResponse._read_chunked</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">598</span>     <span class="bp">self</span><span class="o">.</span><span class="n">chunk_left</span> <span class="o">=</span> <span class="n">chunk_left</span> <span class="o">-</span> <span class="n">amt</span>
+<span class="g g-Whitespace">    </span><span class="mi">599</span>     <span class="k">break</span>
+<span class="ne">--&gt; </span><span class="mi">601</span> <span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_safe_read</span><span class="p">(</span><span class="n">chunk_left</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="k">if</span> <span class="n">amt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">603</span>     <span class="n">amt</span> <span class="o">-=</span> <span class="n">chunk_left</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\http\client.py:640,</span> in <span class="ni">HTTPResponse._safe_read</span><span class="nt">(self, amt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">633</span> <span class="k">def</span><span class="w"> </span><span class="nf">_safe_read</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amt</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">634</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Read the number of bytes requested.</span>
+<span class="g g-Whitespace">    </span><span class="mi">635</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">636</span><span class="sd">     This function should be used when &lt;amt&gt; bytes &quot;should&quot; be present for</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span><span class="sd">     reading. If the bytes are truly not available (due to EOF), then the</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span><span class="sd">     IncompleteRead exception can be used to detect the problem.</span>
+<span class="g g-Whitespace">    </span><span class="mi">639</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">640</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">amt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">642</span>         <span class="k">raise</span> <span class="n">IncompleteRead</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">amt</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\socket.py:708,</span> in <span class="ni">SocketIO.readinto</span><span class="nt">(self, b)</span>
+<span class="g g-Whitespace">    </span><span class="mi">706</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">707</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">708</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">709</span>     <span class="k">except</span> <span class="n">timeout</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">710</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_timeout_occurred</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\ssl.py:1252,</span> in <span class="ni">SSLSocket.recv_into</span><span class="nt">(self, buffer, nbytes, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1248</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1249</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1250</span>           <span class="s2">&quot;non-zero flags not allowed in calls to recv_into() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1251</span>           <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1252</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">nbytes</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1253</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1254</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv_into</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python312\Lib\ssl.py:1104,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1102</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1103</span>     <span class="k">if</span> <span class="n">buffer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1104</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1105</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1106</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Step 3: Visualize the data.  We now have a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">all_trade_partner</span></code> which contains all import and export values for every trading partner with China from 2000-2022.  First, let’s sum trade values across trading partners to measure total import and export values for China for each year from 2000 to 2022.  We make use of our <code class="docutils literal notranslate"><span class="pre">pandas</span></code> library to sum over the <code class="docutils literal notranslate"><span class="pre">primaryValue</span></code> which is the export and import values and group them by year and export/import.  Then we make use of the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library to plot import and export values over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate yearly total trade from df_all_trade_partner</span>
+<span class="c1"># Now we compute the yearly totals by grouping our master DataFrame.</span>
+
+<span class="n">df_total_trade</span> <span class="o">=</span> <span class="n">all_trade_partner</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Flow&#39;</span><span class="p">])[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_total_trade</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Remove the &#39;Flow&#39; column name from index</span>
+<span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Total_Trade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Imports&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Exports&#39;</span><span class="p">]</span> <span class="c1"># Calculate total trade</span>
+
+<span class="c1"># Rename columns for clarity (matching previous output)</span>
+<span class="n">df_total_trade</span> <span class="o">=</span> <span class="n">df_total_trade</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Imports&#39;</span><span class="p">:</span> <span class="s1">&#39;Total_Imports&#39;</span><span class="p">,</span> <span class="s1">&#39;Exports&#39;</span><span class="p">:</span> <span class="s1">&#39;Total_Exports&#39;</span><span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Yearly Total Trade (Imports + Exports) for Reporter Code </span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2"> (2000-2022):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_total_trade</span><span class="p">)</span>
+
+<span class="c1"># Export total trade values to a CSV file.</span>
+<span class="n">output_path_total_summary</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\XPS\Dropbox\Website\International Trade\data\china_yearly_trade_summary.csv&quot;</span>
+<span class="n">df_total_trade</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path_total_summary</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total yearly trade summary data saved to: </span><span class="si">{</span><span class="n">output_path_total_summary</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 3: Plotting imports and exports over time</span>
+
+<span class="c1"># Set the size of the plot for better readability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Plot total imports and total exports</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Total_Imports&#39;</span><span class="p">],</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>         <span class="c1"># Add circles at each data point</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>      <span class="c1"># Use a solid line</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span>       <span class="c1"># Make the line blue</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total Imports&#39;</span><span class="p">)</span> <span class="c1"># Label this line for the legend</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Total_Exports&#39;</span><span class="p">],</span>
+         <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span>         <span class="c1"># Add &#39;x&#39; marks at each data point</span>
+         <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>     <span class="c1"># Use a dashed line</span>
+         <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>        <span class="c1"># Make the line red</span>
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total Exports&#39;</span><span class="p">)</span> <span class="c1"># Label this line for the legend</span>
+
+<span class="c1"># Add a title and axis labels to the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Trade Data for China (2000-2022)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Value (US Dollars)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis ticks: show every year and rotate labels if needed</span>
+<span class="c1"># Add a grid for easier reading of values</span>
+<span class="c1"># Add a legend to identify which line is which</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">df_total_trade</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span> <span class="c1"># ha=&#39;right&#39; aligns labels nicely</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Adjust the plot layout to prevent labels from overlapping</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="c1"># Display the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Yearly Total Trade (Imports + Exports) for Reporter Code 156 (2000-2022):
+    Year  Total_Exports  Total_Imports   Total_Trade
+0   2000   2.492026e+11   2.179206e+11  4.671232e+11
+1   2001   2.660982e+11   2.347874e+11  5.008856e+11
+2   2002   3.255960e+11   2.801899e+11  6.057859e+11
+3   2003   4.382278e+11   3.876655e+11  8.258933e+11
+4   2004   5.933256e+11   5.225742e+11  1.115900e+12
+5   2005   7.619534e+11   6.047899e+11  1.366743e+12
+6   2006   9.689356e+11   7.181280e+11  1.687064e+12
+7   2007   1.220060e+12   8.703422e+11  2.090402e+12
+8   2008   1.430693e+12   1.040101e+12  2.470794e+12
+9   2009   1.201647e+12   9.191412e+11  2.120788e+12
+10  2010   1.577764e+12   1.289134e+12  2.866897e+12
+11  2011   1.898388e+12   1.620780e+12  3.519169e+12
+12  2012   2.048782e+12   1.675269e+12  3.724052e+12
+13  2013   2.209007e+12   1.792451e+12  4.001459e+12
+14  2014   2.342293e+12   1.814354e+12  4.156647e+12
+15  2015   2.273468e+12   1.536195e+12  3.809663e+12
+16  2016   2.097637e+12   1.459861e+12  3.557498e+12
+17  2017   2.263371e+12   1.711424e+12  3.974794e+12
+18  2018   2.486440e+12   1.987384e+12  4.473824e+12
+19  2019   2.499207e+12   1.949493e+12  4.448700e+12
+20  2020   2.589098e+12   1.944304e+12  4.533402e+12
+21  2021   3.316022e+12   2.524026e+12  5.840048e+12
+22  2022   3.593601e+12   2.593114e+12  6.186716e+12
+Total yearly trade summary data saved to: C:\Users\XPS\Dropbox\International Trade\Module 4 2025\homework\china_yearly_trade_summary.csv
+</pre></div>
+</div>
+<img alt="_images/150990bceb63b37ff1fa38ff900dcab255cdad6f184c86fde31d7093a9da8305.png" src="_images/150990bceb63b37ff1fa38ff900dcab255cdad6f184c86fde31d7093a9da8305.png" />
+</div>
+</div>
+<p>Step 4: Collect GDP data and compute the trade-to-GDP ratio over time.  In this example, I’ve already downloaded and cleaned GDP data for China sourced from the World Bank: <a class="reference external" href="https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=CN">https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=CN</a>.  After importing GDP data from my CSV file, we combine the GDP data and trade data into one <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> called <code class="docutils literal notranslate"><span class="pre">df_combined</span></code> and compute the ratio <span class="math notranslate nohighlight">\((X+M)/Y\)</span>.  Lastly, we plot the trade-to-GDP ratio over time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import Chinese GDP data</span>
+<span class="c1"># Define the path to your clean GDP CSV file</span>
+<span class="n">gdp_file_path</span> <span class="o">=</span> <span class="s2">&quot;china_gdp_current_usd.csv&quot;</span>
+<span class="n">df_gdp_clean</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">gdp_file_path</span><span class="p">)</span>
+
+<span class="c1"># Rename the GDP column to a simpler name for easier access The exact name depends on your CSV.</span>
+<span class="n">df_gdp_clean</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;GDP (current US dollars)&#39;</span><span class="p">:</span> <span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># 2. Ensure &#39;Year&#39; and &#39;GDP_Current_USD&#39; are numeric</span>
+<span class="n">df_gdp_clean</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_gdp_clean</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">df_gdp_clean</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_gdp_clean</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="c1"># Drop any rows where &#39;Year&#39; or &#39;GDP_Current_USD&#39; couldn&#39;t be converted (i.e., are NaN)</span>
+<span class="n">df_gdp_clean</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Select only the relevant columns and sort by year</span>
+<span class="n">df_final_gdp</span> <span class="o">=</span> <span class="n">df_gdp_clean</span><span class="p">[[</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Cleaned and Prepared China GDP Data (2000-2022) ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Step 4: Compute total trade to GDP ratio (X+M)/Y (2000-2022)</span>
+
+<span class="c1"># Load Trade Data</span>
+<span class="n">trade_file_path</span> <span class="o">=</span> <span class="s2">&quot;china_yearly_trade_summary.csv&quot;</span>
+
+<span class="c1"># Ensure GDP Data is Available</span>
+<span class="c1"># This assumes `df_final_gdp` from the previous GDP preparation block is in your session.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">GDP data head (from previous block):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df_final_gdp</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GDP data columns:&quot;</span><span class="p">,</span> <span class="n">df_final_gdp</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="c1"># Merge Trade Data with GDP Data</span>
+<span class="c1"># We merge on &#39;Year&#39;, assuming both DataFrames have this column.</span>
+<span class="n">df_combined</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_total_trade</span><span class="p">,</span> <span class="n">df_final_gdp</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Compute (X+M)/Y Ratio</span>
+<span class="c1"># Ensure that the columns are numeric, coercing errors will turn non-numeric into NaN</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s1">&#39;Total_Trade&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_combined</span><span class="p">[</span><span class="s1">&#39;Total_Trade&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df_combined</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="c1"># Calculate the ratio. We add checks for NaN values and division by zero.</span>
+<span class="n">df_combined</span><span class="p">[</span><span class="s1">&#39;(X+M)/Y_Ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_combined</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Total_Trade&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Total_Trade&#39;</span><span class="p">])</span> <span class="ow">and</span>
+       <span class="n">pd</span><span class="o">.</span><span class="n">notna</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">])</span> <span class="ow">and</span>
+       <span class="n">row</span><span class="p">[</span><span class="s1">&#39;GDP_Current_USD&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="kc">None</span><span class="p">,</span> <span class="c1"># Assign None if the calculation isn&#39;t possible (e.g., missing data or zero GDP)</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># Display Results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_combined</span><span class="p">)</span>
+
+<span class="c1"># Save the Final DataFrame to CSV</span>
+<span class="n">final_output_path</span> <span class="o">=</span> <span class="s2">&quot;china_trade_gdp_ratio_2000_2022.csv&quot;</span>
+<span class="n">df_combined</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">final_output_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Final combined data saved to: </span><span class="si">{</span><span class="n">final_output_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Cleaned and Prepared China GDP Data (2000-2022) ---
+
+GDP data head (from previous block):
+    Year  GDP_Current_USD
+0  1960     5.971625e+10
+1  1961     5.005669e+10
+2  1962     4.720919e+10
+3  1963     5.070661e+10
+4  1964     5.970813e+10
+GDP data columns: [&#39;Year&#39;, &#39;GDP_Current_USD&#39;]
+    Year  Total_Exports  Total_Imports   Total_Trade  GDP_Current_USD  \
+0   2000   2.492026e+11   2.179206e+11  4.671232e+11     1.211332e+12   
+1   2001   2.660982e+11   2.347874e+11  5.008856e+11     1.339401e+12   
+2   2002   3.255960e+11   2.801899e+11  6.057859e+11     1.470558e+12   
+3   2003   4.382278e+11   3.876655e+11  8.258933e+11     1.660281e+12   
+4   2004   5.933256e+11   5.225742e+11  1.115900e+12     1.955347e+12   
+5   2005   7.619534e+11   6.047899e+11  1.366743e+12     2.285961e+12   
+6   2006   9.689356e+11   7.181280e+11  1.687064e+12     2.752119e+12   
+7   2007   1.220060e+12   8.703422e+11  2.090402e+12     3.550328e+12   
+8   2008   1.430693e+12   1.040101e+12  2.470794e+12     4.594337e+12   
+9   2009   1.201647e+12   9.191412e+11  2.120788e+12     5.101691e+12   
+10  2010   1.577764e+12   1.289134e+12  2.866897e+12     6.087192e+12   
+11  2011   1.898388e+12   1.620780e+12  3.519169e+12     7.551546e+12   
+12  2012   2.048782e+12   1.675269e+12  3.724052e+12     8.532185e+12   
+13  2013   2.209007e+12   1.792451e+12  4.001459e+12     9.570471e+12   
+14  2014   2.342293e+12   1.814354e+12  4.156647e+12     1.047562e+13   
+15  2015   2.273468e+12   1.536195e+12  3.809663e+12     1.106157e+13   
+16  2016   2.097637e+12   1.459861e+12  3.557498e+12     1.123331e+13   
+17  2017   2.263371e+12   1.711424e+12  3.974794e+12     1.231049e+13   
+18  2018   2.486440e+12   1.987384e+12  4.473824e+12     1.389491e+13   
+19  2019   2.499207e+12   1.949493e+12  4.448700e+12     1.427997e+13   
+20  2020   2.589098e+12   1.944304e+12  4.533402e+12     1.468774e+13   
+21  2021   3.316022e+12   2.524026e+12  5.840048e+12     1.782046e+13   
+22  2022   3.593601e+12   2.593114e+12  6.186716e+12     1.788178e+13   
+
+    (X+M)/Y_Ratio  
+0        0.385628  
+1        0.373962  
+2        0.411943  
+3        0.497442  
+4        0.570692  
+5        0.597886  
+6        0.613005  
+7        0.588791  
+8        0.537791  
+9        0.415703  
+10       0.470972  
+11       0.466020  
+12       0.436471  
+13       0.418105  
+14       0.396792  
+15       0.344405  
+16       0.316692  
+17       0.322879  
+18       0.321976  
+19       0.311534  
+20       0.308652  
+21       0.327716  
+22       0.345979  
+
+Final combined data saved to: china_trade_gdp_ratio_2000_2022.csv
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">df_plot_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;china_trade_gdp_ratio_2000_2022.csv&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loaded data from CSV for plotting.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error: &#39;china_trade_gdp_ratio_2000_2022.csv&#39; not found.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please ensure the final calculation block was run successfully and created this CSV.&quot;</span><span class="p">)</span>
+    <span class="c1"># If the df_combined DataFrame is already in memory, use it directly.</span>
+    <span class="c1"># Otherwise, you would need to run the final calculation block first.</span>
+    <span class="k">if</span> <span class="s1">&#39;df_combined&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span> <span class="c1"># Check if df_combined exists in local scope</span>
+        <span class="n">df_plot_data</span> <span class="o">=</span> <span class="n">df_combined</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using df_combined from current session for plotting.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="c1"># Re-raise if neither CSV nor df_combined is available</span>
+
+<span class="c1"># Ensure &#39;Year&#39; is treated as an integer and sort for correct plotting order</span>
+<span class="n">df_plot_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_plot_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df_plot_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Set the aesthetic style of the plots</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create the plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="c1"># Adjust figure size for better readability</span>
+
+<span class="c1"># Plot the (X+M)/Y_Ratio over time</span>
+<span class="c1"># Make sure the column name for the ratio is correct based on your final output.</span>
+<span class="c1"># It should be &#39;(X+M)/Y_Ratio&#39; as per our previous code.</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;(X+M)/Y_Ratio&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df_plot_data</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add titles and labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;China</span><span class="se">\&#39;</span><span class="s1">s Trade Openness Index (2000-2022)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Trade-to-GDP Ratio ((X+M)/Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Improve x-axis ticks to show all years clearly if possible, or a reasonable subset</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">df_plot_data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Format y-axis to show values as percentages (if the ratio is fractional, like 0.35)</span>
+<span class="c1"># If your ratio is already scaled up (e.g., 35 for 35%), remove the &#39;{:.1%}&#39; part</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.1%}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span> <span class="c1"># Adjust layout to prevent labels from overlapping</span>
+
+
+<span class="c1"># Add caption</span>
+<span class="n">caption_text</span> <span class="o">=</span> <span class="s2">&quot;The trade openness index measures total trade as a percentage of GDP.  It is computed as the sum of exports and imports divided by GDP.  It shows how important trade in goods and services is to an economy. &quot;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figtext</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="n">caption_text</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">bbox</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;facecolor&quot;</span><span class="p">:</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="s2">&quot;alpha&quot;</span><span class="p">:</span><span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;pad&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loaded data from CSV for plotting.
+</pre></div>
+</div>
+<img alt="_images/bf24e532ccf1b8e7da67b6c3b9b1e9654d44644b4b77d45bd05e59c93e1da926.png" src="_images/bf24e532ccf1b8e7da67b6c3b9b1e9654d44644b4b77d45bd05e59c93e1da926.png" />
+</div>
+</div>
+<p>Here we do the following:</p>
+<ul class="simple">
+<li><p>Use the UNComtrade API to fetch data on total Chinese imports from all trading partners</p></li>
+<li><p>Use the UNComtrade API to fetch data on total Chinese exports from all trading partners</p></li>
+<li><p>Compute the fraction of imports/exports each trading partner represents</p></li>
+<li><p>Sort the data in descending order to find the top 5 trading partners with China</p></li>
+<li><p>Export the data to a CSV file</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Part 2: Analyzing Top Import and Export Partners for a Specific Year ---</span>
+
+<span class="c1"># We will use the master DataFrame already fetched and cleaned in the first block:</span>
+<span class="c1"># df_all_trade_detailed</span>
+
+<span class="c1"># Configure the year for top partner analysis.</span>
+<span class="c1"># Ensure this is an INTEGER to match the &#39;Year&#39; column&#39;s data type.</span>
+<span class="n">selected_year_for_partners</span> <span class="o">=</span> <span class="mi">2022</span> <span class="c1"># &lt;&lt;&lt; CHANGED TO INTEGER!</span>
+
+<span class="c1"># Ensure &#39;selected_reporter_code&#39; is available (it should be from the first block)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Analyzing Top Partners for Reporter Code </span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">NameError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- ERROR: Please run the First Code Block entirely before running this one! ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Variables like &#39;selected_reporter_code&#39; and &#39;selected_year_for_partners&#39; are not defined.&quot;</span><span class="p">)</span>
+    <span class="c1"># In a real notebook, you might stop execution here or load data from CSV if not run.</span>
+    <span class="c1"># For a simple demo, we&#39;ll let it proceed but flag the error.</span>
+
+<span class="c1"># --- Analyzing Top Import Partners for the Selected Year ---</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Top Import Partners:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Filter the master DataFrame for the specific year (now an integer) and &#39;Imports&#39;</span>
+<span class="n">df_imports_current_year</span> <span class="o">=</span> <span class="n">df_all_trade_detailed</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">all_trade_partner</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">selected_year_for_partners</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">all_trade_partner</span><span class="p">[</span><span class="s1">&#39;Flow&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Imports&#39;</span><span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># .copy() prevents SettingWithCopyWarning</span>
+
+<span class="c1"># --- DEBUGGING LINE: Check if filtered DF is empty ---</span>
+<span class="k">if</span> <span class="n">df_imports_current_year</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: df_imports_current_year is empty for Year=</span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2">, Flow=&#39;Imports&#39;.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check &#39;Year&#39; column data type and &#39;Flow&#39; column values in df_all_trade_detailed.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Calculate the total import value for this specific year</span>
+    <span class="n">total_imports_for_partners_year</span> <span class="o">=</span> <span class="n">df_imports_current_year</span><span class="p">[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Compute the import fraction for each partner</span>
+    <span class="n">df_imports_current_year</span><span class="p">[</span><span class="s1">&#39;importFraction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_imports_current_year</span><span class="p">[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_imports_for_partners_year</span>
+
+    <span class="c1"># Sort by importFraction in descending order to find the top partners</span>
+    <span class="n">df_top_imports_sorted</span> <span class="o">=</span> <span class="n">df_imports_current_year</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;importFraction&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Display the top 5 import partners</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 5 Import Partners:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_top_imports_sorted</span><span class="p">[[</span><span class="s1">&#39;partnerDesc&#39;</span><span class="p">,</span> <span class="s1">&#39;primaryValue&#39;</span><span class="p">,</span> <span class="s1">&#39;importFraction&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># Optionally, save the sorted imports data to CSV</span>
+    <span class="n">output_path_imports_partners</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;C:\Users\XPS\Dropbox\Website\International Trade\data\</span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2">_imports_by_partner_</span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+    <span class="n">df_top_imports_sorted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path_imports_partners</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top import partners data saved to: </span><span class="si">{</span><span class="n">output_path_imports_partners</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+
+<span class="c1"># --- Analyzing Top Export Partners for the Selected Year ---</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Top Export Partners for Reporter Code </span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2"> ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Filter the master DataFrame for the specific year (now an integer) and &#39;Exports&#39;</span>
+<span class="n">df_exports_current_year</span> <span class="o">=</span> <span class="n">df_all_trade_detailed</span><span class="p">[</span>
+    <span class="p">(</span><span class="n">all_trade_partner</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">selected_year_for_partners</span><span class="p">)</span> <span class="o">&amp;</span>
+    <span class="p">(</span><span class="n">all_trade_partner</span><span class="p">[</span><span class="s1">&#39;Flow&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Exports&#39;</span><span class="p">)</span>
+<span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># .copy() prevents SettingWithCopyWarning</span>
+
+<span class="c1"># --- DEBUGGING LINE: Check if filtered DF is empty ---</span>
+<span class="k">if</span> <span class="n">df_exports_current_year</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Warning: df_exports_current_year is empty for Year=</span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2">, Flow=&#39;Exports&#39;.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check &#39;Year&#39; column data type and &#39;Flow&#39; column values in df_all_trade_detailed.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Calculate the total export value for this specific year</span>
+    <span class="n">total_exports_for_partners_year</span> <span class="o">=</span> <span class="n">df_exports_current_year</span><span class="p">[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+    <span class="c1"># Compute the export fraction for each partner</span>
+    <span class="n">df_exports_current_year</span><span class="p">[</span><span class="s1">&#39;exportFraction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_exports_current_year</span><span class="p">[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">total_exports_for_partners_year</span>
+
+    <span class="c1"># Sort by exportFraction in descending order</span>
+    <span class="n">df_top_exports_sorted</span> <span class="o">=</span> <span class="n">df_exports_current_year</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;exportFraction&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Display the top 5 export partners</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top 5 Export Partners:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df_top_exports_sorted</span><span class="p">[[</span><span class="s1">&#39;partnerDesc&#39;</span><span class="p">,</span> <span class="s1">&#39;primaryValue&#39;</span><span class="p">,</span> <span class="s1">&#39;exportFraction&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># Optionally, save the sorted exports data to CSV</span>
+    <span class="n">output_path_exports_partners</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;C:\Users\XPS\Dropbox\Website\International Trade\data\</span><span class="si">{</span><span class="n">selected_reporter_code</span><span class="si">}</span><span class="s2">_exports_by_partner_</span><span class="si">{</span><span class="n">selected_year_for_partners</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+    <span class="n">df_top_exports_sorted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_path_exports_partners</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Top export partners data saved to: </span><span class="si">{</span><span class="n">output_path_exports_partners</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Analyzing Top Partners for Reporter Code 156 in 2022 ---
+
+Top Import Partners:
+Top 5 Import Partners:
+          partnerDesc  primaryValue  importFraction
+9405  Other Asia, nes  2.380918e+11        0.091817
+9383    Rep. of Korea  1.996671e+11        0.076999
+9378            Japan  1.844970e+11        0.071149
+9493              USA  1.789568e+11        0.069012
+9293        Australia  1.420915e+11        0.054796
+Top import partners data saved to: C:\Users\XPS\Dropbox\International Trade\Module 4 2025\data\156_imports_by_partner_2022.csv
+
+--- Top Export Partners for Reporter Code 156 in 2022 ---
+Top 5 Export Partners:
+               partnerDesc  primaryValue  exportFraction
+9711                   USA  5.827561e+11        0.162165
+9585  China, Hong Kong SAR  2.975384e+11        0.082797
+9596                 Japan  1.729274e+11        0.048121
+9601         Rep. of Korea  1.626214e+11        0.045253
+9680              Viet Nam  1.469599e+11        0.040895
+Top export partners data saved to: C:\Users\XPS\Dropbox\International Trade\Module 4 2025\data\156_exports_by_partner_2022.csv
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we do the following:</p>
+<ul class="simple">
+<li><p>Use the UNComtrade API to fetch China imports and exports at the HS 2-digit level</p></li>
+<li><p>Aggregate the HS 2-digit level data into broader sectoral categories for easier interpretation</p></li>
+<li><p>Compute the Lloyd-Grubel index for each sectoral category</p></li>
+</ul>
+<p>Of course, the value of the Lloyd-Grubel index is sensitive the level of aggregation you choose to use.  The more disaggregated data is almost surely going to generate lower values of the index, and the more aggregated data higher values.  Which level of aggregation you choose to use depends on the research question at hand.  Besides categorizing goods by HS x-digit, it would also be useful to categorize goods into raw, intermediate, and final goods.  We don’t do that in this homework however.  You would likely find that the degree of intra-industry trade (high values of Lloyd-Grubel index) is highest for intermediate goods.</p>
+<p>(Note: I collected the product level data using a loop because, without a subscription, the UNComtrade API limits the amount of data you can fetch.  The loop circumvents this constraint.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List of data you want to retrieve</span>
+<span class="c1"># Add vectors of components to fetch the desired data</span>
+
+<span class="c1"># List of HS 2-digit codes you want to retrieve (e.g., &#39;01&#39; to &#39;05&#39;)</span>
+<span class="c1"># I&#39;m writing a loop to get around the UN Comtrade subscription</span>
+<span class="n">hs_codes</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">99</span><span class="p">)]</span>
+
+<span class="c1"># List of flow codes you want to retrieve (e.g. &#39;X&#39;,&#39;M&#39;)</span>
+<span class="n">flow_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>  <span class="c1"># Exports and Imports</span>
+
+<span class="c1"># Initialize an empty list to store dataframes</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># Fetch the data</span>
+<span class="k">for</span> <span class="n">hs_code</span> <span class="ow">in</span> <span class="n">hs_codes</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">flow</span> <span class="ow">in</span> <span class="n">flow_codes</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching data for HS code </span><span class="si">{</span><span class="n">hs_code</span><span class="si">}</span><span class="s2"> and flow </span><span class="si">{</span><span class="n">flow</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">raw_data</span> <span class="o">=</span> <span class="n">comtradeapicall</span><span class="o">.</span><span class="n">previewFinalData</span><span class="p">(</span>
+            <span class="n">typeCode</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+            <span class="n">freqCode</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+            <span class="n">clCode</span><span class="o">=</span><span class="s1">&#39;HS&#39;</span><span class="p">,</span>
+            <span class="n">period</span><span class="o">=</span><span class="s1">&#39;2022&#39;</span><span class="p">,</span>
+            <span class="n">reporterCode</span><span class="o">=</span><span class="s1">&#39;156&#39;</span><span class="p">,</span>  <span class="c1"># China</span>
+            <span class="n">cmdCode</span><span class="o">=</span><span class="n">hs_code</span><span class="p">,</span>     <span class="c1"># 2-digit HS code</span>
+            <span class="n">flowCode</span><span class="o">=</span><span class="n">flow</span><span class="p">,</span>       <span class="c1"># Single flow code as string</span>
+            <span class="n">partnerCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">partner2Code</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">customsCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">motCode</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">maxRecords</span><span class="o">=</span><span class="mi">50000</span><span class="p">,</span>
+            <span class="n">format_output</span><span class="o">=</span><span class="s1">&#39;JSON&#39;</span><span class="p">,</span>
+            <span class="n">aggregateBy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">breakdownMode</span><span class="o">=</span><span class="s1">&#39;classic&#39;</span><span class="p">,</span>
+            <span class="n">countOnly</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">includeDesc</span><span class="o">=</span><span class="kc">True</span>
+        <span class="p">)</span>
+        
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
+        <span class="c1"># Add a column to indicate flow type (Export or Import)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;flowCode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">flow</span>  
+        <span class="n">all_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># Concatenate all dataframes into one</span>
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_data</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Preview and export the data to a CSV file</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_all</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="n">df_all</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;china_exports_imports_01_to_98.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you already have the CSV file with import and export data, but don&#39;t have the data loaded into your current workspace, you can just import the data into your workspace from the CSV file</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Adjust the path to where your CSV file is saved</span>
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\PHBS\china_exports_imports_01_to_98.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Optional: preview the data</span>
+<span class="n">df_all</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Aggregate 2-digit HS codes into broader categories as defined by https://www.censtatd.gov.hk/en/index_hs_code.html</span>
+<span class="n">hs_category_map</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Define the new categories</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">assign_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">category</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">hs_category_map</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">category</span>
+
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Animal Products&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;Vegetable Products&quot;</span><span class="p">)</span>
+<span class="n">hs_category_map</span><span class="p">[</span><span class="s1">&#39;15&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Animal, Vegetable or Microbial Fats &amp; Oils&quot;</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="s2">&quot;Prepared Foodstuffs; Beverages, Spirits &amp; Vinegar; Tobacco; Products Intended for Inhalation Without Combustion; Other Nicotine Containing Products Intended for Intake of Nicotine into Human Body&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="s2">&quot;Mineral Products&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="s2">&quot;Chemical Products&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">39</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Plastics &amp; Articles thereof; Rubber &amp; Articles thereof&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="s2">&quot;Hides, Skins, Leather &amp; Furskins; Travel Goods &amp; Handbags&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">44</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="s2">&quot;Wood &amp; Articles of Wood; Manufactures of Plaiting Materials&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">47</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="s2">&quot;Wood Pulp; Paper &amp; Articles of Paper&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="s2">&quot;Textiles &amp; Textile Articles&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="s2">&quot;Footwear &amp; Headgear; Articles of Feather; Artificial Flowers; Articles of Human Hair&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">68</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="s2">&quot;Articles of Stone, Plaster, Cement, Asbestos or Mica; Ceramic Products &amp; Glassware&quot;</span><span class="p">)</span>
+<span class="n">hs_category_map</span><span class="p">[</span><span class="s1">&#39;71&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Pearls, Precious or Semi-Precious Stones, Precious Metals, Metals Clad with Precious Metal, &amp; Articles thereof; Imitation Jewellery&quot;</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">72</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="s2">&quot;Base Metals &amp; Articles of Base Metal&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">84</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="s2">&quot;Machinery &amp; Mechanical Appliances; Electrical Equipment&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">86</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="s2">&quot;Transport Equipment&quot;</span><span class="p">)</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="s2">&quot;Precision or Medical Instruments &amp; Apparatus; Clocks &amp; Watches; Musical Instruments&quot;</span><span class="p">)</span>
+<span class="n">hs_category_map</span><span class="p">[</span><span class="s1">&#39;93&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Arms &amp; Ammunition&quot;</span>
+<span class="n">assign_range</span><span class="p">(</span><span class="mi">94</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="s2">&quot;Furniture; Toys &amp; Games/Sports Requisites; Miscellaneous Manufactured Articles&quot;</span><span class="p">)</span>
+<span class="n">hs_category_map</span><span class="p">[</span><span class="s1">&#39;97&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Works of Art, Collectors&#39; Pieces &amp; Antiques&quot;</span>
+<span class="n">hs_category_map</span><span class="p">[</span><span class="s1">&#39;98&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Commodities Not Classified According to Kind&quot;</span>
+
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;cmdCode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;cmdCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;broad_category&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;cmdCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">hs_category_map</span><span class="p">)</span>
+<span class="n">df_exports</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;flowCode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_imports</span> <span class="o">=</span> <span class="n">df_all</span><span class="p">[</span><span class="n">df_all</span><span class="p">[</span><span class="s1">&#39;flowCode&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Aggregate over the new categories</span>
+<span class="n">df_aggregate_exports</span> <span class="o">=</span> <span class="n">df_exports</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;broad_category&#39;</span><span class="p">)[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_aggregate_imports</span> <span class="o">=</span> <span class="n">df_imports</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;broad_category&#39;</span><span class="p">)[</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create easy to read table of export and import values</span>
+
+<span class="c1"># Rename values for the final table</span>
+<span class="n">df_aggregate_exports</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">:</span> <span class="s1">&#39;Volume of Exports&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_aggregate_imports</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">:</span> <span class="s1">&#39;Volume of Imports&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Merge the two on the category name</span>
+<span class="n">trade_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_aggregate_imports</span><span class="p">,</span> <span class="n">df_aggregate_exports</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;broad_category&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+<span class="c1"># Adjust units to billions USD</span>
+<span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Imports&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Imports&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Exports&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Exports&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1e9</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Sort and rename the first column</span>
+<span class="n">trade_summary</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;broad_category&#39;</span><span class="p">:</span> <span class="s1">&#39;China Trade in Goods 2022&#39;</span><span class="p">,</span><span class="s1">&#39;primaryValue&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">trade_summary</span> <span class="o">=</span> <span class="n">trade_summary</span><span class="p">[[</span><span class="s1">&#39;China Trade in Goods 2022&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume of Imports&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume of Exports&#39;</span><span class="p">]]</span>
+<span class="n">trade_summary</span> <span class="o">=</span> <span class="n">trade_summary</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;China Trade in Goods 2022&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># View the easy to read table</span>
+<span class="n">trade_summary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the Grubel-Lloyd index for each category</span>
+<span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Grubel-Lloyd Index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span>
+    <span class="nb">abs</span><span class="p">(</span><span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Exports&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Imports&#39;</span><span class="p">])</span> <span class="o">/</span>
+    <span class="p">(</span><span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Exports&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Volume of Imports&#39;</span><span class="p">])</span>
+<span class="p">)</span>
+
+<span class="c1"># Optional: Round for readability</span>
+<span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Grubel-Lloyd Index&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">trade_summary</span><span class="p">[</span><span class="s1">&#39;Grubel-Lloyd Index&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Display the result</span>
+<span class="n">trade_summary</span><span class="p">[[</span><span class="s1">&#39;China Trade in Goods 2022&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume of Imports&#39;</span><span class="p">,</span> <span class="s1">&#39;Volume of Exports&#39;</span><span class="p">,</span> <span class="s1">&#39;Grubel-Lloyd Index&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want to measure trade statistics for primary, intermediate, and final goods.  We’ll make use of the Broad Economic Categories (BEC) classification within the UN Comtrade data rather than the HS classification system.  We implement this by modifying our <code class="docutils literal notranslate"><span class="pre">fetch_trade_data</span></code> function to fetch data based on the BEC classification system by changing the specification <code class="docutils literal notranslate"><span class="pre">clCode</span></code> to <code class="docutils literal notranslate"><span class="pre">BEC</span></code>.</p>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

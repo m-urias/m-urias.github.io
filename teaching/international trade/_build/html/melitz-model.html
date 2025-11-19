@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Melitz Model of Intra-Industry Trade &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'melitz-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="trade-data-tutorial.html" />
+    <link rel="prev" title="New Trade Theory" href="new-trade-theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Inter- and Intra-Industry Trade</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/melitz-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Melitz Model of Intra-Industry Trade</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="melitz-model-of-intra-industry-trade">
+<h1>Melitz Model of Intra-Industry Trade<a class="headerlink" href="#melitz-model-of-intra-industry-trade" title="Link to this heading">#</a></h1>
+<p>{Motivation}
+International trade effects the types of firms that operate in the economy.</p>
+<ul class="simple">
+<li><p>Trade enhances grwoth opportunities of some firms, while simultaneously forcing out other firms</p></li>
+<li><p>Profits are reallocated toward more productive firms</p></li>
+<li><p>Protectionist policies are often intended to shelter less efficient firms</p></li>
+</ul>
+<p>Bernard and Jensen (1999) show that market share reallocations towards more productive exporting plants accounts for 20% of U.S. manufacturing productivity growth</p>
+<p>{Roadmap}
+To capture these stylized facts, we need a model that allows for firm heterogeneity</p>
+<ul class="simple">
+<li><p>Introduce firms with different producitivities into Krugman’s model</p></li>
+<li><p>Endogenize the distribution of firms under monopolistic competition</p></li>
+<li><p>Incoporate forward looking entry decision of firms facing sunk entry costs</p></li>
+</ul>
+<p>SEVERAL trade papers use this framework.</p>
+<p>{Environment - Preferences}
+Agents have identical preferences over different varieties of goods and are CES:
+$<span class="math notranslate nohighlight">\(
+U = \left[ \int_{\omega \in \Omega} q(\omega)^{\frac{\sigma-1}{\sigma}}d\omega\right]^{\frac{\sigma}{\sigma-1}}
+\)</span>$</p>
+<p>where <span class="math notranslate nohighlight">\(\sigma &gt;1\)</span> is the elasticity of substitution (and let <span class="math notranslate nohighlight">\(\rho = (\sigma-1)/\sigma\)</span>).</p>
+<p>{Environment - Preferences}
+Consumer maximize their utility subject to the budget constraint,
+$<span class="math notranslate nohighlight">\(
+\int_{\omega \in \Omega} p(\omega)q(\omega)d\omega \leq I
+\)</span>$</p>
+<p>{Let’s derive demand function together…}
+We will consider the dual problem of minimizing the expenditure required to obtain <span class="math notranslate nohighlight">\(U\)</span> utility.
+$<span class="math notranslate nohighlight">\(
+\min \int_{\omega \in \Omega} p(\omega)q(\omega)d\omega \quad \text{s.t.} \quad U = \left[ \int_{\omega \in \Omega} q(\omega)^{\rho}d\omega\right]^{\frac{1}{\rho}}
+\)</span>$</p>
+<p>{Let’s derive demand function together…}
+The first-order condition for the expenditure minimization problem gives equality of marginal rates of substitution to price ratios,
+$<span class="math notranslate nohighlight">\(
+\frac{q(i)^{\rho-1}}{q(j)^{\rho-1}}=\frac{p(i)}{p(j)}
+\)</span>$</p>
+<p>for any pair <span class="math notranslate nohighlight">\(i,j\)</span>.</p>
+<p>{Let’s derive demand function together…}
+Substitute the first-order condition into the contraint to obtain,
+$<span class="math notranslate nohighlight">\(
+q(j) = \frac{p(j)^{\frac{1}{\rho-1}}}{\left[ \int_{\omega \in \Omega} p(i)^{\frac{\rho}{\rho-1}}\right]^{1/\rho}}U
+\)</span>$</p>
+<p>which is the compensated demand function for the <span class="math notranslate nohighlight">\(j\)</span>th variety.</p>
+<p>{Let’s derive demand function together…}
+We can derive an expression for the minimum cost of attaining one unit of a bundel of goods <span class="math notranslate nohighlight">\(Q=U\)</span>.
+$<span class="math notranslate nohighlight">\(
+\int_{\omega \in \Omega} p(j) q(j) dj = \underbrace{\left[ \int_{\omega \in \Omega} p(i)^{\rho/(\rho-1)} di\right]^{(\rho-1)/\rho}}_{\text{price index}\hspace{2mm} =P}U
+\)</span>$</p>
+<p>The price index, <span class="math notranslate nohighlight">\(P\)</span>, measures the minimum cost of purchasing a bundle of consumption that provides one unit of utility.</p>
+<p>{Let’s derive demand function together…}
+Demand for <span class="math notranslate nohighlight">\(q(\omega)\)</span> can now be written more compactly,
+$<span class="math notranslate nohighlight">\(
+q(\omega) = \left( \frac{p(\omega)}{P} \right)^{-\sigma}Q.
+\)</span>$</p>
+<p>Ta da!</p>
+<p>{Expenditure}
+The implied spending on each good is therefore,
+$<span class="math notranslate nohighlight">\(
+r(\omega) = p(\omega)q(\omega) = R\left(\frac{p(\omega)}{P} \right)^{1-\sigma}
+\)</span>$</p>
+<p>where
+$<span class="math notranslate nohighlight">\(
+P = \left[ \int_{\omega \in \Omega} p(\omega)^{\rho/(\rho-1)} d\omega\right]^{(\rho-1)/\rho}; \quad R = \int_{\omega \in \Omega} r(\omega)d\omega; \quad Q = R/P
+\)</span>$</p>
+<p>{Welfare}
+We can now compute the welfare of agents by substituting out the demand function into utility,
+\begin{align*}
+U &amp;= \left[ \int_{\omega \in \Omega} \left( \frac{p(\omega)}{P} \right)^{1-\sigma}Q^{\frac{\sigma-1}{\sigma}} \right]^{\frac{\sigma}{\sigma-1}} \
+&amp;= QP^{\sigma} \left[ \int_{\omega \in \Omega} p(\omega)^{1-\sigma} \right]^{\frac{\sigma}{\sigma-1}} \
+&amp;=QP P^{\sigma-1} P^{-\sigma} \
+&amp;= \frac{I}{P} \
+&amp;=\frac{1}{P}
+\end{align*}
+Welfare can be completely summarized by the price index.</p>
+<p>{Production}
+Labor is the only factor of production</p>
+<ul class="simple">
+<li><p>Set the total amount of labor to <span class="math notranslate nohighlight">\(L\)</span> and choose wage as the numeraire: <span class="math notranslate nohighlight">\(w=1\)</span></p></li>
+<li><p>Each variety is produced by a separate firm and there is free entry and exit</p></li>
+<li><p>Each firm draws its productivity <span class="math notranslate nohighlight">\(\varphi\)</span> from a distribution <span class="math notranslate nohighlight">\(G(\varphi)\)</span> after paying a sunk cost of entry <span class="math notranslate nohighlight">\(f_e\)</span>.</p></li>
+<li><p>Each firm faces an exogenous death probabiliy <span class="math notranslate nohighlight">\(\delta\)</span></p></li>
+</ul>
+<p>{Production}
+Production function exhibits increasing returns to scale:
+$<span class="math notranslate nohighlight">\(
+TC(\varphi) = f + \frac{q(\varphi)}{\varphi}
+\)</span>$</p>
+<p>Higher producitivity firms have lower marginal costs. (Notice that <span class="math notranslate nohighlight">\(w=1\)</span> so the above is labor demand, as in Krugman, \textit{and} total cost function).</p>
+<p>{Let’s derive the optimal price together…}
+Firm profits are given by
+\begin{align*}
+\pi(\varphi) &amp;= r(\varphi) - TC(\varphi) \
+&amp;=p(\varphi) q(\varphi) - \frac{q(\varphi)}{\varphi}-f \
+&amp;= \frac{p(\varphi)^{1-\sigma}}{P^{-\sigma}} Q - \left( \frac{p(\omega)}{P} \right)^{-\sigma}Q\frac{1}{\varphi}-f
+\end{align*}
+where the last equality uses the demand function for any variety.</p>
+<p>{Let’s derive the optimal price together…}
+Taking first-order condition gives us the optimal price
+$<span class="math notranslate nohighlight">\(
+p(\varphi) = \frac{\sigma}{1-\sigma}\frac{1}{\varphi} = \frac{1}{\rho \varphi}
+\)</span>$</p>
+<p>{Firm production, revenue, and profit}
+We therefore have that
+\begin{align*}
+q(\varphi) &amp;= \frac{R}{P}\left( \frac{p(\varphi)}{P} \right)^{-\sigma} = RP^{\sigma-1}(\rho \varphi)^{\sigma} \
+r(\varphi) &amp;= p(\varphi) q(\varphi) = R (P\rho \varphi)^{\sigma-1} \
+\pi(\varphi) &amp;= \frac{r(\varphi)}{\sigma}-f
+\end{align*}
+Notice that <span class="math notranslate nohighlight">\(r'(\varphi)&gt;0\)</span> and <span class="math notranslate nohighlight">\(\pi'(\varphi) &gt; 0\)</span>.</p>
+<p>{Characterizing the equilibrium}
+After entry, a firm has the following expected discounted value of profits
+$<span class="math notranslate nohighlight">\(
+\nu(\varphi) = \max\{0, \sum_{t=s}^{\infty} (1-\delta)^{t-s}\pi(\varphi) \} = \max \{0, \frac{\pi(\varphi)}{\delta}\}
+\)</span>$</p>
+<p>Note that since <span class="math notranslate nohighlight">\(\pi'(\varphi) &gt;0\)</span> there exists a <span class="math notranslate nohighlight">\(\varphi^*\)</span> such that <span class="math notranslate nohighlight">\(\nu(\varphi) &gt; 0\)</span> iff <span class="math notranslate nohighlight">\(\varphi &gt; \varphi^*\)</span>.  This productivity cutoff is characterized by
+$<span class="math notranslate nohighlight">\(
+\pi(\varphi^*) = 0 \quad \text{or} \quad r(\varphi^*) = \sigma f
+\)</span>$</p>
+<p>{Characterizing the equilibrium}
+Define the distribution of mass of active firms as
+$<span class="math notranslate nohighlight">\(
+\mu(\varphi) = \left\{ \begin{aligned}
+&amp;\frac{g(\varphi)}{1-G(\varphi^*)} \hspace{2mm} &amp;&amp;\text{if} \hspace{2mm} \varphi \geq \varphi^* \\
+&amp;0 \hspace{2mm} &amp;&amp;\text{if} \hspace{2mm} \varphi &lt; \varphi^*
+\end{aligned}
+\right. \)</span>$</p>
+<p>This is the ex-post producitivty distribution conditional on successful entry.</p>
+<p>{Characterizing the equilibrium}
+Melitz solves the model using a method of aggregation that has become very popular in the literature.</p>
+<p>Define <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span> as the weighted average producitivity:
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi} = \left[ \int_{0}^{\infty} \varphi^{\sigma-1}\mu(\varphi) d\varphi \right]^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>{Characterizing the equilibrium}
+Using the distribution of active firms, the average producitivity is written as,
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi}(\varphi^*) = \left[ \frac{1}{1-G(\varphi^*)}\int_{\varphi^*}^{\infty}\varphi^{\sigma-1}g(\varphi) d\varphi \right]^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>Notice that <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span> is uniquely pinned down by <span class="math notranslate nohighlight">\(\varphi^*\)</span> and the exogenous distribution <span class="math notranslate nohighlight">\(G(\varphi)\)</span>.</p>
+<p>{Characterizing the equilibrium}
+Let the equilibrium mass of firms (varieties) be defined as <span class="math notranslate nohighlight">\(M\)</span>.  The price index for the economy is therefore,
+$<span class="math notranslate nohighlight">\(
+P = \left[ \int_{\varphi^*}^{\infty} p(\varphi)^{1-\sigma}M\mu(\varphi)d\varphi \right]^{\frac{1}{1-\sigma}}
+\)</span>$</p>
+<p>Using the monopoly pricing equation <span class="math notranslate nohighlight">\(p(\varphi) = 1/\rho \varphi\)</span> we can re-write the above,
+$<span class="math notranslate nohighlight">\(
+P = \frac{M^{\frac{1}{1-\sigma}}}{\rho}\left[ \int_{\varphi^*}^{\infty} \varphi^{\sigma-1}\mu(\varphi) d\varphi \right]^{\frac{1}{1-\sigma}}=\frac{M^{\frac{1}{1-\sigma}}}{\rho \tilde{\varphi}} 
+\)</span>$</p>
+<p>{Characterizing the equilibrium}
+Using the same aggregation we have that
+\begin{align*}
+R &amp;= Mr(\tilde{\varphi}) \
+\Pi &amp;= M \pi(\tilde{\varphi}) \
+Q &amp;= M^{\frac{\sigma}{\sigma-1}}q(\tilde{\varphi})
+\end{align*}</p>
+<p>{Characterizing the equilibrium}
+Next, denote average profit by
+$<span class="math notranslate nohighlight">\(
+\bar{\pi} = \frac{r(\tilde{\varphi})}{\sigma}-f
+\)</span>$</p>
+<p>Note that,
+$<span class="math notranslate nohighlight">\(
+r(\tilde{\varphi}) = R(P\rho \tilde{\varphi})^{\sigma-1}; \quad r(\varphi^*)=R(P\rho \varphi^*)^{\sigma-1}
+\)</span>$</p>
+<p>therefore,
+$<span class="math notranslate nohighlight">\(
+r(\tilde{\varphi}) = r(\varphi^*)\left(\frac{\tilde{\varphi}}{\varphi^*} \right)^{\sigma-1}
+\)</span>$</p>
+<p>{Characterizing the equilibrium}
+Since <span class="math notranslate nohighlight">\(r(\varphi^*) = \sigma f\)</span> (zero cutoff profit condition) we have that
+$<span class="math notranslate nohighlight">\(
+\bar{\pi} = \frac{r(\tilde{\varphi})}{\sigma}-f = f\left( \left( \frac{\tilde{\varphi}(\varphi^*)}{\varphi^*} \right)^{\sigma-1}-1  \right)
+\)</span>$</p>
+<p>The above is a key equation in solving the model.  It is called ZCP: zero cutoff profit condition.</p>
+<p>{A comparative static}
+The relationship between <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> and <span class="math notranslate nohighlight">\(\varphi^*\)</span> is ambiguous.
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi}'(\varphi^*) = \frac{g(\varphi^*)\tilde{\varphi}^{2-\sigma}}{(\sigma-1)^{2}}\int_{\varphi^*}^{\infty}(\varphi^{\sigma-1}-\varphi^{*\sigma-1})g(\varphi) d\varphi &gt; 0
+\)</span>$</p>
+<p>Therefore the numerator and denominator in <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> are both increasing in <span class="math notranslate nohighlight">\(\varphi^*\)</span>.</p>
+<p>{A comparative static}
+Because profits tend to increase with firm producitivity, an increase in <span class="math notranslate nohighlight">\(\varphi^*\)</span> will have a direct effect on profits <span class="math notranslate nohighlight">\(\bar{\pi}\)</span>.  But becasue firm profits are decreasing in the producitivity of rivals, there is also an addition effect that goes in the opposite direction.</p>
+<p>If the distribution <span class="math notranslate nohighlight">\(G(\varphi)\)</span> has a fat enough right tail, the latter effect will dominate and the ZCP will be downward slopiong.  In the case of Pareto distribtution, the two effects exactly offset each otehr in which case the ZCP is a flat line, but more generally it is downward sloping.</p>
+<p>{Characterizing the equilibrium}
+The other key equation comes from the free entry condition.<br />
+$<span class="math notranslate nohighlight">\(
+\underbrace{(1-G(\varphi^*))\frac{\bar{\pi}}{\rho}}_{\text{expected profit from entry}} = \underbrace{f_e}_{\text{cost of entry}}
+\)</span>$</p>
+<p>The above is called the free entry condition FE.  Intuitively, for a given cost of entry, if firms are less likely to survive they need to run higher average profits.  Therefore, <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> and <span class="math notranslate nohighlight">\(\varphi^*\)</span> are positively related.</p>
+<p>{Characterizing the equilibrium}
+\begin{figure}
+\includegraphics[scale=.35]{fig4}
+\end{figure}</p>
+<p>{Characterizing the equilibrium}
+Having determined the equilibrium values of <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> and <span class="math notranslate nohighlight">\(\varphi^*\)</span>, the other variables of interest can be easily determined.</p>
+<p>From market clearing we have that <span class="math notranslate nohighlight">\(L = R = r(\tilde{\varphi})M\)</span>, where it follows that
+$<span class="math notranslate nohighlight">\(
+M = \frac{L}{r(\tilde{\varphi}} = \frac{L}{\sigma(\bar{\pi}+f)}
+\)</span>$</p>
+<p>Since <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> is independent of <span class="math notranslate nohighlight">\(L\)</span>, an increase in <span class="math notranslate nohighlight">\(L\)</span> implies an increase in the mass of varieties.</p>
+<p>{Characterizing the equilibrium}
+The welfare of a representative consumer is given by,
+$<span class="math notranslate nohighlight">\(
+U = \frac{1}{P} = M^{\frac{1}{\sigma-1}}\rho \tilde{\varphi}
+\)</span>$</p>
+<p>An increase in <span class="math notranslate nohighlight">\(L\)</span> implies an increase in welfare as in the standard Krugman model.</p>
+<p>Once <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span> and <span class="math notranslate nohighlight">\(\bar{\pi}\)</span> are determined, the aggregate outcome predicted by this model is identical to one generated by representative dfirms who share the same productivity <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span> and profit level <span class="math notranslate nohighlight">\(\bar{\pi}\)</span>.</p>
+<p>{Impact of trade}
+In the absence of trade costs, integration of the two economies will simply lead to an increase in the number of varieties.  There is not going to be any change in <span class="math notranslate nohighlight">\(\tilde{\varphi}\)</span> because it is independent of <span class="math notranslate nohighlight">\(L\)</span>.</p>
+<p>Introduce trade costs:
+\begin{enumerate}</p>
+<ul class="simple">
+<li><p>Iceberg trade costs: in order to sell 1 unit abroad firms need to ship <span class="math notranslate nohighlight">\(\tau \geq 1\)</span> units</p></li>
+<li><p>Fixed exporting costs: in order to export firms must incur some startup/fixed cost <span class="math notranslate nohighlight">\(f_{ex}\)</span> (information, distrubiton or regulation costs) after learning their producitivity.
+\end{enumerate}</p></li>
+</ul>
+<p>{Impact of trade}
+We will assume <span class="math notranslate nohighlight">\(c=0,1,...,n\)</span> countries are symmetric so that <span class="math notranslate nohighlight">\(w_c = 1\)</span> in all countries.</p>
+<p>Monopoly pricing now implies:
+$<span class="math notranslate nohighlight">\(
+p_d(\varphi) = \frac{1}{\rho \varphi}; \quad p_x(\varphi) = \frac{\tau}{\rho \varphi}
+\)</span>$</p>
+<p>and revenues in domestic and export market are:
+$<span class="math notranslate nohighlight">\(
+r_d(\varphi) = R_d (P_d \rho \varphi)^{\sigma-1}; \quad r_x(\varphi) = \tau^{1-\sigma}R_x(P_x \rho \varphi)^{\sigma-1}
+\)</span>$</p>
+<p>Note that by symmetry we must have: <span class="math notranslate nohighlight">\(P_d = P_x = P\)</span> and <span class="math notranslate nohighlight">\(R_d = R_x = R\)</span>.</p>
+<p>{Impact of trade}
+Given that the export decision is made after firms know their productivity, we do not need to distinguish between the one-time investment cost <span class="math notranslate nohighlight">\(f_{ex}\)</span> and the amortized per-period portion of this cost <span class="math notranslate nohighlight">\(f_x = \delta f_{ex}\)</span>.</p>
+<p>Profits in the domestic and export markets are:
+$<span class="math notranslate nohighlight">\(
+\pi_d(\varphi) = \frac{r_d(\varphi)}{\sigma}-f; \quad \pi_x(\varphi) = \frac{r_x(\varphi)}{\sigma}-f_x
+\)</span>$</p>
+<p>{Impact of trade}
+Expected value of a firm with productivity <span class="math notranslate nohighlight">\(\varphi\)</span> is the same as before:
+$<span class="math notranslate nohighlight">\(
+\nu(\varphi) = \max\{0, \sum_{t=s}^{\infty} (1-\delta)^{t-s}\pi(\varphi) \} = \max \{0, \frac{\pi(\varphi)}{\delta}\}
+\)</span>$</p>
+<p>But total profits are now given by:
+$<span class="math notranslate nohighlight">\(
+\pi(\varphi) = \pi_d(x) + n \max\{0, \frac{\pi(\varphi)}{\delta}\}
+\)</span>$</p>
+<p>Similar to the closed economy case, we now have two cutoffs:
+\begin{align*}
+\varphi^* \hspace{2mm} \text{s.t.} \hspace{2mm} \pi_d(\varphi^<em>)=0 \
+\varphi_x^</em> \hspace{2mm} \text{s.t.} \hspace{2mm} \pi_x(\varphi_x^<em>)=0
+\end{align</em>}</p>
+<p>{Impact of trade}
+In order to have both exporters and non-exporters in equilibrium (i.e. <span class="math notranslate nohighlight">\(\varphi_x^* &gt; \varphi^*\)</span>) it is assumed that
+$<span class="math notranslate nohighlight">\(
+\tau^{\sigma-1}f_x &gt; f
+\)</span>$</p>
+<p>Therefore, more productive firms select into exports.</p>
+<p>The profit from exporting is smaller than the profit from domestic sales because of trade costs and higher exporting fixed cost.</p>
+<p>{Impact of trade}
+In the open economy case, the average productivity is defined as
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi}_T = \left[ \frac{1}{M_T}\left(M \tilde{\varphi}^{\sigma-1}+nM_x\left( \frac{\tilde{\varphi}_x}{\tau} \right)^{\sigma-1} \right)  \right]^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>where
+$<span class="math notranslate nohighlight">\(
+M_T = M + nM_x
+\)</span>$</p>
+<p>is the total mass of firms selling in a country (<span class="math notranslate nohighlight">\(M\)</span> Home firms and <span class="math notranslate nohighlight">\(nM_x\)</span> Foreign firms).</p>
+<p>{Impact of trade}
+Average productivity across all Home firms is
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi} = \left[\frac{1}{1-G(\varphi^*)}\int_{\varphi^*}^{\infty}\varphi^{\sigma-1}g(\varphi) d\varphi  \right]^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>Average productivity across all Home exporters is
+$<span class="math notranslate nohighlight">\(
+\tilde{\varphi_x} = \left[\frac{1}{1-G(\varphi_x^*)}\int_{\varphi_x^*}^{\infty}\varphi^{\sigma-1}g(\varphi) d\varphi  \right]^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>{Impact of trade}
+Once we know <span class="math notranslate nohighlight">\(\tilde{\varphi}_T\)</span> the aggregate variables of interest are given by,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;P = \frac{M_T^{\frac{1}{1-\sigma}}}{\rho \tilde{\varphi}_T} \\
+&amp;R = M_t r(\tilde{\varphi}_t) \\
+&amp;\Pi = M_T \pi(\varphi_T) \\
+&amp;Q = M_T^{\frac{\sigma}{\sigma-1}}q(\tilde{\varphi}_T)
+\end{align*}
+\end{split}\]</div>
+<p>{Impact of trade}
+The equilibrium can be obtained using modified versions of ZCP and FE.  The FE condition is given by
+$<span class="math notranslate nohighlight">\(
+\bar{\pi} = \frac{\delta f_e}{(1-G(\varphi^*))}
+\)</span>$</p>
+<p>where
+$<span class="math notranslate nohighlight">\(\bar{\pi}=\pi_d(\tilde{\varphi})+n p_x \pi_x(\tilde{\varphi_x})\)</span>$</p>
+<p>and
+$<span class="math notranslate nohighlight">\(
+p_x = \frac{1-G(\varphi_x^*)}{1-G(\varphi^*)}
+\)</span>$</p>
+<p>is the probability of exporting conditional on successful entry.</p>
+<p>{Impact of trade}
+ZCP condition is obtained as follows.  Recall that zero cutoff profit conditions for domestic and export markets:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+&amp;\pi_d(\varphi^*) = 0 \quad \text{or} \quad \frac{r_d(\varphi^*)}{\sigma} = f \\
+&amp;\pi_x(\varphi_x^*) = 0 \quad \text{or} \quad \frac{r_x(\varphi_x^*)}{\sigma} = f_x
+\end{align*}
+\end{split}\]</div>
+<p>Therefore,
+$<span class="math notranslate nohighlight">\(
+\frac{r_x(\varphi_x^*)}{r_d(\varphi^*)} = \frac{f_x}{f} \quad \text{or} \quad \varphi_x^* = \varphi^* \tau \left( \frac{f_x}{f}\right)^{\frac{1}{\sigma-1}}
+\)</span>$</p>
+<p>The above also verifies that <span class="math notranslate nohighlight">\(\varphi_x^* &gt; \varphi^*\)</span> iff <span class="math notranslate nohighlight">\(\tau^{\sigma-1}f_x &gt; f\)</span>, a condition that was imposed earlier.</p>
+<p>{Impact of trade}
+Next, using the definition of <span class="math notranslate nohighlight">\(\pi_d(\tilde{\varphi})\)</span> and <span class="math notranslate nohighlight">\(\pi_x(\tilde{\varphi}_x)\)</span> obtain
+$<span class="math notranslate nohighlight">\(
+\bar{\pi}= \frac{r_d(\tilde{\varphi})}{\sigma}-f+np_x\left( \frac{r_x(\tilde{\varphi}_x)}{\sigma}-f_x \right)
+\)</span>$</p>
+<p>Finally, making the same substitutions as in the closed economy case obtain,
+$<span class="math notranslate nohighlight">\(
+\bar{\pi} = f\left( \left(\frac{\tilde{\varphi}(\varphi^*)}{\varphi^*} \right)^{\sigma-1} -1 \right) + np_x f_x \left( \left(\frac{\tilde{\varphi}_x(\varphi^*)}{\tilde{\varphi}^*_x(\varphi^*)} \right)^{\sigma-1} -1 \right)
+\)</span>$</p>
+<p>The above is the ZCP in the open economy case.</p>
+<p>{Impact of trade}
+\begin{figure}
+\includegraphics[scale=.35]{fig5}
+\end{figure}</p>
+<p>{Impact of trade}
+Compared to autarky the zero cutoff profit level of productivity is higher in the open economy case.</p>
+<p>Therefore, opening up to trade forces the least productive firms to exist the market</p>
+<p>Intuition: For exporters: Profits increase due to export opportunities but decrease due to the entry of foreign firms in the domestic market; For non-exporters: only the negative second effect is present making it more difficult for them to survive</p>
+<p>{Impact of trade}
+\begin{figure}
+\includegraphics[scale=.28]{fig6}
+\end{figure}</p>
+<p>{Impact of trade}
+We can measure welfare from the price index
+$<span class="math notranslate nohighlight">\(
+P^{1-\sigma} = M_T (\rho \tilde{\varphi}_T)^{\sigma-1}
+\)</span>$</p>
+<p>As long as <span class="math notranslate nohighlight">\(\tau\)</span> is not too high, <span class="math notranslate nohighlight">\(M_T &gt; M_a\)</span>, and since <span class="math notranslate nohighlight">\(\tilde{\varphi}_T &gt; \tilde{\varphi}_a\)</span> (obvious from previous picture), <span class="math notranslate nohighlight">\(P\)</span> is lower in the open economy.</p>
+<p>Melitz shows that even if <span class="math notranslate nohighlight">\(M_T &lt; M_a\)</span>, welfare in the open economy is still higher than wlefare in autarky because of productivity effect (<span class="math notranslate nohighlight">\(\tilde{\varphi}_T &gt; \tilde{\varphi}_a\)</span>) dominates the variety effect.</p>
+<p>{Conclusion}</p>
+<ul class="simple">
+<li><p>Empirical evidence shows that firms (even exporters) are very heterogenous and that trade affects the types of firms who survive foreign competition.</p></li>
+<li><p>We introduce firm heterogeneity into the Krugman model by assuming firms have different productivities</p></li>
+<li><p>Trade causes a selection effect: only the most productive firms export</p></li>
+<li><p>There are intra-industry reallocations where the most productive firms survive while the least productive firms shut-down</p></li>
+<li><p>Welfare is improved by trade, even when the number of varieties fall, because of the productivity effect</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="new-trade-theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">New Trade Theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="trade-data-tutorial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

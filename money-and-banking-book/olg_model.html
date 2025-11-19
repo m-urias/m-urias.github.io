@@ -447,7 +447,7 @@ c_{1,t}+\frac{c_{2,t}}{n} \leq y
 <figure>
     <img src="_static/figs_olg/feasible_set2.png"
          alt="Feasible allocations"
-         width="200"
+         width="150"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     The set of feasible allocations with a constant population growth rate $n$.
@@ -463,7 +463,7 @@ c_{1,t}+\frac{c_{2,t}}{n} \leq y
 <figure>
     <img src="_static/figs_olg/golden_rule2.png"
          alt="Golden rule allocation"
-         width="200"
+         width="150"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Golden rule allocation.
@@ -505,7 +505,7 @@ c_{1,t}+\frac{c_{2,t+1}}{x_{t+1}}\leq y
 <figure>
     <img src="_static/figs_olg/record_keeping.png"
          alt="Equilibrium with record keeping"
-         width="200"
+         width="150"
          style="display: block; margin-left: auto; margin-right: auto;">
     <figcaption style="font-style: italic; text-align: left;">
     Consumption/savings decision with record keeping.
@@ -598,15 +598,15 @@ s.t. \quad &amp;c_{1,t}+\nu_t m_t \leq y \\
 \[
 \nu_{t+1}=\nu_t
 \]</div>
-<p>The <strong>quantity theory of money</strong> predicts that price level is exactly proportional to quantity of money.  Let’s investigate whether or not our OLG model supports this claim or not.</p>
-<p>The price level is</p>
+<p>The aggregate supply of money is fixed at <span class="math notranslate nohighlight">\(M\)</span> and held by the old generation.  The equilibrium rate of return on money must equalize the aggregate savings demand of the young generation with the aggregate supply of fiat currency held by the old generation.  Hence, with a constant population we have that <span class="math notranslate nohighlight">\(\nu_{t+1}\/nu_t=1\)</span>.  If we allowed population growth <span class="math notranslate nohighlight">\(n\)</span>, then the equilibrium rate of return on fiat currency must be equal to <span class="math notranslate nohighlight">\(n\)</span> since each new generation’s demand for fiat currency is <span class="math notranslate nohighlight">\(n\)</span> times larger than the previous generation.  If the return exceeded <span class="math notranslate nohighlight">\(n\)</span>, then the old generation would receive more purchasing power than the young are willing sell.  If the return were lower than <span class="math notranslate nohighlight">\(n\)</span>, then the young generation’s demand for fiat currency is less than the old are willing to supply.  With a constant stock of fiat currency, fiat money is valued only insofar as the next generation wants them so that its equilibrium return is pinned down by how fast that next generation grows.</p>
+<p>The <strong>quantity theory of money</strong> predicts that the price level is exactly proportional to quantity of money.  That is, a one-time increase in the supply of fiat currency leads to a one-for-one increase in the price level.  Let’s investigate whether or not our OLG model supports this claim or not.</p>
+<p>The equilibrium price level is given my market clearing:</p>
 <div class="math notranslate nohighlight">
 \[
 p = \frac{1}{\nu}=\frac{M}{N(y-c_1)}
 \]</div>
-<p>Hence, price level is proportional to money stock.</p>
-<p>In this environment, money is also <strong>neutral</strong>: consumption <span class="math notranslate nohighlight">\((c_1, c_2)\)</span> does not depend on <span class="math notranslate nohighlight">\(M\)</span>.</p>
-<p>What role is fiat money playing in our economy?  Fiat currency allows people to trade for goods they desire despite an absence of double coincidence of wants. Young people sell some of their goods for fiat money and use this money to buy goods when they are old. Fiat money is intrinsically useless—it is not consumed and it does not produce anything that can be consumed—but has value because it allows agents to execute trades.  Fiat money serves a similar function as record keeping—according to Kocherlakota ``money is memory.”</p>
+<p>Hence, the price level is indeed proportional to money stock.  If the stock of outstanding fiat currency were 20 percent higher, then prices would be 20 percent higher.  Obviously this implies that the <em>real</em> value of consumption does not depend on how much fiat currency exists.  Therefore, in this environment, money is also <strong>neutral</strong>: consumption <span class="math notranslate nohighlight">\((c_1, c_2)\)</span> does not depend on <span class="math notranslate nohighlight">\(M\)</span>.</p>
+<p>What role is fiat money playing in our economy?  Fiat currency allows people to trade for goods they desire despite an absence of double coincidence of wants and commitment/record keeping. The only way the young can transfer resources to their old-age selves is by giving something to the old today in exchange for a promise (explicit or implicit) that the next generation will repay them tomorrow. That “something” can be either a gift recorded on a ledger (record-keeping OLG), or fiat money backed only by the collective belief that these objects will continue to have value in the future.  In either case, the object has no intrinsic value. Its value depends entirely on the willingness of future young to accept it.  The concept that fiat money serves a similar function as record keeping is one of the key insights from monetary theory formalized by <a href="https://www.sciencedirect.com/science/article/abs/pii/S0022053197923577" target="_blank">Kocherlakota</a> who coined the phrase “money is memory.”</p>
 <section id="optimality-of-a-monetary-equilibrium">
 <h3>Optimality of a monetary equilibrium<a class="headerlink" href="#optimality-of-a-monetary-equilibrium" title="Link to this heading">#</a></h3>
 <p>Having identified the monetary equilibrium of our economy, we can now ask to what extent it is a “good equilibrium.”  That is, to what degree does it deliver maximum welfare to the citizens?  To measure this, we need only compare the allocation of the decentralized monetary economy to that of the central planner.  The central planner, after all, maximizes welfare by definition; thereby serving as a benchmark by which to judge the outcomes of decentralized equilibria.  We can simplify the problem even further.  Since the decentralized economy and the planner’s problem share the same objective function—to maximize utility—we can guarantee the two solutions coincide if and only if the constraint of the optimization problems are the same.  Said plainly, does the feasibility line of the planner coincide with the budget line of the decentralized equilibrium?  If so, then the decentralized monetary economy achieves the Pareto optimal outcomes.  If not, then the planner could improve on the allocation.</p>
@@ -620,7 +620,7 @@ p = \frac{1}{\nu}=\frac{M}{N(y-c_1)}
 \[
 c_1 + \frac{c_2}{n} \leq y
 \]</div>
-<p>which coincides with social planner! Hence the decentralized monetary economy implements golden rule!  By distributing worthless pieces of paper to individuals, the economy went from a state of autarky to implements the best possible outcome.</p>
+<p>which coincides with the social planner! Hence the decentralized monetary economy implements golden rule!  By distributing worthless pieces of paper to individuals, the economy went from a state of autarky to implementing the best possible outcome.</p>
 </section>
 </section>
 <section id="money-inflation-and-assets">
@@ -637,6 +637,9 @@ c_1 + \frac{c_2}{n} \leq y
     Data is from the Federal Reserve.  See <a href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a> for detailed instructions on how download this data from FRED and re-create this figure.
     </figcaption>
 </figure>
+<p>Some obvious patterns stand out.  First, the supply of money has been consistently growing over the past 60 years.  Second, some measures of money grow much faster than others.  The monetary aggregate M2 (which includes the most assets among the plotted series) exhibits much larger growth than the other series.  Third, the monetary base appears much more volatile compared to the other series–a pattern than only emerges after the 2008 crisis.  Fourth, there is a dramatic spike in the value of M1 around the year 2020.</p>
+<p>We will explain each of these stylized facts in more detail later, but for the time being the simple fact is that our model of fiat currency must at the very least allow the money supply to grow over time.  Assuming a constant stock of outstanding fiat currency, as our model stands now, is clearly missing a critical feature of the real world.</p>
+<p>A similar pattern applies to China’s monetary aggregates:</p>
 <figure>
     <img src="_static/figs_olg/china_monetary_aggregates.png"
          alt="Money supply in the US"
@@ -647,16 +650,16 @@ c_1 + \frac{c_2}{n} \leq y
     </figcaption>
 </figure>
 <p>How do we measure money? Which assets can be called “money”?</p>
-<p>According to the Federal Reserve of the US the <strong>money supply</strong> is the total amount of money–cash, coins and balances in bank account–in circulation.  There are several different <strong>monetary aggregates</strong> which measure the money supply.  These monetary aggregates categorize difference assets based on their liquidity.</p>
+<p>According to the Federal Reserve of the US the <strong>money supply</strong> is the total amount of money–cash, coins and balances in bank accounts–in circulation.  There are several different <strong>monetary aggregates</strong> which measure the money supply.  These monetary aggregates categorize different assets based on their liquidity.</p>
 <ul class="simple">
-<li><p>Monetary aggregate M0 is currency held by the non-bank public.</p></li>
+<li><p>Monetary aggregate <strong>M0</strong> is currency held by the non-bank public.</p></li>
 <li><p>The <strong>monetary base</strong>, or <strong>MB</strong>, is the sum of M0 and reserve balances, or deposits held by banks and other depository institutions in their accounts at the Federal Reserve.</p></li>
 <li><p>Monetary aggregate <strong>M1</strong> is the sum of M0 and deposits, and other checkable deposits (OCDs).  Deposits include balances held in checking accounts and other highly liquid deposits used for transactions.  It measures currency held outside of the U.S. Treasury, Federal Reserve Banks, and the vaults of depository institutions.</p></li>
 <li><p>Monetary aggregate <strong>M2</strong> is the sum of M1 and small-denomination time deposits (less than $100,000) and retail money market mutual funds.</p></li>
 <li><p>Monetary aggregate <strong>M3</strong> is the sum of M2 and large-denomination time deposits (greater than $100,000), balances in institutional money market mutual funds, repos issued by depository institutions, and Eurodollars held by US residents at foreign branches of US banks.</p></li>
 </ul>
-<p>Data on the monetary aggregates are released every month in the Federal Reserve’s H.6statistical release, <a href="https://www.federalreserve.gov/releases/h6/current/default.htm" target="_blank">Money Stock Measures</a>.</p>
-<p>When introducing newly printed money into our OLG model, we will assume a constant money supply growth rate so that <span class="math notranslate nohighlight">\(M_t=zM_{t-1}\)</span>.  In principle, there can be any path for the money supply <span class="math notranslate nohighlight">\(\{M_t\}_{t=1}^{\infty}\)</span> we like, as it is an exogenous variable.  But given that we want to characterize our equilibrium on pen and paper, we stick with the constant money supply growth rate <span class="math notranslate nohighlight">\(z\)</span>.  Therefore,  newly printed fiat money is given by the expression</p>
+<p>Data on the monetary aggregates are released every month in the Federal Reserve’s H.6 statistical release, <a href="https://www.federalreserve.gov/releases/h6/current/default.htm" target="_blank">Money Stock Measures</a>.</p>
+<p>When introducing newly printed money into our OLG model, we assume a constant money supply growth rate so that <span class="math notranslate nohighlight">\(M_t=zM_{t-1}\)</span>.  In principle, there can be any path for the money supply <span class="math notranslate nohighlight">\(\{M_t\}_{t=1}^{\infty}\)</span> we like, as it is an exogenous variable.  But given that we want to characterize our equilibrium on pen and paper, we stick with the constant money supply growth rate <span class="math notranslate nohighlight">\(z\)</span>.  Therefore, newly printed fiat money is given by the expression</p>
 <div class="math notranslate nohighlight">
 \[
 M_t-M_{t-1}=\left(1-\frac{1}{z}\right)M_t
