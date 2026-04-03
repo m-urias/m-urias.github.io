@@ -1,0 +1,728 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Empirical Tests of the Heckscher-Ohlin Theory &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ho-empirical';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Spcific Factors Model" href="specific-factors-model.html" />
+    <link rel="prev" title="The Heckscher-Ohlin Model of Trade" href="ho-model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ek-model.html">Eaton-Kortum Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Empirical Tests of HO Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-trade-growth.html">Growth in the Classical Models of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCA.html">Revealed Comparative Advantage</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade-data-tutorial.html">Trade Data Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ho-empirical.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Empirical Tests of the Heckscher-Ohlin Theory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-leontief-paradox">The Leontief Paradox</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proposed-resolutions">Proposed Resolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-correct-test-leamer-1980">The Correct Test: Leamer (1980)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-vanek-theorem">The Heckscher-Ohlin-Vanek Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-leontief-paradox">Resolving the Leontief Paradox</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-numerical-illustration">A Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-performance-of-the-hov-model">Empirical Performance of the HOV Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bowen-leamer-and-sveikauskas-1987">Bowen, Leamer, and Sveikauskas (1987)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trefler-1995">Trefler (1995)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#davis-and-weinstein-2001">Davis and Weinstein (2001)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="empirical-tests-of-the-heckscher-ohlin-theory">
+<h1>Empirical Tests of the Heckscher-Ohlin Theory<a class="headerlink" href="#empirical-tests-of-the-heckscher-ohlin-theory" title="Link to this heading">#</a></h1>
+<section id="the-leontief-paradox">
+<h2>The Leontief Paradox<a class="headerlink" href="#the-leontief-paradox" title="Link to this heading">#</a></h2>
+<p>The HO model’s central prediction is that countries export goods that use their abundant factors intensively. For the United States in the postwar period, this prediction seemed straightforward to test: the US was widely regarded as the most capital-abundant economy in the world, and the model therefore predicted that US exports should be capital-intensive relative to US imports.</p>
+<p>The first systematic empirical test was conducted by Wassily Leontief, published in 1953, using input-output tables for the US economy. Input-output analysis allows one to trace the full chain of factor requirements embodied in a unit of output — not just the direct labor and capital used in final assembly, but also the indirect factor content embedded in intermediate inputs. Leontief used this methodology to compute the capital and labor embodied in a representative bundle of US exports and a representative bundle of US imports.</p>
+<figure>
+    <img src="_static/figs_ho/ho_12.png"
+         alt="Leontief's results"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Leontief's (1953) estimates of the capital and labor embodied in US exports and imports. The capital-labor ratio is higher in imports than in exports — the opposite of what the HO model predicts for a capital-abundant economy.
+    </figcaption>
+</figure>
+<p>The result was startling: the capital-labor ratio embodied in US <em>imports</em> exceeded that embodied in US <em>exports</em>. The most capital-abundant country in the world was apparently exporting labor-intensive goods and importing capital-intensive ones. This finding — the direct opposite of the HO prediction — became known as the <strong>Leontief paradox</strong>, and it generated a large literature attempting to explain, qualify, or overturn it.</p>
+<section id="proposed-resolutions">
+<h3>Proposed Resolutions<a class="headerlink" href="#proposed-resolutions" title="Link to this heading">#</a></h3>
+<p>Several explanations were advanced for why Leontief’s results might not, in fact, refute the HO model:</p>
+<ul class="simple">
+<li><p><strong>Technology differences</strong>: the HO model assumes identical production technologies across countries, but if US workers are more productive than foreign workers — due to superior technology or organizational practices — then the effective factor endowment of the US in efficiency units may be less capital-intensive than raw capital stock figures suggest.</p></li>
+<li><p><strong>Human capital</strong>: Leontief’s study measured only physical capital and raw labor, ignoring the fact that US workers were far better educated and trained than workers elsewhere. Once  human capital is included in the factor endowment, the US may in fact be <em>labor</em>-abundant  in the relevant sense.</p></li>
+<li><p><strong>Natural resources</strong>: the US imports many resource-intensive goods — oil, raw materials, agricultural products — whose production happens to be capital-intensive. Omitting natural resources as a factor biases the results.</p></li>
+<li><p><strong>Trade policy</strong>: the HO model is a model of free trade equilibria, but the US was not engaged in free trade. Tariffs and quotas may have distorted the pattern of trade away from the model’s predictions.</p></li>
+</ul>
+<p>These explanations have merit, but there is a more fundamental issue: Leontief was not
+actually testing the correct implication of the HO model.</p>
+</section>
+<section id="the-correct-test-leamer-1980">
+<h3>The Correct Test: Leamer (1980)<a class="headerlink" href="#the-correct-test-leamer-1980" title="Link to this heading">#</a></h3>
+<p>The appropriate test of the HO model was formalized by Edward Leamer (1980), who showed that Leontief’s comparison of capital-labor ratios in exports and imports was logically flawed in the presence of a trade imbalance. The correct prediction of the HO model is not about the relative factor intensity of exports versus imports, but about the factor content of <em>net</em> trade relative to factor endowments.</p>
+<p>To state this precisely, consider a world with many countries <span class="math notranslate nohighlight">\(i = 1, \ldots, C\)</span>, many goods <span class="math notranslate nohighlight">\(j = 1, \ldots, N\)</span>, and many factors <span class="math notranslate nohighlight">\(k = 1, \ldots, M\)</span>. Let <span class="math notranslate nohighlight">\(A\)</span> be the <span class="math notranslate nohighlight">\((M \times N)\)</span> matrix of factor requirements, where element <span class="math notranslate nohighlight">\(a_{kj}\)</span> denotes the amount of factor <span class="math notranslate nohighlight">\(k\)</span> required to produce one unit of good <span class="math notranslate nohighlight">\(j\)</span>. For the two-factor case:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix} a_{1L} &amp; a_{2L} \\ a_{1K} &amp; a_{2K} \end{pmatrix}
+\end{split}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{T}^i\)</span> be the <span class="math notranslate nohighlight">\((N \times 1)\)</span> vector of net exports of country <span class="math notranslate nohighlight">\(i\)</span> (exports minus imports, by good). Then the <strong>factor content of net trade</strong> for country <span class="math notranslate nohighlight">\(i\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[F^i = A \mathbf{T}^i\]</div>
+<p>where <span class="math notranslate nohighlight">\(F^i_k\)</span> measures how much of factor <span class="math notranslate nohighlight">\(k\)</span> is embodied in country <span class="math notranslate nohighlight">\(i\)</span>’s net exports. The HO model predicts that <span class="math notranslate nohighlight">\(F^i_k &gt; 0\)</span> — a country is a net exporter of the services of factor <span class="math notranslate nohighlight">\(k\)</span> — if and only if country <span class="math notranslate nohighlight">\(i\)</span> is relatively abundant in factor <span class="math notranslate nohighlight">\(k\)</span>. This is the correct statement to test empirically, and it differs from Leontief’s comparison in a subtle but important way: Leontief compared ratios <em>within</em> a trade flow, whereas the correct test concerns the <em>net</em> factor content relative to the country’s endowment.</p>
+</section>
+<section id="the-heckscher-ohlin-vanek-theorem">
+<h3>The Heckscher-Ohlin-Vanek Theorem<a class="headerlink" href="#the-heckscher-ohlin-vanek-theorem" title="Link to this heading">#</a></h3>
+<p>The two-country, two-factor HO model delivers a prediction about the <em>direction</em> of trade in
+goods. With many countries, goods, and factors, the natural generalization shifts the
+prediction to the <em>factor content</em> of trade. This generalization is due to Vanek (1968) and
+forms the basis for the main empirical tests of the HO framework.</p>
+<section id="setup">
+<h4>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h4>
+<p>Let <span class="math notranslate nohighlight">\(Y^i\)</span> be the <span class="math notranslate nohighlight">\((N \times 1)\)</span> vector of outputs across industries for country <span class="math notranslate nohighlight">\(i\)</span>, and let
+<span class="math notranslate nohighlight">\(D^i\)</span> be the corresponding vector of demands. The vector of net exports is <span class="math notranslate nohighlight">\(T^i = Y^i - D^i\)</span>.
+The <strong>factor content of trade</strong> is then:</p>
+<div class="math notranslate nohighlight">
+\[F^i \equiv A(Y^i - D^i) = AT^i\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the <span class="math notranslate nohighlight">\((M \times N)\)</span> matrix of factor requirements. The <span class="math notranslate nohighlight">\(k\)</span>-th element <span class="math notranslate nohighlight">\(F^i_k\)</span>
+measures the net export of factor <span class="math notranslate nohighlight">\(k\)</span>’s services embedded in country <span class="math notranslate nohighlight">\(i\)</span>’s trade: <span class="math notranslate nohighlight">\(F^i_k &gt; 0\)</span>
+means factor <span class="math notranslate nohighlight">\(k\)</span> is implicitly exported; <span class="math notranslate nohighlight">\(F^i_k &lt; 0\)</span> means it is implicitly imported.</p>
+</section>
+<section id="derivation">
+<h4>Derivation<a class="headerlink" href="#derivation" title="Link to this heading">#</a></h4>
+<p>The HOV prediction follows from three assumptions: (i) full employment, (ii) identical and
+homothetic preferences, and (iii) balanced trade.</p>
+<p>Full employment requires that all factor endowments are absorbed in production:</p>
+<div class="math notranslate nohighlight">
+\[V^i = AY^i\]</div>
+<p>Identical and homothetic preferences with balanced trade imply that each country’s consumption
+is proportional to its share <span class="math notranslate nohighlight">\(s^i\)</span> of world GDP:</p>
+<div class="math notranslate nohighlight">
+\[AD^i = s^i AD^w = s^i AY^w = s^i V^w\]</div>
+<p>where <span class="math notranslate nohighlight">\(s^i = \text{GDP}^i / \text{GDP}^w\)</span>. Substituting into the definition of <span class="math notranslate nohighlight">\(F^i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F^i = AY^i - AD^i = V^i - s^i V^w\]</div>
+<div class="definition admonition">
+<p class="admonition-title">Heckscher-Ohlin-Vanek (HOV) Theorem</p>
+<p>The factor content of trade in factor <span class="math notranslate nohighlight">\(k\)</span> satisfies <span class="math notranslate nohighlight">\(F^i_k = V^i_k - s^i V^w_k\)</span>.
+In particular, <span class="math notranslate nohighlight">\(F^i_k &gt; 0\)</span> (country <span class="math notranslate nohighlight">\(i\)</span> is a net exporter of factor <span class="math notranslate nohighlight">\(k\)</span>) if and only if
+factor <span class="math notranslate nohighlight">\(k\)</span> is abundant in the sense that <span class="math notranslate nohighlight">\(V^i_k / V^w_k &gt; s^i\)</span>.</p>
+</div>
+</section>
+<section id="resolving-the-leontief-paradox">
+<h4>Resolving the Leontief Paradox<a class="headerlink" href="#resolving-the-leontief-paradox" title="Link to this heading">#</a></h4>
+<p>The HOV framework clarifies why Leontief’s test was logically flawed. Leontief compared the
+capital-labor <em>ratio</em> in export goods against that in import goods — a comparison of
+intensities, not quantities. The HOV theorem makes a prediction about the <em>net</em> factor
+content of trade, which depends on both the intensity and the scale of trade flows.</p>
+<p>In the two-factor case, the HOV predictions for capital and labor are:</p>
+<div class="math notranslate nohighlight">
+\[F_K^i = K^i - s^i K^w, \qquad F_L^i = L^i - s^i L^w\]</div>
+<p>If the US is capital-abundant relative to labor — meaning <span class="math notranslate nohighlight">\(K^{US}/K^w &gt; L^{US}/L^w\)</span> — then
+the correct HOV prediction is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{K^{US}}{L^{US}} &gt; \frac{K^{US} - F_K^{US}}{L^{US} - F_L^{US}}\]</div>
+<p>That is, the capital-labor ratio in US <em>production</em> should exceed the capital-labor ratio in
+US <em>consumption</em> — a statement about net factor flows, not about the intensity of any
+particular export or import bundle.</p>
+<p><strong>Proof.</strong> From the HOV conditions and market clearing:</p>
+<div class="math notranslate nohighlight">
+\[K^w = \frac{K^i - F_K^i}{s^i}, \qquad L^w = \frac{L^i - F_L^i}{s^i}\]</div>
+<p>Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\frac{K^i}{K^w} = s^i \frac{K^i}{K^i - F_K^i}, \qquad \frac{L^i}{L^w} = s^i \frac{L^i}{L^i - F_L^i}\]</div>
+<p>Capital abundance (<span class="math notranslate nohighlight">\(K^i/K^w &gt; L^i/L^w\)</span>) then implies:</p>
+<div class="math notranslate nohighlight">
+\[\frac{K^i}{K^i - F_K^i} &gt; \frac{L^i}{L^i - F_L^i}\]</div>
+<p>which is precisely the production-consumption comparison above. <span class="math notranslate nohighlight">\(\square\)</span></p>
+</section>
+<section id="a-numerical-illustration">
+<h4>A Numerical Illustration<a class="headerlink" href="#a-numerical-illustration" title="Link to this heading">#</a></h4>
+<p>To make the distinction between Leontief’s method and the HOV approach concrete, consider
+the following example. Suppose the US economy produces two goods — machinery (M) and
+textiles (T) — using capital and labor with the following input requirements per $1M of
+output:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Good</p></th>
+<th class="head"><p>Capital</p></th>
+<th class="head"><p>Labor</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(K/L\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Machinery (exported)</p></td>
+<td><p>300</p></td>
+<td><p>100</p></td>
+<td><p>3.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Textiles (imported)</p></td>
+<td><p>600</p></td>
+<td><p>100</p></td>
+<td><p>6.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Leontief’s approach</strong> compares the <span class="math notranslate nohighlight">\(K/L\)</span> ratio of the export bundle to that of the import
+bundle. Machinery has <span class="math notranslate nohighlight">\(K/L = 3.0\)</span> and textiles have <span class="math notranslate nohighlight">\(K/L = 6.0\)</span>, so the US appears to be
+exporting the labor-intensive good and importing the capital-intensive good — the Leontief
+paradox.</p>
+<p><strong>The HOV approach</strong> instead computes the net factor content of trade. Suppose the US exports
+$2M of machinery and imports $1M of textiles:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T = \begin{bmatrix} 2 \\ -1 \end{bmatrix}, \quad 
+A = \begin{bmatrix} 300 &amp; 600 \\ 100 &amp; 100 \end{bmatrix}, \quad
+AT = \begin{bmatrix} (2)(300) - (1)(600) \\ (2)(100) - (1)(100) \end{bmatrix} 
+= \begin{bmatrix} 0 \\ 100 \end{bmatrix}\end{split}\]</div>
+<p>On net, the US is exporting 100 units of labor and zero units of capital — seemingly
+consistent with Leontief’s finding. But now suppose the volume of trade is larger: $10M of
+machinery exported and $2M of textiles imported:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T = \begin{bmatrix} 10 \\ -2 \end{bmatrix}, \quad
+AT = \begin{bmatrix} (10)(300) - (2)(600) \\ (10)(100) - (2)(100) \end{bmatrix}
+= \begin{bmatrix} 1800 \\ 800 \end{bmatrix}\end{split}\]</div>
+<p>Now the US is a net exporter of both capital and labor, with a capital-to-labor ratio of
+<span class="math notranslate nohighlight">\(1800/800 = 2.25\)</span> in its net trade. The <span class="math notranslate nohighlight">\(K/L\)</span> ratio of the net export bundle need not equal
+the <span class="math notranslate nohighlight">\(K/L\)</span> ratio of any individual good. Leontief’s error was to draw inferences about factor
+abundance from good-level intensity comparisons, while ignoring the scale of trade. The HOV
+approach, by focusing on net factor content, corrects this.</p>
+</section>
+</section>
+<section id="empirical-performance-of-the-hov-model">
+<h3>Empirical Performance of the HOV Model<a class="headerlink" href="#empirical-performance-of-the-hov-model" title="Link to this heading">#</a></h3>
+<p>The HOV theorem provides a clean empirical test. The prediction is:</p>
+<div class="math notranslate nohighlight">
+\[AT^i = V^i - s^i V^w\]</div>
+<p>The left-hand side can be computed from data on trade flows <span class="math notranslate nohighlight">\(T^i\)</span> and technology <span class="math notranslate nohighlight">\(A\)</span>; the
+right-hand side from data on factor endowments. The question is how well the two sides match.</p>
+<section id="bowen-leamer-and-sveikauskas-1987">
+<h4>Bowen, Leamer, and Sveikauskas (1987)<a class="headerlink" href="#bowen-leamer-and-sveikauskas-1987" title="Link to this heading">#</a></h4>
+<p>The first comprehensive test of the HOV theorem was conducted by Bowen, Leamer, and
+Sveikauskas (1987), who extended Leontief’s analysis to 27 countries and 12 factors of
+production. For each country-factor pair, they tested whether the sign of the measured factor
+content of trade matched the HOV prediction. The sign test passed in only 61 percent of cases
+— not much better than random assignment — and the Leontief paradox remained alive in the
+broader cross-country data.</p>
+</section>
+<section id="trefler-1995">
+<h4>Trefler (1995)<a class="headerlink" href="#trefler-1995" title="Link to this heading">#</a></h4>
+<p>Trefler (1995) pushed the analysis further using data on 33 countries and 9 factors, testing
+both the direction and the magnitude of the HOV predictions. The results were damaging: the
+sign test was consistent with the HOV prediction in only 50 percent of cases, and the rank
+test in 60 percent. Trefler also documented a striking pattern he termed the <strong>mystery of the
+missing trade</strong>: observed factor trade flows were far smaller in magnitude than the HOV model
+predicts. Trefler’s diagnostic analysis pointed to the assumption of identical technologies
+across countries as the primary source of the model’s failure — a finding consistent with
+the resolution of the Leontief paradox discussed above.</p>
+</section>
+<section id="davis-and-weinstein-2001">
+<h4>Davis and Weinstein (2001)<a class="headerlink" href="#davis-and-weinstein-2001" title="Link to this heading">#</a></h4>
+<p>The most influential rehabilitation of the HOV framework was provided by Davis and Weinstein
+(2001), who showed that the model’s empirical failures were largely attributable to its most
+restrictive auxiliary assumptions rather than to the core factor-endowments mechanism. When
+they relaxed the assumptions of identical technologies, a common set of goods produced across
+all countries, and costless trade, the HOV predictions improved dramatically:</p>
+<figure>
+    <img src="_static/figs_ho/ho_13.png"
+         alt="Davis and Weinstein results"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Davis and Weinstein (2001): measured factor content of trade against HOV predictions, 
+    under progressively relaxed assumptions. Each step away from the strict HOV assumptions 
+    improves the fit substantially.
+    </figcaption>
+</figure>
+</section>
+<section id="assessment">
+<h4>Assessment<a class="headerlink" href="#assessment" title="Link to this heading">#</a></h4>
+<p>The empirical literature on HOV delivers a nuanced verdict. The strict version of the
+theorem — with identical technologies, costless trade, and full diversification — performs
+poorly and the Leontief paradox is a genuine anomaly within that framework. But the
+anomaly is largely resolved once the theorem’s most counterfactual assumptions are relaxed.
+Factor endowments do appear to shape the factor content of trade in the manner the HO
+mechanism predicts; the difficulty lies in the auxiliary assumptions required to derive the
+clean HOV prediction rather than in the core economic logic.</p>
+<p>Whether the amended model — with technology differences, trade costs, and incomplete
+specialization layered on top — should still be called the HO model is a matter of
+interpretation. What is clear is that factor endowments remain an empirically relevant
+determinant of trade patterns, even if the strict HOV theorem overstates the precision with
+which endowments alone can account for observed trade flows.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ho-model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Heckscher-Ohlin Model of Trade</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="specific-factors-model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Spcific Factors Model</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-leontief-paradox">The Leontief Paradox</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proposed-resolutions">Proposed Resolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-correct-test-leamer-1980">The Correct Test: Leamer (1980)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-vanek-theorem">The Heckscher-Ohlin-Vanek Theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resolving-the-leontief-paradox">Resolving the Leontief Paradox</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-numerical-illustration">A Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-performance-of-the-hov-model">Empirical Performance of the HOV Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bowen-leamer-and-sveikauskas-1987">Bowen, Leamer, and Sveikauskas (1987)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trefler-1995">Trefler (1995)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#davis-and-weinstein-2001">Davis and Weinstein (2001)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

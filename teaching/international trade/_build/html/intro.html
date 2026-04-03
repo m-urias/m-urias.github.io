@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -171,13 +171,17 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ek-model.html">Eaton-Kortum Model of Trade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-empirical.html">Empirical Tests of HO Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCA.html">Revealed Comparative Advantage</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade-data-tutorial.html">Trade Data Tutorial</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
 <ul class="nav bd-sidenav">
@@ -331,6 +335,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-trade-models">Classical Trade Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-trade-theories">New Trade Theories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#international-trade-policy">International Trade Policy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 </li>
@@ -351,15 +358,37 @@ document.write(`
 <p>Welcome to my International Trade course site.  Included here are lectures and data tutorials presented in a Jupyter Book.  Lectures provide theoretical models related to money, assets, banking, and monetary policy.  Data tutorials are intended to show students what economic databases are publicly available, how to acquire data, and how to analyze the data using Python.</p>
 <section id="course-overview">
 <h2>Course Overview<a class="headerlink" href="#course-overview" title="Link to this heading">#</a></h2>
+<p>This course discusses both classical and new theories of international trade.  First, we investigate the classical models of Ricardo and Heckscher-Ohlin which introduces the concepts of comparative advantage, factor price equalization, factor content of trade, and sources of inter- and intra-national differences in income.  Second, we discuss “new” trade theories based on Krugman which identifies increasing returns to scale as alternative source of gains from trade.  We analyze a variety of such new trade theories including more recent models by Meltiz and Eaton-Kortum to bring you closer the frontier of research in international trade.  Finally, we discuss how countries borrow and lend from each other and measure the flow of funds between countries using the balance of payments accounts.  We analyze how economies are affected by global linkages to better understand the function of exchange rates, interest rates, and the current account.</p>
+<p>Below is a table of contents for the course content. This table of contents can also be conveniently navigated on the left hand panel.</p>
+<section id="classical-trade-models">
+<h3>Classical Trade Models<a class="headerlink" href="#classical-trade-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="ricardian-model.html"><span class="std std-doc">Ricardian Model</span></a> This lecture formalizes the concept of comparative advantage in a two-country world.  Comparative advantage arises from productivity differences which generate gains from trade.  We measure the extent and distribution of gains from trade across countries, predict the pattern of specialization, and analyze the relative wage.  Finally, we introduce some empirical evidence in support of the Ricardian theory of trade.</p></li>
+<li><p><a class="reference internal" href="ho-model.html"><span class="std std-doc">Hecksher-Ohlin Model</span></a> We develop a theory of comparative advantage based on resource endowments.  This model allows us to the how the gain from trade are distributed <em>within</em> a country–there exist both winners and losers from trade.  In this context, we consider the impact of common trade policies on different groups within a country.  We explore empirical tests of the HO theory and address what modeling assumptions are too restrictive in the sense that they generate the famous “missing trade” puzzle.</p></li>
+<li><p><a class="reference internal" href="specific-factors-model.html"><span class="std std-doc">Specific Factors Model</span></a> We explore the how the gains from trade are distributed <em>within</em> a country in the <em>short-run</em>.  Compared to the HO model, we consider an economy where some factors of production are immobile or specialized to a particular sector.</p></li>
+</ul>
+</section>
+<section id="new-trade-theories">
+<h3>New Trade Theories<a class="headerlink" href="#new-trade-theories" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="new-trade-theory.html"><span class="std std-doc">New Trade Theory</span></a> We introduce an alternative source of gains from international trade: increasing returns to scale.  This model generates a <em>non-comparative advantage theory</em> of international trade. We explore both external and internal economies of scale and introduce the concepts of selection and scale effects from international trade.</p></li>
+<li><p><a class="reference internal" href="melitz-model.html"><span class="std std-doc">Inter- and Intra-Industry Trade</span></a> We discuss how different theories are more or less appropriate for explaining inter- versus intra-industry trade across countries.  We review the seminal model by Melitz (2001).</p></li>
+<li><p><a class="reference internal" href="ek-model.html"><span class="std std-doc">Trade and Geography</span></a></p></li>
+</ul>
+</section>
+<section id="international-trade-policy">
+<h3>International Trade Policy<a class="headerlink" href="#international-trade-policy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="trade-policy.html"><span class="std std-doc">International Trade Policy</span></a> We discuss a partial equilibrium analysis of tariffs.  We show the existence of a theoretical optimal tariff and raise some practical caveats to implementing such a tariff.  We discuss empirical papers which measure the welfare cost of tariffs using a partial equilibrium approach and also discuss the “China shock” literature.</p></li>
+</ul>
+</section>
 <section id="resources">
 <h3>Resources<a class="headerlink" href="#resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="#../money%20and%20banking/syllabus.pdf"><span class="xref myst">Syllabus (PDF)</span></a></p></li>
-<li><p><a class="reference internal" href="#../assets/readings.html"><span class="xref myst">Additional readings</span></a></p></li>
+<li><p><a class="reference internal" href="#../assets/International-Trade-Syllabus-M4-2025.pdf"><span class="xref myst">Syllabus (PDF)</span></a></p></li>
 </ul>
 </section>
 </section>
-<hr class="docutils" />
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -426,6 +455,9 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-overview">Course Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classical-trade-models">Classical Trade Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#new-trade-theories">New Trade Theories</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#international-trade-policy">International Trade Policy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
 </ul>
 </li>

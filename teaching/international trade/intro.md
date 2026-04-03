@@ -14,21 +14,17 @@ Below is a table of contents for the course content. This table of contents can 
 
 - [Ricardian Model](ricardian-model.ipynb) This lecture formalizes the concept of comparative advantage in a two-country world.  Comparative advantage arises from productivity differences which generate gains from trade.  We measure the extent and distribution of gains from trade across countries, predict the pattern of specialization, and analyze the relative wage.  Finally, we introduce some empirical evidence in support of the Ricardian theory of trade.
 - [Hecksher-Ohlin Model](ho-model.ipynb) We develop a theory of comparative advantage based on resource endowments.  This model allows us to the how the gain from trade are distributed *within* a country--there exist both winners and losers from trade.  In this context, we consider the impact of common trade policies on different groups within a country.  We explore empirical tests of the HO theory and address what modeling assumptions are too restrictive in the sense that they generate the famous "missing trade" puzzle.
+- [Specific Factors Model](specific-factors-model.ipynb) We explore the how the gains from trade are distributed *within* a country in the *short-run*.  Compared to the HO model, we consider an economy where some factors of production are immobile or specialized to a particular sector.
 
 ### New Trade Theories
 
-- [Specific Factors Model](specific-factors-model.ipynb) We explore the how the gains from trade are distributed *within* a country in the *short-run*.  Compared to the HO model, we consider an economy where some factors of production are immobile or specialized to a particular sector.
 - [New Trade Theory](new-trade-theory.ipynb) We introduce an alternative source of gains from international trade: increasing returns to scale.  This model generates a *non-comparative advantage theory* of international trade. We explore both external and internal economies of scale and introduce the concepts of selection and scale effects from international trade.
 - [Inter- and Intra-Industry Trade](melitz-model.ipynb) We discuss how different theories are more or less appropriate for explaining inter- versus intra-industry trade across countries.  We review the seminal model by Melitz (2001).
+- [Trade and Geography](ek-model.ipynb)
 
 ### International Trade Policy
 
 - [International Trade Policy](trade-policy.ipynb) We discuss a partial equilibrium analysis of tariffs.  We show the existence of a theoretical optimal tariff and raise some practical caveats to implementing such a tariff.  We discuss empirical papers which measure the welfare cost of tariffs using a partial equilibrium approach and also discuss the "China shock" literature.
 
-## Resources
-- [Syllabus (PDF)](../money%20and%20banking/syllabus.pdf)  
-- [Additional readings](../assets/readings.html)
-
----
-
-
+### Resources
+- [Syllabus (PDF)](../assets/International-Trade-Syllabus-M4-2025.pdf)

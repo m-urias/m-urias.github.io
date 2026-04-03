@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Melitz Model of Intra-Industry Trade" href="melitz-model.html" />
-    <link rel="prev" title="Spcific Factors Model" href="specific-factors-model.html" />
+    <link rel="prev" title="Revealed Comparative Advantage" href="RCA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,13 +170,17 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ek-model.html">Eaton-Kortum Model of Trade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-empirical.html">Empirical Tests of HO Model</a></li>
 <li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCA.html">Revealed Comparative Advantage</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Economies of Scale and Trade</a></li>
 <li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade-data-tutorial.html">Trade Data Tutorial</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +310,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -322,6 +328,43 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-the-limits-of-classical-trade-theory">Motivation: The Limits of Classical Trade Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gravity-equation">The Gravity Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intra-industry-trade">Intra-Industry Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-intra-industry-trade">Measuring Intra-Industry Trade</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#economies-of-scale">Economies of Scale</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-versus-external-economies-of-scale">Internal versus External Economies of Scale</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-economies-of-scale">External Economies of Scale</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-concentration">Geographic Concentration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-external-economies">Sources of External Economies</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#external-economies-of-scale-and-trade">External Economies of Scale and Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-lock-in-and-the-limits-of-trade">History, Lock-In, and the Limits of Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-implications">Policy Implications</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-economies-of-scale-and-the-krugman-1979-model">Internal Economies of Scale and the Krugman (1979) Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-internal-economies-of-scale-require-imperfect-competition">Why Internal Economies of Scale Require Imperfect Competition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-conditions">Equilibrium Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetric-equilibrium">Symmetric Equilibrium</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#international-trade">International Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-and-scale-effects">Selection and Scale Effects</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -333,334 +376,318 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="new-trade-theory">
 <h1>New Trade Theory<a class="headerlink" href="#new-trade-theory" title="Link to this heading">#</a></h1>
-<p>{Introduction}
-The classical models of trade tell us that countries specialize in the production of the good for which they have a comparative advantage.</p>
-<ul class="simple">
-<li><p>Differences in technology (Ricardo)</p></li>
-<li><p>Differences in resource endowments (Heckscher-Ohlin)</p></li>
-<li><p>Differences in preferences (no model, just obvious)</p></li>
-</ul>
-<p>Comparative advantage is all about taking advantages of differences between countries, and letting each country produce the good at the cheapest cost.</p>
-<p>{Introduction}
-According to classical theories:</p>
-<ul class="simple">
-<li><p>Different countries should trade more with each other</p></li>
-<li><p>Countries should specialize in the production of different goods
-In reality, we see that:</p></li>
-<li><p>Most trade occurs between similar countries</p></li>
-<li><p>Countries tend to trade similar goods</p></li>
-</ul>
-<p>{Similar countries trade more}
-Roughly half of all world trade involves shipping goods between the fairly similar high-income economies.
-\begin{figure}
-\includegraphics[scale=.50]{nt_3}
-\end{figure}</p>
-<p>{Similar countries trade more}
-\begin{figure}
-\includegraphics[scale=.50]{nt_china}
-\end{figure}</p>
-<p>\begin{figure}
-\includegraphics[scale=.40]{nt_1_1}
-\end{figure}</p>
-<p>\begin{figure}
-\includegraphics[scale=.40]{nt_1_2}
-\end{figure}</p>
-<p>{Gravity Equation}
-Economists have found that the following \textbf{gravity equation} does a good job of predicting the volume of trade between any two countries:</p>
+<section id="motivation-the-limits-of-classical-trade-theory">
+<h2>Motivation: The Limits of Classical Trade Theory<a class="headerlink" href="#motivation-the-limits-of-classical-trade-theory" title="Link to this heading">#</a></h2>
+<p>The classical models of comparative advantage — Ricardian technology differences and
+Heckscher-Ohlin factor endowment differences — share a common prediction: countries gain from trade by exploiting their differences. Each country specializes in goods for which it has a relative cost advantage, and trade flows reflect these underlying asymmetries in technology or factor abundance.</p>
+<p>This prediction sits uneasily with several prominent features of observed trade patterns. Two empirical regularities in particular are difficult to reconcile with the classical framework:</p>
+<ol class="arabic simple">
+<li><p><strong>Similar countries trade disproportionately with each other.</strong> Roughly half of all
+world trade takes place between high-income economies that are broadly similar in their technology and factor endowments — precisely the countries between which classical theory predicts the least comparative advantage, and therefore the least incentive to trade.</p></li>
+<li><p><strong>Countries frequently trade similar goods.</strong> A large share of trade consists of
+countries simultaneously importing and exporting goods within the same industry —
+Germany exporting BMWs and importing Volvos, for instance. Classical theories, which predict specialization across industries based on comparative advantage, have no natural account of this pattern.</p></li>
+</ol>
+<p>These facts call for a complementary theory of trade — one capable of generating gains from trade even between countries that are nearly identical in their fundamentals. New trade theory, developed primarily in the late 1970s and 1980s, provides this account by incorporating economies of scale and product differentiation.</p>
+<figure>
+    <img src="_static/figs_nt/nt_3.png"
+         alt="Trade between similar countries"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    A large share of world trade occurs between high-income economies with similar factor endowments and technologies — a pattern difficult to explain with classical comparative advantage alone.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_nt/nt_china.png"
+         alt="China trade patterns"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    China's trade patterns illustrate the coexistence of comparative-advantage trade 
+    (labor-intensive exports) and substantial intra-industry trade in manufacturing.
+    </figcaption>
+</figure>
+<section id="the-gravity-equation">
+<h3>The Gravity Equation<a class="headerlink" href="#the-gravity-equation" title="Link to this heading">#</a></h3>
+<p>Before developing the theoretical framework, it is worth noting that the empirical pattern of trade volumes across country pairs is well described by the <strong>gravity equation</strong>:</p>
 <div class="math notranslate nohighlight">
-\[
-T_{ij}=\frac{A \times Y_i^a \times Y_j^b}{D_{ij}^c}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(Y_i, Y_j\)</span> are are two countries’ GDPs and <span class="math notranslate nohighlight">\(D_{ij}\)</span> is the distance between countries.</p>
-<p>Why does the equation work?</p>
+\[T_{ij} = A \cdot \frac{Y_i^a \cdot Y_j^b}{D_{ij}^c}\]</div>
+<p>where <span class="math notranslate nohighlight">\(T_{ij}\)</span> is the value of trade between countries <span class="math notranslate nohighlight">\(i\)</span> and <span class="math notranslate nohighlight">\(j\)</span>, <span class="math notranslate nohighlight">\(Y_i\)</span> and <span class="math notranslate nohighlight">\(Y_j\)</span> are their respective GDPs, and <span class="math notranslate nohighlight">\(D_{ij}\)</span> is the distance between them. The equation takes its name from an analogy to Newtonian gravity: trade between two countries is increasing in their economic mass and decreasing in the distance between them.</p>
+<p>The gravity equation has two intuitive foundations:</p>
 <ul class="simple">
-<li><p>Larger economies tend to spend more an imports because they have large incomes</p></li>
-<li><p>Large countries tend to attract other countries’ spending because they tend to produce a wider range of products.</p></li>
+<li><p><strong>Income effects on demand</strong>: larger economies have higher incomes and therefore spend   more on imports in absolute terms.</p></li>
+<li><p><strong>Supply variety</strong>: larger economies produce a wider range of goods, attracting a larger share of other countries’ import spending.</p></li>
 </ul>
-<p>{Intra-Industry trade}
-A high proportion of trade is \textbf{intra-industry trade}–—trade of goods within the same industry from one country to another.
-\begin{figure}
-\includegraphics[scale=.65]{nt_1}
-\end{figure}
-(Approximately 60% of US trade and 60% of EU trade is intra-industry)</p>
-<p>{Intra-Industry trade}
-\begin{figure}
-\includegraphics[scale=.53]{nt_china_intraindustry}
-\end{figure}</p>
-<p>{Intra-Industry trade}
-Intra-industry trade is related to the sharp increase in international trade in parts
-and components of a product, or outsourcing. International companies often produce or import various parts of a product in different nations in order to minimize their costs of production.</p>
-<p>For example, the motors of some Ford Fiestas are produced in the United Kingdom, the transmissions in France, the clutches in Spain, and the parts are assembled in Germany for sales throughout Europe.</p>
-<p>{Intra-Industry trade}
-\begin{figure}
-\includegraphics[scale=.55]{nt_5}
-\end{figure}</p>
-<p>{Intra-Industry trade}
-We can measure the degree of intra-industry trade using the following index</p>
+<p>Empirically, the gravity equation is one of the most robust relationships in international economics — it fits trade data across country pairs and time periods remarkably well, with estimated elasticities of trade with respect to GDP typically close to one and distance elasticities in the range of <span class="math notranslate nohighlight">\(-0.7\)</span> to <span class="math notranslate nohighlight">\(-1.5\)</span>. Notably, the gravity equation can be derived as an equilibrium prediction from multiple theoretical frameworks, including both the classical models and the new trade theory models developed below, which has made it a
+workhorse for empirical trade research.</p>
+</section>
+<section id="intra-industry-trade">
+<h3>Intra-Industry Trade<a class="headerlink" href="#intra-industry-trade" title="Link to this heading">#</a></h3>
+<p>The most striking departure from classical predictions is the prevalence of <strong>intra-industry trade</strong> — the simultaneous export and import of goods within the same
+industry. The classical models predict that each country specializes in the production of certain goods and imports the rest; they offer no account of why a country would both export and import cars, chemicals, or machinery at the same time.</p>
+<figure>
+    <img src="_static/figs_nt/nt_1.png"
+         alt="Intra-industry trade shares"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Intra-industry trade accounts for approximately 60% of US trade and 60% of EU trade. The share is particularly high in manufactured goods among advanced industrial economies.
+    </figcaption>
+</figure>
+<p>Intra-industry trade is closely connected to the growth of international production
+fragmentation — the practice of producing different components of a final good in different countries to minimize costs. A telling example is the Ford Fiesta: engines produced in the United Kingdom, transmissions in France, clutches in Spain, with final assembly in Germany for sale across Europe. From the perspective of standard trade statistics, this generates simultaneous exports and imports of automobile parts across multiple European countries — all within the same industry classification.</p>
+<figure>
+    <img src="_static/figs_nt/nt_5.png"
+         alt="Global value chains"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    International fragmentation of production generates intra-industry trade as components cross borders multiple times before final assembly.
+    </figcaption>
+</figure>
+<section id="measuring-intra-industry-trade">
+<h4>Measuring Intra-Industry Trade<a class="headerlink" href="#measuring-intra-industry-trade" title="Link to this heading">#</a></h4>
+<p>The degree of intra-industry trade in industry <span class="math notranslate nohighlight">\(k\)</span> is quantified using the <strong>Grubel-Lloyd index</strong>:</p>
 <div class="math notranslate nohighlight">
-\[
-T_k = 1-\frac{\lvert X_k-M_k \rvert}{X_k+M_k}
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(M\)</span> represent the value of exports and imports, respectively, of a particular industry <span class="math notranslate nohighlight">\(k\)</span>.</p>
+\[T_k = 1 - \frac{|X_k - M_k|}{X_k + M_k}\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_k\)</span> and <span class="math notranslate nohighlight">\(M_k\)</span> are the values of exports and imports in industry <span class="math notranslate nohighlight">\(k\)</span> respectively. The index has a natural interpretation at its extremes:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(T=0\)</span> when a country only exports or only imports good <span class="math notranslate nohighlight">\(k\)</span>—there is no intra-industry trade</p></li>
-<li><p><span class="math notranslate nohighlight">\(T=1\)</span> when the value of export and imports of good <span class="math notranslate nohighlight">\(k\)</span> are equal—intra-industry trade is at a maximum</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_k = 0\)</span> when a country only exports or only imports good <span class="math notranslate nohighlight">\(k\)</span> — all trade is
+inter-industry, as classical theory predicts.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_k = 1\)</span> when exports and imports of good <span class="math notranslate nohighlight">\(k\)</span> are equal in value — trade is entirely intra-industry.</p></li>
 </ul>
-<p>{Intra-Industry trade}
-\begin{figure}
-\includegraphics[scale=.50]{nt_7}
-\end{figure}</p>
-<p>{Intra-Industry trade}
-\begin{figure}
-\includegraphics[scale=.50]{nt_6}
-\end{figure}</p>
-<p>{Intra-Industry trade}
-\begin{figure}
-\includegraphics[scale=.35]{nt_1_3}
-\end{figure}</p>
-<p>{Intra-Industry trade}
-While trade based on comparative advantage is likely to be larger when the difference in technology or factor endowments among nations is greater, intra-industry trade is likely to be larger among industrial economies of similar size and factor proportions.</p>
-<p>{Intra-Industry trade}</p>
+<p>Values of <span class="math notranslate nohighlight">\(T_k\)</span> between 0 and 1 indicate a mixture of the two. Empirically, intra-industry trade is most prevalent in manufactured goods traded between advanced industrial economies, and has grown substantially over the past six decades. Estimates suggest that intra-industry trade accounts for between one quarter and one half of all world trade flows, depending on the level of industry aggregation used.</p>
+<figure>
+    <img src="_static/figs_nt/nt_7.png"
+         alt="Grubel-Lloyd indices by industry"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Grubel-Lloyd indices across industries. Intra-industry trade is concentrated in 
+    differentiated manufactured goods and is higher among advanced industrial economies.
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_nt/nt_6.png"
+         alt="Intra-industry trade over time"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The rise of intra-industry trade over the postwar period, driven largely by the growth of trade in differentiated manufactures among high-income economies.
+    </figcaption>
+</figure>
+<p>A final empirical regularity is worth noting: while comparative-advantage trade tends to be larger when countries differ more in technology or factor endowments, intra-industry trade is larger precisely when countries are <em>similar</em> — in income, size, and factor proportions. This is consistent with a theory in which the gains from trade arise not from exploiting differences, but from the mutual gains available when similar countries can access a wider range of differentiated products at lower cost. It is this mechanism that new trade theory
+formalizes.</p>
+</section>
+</section>
+<section id="economies-of-scale">
+<h3>Economies of Scale<a class="headerlink" href="#economies-of-scale" title="Link to this heading">#</a></h3>
+<p>Before developing the formal model, it is useful to build intuition for why economies of scale can generate gains from trade independently of comparative advantage. Consider a firm that produces output using only labor:</p>
+<figure>
+    <img src="_static/figs_nt/nt_8.png"
+         alt="Economies of scale example"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    A production technology exhibiting economies of scale. Doubling labor input from 15 to 30 raises output by more than double — from 10 to 25 units — so that average labor requirements per unit of output fall as the scale of production increases.
+    </figcaption>
+</figure>
+<p>Economies of scale exist when doubling inputs produces more than double the output — or equivalently, when the average cost of production declines with the scale of output. In the example above, increasing labor from 15 to 30 raises output from 10 to 25: a doubling of inputs yields a 150% increase in output. The average labor requirement per unit falls, meaning goods can be produced more cheaply at larger scale.</p>
+<p>Now suppose this technology applies to automobile production, and that the automobile
+industry produces many distinct <em>varieties</em> — Ford Focus, Toyota Corolla, Hyundai Elantra — which consumers regard as imperfect substitutes. Suppose further that both Britain and the United States have access to the same production technology. Classical comparative advantage offers no reason for trade between them. Yet economies of scale provide one.</p>
+<p>To see why, compare two plans for organizing world automobile production:</p>
 <ul class="simple">
-<li><p>Intra-industry trade in the world has grown over the last 60 years</p></li>
-<li><p>Intra-industry trade account for 1/4 to 1/2 of all world trade flows (depending on how you categorize the goods)</p></li>
-<li><p>Intra-industry trade plays an even more prominent role in the trade of manufactured goods among advanced industrial nations, which account for the majority of world trade</p></li>
+<li><p><strong>Plan A</strong> (no trade): each country produces 10 cars independently, requiring 15 units of  labor each. World output is 20 cars using 30 units of labor.</p></li>
+<li><p><strong>Plan B</strong> (specialization): the US employs all 30 units of labor in automobile
+production, producing 25 cars. World output rises by 5 cars with no additional labor input.</p></li>
 </ul>
-<p>{<code class="docutils literal notranslate"><span class="pre">New&quot;</span> <span class="pre">Trade</span> <span class="pre">Theory}</span> </code>New” trade theory argues that economies of scale can explain these empirical facts.</p>
-<p>Economies of scale (or increasing returns to scale) result when large firms have a cost advantage over small firms—the average cost of production decreases the more output is produced.</p>
-<p>Economies of scale can emerge either within a company (internal) or within an industry (external).</p>
-<p>{}
-EXTERNAL ECONOMIES OF SCALE
-\centering</p>
-<p>{An example of economies of scale}
-Let’s consider a business who produces output using only labor:
-\begin{figure}
-\includegraphics[scale=.50]{nt_8}
-\end{figure}
-Economies of scale exists because the average cost of producing to the good decreases as the firm produces more of the output.</p>
-<p>{An example of economies of scale}
-You can see economies of scale by observing that if I double the amount of labor from 15 to 30, the business gets \textit{more than double} the amount of output from 10 to 25.</p>
-<p>Equivalently, the average amount of labor used to produce output is declining the scale of production.</p>
-<p>{An example of economies of scale}
-Let’s imagine that this business is assembling a car.  There are many \textit{varieties} of car (Ford Focus, Toyota Corolla, Hyundai Elantra etc.) even though the industry ``automobile” could be considered the same type of good.  And let’s imagine that both Britain and the U.S. have the same technology to produce different varieties of car</p>
-<p>How might economies of scale provide an incentive for trade?</p>
-<p>{An example of economies of scale}
-Plan A:</p>
+<p>Under Plan B, the US specializes in producing certain varieties of automobiles at larger scale, while Britain, having released labor from car production, can produce other goods that the US no longer makes. Consumers in both countries access the full range of varieties through trade. Mutually beneficial trade arises not from any difference in technology or factor endowments, but purely from the efficiency gains of large-scale production — provided consumers value access to the full range of varieties, a preference we will formalize as <em>love of variety</em>.</p>
+<section id="internal-versus-external-economies-of-scale">
+<h4>Internal versus External Economies of Scale<a class="headerlink" href="#internal-versus-external-economies-of-scale" title="Link to this heading">#</a></h4>
+<p>Economies of scale can arise at two distinct levels, with very different implications for market structure:</p>
 <ul class="simple">
-<li><p>Suppose each country produces 10 cars, so total care production is 20</p></li>
-<li><p>Each country requires 15 labor, so total labor use is 30</p></li>
+<li><p><strong>Internal economies of scale</strong> occur when a firm’s average cost falls with its own
+output, independent of the size of the industry. Internal scale economies lead naturally to large firms and imperfectly competitive markets, since a firm that expands gains a cost advantage over its rivals.</p></li>
+<li><p><strong>External economies of scale</strong> occur when a firm’s average cost falls with the total output of the industry, independent of the firm’s own size. External scale economies are consistent with an industry composed of many small, perfectly competitive firms — the cost advantage accrues to the industry as a whole, not to any individual firm within it.</p></li>
 </ul>
-<p>Plan B:</p>
+<p>Because these two types of economies of scale have fundamentally different implications for market structure, they are best analyzed separately. We begin with external economies of scale, which preserve the tractability of the competitive framework, before turning to internal economies of scale and the imperfectly competitive models they require.</p>
+</section>
+</section>
+<section id="external-economies-of-scale">
+<h3>External Economies of Scale<a class="headerlink" href="#external-economies-of-scale" title="Link to this heading">#</a></h3>
+<section id="geographic-concentration">
+<h4>Geographic Concentration<a class="headerlink" href="#geographic-concentration" title="Link to this heading">#</a></h4>
+<p>A defining feature of industries exhibiting external economies of scale is geographic
+concentration. When cost advantages arise at the industry level, firms benefit from locating near one another, and the resulting clusters can sustain cost advantages that no individual firm could achieve in isolation. Examples are pervasive:</p>
 <ul class="simple">
-<li><p>The U.S. employs 30 labor to produce 25 cars</p></li>
-<li><p>The world economy can use the same amount of labor (30) and produce 5 more cars</p></li>
+<li><p>Semiconductor design and fabrication in Silicon Valley</p></li>
+<li><p>Investment banking and financial services in New York and London</p></li>
+<li><p>Financial technology in Shenzhen and Shanghai</p></li>
+<li><p>Film and television production in Hollywood</p></li>
+<li><p>Button and zipper manufacturing in Qiaotou, China</p></li>
+<li><p>Cigarette lighter production in Wenzhou, China</p></li>
+<li><p>Software and information services in Bangalore, India</p></li>
 </ul>
-<p>{An example of economies of scale}</p>
+<p>The persistence of these clusters — often over decades or centuries — reflects the
+self-reinforcing nature of external economies: once an industry is established in a location, the cost advantages it generates attract further entry, which deepens those advantages.</p>
+</section>
+<section id="sources-of-external-economies">
+<h4>Sources of External Economies<a class="headerlink" href="#sources-of-external-economies" title="Link to this heading">#</a></h4>
+<p>Marshall (1890) identified three distinct mechanisms through which geographic concentration generates industry-level cost advantages, all three of which remain central to the modern literature.</p>
+<p><strong>Specialized suppliers.</strong> Production of complex goods, and the development of new products, requires access to specialized inputs — equipment, components, and services — that are themselves subject to scale economies. A single firm typically cannot generate sufficient demand to support a supplier of highly specialized capital goods, but a cluster of firms can. Silicon Valley’s semiconductor industry illustrates this mechanism precisely. As the cluster grew, engineers spun out of established firms to found suppliers of specialized equipment — diffusion ovens, photomasks, step-and-repeat cameras, precision chemicals — that no individual firm could have justified purchasing on its own. A new entrant locating outside Silicon Valley would face a significant cost disadvantage simply from lacking access to this supplier ecosystem.</p>
+<p><strong>Labor market pooling.</strong> A geographic cluster creates a thick market for workers with
+highly specialized skills, benefiting both employers and employees. Firms can hire qualified workers readily without bearing the full cost of training them internally; workers can find new employment within the cluster when their current employer downsizes or fails, reducing the personal risk of acquiring highly specialized human capital. The film industry illustrates this well: the volume of active productions fluctuates substantially, but because directors, cinematographers, sound engineers, and set designers are concentrated in the same labor market, workers can move fluidly between projects as funding conditions change. The same dynamic applies to financial services in New York or technology in Silicon Valley — the depth of the local labor pool is itself a source of productive efficiency.</p>
+<p><strong>Knowledge spillovers.</strong> Innovation and technological progress depend not only on formal research and development, but on the informal exchange of ideas that occurs through personal interaction — conversations between researchers, the movement of workers between firms, observation of competitors’ practices, and the diffusion of tacit knowledge that cannot easily be codified or transmitted at a distance. This kind of knowledge diffusion is most effective when an industry is geographically concentrated, since proximity lowers the cost of interaction and increases the density of information flows. University clusters provide a clear analogy: institutions located near one another can share faculty, attract overlapping student populations, and benefit from the cross-pollination of ideas in ways that geographically isolated institutions cannot.</p>
+</section>
+<section id="external-economies-of-scale-and-trade">
+<h4>External Economies of Scale and Trade<a class="headerlink" href="#external-economies-of-scale-and-trade" title="Link to this heading">#</a></h4>
+<p>To examine the trade implications of external economies, consider two countries — China and the United States — each capable of producing buttons, an industry that exhibits external economies of scale at the industry level.</p>
+<figure>
+    <img src="_static/figs_nt/nt_9.png"
+         alt="External economies and trade"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Supply curves for the button industry in China and the United States under external economies of scale. The supply curve is downward-sloping: a larger industry produces at lower average cost, so firms are willing to supply at a lower price as industry output expands.
+    </figcaption>
+</figure>
+<p>The supply curve is downward-sloping because external economies imply that a larger
+industry operates at lower average cost: as the industry expands, the cluster deepens,
+specialized suppliers proliferate, and the labor pool thickens, all reducing unit costs. Suppose that in autarky, China’s button industry is larger and therefore produces at lower cost than the US industry. When trade opens, demand for Chinese buttons expands, the Chinese industry grows, and costs fall further; simultaneously, the US industry contracts, losing the scale needed to sustain its cluster, and costs rise. The equilibrium outcome is complete specialization: China supplies the entire world market.</p>
+<figure>
+    <img src="_static/figs_nt/nt_10.png"
+         alt="Trade equilibrium with external economies"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Post-trade equilibrium with external economies of scale. World production concentrates in China; the equilibrium world price is below both countries' autarky prices.
+    </figcaption>
+</figure>
+<p>This example has several important implications that distinguish the external economies framework from classical trade theory:</p>
 <ul class="simple">
-<li><p>In order for the U.S. to recruit more labor to the car industry, it must decrease or abandon the production of other goods</p></li>
-<li><p>These other goods could be produced in Britain, using labor that was formerly employed in the production of cars that now the U.S. makes</p></li>
-<li><p>If U.S. and Britain each specialize in producing certain varieties of cars, then cars can be produced at a much larger scale!</p></li>
+<li><p>The world price of buttons falls below <em>both</em> countries’ autarky prices — both countries benefit as consumers, even though US button producers are eliminated.</p></li>
+<li><p>External economies make complete geographic concentration of world production in a single location a natural equilibrium outcome, not a special case.</p></li>
+<li><p>The pattern of specialization need not reflect any underlying difference in comparative advantage. China produces buttons for the world not necessarily because it has a technological edge or an abundance of relevant factors, but because it developed a large-scale button industry first.</p></li>
 </ul>
-<p>{An example of economies of scale}
-Why would consumers be willing to import different varieties from other countries?</p>
-<p>Because consumers enjoy having options.  Part of our theory will rely on the assumption that consumers have \textbf{love for variety}.</p>
-<p>Mutually beneficial trade occurs because each country can produce goods at a larger scale (lower average cost) and consumers still have access to the full range of goods available through trade.</p>
-<p>{Internal versus External Economies of Scale}
-Economies of scale can emerge either because of industry-level effects, or firm-level effects:</p>
-<ul class="simple">
-<li><p>\textbf{Internal economies of scale} occur when the cost per unit depends on the size of an individual company, but not necessarily on the size of the industry</p></li>
-<li><p>\textbf{External economies of scale} occurs when the cost per unit depends on the size of the industry, but not necessarily the size of the firm</p></li>
-</ul>
-<p>{Internal versus External Economies of Scale}
-An industry where economies of scale are purely external will typically consist of many small firms and be perfectly competitive.</p>
-<p>An industry where economies of scale are purely internal will typically give rise to large firms and results in imperfectly competitive markets.</p>
-<p>Because these different types of economies of scale have different implications for the market structure, it’s difficult analyze both in a single model.  Let’s investigate \textit{external} economies of scale first.</p>
-<p>{Internal versus External Economies of Scale}
-Since external economies of scale rely on cost advantages at the industry level, often these types of industries tend to be geographically concentrated:</p>
-<ul class="simple">
-<li><p>Semiconductor industry in California’s Silicon Valley</p></li>
-<li><p>Investment banking in New York</p></li>
-<li><p>Financial analysis in Shenzhen and Shanghai</p></li>
-<li><p>Entertainment industry in Hollywood</p></li>
-<li><p>Button and zipper manufacturing in Qiaotou</p></li>
-<li><p>Cigarette lighters in Zhang Qi</p></li>
-<li><p>Information services in India</p></li>
-</ul>
-<p>{External Economies of Scale}
-There are three main reasons why a cluster of firms may be more efficient than an individual firm in isolation:</p>
-<ul class="simple">
-<li><p>Specialized suppliers</p></li>
-<li><p>Labor market pooling</p></li>
-<li><p>Knowledge spillovers</p></li>
-</ul>
-<p>{Specialized Suppliers}
-Production of goods, and the development of new products, often requires the use of specialized equipment or services.</p>
-<p>Often an individual business does not provide enough demand to support the business of these specialized suppliers, but a group of firms does.</p>
-<p>{Specialized Suppliers}
-Consider Silicon Valley’s semiconductor industry as an example:</p>
-<ul class="simple">
-<li><p>Many engineers left established semiconductor companies to start businesses in Silicon Valley that manufactured specialized capital goods like diffusion ovens, step-and-repeat cameras, photomasks, testing jigs, and specialized chemicals</p></li>
-<li><p>This specialized equipment sector promoted the formation of semiconductor companies by freeing individual businesses from the expense of developing capital equipment internally</p></li>
-<li><p>A company that tried to enter the semiconductor industry not in Silicon Valley would be at a disadvantage, since it would lack access to Silicon Valley’s suppliers.</p></li>
-</ul>
-<p>{Labor Pooling}
-A cluster of firms can create a pooled market for workers with highly specialized skills.  Businesses benefit because they can always find qualified employees, and workers benefit because they can always find a job.</p>
-<p>Consider the movie industry (Hollywood, Bollywood, Nollywood etc).  Sometimes there are many movie projects that can be made, while other times there are few.  If actors, directors, producers, and staff all work in the same area, they can easily relocate their labor to the movie project that gets funding.</p>
-<p>{Knowledge Spillovers}
-An important source of knowledge/technological development is done by the information exchange of information and ideas that take place on a personal level.  This kind of knowledge diffusion seems to take place most effectively when an industry is concentrated in a small area.</p>
-<p>Consider University Town.  It located three universities in the same geographic area.  Educational institution can observe each other, learn from each other, and professors and students can exchange information and ideas.</p>
-<p>{External Economies of Scale and Trade}
-Let’s consider two countries, China and the United States, producing one type of good: buttons.  We will also suppose that the button industry exhibit external economies of scale.
-\begin{figure}
-\includegraphics[scale=.45]{nt_9}
-\end{figure}</p>
-<p>{External Economies of Scale and Trade}
-The supply curve is downward sloping in the presence of external economies of scale since the larger the industry’s output, the lower the price at which firms are willing to sell.</p>
-<p>In our example, China is able to sell buttons at a cheaper price than the US pre-trade.  If the two countries are allowed to trade, China’s button industry should expand (causing the price to fall even further) and U.S’s button industry should shrink (causing the price to rise).</p>
-<p>Eventually only China supplies the world with buttons.</p>
-<p>{External Economies of Scale and Trade}
-\begin{figure}
-\includegraphics[scale=.45]{nt_10}
-\end{figure}</p>
-<p>{External Economies of Scale and Trade}
-Even this simple example has interesting implication for the effects of trade:</p>
-<ul class="simple">
-<li><p>Trade leads to button prices that are lower than \textit{both} countries’ autarky prices</p></li>
-<li><p>External economies makes it possible to concentrate world production in a single location</p></li>
-<li><p>The pattern of specialization may be simply due to luck, or historical happenstance</p></li>
-</ul>
-<p>{External Economies of Scale and Trade}
-Comparative advantage could explain why button production should locate in a country where the wage rate is lower, but it doesn’t tell us why it had to be China.  If external economies of scale are present, China could be the world supplier simply because it started making buttons at scale \textbf{before any other country}</p>
-<p>Other examples:</p>
-<ul class="simple">
-<li><p>London became a financial center in the 19th century when Britain was the worlds’ leading economy</p></li>
-<li><p>New York became the financial center thanks to the Eerie Canal, which made it the nation’s leading port.</p></li>
-<li><p>Silicon Valley owes at least part of its success to the fact that Stanford graduates Hewlett and Packard decided to start a business in a garage in that area.</p></li>
-</ul>
-<p>{External Economies of Scale and Trade}
-If history and luck plays a role in deciding where production occurs, then it is very possible that industries aren’t always located in the ``right” place.</p>
-<p>Once a country has established an advantage in an industry, it may retain that advantage even if some other country could potentially produce the goods more cheaply.</p>
-<p>If this is true, it’s possible that trade based on external economies of scale may actually leave a country worse off than it would have been in the absence of trade.</p>
-<p>{External Economies of Scale and Trade}
-\begin{figure}
-\includegraphics[scale=.45]{nt_11}
-\end{figure}</p>
-<p>{External Economies of Scale and Trade}
-In the example above, Vietnam could have made button more cheaply, but China developed its button industry first, and so was able to offer the world buttons at a cheaper price than Vietnam.</p>
-<p>If Vietnam was forced to produce buttons on its own, it would eventually be able to supply buttons at an even lower price than it imports from China.</p>
-<p>{External Economies of Scale and Trade}
-It should be noted that identifying cases like the China and Vietnam example is extremely difficult to do in practice, so any policies promoting protectionism should be carefully scrutinized.</p>
-<p>One should also take seriously the short-run cost of developing an industry to a large enough scale to reap the benefits of external economies of scale.  It is very possible that the short-run costs could outweigh the long-run benefit, not to mention the unfair burden imposed on today’s society for a potential return to tomorrow society.</p>
-<p>{}
-INTERNAL ECONOMIES OF SCALE
-\centering</p>
-<p>{Internal Economies of Scale}
-Now we will investigate the role of \textbf{internal economies of scale} in determining the pattern of international trade.</p>
-<p>Internal economies of scale occur when the average cost of production decreases within a firm.</p>
-<p>Modeling internal economies of scale requires us to leave the world of perfect competition…</p>
-<p>{Internal Economies of Scale}
-Why do we have to abandon perfect competition?</p>
-<p>Perfect competition drives the price of a good down to marginal cost</p>
+</section>
+<section id="history-lock-in-and-the-limits-of-trade">
+<h4>History, Lock-In, and the Limits of Trade<a class="headerlink" href="#history-lock-in-and-the-limits-of-trade" title="Link to this heading">#</a></h4>
+<p>The last point has a striking implication: <strong>the pattern of specialization under external economies of scale may be determined by history and accident rather than by underlying comparative advantage.</strong> London became the world’s leading financial center in the nineteenth century when Britain was the dominant global economy — a position it retained long after Britain’s economic leadership had passed. New York’s rise as a financial center owed much to the Erie Canal, which made it the nation’s pre-eminent port and concentrated commercial activity there. Silicon Valley’s origins trace in part to the decision of two Stanford graduates, Hewlett and Packard, to start a company in a Palo Alto garage in 1939 — a contingency that could easily have located the electronics industry elsewhere.</p>
+<p>Once a cluster is established, it may persist even if another location could, in principle, produce the same good more cheaply. The incumbent cluster offers specialized suppliers, a thick labor market, and accumulated knowledge spillovers that a potential entrant elsewhere cannot immediately replicate. This creates genuine lock-in: an industry may remain in the “wrong” location simply because the right location has never had the opportunity to build the cluster to sufficient scale.</p>
+<figure>
+    <img src="_static/figs_nt/nt_11.png"
+         alt="Lock-in with external economies"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Lock-in under external economies of scale. Vietnam has lower long-run costs in button production, but China's established cluster allows it to supply the world market at a lower price than Vietnam can currently achieve. Vietnam would only become cost-competitive after building its industry to sufficient scale — a transition that trade prevents from 
+    occurring.
+    </figcaption>
+</figure>
+<p>In the figure above, Vietnam has a lower long-run cost curve than China — meaning that if Vietnam’s button industry were developed to full scale, it could supply buttons more cheaply than China. But China’s established cluster can supply at a price that Vietnam, starting from small scale, cannot match. Trade locks in China’s incumbency and prevents Vietnam from ever reaching the scale at which its latent cost advantage would be realized.</p>
+</section>
+<section id="policy-implications">
+<h4>Policy Implications<a class="headerlink" href="#policy-implications" title="Link to this heading">#</a></h4>
+<p>The lock-in result provides a theoretical foundation for <strong>infant industry protection</strong>: temporary trade barriers that allow a country’s nascent industry to reach the scale at which it can compete internationally. If Vietnam erected tariffs on Chinese buttons, its domestic industry might grow to sufficient scale that the tariffs could eventually be removed while the industry remains competitive.</p>
+<p>However, the case for infant industry protection should be approached with considerable caution for several reasons. First, identifying in advance which industries exhibit the relevant external economies — and which countries have a latent comparative advantage in them — is extremely difficult in practice; governments have a poor track record of making such picks successfully. Second, the transition costs are real and fall on current consumers and taxpayers, who must bear higher prices today in exchange for a potential benefit that may not materialize, or that may accrue only to future generations. Third, protection creates rents that attract political pressure to extend it beyond any economically justified period. Any policy argument invoking infant industry logic should therefore be scrutinized carefully, with the burden of proof on those claiming to have identified a genuine lock-in case.</p>
+</section>
+</section>
+<section id="internal-economies-of-scale-and-the-krugman-1979-model">
+<h3>Internal Economies of Scale and the Krugman (1979) Model<a class="headerlink" href="#internal-economies-of-scale-and-the-krugman-1979-model" title="Link to this heading">#</a></h3>
+<section id="why-internal-economies-of-scale-require-imperfect-competition">
+<h4>Why Internal Economies of Scale Require Imperfect Competition<a class="headerlink" href="#why-internal-economies-of-scale-require-imperfect-competition" title="Link to this heading">#</a></h4>
+<p>Internal economies of scale arise when a firm’s average cost of production declines with its own output. To see why this is incompatible with perfect competition, consider the simplest possible cost structure:</p>
 <div class="math notranslate nohighlight">
-\[
-p=AR=MC
-\]</div>
-<p>But economies of scale imply that marginal cost is less than average cost</p>
+\[C(Q) = F + cQ\]</div>
+<p>where <span class="math notranslate nohighlight">\(F &gt; 0\)</span> is a fixed cost of production — overhead, product development, or any cost that must be incurred regardless of output — and <span class="math notranslate nohighlight">\(c &gt; 0\)</span> is a constant marginal cost. The average and marginal costs are:</p>
 <div class="math notranslate nohighlight">
-\[
-p = AR = MC &lt; AC
-\]</div>
-<p>but this means that firms operate at a loss!</p>
-<p>{Internal Economies of Scale}
-If perfect competition drives the price down to marginal cost, firms would suffer losses because the would not be able to recover the higher costs incurred from producing the initial units of output.  As a result, these firms would be forced out of the market, and this process would continue until an equilibrium featuring imperfect competition is attained.</p>
-<p>{Internal Economies of Scale: An Example}
-Suppose that a firm’s cost of producing <span class="math notranslate nohighlight">\(Q\)</span> units of output is given by</p>
-<div class="math notranslate nohighlight">
-\[
-C(Q) = F+cQ
-\]</div>
-<p>where would say <span class="math notranslate nohighlight">\(F\)</span> is a fixed cost of production (e.g. overhead) and <span class="math notranslate nohighlight">\(c\)</span> is a variable cost of production (e.g. supplies, labor, capital).</p>
-<p>We define the \textbf{average cost} and \textbf{marginal cost} of production to be</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-AC &amp;= \frac{C(Q)}{Q} = \frac{F}{Q}+c \\
-MC &amp;= \frac{\partial C(Q)}{\partial Q}=c
-\end{align*}
-\end{split}\]</div>
-<p>{Internal Economies of Scale: An Example}
-\begin{figure}
-\includegraphics[scale=.40]{nt_12}
-\centering
-\end{figure}</p>
-<p>{Internal Economies of Scale}
-We need to build a model of imperfect competition.</p>
-<p>This will allow us to introduce two additional characteristics of firms that are prevalent in the real world:</p>
+\[AC = \frac{F}{Q} + c, \qquad MC = c\]</div>
+<p>Since <span class="math notranslate nohighlight">\(AC &gt; MC\)</span> for all finite <span class="math notranslate nohighlight">\(Q\)</span>, average cost strictly exceeds marginal cost at every output level and converges to <span class="math notranslate nohighlight">\(c\)</span> only asymptotically as <span class="math notranslate nohighlight">\(Q \to \infty\)</span>.</p>
+<figure>
+    <img src="_static/figs_nt/nt_12.png"
+         alt="Average and marginal cost with fixed costs"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Average cost (declining) and marginal cost (constant) under the fixed-plus-variable 
+    cost structure $C(Q) = F + cQ$. Economies of scale exist because average cost falls 
+    with output. Since $AC > MC$ everywhere, competitive pricing at marginal cost implies 
+    losses.
+    </figcaption>
+</figure>
+Under perfect competition, free entry drives prices down to marginal cost: $p = MC = c$. But at this price, revenue per unit equals $c$ while average cost exceeds $c$, so every firm operates at a loss. Firms exit, but since all firms face the same cost structure, no equilibrium with positive production is possible under perfect competition. The fixed cost $F$ cannot be recovered if price equals marginal cost, and so internal economies of scale are logically incompatible with the perfectly competitive paradigm. The market structure that naturally emerges instead is one of imperfect competition, where firms retain pricing power sufficient to set $p > MC$ and thereby cover their fixed costs.
+<p>The model we now develop — due to Krugman (1979) — captures this environment using
+monopolistic competition: firms have pricing power over their individual variety, but the market is large enough that no firm accounts for a significant share of demand and strategic interaction can be ignored. In Krugman’s words:</p>
+<blockquote>
+<div><p><em>“This paper develops a simple, general equilibrium model of noncomparative-advantage
+trade. Trade is driven by economies of scale, which are internal to firms. Because of
+the scale economies, markets are imperfectly competitive. Nonetheless, one can show
+that trade, and gains from trade, will occur, even between countries with identical
+tastes, technology, and factor endowments.”</em></p>
+</div></blockquote>
+<p>The model also allows us to introduce two features of real-world industries that the
+classical models abstract from entirely: product differentiation — firms produce distinct varieties that consumers value differently — and, in extensions we will encounter later, heterogeneity in firm performance.</p>
+</section>
+<section id="environment">
+<h4>Environment<a class="headerlink" href="#environment" title="Link to this heading">#</a></h4>
+<p>Imperfect competition describes a market environment with the following features:</p>
 <ul class="simple">
-<li><p>In most sectors, firms produce goods that are differentiated from one another</p></li>
-<li><p>Performance measures, such as size and profits, vary widely across firms.</p></li>
-</ul>
-<p>First let’s develop an economy featuring imperfect competition without performance differences, then we can add those in later.</p>
-<p>{Krugman 1979}
-\textit{``This paper develops a simple, general equilibrium model of noncomparative advantage of trade.   Trade is driven by economies of scale, which are internal to firms.  Because of the scale economies, market are imperfectly competitive.  Nonetheless, one can show that trade, and gains from trade, will occur, even between countries with identical tastes, technology, and factor endowments.”}</p>
-<p>{Environment: Imperfect Competition}
-Imperfect competition describes a market environment with the following features:</p>
-<ul class="simple">
-<li><p>Monopoly power: each firm produces a differentiated \textbf{variety} of good and faces a downward sloping demand curve</p></li>
+<li><p>Monopoly power: each firm produces a differentiated variety of good and faces a downward sloping demand curve</p></li>
 <li><p>No strategic interaction: there are a large number of firms to each individual firm ignores its impact on the demand of other firms</p></li>
 <li><p>Free entry and exit: there are no barriers to entry or exit so economic profits are driven to zero in equilibrium</p></li>
 </ul>
-<p>{Imperfect Competition}
-Monopoly power means that firms have to choose the price they sell their product at.  They are \textit{not price takers}.</p>
-<p>Boeing, the large aircraft manufacturer, competes with European firm Airbus.  Boeing knows that if it wants to sell more airplanes than it currently does, it has to reduce its price.</p>
-<p>This is very different from \textit{perfect} competition, where firms have no control over the price because everyone produces exactly the same good, so if a firm charges a higher price that the market it sells nothing; and if it charges a lower price it loses money.</p>
-<p>{Environment: Preferences}
-There is a fixed number <span class="math notranslate nohighlight">\(L\)</span> of consumers who have identical tastes over varieties <span class="math notranslate nohighlight">\(i=1,...,N.\)</span></p>
+<p>Monopoly power means that firms have to choose the price they sell their product at.  They are <em>not price takers</em>.  Boeing, the large aircraft manufacturer, competes with European firm Airbus.  Boeing knows that if it wants to sell more airplanes than it currently does, it has to reduce its price. This is very different from <em>perfect</em> competition, where firms have no control over the price because everyone produces exactly the same good, so if a firm charges a higher price that the market it sells nothing; and if it charges a lower price it loses money.</p>
+<p><strong>Preferences.</strong> There are <span class="math notranslate nohighlight">\(L\)</span> consumers with identical preferences over <span class="math notranslate nohighlight">\(N\)</span> varieties of a differentiated good, indexed <span class="math notranslate nohighlight">\(i = 1, \ldots, N\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 U = \sum_{i=1}^{N} v(c_i), \quad v' &gt; 0 \quad v'' &lt;0
 \]</div>
-<p>Each consumer has one unit of labor which earns them a wage <span class="math notranslate nohighlight">\(w\)</span> so that</p>
+<p>The assumption <span class="math notranslate nohighlight">\(v'' &lt; 0\)</span> captures love of variety: consumers have diminishing marginal
+utility from any individual variety, so they prefer to spread consumption across varieties rather than concentrate it in one. Each consumer supplies one unit of labor inelastically, earning wage <span class="math notranslate nohighlight">\(w\)</span>, and faces the budget constraint:</p>
 <div class="math notranslate nohighlight">
 \[
 \sum_{i=1}^{N} p_i c_i \leq w
 \]</div>
-<p>{Environment: Technology}
-Labor is the only factor of production whose requirements are given by,</p>
+<p><strong>Technology.</strong> Labor is the only factor of production. The labor required to produce <span class="math notranslate nohighlight">\(q_i\)</span> units of variety <span class="math notranslate nohighlight">\(i\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
 l_i = f + \frac{q_i}{\psi}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(f\)</span> is the fixed cost of production and <span class="math notranslate nohighlight">\(\psi\)</span> is a productivity parameter common to all firms.</p>
-<p>{Equilibrium condition 1: Agents’ maximize utility}
-Agents maximize utility:</p>
+<p>where <span class="math notranslate nohighlight">\(f &gt; 0\)</span> is the fixed labor requirement and <span class="math notranslate nohighlight">\(\psi &gt; 0\)</span> is a productivity parameter common to all firms. This is the variable-plus-fixed cost structure from above, expressed in units of labor. The fixed cost <span class="math notranslate nohighlight">\(f\)</span> generates internal economies of scale: average labor per unit of output, <span class="math notranslate nohighlight">\(f/q_i + 1/\psi\)</span>, is strictly decreasing in <span class="math notranslate nohighlight">\(q_i\)</span>.</p>
+</section>
+<section id="equilibrium-conditions">
+<h4>Equilibrium Conditions<a class="headerlink" href="#equilibrium-conditions" title="Link to this heading">#</a></h4>
+<p><strong>Consumer optimization.</strong> Consumers maximize utility subject to their budget
+constraint.</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align*}
 \max_{c_i} \sum_{i=1}^{N} v(c_i) \quad \text{s.t.} \quad \sum_{i=1}^{N} p_i c_i \leq w
 \end{align*} 
 \]</div>
+<p>The first-order condition for variety <span class="math notranslate nohighlight">\(i\)</span> is:</p>
 <div class="math notranslate nohighlight">
-\[
-\Rightarrow v'(c_i) = \lambda p_i
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the Lagrange multiplier associated with the agents budget constraint.</p>
-<p>{Equilibrium condition 2: Firms’ maximize profits}
-Firms maximize profits:</p>
+\[v'(c_i) = \lambda p_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the marginal utility of income (the Lagrange multiplier on the budget constraint). This standard condition equates the marginal utility of consuming variety <span class="math notranslate nohighlight">\(i\)</span> to its price, scaled by the marginal utility of income.</p>
+<p><strong>Firm optimization.</strong> Each firm chooses output <span class="math notranslate nohighlight">\(q_i\)</span> to maximize profits,
+taking as given the demand curve it faces:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
 \max_{q_i}\hspace{2mm} &amp;p_i q_i - w (f + \frac{q_i}{\psi}) \\
 \end{align*}
 \end{split}\]</div>
+<p>The first-order condition yields the familiar markup pricing rule:</p>
 <div class="math notranslate nohighlight">
 \[
-\Rightarrow p_i = \underbrace{\left( \frac{\eta_i}{\eta
+p_i = \underbrace{\left( \frac{\eta_i}{\eta
 _i -1}\right)}_{\text{markup}}\frac{w}{\psi}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(\eta_i \equiv -(v'/c_i v'') &gt;0\)</span> is the elasticity of demand for variety <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>{Equilibrium conditions 3: Free entry and exit + Market clearing}
-Free entry and exit, so firms earn zero profits in the long-run (<span class="math notranslate nohighlight">\(p_i = AC_i\)</span>):</p>
+<p>where <span class="math notranslate nohighlight">\(\eta_i \equiv -(v'/c_i v'') &gt; 0\)</span> is the price elasticity of demand for variety <span class="math notranslate nohighlight">\(i\)</span>, which depends on the curvature of <span class="math notranslate nohighlight">\(v\)</span>. The markup over marginal cost <span class="math notranslate nohighlight">\(w/\psi\)</span> is
+<span class="math notranslate nohighlight">\(\eta_i/(\eta_i - 1) &gt; 1\)</span>: firms with more elastic demand (higher <span class="math notranslate nohighlight">\(\eta_i\)</span>) charge a lower markup. This is the standard monopolistic competition pricing condition — it differs from perfect competition precisely in that <span class="math notranslate nohighlight">\(p_i &gt; MC = w/\psi\)</span>.</p>
+<p><strong>Free entry and market clearing.</strong> Free entry drives economic profits to zero
+in the long run, so price equals average cost:</p>
 <div class="math notranslate nohighlight">
 \[
 p_i = \frac{f w}{q_i} + \frac{w}{\psi}
@@ -673,9 +700,10 @@ p_i = \frac{f w}{q_i} + \frac{w}{\psi}
 &amp;L = \sum_{i=1}^n l_i = \sum_{i=1}^n  f + \frac{q_i}{\psi}
 \end{align}
 \end{split}\]</div>
-<p>{Equilibrium}
-Symmetry <span class="math notranslate nohighlight">\(\Rightarrow p_i = p, q_i = q, c_i =c\)</span> for all <span class="math notranslate nohighlight">\(i \in [0,n]\)</span>.</p>
-<p><span class="math notranslate nohighlight">\((c,p/w)\)</span> are jointly determined by the following two equations:</p>
+</section>
+<section id="symmetric-equilibrium">
+<h4>Symmetric Equilibrium<a class="headerlink" href="#symmetric-equilibrium" title="Link to this heading">#</a></h4>
+<p>By symmetry — all firms face the same technology, consumers have identical preferences, and there is no comparative advantage — the equilibrium features identical prices, quantities, and consumption across all varieties: <span class="math notranslate nohighlight">\(p_i = p\)</span>, <span class="math notranslate nohighlight">\(q_i = q\)</span>, <span class="math notranslate nohighlight">\(c_i = c\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>. The equilibrium <span class="math notranslate nohighlight">\((c, p/w)\)</span> is jointly determined by two conditions:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -684,65 +712,91 @@ _i -1}\right)\frac{1}{\psi} \\
 &amp;(FE): \quad \frac{p}{w} = \frac{f}{Lc} + \frac{1}{\psi} 
 \end{align*}
 \end{split}\]</div>
-<p>{Equilibrium}
-\begin{figure}
-\includegraphics[scale=.4]{fig1}
-\end{figure}</p>
-<p>{Equilibrium}
-The number of varieties produced in equilibrium is given by,</p>
+<p>The <strong>pricing condition (PP)</strong> is horizontal in <span class="math notranslate nohighlight">\((c, p/w)\)</span> space: since the demand
+elasticity <span class="math notranslate nohighlight">\(\eta\)</span> depends only on the shape of <span class="math notranslate nohighlight">\(v\)</span> and not on the scale of consumption
+under symmetry, the markup — and therefore the price-wage ratio — is constant. The <strong>free entry condition (FE)</strong> is downward-sloping: as per-consumer consumption <span class="math notranslate nohighlight">\(c\)</span> rises, output per firm <span class="math notranslate nohighlight">\(q = Lc\)</span> rises, fixed costs are spread over more units, and average cost (and therefore price) falls. Equilibrium is at the intersection of the two curves.</p>
+<figure>
+    <img src="_static/figs_nt/fig1.png"
+         alt="Krugman equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Closed-economy equilibrium in the Krugman (1979) model. The PP curve is flat 
+    (markup pricing); the FE curve is downward-sloping (zero-profit condition). Equilibrium 
+    consumption per variety $c^*$ and the real price $p^*/w$ are determined at the 
+    intersection.
+    </figcaption>
+</figure>
+<p>Given the equilibrium <span class="math notranslate nohighlight">\((c^*, q^* = Lc^*)\)</span>, the equilibrium number of varieties follows from the labor market clearing condition:</p>
 <div class="math notranslate nohighlight">
-\[
-N = \frac{1}{f/L + c/\psi}.
-\]</div>
-<p>{International Trade}
-Suppose there exist two economies with identical tastes and technologies that open up to trade.  Symmetry ensures that the wage rates and price of any good will be the the same in both countries.  The effect will be the same as if each country experienced an increase in its labor force.</p>
-<p>{International Trade}
-\begin{figure}
-\includegraphics[scale=.4]{fig2}
-\end{figure}</p>
-<p>{International Trade}
-The direction of trade is intdeterminate.  All we can say is that each good will be produced in one country.  Since all goods have the same price, expenditures on each country’s goods will be proportional to the country’s labor force.</p>
+\[N = \frac{L}{f + q^*/\psi}\]</div>
+<p>The number of varieties is proportional to the size of the labor force: a larger economy supports more firms and produces more varieties in equilibrium.</p>
+</section>
+<section id="international-trade">
+<h4>International Trade<a class="headerlink" href="#international-trade" title="Link to this heading">#</a></h4>
+<p>Now suppose two economies with identical tastes, technologies, and factor endowments open to trade. Since the economies are symmetric, wages and goods prices are equalized immediately. The effect of trade is equivalent to a single economy experiencing an increase in its effective labor force from <span class="math notranslate nohighlight">\(L\)</span> to <span class="math notranslate nohighlight">\(L + L^*\)</span>: the integrated market is larger, and firms can achieve greater scale.</p>
+<figure>
+    <img src="_static/figs_nt/fig2.png"
+         alt="Krugman trade equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The effect of trade in the Krugman model. The larger integrated market shifts the FE curve rightward (or downward): at any given $p/w$, the zero-profit scale of output is  now achievable at lower average cost. Equilibrium moves to higher $c^*$ and lower $p^*/w$.
+    </figcaption>
+</figure>
+<p>The larger market shifts the FE curve: for any given <span class="math notranslate nohighlight">\(p/w\)</span>, the zero-profit condition is now satisfied at a higher level of consumption per variety (since fixed costs are spread over a larger market). The new equilibrium features lower <span class="math notranslate nohighlight">\(p/w\)</span> — a higher real wage — and higher <span class="math notranslate nohighlight">\(c^*\)</span> per variety. The gains from trade are realized through two channels:</p>
+<ul class="simple">
+<li><p><strong>Lower prices (higher real wages)</strong>: each surviving firm operates at greater scale,
+moving further down its average cost curve, so goods are produced more cheaply.</p></li>
+<li><p><strong>Greater variety</strong>: the total number of varieties available to consumers in the
+integrated economy is <span class="math notranslate nohighlight">\(N + N^* &gt; N\)</span>, so consumers gain access to varieties that were
+not produced domestically before trade.</p></li>
+</ul>
+<p>The number of varieties produced in each country after trade is:</p>
 <div class="math notranslate nohighlight">
-\[
-M = wL \cdot \frac{L^*}{L+L^*} = M^*
-\]</div>
-<p>Trade is balanced, and the volume of trade as a fraction of world income is maximized wehn the economies are of equal size.</p>
-<p>{Key Point}
-Economies of scale can generate gains from trade even when there are no international differences in tastes, technology, of factor endowments.</p>
-<p>{Comparative statics}
-There exist gains from trade because:</p>
-<ul class="simple">
-<li><p>more product variety</p></li>
-<li><p>higher real wages</p></li>
-</ul>
-<p>The number of goods produced in each country is proportional to its labor force,</p>
+\[N = \frac{L}{f + q^*/\psi}, \qquad N^* = \frac{L^*}{f + q^*/\psi}\]</div>
+<p>Since post-trade output per firm <span class="math notranslate nohighlight">\(q^*\)</span> exceeds pre-trade output (firms move down their
+average cost curves), each country produces <em>fewer</em> varieties than before trade — but
+consumers in each country now have access to the full set <span class="math notranslate nohighlight">\(N + N^*\)</span>. Each variety is
+produced in exactly one country; the direction of trade is indeterminate since all varieties are symmetric. Since all goods have the same price, expenditure on each country’s goods is proportional to its labor force, and trade is balanced:</p>
 <div class="math notranslate nohighlight">
-\[
-N = \frac{L}{f+q/\psi}, \qquad N^* = \frac{L^*}{f+q/\psi}
-\]</div>
-<p>As firms move down their average cost curve, output <span class="math notranslate nohighlight">\(q\)</span> increases which necessarily means each country has fewer firms operating after trade.</p>
-<p>{Effects on business from trade}
-Krugman model posits two impacts of trade on the productivity of firms:</p>
+\[M = wL \cdot \frac{L^*}{L + L^*} = M^*\]</div>
+<p>The volume of trade as a share of world income is maximized when the two economies are of equal size — a prediction consistent with the empirical observation that trade is
+disproportionately concentrated between countries of similar size.</p>
+</section>
+<section id="selection-and-scale-effects">
+<h4>Selection and Scale Effects<a class="headerlink" href="#selection-and-scale-effects" title="Link to this heading">#</a></h4>
+<p>The Krugman model implies two distinct effects of trade liberalization on the productive structure of an economy:</p>
 <ul class="simple">
-<li><p>Selection effect: some firms are forced to exit after trade</p></li>
-<li><p>Scale effect: surviving firms expand their output</p></li>
+<li><p><strong>Scale effect</strong>: surviving firms expand output as they gain access to the larger
+integrated market, moving down their average cost curves and raising productivity.</p></li>
+<li><p><strong>Selection effect</strong>: some firms are forced to exit as intensified competition from
+foreign varieties reduces the equilibrium number of domestic producers.</p></li>
 </ul>
-<p>{An Empirical Study}
-Trefler (2001) studies the selection effect from the FTA.</p>
+<p>In the symmetric version of the model developed here, the selection effect has no
+productivity consequences — all firms are identical, so exit does not alter average firm productivity. Empirically, however, the selection effect is quantitatively important and operates through the reallocation of resources from less to more productive firms. Trefler (2004) provides compelling evidence from the Canada-US Free Trade Agreement: the short-run costs of liberalization included a 15% decline in manufacturing employment and a 10% reduction in output and plant numbers, while the long-run gains included productivity improvements of approximately 17% — roughly 1% per year — with about half of those gains attributable to plant entry and exit. Capturing this selection effect in a model requires allowing firms to differ in their underlying productivity, a feature that the symmetric Krugman model deliberately abstracts from. This is the motivation for the heterogeneous
+firms framework we turn to next.</p>
+</section>
+</section>
+<section id="conclusion">
+<h3>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<p>The new trade theory framework developed in this chapter offers a coherent account of the empirical patterns that classical models struggle to explain. The key insights are:</p>
 <ul class="simple">
-<li><p>Short-run costs included a 15% decline in employment and a 10% decline in both output and the number of plants</p></li>
-<li><p>Long-run gains included productivity gains of about 17% (or 1% per year!).</p></li>
-<li><p>About half of the productivity gains come from favorable plant turnover (entry and exit)
-Our model assumed symmetry—all firms were the same size and effiency; so entry and exit would not affect producitivity.  If we want to capture a meaningful selection effect, we need to allow for heterogenous firms.  Next time…</p></li>
+<li><p>Economies of scale — whether external or internal — generate gains from trade even
+between countries that are identical in their technology, factor endowments, and
+preferences.</p></li>
+<li><p>Internal economies of scale require imperfect competition: the fixed-cost structure
+that generates scale economies is incompatible with competitive pricing at marginal cost.</p></li>
+<li><p>Trade in the Krugman model raises welfare through two channels: lower goods prices
+(higher real wages) and expanded product variety.</p></li>
+<li><p>The volume of trade is largest between similar-sized economies — consistent with the
+gravity equation patterns documented at the outset of this chapter.</p></li>
+<li><p>The symmetric model predicts a scale effect from trade but no productivity-enhancing
+selection effect. Generating the latter requires firms to be heterogeneous in
+productivity — the subject of the next chapter.</p></li>
 </ul>
-<p>{Conclusion}</p>
-<ul class="simple">
-<li><p>We began with the observation that similar countries trade a lot, and often similar goods.</p></li>
-<li><p>We need a theory that generates gains from trade even when countries are very similar.</p></li>
-<li><p>Introduce economies of scale and (necessarily) monopolistic competition.</p></li>
-<li><p>Free trade benefits economies by lowering the average prices of goods (higher real wages) and introducing more product variety</p></li>
-<li><p>Next time, we want to all firms to be different because we see large selection effects in international trade where top firms seem to be exporting while low productivity firms do not.</p></li>
-</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -776,12 +830,12 @@ Our model assumed symmetry—all firms were the same size and effiency; so entry
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="specific-factors-model.html"
+       href="RCA.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Spcific Factors Model</p>
+        <p class="prev-next-title">Revealed Comparative Advantage</p>
       </div>
     </a>
     <a class="right-next"
@@ -799,6 +853,50 @@ Our model assumed symmetry—all firms were the same size and effiency; so entry
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation-the-limits-of-classical-trade-theory">Motivation: The Limits of Classical Trade Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gravity-equation">The Gravity Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intra-industry-trade">Intra-Industry Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-intra-industry-trade">Measuring Intra-Industry Trade</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#economies-of-scale">Economies of Scale</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-versus-external-economies-of-scale">Internal versus External Economies of Scale</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-economies-of-scale">External Economies of Scale</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geographic-concentration">Geographic Concentration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sources-of-external-economies">Sources of External Economies</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#external-economies-of-scale-and-trade">External Economies of Scale and Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#history-lock-in-and-the-limits-of-trade">History, Lock-In, and the Limits of Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#policy-implications">Policy Implications</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#internal-economies-of-scale-and-the-krugman-1979-model">Internal Economies of Scale and the Krugman (1979) Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-internal-economies-of-scale-require-imperfect-competition">Why Internal Economies of Scale Require Imperfect Competition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#environment">Environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-conditions">Equilibrium Conditions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#symmetric-equilibrium">Symmetric Equilibrium</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#international-trade">International Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#selection-and-scale-effects">Selection and Scale Effects</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

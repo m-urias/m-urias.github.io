@@ -1,0 +1,7 @@
+# Ignore all large data files
+*.csv
+*.xlsx
+*.zip
+# Ignore system-specific junk
+.DS_Store
+Thumbs.db

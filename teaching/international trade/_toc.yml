@@ -6,12 +6,16 @@ parts:
     chapters:
       - file: ricardian-model
         title: Ricardian Model of Trade
-      - file: ek_model
+      - file: ek-model
         title: Eaton-Kortum Model of Trade
       - file: ho-model
         title: Heckscher-Ohlin Model of Trade
+      - file: ho-empirical
+        title: Empirical Tests of HO Model
       - file: specific-factors-model
         title: Specific Factors Model of Trade
+      - file: RCA
+        title: Revealed Comparative Advantage
 
   - caption: New Trade Theory
     chapters:
@@ -27,7 +31,7 @@ parts:
       - file: trade-policy
         title: Tariffs and Trade policy
 
-  - caption:
+  - caption: Open Economy Macro
     chapters:
       - file: intertemporal-trade
         title: Intertemporal Trade and the Current Account
