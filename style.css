@@ -118,11 +118,11 @@ a:hover {
     /* Add spacing below the photo */
     margin-bottom: 20px;
 }
-    /* Add this to the bottom of your style.css */
-    nav ul li a.active,
-    nav ul li a[href$="research-tools.html"] {  /* change filename if needed */
-        font-weight: bold;
-        color: #0066cc;   /* or whatever color matches your site */
+
+/* This will now only apply to the link with class="active" */
+nav ul li a.active {
+    font-weight: bold;
+    color: #0066cc;
 }
 /* Image sizing classes */
 .image-small  { max-width: 400px; margin: 20px auto; display: block; }
