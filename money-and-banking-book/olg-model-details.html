@@ -486,7 +486,7 @@ q(\pi)=\frac{\pi^{1-\sigma}y}{1+\pi^{1-\sigma}}, \quad \text{where} \quad \sigma
 \frac{\nu_{t+1}}{\nu_t}=\frac{n}{z}\frac{q_{t+1}}{q_t}
 \]</div>
 <p>Notice that if we restricted ourselves to stationary equilibria <span class="math notranslate nohighlight">\(q_t=q_{t+1}\)</span>, then the equilibrium inflation rate is simply <span class="math notranslate nohighlight">\(\pi=z/n\)</span>.  In this case, we could graphically describe the equilibrium as the intersection of the a money demand curve with the equilibrium inflation rate determined by the growth rate of the money supply and population.  In the figure below we assume that <span class="math notranslate nohighlight">\(z=1.05\)</span> and <span class="math notranslate nohighlight">\(n=1.02\)</span> so that equilibrium inflation is 3 percent.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-stdout docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -511,15 +511,15 @@ q(\pi)=\frac{\pi^{1-\sigma}y}{1+\pi^{1-\sigma}}, \quad \text{where} \quad \sigma
 
 <span class="c1"># --- Figure 1: Money demand with steady-state markers ---</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">q_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">q_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$\eta = </span><span class="si">{</span><span class="n">eta</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\pi^* = z/n = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$\pi^* = z/n = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">q_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">q_star</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$q(\pi^*) = </span><span class="si">{</span><span class="n">q_star</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$q(\pi^*) = </span><span class="si">{</span><span class="n">q_star</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Stationary Equilibrium: Real Money Demand&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Real Money Demand ($q$)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -529,24 +529,6 @@ q(\pi)=\frac{\pi^{1-\sigma}y}{1+\pi^{1-\sigma}}, \quad \text{where} \quad \sigma
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-&lt;&gt;:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:24: SyntaxWarning: invalid escape sequence &#39;\e&#39;
-  plt.plot(pi, q_vals, color=&quot;blue&quot;, label=f&quot;$\eta = {eta}$&quot;)
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:26: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  label=f&quot;$\pi^* = z/n = {pi_star:.2f}$&quot;)
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:29: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  label=f&quot;$q(\pi^*) = {q_star:.3f}$&quot;)
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2564225850.py:32: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.xlabel(&quot;Gross Inflation ($\pi$)&quot;)
-</pre></div>
-</div>
 <img alt="_images/376aba6b2085f13c32a9c4562771ee2e32a00691a043b1c9b0e962a3d8e159dc.png" src="_images/376aba6b2085f13c32a9c4562771ee2e32a00691a043b1c9b0e962a3d8e159dc.png" />
 </div>
 </div>
@@ -563,7 +545,7 @@ $<span class="math notranslate nohighlight">\(
 C \equiv c_1+c_2=y+\frac{1-\pi}{\pi}q
 \)</span>$</p>
 <p>The figure below plots consumption of the young, old, and aggregate consumption as a function of inflation.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -597,10 +579,10 @@ C \equiv c_1+c_2=y+\frac{1-\pi}{\pi}q
 <span class="c1"># --- Figure 2: Consumption of young, old, and aggregate ---</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">c1_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Young consumption $c_</span><span class="si">{1}</span><span class="s2">=y-q$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">c2_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Old consumption $c_</span><span class="si">{2}</span><span class="s2">=q/</span><span class="se">\\</span><span class="s2">pi$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">c2_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Old consumption $c_</span><span class="si">{2}</span><span class="s2">=q/\pi$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="n">C_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Aggregate $C=c_1+c_2$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pi_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
-            <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$\pi^* = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">fr</span><span class="s2">&quot;$\pi^* = </span><span class="si">{</span><span class="n">pi_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
 
 <span class="c1"># Mark steady-state values</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">c1_star</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -608,7 +590,7 @@ C \equiv c_1+c_2=y+\frac{1-\pi}{\pi}q
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">pi_star</span><span class="p">],</span> <span class="p">[</span><span class="n">C_star</span><span class="p">],</span>  <span class="n">color</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>  <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Consumption by Inflation in Steady State&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Gross Inflation ($\pi$)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Consumption&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
@@ -616,19 +598,6 @@ C \equiv c_1+c_2=y+\frac{1-\pi}{\pi}q
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-&lt;&gt;:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2984064613.py:36: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  label=f&quot;$\pi^* = {pi_star:.2f}$&quot;)
-C:\Users\XPS\AppData\Local\Temp\ipykernel_42428\2984064613.py:44: SyntaxWarning: invalid escape sequence &#39;\p&#39;
-  plt.xlabel(&quot;Gross Inflation ($\pi$)&quot;)
-</pre></div>
-</div>
-<img alt="_images/852e743b426da174dd6fc8c44d3a0ce816a09729e8744ceac5f93815c4b06514.png" src="_images/852e743b426da174dd6fc8c44d3a0ce816a09729e8744ceac5f93815c4b06514.png" />
 </div>
 </div>
 <p>What we’ve described so far is the <strong>stationary equilibrium</strong>: we assumed that the equilibrium featured <span class="math notranslate nohighlight">\(q_t=q_{t+1}\)</span>.  We now relax that assumption and compute all <strong>non-stationary equilibria</strong> as well.  We continue working with the CRRA utility and constant money supply and population growth rates so that equilibrium rate of return on money is given by</p>
@@ -771,7 +740,7 @@ q_{t+1}=\frac{z}{n}\left( \frac{q_t}{(y-q_t)^{\eta}} \right)^{\frac{1}{1-\eta}}
 </div>
 <p>Notice that the non-stationary equilibrium converges to the steady state <span class="math notranslate nohighlight">\(q=0\)</span>.  That is, it converges to the <strong>non-monetary equilibrium</strong>: an equilibrium where money has no value so that <span class="math notranslate nohighlight">\(q=0\)</span>.  In fact, for any <span class="math notranslate nohighlight">\(q_0&lt;q^*\)</span>, the non-stationary equilibrium will behave similarly.  Therefore, we say that the stationary monetary equilibrium is <strong>unstable</strong>.</p>
 <p>Notice that the value of our exogenous variables <span class="math notranslate nohighlight">\((y,z,n)\)</span> will shift the curve, but not alter the fundamental dynamics.  Increasing money supply <span class="math notranslate nohighlight">\(z\)</span>,for example, would shift the phase line to the left resulting in a lower value for stationary money balances <span class="math notranslate nohighlight">\(q^*\)</span>.  Nevertheless, any small perturbation causing <span class="math notranslate nohighlight">\(q\)</span> to drop below <span class="math notranslate nohighlight">\(q^*\)</span> would trigger the non-stationary equilibrium which converges to the non-monetary equilibrium.</p>
-<div class="cell docutils container">
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
@@ -830,19 +799,6 @@ q_{t+1}=\frac{z}{n}\left( \frac{q_t}{(y-q_t)^{\eta}} \right)^{\frac{1}{1-\eta}}
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:25: RuntimeWarning: The iteration is not making good progress, as measured by the 
-  improvement from the last ten iterations.
-  y_low, = fsolve(eq, last_low + 1e-6, args=(q_t,))
-C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:32: RuntimeWarning: The iteration is not making good progress, as measured by the 
-  improvement from the last ten iterations.
-  y_high, = fsolve(eq, last_high - 1e-6, args=(q_t,))
-C:\Users\XPS\AppData\Local\Temp\ipykernel_27264\3511899077.py:11: RuntimeWarning: invalid value encountered in power
-  return q_next / (alpha + q_next)**eta - q_t / (1 - q_t)**eta
-</pre></div>
-</div>
-<img alt="_images/a99b5babbc22d9f12f59f020e21af3c0581d342c648274cdfc4b02b253972960.png" src="_images/a99b5babbc22d9f12f59f020e21af3c0581d342c648274cdfc4b02b253972960.png" />
 </div>
 </div>
 </section>

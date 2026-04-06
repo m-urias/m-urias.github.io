@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ricardian Model of International Trade &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ricardian-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Eaton and Kortum Model of Trade" href="ek-model.html" />
+    <link rel="prev" title="International Trade" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ek-model.html">Eaton-Kortum Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-model.html">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-empirical.html">Empirical Tests of HO Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-trade-growth.html">Growth in the Classical Models of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCA.html">Revealed Comparative Advantage</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade-data-tutorial.html">Trade Data Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ricardian-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ricardian Model of International Trade</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivating-numerical-example">Motivating Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-advantage">Absolute Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-advantage">Comparative Advantage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ricardian-model">The Ricardian Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ricardian-model-with-many-goods">Ricardian Model with Many Goods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-case">The Continuum Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-evidence-for-the-ricardian-model">Empirical Evidence for the Ricardian Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bangladesh-and-the-clothing-industry">Bangladesh and the Clothing Industry</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macdougall-1951-us-and-uk-export-performance">MacDougall (1951): US and UK Export Performance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golub-1995-and-golub-and-hsieh-2000-broader-cross-country-evidence">Golub (1995) and Golub and Hsieh (2000): Broader Cross-Country Evidence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-the-need-for-richer-models">Limitations and the Need for Richer Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ricardian-model-of-international-trade">
+<h1>Ricardian Model of International Trade<a class="headerlink" href="#ricardian-model-of-international-trade" title="Link to this heading">#</a></h1>
+<p>The Ricardian model is our first attempt to explain why countries trade with one another.  It identifies the sources of mutually beneficial trade and predicts which types of goods are exported and imported by different nations. Although remarkably simple, the model yields powerful insights that remain relevant to modern policy debates. Is foreign competition unfair when based on low wages? Is free trade beneficial only if a country is strong enough to withstand foreign competition? Does trade exploit poor nations by locking them into low-wage production? We begin to answer these questions—echoing centuries of skepticism about globalization—within the Ricardian framework.</p>
+<p>Even after hundreds of years of trade theory, and a near universal consensus among economists about the merits of free trade, policymakers continue to denounce the import of manufactured goods from developing countries, claiming they displace domestic jobs. In the United States, for instance, the persistent trade deficit with China is often portrayed as a “bad deal,” where the U.S. allegedly loses wealth by importing more than it exports. This rhetoric resembles the neo-mercantilist arguments of the seventeenth century. England’s Treasurer, Thomas Munn (1682), once wrote:</p>
+<p><em>The ordinary means therefore to increase our wealth and treasure is by Foreign Trade, wherein we must ever observe this rule; to sell more to strangers yearly than we consume of theirs in value. For … that part of our stock exports which is not returned to us in wares imports must necessarily be brought home in treasure bullion…</em></p>
+<p>Even with a model as simple as Ricardo’s, we can scrutinize such claims and assess whether trade imbalances imply losses or whether trade, in fact, enriches all participants.</p>
+<p>By the end of this chapter you should:</p>
+<ul class="simple">
+<li><p>Explain how the Ricardian model illustrates the principle of <strong>comparative advantage</strong>.</p></li>
+<li><p>Demonstrate <strong>gains from trade</strong> and refute common fallacies about international trade.</p></li>
+<li><p>Relate empirical evidence on how productivity differences explain wage differences and trade patterns.</p></li>
+</ul>
+<p>After examining the Ricardian model, we will turn to the Heckscher–Ohlin model, which deepens our understanding of who gains and who loses from trade and from trade protection policies.</p>
+<section id="motivating-numerical-example">
+<h2>Motivating Numerical Example<a class="headerlink" href="#motivating-numerical-example" title="Link to this heading">#</a></h2>
+<p>The fundamental lesson of classical trade theory is that nations—and individuals—can benefit from their differences by specializing in the activities they do relatively well. The greater the differences, the greater the potential gains.  Before formalizing the Ricardian model, consider two simple examples that illustrate this lesson.</p>
+<section id="absolute-advantage">
+<h3>Absolute Advantage<a class="headerlink" href="#absolute-advantage" title="Link to this heading">#</a></h3>
+<p>Adam Smith first proposed the theory of <strong>absolute advantage</strong> as a direct challenge to mercantilist thinking, which viewed trade as a zero-sum game.  Consider the following table which shows the production technology for the United States and Mexico for Cloth and Wheat.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>United States</p></th>
+<th class="head text-center"><p>Mexico</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Wheat (bushels/hour)</strong></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Cloth (yards/hour)</strong></p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The United States can produce more wheat per hour than Mexico, while Mexico can produce more cloth per hour than the United States.  We say that the US has an <strong>absolute advantage</strong> in the production of wheat, and Mexico has an absolute advantage in the production of cloth.</p>
+<p>If each country specializes in producing the good for which it has an absolute advantage, then there exists a trading arrangement which is mutually beneficial.  Here is one such arrangement: the US exchanges 6 bushels of wheat for 6 yards of Mexican cloth.  If the US instead produced cloth by itself, it could only generate 4 yards of cloth with one labor hour.  By trading with Mexico, that single labor hour can be transformed into 6 yards of cloth.  The US has effectively gains 2 yards of cloth by trading instead of producing it domestically.  Equivalently, it would take 1.5 hours for the US to produce 6 units of cloth, so by trading with Mexico it effectively saves 0.5 labor hours.  Similarly, if Mexico tries to produce wheat itself it would take 6 labor hours.  Instead, Mexico uses <span class="math notranslate nohighlight">\(6/5\)</span> labor hours to produce 6 units of cloth in order to acquire 6 units of wheat from the US.  Mexico saved <span class="math notranslate nohighlight">\(24/5\)</span> labor hours, or equivalently gains 24 units of cloth.</p>
+<p>In this example, we assume that the exchange rate between cloth and wheat is one-to-one. There is a range of exchange rates which allow for mutually beneficial trade, and later we will show how to compute the <em>equilibrium</em> exchange rate.  For now, we simply want to demonstrate how gains from trade are possible.</p>
+</section>
+<section id="comparative-advantage">
+<h3>Comparative Advantage<a class="headerlink" href="#comparative-advantage" title="Link to this heading">#</a></h3>
+<p>It should not be surprising that if each country is more efficient at producing a particular good, then they can gain by specializing in that good and trading.  However, it is also the case that even if one country is more efficient at producing every good, there can still exist gains from trade.  David Ricardo offered this profound insight in his theory of <strong>comparative advantage</strong>-one of the most important lessons in all of the economics.</p>
+<p>Consider the following production technologies:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-center"><p>United States</p></th>
+<th class="head text-center"><p>Mexico</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Wheat (bushels/hour)</strong></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Cloth (yards/hour)</strong></p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Notice that in this example, Mexico has an absolute <em>disadvantage</em> in the production of <em>both</em> goods.  The United States is more efficient at producing both cloth and wheat.  Is it possible that the United States can gain from trade with Mexico even though it is better at producing everything?</p>
+<p>Consider the following trading arrangement: the US specializes in the production of wheat and exchanges 6 bushels of wheat for 6 yards of cloth with Mexico.  If the US produced cloth itself, it would require 1.5 labor hours.  Instead, it uses only 1 labor hour to produce 6 units of wheat and then trades it to acquire 6 yards of cloth from Mexico.  The US still saves itself 0.5 labor hours!  Equivalently, we can say that the US gains 2 yards of cloth.  Mexico clearly gains because it would have taken 6 labor hours to produce wheat, but by trading with the US it only takes 3 labor hours.</p>
+<p>Hence, we have described a trading arrangement where both countries benefit from trade even though the US is better at producing all goods.  The reason such an arrangement exists is because the US and Mexico have different <em>relative productivities</em> which measure the trade-off between producing one good versus the other.  The ratio of wheat-to-cloth production for the US is <span class="math notranslate nohighlight">\(6/4\)</span>, whereas it is <span class="math notranslate nohighlight">\(1/2\)</span> for Mexico.  If the US wants to produce one extra unit of cloth, it must take labor away from the production of wheat.  The cost of producing one extra yard of cloth is therefore <span class="math notranslate nohighlight">\(6/4\)</span> bushels of wheat.  By similar reasoning, the cost to Mexico of producing one more yard of cloth itself is <span class="math notranslate nohighlight">\(1/2\)</span> bushels of wheat.  Therefore, cloth production is <em>relatively</em> more expensive in the US compared to Mexico (<span class="math notranslate nohighlight">\(6/4&gt;1/2\)</span>).  This is why the US can save itself labor hours by specializing in wheat and exchanging wheat for cloth with Mexico.  We say that the US has a comparative advantage in wheat, and Mexico has a comparative advantage in cloth.</p>
+<p>As mentioned before, there are a range of production technologies for which mutually beneficial trade can occur.  When we build our general model, we allow for any level of production efficiency to describe when a particular country has a comparative advantage.  This allows us to predict the pattern of specialization and trade.  We also compute the equilibrium exchange rate between the two countries which allows to predict the volume of trade.  With these prices and quantities determines, we can then measure the gains from trade that accrue to each nation.  One benefit of a general model is that we can alter parameters of the model (such as the efficiency of production) and investigate how the equilibrium prices, quantities, and gains from trade are affected.  This gives us insight into how economic shocks (e.g. technological progress, falling trade costs, tariff policies) affect the production, trade, and welfare of countries.</p>
+<p>It’s worth noting that our Ricardian theory of trade does not identify <em>why</em> countries have different production technologies.  One can imagine many possible reasons why the US would be better at producing wheat, for example (e.g. weather, natural resources, skilled labor, farming equipment etc.) Although it is interesting to investigate the specific reason why a country is productive at making a particular good, we don’t need to know why they are productive for our theory.</p>
+</section>
+</section>
+<section id="the-ricardian-model">
+<h2>The Ricardian Model<a class="headerlink" href="#the-ricardian-model" title="Link to this heading">#</a></h2>
+<p>We now generalize these ideas to any two goods and compute the <em>equilibrium</em> trading trading arrangement.</p>
+<p>Assume there exist</p>
+<ul class="simple">
+<li><p>Two countries: Home and Foreign</p></li>
+<li><p>Two goods: <span class="math notranslate nohighlight">\(i=1,2\)</span></p></li>
+<li><p>One factor of production: labor at Home <span class="math notranslate nohighlight">\(L\)</span> and Foreign <span class="math notranslate nohighlight">\(L^*\)</span></p></li>
+</ul>
+<p>Production technology is described by <strong>unit labor requirements</strong>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a_i \equiv\)</span> labor need per unit of good <span class="math notranslate nohighlight">\(i\)</span> at Home</p></li>
+<li><p><span class="math notranslate nohighlight">\(a_i^* \equiv\)</span> labor need per unit of good <span class="math notranslate nohighlight">\(i\)</span> at Foreign</p></li>
+</ul>
+<p>We assume that labor is perfectly mobile between industries, but immobile across countries.</p>
+<p>Assume that preferences are identical and homothetic across countries. Homotheticity guarantees that ratios of goods demanded only depends on relative prices and not income or scale (CES preferences for example). Identical preferences are assumed in order to show that technological differences can be a source of mutually beneficial trade.</p>
+<p>Because each country has a limited number of workers, there are limits to the amount of goods that can be produced.  The feasible production plans are represented by a <strong>production possibilities set</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\text{Home:} \quad &amp;a_1 y_1 + a_2 y_2 \leq L \\
+\text{Foreign:} \quad &amp;a_1^* y_1^* + a_2^* y_2^* \leq L^*
+\end{align*}
+\end{split}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(a_i y_i\)</span> represents the total amount of labor used to produce <span class="math notranslate nohighlight">\(y_i\)</span> units of good <span class="math notranslate nohighlight">\(i\)</span>.  Hence, the equations say that both Home and Foreign can not use more labor than they have.  Graphically, we can represent the production possibilities sets as the region under the lines:</p>
+<figure>
+    <img src="_static/figs_ricardo/fig1.png"
+         alt="Production possibilities"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The production possibilities sets of Home and Foreign.
+    </figcaption>
+</figure>
+<p>A critical measure of production efficiency is the <strong>opportunity cost</strong> of producing a good.  For example, the opportunity cost of producing good 1 is how many units of good 2 must stop being produced in order to make one more unit of good 1.  Producing one additional unit of good 1 requires <span class="math notranslate nohighlight">\(a_1\)</span> hours of labor.  Each hour devoted to the production of good 1 could have been used instead to produce an amount of good 2 equal to <span class="math notranslate nohighlight">\(1/a_2\)</span>. Therefore, the opportunity cost of good 1 in terms of good 2 is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_1}{a_2}.
+\]</div>
+<p>Since labor is the only factor of production, the relative supply of goods is determined by whether workers choose to produce good 1 or good 2.  Workers will choose to work in the industry with higher wages. The hourly wage of workers producing good 1 is <span class="math notranslate nohighlight">\(p_1/a_1\)</span> and the hourly wage of workers producing good 2 is <span class="math notranslate nohighlight">\(p_2/a_2\)</span>.</p>
+<p>Both goods are produced if and only if</p>
+<div class="math notranslate nohighlight">
+\[
+p_1/a_1 = p_2/a_2.
+\]</div>
+<p>A reminder about equilibrium wages.  Consider the profit of a firm:</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_i = p_i q_i - w a_{iL}q_i
+\]</div>
+<p>and recognize that if <span class="math notranslate nohighlight">\(p_i/a_{iL} &lt; w\)</span> then the price is too low for firms to survive so no amount of good <span class="math notranslate nohighlight">\(i\)</span> is produced. Conversely if <span class="math notranslate nohighlight">\(p_i/a_{iL} &gt; w\)</span> then firms will want to produce good <span class="math notranslate nohighlight">\(i\)</span> and competition will force the price down until <span class="math notranslate nohighlight">\(p_i/a_{iL}=w\)</span>.  The lesson is that if good <span class="math notranslate nohighlight">\(i\)</span> is produced, then it must be the case that <span class="math notranslate nohighlight">\(w/p_i = 1/a_{iL}\)</span>.</p>
+<p>In the absence of international trade, the relative prices of goods are equal to their relative unit labor requirements.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p_1}{p_2} = \frac{a_1}{a_2}
+\]</div>
+<p>We may say that the <strong>relative price</strong> of Good 1 in terms of Good 2 is equal the opportunity cost of Good 1 in terms of Good 2.</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Comparative Advantage</p>
+<p>A country has a <strong>comparative advantage</strong> in the production of good i if its <strong>opportunity cost</strong> of producing good i is smaller than the other country.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(a_1/a_2 &lt; a_1^*/a_2^*\)</span> then Home (Foreign) has a comparative advantage in the production of good 1 (good 2).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(a_1/a_2 &gt; a_1^*/a_2^*\)</span> then Foreign (Home) has a comparative advantage in the production of good 1 (good 2).</p></li>
+</ul>
+<p>A country has a <strong>comparative advantage</strong> in the production of good i if the <strong>autarky relative price</strong> of good i is less than the other country.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(p_1/p_2 &lt; p_1^*/p_2^*\)</span> then Home (Foreign) has a comparative advantage in the production of good 1 (good 2).</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(p_1/p_2 &gt; p_1^*/p_2^*\)</span> then Foreign (Home) has a comparative advantage in the production of good 1 (good 2).</p></li>
+</ul>
+</div>
+<p>Suppose that Home is more efficient in the production of both goods</p>
+<div class="math notranslate nohighlight">
+\[
+a_1 &lt; a_1^* \qquad \text{and} \qquad a_2 &lt; a_2^*
+\]</div>
+<p>then Home is said to have an <strong>absolute advantage</strong> in the production of both goods.</p>
+<p>A country can be more efficient producing both goods, but it will have a comparative advantage in only one good.  Even if a country is the most (or least) efficient producer of all goods, it still can benefit from trade.</p>
+<p>Let’s allow both countries to trade with each other.  Each country will benefit by completely specializing in the production of the good for which it has a comparative advantage and trading.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig2.png"
+         alt="Gains from trade"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    An illustration of the gains from trade.  Points $(A,A^*)$ are the autarky points, points $(B,B^*)$ are the production points under free trade, and $(C,C^*)$ are the consumption points under free trade.
+    </figcaption>
+</figure>
+<p>To determine the equilibrium world price, let’s begin by defining the <strong>world relative supply curve</strong>.  In this example, we assume that Home has a comparative advantage in the production of good 1.</p>
+<p>Consider any any world relative price <span class="math notranslate nohighlight">\((p_1/p_2)^W &lt; (p_1/p_2) \)</span> and <span class="math notranslate nohighlight">\((p_1/p_2)^W &lt; (p_1^*/p_2^*) \)</span>.  In this case, both countries find it cheaper to acquire good 1 on the “world market” compared to producing it themselves.  Therefore, both countries completely specialize in producing good 2 resulting in a world relative supply of good 1 equal to zero.  Alternatively, if <span class="math notranslate nohighlight">\((p_1/p_2) &lt; (p_1/p_2)^W &lt; (p_1^*/p_2^*)\)</span> then Home specializes in producing good 1 and Foreign specializes in good resulting in world relative supply <span class="math notranslate nohighlight">\(\frac{L/a_1}{L^*/a_2^*}\)</span>.  Finally, if <span class="math notranslate nohighlight">\((p_1/p_2)^W &gt; (p_1/p_2)\)</span> and <span class="math notranslate nohighlight">\((p_1/p_2)^W &gt; (p_1^*/p_2^*)\)</span> then both countries specialize in good 1, resulting in an infinite relative supply of good 1.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig3.png"
+         alt="World relative supply curve"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The world relative supply curve.
+    </figcaption>
+</figure>
+<p>To find the equilibrium world relative price, we need to bring in the relative demand goods.  Our assumption that preferences are homothetic and identical across countries guarantees there exists a well behaved downward sloping relative demand curve.  The equilibrium price obtains where world relative demand equals world relative supply.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig4.png"
+         alt="World equilibrium"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The world equilibrium.
+    </figcaption>
+</figure>
+<p>Any equilibrium world price which is in between each country’s autarky price, <span class="math notranslate nohighlight">\(p&lt;p^w&lt;p^*\)</span>, benefits both countries since each can import the good at a lower price compared to autarky.  The distribution of gains from trade change with the world price: the closer the world price is to a country’s autarky price, the less the gains from trade for that country; the further away the world price is the more the gains from trade for that country.</p>
+<p>We consider how the distribution of gains from trade are affected by both demand shocks and supply shocks.  A demand shock alters consumers’ desire for the relative consumption of good 1 for any given relative price.  Graphically, this is represented by a shift of the demand curve.  A demand shock which raises the demand for good 1, for example, shifts the demand curve rightward resulting in a higher world relative price of good 1.  This increases the gains from trade for the country producing good 1, and decreases the gains from trade for the country producing good 2.  If demand is particularly strong for one of the goods, the country that does not have a comparative advantage in that good will not gain from trade, but does not lose from trade either.</p>
+<p>A supply shock changes the amount of good each country is capable of producing.  In our model, this occurs when either <span class="math notranslate nohighlight">\(L\)</span> or <span class="math notranslate nohighlight">\(a_i\)</span> changes.  We will assume that the supply shock to <span class="math notranslate nohighlight">\(a\)</span> are small enough so that comparative advantage is not reversed.  An increase in <span class="math notranslate nohighlight">\(L\)</span> or a decrease in <span class="math notranslate nohighlight">\(a_1\)</span>, for example, shifts the supply curve to the right indicating a higher world supply of good 1.  This pushes the world price of good 1 down, thereby decreasing the gains from trade for the country producing good 1 and increasing the gains from trade for the country producing good 2.  Smaller countries, those with small <span class="math notranslate nohighlight">\(L\)</span>, are more likely to gain from trade since it requires especially small demand for its good to erase gains from trade.  Similarly, it is more likley that small countries can retain gains from trade when there are demand shocks.</p>
+</section>
+<section id="ricardian-model-with-many-goods">
+<h2>Ricardian Model with Many Goods<a class="headerlink" href="#ricardian-model-with-many-goods" title="Link to this heading">#</a></h2>
+<p>To move a bit closer to reality, let’s extend the model to include multiple goods <span class="math notranslate nohighlight">\(i=1,2,...N\)</span>.  For each good, we can calculate the ratio of Home’s unit labor requirement to Foreign’s and order them,</p>
+<div class="math notranslate nohighlight">
+\[
+a_1/a_1^* &lt; a_2/a_2^* &lt; ... &lt; a_N/a_N^*.
+\]</div>
+<p>Goods will always be produced where it cheapest to make them.  It will be cheaper to produce the good in Home if</p>
+<div class="math notranslate nohighlight">
+\[
+w a_i &lt; w^* a_i^*
+\]</div>
+<p>where <span class="math notranslate nohighlight">\((w,w^*)\)</span> are the wages at Home and Foreign.  This implies that any good which satsifies</p>
+<div class="math notranslate nohighlight">
+\[
+a_i^*/a_i &gt; w/w^*
+\]</div>
+<p>will be produced at Home.  We have already ordered the goods in terms of the ratio of Home’s unit labor requirement to Foreign’s.  Therefore, all the goods to the left of <span class="math notranslate nohighlight">\(w/w^*\)</span> will be produced at Home and the remaining goods will be produced at Foreign.</p>
+<p>The ordering captures each good’s <em>comparative advantage</em> ranking. A low value of <span class="math notranslate nohighlight">\(a_i/a_i^*\)</span> means Home is relatively efficient at producing good <span class="math notranslate nohighlight">\(i\)</span> — not necessarily in an absolute sense, but compared to how efficient Home is in other goods. Goods on the left of the ordering are those where Home’s relative productivity advantage is greatest; goods on the right are those where Foreign has the relative edge.</p>
+<p>Note that the ordering itself depends only on technology — it is independent of wages. Wages determine <em>where</em> along this fixed ranking the cutoff falls, but not the ranking itself. This separation between technology (which determines the order) and market conditions (which determine the cutoff) is a key feature of the Ricardian model.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig5.png"
+         alt="Unit labor requirements"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<figure>
+    <img src="_static/figs_ricardo/fig6.png"
+         alt="Equilibrium relative wage"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The equilibrium relative wage.
+    </figcaption>
+</figure>
+<section id="the-continuum-case">
+<h3>The Continuum Case<a class="headerlink" href="#the-continuum-case" title="Link to this heading">#</a></h3>
+<p>The discrete model with <span class="math notranslate nohighlight">\(N\)</span> goods already delivers the key insights, but the algebra becomes cleaner — and the comparative statics sharper — when we pass to a continuum of goods <span class="math notranslate nohighlight">\(z \in [0,1]\)</span>. Let <span class="math notranslate nohighlight">\(a(z)\)</span> and <span class="math notranslate nohighlight">\(a^*(z)\)</span> denote the unit labor requirements for good <span class="math notranslate nohighlight">\(z\)</span> at Home and Foreign respectively. We can always re-index goods such that the relative Home advantage,</p>
+<div class="math notranslate nohighlight">
+\[A(z) \equiv \frac{a^*(z)}{a(z)},\]</div>
+<p>is strictly decreasing: <span class="math notranslate nohighlight">\(A'(z) &lt; 0\)</span>. Goods near <span class="math notranslate nohighlight">\(z = 0\)</span> are those in which Home has the strongest comparative advantage; goods near <span class="math notranslate nohighlight">\(z = 1\)</span> are those in which Foreign has the strongest comparative advantage.</p>
+<p>For a given relative wage <span class="math notranslate nohighlight">\(w/w^*\)</span>, there exists a cutoff value <span class="math notranslate nohighlight">\(\tilde{z}\)</span> defined implicitly by
+$<span class="math notranslate nohighlight">\(A(\tilde{z}) = w/w^*\)</span>$</p>
+<p>The pattern of specialization follows immediately:</p>
+<ul class="simple">
+<li><p>Home produces good <span class="math notranslate nohighlight">\(z\)</span> if <span class="math notranslate nohighlight">\(A(z) &gt; w/w^*\)</span>, i.e. for all <span class="math notranslate nohighlight">\(z &lt; \tilde{z}\)</span>,</p></li>
+<li><p>Foreign produces good <span class="math notranslate nohighlight">\(z\)</span> if <span class="math notranslate nohighlight">\(A(z) &lt; w/w^*\)</span>, i.e. for all <span class="math notranslate nohighlight">\(z &gt; \tilde{z}\)</span>.</p></li>
+</ul>
+<p>At the cutoff good <span class="math notranslate nohighlight">\(\tilde{z}\)</span>, both countries are indifferent between producing and not producing — unit costs are equalized. Since <span class="math notranslate nohighlight">\(A(z)\)</span> is strictly decreasing, this cutoff is unique for any given <span class="math notranslate nohighlight">\(\omega\)</span>, and a higher relative wage <span class="math notranslate nohighlight">\(\omega\)</span> shifts <span class="math notranslate nohighlight">\(\tilde{z}\)</span> to the left, shrinking the range of goods produced at Home.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig7.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The decreasing schedule $A(z)$ and the relative wage $\omega$ jointly determine the cutoff $\tilde{z}$. Home specializes in goods to the left; Foreign specializes in goods to the right.
+    </figcaption>
+</figure>
+<p>Let preferences be given by the Cobb-Douglas aggregate</p>
+<div class="math notranslate nohighlight">
+\[U = \int_0^1 c(z)^{b(z)}\, dz\]</div>
+<p>where <span class="math notranslate nohighlight">\(b(z) = p(z)c(z)/Y\)</span> is the expenditure share on good <span class="math notranslate nohighlight">\(z\)</span>, with <span class="math notranslate nohighlight">\(\int_0^1 b(z)\, dz = 1\)</span>. The Cobb-Douglas structure is analytically convenient because it implies that expenditure shares <span class="math notranslate nohighlight">\(b(z)\)</span> are constant and independent of prices — a property we will use heavily below.</p>
+<p>Define the share of Home expenditure that falls on domestically produced goods as</p>
+<div class="math notranslate nohighlight">
+\[\phi(\tilde{z}) = \int_0^{\tilde{z}} b(z)\, dz.\]</div>
+<p>This is increasing in <span class="math notranslate nohighlight">\(\tilde{z}\)</span>: a larger range of Home-produced goods mechanically raises the domestic expenditure share.</p>
+<p>To determine equilibrium, we impose the condition that total Home income equals Home expenditure.
+Home income is <span class="math notranslate nohighlight">\(wL\)</span>, and Home residents spend fraction <span class="math notranslate nohighlight">\(\phi(\tilde{z})\)</span> of world income on
+Home-produced goods:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+wL &amp;= \phi(\tilde{z})\left(wL + w^* L^*\right) \\
+\omega L &amp;= \phi(\tilde{z})\left(\omega L + L^*\right) \\
+\omega &amp;= \frac{\phi(\tilde{z})}{1 - \phi(\tilde{z})} \cdot \frac{L^*}{L} \equiv f\!\left(\tilde{z},\, L^*/L\right)
+\end{align*}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega=w/w^*\)</span>.  The <span class="math notranslate nohighlight">\(f\)</span> schedule is upward-sloping in <span class="math notranslate nohighlight">\(\tilde{z}\)</span>: if the range of Home-produced goods expands at constant relative wages, demand shifts toward Home labor, creating excess demand in the Home labor market. The relative wage <span class="math notranslate nohighlight">\(\omega\)</span> must rise to restore equilibrium.</p>
+<p>An equivalent way to read the <span class="math notranslate nohighlight">\(f\)</span> schedule is as the locus of trade balance. Home exports equal <span class="math notranslate nohighlight">\((1-\phi(\tilde{z}))wL\)</span> — the share of world income spent on Home goods by Foreign residents — while Home imports equal <span class="math notranslate nohighlight">\(\phi(\tilde{z})w^*L^*\)</span>. Trade balance requires:</p>
+<div class="math notranslate nohighlight">
+\[(1 - \phi(\tilde{z}))\,wL = \phi(\tilde{z})\,w^* L^*.\]</div>
+<p>This is simply a rearrangement of the income-expenditure condition above, confirming that Walras’ Law holds: income-expenditure balance at Home implies trade balance.</p>
+<p>The full equilibrium is determined by two conditions simultaneously:</p>
+<ol class="arabic simple">
+<li><p><strong>Specialization</strong> (<span class="math notranslate nohighlight">\(A\)</span> schedule): given <span class="math notranslate nohighlight">\(\omega\)</span>, the cutoff is <span class="math notranslate nohighlight">\(\tilde{z}\)</span> such that <span class="math notranslate nohighlight">\(A(\tilde{z}) = \omega\)</span>.</p></li>
+<li><p><strong>Income balance</strong> (<span class="math notranslate nohighlight">\(f\)</span> schedule): given <span class="math notranslate nohighlight">\(\tilde{z}\)</span>, the relative wage satisfies <span class="math notranslate nohighlight">\(\omega = f(\tilde{z}, L^*/L)\)</span>.</p></li>
+</ol>
+<p>The equilibrium pair <span class="math notranslate nohighlight">\((\omega^*, \tilde{z}^*)\)</span> is found at the intersection of these two schedules, as illustrated below. The <span class="math notranslate nohighlight">\(A\)</span> schedule is decreasing (higher <span class="math notranslate nohighlight">\(\omega\)</span> shifts the cutoff left) while the <span class="math notranslate nohighlight">\(f\)</span> schedule is increasing (a larger range of Home goods requires higher <span class="math notranslate nohighlight">\(\omega\)</span> to clear the labor market). Under standard regularity conditions, the intersection is unique.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig8.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Free trade equilibrium.
+    </figcaption>
+</figure>
+<p>What are equilibrium prices? Once <span class="math notranslate nohighlight">\((\omega^*, \tilde{z}^*)\)</span> are determined, all relative goods prices follow. For two goods both produced at Home (<span class="math notranslate nohighlight">\(z, z' &lt; \tilde{z}\)</span>), relative prices reflect only domestic technology:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(z)}{p(z')} = \frac{wa(z)}{wa(z')} = \frac{a(z)}{a(z')}.\]</div>
+<p>For a Home-produced good <span class="math notranslate nohighlight">\(z &lt; \tilde{z}\)</span> relative to a Foreign-produced good <span class="math notranslate nohighlight">\(z'' &gt; \tilde{z}\)</span>, the relative wage enters:</p>
+<div class="math notranslate nohighlight">
+\[\frac{p(z)}{p(z'')} = \frac{wa(z)}{w^*a^*(z'')} = \omega^* \cdot \frac{a(z)}{a^*(z'')}.\]</div>
+<p>The full structure of relative prices is therefore pinned down by the equilibrium <span class="math notranslate nohighlight">\((\omega^*, \tilde{z}^*)\)</span> together with the technology schedules <span class="math notranslate nohighlight">\(a(z)\)</span> and <span class="math notranslate nohighlight">\(a^*(z)\)</span>.</p>
+<figure>
+    <img src="_static/figs_ricardo/fig9.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Increase in the size of Foreign's labor force.
+    </figcaption>
+</figure>
+<p>What is the effect of an increase in the relative size of Foreign?</p>
+<ul class="simple">
+<li><p>At the initial equilibrium, the increase in Foreign labor would create an excess supply of labor abroad and an excess demand for labor at home: a trade surplus.</p></li>
+<li><p>Domestic relative wages must increase to eliminate the trade surplus while at the same time raising relative unit labor costs at Home.</p></li>
+<li><p>Higher labor costs at Home implies a loss of comparative advantage and thus fewer commodities are produced domestically.</p></li>
+</ul>
+<p>What is the effect of technological improvements in Foreign?</p>
+<figure>
+    <img src="_static/figs_ricardo/fig8.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Increase in Foreign's productivity.
+    </figcaption>
+</figure>
+<p>What is the effect of technological improvements in Foreign?</p>
+<ul class="simple">
+<li><p>At the initial equilibrium, a reduction in Foreign labor costs implies fewer commodities produced at Home and a corresponding trade deficit.</p></li>
+<li><p>Domestic relative wages must decrease to eliminate the trade deficit and offsets parts of the decline in comparative advantage.</p></li>
+</ul>
+<p>What is the effect of a demand shift away from high <span class="math notranslate nohighlight">\(z\)</span> goods to low <span class="math notranslate nohighlight">\(z\)</span> goods?</p>
+<figure>
+    <img src="_static/figs_ricardo/fig9.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Demand shock toward low $z$ goods.
+    </figcaption>
+</figure>
+<ul class="simple">
+<li><p>Equilibrium relative wage rises</p></li>
+<li><p>Range of goods produced at home shrinks</p></li>
+<li><p>Although home income certainly increased, we cannot say anything about welfare since preferences have changed</p></li>
+</ul>
+<p>The Ricardian model proposes the following features of international trade:</p>
+<ul class="simple">
+<li><p>Gains from trade arise from technological differences.</p></li>
+<li><p>Each country exports the good for which it has a comparative advantage.</p></li>
+<li><p>The world equilibrium price must lie in between autarky prices.</p></li>
+<li><p>The smaller country stands to gain more from trade.</p></li>
+<li><p>More productive countries are rewarded with higher wages.</p></li>
+</ul>
+<p>The model can be extended to include:</p>
+<ul class="simple">
+<li><p>Non-traded goods</p></li>
+<li><p>Transport costs</p></li>
+<li><p>Tariffs</p></li>
+<li><p>Multiple countries (a bit difficult but we will see later in the course…)</p></li>
+</ul>
+</section>
+<section id="empirical-evidence-for-the-ricardian-model">
+<h3>Empirical Evidence for the Ricardian Model<a class="headerlink" href="#empirical-evidence-for-the-ricardian-model" title="Link to this heading">#</a></h3>
+<p>Few economists regard the Ricardian model as a complete account of the causes and consequences of
+world trade. Nevertheless, its two core principles retain considerable empirical relevance:</p>
+<ul class="simple">
+<li><p>Productivity differences are a primary determinant of the pattern of trade.</p></li>
+<li><p>It is <em>comparative</em> advantage, not absolute advantage, that governs specialization.</p></li>
+</ul>
+<p>Testing these predictions is not straightforward. One fundamental difficulty is that the growth of
+world trade and the resulting specialization means we rarely observe what countries produce badly —
+productivity in sectors that have been abandoned or never developed is simply not measured. The
+evidence must therefore be read carefully, with this selection problem in mind.</p>
+<section id="bangladesh-and-the-clothing-industry">
+<h4>Bangladesh and the Clothing Industry<a class="headerlink" href="#bangladesh-and-the-clothing-industry" title="Link to this heading">#</a></h4>
+<p>A striking illustration of comparative advantage in action is Bangladesh’s emergence as a major  clothing exporter. Bangladesh is among the least productive economies in the world in absolute terms, yet its clothing exports grew rapidly and, at their peak, were approaching China’s in scale. The Ricardian logic is clear: even though Bangladesh was less productive than China in virtually every industry, its  productivity disadvantage was far smaller in clothing than elsewhere. Comparative
+advantage, not absolute productivity, determined the pattern of specialization.</p>
+<figure>
+    <img src="_static/figs_ricardo/Emp_Ricardo.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    The world relative supply curve.
+    </figcaption>
+</figure>
+</section>
+<section id="macdougall-1951-us-and-uk-export-performance">
+<h4>MacDougall (1951): US and UK Export Performance<a class="headerlink" href="#macdougall-1951-us-and-uk-export-performance" title="Link to this heading">#</a></h4>
+<p>The earliest and most influential direct test of the Ricardian model was conducted by MacDougall (1951), who compared the export performance of the United States and the United Kingdom in the immediate post-war period. The setting was well-suited to the theory: American labor productivity exceeded British productivity in nearly every sector, giving the US an absolute advantage across the board, yet British exports remained roughly comparable in scale to American exports. This implied that Britain must have held a comparative advantage in some industries — and the Ricardian model predicts precisely which ones: those where America’s productivity lead was relatively
+<em>smaller</em>.</p>
+<p>MacDougall found strong support for this prediction. Across a range of industries, the US tended to capture a larger export share in sectors where its productivity advantage over the UK was greatest, and Britain held its own in sectors where the productivity gap was narrower.</p>
+<figure>
+    <img src="_static/figs_ricardo/Emp_Ricardo3.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    MacDougall (1951). *British and American Exports: A Study Suggested by the Theory of Comparative Costs.*
+    </figcaption>
+</figure>
+</section>
+<section id="golub-1995-and-golub-and-hsieh-2000-broader-cross-country-evidence">
+<h4>Golub (1995) and Golub and Hsieh (2000): Broader Cross-Country Evidence<a class="headerlink" href="#golub-1995-and-golub-and-hsieh-2000-broader-cross-country-evidence" title="Link to this heading">#</a></h4>
+<p>Golub (1995) extended this line of research by examining relative unit labor costs — the ratio of wages to labor productivity — as a predictor of export performance. Using data on bilateral trade between the US and several major economies (the UK, Japan, Germany, Canada, and Australia), Golub found that sectors in which a country had relatively low unit labor costs tended to be precisely the sectors in which that country held a comparative export advantage. This is consistent with the Ricardian prediction that cost competitiveness, driven by relative productivity, shapes the pattern
+of trade.</p>
+<figure>
+    <img src="_static/figs_ricardo/Emp_Ricardo4.png"
+         alt="World relative supply curve"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    Golub (1995): relative unit labor costs and relative export performance across industries and country pairs.
+    </figcaption>
+</figure>
+<p>These findings were subsequently confirmed and extended by Golub and Hsieh (2000), who applied more systematic econometric methods to a broader dataset, reinforcing the conclusion that Ricardian-style productivity differences are a robust predictor of trade patterns.</p>
+</section>
+<section id="limitations-and-the-need-for-richer-models">
+<h4>Limitations and the Need for Richer Models<a class="headerlink" href="#limitations-and-the-need-for-richer-models" title="Link to this heading">#</a></h4>
+<p>Taken together, the empirical literature provides reasonably consistent support for the Ricardian model’s core prediction: comparative productivity advantage shapes the pattern of specialization and trade. However, the model’s quantitative fit is imperfect, and several real-world frictions fall outside its scope entirely:</p>
+<ul class="simple">
+<li><p><strong>Imperfect competition</strong>: many traded goods markets are dominated by a small number of large   firms, and pricing departs substantially from the competitive benchmark.</p></li>
+<li><p><strong>Wage rigidity</strong>: the model assumes wages adjust freely to clear labor markets, but nominal and real wage rigidities can slow or distort the adjustment process.</p></li>
+<li><p><strong>Labor immobility</strong>: the model treats labor as perfectly mobile across industries within a  country, whereas in practice workers face significant barriers — geographic, occupational,  and sectoral — to reallocation.</p></li>
+</ul>
+<p>These limitations do not invalidate the Ricardian framework as a first approximation, but they do suggest that a fuller account of trade patterns, factor market adjustment, and the distributional consequences of trade requires richer models — some of which we will encounter later in the course.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">International Trade</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ek-model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Eaton and Kortum Model of Trade</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivating-numerical-example">Motivating Numerical Example</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-advantage">Absolute Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-advantage">Comparative Advantage</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ricardian-model">The Ricardian Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ricardian-model-with-many-goods">Ricardian Model with Many Goods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-continuum-case">The Continuum Case</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empirical-evidence-for-the-ricardian-model">Empirical Evidence for the Ricardian Model</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bangladesh-and-the-clothing-industry">Bangladesh and the Clothing Industry</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macdougall-1951-us-and-uk-export-performance">MacDougall (1951): US and UK Export Performance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#golub-1995-and-golub-and-hsieh-2000-broader-cross-country-evidence">Golub (1995) and Golub and Hsieh (2000): Broader Cross-Country Evidence</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-the-need-for-richer-models">Limitations and the Need for Richer Models</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>OLG Model with a Risky Asset &#8212; My Money and Banking Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'olg-model-risk';</script>
+    <link rel="canonical" href="/money-and-banking-book/olg-model-risk.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Money and Banking Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overlapping Generations Model of Money and Banking</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="olg_model.html">OLG Model of Money, Inflation, and Assets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-model-details.html">Technical Details of our OLG Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="olg-expectations.html">The Role of Expectations in OLG Dynamics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-aggregates-data-tutorial.html">Monetary Aggregates Data Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monetary-facts.html">Some Empirical Monetary Facts</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="government-money.html">Government Spending and Monetary Policy</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="olg-government-example.html">An Example of a Monetary OLG Model with a Government</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="olg-banking.html">OLG Model of Banking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diamond-dybvig.html">Diamond-Dybvig Model of Banking</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bank Balance Sheets</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bank-balance-sheets.html">Bare Bones of Bank Balance Sheets</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interbank Market and Monetary Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="term-structure-of-interest-rates.html">Term Structure of Interest Rates</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="yield-curve-data-tutorial.html">Yield Curve Data Tutorial</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="monetary-policy-systems.html">Market for Reserves and Monetary Policy Systems</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A Simple Model of Monetary Policy Transmission</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="measuring-business-cycles.html">Measuring Business Cycles</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="simple-macro-model.html">A Simple Macro Model of Monetary Policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/olg-model-risk.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>OLG Model with a Risky Asset</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-with-a-risky-asset">Portfolio Choice with a Risky Asset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-with-log-utility">An Example with Log Utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endogenizing-the-rate-of-the-return-on-the-risky-asset">Endogenizing the Rate of the Return on the Risky Asset</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="olg-model-with-a-risky-asset">
+<h1>OLG Model with a Risky Asset<a class="headerlink" href="#olg-model-with-a-risky-asset" title="Link to this heading">#</a></h1>
+<p>According to the rate of return dominance principle, if assets are identical in terms of their liquidity and risk then agents should only hold the asset with the higher rate of return.  An implication of this principle is that multiple assets are held in equilibrium if and only if they generate the same rate of return.</p>
+<p>We now break the assumption that assets are equivalent in terms of risk.  This allows both assets to be held in equilibrium even when the risky asset pays a higher <em>expected rate of return</em> compared to fiat currency.</p>
+<section id="portfolio-choice-with-a-risky-asset">
+<h2>Portfolio Choice with a Risky Asset<a class="headerlink" href="#portfolio-choice-with-a-risky-asset" title="Link to this heading">#</a></h2>
+<p>Suppose there is a risky asset whose real returns <span class="math notranslate nohighlight">\(R\)</span> are a random variable with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>.  An young agent who purchases <span class="math notranslate nohighlight">\(a\)</span> units of the asset enjoys consumption <span class="math notranslate nohighlight">\(aR\)</span> when old.  This is in contrast to fiat currency which pays a rate of return <span class="math notranslate nohighlight">\(\nu_{t+1}/\nu_t\)</span> with certainty.</p>
+<p>To highlight the role of risk in determining the optimal portfolio we assume, without loss of generality, that agents only value consumption when old so that lifetime utility is given by</p>
+<div class="math notranslate nohighlight">
+\[
+U = u(c_{2,t+1})
+\]</div>
+<p>Agents must decide how much of their wealth <span class="math notranslate nohighlight">\(y\)</span> to invest in fiat currency and the risky asset to maximize their <em>expected utility</em>.  The problem is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max &amp;\hspace{2mm} \mathbb{E}[u(c_{2,t+1})] \\
+\text{s.t.} \quad &amp;\nu_t m_t+a_t \leq y \\
+&amp;c_{2,t+1}=\nu_{t+1}m_t+a_tR_t
+\end{align}
+\end{split}\]</div>
+<p>where we set <span class="math notranslate nohighlight">\(c_{1,t}=0\)</span> in the budget constraint of the young since agents do not value consumption when young.  The problem is equivalently expressed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max &amp;\mathbb{E}[u(q_t(\nu_{t+1}/\nu_t) +a_tR_t)] \\
+\text{s.t.} \quad &amp; q_t+a_t \leq y
+\end{align}
+\end{split}\]</div>
+<p>Agents are simply maximizing the expected utility of their portfolio subject to a wealth constraint.  The problem agents face is that the rate of return <span class="math notranslate nohighlight">\(R\)</span> is uncertain.  Moreover, so long as agents are risk averse we have that <span class="math notranslate nohighlight">\(\mathbb{E}[u(c)]&lt;u(\mathbb{E}[c])\)</span> so that agents don’t only care about expected returns, but also the degree of uncertainty over those returns.  We can formally disentangle the role of expected return and risk in the following way.</p>
+<p>Let <span class="math notranslate nohighlight">\(X_t \equiv q_t(\nu_{t+1}/\nu_t) +a_t\mathbb{E}[R_t]\)</span> be the expected return on the portfolio and let <span class="math notranslate nohighlight">\(\epsilon \equiv a_t(R_t-\mathbb{E}_t[R])\)</span> denote how much the realized rate of return differs from its expected value.  Of course we have that <span class="math notranslate nohighlight">\(\mathbb{E}[\epsilon]=0\)</span> so it is a zero-mean risk component of the asset.  The household objective can be written as</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[u(X_t+\epsilon_t)]
+\]</div>
+<p>We now consider a second-order Taylor expansion around <span class="math notranslate nohighlight">\(R=\mathbb{E}[R]\)</span>, or <span class="math notranslate nohighlight">\(\epsilon=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[u(X_t+\epsilon_t)] = u(X_t)+u'(X_t)\underbrace{\mathbb{E}[\epsilon]}_{0}+\frac{1}{2}u''(X_t)\underbrace{\mathbb{E}[\epsilon^2]]}_{a^2Var[R]}
+\]</div>
+<p>Notice that the second term in the Taylor expansion reduces to zero while the third term is precisely the variance of <span class="math notranslate nohighlight">\(R\)</span>.  We therefore have that</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}[u(c_{2,t+1})]=u(X_t)+\frac{1}{2}u''(X_t)a_t^2 Var(R_t), \quad X_t=q_t(\nu_{t+1}/\nu_t) +a_t\mathbb{E}[R_t]
+\]</div>
+<p>This decomposes the expected utility of a portfolio into a component driven by expected returns (<span class="math notranslate nohighlight">\(X\)</span>) and a component which captures risk (<span class="math notranslate nohighlight">\(Var(R)\)</span>).  The problem of the individual is therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max \hspace{2mm} &amp;u(X_t)+\frac{1}{2}u''(X_t)a_t^2 Var(R_t) \\
+\text{s.t.} \quad  X_t &amp;=q_t(\nu_{t+1}/\nu_t) +a_t\mathbb{E}[R_t] \\
+q_t+a_t &amp;\leq y
+\end{align}
+\end{split}\]</div>
+</section>
+<section id="an-example-with-log-utility">
+<h2>An Example with Log Utility<a class="headerlink" href="#an-example-with-log-utility" title="Link to this heading">#</a></h2>
+<p>In order to provide a concrete example, let’s use log utility <span class="math notranslate nohighlight">\(u(c)=\log(c)\)</span>.  In this case the problem of a household is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max \hspace{2mm} &amp;\log(X_t) - \frac{1}{2}\frac{a^2 Var(R)}{X^2} \\
+\text{s.t.} \quad  X_t &amp;=q_t(\nu_{t+1}/\nu_t) +a_t\mathbb{E}[R_t] \\
+q_t+a_t &amp;\leq y
+\end{align}
+\end{split}\]</div>
+<p>Simplify the problem by substituting the income constraint into the definition of the portfolio to say <span class="math notranslate nohighlight">\(X=(y-a_t)(\nu_{t+1}/\nu_t)+a_t\mathbb{E}[R_t]\)</span> and define <span class="math notranslate nohighlight">\(\mu=\mathbb{E}[R]-\nu_{t+1}/\nu_t\)</span> as the excess return of the risky asset over money.  These simplifications allow us to write the problem as</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\max_{a} \hspace{2mm} \log \left( (\nu_{t+1}/\nu_t)y+\mu a \right)-\frac{1}{2}\frac{a^2 Var(R)}{\left( (\nu_{t+1}/\nu_t)y+\mu a\right)^2}
+\end{align}
+\]</div>
+<p>The first-order condition to this problem is</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mu}{X}=\frac{a Var(R)}{X^2}-\frac{a^2 Var(R)\mu}{X^3}
+\]</div>
+<p>As a decent approximation, we drop the final term to say</p>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{\mu}{Var(R)}X
+\]</div>
+<p>The numerator captures the fact that higher excess returns encourage the agent to allocate more of their portfolio into the risky asset, but the denominator shows that more risk discourages investment in the risky asset.</p>
+<p>Substituting out <span class="math notranslate nohighlight">\(X\)</span> gives us a closed form expression for optimal investment in the risky asset:</p>
+<div class="math notranslate nohighlight">
+\[
+a = \frac{\mu}{\sigma^2}\left(q_t(\nu_{t+1}/\nu_t) +a_t\mathbb{E}[R_t]\right)
+\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[
+a = \left( \mathbb{E}[R]-\mu \right) \left( \frac{\mu y}{\sigma^2-\mu^2}\right)
+\]</div>
+<p>and therefore amount of real money demand is simply</p>
+<div class="math notranslate nohighlight">
+\[
+\nu_t m_t = y-a_t
+\]</div>
+<p>It is sufficient that <span class="math notranslate nohighlight">\(\sigma^2&lt;\mu^2\)</span> for <span class="math notranslate nohighlight">\(\partial a/\partial \mu&gt;0\)</span>.  That is, so long as the risky asset has a standard deviation lower than the expected excess return, agents invest more in the risky when it’s excess returns rise.</p>
+<p>We now have a link between money creation and risk taking in the economy.  If the government increases the growth rate of money supply, this lowers the rate of return on money (<span class="math notranslate nohighlight">\(\downarrow \nu_{t+1}/\nu_t\)</span>) and thereby increases the excess returns from the risky asset (<span class="math notranslate nohighlight">\(\uparrow \mu\)</span>).  Agents invest more in the risky asset and less in currency.  Similar logic suggests a link between the fundamentals underlying the risky asset and the value of money.  If the average returns of the risky asset fall or the standard deviation of the asset rises, individuals rellocate their portfolio away from the risky asset and toward fiat currency.  This implying a higher demand for fiat currency and hence a higher equilibrium value.</p>
+</section>
+<section id="endogenizing-the-rate-of-the-return-on-the-risky-asset">
+<h2>Endogenizing the Rate of the Return on the Risky Asset<a class="headerlink" href="#endogenizing-the-rate-of-the-return-on-the-risky-asset" title="Link to this heading">#</a></h2>
+<p>The analysis thus far has taken the rate of return on the risky asset as given.  In reality, the rate of return on risky assets (e.g. equities) are determined by the price they trade at which equates the demand for that asset to it’s supply.  Consider the risky asset as an equity share in a firm.  The share entitles the holder to a stream of dividends <span class="math notranslate nohighlight">\(d\)</span> which are generated by the profits of the firm.  This stream of dividends is uncertain though, because firms are constantly hit by random shocks which generates random profits.  The holder of the share can sell the share in the secondary market at price <span class="math notranslate nohighlight">\(p^e\)</span>.  The rate of return on the share is</p>
+<div class="math notranslate nohighlight">
+\[
+R_{t+1}^e = \frac{p^e_{t+1}+d_{t+1}}{p_t^e} 
+\]</div>
+<p>The price that the asset sells for in the secondary market is determined in equilibrium by equating the supply of that asset to it’s demand.  Hence, the rate of return <span class="math notranslate nohighlight">\(R^e\)</span> is endogenous.</p>
+<p>For clarity, we will continue using log perferences so that the problem facing an individual is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max &amp;\mathbb{E}[\log c_{2,t+1}] \\
+\text{s.t.} \quad &amp;\nu_t m_t + p^e_t a_t = y \\
+&amp; c_{2,t+1} = \nu_{t+1}m_t+(p^e_{t+1}+d_{t+1})a_t
+\end{align}
+\end{split}\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#portfolio-choice-with-a-risky-asset">Portfolio Choice with a Risky Asset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-with-log-utility">An Example with Log Utility</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#endogenizing-the-rate-of-the-return-on-the-risky-asset">Endogenizing the Rate of the Return on the Risky Asset</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

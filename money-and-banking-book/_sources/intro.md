@@ -39,7 +39,7 @@ Below is a table of contents for the course content.  This table of contents can
 
 ### Resources
 - [Syllabus (PDF)](../money%20and%20banking/syllabus.pdf)  
-- [Additional readings](../assets/readings.html)
+- [Syllabus (PDF)](../assets/readings.html)
 
 ---
 

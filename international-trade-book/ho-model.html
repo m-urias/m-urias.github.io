@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Heckscher-Ohlin Model of Trade &#8212; My International Trade Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ho-model';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Empirical Tests of the Heckscher-Ohlin Theory" href="ho-empirical.html" />
+    <link rel="prev" title="Eaton and Kortum Model of Trade" href="ek-model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My International Trade Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classical Models of International Trade</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ricardian-model.html">Ricardian Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ek-model.html">Eaton-Kortum Model of Trade</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Heckscher-Ohlin Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ho-empirical.html">Empirical Tests of HO Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specific-factors-model.html">Specific Factors Model of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classical-trade-growth.html">Growth in the Classical Models of Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RCA.html">Revealed Comparative Advantage</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">New Trade Theory</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-trade-theory.html">Economies of Scale and Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="melitz-model.html">Inter- and Intra-Industry Trade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trade-data-tutorial.html">Trade Data Tutorial</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">International Trade Policy</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="trade-policy.html">Tariffs and Trade policy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ho-model.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Heckscher-Ohlin Model of Trade</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-environment">The Heckscher-Ohlin Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-function">The Production Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-possibilities-frontier">The Production Possibilities Frontier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-economy-operate-on-the-ppf">Where Does the Economy Operate on the PPF?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relative-supply-curve">The Relative Supply Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autarky-equilibrium-prices">Autarky Equilibrium Prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-glance-at-how-factor-endowments-matter">A First Glance at how Factor Endowments Matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firms-employment-of-factors">Firms’ Employment of Factors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-factor-prices">Equilibrium Factor Prices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-price-insensitivity-and-factor-intensity-reversals">Factor Price Insensitivity and Factor Intensity Reversals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-goods-prices-to-factor-prices-the-fg-curve">From Goods Prices to Factor Prices: The <span class="math notranslate nohighlight">\(FG\)</span> Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-winners-and-losers-from-trade">The Winners and Losers from Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-amplification-effect">The Amplification Effect</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-pattern-of-trade">Predicting the Pattern of Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-many-goods-factors-and-countries">Extension to Many Goods, Factors, and Countries</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trade-and-the-distribution-of-income">Trade and the Distribution of Income</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-contemporary-illustration-uschina-trade">A Contemporary Illustration: US–China Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-price-equalization">Factor Price Equalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-factor-price-equalization-fails-in-practice">Why Factor Price Equalization Fails in Practice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="the-heckscher-ohlin-model-of-trade">
+<h1>The Heckscher-Ohlin Model of Trade<a class="headerlink" href="#the-heckscher-ohlin-model-of-trade" title="Link to this heading">#</a></h1>
+<p>The Heckscher-Ohlin (HO) model shows how countries’ resources, such as labor and capital, determine their comparative advantage and pattern of trade.  This is an alternative story to that of the Ricardian model which assumes the source of comparative advantage is differences in productivity.  In the real world, however, trade also reflects differences in a countries’ resources. For example, Canada’s forest industry is export-oriented due to its vast forest resources relative to its small population, not because it’s lumberjacks are especially productive.   Canada has one of the largest forested areas in the world, similar in size to the United States, but with a population approximately one-tenth the size of the U.S.  As a result, Canadian lumber production of approximately 20 billion board feet in 2024 exceeds domestic consumption of about 7 billion board feet, creating a surplus which is directed toward export markets.  The U.S. remains the dominant market, absorbing over 80% of Canadian softwood lumber exports by volume, with the value of these exports exceeding $8 billion annually.   This trade pattern is driven by resource availability, not superior productivity of Canadian forestry.</p>
+<p>Although it is not surprising that a country with an abundance of forest resources, or oil, or any other natural commodity tends to export it; the HO theory offers a counterintuitive insight: trade in goods offers an indirect mechanism to exchange factors of production.  The HO model reminds us that goods are really bundles of factors services (labor, capital, land), so that an international shipment of goods is an indirect transfer of otherwise immobile factor services.  The source of comparative advantage therefore stems from the relative <strong>abundance</strong> of resources in concert with how <strong>intensively</strong> a country’s technology uses those resources to produce certain goods.  A country abundant in labor, tends to exports goods which disproportionately rely on labor services.  Exporting such goods is an indirect way of exporting its domestic labor services to the rest of the world which has the effect of increasing wages.  Under certain conditions, this indirect trade in resources can eliminate all differences in factor prices between countries–a phenonema known as factor price equalization.</p>
+<p>This movement in factor prices implies that trade effects <em>the distribution of income</em> within a country: some people are made better off from trade, and some are made worse off.  This is especially relevant for policy discussions regarding how trade may hurt workers in certain sectors.</p>
+<section id="the-heckscher-ohlin-environment">
+<h2>The Heckscher-Ohlin Environment<a class="headerlink" href="#the-heckscher-ohlin-environment" title="Link to this heading">#</a></h2>
+<p>We consider the following environment:</p>
+<ul class="simple">
+<li><p>Two countries: Home and Foreign</p></li>
+<li><p>Two goods: <span class="math notranslate nohighlight">\(i = 1,2\)</span></p></li>
+<li><p>Two factors: labor (<span class="math notranslate nohighlight">\(L, L^*\)</span>) and capital (<span class="math notranslate nohighlight">\(K,K^*\)</span>)</p></li>
+</ul>
+<section id="the-production-function">
+<h3>The Production Function<a class="headerlink" href="#the-production-function" title="Link to this heading">#</a></h3>
+<p>Compared to the Ricardian model, the only difference is that there are now two factors of production instead of one.  It turns out that this small changes makes a big difference!  With two inputs, firms have many different possible methods of producing goods.  We describe how inputs are transformed into goods using a <strong>production function.</strong></p>
+<div class="math notranslate nohighlight">
+\[
+y_i = f_i(L_i,K_i)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(y_i\)</span> is the amount of good produced using labor <span class="math notranslate nohighlight">\(L_i\)</span> and capital <span class="math notranslate nohighlight">\(K_i\)</span>.  The production function is assumed to be increasing, concave, and homogeneous of degree one.  One such production function is the Cobb-Douglas production function</p>
+<div class="math notranslate nohighlight">
+\[
+y = A L^{\alpha}K^{1-\alpha}
+\]</div>
+<p>Below is a three-dimensional plot of the Cobb-Douglas production function with <span class="math notranslate nohighlight">\(A=1\)</span> and <span class="math notranslate nohighlight">\(\alpha=0.5\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cobb_douglas</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">L</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">K</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+
+<span class="c1"># Cobb–Douglas surface</span>
+<span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">L_grid</span><span class="p">,</span> <span class="n">K_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
+<span class="n">Y_grid</span> <span class="o">=</span> <span class="n">cobb_douglas</span><span class="p">(</span><span class="n">L_grid</span><span class="p">,</span> <span class="n">K_grid</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">L_grid</span><span class="p">,</span> <span class="n">K_grid</span><span class="p">,</span> <span class="n">Y_grid</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Labor (L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Capital (K)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s2">&quot;Output (Y)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Cobb–Douglas Production Surface&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/77a3d044712b471ecab7b4894bc823ea1519deb49a310f0b0b4a80e13691d30b.png" src="_images/77a3d044712b471ecab7b4894bc823ea1519deb49a310f0b0b4a80e13691d30b.png" />
+</div>
+</div>
+<p>Any point on the floor of the diagram picks a specific combination of labor and capital.  The value of the production surface at that point–the height of the graph–determines how much output is produced with the given labor and capital.  The fact that the production function is increasing means that if firms use more labor or more capital they produce more output.  Notice that for any given level of output <span class="math notranslate nohighlight">\(y\)</span>, there exists many different combinations of labor <span class="math notranslate nohighlight">\(L_i\)</span> and capital <span class="math notranslate nohighlight">\(K_i\)</span> that can achieve this.  Graphically, we fix the value of <span class="math notranslate nohighlight">\(y\)</span>–the height of our three-dimensional surface–and observe the resulting combinations of <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(K\)</span> which produce <span class="math notranslate nohighlight">\(y\)</span>.  We are horizontally “slicing” our surface at a particular height, and recording the different amounts of capital and labor and produce that appear on the floor.</p>
+<p>The resulting curves are called <strong>isoquants</strong>: different combinations of inputs which generate a fixed level of output.  Below are the isoquants for the Cobb-Douglas function we are considering.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">CS</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">L_grid</span><span class="p">,</span> <span class="n">K_grid</span><span class="p">,</span> <span class="n">Y_grid</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">CS</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Labor (L)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Capital (K)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Isoquants of Cobb–Douglas Production&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/a54d7c6465358482c0769d88ade9b4add64d5285bad4e339040ddc3f84d0f35d.png" src="_images/a54d7c6465358482c0769d88ade9b4add64d5285bad4e339040ddc3f84d0f35d.png" />
+</div>
+</div>
+<p>Curves further from the origin represent higher levels of output <span class="math notranslate nohighlight">\(y\)</span>.  We can see that firms may choose to produce <span class="math notranslate nohighlight">\(y\)</span> using a lot of capital with little labor; a lot of labor with little capital, or some intermediate combination of the two.  It remains to be seen what combination a firm <em>actually</em> chooses, but we can anticipate that it will depend on the cost of employing labor and the cost of using capital.  Before we discuss the solution to this problem, let’s investigate why the curves are themselves convex to the origin.</p>
+<p>Recall that we assume our production function <span class="math notranslate nohighlight">\(y_i = f_i(L_i,K_i)\)</span> is concave.  Economically, this means that the production process exhibits <strong>diminishing marginal products</strong>: each additional unit of input yields less extra output.  The marginal products of labor and capital are</p>
+<div class="math notranslate nohighlight">
+\[
+MPL=\frac{\partial y_i}{\partial L_i} \qquad MPK = \frac{\partial y_i}{\partial K_i}
+\]</div>
+<p>Below we plot these marginal products.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_fixed</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">L_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">MP_L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">cobb_douglas</span><span class="p">(</span><span class="n">L_vals</span><span class="p">,</span> <span class="n">K_fixed</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">L_vals</span><span class="p">,</span> <span class="n">MP_L</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Marginal Product of Labor&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Labor (L)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Marginal Product of Labor (MPL)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">L_fixed</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">K_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">MP_K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">cobb_douglas</span><span class="p">(</span><span class="n">L_fixed</span><span class="p">,</span> <span class="n">K_vals</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">K_vals</span><span class="p">,</span> <span class="n">MP_K</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Marginal Product of Capital&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Capital (K)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Marginal Product of Capital (MPK)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/cb31c83ffb81b394dc5914b4fe9bf14f170aa7645827f3b249de171fdf1f7953.png" src="_images/cb31c83ffb81b394dc5914b4fe9bf14f170aa7645827f3b249de171fdf1f7953.png" />
+<img alt="_images/677900da3aa4f5d740a2bd01d2ed300fccb2fca770766b66a665cd6a8e81e533.png" src="_images/677900da3aa4f5d740a2bd01d2ed300fccb2fca770766b66a665cd6a8e81e533.png" />
+</div>
+</div>
+<p>While additional units of either labor or capital always generate extra output (<span class="math notranslate nohighlight">\(MPL&gt;0,MPK&gt;0\)</span>), they do so at a diminishing rate.  Said simply, the 100th worker is not as productive as the 1st worker, holding capital constant.</p>
+<p>When we say that the production function is homogeneous of degree 1, economically this is called constant returns to scale: if we double the amount of all inputs, then we generate double the amount of output.  Formally, a function is homogenous of degree <span class="math notranslate nohighlight">\(k\)</span> if it satisfies</p>
+<div class="math notranslate nohighlight">
+\[
+f(\lambda x)=\lambda^{k}f(x)
+\]</div>
+<p>Homogeneity of degree 1 is therefore <span class="math notranslate nohighlight">\(k=1\)</span> so that, for example, doubling the amount of inputs generates twice as much output: <span class="math notranslate nohighlight">\(f(2K,2L)=2f(K,L)\)</span>.  Below we simply plot the amount of output generated for different values of <span class="math notranslate nohighlight">\(\lambda\)</span> under constant returns to scale <span class="math notranslate nohighlight">\(k=1\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L0</span><span class="p">,</span> <span class="n">K0</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">t_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">scaled_output</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">cobb_douglas</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">L0</span><span class="p">,</span> <span class="n">t</span><span class="o">*</span><span class="n">K0</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+
+<span class="n">Y_vals</span> <span class="o">=</span> <span class="n">scaled_output</span><span class="p">(</span><span class="n">t_vals</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_vals</span><span class="p">,</span> <span class="n">Y_vals</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Scale factor (t)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Output Y(t L, t K)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Constant Returns to Scale&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/d9390132fcf4e9a1670053b35c9ef8cc0e2385f7ffaa53fe8de7672a6bd25353.png" src="_images/d9390132fcf4e9a1670053b35c9ef8cc0e2385f7ffaa53fe8de7672a6bd25353.png" />
+</div>
+</div>
+</section>
+<section id="the-production-possibilities-frontier">
+<h3>The Production Possibilities Frontier<a class="headerlink" href="#the-production-possibilities-frontier" title="Link to this heading">#</a></h3>
+<p>Lastly, we want to show what are all the possible combinations of output for two different goods given some amount of fixed labor <span class="math notranslate nohighlight">\(L\)</span> and capital <span class="math notranslate nohighlight">\(K\)</span>, assuming that both factors are fully mobile between the two industries.  Denote by <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> the goods to be produced so that the production technologies are described by,</p>
+<div class="math notranslate nohighlight">
+\[X = F_X (K_X, L_X)\]</div>
+<div class="math notranslate nohighlight">
+\[Y = F_Y (K_Y, L_Y)\]</div>
+<p><strong>Factor market clearing</strong> tells us that labor used in production must equal total labor supply, and capital used in production must equal total capital stock:</p>
+<div class="math notranslate nohighlight">
+\[L_X+L_Y = L, \qquad K_X +K_Y = K\]</div>
+<p>We seek to understand all the feasible production plans for the two goods.  Formally, we can deduce this by maximizing the amount of good <span class="math notranslate nohighlight">\(Y\)</span> produced for a given level of good <span class="math notranslate nohighlight">\(X\)</span>. Formally, we write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\max_{K_Y,L_Y} \hspace{2mm} &amp;F_Y (K_Y, L_Y) \\
+\text{s.t.} \quad &amp; X = F (K_X, L_X) \\
+&amp; K = K_X + K_Y \\
+&amp; L = L_X + L_Y
+\end{align}
+\end{split}\]</div>
+<p>This constrained optimization problem can be solved using the Lagrangian:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L} = F_Y (K_Y, L_Y) + \lambda (F_X (K_X, L_X) − X) + \mu_K (K_X + K_Y − K) + \mu_L (L_X + L_Y − L)
+\]</div>
+<p>The first-order conditions obtain</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\partial\mathcal{L}/\partial K_X: 0 &amp;= \lambda \partial F_X (K_X, L_X)/\partial K_X + \mu_K \\
+\partial\mathcal{L}/\partial L_X: 0 &amp;= \lambda \partial F_X (K_X, L_X)/\partial L_X + \mu_L \\
+\partial\mathcal{L}/\partial K_Y: 0 &amp;= \partial F_Y(K_Y, L_Y)/\partial K_Y + \mu_K \\
+\partial\mathcal{L}/\partial L_Y: 0 &amp;= \partial F_Y(K_Y, L_Y)/\partial L_Y + \mu_L 
+\end{align}
+\end{split}\]</div>
+<p>Substituting out the Lagrange multipliers <span class="math notranslate nohighlight">\(\mu_K\)</span> and <span class="math notranslate nohighlight">\(\mu_L\)</span> from the four equations,</p>
+<div class="math notranslate nohighlight">
+\[\partial F_Y (K_y, L_y)/\partial K_Y = \lambda \partial F_X(K_x, L_x)/\partial K_X\]</div>
+<div class="math notranslate nohighlight">
+\[\partial F_Y(K_y, L_y)/\partial L_Y = \lambda \partial F_X (K_x, L_y)/\partial L_X\]</div>
+<p>Dividing the second equation by the first, we get:</p>
+<div class="math notranslate nohighlight">
+\[\frac{H_L (K_y, L_y)}{H_K (K_y, L_y)} = \frac{F_L (K_x, L_x)}{F_K (K_x, L_x)}\]</div>
+<p>By the factor market clearing conditions, this becomes:</p>
+<div class="math notranslate nohighlight">
+\[\frac{H_L (K − K_x, L − L_x)}{H_K (K − K_x, L − L_x)} = \frac{F_L (K_x, L_x)}{F_K (K_x, L_x)}\]</div>
+<p>By definition, <span class="math notranslate nohighlight">\(\partial F_Y(K_y, L_y)/\partial L_Y\)</span> is <strong><span class="math notranslate nohighlight">\(MPL_Y\)</span></strong> and <span class="math notranslate nohighlight">\(\partial F_Y (K_y, L_y)/\partial K_Y\)</span> is <strong><span class="math notranslate nohighlight">\(MPK_y\)</span></strong> (and similarly for the <span class="math notranslate nohighlight">\(X\)</span> sector)</p>
+<p>Then the above equation is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{MPL_y}{MPK_y} = \frac{MPL_x}{MPK_x}\]</div>
+<p>The <strong>marginal rate of technical substitution (RTS)</strong> for some good <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(RTS_i = −\frac{MPL_i}{MPK_i}\)</span>. Then the above equation is equivalent to:</p>
+<div class="math notranslate nohighlight">
+\[RTS_y = RTS_x\]</div>
+<p>This equality is evaluated subject to factor market clearing.</p>
+<p>We now derive the PPF for a Cobb Douglas production of the form:</p>
+<div class="math notranslate nohighlight">
+\[X = K_X^{\alpha}L_X^{1-\alpha}\]</div>
+<div class="math notranslate nohighlight">
+\[Y = K_Y^{\beta}L_Y^{1-\beta}\]</div>
+<p>First, let’s list all the marginal products for a Cobb-Douglas production function:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+MPK_X=\alpha \left( \frac{L_X}{K_X} \right)^{1-\alpha}
+MPL_X=(1-\alpha)\left( \frac{K_X}{L_x} \right)^{\alpha}
+MPK_Y = \beta \left( \frac{L_Y}{K_Y} \right)^{1-\beta}
+MPL_Y = (1-\beta)\left( \frac{K_Y}{L_Y} \right)^\beta
+\end{align}
+\]</div>
+<p>We can use these to compute the marginal rate of technical substitution for both <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> and equate them:</p>
+<div class="math notranslate nohighlight">
+\[
+RTS_X = -\frac{MPL_X}{MPK_X}=-\frac{1-\alpha}{\alpha}\left( \frac{K_X}{L_X} \right) = -\frac{1-\beta}{\beta}\left( \frac{K_Y}{L_Y} \right)=RTS_Y
+\]</div>
+<p>Finally, we apply factor market clearing</p>
+<div class="math notranslate nohighlight">
+\[K_X+K_Y=K\]</div>
+<div class="math notranslate nohighlight">
+\[L_X+L_Y=L\]</div>
+<p>to write</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{1-\alpha}{\alpha} \right) \left( \frac{K_X}{L_X} \right)=\left( \frac{\beta}{1-\beta} \right)\left( \frac{K-K_X}{L-L_X} \right)
+\]</div>
+<p>Solving for <span class="math notranslate nohighlight">\(L_X\)</span> obtains</p>
+<div class="math notranslate nohighlight">
+\[
+L_X=\frac{\Lambda K_X L}{K-K_X+\Lambda K_X}, \quad \Lambda= \left( \frac{1-\alpha}{\alpha} \right)\left( \frac{\beta}{1-\beta} \right)
+\]</div>
+<p>At this point, we can describe the amount of output <span class="math notranslate nohighlight">\(X\)</span> for a given <span class="math notranslate nohighlight">\(K_X\)</span> since <span class="math notranslate nohighlight">\(X = K_X^{\alpha}L_X^{1-\alpha}\)</span>.</p>
+<p>Similarly, we can use factor market clearing for the <span class="math notranslate nohighlight">\(Y\)</span> sector to write</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{1-\alpha}{\alpha} \right) \left( \frac{K-K_Y}{L-L_Y} \right)=\left( \frac{\beta}{1-\beta} \right)\left( \frac{K_Y}{L_Y} \right)
+\]</div>
+<p>and solving for <span class="math notranslate nohighlight">\(L_Y\)</span> obtains</p>
+<div class="math notranslate nohighlight">
+\[
+L_Y = \frac{\Lambda^{-1} K_Y L}{K-K_Y+\Lambda^{-1} K_Y}, \quad \Lambda= \left( \frac{1-\alpha}{\alpha} \right)\left( \frac{\beta}{1-\beta} \right)
+\]</div>
+<p>At this point we have described the production possibilities frontier in parametric form:</p>
+<div class="math notranslate nohighlight">
+\[
+(X,Y)=\left( K_X^{\alpha} \left( \frac{\Lambda K_X L}{K-K_X+\Lambda K_X} \right)^{1-\alpha}, (K-K_X)^{\beta}\left( \frac{\Lambda^{-1}(K-K_X)L}{K-(K-K_X)+\Lambda^{-1}(K-K_X)} \right)^{1-\beta} \right)
+\]</div>
+<p>For any value <span class="math notranslate nohighlight">\(K_X\)</span>, we can compute the efficient level of output for goods <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.  Below, we plot this PPF by plugging a range of values for <span class="math notranslate nohighlight">\(K_X\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">Lbar</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">Kbar</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Composite parameter</span>
+<span class="n">Delta</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">/</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">beta</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta</span><span class="p">))</span>
+
+<span class="c1"># Grid for K_x</span>
+<span class="n">Kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">Kbar</span> <span class="o">-</span> <span class="mf">1e-6</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+
+<span class="c1"># Allocate L_x using your derived condition</span>
+<span class="n">Lx</span> <span class="o">=</span> <span class="p">(</span><span class="n">Delta</span> <span class="o">*</span> <span class="n">Kx</span> <span class="o">*</span> <span class="n">Lbar</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">Kbar</span> <span class="o">-</span> <span class="n">Kx</span> <span class="o">+</span> <span class="n">Delta</span> <span class="o">*</span> <span class="n">Kx</span><span class="p">)</span>
+
+<span class="c1"># Market clearing</span>
+<span class="n">Ky</span> <span class="o">=</span> <span class="n">Kbar</span> <span class="o">-</span> <span class="n">Kx</span>
+<span class="n">Ly</span> <span class="o">=</span> <span class="n">Lbar</span> <span class="o">-</span> <span class="n">Lx</span>
+
+<span class="c1"># Production functions</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">Kx</span><span class="o">**</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">Lx</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Ky</span><span class="o">**</span><span class="n">beta</span>  <span class="o">*</span> <span class="n">Ly</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Production Possibilities Frontier (PPF)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/69762f757e7abb7d4f33e9b0cf8f85de1aa9fbb7384dff31ebd3d94b981becb0.png" src="_images/69762f757e7abb7d4f33e9b0cf8f85de1aa9fbb7384dff31ebd3d94b981becb0.png" />
+</div>
+</div>
+</section>
+<section id="where-does-the-economy-operate-on-the-ppf">
+<h3>Where Does the Economy Operate on the PPF?<a class="headerlink" href="#where-does-the-economy-operate-on-the-ppf" title="Link to this heading">#</a></h3>
+<p>Where on the PPF does the economy actually produce? It depends on <strong>goods prices</strong>: the economy will always produce at the point that maximizes the value of production.</p>
+<ul class="simple">
+<li><p>If the price of good 1 is relatively high, the economy will produce more of good 1 and less of good 2</p></li>
+<li><p>If the price of good 2 is relatively high, the economy will produce more of good 2 and less of good 1</p></li>
+</ul>
+<p>The value of production (GDP) is given by</p>
+<div class="math notranslate nohighlight">
+\[
+Y = p_1 y_2 + p_2 y_2
+\]</div>
+<p>Formally, the gross domestic production (GDP) for the economy is given by</p>
+<div class="math notranslate nohighlight">
+\[
+G(p_1,p_2,L,K) = \max_{y_1,y_2} \hspace{2mm} p_1 y_1 + p_2 y_2 \qquad \text{s.t.} \quad y_2 = h(y_1,L,K)
+\]</div>
+<p>where the constraint is precisely the PPF we described earlier.</p>
+<p>The first order condition for this problem is,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p_1}{p_2} = \frac{\partial h}{\partial y_1} = -\frac{\partial y_2}{\partial y_1}
+\]</div>
+<p>which show that the maximized value of GDP is where the PPF is tangent to the GDP line.</p>
+<p>We now prove that the competitive economy indeed operates in this way.  Recall that in a competitive equilibrium, factors are always paid their value marginal products:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+P_1 \times MPL_1 &amp;= w \\
+P_2 \times MPL_2 &amp;= w \\
+P_1 \times MPK_1 &amp;= r \\
+P_2 \times MPK_2 &amp;= r
+\end{align}
+\end{split}\]</div>
+<p>Notice that these equations also reflect the ability of labor and land to freely move between sectors.  For example, workers will always choose work in the sector that pays a higher wage, therefore, the only way that both sectors produce good is if the wage is the same in both sectors.</p>
+<p>We can take the ratio of the equations like this</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_1}{P_2} = \frac{MPL_2}{MPL_1} = \frac{MPK_1}{MPK_2}
+\]</div>
+<p>Using our definition of marginal products we can write</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_1}{P_2} = \frac{\partial Y_2/\partial L_2}{\partial Y_1/\partial L_1} = \frac{\partial Y_1/\partial K_1}{\partial Y_2/\partial K_2}
+\]</div>
+<p>and realizing that the total supply of labor and land is fixed we know that <span class="math notranslate nohighlight">\(dL_1 = -dL_2\)</span> and <span class="math notranslate nohighlight">\(dT_1=-dT_2\)</span> so we can say</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_1}{P_2} = -\frac{dY_2}{dY_1}
+\]</div>
+<p>The righthand side is exactly the slope of the PPF!  This proves that in a competitive equilibrium, resources are indeed allocated in such a way which maximizes GDP.</p>
+<p>The figure below shows that once we know the relative price <span class="math notranslate nohighlight">\(p_1/p_2\)</span>, we can determine the optimal production of <span class="math notranslate nohighlight">\(y_1,y_2\)</span>.</p>
+<figure>
+    <img src="_static/figs_ho/ho_prod.png"
+         alt="Optimal product mix of good 1 and good 2"
+         width="300"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+The economy will produce $(y_1,y_2)$ in order to maximize the value of GDP.  When the relative of price of good 1 is higher ($\uparrow p_1/p_2$), the economy diverts resources toward industry 1 and away from industry 2.
+    </figcaption>
+</figure>
+</section>
+<section id="the-relative-supply-curve">
+<h3>The Relative Supply Curve<a class="headerlink" href="#the-relative-supply-curve" title="Link to this heading">#</a></h3>
+<p>What we have derived is the amount of good 1 and good 2 firms are willing to supply at different relative prices.  We can convey the same information in a different diagram to show the country’s <strong>relative supply curve</strong>.  Below we show how to sketch the relative supply curve from the PPF.</p>
+<p>INSERT PPF AND ACCOMPANYING SUPPLY CURVE</p>
+</section>
+<section id="autarky-equilibrium-prices">
+<h3>Autarky Equilibrium Prices<a class="headerlink" href="#autarky-equilibrium-prices" title="Link to this heading">#</a></h3>
+<p>In order to determine the equilibrium relative price in autarky we simply need to find that price which equalizes the relative demand for the two goods to their relative supply.  Diagramatically, we need to draw a relative demand curve and find the unique intersection.  To have a well-behaved demand curve, we only need to assume that preferences are identical and homothetic across countries so that relative demand is a function of relative price only,</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{y_1}{y_2} \right)^d = f\left(\frac{p_1}{p_2} \right) \quad \text{where} \quad f'(\cdot) &lt;0
+\]</div>
+<p>This asssumption is sufficient to generate a smooth downward sloping demand curve, and thereby compute the equilibrium autarky relative price</p>
+<p>INSERT SUPPLY AND DEMAND DIAGRAM</p>
+</section>
+<section id="a-first-glance-at-how-factor-endowments-matter">
+<h3>A First Glance at how Factor Endowments Matter<a class="headerlink" href="#a-first-glance-at-how-factor-endowments-matter" title="Link to this heading">#</a></h3>
+<p>At this point, we can begin to understand how the amount of factor endowments and intensity with which goods use this factors matter for the equilibrium price.  For example, suppose that good 1 uses a higher amount of labor services relative to capital compared to good 2.  If this country experiences an increase in its labor endowment, then the shape of the PPF will be stretched toward the right.  This is because good 1 uses labor intensively, and so the extra labor endowment allows for much more produciton of good 1 compared to good 2.  We can say that the PPF becomes more “skewed” toward the production of good 1.  Since the shape of the PPF has changed, so to does the positive of the relative supply curve.  Since the PPF is skewed toward the production of good 1, for any given relative price <span class="math notranslate nohighlight">\(p_1/p_2\)</span> the economy will optimally produce more <span class="math notranslate nohighlight">\(y_1\)</span> and less <span class="math notranslate nohighlight">\(y_2\)</span> than before.  Therefore, we can say that the relatie supply curve shifts to the right, resulting in a lower equilibrium price.</p>
+<p>This should build some intuition regarding how endowments matter for the pattern of comparative advantage: endowments affect the relative positions of each country’s supply curve and thereby determined which country has a lower autarky price in which good.  In the following material, we prove that a higher factor endowment does indeed bias the PPF toward the good which uses that factor intensively (Rybzynski theorem), and then discuss implications for how the returns to factors are affected by changes in equilibrium goods prices (Stolper-Samuelson theorem).</p>
+</section>
+<section id="firms-employment-of-factors">
+<h3>Firms’ Employment of Factors<a class="headerlink" href="#firms-employment-of-factors" title="Link to this heading">#</a></h3>
+<p>At this point, once we know the goods prices <span class="math notranslate nohighlight">\((P_1,P_2)\)</span>, we know the amount of each good produced <span class="math notranslate nohighlight">\((Y_1,Y_2)\)</span>.  Given a level of production, firms still have a choice about what combination of capital (<span class="math notranslate nohighlight">\(K\)</span>) and labor (<span class="math notranslate nohighlight">\(L\)</span>) they want to use to produce each good.  Although firms have many possible ways of combining labor and capital to create goods, we denote the <em>actual amount of inputs used to produce one unit of good &amp;i$</em> by the tuple</p>
+<div class="math notranslate nohighlight">
+\[
+(a_{i,L},a_{i,K}) \quad \text{for} \quad i=1,2
+\]</div>
+<p>Although these are similar to the unit input requirements defined in the Ricardian model (for labor at least), there is an important difference: we are talking about the quantity of capital or labor <em>used</em> in production, not the amount of capital or labor <em>required</em>.  What combination of inputs do produces actually use?  It depends on <strong>factor prices</strong>: producers will minimize cost by using more of the factor that is relatively cheaper. If capital rental rates (<span class="math notranslate nohighlight">\(r\)</span>) are high and wages (<span class="math notranslate nohighlight">\(w\)</span>) low, producers will choose to use relatively little capital and a lot of labor.  Conversely, if wages are low and rental rates are high, producers will choose to use relatively little labor and a lot of capital</p>
+<p>It will be convenient to work with the <em>unit cost functions</em>,</p>
+<div class="math notranslate nohighlight">
+\[
+c_i(w,r) = \min_{L_i,K_i \geq 0} \hspace{2mm} \{wL_i + rK_i \vert f_i(L_i,K_i) \geq 1\}
+\]</div>
+<p>which describe the minimum cost to produce one unit of output.  The cost minimization problem is seeking the smallest iso-cost line <span class="math notranslate nohighlight">\(wL_i+rK_i\)</span> such that the amount of labor and capital used generates one unit of output <span class="math notranslate nohighlight">\(f_i(L_i,K_i) = 1\)</span>.  Diagramatically, this is finding the iso-cost line nearest the origin while remaining on the isoquant which represents one unit of output.  Clearly, this occurs where the iso-cost line is tangent to the isoquant; where the wage-to-rental rate <span class="math notranslate nohighlight">\((w/r)\)</span> is equal to the marginal rate of technical substitution <span class="math notranslate nohighlight">\(MPL/MPK\)</span>.</p>
+<figure>
+    <img src="_static/figs_ho/fig6.png"
+         alt="US employment to population ratio"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+<p>For any given wage and rental rate <span class="math notranslate nohighlight">\((w,r)\)</span>, the firm optimally uses <span class="math notranslate nohighlight">\((a_{Li},a_{Ki})\)</span>.  Higher wage rates (or lower rental rates) rotate the iso-cost line clockwise resulting in firms optimally using less labor <span class="math notranslate nohighlight">\((\downarrow a_{Li})\)</span> and more capital <span class="math notranslate nohighlight">\((\uparrow a_{Ki})\)</span>.</p>
+</figure>
+<p>We will write the <em>solution</em> to the minimization problem above as,</p>
+<div class="math notranslate nohighlight">
+\[
+c_i(w,r) = w a_{iL} + r a_{iK}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{iL}\)</span> is the optimal choice for <span class="math notranslate nohighlight">\(L_i\)</span> and <span class="math notranslate nohighlight">\(a_{iK}\)</span> is the optimal choice for <span class="math notranslate nohighlight">\(K_i\)</span>.</p>
+<p>We have shown that for any given factor prices <span class="math notranslate nohighlight">\((w,r)\)</span>, we can find the cost minimizing combination of labor and capital <span class="math notranslate nohighlight">\((a_{iL},a_{iK})\)</span>.  We can convey this same information in a different graph which plots <span class="math notranslate nohighlight">\((w/r)\)</span> on the vertical axis and the ratio of labor-to-capital used to produce one unit of good <span class="math notranslate nohighlight">\((a_{Li}/a_{Ki})\)</span> on the horizontal axis:</p>
+<figure>
+    <img src="_static/figs_ho/ho_5.png"
+         alt="FI curves"
+         width="300"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>As drawn above, the input choice for good 1 is shifted out compare to good 2.  This means that for any relative factor prices good 1 requires relatively more labor than capital compared to good 2. We therefore say that:</p>
+<ul class="simple">
+<li><p>good 1 is <strong>labor-intensive</strong></p></li>
+<li><p>good 2 is <strong>capital-intensive</strong></p></li>
+</ul>
+<p>Mathematically we recognize that this implies</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{1L}}{a_{1K}}&gt;\frac{a_{2L}}{a_{2K}}
+\]</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> a good cannot be both capital- and labor-intensive.</p>
+<p>Notice that our definition of <strong>intensity</strong> relies on the ratio of labor to capital used in production, not the ratio of labor or capital to output.</p>
+<div class="admonition-definition-intensity admonition">
+<p class="admonition-title">Definition: Intensity</p>
+<p>Good 1 is said to be labor intensive if</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{1L}}{a_{1K}}&gt;\frac{a_{2L}}{a_{2K}}
+\]</div>
+<p>it must then be that Good 2 is capital intensive since</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{a_{2K}}{a_{2L}}&gt;\frac{a_{1K}}{a_{1L}}
+\]</div>
+</div>
+</section>
+<section id="equilibrium-factor-prices">
+<h3>Equilibrium Factor Prices<a class="headerlink" href="#equilibrium-factor-prices" title="Link to this heading">#</a></h3>
+<p>The final objects to determine are the equilibrium wage and rental rate <span class="math notranslate nohighlight">\((w, r)\)</span>. Under perfect competition, free entry drives economic profits to zero in every active sector, giving the zero-profit conditions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+p_1 &amp;= c_1(w,r) \\
+p_2 &amp;= c_2(w,r)
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(c_j(w,r)\)</span> is the unit cost function for sector <span class="math notranslate nohighlight">\(j\)</span>. Full employment of both factors requires:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+&amp;\underbrace{a_{1L}y_1}_{L_1} + \underbrace{a_{2L}y_2}_{L_2} = L \\
+&amp;\underbrace{a_{1K}y_1}_{K_1} + \underbrace{a_{2K}y_2}_{K_2} = K
+\end{align}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_{jL}\)</span> and <span class="math notranslate nohighlight">\(a_{jK}\)</span> denote the unit labor and capital requirements in sector <span class="math notranslate nohighlight">\(j\)</span>, and <span class="math notranslate nohighlight">\(L_j = a_{jL}y_j\)</span>, <span class="math notranslate nohighlight">\(K_j = a_{jK}y_j\)</span> are the factor demands of each sector.</p>
+<div class="admonition-definition-equilibrium-in-ho-model admonition">
+<p class="admonition-title">Definition: Equilibrium in HO Model</p>
+<p>An equilibrium is a set of goods prices <span class="math notranslate nohighlight">\((p_1,p_2)\)</span>, factor prices <span class="math notranslate nohighlight">\((w,r)\)</span> and outputs <span class="math notranslate nohighlight">\((y_1,y_2)\)</span> such that profits are zero and factors are fully employed.</p>
+</div>
+<section id="factor-price-insensitivity-and-factor-intensity-reversals">
+<h4>Factor Price Insensitivity and Factor Intensity Reversals<a class="headerlink" href="#factor-price-insensitivity-and-factor-intensity-reversals" title="Link to this heading">#</a></h4>
+<p>A central result of the HO model is <strong>factor price insensitivity</strong>: so long as both goods are produced and factor intensity reversals (FIRs) do not occur, each vector of goods prices <span class="math notranslate nohighlight">\((p_1, p_2)\)</span> corresponds to a <em>unique</em> vector of factor prices <span class="math notranslate nohighlight">\((w, r)\)</span>, regardless of the economy’s factor endowments. The zero-profit conditions alone are sufficient to pin down <span class="math notranslate nohighlight">\((w, r)\)</span>.</p>
+<p>To understand when this result holds — and when it fails — it is useful to examine the
+zero-profit loci directly. For each sector <span class="math notranslate nohighlight">\(j\)</span>, the <strong>break-even curve</strong> <span class="math notranslate nohighlight">\(p_j = c_j(w, r)\)</span> traces all combinations of <span class="math notranslate nohighlight">\((w, r)\)</span> consistent with zero profits, for given goods prices. The slope of this curve at any point reflects the capital-labor ratio in that sector: a more capital-intensive sector has a steeper break-even curve in <span class="math notranslate nohighlight">\((w, r)\)</span> space.</p>
+<p><strong>No FIRs.</strong> If one sector is unambiguously more capital-intensive than the other at all factor price ratios, the two break-even curves have a consistent ranking of slopes everywhere, and they intersect exactly once. A unique <span class="math notranslate nohighlight">\((w, r)\)</span> is therefore associated with any given <span class="math notranslate nohighlight">\((p_1, p_2)\)</span>, confirming factor price insensitivity.</p>
+<figure>
+    <img src="_static/figs_ho/fig7.png"
+         alt="No FIRs"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p><strong>FIRs present.</strong> If the relative capital intensity of the two sectors reverses at some factor price ratio — meaning sector 1 is capital-intensive at low <span class="math notranslate nohighlight">\(w/r\)</span> but labor-intensive at high <span class="math notranslate nohighlight">\(w/r\)</span> — then the slopes of the break-even curves cross, producing multiple intersections. In this case, the zero-profit conditions are no longer sufficient to determine <span class="math notranslate nohighlight">\((w, r)\)</span> uniquely; the full employment conditions must also be imposed to select among the candidate equilibria.</p>
+<figure>
+    <img src="_static/figs_ho/fig8.png"
+         alt="FIRs"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Break-even curves with factor intensity reversals. Multiple intersections arise, and the zero-profit conditions alone do not suffice to pin down $(w, r)$.
+    </figcaption>
+</figure>
+</section>
+</section>
+<section id="from-goods-prices-to-factor-prices-the-fg-curve">
+<h3>From Goods Prices to Factor Prices: The <span class="math notranslate nohighlight">\(FG\)</span> Curve<a class="headerlink" href="#from-goods-prices-to-factor-prices-the-fg-curve" title="Link to this heading">#</a></h3>
+<p>In the absence of FIRs, there is a well-defined monotone relationship between the relative goods price <span class="math notranslate nohighlight">\(p_1/p_2\)</span> and the relative factor price <span class="math notranslate nohighlight">\(w/r\)</span>. This relationship — the <strong>factor goods</strong> (<span class="math notranslate nohighlight">\(FG\)</span>) curve — is plotted below. Its upward slope reflects the Stolper-Samuelson logic: an increase in the relative price of good 1 raises the real return to the factor used intensively
+in sector 1.</p>
+<figure>
+    <img src="_static/figs_ho/ho_6.png"
+         alt="US employment to population ratio"
+         width="200"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+    </figcaption>
+</figure>
+<p>The full chain of logic connecting goods prices to production decisions runs as follows. Given a relative goods price <span class="math notranslate nohighlight">\(p_1/p_2\)</span>:</p>
+<ol class="arabic simple">
+<li><p>The <span class="math notranslate nohighlight">\(FG\)</span> curve determines the equilibrium relative factor price <span class="math notranslate nohighlight">\(w/r\)</span>.</p></li>
+<li><p>Given <span class="math notranslate nohighlight">\(w/r\)</span>, each sector’s cost-minimizing factor intensity is read off the <strong>factor isoquant</strong> (<span class="math notranslate nohighlight">\(FI_j\)</span>) curves: producers in the more capital-intensive sector choose a higher capital-labor ratio, <span class="math notranslate nohighlight">\(a_{2K}/a_{2L} &gt; a_{1K}/a_{1L}\)</span>.</p></li>
+<li><p>Given factor intensities and the full employment conditions, equilibrium outputs <span class="math notranslate nohighlight">\((y_1, y_2)\)</span> are determined.</p></li>
+</ol>
+<figure>
+    <img src="_static/figs_ho/ho_7.png"
+         alt="FI and FG curve combined"
+         width="1500"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+The $FG$ and $FI_j$ curves together. Goods prices determine factor prices via the $FG$ curve, which in turn determine cost-minimizing factor intensities in each sector.
+    </figcaption>
+</figure></section>
+<section id="the-winners-and-losers-from-trade">
+<h3>The Winners and Losers from Trade<a class="headerlink" href="#the-winners-and-losers-from-trade" title="Link to this heading">#</a></h3>
+<p>A central question in trade theory is not merely whether trade raises aggregate welfare, but how its gains and losses are distributed across factors of production. The Stolper-Samuelson theorem provides a sharp answer within the HO framework.</p>
+<div class="admonition-stolper-samuelson-theorem admonition">
+<p class="admonition-title">Stolper-Samuelson Theorem</p>
+<p>An increase in the relative price of a good will increase the real return to the factor used intensively in that good, and reduce the real return to the other factor.</p>
+</div>
+<p>Since opening to trade changes relative goods prices, it follows immediately that trade redistributes income between factors — even if it raises aggregate welfare. Identifying who gains and who loses requires tracing the link from goods prices to factor prices precisely.</p>
+<section id="derivation">
+<h4>Derivation<a class="headerlink" href="#derivation" title="Link to this heading">#</a></h4>
+<p>Begin with the zero-profit conditions under perfect competition:</p>
+<div class="math notranslate nohighlight">
+\[
+p_i = w a_{iL} + r a_{iK}
+\]</div>
+<p>Totally differentiating:</p>
+<div class="math notranslate nohighlight">
+\[
+dp_i = a_{iL}dw + a_{iK} dr.
+\]</div>
+<p>Dividing both sides by <span class="math notranslate nohighlight">\(p_i = c_i(w,r)\)</span> and multiplying and dividing each term on the right by the relevant factor price converts this into an expression in percentage changes and cost shares:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dp_i}{p_i}=\frac{w a_{iL}}{c_i}\frac{dw}{w}+\frac{r a_{iK}}{c_i}\frac{dr}{r}
+\]</div>
+<p>Define the cost shares:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\theta_{iL} \equiv \dfrac{w\, a_{iL}}{c_i}\)</span>: the share of labor costs in sector <span class="math notranslate nohighlight">\(i\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_{iK} \equiv \dfrac{r\, a_{iK}}{c_i}\)</span>: the share of capital costs in sector <span class="math notranslate nohighlight">\(i\)</span>,</p></li>
+</ul>
+<p>with <span class="math notranslate nohighlight">\(\theta_{iL} + \theta_{iK} = 1\)</span> for each <span class="math notranslate nohighlight">\(i\)</span>. Using hats to denote proportional changes (<span class="math notranslate nohighlight">\(\hat{x} \equiv dx/x = d\ln x\)</span>), the zero-profit conditions become:</p>
+<div class="math notranslate nohighlight">
+\[\hat{p}_i = \theta_{iL}\,\hat{w} + \theta_{iK}\,\hat{r}\]</div>
+<p>This is a <span class="math notranslate nohighlight">\(2\times 2\)</span> linear system in the unknown factor price changes <span class="math notranslate nohighlight">\((\hat{w}, \hat{r})\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix} \hat{p}_1 \\ \hat{p}_2 \end{pmatrix}
+= \begin{pmatrix} \theta_{1L} &amp; \theta_{1K} \\ \theta_{2L} &amp; \theta_{2K} \end{pmatrix}
+\begin{pmatrix} \hat{w} \\ \hat{r} \end{pmatrix}
+\end{split}\]</div>
+<p>Applying Cramer’s rule, with <span class="math notranslate nohighlight">\(|\Theta| = \theta_{1L}\theta_{2K} - \theta_{1K}\theta_{2L}\)</span> denoting the determinant of the cost-share matrix:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{w} = \frac{\theta_{2K}\hat{p}_1 - \theta_{1K}\hat{p}_2}{|\Theta|}, \qquad
+\hat{r} = \frac{\theta_{1L}\hat{p}_2 - \theta_{2L}\hat{p}_1}{|\Theta|}
+\]</div>
+</section>
+<section id="the-amplification-effect">
+<h4>The Amplification Effect<a class="headerlink" href="#the-amplification-effect" title="Link to this heading">#</a></h4>
+<p>To interpret these expressions, suppose that sector 1 is labor-intensive relative to sector 2:</p>
+<div class="math notranslate nohighlight">
+\[
+\theta_{1L}&gt;\theta_{2L}
+\]</div>
+<p>This implies <span class="math notranslate nohighlight">\(|\Theta| = \theta_{1L} - \theta_{2L} &gt; 0\)</span> (using <span class="math notranslate nohighlight">\(\theta_{iL} + \theta_{iK} = 1\)</span>).
+Now suppose the relative price of the labor-intensive good rises: <span class="math notranslate nohighlight">\(\hat{p}_1 &gt; \hat{p}_2\)</span>.
+Substituting into the Cramer’s rule expressions and rearranging:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{w} = \hat{p}_1 + \frac{\theta_{1K}(\hat{p}_1 - \hat{p}_2)}{|\Theta|} &gt; \hat{p}_1 &gt; \hat{p}_2 &gt; \hat{r}
+\]</div>
+<p>so that:</p>
+<div class="math notranslate nohighlight">
+\[\hat{r} &lt; \hat{p}_2 &lt; \hat{p}_1 &lt; \hat{w}\]</div>
+<p>This chain of inequalities — sometimes called the <strong>magnification effect</strong> — is the formal content of the Stolper-Samuelson theorem. The wage rises by <em>more</em> than either goods price, implying that labor’s real purchasing power increases regardless of which good workers consume. The return to capital falls by <em>more</em> than either goods price falls, so capital owners suffer an unambiguous real loss. The distributional effects of a price change are thus amplified relative to the price change itself — trade does not merely redistribute income at the margin, it creates clear-cut winners and losers in real terms.</p>
+<p>The policy implication is stark: within the HO framework, the owners of a country’s scarce factor have a genuine material interest in opposing trade liberalization, even if trade raises aggregate national income. Protection is not simply the result of ignorance or special interests — it can reflect the rational preferences of those who stand to lose.</p>
+</section>
+</section>
+<section id="predicting-the-pattern-of-trade">
+<h3>Predicting the Pattern of Trade<a class="headerlink" href="#predicting-the-pattern-of-trade" title="Link to this heading">#</a></h3>
+<p>The Ricardian model attributes comparative advantage to differences in technology. The
+Heckscher-Ohlin model offers a complementary explanation: even with identical technologies, countries differ in their relative factor endowments, and these differences alone are sufficient to generate comparative advantage, specialization, and gains from trade.</p>
+<p>We assume that Home and Foreign share the same preferences and the same production technology, but differ in their relative endowments of labor and capital:</p>
+<ul class="simple">
+<li><p><strong>Home</strong> is <strong>labor-abundant</strong>: <span class="math notranslate nohighlight">\(L/K &gt; L^*/K^*\)</span>,</p></li>
+<li><p><strong>Foreign</strong> is <strong>capital-abundant</strong>: <span class="math notranslate nohighlight">\(K^*/L^* &gt; K/L\)</span>.</p></li>
+</ul>
+<p>We retain the assumption that good 1 is <strong>labor-intensive</strong> and good 2 is <strong>capital-intensive</strong>. The key question is: how do these endowment differences translate into differences in comparative advantage?</p>
+<p>Because good 1 is labor-intensive, an economy with a relatively large labor endowment will find that its production possibilities are shifted out disproportionately in the direction of good 1. Home’s production possibility frontier is therefore biased toward good 1 relative to Foreign’s.</p>
+<figure>
+    <img src="_static/figs_ho/ho_9.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Home's PPF is biased toward good 1 relative to Foreign's, reflecting its relative labor abundance. At identical homothetic preferences, this implies a lower autarky relative price of good 1 at Home: $(p_1/p_2)^H < (p_1/p_2)^F$, establishing Home's comparative advantage in good 1.
+    </figcaption>
+</figure>
+<p>With identical and homothetic preferences, the consumption ratio is the same function of relative prices in both countries. Since Home’s PPF is biased toward good 1, its autarky relative supply of good 1 is higher, and its autarky relative price of good 1 is therefore lower: <span class="math notranslate nohighlight">\((p_1/p_2)^H &lt; (p_1/p_2)^F\)</span>. Home has a comparative advantage in good 1 — not because of any technological difference, but purely as a consequence of its relative factor abundance.</p>
+<p>The endowment bias carries over to relative supply at any given world price. For any common goods price ratio, Home — being labor-abundant — will allocate relatively more resources to the labor-intensive sector and produce a higher ratio of good 1 to good 2 than Foreign.</p>
+<figure>
+    <img src="_static/figs_ho/ho_8.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+For any world price, Home will produce a higher ratio of good 1 to good 2 than foreign because it is labor abundant, and good 1 is labor intensive.  Home will have a larger relative supply of good 1
+    </figcaption>
+</figure>
+<p>By the same logic applied symmetrically, Foreign’s relative supply of good 2 is higher at every price, reflecting its capital abundance and the capital intensity of good 2.</p>
+<p>Opening to trade equalizes relative goods prices across countries, moving both economies away from their autarky price ratios toward the common world price. Since <span class="math notranslate nohighlight">\((p_1/p_2)^H &lt; p_1^W/p_2^W &lt; (p_1/p_2)^F\)</span>, the world price lies strictly between the two autarky prices — trade raises the relative price of good 1 at Home and lowers it at Foreign.</p>
+<figure>
+    <img src="_static/figs_ho/ho_10.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+The autarky equilibrium prices show that Home has a comparative advantage in good 1, and Foreign has a comparative advantage in good 2.  International trade will cause the relative price of good 1 to rise at Home, and fall in Foreign.  The equilibrium free trade will lie in between the autarky prices.
+    </figcaption>
+</figure>
+<p>Home therefore expands production of good 1 and exports the surplus; Foreign expands production of good 2 and exports it. This is the central prediction of the model:</p>
+<div class="admonition-heckscher-ohlin-theorem admonition">
+<p class="admonition-title">Heckscher-Ohlin Theorem</p>
+<p>Each country will export the good that uses its abundant factor intensively.</p>
+</div>
+<p>The logic is worth stating precisely: Home exports good 1 not because it has a technological edge in producing it, but because its relative abundance of labor lowers the autarky cost of the labor-intensive good, generating comparative advantage endogenously from endowments alone.</p>
+<section id="extension-to-many-goods-factors-and-countries">
+<h4>Extension to Many Goods, Factors, and Countries<a class="headerlink" href="#extension-to-many-goods-factors-and-countries" title="Link to this heading">#</a></h4>
+<p>In the two-good, two-factor case the theorem delivers a sharp prediction about the direction of trade. With multiple goods, factors, and countries, exact predictions about bilateral trade flows are harder to establish, but the core insight survives in a weaker form: <em>countries tend to export goods whose production is intensive in factors with which they are abundantly endowed</em>. This prediction has been the basis of a large empirical literature, which we turn to next.</p>
+</section>
+</section>
+<section id="trade-and-the-distribution-of-income">
+<h3>Trade and the Distribution of Income<a class="headerlink" href="#trade-and-the-distribution-of-income" title="Link to this heading">#</a></h3>
+<p>We established that opening to trade causes relative goods prices to converge toward the world price. For Home — which has a comparative advantage in the labor-intensive good 1 — this means a rise in <span class="math notranslate nohighlight">\(p_1/p_2\)</span>. Applying the Stolper-Samuelson theorem derived earlier, the consequences for factor incomes follow directly:</p>
+<ul class="simple">
+<li><p>A rise in the relative price of the labor-intensive good raises the real wage in terms of  <em>both</em> goods, and reduces the real return to capital in terms of <em>both</em> goods.</p></li>
+</ul>
+<p>The distributional implications are therefore unambiguous within the HO framework:</p>
+<div class="admonition-hecksher-ohlin-s-prediction-on-the-distribution-of-income admonition">
+<p class="admonition-title">Hecksher-Ohlin’s prediction on the distribution of income</p>
+<p>:class: definition</p>
+<p>Owners of a country’s abundant factors gain from trade, but owners of a country’s scarce factors lose.</p>
+</div>
+<p>At Home, where labor is abundant, workers benefit and capital owners are hurt. At Foreign, where capital is abundant, the gains and losses are reversed. These are not transitional effects — they are permanent consequences of the change in relative prices that trade induces.</p>
+<p>It is important to note that trade still expands the economy’s aggregate consumption
+possibilities: the gains to the winners exceed the losses to the losers in principle, so that aggregate welfare rises. But the HO model offers no mechanism by which those gains are automatically shared. Redistribution from winners to losers requires explicit policy intervention — trade liberalization alone does not deliver it.</p>
+<section id="a-contemporary-illustration-uschina-trade">
+<h4>A Contemporary Illustration: US–China Trade<a class="headerlink" href="#a-contemporary-illustration-uschina-trade" title="Link to this heading">#</a></h4>
+<p>The distributional logic of the HO model speaks directly to one of the most consequential trade debates of recent decades. The US is relatively abundant in high-skilled labor and capital, and relatively scarce in low-skilled labor. China, by contrast, entered global markets as an economy with an abundance of low-skilled labor. The HO framework predicts precisely what the political economy of the period reflected: trade integration with China would tend to raise returns to high-skilled labor and capital in the US while putting downward pressure on the wages of low-skilled and manufacturing workers — not as a temporary adjustment cost, but as a
+permanent feature of the new equilibrium.</p>
+<p>This prediction aligns with a substantial body of empirical work. Manufacturing workers in the US had a genuine material interest in protection from import competition, and the political pressure they exerted reflected real economic losses, not a misunderstanding of aggregate gains. The HO model thus provides a coherent framework for understanding why the distributional consequences of trade liberalization, rather than its aggregate effects, tend to dominate the
+political debate.</p>
+</section>
+<section id="factor-price-equalization">
+<h4>Factor Price Equalization<a class="headerlink" href="#factor-price-equalization" title="Link to this heading">#</a></h4>
+<p>The convergence of goods prices under trade has an even stronger implication: if goods prices equalize across countries, and if factor prices are uniquely determined by goods prices (as established by the factor price insensitivity result), then factor prices must equalize too.</p>
+<p>In autarky, labor-abundant Home faces a lower relative price of the labor-intensive good than capital-abundant Foreign. This difference in goods prices is reflected in a difference in factor prices: wages are relatively low and rents relatively high at Home, and the reverse holds at Foreign. Trade eliminates the goods price differential — and with it, the factor price differential.</p>
+<figure>
+    <img src="_static/figs_ho/ho_11.png"
+         alt="US employment to population ratio"
+         width="600"
+         style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption style="font-style: italic; text-align: left;">
+Trade equalizes relative goods prices across countries, which in turn equalizes relative factor prices. The autarky gap in $w/r$ between labor-abundant Home and capital-abundant Foreign is eliminated under free trade.
+    </figcaption>
+</figure>
+<div class="admonition-factor-price-equalization-theorem admonition">
+<p class="admonition-title">Factor Price Equalization Theorem</p>
+<p>:class: definition</p>
+<p>Under free trade, factor prices are equalized across countries, provided both countries produce both goods and share the same technology.</p>
+</div>
+<p>The result has a striking implication: although Home has a higher ratio of labor to capital than Foreign, free trade drives wages and rental rates to identical levels in both countries. The mechanism is indirect but precise. By trading goods, countries are in effect trading the factors embodied in them:</p>
+<ul class="simple">
+<li><p>Home exports goods produced with a high labor-capital ratio, effectively exporting labor  services indirectly.</p></li>
+<li><p>Foreign exports goods produced with a high capital-labor ratio, effectively exporting capital services indirectly.</p></li>
+</ul>
+<p>Trade in goods thus serves as a substitute for the direct international mobility of factors. Even without migration or capital flows, factor markets are linked through trade.</p>
+</section>
+<section id="why-factor-price-equalization-fails-in-practice">
+<h4>Why Factor Price Equalization Fails in Practice<a class="headerlink" href="#why-factor-price-equalization-fails-in-practice" title="Link to this heading">#</a></h4>
+<p>Factor price equalization is not observed empirically — wage gaps across countries are large and persistent. The theorem rests on assumptions that are unlikely to hold simultaneously in practice:</p>
+<ul class="simple">
+<li><p><strong>Identical technology</strong>: production functions are assumed the same in every country, but in reality technological differences across countries are substantial and persistent.</p></li>
+<li><p><strong>Costless trade</strong>: the theorem requires that goods prices fully equalize, which in turn requires zero transport costs, no tariffs, and no other trade barriers.</p></li>
+<li><p><strong>Diversification</strong>: both countries must produce both goods in equilibrium; if either country fully specializes, the tight link between goods prices and factor prices is broken.</p></li>
+</ul>
+<p>The failure of factor price equalization in practice does not, however, invalidate the
+broader HO mechanism. It suggests instead that a richer model — one that relaxes some of these strong assumptions — is needed to account quantitatively for observed patterns of trade and factor prices. The core insight that factor endowments shape comparative advantage and trade patterns survives even when the knife-edge conditions required for full factor price equalization are not met. We return to the empirical evidence for and against the HO framework in the next section.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ek-model.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Eaton and Kortum Model of Trade</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ho-empirical.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Empirical Tests of the Heckscher-Ohlin Theory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-heckscher-ohlin-environment">The Heckscher-Ohlin Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-function">The Production Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-possibilities-frontier">The Production Possibilities Frontier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#where-does-the-economy-operate-on-the-ppf">Where Does the Economy Operate on the PPF?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-relative-supply-curve">The Relative Supply Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autarky-equilibrium-prices">Autarky Equilibrium Prices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-first-glance-at-how-factor-endowments-matter">A First Glance at how Factor Endowments Matter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firms-employment-of-factors">Firms’ Employment of Factors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-factor-prices">Equilibrium Factor Prices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-price-insensitivity-and-factor-intensity-reversals">Factor Price Insensitivity and Factor Intensity Reversals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-goods-prices-to-factor-prices-the-fg-curve">From Goods Prices to Factor Prices: The <span class="math notranslate nohighlight">\(FG\)</span> Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-winners-and-losers-from-trade">The Winners and Losers from Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-amplification-effect">The Amplification Effect</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-the-pattern-of-trade">Predicting the Pattern of Trade</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-to-many-goods-factors-and-countries">Extension to Many Goods, Factors, and Countries</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trade-and-the-distribution-of-income">Trade and the Distribution of Income</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-contemporary-illustration-uschina-trade">A Contemporary Illustration: US–China Trade</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#factor-price-equalization">Factor Price Equalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-factor-price-equalization-fails-in-practice">Why Factor Price Equalization Fails in Practice</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
