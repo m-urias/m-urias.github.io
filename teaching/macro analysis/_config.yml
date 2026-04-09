@@ -1,0 +1,41 @@
+# Book settings
+title: My Macroeconomic Analysis Course
+author: Marshall Urias
+
+# Execution settings
+execute:
+  execute_notebooks: 'auto'
+
+# Master document
+root: intro.md
+
+# HTML settings
+html:
+  extra_navbar: Powered by Jupyter Book   # Will be displayed underneath the left navbar
+  baseurl: /macro-analysis-book/   # The base URL where your book will be hosted
+  use_analytics: true
+  google_analytics_id: "G-S9LGY107SZ"
+
+# Allow viewers to launch an interactive Jupyter session
+launch_buttons:
+  notebook_interface: "jupyterlab"
+  binderhub_url: "https://mybinder.org"
+  colab_url: "https://colab.research.google.com"
+  thebe: true
+
+# Ensure images are copied
+sphinx:
+  config:
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    html_theme_options:
+      navigation_depth: 3
+    # Explicitly tell Sphinx to copy the figs directory
+    html_static_path: ["figs"]
+    html_extra_path: ["figs"]
+    # Allow hidden code blocks
+    nb_execution_show_tb: True
+    # Custom build
+    html_show_copyright: false
+  extra_extensions:
+    - sphinx.ext.imgconverter
+    - sphinx_design

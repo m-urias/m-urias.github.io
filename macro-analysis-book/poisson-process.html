@@ -1,0 +1,998 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Poisson Processes and the Value of an Asset &#8212; My Macroeconomic Analysis Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'poisson-process';</script>
+    <link rel="canonical" href="/macro-analysis-book/poisson-process.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Nash Bargaining and Wage Determination" href="Nash-bargaining.html" />
+    <link rel="prev" title="Equilibrium Unemployment" href="equilibrium-unemployment.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomic Analysis Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Labor Market</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Poisson Process and the Value of an Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nash-bargaining.html">Nash Bargaining and Wage Determination</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="labor-dynamics.html">Labor Market Dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="linearization.html">Linearization in Macro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="model-extensions.html">Labor Search Extensions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Credit Frictions and Financial Multipliers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="credit-market.html">Frictional Credit Market</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="market-efficiency.html">Efficiency in Search Economies</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/poisson-process.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Poisson Processes and the Value of an Asset</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-poisson-distribution">The Poisson Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-basic-properties">Definition and Basic Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-law-of-rare-events">The Law of Rare Events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-poisson-process">The Poisson Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sojourn-times-and-the-exponential-distribution">Sojourn Times and the Exponential Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-labor-market">Connection to the Labor Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-bellman-equation-for-a-filled-job">Deriving the Bellman Equation for a Filled Job</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-expected-value">Evaluating the Expected Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-integral-to-differential-equation">From Integral to Differential Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="poisson-processes-and-the-value-of-an-asset">
+<h1>Poisson Processes and the Value of an Asset<a class="headerlink" href="#poisson-processes-and-the-value-of-an-asset" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>In the search and matching notebooks, we wrote down Bellman equations for workers and firms directly, motivating them through the asset pricing analogy. Here we derive these equations rigorously from first principles, grounding them in the theory of Poisson processes. This serves two purposes: it provides a precise mathematical foundation for the continuous-time Bellman equations used throughout the course, and it illustrates how Poisson processes arise naturally as the appropriate model for the timing of stochastic events in continuous time.</p>
+<p>The notebook proceeds in three steps. We first review the Poisson distribution and its origins in the law of rare events. We then define the Poisson process and establish its key property: that the waiting times between events are exponentially distributed. Finally, we use this property to derive the Bellman equation for a filled job directly from the expected discounted value integral, without appealing to the heuristic asset pricing argument.</p>
+</section>
+<section id="the-poisson-distribution">
+<h2>The Poisson Distribution<a class="headerlink" href="#the-poisson-distribution" title="Link to this heading">#</a></h2>
+<section id="definition-and-basic-properties">
+<h3>Definition and Basic Properties<a class="headerlink" href="#definition-and-basic-properties" title="Link to this heading">#</a></h3>
+<div class="admonition-definition-poisson-distribution admonition">
+<p class="admonition-title">Definition: Poisson Distribution</p>
+<p>A discrete random variable <span class="math notranslate nohighlight">\(X\)</span> with possible values <span class="math notranslate nohighlight">\(0, 1, 2, 3, \ldots\)</span> is called
+<strong>Poisson with parameter <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span></strong> if its probability mass function is:</p>
+<div class="math notranslate nohighlight">
+\[p(k) = \frac{e^{-\lambda}\lambda^k}{k!}, \qquad k = 0, 1, 2, \ldots\]</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Proposition: Mean and Variance</p>
+<p>The mean and variance of a Poisson random variable are both equal to <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[X] = \text{Var}(X) = \lambda\]</div>
+</div>
+<p>The coincidence of mean and variance is a distinctive feature of the Poisson
+distribution and has a direct interpretation: <span class="math notranslate nohighlight">\(\lambda\)</span> simultaneously controls
+the average number of events and the dispersion around that average. A large
+<span class="math notranslate nohighlight">\(\lambda\)</span> means many events on average and high variability; a small <span class="math notranslate nohighlight">\(\lambda\)</span>
+means few events and low variability.</p>
+</section>
+<section id="the-law-of-rare-events">
+<h3>The Law of Rare Events<a class="headerlink" href="#the-law-of-rare-events" title="Link to this heading">#</a></h3>
+<p>Poisson processes arise naturally from the <strong>law of rare events</strong>, which provides
+an intuitive justification for why the Poisson distribution appears so frequently
+in applications involving counts of random arrivals.</p>
+<p>Consider a large number <span class="math notranslate nohighlight">\(N\)</span> of independent Bernoulli trials, where the probability
+of success on each trial is <span class="math notranslate nohighlight">\(p\)</span> — small and constant. The total number of successes
+in <span class="math notranslate nohighlight">\(N\)</span> trials, <span class="math notranslate nohighlight">\(X_{N,p}\)</span>, follows the binomial distribution:</p>
+<div class="math notranslate nohighlight">
+\[\Pr(X_{N,p} = k) = \frac{N!}{k!(N-k)!}p^k(1-p)^{N-k}, 
+\qquad k = 0, 1, 2, \ldots\]</div>
+<p>Now take the limiting case in which the number of trials grows without bound and
+the probability of success on each trial shrinks proportionally, so that the
+expected number of successes <span class="math notranslate nohighlight">\(Np = \lambda\)</span> remains fixed. Formally, let
+<span class="math notranslate nohighlight">\(N \to \infty\)</span> and <span class="math notranslate nohighlight">\(p \to 0\)</span> with <span class="math notranslate nohighlight">\(Np \to \lambda &gt; 0\)</span>. In this limit, the
+binomial distribution converges to the Poisson distribution with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>The intuition is direct: when there are many opportunities for an event to occur
+but each individual opportunity is unlikely to produce one, the total count of
+events follows the Poisson law. This is precisely the structure of job matching
+in continuous time: at any instant, there are many worker-firm pairs that could
+potentially match, but the probability of any specific pair matching in a given
+instant is vanishingly small. The Poisson distribution is therefore the natural
+model for the count of matches formed over any interval of time.</p>
+</section>
+<section id="numerical-illustration">
+<h3>Numerical Illustration<a class="headerlink" href="#numerical-illustration" title="Link to this heading">#</a></h3>
+<p>The following code illustrates the convergence of the binomial to the Poisson
+distribution as <span class="math notranslate nohighlight">\(N \to \infty\)</span> with <span class="math notranslate nohighlight">\(Np = \lambda\)</span> fixed, and plots the Poisson
+PMF for several values of <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">binom</span><span class="p">,</span> <span class="n">poisson</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.special</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Convergence of Binomial to Poisson</span>
+<span class="c1"># Fixed lambda = Np; increase N</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">lam</span>    <span class="o">=</span> <span class="mf">3.0</span>
+<span class="n">N_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
+<span class="n">k_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Panel 1: Convergence</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="s2">&quot;#f4910a&quot;</span><span class="p">,</span> <span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="s2">&quot;#1a9641&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">N</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">N_vals</span><span class="p">,</span> <span class="n">colors</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">lam</span> <span class="o">/</span> <span class="n">N</span>
+    <span class="n">pmf_binom</span> <span class="o">=</span> <span class="n">binom</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">k_grid</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_grid</span><span class="p">,</span> <span class="n">pmf_binom</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Binomial($N=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">$, $p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+
+<span class="n">pmf_pois</span> <span class="o">=</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">k_grid</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_grid</span><span class="p">,</span> <span class="n">pmf_pois</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span>
+        <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Poisson($\lambda=</span><span class="si">{</span><span class="n">lam</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$k$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$p(k)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;Convergence of Binomial to Poisson ($\lambda = </span><span class="si">{</span><span class="n">lam</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+
+<span class="c1"># Panel 2: Poisson PMF for several lambda values</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">lam_vals</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">]</span>
+<span class="n">colors2</span>  <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="s2">&quot;#f4910a&quot;</span><span class="p">,</span> <span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="s2">&quot;#1a9641&quot;</span><span class="p">]</span>
+<span class="n">k_grid2</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">lv</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lam_vals</span><span class="p">,</span> <span class="n">colors2</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_grid2</span><span class="p">,</span> <span class="n">poisson</span><span class="o">.</span><span class="n">pmf</span><span class="p">(</span><span class="n">k_grid2</span><span class="p">,</span> <span class="n">lv</span><span class="p">),</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;$\lambda = </span><span class="si">{</span><span class="n">lv</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$k$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$p(k)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Poisson PMF for Various $</span><span class="se">\\</span><span class="s2">lambda$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;The Poisson Distribution&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9d3157bb296e4dcdae9403481a0fcd6f96c8f60d90a56deb4c8ca9d8bc61eaeb.png" src="_images/9d3157bb296e4dcdae9403481a0fcd6f96c8f60d90a56deb4c8ca9d8bc61eaeb.png" />
+</div>
+</div>
+<p>The left panel confirms the law of rare events numerically: as <span class="math notranslate nohighlight">\(N\)</span> increases with <span class="math notranslate nohighlight">\(\lambda = Np\)</span> held fixed at 3, the binomial PMF converges to the Poisson PMF (black dashed line). The convergence is rapid — already at <span class="math notranslate nohighlight">\(N = 100\)</span> the two distributions are nearly indistinguishable. The right panel shows how the shape of the Poisson distribution changes with <span class="math notranslate nohighlight">\(\lambda\)</span>. For small <span class="math notranslate nohighlight">\(\lambda\)</span> the distribution is concentrated near zero and strongly right-skewed; as <span class="math notranslate nohighlight">\(\lambda\)</span> grows the distribution becomes more symmetric and bell-shaped, reflecting the central limit theorem applied to the sum of many Bernoulli trials.</p>
+</section>
+</section>
+<section id="the-poisson-process">
+<h2>The Poisson Process<a class="headerlink" href="#the-poisson-process" title="Link to this heading">#</a></h2>
+<section id="definition">
+<h3>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h3>
+<p>A single Poisson random variable counts events over a fixed interval. A <strong>Poisson process</strong> extends this to a continuous-time stochastic process that counts events as they accumulate over time.</p>
+<div class="definition admonition">
+<p class="admonition-title">Definition: Poisson Process</p>
+<p>A <strong>Poisson process</strong> is an integer-valued stochastic process <span class="math notranslate nohighlight">\(\{X(t);\, t \geq 0\}\)</span> satisfying:</p>
+<ol class="arabic simple">
+<li><p><strong>Independent increments</strong>: for any <span class="math notranslate nohighlight">\(0 = t_0 &lt; t_1 &lt; \cdots &lt; t_n\)</span>, the increments <span class="math notranslate nohighlight">\(X(t_1) - X(t_0),\, X(t_2) - X(t_1),\, \ldots,\, X(t_n) - X(t_{n-1})\)</span> are independent random variables.</p></li>
+<li><p><strong>Stationary Poisson increments</strong>: for <span class="math notranslate nohighlight">\(s \geq 0\)</span> and <span class="math notranslate nohighlight">\(t \geq 0\)</span>, the increment <span class="math notranslate nohighlight">\(X(s+t) - X(s)\)</span> has the Poisson distribution:
+$<span class="math notranslate nohighlight">\(\Pr(X(s+t) - X(s) = k) = \frac{e^{-\lambda t}(\lambda t)^k}{k!}, 
+\qquad k = 0, 1, 2, \ldots\)</span>$</p></li>
+<li><p><strong>Zero initial value</strong>: <span class="math notranslate nohighlight">\(X(0) = 0\)</span>.</p></li>
+</ol>
+</div>
+<p>The process <span class="math notranslate nohighlight">\(X(t)\)</span> counts the cumulative number of events — job destructions, productivity shocks, matches — that have occurred up to time <span class="math notranslate nohighlight">\(t\)</span>. The parameter <span class="math notranslate nohighlight">\(\lambda\)</span> is the <strong>arrival rate</strong>.  On average, <span class="math notranslate nohighlight">\(\lambda\)</span> events occur per unit time, and the number of events in any interval of length <span class="math notranslate nohighlight">\(t\)</span> has mean <span class="math notranslate nohighlight">\(\lambda t\)</span>.</p>
+</section>
+<section id="sojourn-times-and-the-exponential-distribution">
+<h3>Sojourn Times and the Exponential Distribution<a class="headerlink" href="#sojourn-times-and-the-exponential-distribution" title="Link to this heading">#</a></h3>
+<p>The most important property of the Poisson process for our purposes concerns the <strong>sojourn times</strong> — the waiting times between consecutive events. If events arrive according to a Poisson process with rate <span class="math notranslate nohighlight">\(\lambda\)</span>, how long does one typically wait for the next event?</p>
+<div class="important admonition">
+<p class="admonition-title">Theorem: Exponential Sojourn Times</p>
+<p>Let <span class="math notranslate nohighlight">\(S_0, S_1, S_2, \ldots\)</span> denote the sojourn times (waiting times between consecutive events) of a Poisson process with rate <span class="math notranslate nohighlight">\(\lambda\)</span>. Then <span class="math notranslate nohighlight">\(S_0, S_1, \ldots\)</span> are <strong>independent</strong> random variables, each with the exponential density:</p>
+<div class="math notranslate nohighlight">
+\[f_{S_k}(s) = \lambda e^{-\lambda s}, \qquad s \geq 0\]</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Proposition: Mean and Variance of Exponential</p>
+<p>If <span class="math notranslate nohighlight">\(S \sim \text{Exp}(\lambda)\)</span>, then:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[S] = \frac{1}{\lambda}, \qquad \text{Var}(S) = \frac{1}{\lambda^2}\]</div>
+</div>
+<p>The mean sojourn time <span class="math notranslate nohighlight">\(1/\lambda\)</span> is the reciprocal of the arrival rate — a natural and intuitive result. If events arrive at rate <span class="math notranslate nohighlight">\(\lambda = 2\)</span> per month, the average waiting time between events is <span class="math notranslate nohighlight">\(1/2\)</span> a month.</p>
+</section>
+<section id="connection-to-the-labor-market">
+<h3>Connection to the Labor Market<a class="headerlink" href="#connection-to-the-labor-market" title="Link to this heading">#</a></h3>
+<p>The sojourn time result connects directly to the search and matching model. Recall that the rate at which a vacant firm fills its job is <span class="math notranslate nohighlight">\(q(\theta)\)</span>. In the language of Poisson processes, matches arrive at rate <span class="math notranslate nohighlight">\(q(\theta)\)</span>.  The firm experiences a Poisson process of potential workers, and the sojourn time until the next match is exponentially distributed with rate <span class="math notranslate nohighlight">\(q(\theta)\)</span>. The average time the firm waits to fill its vacancy is therefore:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[\text{vacancy duration}] = \frac{1}{q(\theta)}\]</div>
+<p>By the symmetric argument, the rate at which an unemployed worker finds a job is <span class="math notranslate nohighlight">\(f(\theta) = \theta q(\theta)\)</span>, and the average unemployment duration is:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[\text{unemployment duration}] = \frac{1}{f(\theta)}\]</div>
+<p>Similarly, filled jobs are destroyed at Poisson rate <span class="math notranslate nohighlight">\(s\)</span>.  Each filled job experiences an independent Poisson process of destruction shocks, and the sojourn time until destruction — the employment spell duration — is exponentially distributed with mean <span class="math notranslate nohighlight">\(1/s\)</span>.</p>
+<p>These are not assumptions imposed on the model for convenience. They follow necessarily from modeling the timing of matches and separations as Poisson processes, which is itself justified by the law of rare events: at any instant, there are many potential pairings of workers and firms, each individually unlikely to result in a match, so the total arrival of matches follows the Poisson law.</p>
+</section>
+<section id="id1">
+<h3>Numerical Illustration<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">expon</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Simulate a Poisson process and its sojourn times</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">lam</span>     <span class="o">=</span> <span class="mf">2.0</span>      <span class="c1"># arrival rate (events per unit time)</span>
+<span class="n">T_end</span>   <span class="o">=</span> <span class="mf">10.0</span>     <span class="c1"># observation window</span>
+
+<span class="c1"># Generate sojourn times until we exceed T_end</span>
+<span class="n">sojourns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">t_current</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="k">while</span> <span class="n">t_current</span> <span class="o">&lt;</span> <span class="n">T_end</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">)</span>
+    <span class="n">sojourns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="n">t_current</span> <span class="o">+=</span> <span class="n">s</span>
+
+<span class="n">event_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">sojourns</span><span class="p">)</span>
+<span class="n">event_times</span> <span class="o">=</span> <span class="n">event_times</span><span class="p">[</span><span class="n">event_times</span> <span class="o">&lt;=</span> <span class="n">T_end</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ── Panel 1: Sample path of Poisson process ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t_fine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T_end</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">event_times</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">t_fine</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">t_fine</span><span class="p">,</span> <span class="n">counts</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="s2">&quot;post&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">et</span> <span class="ow">in</span> <span class="n">event_times</span><span class="p">:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">et</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">event_times</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">event_times</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Time $t$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$X(t)$: cumulative event count&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">rf</span><span class="s2">&quot;Sample Path of Poisson Process ($\lambda = </span><span class="si">{</span><span class="n">lam</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T_end</span><span class="p">)</span>
+
+<span class="c1"># ── Panel 2: Sojourn time distribution ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Simulate many sojourn times</span>
+<span class="n">n_sim</span>    <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">soj_sim</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+<span class="n">s_grid</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">soj_sim</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Simulated sojourn times&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s_grid</span><span class="p">,</span> <span class="n">expon</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">s_grid</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Exp$(\lambda=</span><span class="si">{</span><span class="n">lam</span><span class="si">}</span><span class="s2">)$ density&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Mean $= 1/\lambda = </span><span class="si">{</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Sojourn time $s$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Sojourn Time Distribution&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># ── Panel 3: Labor market interpretation ──</span>
+<span class="c1"># Show mean vacancy duration 1/q(theta) and</span>
+<span class="c1"># mean unemployment duration 1/f(theta) as</span>
+<span class="c1"># functions of market tightness</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">1.25</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span> <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nu</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span> <span class="k">return</span> <span class="n">theta</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nu</span><span class="p">)</span>
+
+<span class="n">theta_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">q</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$1/q(\theta)$: mean vacancy duration&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">f</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$1/f(\theta)$: mean unemployment duration&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Market Tightness $\theta$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Mean Vacancy Duration $1/q(\theta)$&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Mean Unemployment Duration $1/f(\theta)$&quot;</span><span class="p">,</span>
+               <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Mean Durations as Functions of $</span><span class="se">\\</span><span class="s2">theta$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">)</span>
+
+<span class="n">lines1</span><span class="p">,</span> <span class="n">labs1</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">lines2</span><span class="p">,</span> <span class="n">labs2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">lines1</span> <span class="o">+</span> <span class="n">lines2</span><span class="p">,</span> <span class="n">labs1</span> <span class="o">+</span> <span class="n">labs2</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;center right&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;The Poisson Process and Sojourn Times&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/d95d213f3999e3a7c97a5498bdc0f7776c62b567fc2b8351c168e78c8637bddf.png" src="_images/d95d213f3999e3a7c97a5498bdc0f7776c62b567fc2b8351c168e78c8637bddf.png" />
+</div>
+</div>
+<p>The left panel shows a simulated sample path of a Poisson process with rate <span class="math notranslate nohighlight">\(\lambda = 2\)</span>: the process jumps by one at each event time (red dashed lines) and is constant between events. The middle panel confirms that the sojourn times between events follow the exponential distribution: the histogram of 10,000 simulated waiting times matches the theoretical <span class="math notranslate nohighlight">\(\text{Exp}(\lambda)\)</span> density closely, with the mean at <span class="math notranslate nohighlight">\(1/\lambda = 0.5\)</span>. The right panel translates this into the labor market context: mean vacancy duration <span class="math notranslate nohighlight">\(1/q(\theta)\)</span> is increasing in tightness (harder for firms to fill vacancies in tight markets) while mean unemployment duration <span class="math notranslate nohighlight">\(1/f(\theta)\)</span> is decreasing in tightness (easier for workers to find jobs in tight markets).</p>
+</section>
+</section>
+<section id="deriving-the-bellman-equation-for-a-filled-job">
+<h2>Deriving the Bellman Equation for a Filled Job<a class="headerlink" href="#deriving-the-bellman-equation-for-a-filled-job" title="Link to this heading">#</a></h2>
+<p>We now use the Poisson process framework to derive the Bellman equation for the value of a filled job rigorously, without the heuristic asset pricing argument used in the main notebooks.</p>
+<p>A filled job can be viewed as an asset that:</p>
+<ul class="simple">
+<li><p>generates a flow payoff <span class="math notranslate nohighlight">\(x(t) - w(t)\)</span> at each instant — the difference between output and the wage,</p></li>
+<li><p>is destroyed at a Poisson arrival rate <span class="math notranslate nohighlight">\(\lambda \equiv s\)</span> — the job destruction process — at which point it transitions to the vacancy state with value <span class="math notranslate nohighlight">\(J_v\)</span>.</p></li>
+</ul>
+<p>Let <span class="math notranslate nohighlight">\(T(t)\)</span> denote the (random) time at which the job is destroyed, given that it is filled at time <span class="math notranslate nohighlight">\(t\)</span>. By the sojourn time theorem, <span class="math notranslate nohighlight">\(T(t) - t\)</span> is exponentially distributed with rate <span class="math notranslate nohighlight">\(\lambda\)</span>. The present discounted value of the filled job is therefore:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi(t) = \mathbb{E}\left\{\int_t^{t+T(t)}[x(s)-w(s)]e^{-r(s-t)}ds + 
+e^{-rT(t)}J_v(t+T(t))\right\}\]</div>
+<p>The first term is the discounted flow of profits accumulated until destruction; the second is the discounted value of the vacancy state entered at destruction.</p>
+<section id="evaluating-the-expected-value">
+<h3>Evaluating the Expected Value<a class="headerlink" href="#evaluating-the-expected-value" title="Link to this heading">#</a></h3>
+<p>Since <span class="math notranslate nohighlight">\(T(t) - t \sim \text{Exp}(\lambda)\)</span> with density <span class="math notranslate nohighlight">\(\lambda e^{-\lambda y}\)</span> for <span class="math notranslate nohighlight">\(y \geq 0\)</span>, we evaluate the expectation by integrating over all possible destruction times <span class="math notranslate nohighlight">\(y = T(t) - t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi(t) = \int_0^\infty \left\{\int_t^{t+y}[x(s)-w(s)]e^{-r(s-t)}ds + e^{-ry}J_v(t+y)\right\}\lambda e^{-\lambda y}\,dy\]</div>
+<p>We simplify the first term using integration by parts with:</p>
+<div class="math notranslate nohighlight">
+\[u = \int_t^{t+y}[x(s)-w(s)]e^{-r(s-t)}ds, \qquad dv = \lambda e^{-\lambda y}dy\]</div>
+<p>so that:</p>
+<div class="math notranslate nohighlight">
+\[du = [x(t+y)-w(t+y)]e^{-ry}dy, \qquad v = -e^{-\lambda y}\]</div>
+<p>Applying <span class="math notranslate nohighlight">\(\int u\,dv = uv - \int v\,du\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\int_0^\infty &amp;\left\{\int_t^{t+y}[x(s)-w(s)]e^{-r(s-t)}ds\right\}
+\lambda e^{-\lambda y}dy \\
+&amp;= \left[-e^{-\lambda y}\int_t^{t+y}[x(s)-w(s)]e^{-r(s-t)}ds\right]_0^\infty 
++ \int_0^\infty e^{-\lambda y}[x(t+y)-w(t+y)]e^{-ry}dy
+\end{aligned}\end{split}\]</div>
+<p>The boundary term vanishes at <span class="math notranslate nohighlight">\(y = 0\)</span> (the integral is zero) and at <span class="math notranslate nohighlight">\(y \to \infty\)</span> (the exponential <span class="math notranslate nohighlight">\(e^{-\lambda y}\)</span> dominates, provided the flow payoff is bounded).
+Substituting back:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi(t) = \int_0^\infty e^{-\lambda y}[x(t+y)-w(t+y)]e^{-ry}dy + \int_0^\infty e^{-ry}J_v(t+y)\lambda e^{-\lambda y}dy\]</div>
+<p>Combining the two integrals:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi(t) = \int_0^\infty \left[x(t+y)-w(t+y) + \lambda J_v(t+y)\right]
+e^{-(r+\lambda)y}dy\]</div>
+<p>Substituting <span class="math notranslate nohighlight">\(s = t + y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi(t) = \int_t^\infty \left[x(s)-w(s) + \lambda J_v(s)\right]
+e^{-(r+\lambda)(s-t)}ds \tag{1}\]</div>
+</section>
+<section id="from-integral-to-differential-equation">
+<h3>From Integral to Differential Equation<a class="headerlink" href="#from-integral-to-differential-equation" title="Link to this heading">#</a></h3>
+<p>Expression (1) is an integral equation for <span class="math notranslate nohighlight">\(J_\pi(t)\)</span>. To convert it to the familiar Bellman ODE, we differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p>Applying the Leibniz rule — differentiating under the integral sign and accounting for the moving lower limit:</p>
+<div class="math notranslate nohighlight">
+\[\dot{J}_\pi(t) = -\left[x(t)-w(t)+\lambda J_v(t)\right] + 
+(r+\lambda)\int_t^\infty \left[x(s)-w(s)+\lambda J_v(s)\right]
+e^{-(r+\lambda)(s-t)}ds\]</div>
+<p>Recognizing the integral as <span class="math notranslate nohighlight">\(J_\pi(t)\)</span> from (1):</p>
+<div class="math notranslate nohighlight">
+\[\dot{J}_\pi(t) = -\left[x(t)-w(t)+\lambda J_v(t)\right] + (r+\lambda)J_\pi(t)\]</div>
+<p>Rearranging:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{rJ_\pi(t) = x(t)-w(t) + \lambda(J_v(t) - J_\pi(t)) + \dot{J}_\pi(t)}\]</div>
+<p>This is the <strong>Bellman equation for a filled job</strong>. Its terms now have precise meanings grounded in the Poisson process derivation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t) - w(t)\)</span>: the instantaneous flow profit from production.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\lambda(J_v(t) - J_\pi(t))\)</span>: the expected capital loss from job destruction, which arrives at Poisson rate <span class="math notranslate nohighlight">\(\lambda\)</span> and reduces the firm’s value from <span class="math notranslate nohighlight">\(J_\pi\)</span> to <span class="math notranslate nohighlight">\(J_v\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\dot{J}_\pi(t)\)</span>: the capital gain from any anticipated change in the value of the filled job over time.</p></li>
+<li><p><span class="math notranslate nohighlight">\(rJ_\pi(t)\)</span>: the required flow return — the opportunity cost of holding an asset worth <span class="math notranslate nohighlight">\(J_\pi(t)\)</span> rather than investing at rate <span class="math notranslate nohighlight">\(r\)</span>.</p></li>
+</ul>
+<p>In steady state, <span class="math notranslate nohighlight">\(\dot{J}_\pi = 0\)</span>, and the equation reduces to:</p>
+<div class="math notranslate nohighlight">
+\[rJ_\pi = x - w + s(J_v - J_\pi)\]</div>
+<p>which is exactly the Bellman equation written down by inspection in the main notebook. The derivation here confirms that this equation is not merely a convenient approximation but an exact consequence of modeling job destruction as a Poisson process.</p>
+</section>
+<section id="id2">
+<h3>Numerical Illustration<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The following code verifies the Bellman equation numerically by simulating many job spell trajectories, computing the expected discounted value directly from the definition, and comparing it to the closed-form solution of the Bellman ODE.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">brentq</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Parameters</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">r</span>     <span class="o">=</span> <span class="mf">0.04</span> <span class="o">/</span> <span class="mi">12</span>    <span class="c1"># monthly discount rate</span>
+<span class="n">lam</span>   <span class="o">=</span> <span class="mf">0.035</span>        <span class="c1"># job destruction rate (= s)</span>
+<span class="n">x</span>     <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># productivity</span>
+<span class="n">w</span>     <span class="o">=</span> <span class="mf">0.95</span>         <span class="c1"># wage</span>
+<span class="n">J_v</span>   <span class="o">=</span> <span class="mf">0.0</span>          <span class="c1"># value of vacancy (free entry)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Analytical solution: steady-state Bellman</span>
+<span class="c1">#   rJ_pi = x - w + lam*(J_v - J_pi)</span>
+<span class="c1">#   J_pi*(r + lam) = x - w + lam*J_v</span>
+<span class="c1">#   J_pi = (x - w + lam*J_v) / (r + lam)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">J_pi_analytical</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">w</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">J_v</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">lam</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analytical J_pi = </span><span class="si">{</span><span class="n">J_pi_analytical</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Simulation: draw many job spells</span>
+<span class="c1"># For each spell:</span>
+<span class="c1">#   1. Draw destruction time T ~ Exp(lam)</span>
+<span class="c1">#   2. Compute integral of (x-w)*e^{-r*t} dt from 0 to T</span>
+<span class="c1">#      = (x-w)/r * (1 - e^{-rT})</span>
+<span class="c1">#   3. Add discounted J_v at destruction: J_v * e^{-rT}</span>
+<span class="c1"># Average over many spells to estimate E[J_pi]</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_sim</span> <span class="o">=</span> <span class="mi">100_000</span>
+
+<span class="n">T_spells</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">exponential</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+<span class="n">flow_term</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">w</span><span class="p">)</span> <span class="o">/</span> <span class="n">r</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">T_spells</span><span class="p">))</span>
+<span class="n">cont_term</span> <span class="o">=</span> <span class="n">J_v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span> <span class="o">*</span> <span class="n">T_spells</span><span class="p">)</span>
+<span class="n">J_pi_sim</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">flow_term</span> <span class="o">+</span> <span class="n">cont_term</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Simulated J_pi  = </span><span class="si">{</span><span class="n">J_pi_sim</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Difference      = </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">J_pi_analytical</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">J_pi_sim</span><span class="p">)</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Show how J_pi varies with wage and destruction rate</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Panel 1: Distribution of discounted spell values</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">flow_term</span> <span class="o">+</span> <span class="n">cont_term</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Simulated spell values&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">J_pi_analytical</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Analytical $J_\pi = </span><span class="si">{</span><span class="n">J_pi_analytical</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">J_pi_sim</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Simulated mean $= </span><span class="si">{</span><span class="n">J_pi_sim</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Discounted value of spell&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Density&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of Job Spell Values&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># Panel 2: J_pi as a function of wage w</span>
+<span class="n">w_grid</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">0.001</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">J_pi_w</span>   <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">w_grid</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">J_v</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">lam</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_grid</span><span class="p">,</span> <span class="n">J_pi_w</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">w</span> <span class="o">+</span> <span class="mf">0.01</span><span class="p">,</span> <span class="n">J_pi_analytical</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="sa">rf</span><span class="s2">&quot;$w = </span><span class="si">{</span><span class="n">w</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">w</span><span class="p">],</span> <span class="p">[</span><span class="n">J_pi_analytical</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span>
+           <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Wage $w$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$J_\pi$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Value of Filled Job vs Wage&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="c1"># Panel 3: J_pi as a function of destruction rate lambda</span>
+<span class="n">lam_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">J_pi_lam</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">w</span> <span class="o">+</span> <span class="n">lam_grid</span> <span class="o">*</span> <span class="n">J_v</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">lam_grid</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_grid</span><span class="p">,</span> <span class="n">J_pi_lam</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">lam</span> <span class="o">+</span> <span class="mf">0.002</span><span class="p">,</span> <span class="n">J_pi_analytical</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="sa">rf</span><span class="s2">&quot;$\lambda = </span><span class="si">{</span><span class="n">lam</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">lam</span><span class="p">],</span> <span class="p">[</span><span class="n">J_pi_analytical</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span>
+           <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Destruction Rate $\lambda$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$J_\pi$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Value of Filled Job vs Destruction Rate&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Bellman Equation: Analytical vs Simulated&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analytical J_pi = 1.304348
+Simulated J_pi  = 1.299873
+Difference      = 0.004475
+</pre></div>
+</div>
+<img alt="_images/622047efcb882a37288cd33d73de18e42f9239b51f457b6369e9925e764d1904.png" src="_images/622047efcb882a37288cd33d73de18e42f9239b51f457b6369e9925e764d1904.png" />
+</div>
+</div>
+<p>The left panel shows the distribution of discounted job spell values across 100,000 simulated spells. Each spell ends at a randomly drawn destruction time <span class="math notranslate nohighlight">\(T \sim \text{Exp}(\lambda)\)</span>; the discounted value of each spell is <span class="math notranslate nohighlight">\(\int_0^T (x-w)e^{-rt}dt + J_v e^{-rT}\)</span>, which can be computed in closed form as <span class="math notranslate nohighlight">\((x-w)/r \cdot (1 - e^{-rT}) + J_v e^{-rT}\)</span>. The average across spells converges to the analytical solution of the Bellman equation (red vertical line) with negligible simulation error, confirming the derivation.</p>
+<p>The middle and right panels illustrate how <span class="math notranslate nohighlight">\(J_\pi\)</span> varies with the wage and the destruction rate. <span class="math notranslate nohighlight">\(J_\pi\)</span> is linearly decreasing in <span class="math notranslate nohighlight">\(w\)</span>: a higher wage reduces the flow profit <span class="math notranslate nohighlight">\(x - w\)</span> proportionally, and since <span class="math notranslate nohighlight">\(w\)</span> enters the numerator of <span class="math notranslate nohighlight">\(J_\pi = (x - w + \lambda J_v)/(r + \lambda)\)</span> additively, the relationship is exactly linear.</p>
+<p>The relationship with <span class="math notranslate nohighlight">\(\lambda\)</span> is different. With <span class="math notranslate nohighlight">\(J_v = 0\)</span> under free entry, <span class="math notranslate nohighlight">\(J_\pi = (x-w)/(r+\lambda)\)</span>: the value of the filled job is the flow profit discounted at the effective rate <span class="math notranslate nohighlight">\(r + \lambda\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> enters the denominator. The relationship is therefore <strong>decreasing and convex</strong> in <span class="math notranslate nohighlight">\(\lambda\)</span>: as the destruction rate rises, <span class="math notranslate nohighlight">\(J_\pi\)</span> falls at a diminishing rate, asymptoting toward zero as <span class="math notranslate nohighlight">\(\lambda \to \infty\)</span>. The convexity has an intuitive interpretation — when jobs are already very fragile (high <span class="math notranslate nohighlight">\(\lambda\)</span>), a further increase in the destruction rate has a smaller proportional effect on <span class="math notranslate nohighlight">\(J_\pi\)</span> than when jobs are relatively secure, because the expected spell duration <span class="math notranslate nohighlight">\(1/(r+\lambda)\)</span> is already short and additional fragility shortens it by proportionally less.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>This notebook has derived the Bellman equation for a filled job from first principles, proceeding in three steps. The Poisson distribution arises naturally from the law of rare events as the appropriate model for counting random arrivals in continuous time. The Poisson process extends this to a continuous-time stochastic counting process whose sojourn times are exponentially distributed — a result that immediately pins down the mean durations of vacancies, unemployment spells, and employment spells in the search and matching model. Finally, by writing the value of a filled job as an expected discounted integral over a random spell length drawn from the exponential distribution, and differentiating to obtain a differential equation, we recover the Bellman ODE used throughout the course.</p>
+<p>The derivation makes explicit what the asset pricing heuristic leaves implicit: the term <span class="math notranslate nohighlight">\(\lambda(J_v - J_\pi)\)</span> in the Bellman equation is not merely an “expected capital loss” but the precise consequence of job destruction arriving as a Poisson process with rate <span class="math notranslate nohighlight">\(\lambda\)</span>. The same logic extends to all the other Bellman equations in the model — for vacant jobs, employed workers, and unemployed workers — since each involves a state variable that transitions at a Poisson rate. The exponential distribution of sojourn times is the mathematical thread connecting the stochastic timing of labor market events to the continuous-time value functions that characterize equilibrium.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="equilibrium-unemployment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Equilibrium Unemployment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Nash-bargaining.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Nash Bargaining and Wage Determination</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-poisson-distribution">The Poisson Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-and-basic-properties">Definition and Basic Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-law-of-rare-events">The Law of Rare Events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-poisson-process">The Poisson Process</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sojourn-times-and-the-exponential-distribution">Sojourn Times and the Exponential Distribution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-to-the-labor-market">Connection to the Labor Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-bellman-equation-for-a-filled-job">Deriving the Bellman Equation for a Filled Job</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluating-the-expected-value">Evaluating the Expected Value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-integral-to-differential-equation">From Integral to Differential Equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

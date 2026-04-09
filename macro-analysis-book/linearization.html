@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linearization Methods in Macroeconomics &#8212; My Macroeconomic Analysis Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'linearization';</script>
+    <link rel="canonical" href="/macro-analysis-book/linearization.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Extracting Business Cycles from Time Series" href="extracting-business-cycles.html" />
+    <link rel="prev" title="Labor Market Dynamics" href="labor-dynamics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomic Analysis Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Labor Market</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="poisson-process.html">Poisson Process and the Value of an Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nash-bargaining.html">Nash Bargaining and Wage Determination</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="labor-dynamics.html">Labor Market Dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Linearization in Macro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="model-extensions.html">Labor Search Extensions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Credit Frictions and Financial Multipliers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="credit-market.html">Frictional Credit Market</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="market-efficiency.html">Efficiency in Search Economies</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/linearization.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linearization Methods in Macroeconomics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-approximation">Taylor Approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-one-variable">Functions of One Variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-multiple-variables">Functions of Multiple Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-valued-functions-the-jacobian">Vector-Valued Functions: The Jacobian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-linearization">Log-Linearization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-log-linearization-procedure">The Log-Linearization Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uhlig-s-method">Uhlig’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-algorithm">The Algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uhlig-s-rules">Uhlig’s Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ces-production-function">CES Production Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobb-douglas-production-function">Cobb-Douglas Production Function:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consumption-euler-equation">Consumption Euler Equation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-limitations">Accuracy and Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linearization-methods-in-macroeconomics">
+<h1>Linearization Methods in Macroeconomics<a class="headerlink" href="#linearization-methods-in-macroeconomics" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Macroeconomic models are almost universally nonlinear. Production functions, utility functions, budget constraints, and equilibrium conditions all involve products, ratios, and exponentials of endogenous variables. Solving these models exactly is generally impossible — closed-form solutions exist only in special cases — so economists rely on approximation methods that replace the original nonlinear system with a tractable linear one in the neighborhood of a particular equilibrium.</p>
+<p>This notebook develops two related linearization techniques that are workhorses of modern macroeconomics:</p>
+<ol class="arabic simple">
+<li><p><strong>Taylor approximation</strong>: the general mathematical tool for approximating a    smooth function by a linear (or higher-order polynomial) function near a    point of interest.</p></li>
+<li><p><strong>Log-linearization and Uhlig’s method</strong>: a specialized application of Taylor approximation that expresses model variables as log-deviations from their steady-state values, producing an approximation that is particularly convenient for multiplicative nonlinearities.</p></li>
+</ol>
+<p>Throughout we emphasize both the mechanics — the step-by-step procedure for applying each method — and the economic interpretation: what does the linear approximation tell us about the behavior of the model near its steady state, and when is it a reliable guide to the model’s true dynamics?</p>
+</section>
+<section id="taylor-approximation">
+<h2>Taylor Approximation<a class="headerlink" href="#taylor-approximation" title="Link to this heading">#</a></h2>
+<section id="functions-of-one-variable">
+<h3>Functions of One Variable<a class="headerlink" href="#functions-of-one-variable" title="Link to this heading">#</a></h3>
+<p>The Taylor approximation replaces a smooth function <span class="math notranslate nohighlight">\(F: \mathbb{R} \to \mathbb{R}\)</span> with a polynomial that behaves similarly to <span class="math notranslate nohighlight">\(F\)</span> within a neighborhood of a point <span class="math notranslate nohighlight">\(x^*\)</span>. The first-order (linear) Taylor approximation around <span class="math notranslate nohighlight">\(x^*\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[F(x^* + \Delta x) \approx F(x^*) + F'(x^*)\Delta x\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Delta x = x - x^*\)</span> is the perturbation around the approximation point. Geometrically, this replaces the curve <span class="math notranslate nohighlight">\(F(x)\)</span> with its <strong>tangent line</strong> at <span class="math notranslate nohighlight">\(x^*\)</span>. The approximation is exact at <span class="math notranslate nohighlight">\(x = x^*\)</span> and becomes less accurate as <span class="math notranslate nohighlight">\(|\Delta x|\)</span> grows — the approximation error is of order <span class="math notranslate nohighlight">\(O((\Delta x)^2)\)</span>.</p>
+<p>The quality of the approximation depends on two things: the size of the perturbation <span class="math notranslate nohighlight">\(|\Delta x|\)</span> and the curvature of <span class="math notranslate nohighlight">\(F\)</span> at <span class="math notranslate nohighlight">\(x^*\)</span> (captured by <span class="math notranslate nohighlight">\(F''(x^*)\)</span>). A highly curved function is poorly approximated by its tangent line even for small perturbations; a nearly linear function is well approximated even for large perturbations.</p>
+</section>
+<section id="functions-of-multiple-variables">
+<h3>Functions of Multiple Variables<a class="headerlink" href="#functions-of-multiple-variables" title="Link to this heading">#</a></h3>
+<p>For <span class="math notranslate nohighlight">\(F: \mathbb{R}^2 \to \mathbb{R}\)</span>, the first-order Taylor approximation around <span class="math notranslate nohighlight">\((x^*, y^*)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[F(x^* + \Delta x,\, y^* + \Delta y) \approx F(x^*, y^*) + 
+\frac{\partial F}{\partial x}(x^*, y^*)\Delta x + 
+\frac{\partial F}{\partial y}(x^*, y^*)\Delta y\]</div>
+<p>The change in the function value is represented by the <strong>linear map</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F(x^* + \Delta x, y^* + \Delta y) - F(x^*, y^*) \approx 
+\begin{pmatrix}\dfrac{\partial F}{\partial x}(x^*,y^*) &amp; 
+\dfrac{\partial F}{\partial y}(x^*,y^*)\end{pmatrix}
+\begin{pmatrix}\Delta x \\ \Delta y\end{pmatrix}\end{split}\]</div>
+<p>Geometrically this replaces the surface <span class="math notranslate nohighlight">\(F(x, y)\)</span> with its <strong>tangent plane</strong> at <span class="math notranslate nohighlight">\((x^*, y^*)\)</span>.</p>
+</section>
+<section id="vector-valued-functions-the-jacobian">
+<h3>Vector-Valued Functions: The Jacobian<a class="headerlink" href="#vector-valued-functions-the-jacobian" title="Link to this heading">#</a></h3>
+<p>For a vector-valued function <span class="math notranslate nohighlight">\(F = (f_1, f_2, \ldots, f_m): \mathbb{R}^n \to \mathbb{R}^m\)</span>, the first-order Taylor approximation around <span class="math notranslate nohighlight">\(x^*\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[F(x^* + \Delta x) \approx F(x^*) + J_F(x^*)\,\Delta x\]</div>
+<p>where <span class="math notranslate nohighlight">\(J_F(x^*)\)</span> is the <strong>Jacobian matrix</strong> of <span class="math notranslate nohighlight">\(F\)</span> evaluated at <span class="math notranslate nohighlight">\(x^*\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}J_F(x^*) = \begin{pmatrix}
+\dfrac{\partial f_1}{\partial x_1}(x^*) &amp; \cdots &amp; 
+\dfrac{\partial f_1}{\partial x_n}(x^*) \\[8pt]
+\vdots &amp; \ddots &amp; \vdots \\[4pt]
+\dfrac{\partial f_m}{\partial x_1}(x^*) &amp; \cdots &amp; 
+\dfrac{\partial f_m}{\partial x_n}(x^*)
+\end{pmatrix}\end{split}\]</div>
+<p>The Jacobian is the multi-dimensional generalization of the derivative: it captures the first-order sensitivity of every output to every input. In macroeconomic applications, <span class="math notranslate nohighlight">\(F\)</span> is typically a system of equilibrium conditions, <span class="math notranslate nohighlight">\(x^*\)</span> is the steady state, and <span class="math notranslate nohighlight">\(J_F(x^*)\)</span> governs the local dynamics of the model around that steady state. The eigenvalues of the Jacobian determine whether the steady state is stable, unstable, or a saddle point — as we saw in the dynamics notebook.</p>
+</section>
+<section id="numerical-illustration">
+<h3>Numerical Illustration<a class="headerlink" href="#numerical-illustration" title="Link to this heading">#</a></h3>
+<p>As an example, consider approximating the exponential function <span class="math notranslate nohighlight">\(F(x)=e^x\)</span> and it’s inverse <span class="math notranslate nohighlight">\(G(x)=\ln x\)</span> about the point <span class="math notranslate nohighlight">\(x^*=1\)</span>.  We have the first-order Taylor approximations
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+F(x^*+\Delta x) &amp;\approx e^{x^*}+e^{x^*}(x-x^*) = e \cdot x \\
+G(x^*+\Delta x) &amp;\approx \ln(x^*)+1/x^*(x-x^*) =  x-1
+\end{align}
+\)</span>$</p>
+<p>and second-order approximations
+$<span class="math notranslate nohighlight">\(
+\begin{align}
+F(x^*+\Delta x) &amp;\approx e^{x^*}+e^{x^*}(x-x^*)+\frac{e^{x^*}}{2}(x-x^*)^2 = e \left( 1 + (x-1) + \frac{(x-1)^2}{2} \right) \\
+G(x^*+\Delta x) &amp;\approx \ln(x^*)+1/x^*(x-x^*)-\frac{1}{2{x^*}^2}(x-x^*)^2 = (x-1) - \frac{1}{2}(x-1)^2
+\end{align}
+\)</span>$</p>
+<p>The left two panels plot these first- and second-order Taylor approximations for <span class="math notranslate nohighlight">\(e^x\)</span> and <span class="math notranslate nohighlight">\(\ln x\)</span> around <span class="math notranslate nohighlight">\(x^* = 1\)</span>. The first-order approximation (tangent line) is exact at <span class="math notranslate nohighlight">\(x^*\)</span> and diverges from the true function as <span class="math notranslate nohighlight">\(|x - x^*|\)</span> grows. The second-order approximation tracks the function more closely by capturing its curvature. The right panel quantifies the approximation error as a function of perturbation size on a log scale. Hence, first-order approximations are useful for studying small fluctuations around the steady state — which is exactly the business cycle application.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Panel 1: Taylor approximation for R -&gt; R</span>
+<span class="c1"># Show tangent line approximation for several functions and expansion points</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">x_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Example 1: F(x) = exp(x), expand around x*=1</span>
+<span class="n">x_star</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">F</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span>
+<span class="n">dF</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span>   <span class="c1"># F&#39;(x) = exp(x)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">F</span><span class="p">(</span><span class="n">x_grid</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$F(x) = e^x$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Taylor approximations of different orders</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">dF</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;1st order (tangent line)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span>
+        <span class="n">F</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">dF</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">)</span>
+        <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">F</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;2nd order&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x_star</span><span class="p">],</span> <span class="p">[</span><span class="n">F</span><span class="p">(</span><span class="n">x_star</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+           <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;$x^* = </span><span class="si">{</span><span class="n">x_star</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$F(x)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Taylor Approximation: $F(x) = e^x$&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Example 2: F(x) = log(x), expand around x*=1</span>
+<span class="n">F2</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span>
+<span class="n">dF2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="n">d2F2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span> <span class="n">F2</span><span class="p">(</span><span class="n">x_grid</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$F(x) = \ln(x)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span>
+        <span class="n">F2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">dF2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;1st order&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_grid</span><span class="p">,</span>
+        <span class="n">F2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">dF2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">)</span>
+        <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">d2F2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x_grid</span> <span class="o">-</span> <span class="n">x_star</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;2nd order&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x_star</span><span class="p">],</span> <span class="p">[</span><span class="n">F2</span><span class="p">(</span><span class="n">x_star</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+           <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;$F(x)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Taylor Approximation: $G(x) = \ln(x)$&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Example 3: approximation error as a function</span>
+<span class="c1"># of perturbation size |Delta x|</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">delta_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">F3</span><span class="p">,</span> <span class="n">dF3</span><span class="p">,</span> <span class="n">d2F3</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span>   <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span>      <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">,</span>
+     <span class="sa">r</span><span class="s2">&quot;$e^x$&quot;</span><span class="p">,</span> <span class="s2">&quot;#2c7bb6&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">,</span>   <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span>
+     <span class="sa">r</span><span class="s2">&quot;$\ln x$&quot;</span><span class="p">,</span> <span class="s2">&quot;#d7191c&quot;</span><span class="p">),</span>
+<span class="p">]:</span>
+    <span class="n">true_val</span>   <span class="o">=</span> <span class="n">F3</span><span class="p">(</span><span class="n">x_star</span> <span class="o">+</span> <span class="n">delta_grid</span><span class="p">)</span>
+    <span class="n">approx_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">F3</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span>
+                  <span class="o">+</span> <span class="n">dF3</span><span class="p">(</span><span class="n">x_star</span><span class="p">)</span><span class="o">*</span><span class="n">delta_grid</span><span class="p">)</span>
+    <span class="n">error</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">true_val</span> <span class="o">-</span> <span class="n">approx_val</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">delta_grid</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+            <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Perturbation size $|\Delta x|$&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Approximation error $|F - F_</span><span class="si">{approx}</span><span class="s2">|$&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;1st-Order Approximation Error</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s2">&quot;log&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Taylor Approximation&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/cf5b5259eabee6f0befce05fe39d8dcc2689445b2f9dc38e4abc16d513efea13.png" src="_images/cf5b5259eabee6f0befce05fe39d8dcc2689445b2f9dc38e4abc16d513efea13.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="log-linearization">
+<h2>Log-Linearization<a class="headerlink" href="#log-linearization" title="Link to this heading">#</a></h2>
+<section id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
+<p>First-order Taylor approximations applied to a nonlinear model produces a linear approximation in the <strong>levels</strong> of variables. In macroeconomics, a more natural approximation works in <strong>log-deviations</strong> from steady state. There are three reasons for this preference:</p>
+<ol class="arabic simple">
+<li><p><strong>Multiplicative nonlinearities become additive.</strong> Many macroeconomic relationships involve products and ratios — <span class="math notranslate nohighlight">\(Y = AK^\alpha L^{1-\alpha}\)</span>, <span class="math notranslate nohighlight">\(pq = wl + rk\)</span>, and so on. Taking logs converts multiplication to addition and division to subtraction, dramatically simplifying the algebra.</p></li>
+<li><p><strong>Log-deviations are interpretable as percentage changes.</strong> If <span class="math notranslate nohighlight">\(\tilde{x} \equiv \ln x - \ln x^*\)</span>, then <span class="math notranslate nohighlight">\(\tilde{x} \approx (x - x^*)/x^*\)</span> for small deviations — the log-deviation is approximately the percentage deviation from steady state. This makes the linearized model’s predictions directly comparable to empirical moments expressed as percentage deviations.</p></li>
+<li><p><strong>Coefficients have elasticity interpretations.</strong> In a log-linearized equation, the coefficient on <span class="math notranslate nohighlight">\(\tilde{x}\)</span> in the expression for <span class="math notranslate nohighlight">\(\tilde{y}\)</span> is the elasticity of <span class="math notranslate nohighlight">\(y\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span> — the percentage change in <span class="math notranslate nohighlight">\(y\)</span> per one percent change in <span class="math notranslate nohighlight">\(x\)</span>. These are among the most economically meaningful objects in applied work.</p></li>
+</ol>
+</section>
+<section id="the-log-linearization-procedure">
+<h3>The Log-Linearization Procedure<a class="headerlink" href="#the-log-linearization-procedure" title="Link to this heading">#</a></h3>
+<p>Consider a nonlinear model given by  <span class="math notranslate nohighlight">\(F(x) = G(x)/H(x)\)</span>. The log-linearization proceeds in two steps.</p>
+<p><strong>Step 1.</strong> Take the logarithm of both sides:</p>
+<div class="math notranslate nohighlight">
+\[\ln F(x) = \ln G(x) - \ln H(x)\]</div>
+<p><strong>Step 2.</strong> Take a first-order Taylor approximation of each term around <span class="math notranslate nohighlight">\(x^*\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\ln F(x^*) + \frac{F'(x^*)}{F(x^*)}(x - x^*) \approx 
+\ln G(x^*) + \frac{G'(x^*)}{G(x^*)}(x - x^*) - 
+\ln H(x^*) - \frac{H'(x^*)}{H(x^*)}(x - x^*)\]</div>
+<p>Since the original equation must hold at the steady state, <span class="math notranslate nohighlight">\(\ln F(x^*) = 
+\ln G(x^*) - \ln H(x^*)\)</span> cancels, leaving:</p>
+<div class="math notranslate nohighlight">
+\[\frac{F'(x^*)}{F(x^*)}(x - x^*) \approx 
+\frac{G'(x^*)}{G(x^*)}(x - x^*) - \frac{H'(x^*)}{H(x^*)}(x - x^*)\]</div>
+<p>This is the log-linear approximation: a linear equation in the percentage
+deviations of <span class="math notranslate nohighlight">\(x\)</span> from its steady-state value.</p>
+</section>
+</section>
+<section id="uhlig-s-method">
+<h2>Uhlig’s Method<a class="headerlink" href="#uhlig-s-method" title="Link to this heading">#</a></h2>
+<section id="the-algorithm">
+<h3>The Algorithm<a class="headerlink" href="#the-algorithm" title="Link to this heading">#</a></h3>
+<p>Harald Uhlig developed a particularly efficient algorithm for log-linearizing
+macroeconomic models that exploits the structure of the approximation to minimize
+the algebra involved. The algorithm has three steps:</p>
+<p><strong>Step 1.</strong> Define log-deviations <span class="math notranslate nohighlight">\(\tilde{x} \equiv \ln x - \ln x^*\)</span>, and
+rewrite every variable in the model as <span class="math notranslate nohighlight">\(x = x^* e^{\tilde{x}}\)</span>. Substitute
+throughout.</p>
+<p><strong>Step 2.</strong> Algebraically combine as many exponential terms as possible,
+collecting them into a single expression <span class="math notranslate nohighlight">\(e^{(\text{linear combination of } 
+\tilde{x}_i)}\)</span>.</p>
+<p><strong>Step 3.</strong> Apply the first-order Taylor approximation <span class="math notranslate nohighlight">\(e^u \approx 1 + u\)</span>
+for small <span class="math notranslate nohighlight">\(u\)</span>, where <span class="math notranslate nohighlight">\(u\)</span> is the linear combination from Step 2. Since <span class="math notranslate nohighlight">\(\tilde{x} 
+= 0\)</span> at the steady state by construction, higher-order terms in <span class="math notranslate nohighlight">\(\tilde{x}\)</span> are
+discarded.</p>
+</section>
+<section id="uhlig-s-rules">
+<h3>Uhlig’s Rules<a class="headerlink" href="#uhlig-s-rules" title="Link to this heading">#</a></h3>
+<p>The procedure in Steps 1–3 can be summarized as a set of simple algebraic
+rules that can be applied mechanically:</p>
+<div class="important admonition">
+<p class="admonition-title">Uhlig’s Rules</p>
+<p>For log-deviations <span class="math notranslate nohighlight">\(\tilde{x} \approx (x - x^*)/x^*\)</span> small:</p>
+<ol class="arabic simple">
+<li><p><strong>Exponential approximation</strong>: <span class="math notranslate nohighlight">\(e^{\tilde{x} + \alpha\tilde{y}} \approx 
+1 + \tilde{x} + \alpha\tilde{y}\)</span></p></li>
+<li><p><strong>Product approximation</strong>: <span class="math notranslate nohighlight">\(\tilde{x}\tilde{y} \approx 0\)</span> (products of
+small deviations are second-order and discarded)</p></li>
+<li><p><strong>Expectations</strong>: <span class="math notranslate nohighlight">\(\mathbb{E}[\alpha e^{\tilde{x}}] \approx \alpha + 
+\alpha\,\mathbb{E}[\tilde{x}]\)</span></p></li>
+</ol>
+</div>
+<p>Rule 1 is the key workhorse: it converts the nonlinear exponential into a
+linear expression. Rule 2 ensures consistency — any term involving a product
+of two log-deviations is second-order small and dropped. Rule 3 extends the
+approximation to stochastic models with rational expectations.</p>
+</section>
+<section id="worked-examples">
+<h3>Worked Examples<a class="headerlink" href="#worked-examples" title="Link to this heading">#</a></h3>
+<p>Consider the model:</p>
+<div class="math notranslate nohighlight">
+\[F(x, y, z) = \frac{x\, y^\alpha}{z^\beta}\]</div>
+<p>We want to express <span class="math notranslate nohighlight">\(F\)</span> as a linear function of the log-deviations
+<span class="math notranslate nohighlight">\((\tilde{x}, \tilde{y}, \tilde{z})\)</span>.</p>
+<p><strong>Step 1.</strong> Substitute <span class="math notranslate nohighlight">\(x = x^*e^{\tilde{x}}\)</span>, <span class="math notranslate nohighlight">\(y = y^*e^{\tilde{y}}\)</span>,
+<span class="math notranslate nohighlight">\(z = z^*e^{\tilde{z}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F = \frac{x^* e^{\tilde{x}} \cdot (y^*)^\alpha e^{\alpha\tilde{y}}}
+{(z^*)^\beta e^{\beta\tilde{z}}}\]</div>
+<p><strong>Step 2.</strong> Collect steady-state values and combine exponentials:</p>
+<div class="math notranslate nohighlight">
+\[F = \underbrace{\frac{x^*(y^*)^\alpha}{(z^*)^\beta}}_{= F^*} \cdot 
+e^{\tilde{x} + \alpha\tilde{y} - \beta\tilde{z}}\]</div>
+<p><strong>Step 3.</strong> Apply Rule 1: <span class="math notranslate nohighlight">\(e^{\tilde{x}+\alpha\tilde{y}-\beta\tilde{z}} 
+\approx 1 + \tilde{x} + \alpha\tilde{y} - \beta\tilde{z}\)</span>, so:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{F \approx F^*\left(1 + \tilde{x} + \alpha\tilde{y} - 
+\beta\tilde{z}\right)}\]</div>
+<p>Equivalently, in terms of the log-deviation of <span class="math notranslate nohighlight">\(F\)</span> from its steady state:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{F} \approx \tilde{x} + \alpha\tilde{y} - \beta\tilde{z}\]</div>
+<p>The coefficients are exactly the elasticities: a 1% increase in <span class="math notranslate nohighlight">\(x\)</span> raises
+<span class="math notranslate nohighlight">\(F\)</span> by 1%; a 1% increase in <span class="math notranslate nohighlight">\(y\)</span> raises <span class="math notranslate nohighlight">\(F\)</span> by <span class="math notranslate nohighlight">\(\alpha\%\)</span>; a 1% increase in
+<span class="math notranslate nohighlight">\(z\)</span> reduces <span class="math notranslate nohighlight">\(F\)</span> by <span class="math notranslate nohighlight">\(\beta\%\)</span>. This is the sense in which log-linearization
+produces elasticity interpretations automatically.</p>
+<section id="ces-production-function">
+<h4>CES Production Function<a class="headerlink" href="#ces-production-function" title="Link to this heading">#</a></h4>
+<p>Consider a Constant Elasticity of Substitution (CES) production function:</p>
+<div class="math notranslate nohighlight">
+\[
+F(k, l) = \left[ \alpha k^\rho + (1-\alpha) l^\rho \right]^{1/\rho}
+\]</div>
+<p>To find the log-linear approximation using Uhlig’s Method, we follow the standard three-step algorithm.</p>
+<p>Step 1: Substitution Replace levels with log-deviations using the identity <span class="math notranslate nohighlight">\(x = x^* e^{\tilde{x}}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+F^* e^{\tilde{F}} = \left[ \alpha (k^* e^{\tilde{k}})^\rho + (1-\alpha) (l^* e^{\tilde{l}})^\rho \right]^{1/\rho}
+\]</div>
+<p>Step 2: Expansion and Steady-State Alignment Distribute the power <span class="math notranslate nohighlight">\(\rho\)</span> and factor out the steady-state constants:</p>
+<div class="math notranslate nohighlight">
+\[
+F^* e^{\tilde{F}} = \left[ \alpha (k^*)^\rho e^{\rho\tilde{k}} + (1-\alpha) (l^*)^\rho e^{\rho\tilde{l}} \right]^{1/\rho}
+\]</div>
+<p>Step 3: Apply Uhlig’s Rules Apply the first-order approximation <span class="math notranslate nohighlight">\(e^u \approx 1 + u\)</span> to the internal exponential terms:</p>
+<div class="math notranslate nohighlight">
+\[
+F^* e^{\tilde{F}} \approx \left[ \alpha (k^*)^\rho (1 + \rho\tilde{k}) + (1-\alpha) (l^*)^\rho (1 + \rho\tilde{l}) \right]^{1/\rho}
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\((F^*)^\rho = \alpha (k^*)^\rho + (1-\alpha) (l^*)^\rho\)</span> at the steady state, we simplify:</p>
+<div class="math notranslate nohighlight">
+\[F^* e^{\tilde{F}} \approx \left[ (F^*)^\rho + \alpha (k^*)^\rho \rho\tilde{k} + (1-\alpha) (l^*)^\rho \rho\tilde{l} \right]^{1/\rho}\]</div>
+<p>Factoring out <span class="math notranslate nohighlight">\((F^*)^\rho\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F^* e^{\tilde{F}} \approx F^* \left[ 1 + \frac{\alpha (k^*)^\rho}{(F^*)^\rho} \rho\tilde{k} + \frac{(1-\alpha) (l^*)^\rho}{(F^*)^\rho} \rho\tilde{l} \right]^{1/\rho}\]</div>
+<p>Define the steady-state cost shares as <span class="math notranslate nohighlight">\(s_k = \frac{\alpha (k^*)^\rho}{(F^*)^\rho}\)</span> and <span class="math notranslate nohighlight">\(s_l = \frac{(1-\alpha) (l^*)^\rho}{(F^*)^\rho}\)</span>. Applying the binomial approximation <span class="math notranslate nohighlight">\((1+x)^n \approx 1 + nx\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[e^{\tilde{F}} \approx 1 + \frac{1}{\rho} \left( s_k \rho\tilde{k} + s_l \rho\tilde{l} \right)\]</div>
+<div class="math notranslate nohighlight">
+\[1 + \tilde{F} \approx 1 + s_k \tilde{k} + s_l \tilde{l}\]</div>
+<div class="math notranslate nohighlight">
+\[\boxed{\tilde{F} \approx s_k \tilde{k} + s_l \tilde{l}}\]</div>
+</section>
+<section id="cobb-douglas-production-function">
+<h4>Cobb-Douglas Production Function:<a class="headerlink" href="#cobb-douglas-production-function" title="Link to this heading">#</a></h4>
+<p>The Cobb-Douglas function <span class="math notranslate nohighlight">\(F = k^\alpha l^{1-\alpha}\)</span> is the analytical limit of the CES function as <span class="math notranslate nohighlight">\(\rho \to 0\)</span>.Mathematically, the Cobb-Douglas form allows us to move all variables into a single exponential term before we ever apply an approximation:</p>
+<div class="math notranslate nohighlight">
+\[F^* e^{\tilde{F}} = (k^* e^{\tilde{k}})^\alpha (l^* e^{\tilde{l}})^{1-\alpha} = \underbrace{(k^*)^\alpha (l^*)^{1-\alpha}}_{F^*} e^{\alpha\tilde{k} + (1-\alpha)\tilde{l}}\]</div>
+<p>Because <span class="math notranslate nohighlight">\(e^{\tilde{F}} = e^{\alpha\tilde{k} + (1-\alpha)\tilde{l}}\)</span> is an identity, taking the natural log of both sides yields:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{F} = \alpha\tilde{k} + (1-\alpha)\tilde{l}\]</div>
+<p>In this specific case, the “approximation” is exact in log-space.</p>
+<p>It is crucial to distinguish between the two types of errors inherent in this process. When we convert a curve into a line (tangent), we lose the “bow” of the function. Even in Cobb-Douglas, <span class="math notranslate nohighlight">\(F \approx F^*(1 + \tilde{F})\)</span> is an approximation in levels. We are replacing the true surface with a flat tangent plane. In the CES case, the relationship between the logs of the variables is itself non-linear. Therefore, even in “percent space,” we are making an approximation.</p>
+<p>The top-left panel compares the exact Cobb-Douglas function with its log-linearized approximation in levels as <span class="math notranslate nohighlight">\(x\)</span> varies from 0.5 to 2. The two are nearly identical near the steady state <span class="math notranslate nohighlight">\(x^* = 1\)</span> and diverge as the perturbation grows. The top-right panel compares the exact and approximate function in log-deviations.  Recall that since Cobb-Douglas is linear in logs, the approximation is exact in log-space.</p>
+<p>The bottom panels compares the exact and approximate CES production function.  Since log-linearization is a local approximation of a function’s elasticity, the accuracy of Uhlig’s Method depends on how constant those elasticities remain as we move away from the steady state. In the Cobb-Douglas case, elasticities are constant by definition, so the ‘approximation’ is globally exact. In the CES case, elasticities shift as the input mix changes. The parameter <span class="math notranslate nohighlight">\(\rho\)</span> controls this shift; the further <span class="math notranslate nohighlight">\(\rho\)</span> is from zero, the more the ‘true’ elasticity deviates from the steady-state share <span class="math notranslate nohighlight">\(s_k\)</span>, and the more visible our approximation error becomes.”</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># --- 1. Parameters ---</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.33</span>
+<span class="c1"># We use a very low rho to create high curvature for pedagogical clarity</span>
+<span class="n">rho_ces</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span>  
+<span class="n">k_ss</span><span class="p">,</span> <span class="n">l_ss</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span>
+
+<span class="c1"># Steady State Values</span>
+<span class="n">F_ss_cd</span> <span class="o">=</span> <span class="p">(</span><span class="n">k_ss</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l_ss</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+<span class="n">F_ss_ces</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">k_ss</span><span class="o">**</span><span class="n">rho_ces</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">l_ss</span><span class="o">**</span><span class="n">rho_ces</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">rho_ces</span><span class="p">)</span>
+<span class="n">s_k_ces</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">k_ss</span><span class="o">**</span><span class="n">rho_ces</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">F_ss_ces</span><span class="o">**</span><span class="n">rho_ces</span><span class="p">)</span>
+
+<span class="c1"># --- 2. Data Generation ---</span>
+<span class="c1"># Wide range (-70% to +70%) to show the &quot;breakdown&quot; of the approximation</span>
+<span class="n">k_tilde</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">k_vec</span> <span class="o">=</span> <span class="n">k_ss</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k_tilde</span><span class="p">)</span>
+
+<span class="c1"># Cobb-Douglas</span>
+<span class="n">F_ex_cd</span> <span class="o">=</span> <span class="p">(</span><span class="n">k_vec</span><span class="o">**</span><span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">l_ss</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+<span class="n">tilde_F_ex_cd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">F_ex_cd</span> <span class="o">/</span> <span class="n">F_ss_cd</span><span class="p">)</span>
+<span class="n">tilde_F_approx_cd</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">k_tilde</span>
+
+<span class="c1"># CES</span>
+<span class="n">F_ex_ces</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">k_vec</span><span class="o">**</span><span class="n">rho_ces</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">l_ss</span><span class="o">**</span><span class="n">rho_ces</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">rho_ces</span><span class="p">)</span>
+<span class="n">tilde_F_ex_ces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">F_ex_ces</span> <span class="o">/</span> <span class="n">F_ss_ces</span><span class="p">)</span>
+<span class="n">tilde_F_approx_ces</span> <span class="o">=</span> <span class="n">s_k_ces</span> <span class="o">*</span> <span class="n">k_tilde</span>
+
+<span class="c1"># --- 3. Plotting ---</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_style</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># ROW 1: COBB-DOUGLAS</span>
+<span class="c1"># Levels</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_vec</span><span class="p">,</span> <span class="n">F_ex_cd</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact $F(k)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_vec</span><span class="p">,</span> <span class="n">F_ss_cd</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tilde_F_approx_cd</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uhlig Approx&quot;</span><span class="p">)</span>
+<span class="n">apply_style</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;A. Cobb-Douglas: Level Space&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital ($k$)&quot;</span><span class="p">,</span> <span class="s2">&quot;Output ($F$)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Log-Devs</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_tilde</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">tilde_F_ex_cd</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact $</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{F}</span><span class="s2">$&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_tilde</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">tilde_F_approx_cd</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uhlig Rule&quot;</span><span class="p">)</span>
+<span class="n">apply_style</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;B. Cobb-Douglas: Log-Dev Space&quot;</span><span class="p">,</span> <span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{k}</span><span class="s2">$ (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{F}</span><span class="s2">$ (%)&quot;</span><span class="p">)</span>
+
+<span class="c1"># ROW 2: CES</span>
+<span class="c1"># Levels</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_vec</span><span class="p">,</span> <span class="n">F_ex_ces</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact $F(k)$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_vec</span><span class="p">,</span> <span class="n">F_ss_ces</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">tilde_F_approx_ces</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uhlig Approx&quot;</span><span class="p">)</span>
+<span class="n">apply_style</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;C. CES: Level Space&quot;</span><span class="p">,</span> <span class="s2">&quot;Capital ($k$)&quot;</span><span class="p">,</span> <span class="s2">&quot;Output ($F$)&quot;</span><span class="p">)</span>
+
+<span class="c1"># Log-Devs</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_tilde</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">tilde_F_ex_ces</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact $</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{F}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">k_tilde</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">tilde_F_approx_ces</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uhlig Rule&quot;</span><span class="p">)</span>
+<span class="n">apply_style</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;D. CES: Log-Dev Space&quot;</span><span class="p">,</span> <span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{k}</span><span class="s2">$ (%)&quot;</span><span class="p">,</span> <span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">tilde</span><span class="si">{F}</span><span class="s2">$ (%)&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">4.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/85cf8073995df0aee781c1126f3e03ed4c98700a2f66a177e25e4636073900b0.png" src="_images/85cf8073995df0aee781c1126f3e03ed4c98700a2f66a177e25e4636073900b0.png" />
+</div>
+</div>
+</section>
+<section id="consumption-euler-equation">
+<h4>Consumption Euler Equation<a class="headerlink" href="#consumption-euler-equation" title="Link to this heading">#</a></h4>
+<p>As a more substantive economic application, consider the Euler equation from
+the Real Business Cycle model:</p>
+<div class="math notranslate nohighlight">
+\[u'(C_t) = \beta\,\mathbb{E}_t\left[u'(C_{t+1})(1 + r_{t+1})\right]\]</div>
+<p>where <span class="math notranslate nohighlight">\(u(C) = C^{1-\sigma}/(1-\sigma)\)</span> is the CRRA utility function with
+<span class="math notranslate nohighlight">\(u'(C) = C^{-\sigma}\)</span>. Substituting:</p>
+<div class="math notranslate nohighlight">
+\[C_t^{-\sigma} = \beta\,\mathbb{E}_t\left[C_{t+1}^{-\sigma}(1 + r_{t+1})\right]\]</div>
+<p><strong>Step 1.</strong> Substitute <span class="math notranslate nohighlight">\(C_t = C^* e^{\tilde{C}_t}\)</span> and
+<span class="math notranslate nohighlight">\(r_{t+1} = r^* + \tilde{r}_{t+1}\cdot r^*\)</span> (noting that <span class="math notranslate nohighlight">\(r\)</span> enters additively,
+so we approximate <span class="math notranslate nohighlight">\(1 + r_{t+1} \approx (1+r^*)(1 + \frac{r^*}{1+r^*}\tilde{r}_{t+1})\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[(C^*)^{-\sigma}e^{-\sigma\tilde{C}_t} = \beta(C^*)^{-\sigma}
+\mathbb{E}_t\left[e^{-\sigma\tilde{C}_{t+1}}(1+r^*)\left(1 + 
+\frac{r^*}{1+r^*}\tilde{r}_{t+1}\right)\right]\]</div>
+<p><strong>Step 2.</strong> At the steady state <span class="math notranslate nohighlight">\(\beta(1+r^*) = 1\)</span>, so the steady-state
+terms cancel. Applying Uhlig’s Rules:</p>
+<div class="math notranslate nohighlight">
+\[-\sigma\tilde{C}_t \approx \mathbb{E}_t\left[-\sigma\tilde{C}_{t+1} + 
+\frac{r^*}{1+r^*}\tilde{r}_{t+1}\right]\]</div>
+<p><strong>Step 3.</strong> Rearranging:</p>
+<div class="math notranslate nohighlight">
+\[\boxed{\tilde{C}_t = \mathbb{E}_t[\tilde{C}_{t+1}] - 
+\frac{1}{\sigma}\frac{r^*}{1+r^*}\mathbb{E}_t[\tilde{r}_{t+1}]}\]</div>
+<p>This is the <strong>log-linearized Euler equation</strong>: consumption today equals expected future consumption minus <span class="math notranslate nohighlight">\(1/\sigma\)</span> times the expected return. The coefficient <span class="math notranslate nohighlight">\(1/\sigma\)</span> is the intertemporal elasticity of substitution — exactly the elasticity interpretation that Uhlig’s method delivers automatically.</p>
+<p>The plots below consider how an interest rate shock affects the optimal consumption path.  We plot the impulse responses for both the exact and approximate Euler equation.</p>
+<p>To compute an exact path, we make two simplifying assumptions:</p>
+<ol class="arabic simple">
+<li><p>Perfect Foresight: We assume the agent knows the path of interest rates <span class="math notranslate nohighlight">\(\{r_t\}_{t=0}^T\)</span>.</p></li>
+<li><p>Terminal Steady State: We assume that by period <span class="math notranslate nohighlight">\(T\)</span> (the “horizon”), the economy has returned to its steady state (<span class="math notranslate nohighlight">\(C_T = C^*\)</span>).</p></li>
+</ol>
+<p>We rewrite the Euler equation to isolate <span class="math notranslate nohighlight">\(C_t\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[C_t = C_{t+1} \left[ \beta (1 + r_{t+1}) \right]^{-\frac{1}{\sigma}}\]</div>
+<p>We then solve backward from <span class="math notranslate nohighlight">\(T-1\)</span> to <span class="math notranslate nohighlight">\(0\)</span>. At <span class="math notranslate nohighlight">\(T\)</span>, <span class="math notranslate nohighlight">\(C_T = 1.0\)</span> (Steady State). At <span class="math notranslate nohighlight">\(T-1\)</span>: <span class="math notranslate nohighlight">\(C_{T-1} = C_T \cdot [\beta(1+r_T)]^{-1/\sigma}\)</span>. At <span class="math notranslate nohighlight">\(T-2\)</span>: <span class="math notranslate nohighlight">\(C_{T-2} = C_{T-1} \cdot [\beta(1+r_{T-1})]^{-1/\sigma}\)</span>. This produces the non-linear path. The “error” in the log-linear model arises because the operation <span class="math notranslate nohighlight">\(\ln(\mathbb{E}[\cdot])\)</span> is replaced with <span class="math notranslate nohighlight">\(\mathbb{E}[\ln(\cdot)]\)</span>, and the convex curvature of the power function is replaced by a flat line.</p>
+<p>In the exact Euler equation:</p>
+<div class="math notranslate nohighlight">
+\[C_t = C_{t+1} \left[ \beta (1 + r_{t+1}) \right]^{-1/\sigma}\]</div>
+<p>In the log-linearized version:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{C}_t = \mathbb{E}_t[\tilde{C}_{t+1}] - \frac{1}{\sigma} \left( \frac{r^*}{1+r^*} \right) \tilde{r}_{t+1}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(\frac{1}{\sigma} \frac{r^*}{1+r^*}\)</span> is the effective elasticity of consumption with respect to the interest rate deviation. When we use Uhlig’s rule, we approximate <span class="math notranslate nohighlight">\((1+r_{t+1})\)</span> as <span class="math notranslate nohighlight">\((1+r^*)(1 + \frac{r^*}{1+r^*}\tilde{r}_{t+1})\)</span>. However, the function <span class="math notranslate nohighlight">\(f(R) = R^{-1/\sigma}\)</span> is convex. By Jensen’s Inequality and the properties of linear tangents to convex curves, the linear approximation of a convex function will always lie below the actual curve. If <span class="math notranslate nohighlight">\(C_t\)</span> is a convex function of the interest rate, a linear approximation (the red dashed line) will predict a lower level of consumption (a larger drop) than the exact curved relationship for a given increase in <span class="math notranslate nohighlight">\(r\)</span>. This explains why the log-linear IRF shows a more “aggressive” drop: the linear tangent “overshoots” the curve as the interest rate rises.</p>
+<p>One might expect the log-linear model to be conservative, but for the RBC Euler equation, the opposite is true. Because the marginal utility of consumption is highly convex, the linear approximation of the Euler equation ‘overshoots’ the drop in consumption following an interest rate hike. This illustrates a critical lesson: log-linearized models tend to exaggerate the impact of shocks when the underlying economic relationships have significant curvature.”</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># 1. PARAMETERS &amp; STEADY STATE</span>
+<span class="c1"># =============================================================================</span>
+<span class="n">sigma</span>  <span class="o">=</span> <span class="mf">2.0</span>         <span class="c1"># CRRA Coefficient (Curvature of Utility)</span>
+<span class="n">r_ss</span>   <span class="o">=</span> <span class="mf">0.04</span>        <span class="c1"># Steady-state annual interest rate</span>
+<span class="n">beta</span>   <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r_ss</span><span class="p">)</span>  <span class="c1"># Discount factor consistent with r_ss</span>
+<span class="n">rho_r</span>  <span class="o">=</span> <span class="mf">0.8</span>         <span class="c1"># Persistence of interest rate shock</span>
+<span class="n">shock</span>  <span class="o">=</span> <span class="mf">0.05</span>        <span class="c1"># 5 percentage point shock (Exaggerated for clarity)</span>
+<span class="n">T</span>      <span class="o">=</span> <span class="mi">50</span>          <span class="c1"># Simulation horizon</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># 2. PATH GENERATION</span>
+<span class="c1"># =============================================================================</span>
+<span class="n">t_axis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="c1"># Interest Rate Path (AR1 Process in levels)</span>
+<span class="n">r_path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+<span class="n">r_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_ss</span> <span class="o">+</span> <span class="n">shock</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+    <span class="n">r_path</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_ss</span> <span class="o">+</span> <span class="n">rho_r</span> <span class="o">*</span> <span class="p">(</span><span class="n">r_path</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">r_ss</span><span class="p">)</span>
+
+<span class="c1"># Log-deviation of r (used for Uhlig&#39;s Method)</span>
+<span class="n">r_tilde</span> <span class="o">=</span> <span class="p">(</span><span class="n">r_path</span> <span class="o">-</span> <span class="n">r_ss</span><span class="p">)</span> <span class="o">/</span> <span class="n">r_ss</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># 3. SOLVING THE MODELS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># A. Log-Linear IRF (Uhlig&#39;s Method)</span>
+<span class="c1"># Formula: C_tilde_t = E_t[C_tilde_t+1] - (1/sigma)*(r_ss/(1+r_ss))*r_tilde_t+1</span>
+<span class="c1"># Integrated forward:</span>
+<span class="n">coeff</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">r_ss</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r_ss</span><span class="p">))</span>
+<span class="n">C_tilde</span> <span class="o">=</span> <span class="o">-</span><span class="n">coeff</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">r_tilde</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1"># B. Exact Non-Linear IRF (Backward Induction)</span>
+<span class="n">C_exact</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="c1"># Assume C_T = C_ss = 1</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="o">-</span><span class="mi">1</span><span class="p">)):</span>
+    <span class="n">C_exact</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_exact</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">beta</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r_path</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># 4. VISUALIZATION</span>
+<span class="c1"># =============================================================================</span>
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;font.family&#39;</span><span class="p">:</span> <span class="s1">&#39;sans-serif&#39;</span><span class="p">})</span>
+
+<span class="c1"># Panel 1: Impulse Response Functions</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_axis</span><span class="p">,</span> <span class="p">(</span><span class="n">C_exact</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exact Non-Linear&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_axis</span><span class="p">,</span> <span class="n">C_tilde</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Uhlig Log-Linear&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Consumption IRF: +5pp Interest Rate Shock&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;% Deviation from Steady State&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Periods ($t$)&quot;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="c1"># Panel 2: The Approximation Error</span>
+<span class="c1"># (Log-Linear minus Exact)</span>
+<span class="c1"># Convert log-deviation to level-percentage deviation for consistent comparison</span>
+<span class="n">C_level_approx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">C_tilde</span><span class="p">)</span> 
+<span class="n">error_in_pct_points</span> <span class="o">=</span> <span class="p">(</span><span class="n">C_level_approx</span> <span class="o">-</span> <span class="n">C_exact</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Visualization</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_axis</span><span class="p">,</span> <span class="n">error_in_pct_points</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;purple&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Approximation Error (Level % Points)&quot;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/dc6272fa0619a5a00e4d790770645fa9fbc964e52a7b530fb79c974e4eb2c0ba.png" src="_images/dc6272fa0619a5a00e4d790770645fa9fbc964e52a7b530fb79c974e4eb2c0ba.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="accuracy-and-limitations">
+<h2>Accuracy and Limitations<a class="headerlink" href="#accuracy-and-limitations" title="Link to this heading">#</a></h2>
+<p>Log-linearization is the standard solution method in macroeconomics, but it rests on an approximation that can fail in important cases. Several limitations deserve emphasis.</p>
+<p><strong>Local validity.</strong> The approximation is accurate only in a neighborhood of the steady state. For models with large shocks — financial crises, pandemic disruptions, regime changes — the economy may move far from steady state and the linear approximation may be unreliable. As we saw in the dynamics notebook, the search and matching model is a case where nonlinearities are quantitatively important even at business cycle frequencies.</p>
+<p><strong>Asymmetric dynamics.</strong> Log-linearization produces a symmetric approximation: positive and negative shocks of equal magnitude produce responses of equal magnitude but opposite sign. Models with asymmetric nonlinearities — such as the concave matching function in the search and matching model — generate asymmetric responses that the linear approximation cannot capture. Recessions may be sharper than expansions even under symmetric shocks, a feature visible only in the nonlinear solution.</p>
+<p><strong>Multiple equilibria.</strong> If the nonlinear model has multiple steady states, the log-linearization is valid only locally around the particular steady state at which it is taken. It cannot characterize transitions between equilibria or global dynamics.</p>
+<p><strong>Zero lower bound and occasionally binding constraints.</strong> When constraints occasionally bind — the zero lower bound on interest rates, occasionally binding borrowing constraints — the linear approximation misses the kink in the equilibrium conditions at the constraint boundary. These cases require global solution methods.</p>
+<p>Despite these limitations, log-linearization remains the dominant solution method in macroeconomics for good reason: it delivers transparent, analytically tractable solutions whose coefficients have clean economic interpretations as elasticities, and it is accurate for the small fluctuations that characterize normal business cycles. Understanding when it is appropriate — and when it is not — is an essential skill for modern macroeconomic analysis.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>This notebook has developed two related linearization techniques. Taylor approximation replaces a smooth nonlinear function with its tangent hyperplane at a point of interest, producing a linear map from perturbations to changes in function values. The Jacobian matrix is the multi-dimensional generalization of this idea and governs the local dynamics of macroeconomic systems around their steady states.</p>
+<p>Log-linearization applies Taylor approximation to the logarithm of the model’s equations, expressing the result in terms of percentage log-deviations from steady state. This is particularly natural for multiplicative nonlinearities and produces coefficients with elasticity interpretations. Uhlig’s method provides an efficient algorithm for implementing log-linearization: substitute <span class="math notranslate nohighlight">\(x = x^*e^{\tilde{x}}\)</span>, combine exponential terms, and apply the rule <span class="math notranslate nohighlight">\(e^u \approx 1 + u\)</span>.</p>
+<p>The worked examples — the Cobb-Douglas production function and the RBC Euler equation — illustrate that log-linearization delivers clean, interpretable results with minimal algebra. The numerical illustrations confirm that the approximation is accurate for typical business cycle fluctuations but can fail for large shocks, motivating the global solution methods discussed in the dynamics notebook.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="labor-dynamics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Labor Market Dynamics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="extracting-business-cycles.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extracting Business Cycles from Time Series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-approximation">Taylor Approximation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-one-variable">Functions of One Variable</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-multiple-variables">Functions of Multiple Variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-valued-functions-the-jacobian">Vector-Valued Functions: The Jacobian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-linearization">Log-Linearization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-log-linearization-procedure">The Log-Linearization Procedure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uhlig-s-method">Uhlig’s Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-algorithm">The Algorithm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uhlig-s-rules">Uhlig’s Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-examples">Worked Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ces-production-function">CES Production Function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobb-douglas-production-function">Cobb-Douglas Production Function:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#consumption-euler-equation">Consumption Euler Equation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-and-limitations">Accuracy and Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

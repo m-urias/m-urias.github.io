@@ -1,0 +1,1356 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Efficiency and Competitive Search Equilibrium &#8212; My Macroeconomic Analysis Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'market-efficiency';</script>
+    <link rel="canonical" href="/macro-analysis-book/market-efficiency.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Financial Frictions in Macroeconomics" href="financial-frictions.html" />
+    <link rel="prev" title="Frictional Credit Market" href="credit-market.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomic Analysis Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Labor Market</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="poisson-process.html">Poisson Process and the Value of an Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nash-bargaining.html">Nash Bargaining and Wage Determination</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="labor-dynamics.html">Labor Market Dynamics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="linearization.html">Linearization in Macro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extracting-business-cycles.html">Extracting Business Cycles from Time Series</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="model-extensions.html">Labor Search Extensions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Credit Frictions and Financial Multipliers</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="credit-market.html">Frictional Credit Market</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Efficiency in Search</a></li>
+<li class="toctree-l1"><a class="reference internal" href="financial-frictions.html">Financial Frictions in Macroeconomics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/market-efficiency.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Efficiency and Competitive Search Equilibrium</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-social-planner-s-problem">The Social Planner’s Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-hamiltonian">Solving the Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constrained-efficient-job-creation-condition">The Constrained Efficient Job Creation Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#economic-interpretation">Economic Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-derivation-maximizing-workers-welfare">An Alternative Derivation: Maximizing Workers’ Welfare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labor-market-policies">Labor Market Policies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-augmented-model">The Augmented Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nash-bargained-wage-with-policies">Nash Bargained Wage with Policies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-condition">Equilibrium Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-policy-instruments">Optimal Policy Instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-search-equilibrium">Competitive Search Equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-search-and-wage-posting">Directed Search and Wage Posting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workers-decision-the-participation-constraint">Workers’ Decision: The Participation Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firms-decision-optimal-wage-posting">Firms’ Decision: Optimal Wage Posting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-and-efficiency">Equilibrium and Efficiency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="efficiency-and-competitive-search-equilibrium">
+<h1>Efficiency and Competitive Search Equilibrium<a class="headerlink" href="#efficiency-and-competitive-search-equilibrium" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The search and matching models developed in previous notebooks characterize
+the decentralized equilibrium of the labor market — the outcome that emerges
+when workers and firms independently optimize given market conditions. A natural
+question follows: is this equilibrium efficient? Does the decentralized market
+maximize social welfare, or do the frictions that generate unemployment also
+generate misallocation?</p>
+<p>The answer is not obvious. Search frictions create <strong>trading externalities</strong>:
+the probability that any agent finds a trading partner depends on the number
+of other agents searching in the same market. When a firm opens a vacancy, it
+makes it easier for unemployed workers to find jobs — a positive externality
+on workers — but harder for other firms to fill their vacancies — a negative
+externality on firms. These externalities are not priced by the Nash bargaining
+process, which takes place between a matched pair <em>after</em> they meet and
+therefore cannot internalize the effects of their wage agreement on agents
+still searching.</p>
+<p>This lecture develops three interconnected topics:</p>
+<ol class="arabic simple">
+<li><p><strong>The social planner’s problem</strong>: what allocation would a benevolent planner
+choose, subject to the same matching frictions as the decentralized economy?</p></li>
+<li><p><strong>The Hosios condition</strong>: the precise condition under which Nash bargaining
+internalizes the search externalities and delivers the efficient allocation.</p></li>
+<li><p><strong>Labor market policies</strong>: how hiring subsidies, payroll taxes, and layoff
+taxes can restore efficiency when the Hosios condition fails.</p></li>
+<li><p><strong>Competitive search equilibrium</strong>: a market structure, due to Moen (1997),
+in which the decentralized equilibrium is always efficient, without requiring
+the Hosios condition to hold.</p></li>
+</ol>
+</section>
+<section id="the-social-planner-s-problem">
+<h2>The Social Planner’s Problem<a class="headerlink" href="#the-social-planner-s-problem" title="Link to this heading">#</a></h2>
+<section id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
+<p>To characterize the efficient allocation, we solve the problem of a benevolent
+social planner who maximizes the present discounted value of aggregate output
+and leisure net of search costs, subject to the matching technology. The planner
+controls the number of unemployed workers <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> and vacancies
+<span class="math notranslate nohighlight">\(\mathcal{V}\)</span> — equivalently, market tightness <span class="math notranslate nohighlight">\(\theta = \mathcal{V}/\mathcal{U}\)</span>
+— and takes the matching function as given.</p>
+<p>Crucially, the planner is not interested in wages. Wages determine only the
+<em>distribution</em> of output between workers and firms, not the total amount. Since
+the social welfare function aggregates the welfare of all agents, the wage is
+irrelevant — it is a transfer from the firm to the worker within the same
+economy. The planner cares only about how much is produced, how many resources
+are devoted to search, and how many workers are employed.</p>
+<p>The planner’s problem is:</p>
+<div class="math notranslate nohighlight">
+\[\max_{\mathcal{U}, \mathcal{V}} \int_0^\infty e^{-rt}
+\left[x(1-\mathcal{U}) + z\mathcal{U} - \gamma\theta\mathcal{U}\right]dt 
+\tag{1}\]</div>
+<p>subject to the law of motion for unemployment:</p>
+<div class="math notranslate nohighlight">
+\[\dot{\mathcal{U}} = s(1-\mathcal{U}) - \mathcal{M}(\mathcal{U},\mathcal{V}) 
+\tag{2}\]</div>
+<p>The objective (1) has three components: output from employed workers <span class="math notranslate nohighlight">\(x(1-\mathcal{U})\)</span>,
+the flow value of leisure for unemployed workers <span class="math notranslate nohighlight">\(z\mathcal{U}\)</span>, and the total
+recruiting cost <span class="math notranslate nohighlight">\(\gamma\mathcal{V} = \gamma\theta\mathcal{U}\)</span>. The constraint (2)
+is the bathtub equation from the benchmark model.</p>
+</section>
+<section id="solving-the-hamiltonian">
+<h3>Solving the Hamiltonian<a class="headerlink" href="#solving-the-hamiltonian" title="Link to this heading">#</a></h3>
+<p>The problem is a standard optimal control problem. We form the <strong>current-value
+Hamiltonian</strong> with co-state variable <span class="math notranslate nohighlight">\(\Psi\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[H = e^{-rt}\left[x(1-\mathcal{U}) + z\mathcal{U} - \gamma\theta\mathcal{U}\right] 
++ \Psi\left[s(1-\mathcal{U}) - \mathcal{M}(\mathcal{U},\mathcal{V})\right]\]</div>
+<p>The first-order conditions are <span class="math notranslate nohighlight">\(\partial H/\partial \mathcal{V} = 0\)</span> and
+<span class="math notranslate nohighlight">\(\dot{\Psi} = -\partial H/\partial \mathcal{U}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial H}{\partial \mathcal{V}} = 0: \qquad 
+-e^{-rt}\gamma - \Psi[1-\eta_L(\theta)]q(\theta) = 0 \tag{3}\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\Psi} = -\frac{\partial H}{\partial \mathcal{U}}: \qquad 
+\dot{\Psi} = e^{-rt}(x-z) + \gamma e^{-rt}\theta + \Psi[s + \eta_L(\theta)f(\theta)] 
+\tag{4}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta_L(\theta) \equiv -\theta q'(\theta)/q(\theta)\)</span> is the elasticity of
+the vacancy-filling rate with respect to tightness.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Deriving the FOCs</p>
+<p><strong>Condition (3)</strong> follows from differentiating <span class="math notranslate nohighlight">\(H\)</span> with respect to <span class="math notranslate nohighlight">\(\mathcal{V}\)</span>.
+Using constant returns to scale of the matching function:
+<span class="math notranslate nohighlight">\(\partial\mathcal{M}/\partial\mathcal{V} = q(\theta)(1-\eta_L(\theta))\)</span>, since
+<span class="math notranslate nohighlight">\(\mathcal{M} = \mathcal{V}q(\theta)\)</span> and the elasticity of <span class="math notranslate nohighlight">\(q\)</span> with respect to
+<span class="math notranslate nohighlight">\(\theta\)</span> is <span class="math notranslate nohighlight">\(-\eta_L\)</span>, so the elasticity of <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> with respect to
+<span class="math notranslate nohighlight">\(\mathcal{V}\)</span> at fixed <span class="math notranslate nohighlight">\(\mathcal{U}\)</span> is <span class="math notranslate nohighlight">\(1 - \eta_L\)</span>.</p>
+<p><strong>Condition (4)</strong> follows from differentiating <span class="math notranslate nohighlight">\(H\)</span> with respect to <span class="math notranslate nohighlight">\(\mathcal{U}\)</span>,
+noting that <span class="math notranslate nohighlight">\(\partial\mathcal{M}/\partial\mathcal{U} = f(\theta)\eta_L(\theta)\)</span>
+by the constant returns property.</p>
+</div>
+</section>
+<section id="the-constrained-efficient-job-creation-condition">
+<h3>The Constrained Efficient Job Creation Condition<a class="headerlink" href="#the-constrained-efficient-job-creation-condition" title="Link to this heading">#</a></h3>
+<p>Combining conditions (3) and (4) — eliminating the co-state variable <span class="math notranslate nohighlight">\(\Psi\)</span>
+and its derivative — and evaluating at the planner’s optimal tightness
+<span class="math notranslate nohighlight">\(\theta^{PP}\)</span> yields the <strong>constrained efficient job creation condition</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta^{PP})} = 
+\frac{(x-z)[1-\eta_L(\theta^{PP})] - \gamma\theta^{PP}\eta_L(\theta^{PP})}{r+s} 
+\tag{5}\]</div>
+<p>Compare this to the decentralized job creation condition with Nash bargaining:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta^*)} = \frac{(1-\alpha)(x-z) - \alpha\gamma\theta^*}{r+s} 
+\tag{6}\]</div>
+<p>The two conditions are identical if and only if:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_L = \eta_L(\theta^{PP}) \tag{7}\]</div>
+<p>This is the <strong>Hosios condition</strong>: the worker’s bargaining power must equal the
+elasticity of the matching function with respect to unemployment evaluated at
+the planner’s optimum.</p>
+<div class="important admonition">
+<p class="admonition-title">The Hosios Condition</p>
+<p>The decentralized Nash bargaining equilibrium is constrained efficient if and
+only if the worker’s bargaining power <span class="math notranslate nohighlight">\(\alpha_L\)</span> equals the elasticity of the
+matching function with respect to unemployment <span class="math notranslate nohighlight">\(\eta_L(\theta^{PP})\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_L = \eta_L(\theta^{PP})\]</div>
+<p>When the Hosios condition holds, the wage that emerges from Nash bargaining
+exactly internalizes the search externalities, and the decentralized equilibrium
+coincides with the planner’s allocation.</p>
+</div>
+</section>
+<section id="economic-interpretation">
+<h3>Economic Interpretation<a class="headerlink" href="#economic-interpretation" title="Link to this heading">#</a></h3>
+<p>The Hosios condition has a precise economic interpretation in terms of the
+congestion externalities on each side of the market.</p>
+<p>When a firm opens an additional vacancy, it creates two externalities:</p>
+<ul class="simple">
+<li><p>A <strong>positive externality on workers</strong>: more vacancies mean a higher
+job-finding rate <span class="math notranslate nohighlight">\(f(\theta)\)</span>, benefiting unemployed workers.</p></li>
+<li><p>A <strong>negative externality on other firms</strong>: more vacancies reduce the
+vacancy-filling rate <span class="math notranslate nohighlight">\(q(\theta)\)</span>, making it harder for other firms to hire.</p></li>
+</ul>
+<p>The elasticity <span class="math notranslate nohighlight">\(\eta_L(\theta)\)</span> measures the relative magnitude of these two
+effects: it is the share of the marginal match attributed to the firm’s side
+of the market. When <span class="math notranslate nohighlight">\(\eta_L\)</span> is high, firms cause more congestion to other
+firms than workers cause to other workers, so the planner would want to
+discourage vacancy creation — achieved by giving workers a high bargaining
+share <span class="math notranslate nohighlight">\(\alpha_L = \eta_L\)</span>, which raises wages and reduces firm entry.</p>
+<p>Three cases follow:</p>
+<ul class="simple">
+<li><p><strong><span class="math notranslate nohighlight">\(\alpha_L &gt; \eta_L\)</span></strong>: wages are too high, tightness too low. Workers
+capture an excessively large share of the surplus, firms create too few
+vacancies, and the unemployment congestion externality is too high.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\alpha_L &lt; \eta_L\)</span></strong>: wages are too low, tightness too high. Firms
+capture too large a share of the surplus, create too many vacancies, and
+impose excessive congestion on other firms.</p></li>
+<li><p><strong><span class="math notranslate nohighlight">\(\alpha_L = \eta_L\)</span></strong>: the Hosios condition holds, the wage correctly
+prices the externalities, and the decentralized equilibrium is efficient.</p></li>
+</ul>
+</section>
+<section id="an-alternative-derivation-maximizing-workers-welfare">
+<h3>An Alternative Derivation: Maximizing Workers’ Welfare<a class="headerlink" href="#an-alternative-derivation-maximizing-workers-welfare" title="Link to this heading">#</a></h3>
+<p>There is a second, more intuitive derivation of the Hosios condition. The
+value of being unemployed is:</p>
+<div class="math notranslate nohighlight">
+\[rW_u = z + \frac{\alpha_L}{1-\alpha_L}\gamma\theta\]</div>
+<p>where <span class="math notranslate nohighlight">\(\theta\)</span> is determined by the job creation condition:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta)} = \frac{(1-\alpha_L)(x-z) - \alpha_L\gamma\theta}{r+s}\]</div>
+<p>Maximizing <span class="math notranslate nohighlight">\(rW_u\)</span> with respect to <span class="math notranslate nohighlight">\(\alpha_L\)</span>, subject to the equilibrium
+relationship between <span class="math notranslate nohighlight">\(\alpha_L\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>, yields a unique maximum at
+exactly <span class="math notranslate nohighlight">\(\alpha_L = \eta_L(\theta)\)</span>. This result has a powerful implication:
+if workers and firms agree to share the surplus in a way that maximizes the
+welfare of unemployed workers — the outsiders in the wage bargain — the
+search externalities are fully internalized and social output is maximized.
+The Hosios condition is not just a condition for aggregate efficiency; it is
+also the condition that is best for the unemployed.</p>
+<p>This highlights a fundamental tension in the search and matching model:
+employed workers and firms are <strong>insiders</strong> in the wage bargain, and they
+are unlikely to internalize the welfare of <strong>outsiders</strong> — the unemployed —
+when setting the wage. Inefficiency in decentralized search economies is
+therefore the rule rather than the exception.</p>
+</section>
+<section id="numerical-illustration">
+<h3>Numerical Illustration<a class="headerlink" href="#numerical-illustration" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">brentq</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Den Haan et al. matching function</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">nu</span> <span class="o">=</span> <span class="mf">1.25</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">q</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span> <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nu</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span> <span class="k">return</span> <span class="n">theta</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nu</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">eta</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span> <span class="k">return</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">theta</span><span class="o">**</span><span class="n">nu</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Parameters</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">r</span>      <span class="o">=</span> <span class="mf">0.04</span>
+<span class="n">s</span>      <span class="o">=</span> <span class="mf">0.42</span>
+<span class="n">gamma</span>  <span class="o">=</span> <span class="mf">0.26</span>
+<span class="n">x</span>      <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">z</span>      <span class="o">=</span> <span class="mf">0.71</span>
+<span class="n">alpha</span>  <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Decentralized JC condition</span>
+<span class="c1">#   gamma/q(theta) = [(1-alpha)(x-z) - alpha*gamma*theta]/(r+s)</span>
+<span class="c1"># Planner&#39;s JC condition</span>
+<span class="c1">#   gamma/q(theta) = [(x-z)(1-eta) - gamma*theta*eta]/(r+s)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">jc_decentralized</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">alpha_val</span><span class="o">=</span><span class="n">alpha</span><span class="p">):</span>
+    <span class="n">lhs</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">/</span> <span class="n">q</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha_val</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">alpha_val</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lhs</span> <span class="o">-</span> <span class="n">rhs</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">jc_planner</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="n">lhs</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">/</span> <span class="n">q</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eta</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">-</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta</span><span class="o">*</span><span class="n">eta</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">lhs</span> <span class="o">-</span> <span class="n">rhs</span>
+
+<span class="n">theta_decen</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">jc_decentralized</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">theta_pp</span>    <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="n">jc_planner</span><span class="p">,</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">eta_pp</span>      <span class="o">=</span> <span class="n">eta</span><span class="p">(</span><span class="n">theta_pp</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Decentralized tightness: θ* = </span><span class="si">{</span><span class="n">theta_decen</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">  &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;(α = </span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Planner&#39;s tightness:  θ^PP = </span><span class="si">{</span><span class="n">theta_pp</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Matching elasticity:  η(θ^PP) = </span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hosios condition satisfied: α = η? &quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">eta_pp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.01</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;No&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  α - η(θ^PP) = </span><span class="si">{</span><span class="n">alpha</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Panel 1: Planner vs decentralized JC condition</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">theta_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">lhs_grid</span>   <span class="o">=</span> <span class="n">gamma</span> <span class="o">/</span> <span class="n">q</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">)</span>
+<span class="n">rhs_decen</span>  <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="n">alpha</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">theta_grid</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+<span class="n">rhs_pp</span>     <span class="o">=</span> <span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">eta</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">))</span>
+              <span class="o">-</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_grid</span><span class="o">*</span><span class="n">eta</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">s</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">,</span> <span class="n">lhs_grid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\gamma/q(\theta)$ (LHS)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">,</span> <span class="n">rhs_decen</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Decentralized RHS ($\alpha=0.5$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_grid</span><span class="p">,</span> <span class="n">rhs_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Planner&#39;s RHS&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">theta_decen</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">theta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">theta_decen</span><span class="p">],</span> <span class="p">[</span><span class="n">gamma</span><span class="o">/</span><span class="n">q</span><span class="p">(</span><span class="n">theta_decen</span><span class="p">)],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">theta_pp</span><span class="p">],</span> <span class="p">[</span><span class="n">gamma</span><span class="o">/</span><span class="n">q</span><span class="p">(</span><span class="n">theta_pp</span><span class="p">)],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Market Tightness $\theta$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Planner vs Decentralized</span><span class="se">\n</span><span class="s2">Job Creation Condition&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Panel 2: rW_u as a function of alpha</span>
+<span class="c1"># Show maximum at alpha = eta(theta)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">alpha_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">rWu_grid</span>   <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alpha_grid</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">th</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">jc_decentralized</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">rWu</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="n">gamma</span><span class="o">*</span><span class="n">th</span>
+        <span class="n">rWu_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rWu</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">rWu_grid</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">rWu_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rWu_grid</span><span class="p">)</span>
+<span class="n">idx_max</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanargmax</span><span class="p">(</span><span class="n">rWu_grid</span><span class="p">)</span>
+<span class="n">alpha_max</span> <span class="o">=</span> <span class="n">alpha_grid</span><span class="p">[</span><span class="n">idx_max</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">rWu_grid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">alpha_max</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Max at $\alpha=</span><span class="si">{</span><span class="n">alpha_max</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;$\eta(\theta^</span><span class="se">{{</span><span class="s2">PP</span><span class="se">}}</span><span class="s2">)=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">alpha_max</span><span class="p">],</span> <span class="p">[</span><span class="n">rWu_grid</span><span class="p">[</span><span class="n">idx_max</span><span class="p">]],</span>
+           <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Bargaining Power $\alpha_L$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$rW_u$ (value of unemployment)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Workers&#39; Welfare vs Bargaining Power</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(Hosios condition maximizes $rW_u$)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Panel 3: Equilibrium tightness vs alpha</span>
+<span class="c1"># Mark efficient level</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">theta_alpha</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alpha_grid</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">th</span> <span class="o">=</span> <span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">jc_decentralized</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">),</span> <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="n">theta_alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="n">theta_alpha</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">theta_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta_alpha</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">theta_alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Decentralized $\theta^*(\alpha)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">theta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Planner&#39;s $\theta^</span><span class="se">{{</span><span class="s2">PP</span><span class="se">}}</span><span class="s2">=</span><span class="si">{</span><span class="n">theta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Hosios: $\alpha^*=\eta=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Shade inefficiency regions</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">theta_alpha</span><span class="p">,</span> <span class="n">theta_pp</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">theta_alpha</span> <span class="o">&lt;</span> <span class="n">theta_pp</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Too little vacancy ($\alpha&gt;\eta$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">theta_alpha</span><span class="p">,</span> <span class="n">theta_pp</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">theta_alpha</span> <span class="o">&gt;</span> <span class="n">theta_pp</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Too many vacancies ($\alpha&lt;\eta$)&quot;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Bargaining Power $\alpha_L$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Equilibrium Tightness $\theta^*$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Equilibrium Tightness vs Bargaining Power</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(efficient level marked)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;The Hosios Condition&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Decentralized tightness: θ* = 0.1354  (α = 0.5)
+Planner&#39;s tightness:  θ^PP = 0.5187
+Matching elasticity:  η(θ^PP) = 0.3057
+Hosios condition satisfied: α = η? No
+  α - η(θ^PP) = 0.1943
+</pre></div>
+</div>
+<img alt="_images/5fdb7b6985d30d8c18f0dd6982cbca4aebd563ede15d3254a97626e220040d4f.png" src="_images/5fdb7b6985d30d8c18f0dd6982cbca4aebd563ede15d3254a97626e220040d4f.png" />
+</div>
+</div>
+<p>The left panel shows the planner’s and decentralized job creation conditions
+as functions of tightness. The two curves have the same left-hand side
+<span class="math notranslate nohighlight">\(\gamma/q(\theta)\)</span> but different right-hand sides: the planner’s condition
+weights the surplus by <span class="math notranslate nohighlight">\(1-\eta(\theta)\)</span> while the decentralized condition
+weights it by <span class="math notranslate nohighlight">\(1-\alpha\)</span>. When <span class="math notranslate nohighlight">\(\alpha \neq \eta(\theta^{PP})\)</span>, the two
+equilibria differ. The middle panel confirms the welfare-maximization
+interpretation: <span class="math notranslate nohighlight">\(rW_u\)</span> achieves a unique maximum at exactly <span class="math notranslate nohighlight">\(\alpha = 
+\eta(\theta^{PP})\)</span>, the Hosios value. The right panel shows how equilibrium
+tightness varies with bargaining power, with the efficient level marked as
+a horizontal dashed line: above the Hosios value of <span class="math notranslate nohighlight">\(\alpha\)</span>, tightness
+is too low (too few vacancies); below it, tightness is too high.</p>
+</section>
+</section>
+<section id="labor-market-policies">
+<h2>Labor Market Policies<a class="headerlink" href="#labor-market-policies" title="Link to this heading">#</a></h2>
+<section id="motivation">
+<h3>Motivation<a class="headerlink" href="#motivation" title="Link to this heading">#</a></h3>
+<p>When the Hosios condition fails — which is the generic case, since there is
+no reason why the structural parameters <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\eta\)</span> should coincide
+— the decentralized equilibrium is inefficient. Labor market policies can
+potentially correct for this inefficiency by modifying the incentives for
+vacancy creation and wage setting. We consider three instruments: a hiring
+subsidy, a payroll tax, and a layoff tax.</p>
+</section>
+<section id="the-augmented-model">
+<h3>The Augmented Model<a class="headerlink" href="#the-augmented-model" title="Link to this heading">#</a></h3>
+<p>We augment the benchmark model with three policy parameters:</p>
+<ul class="simple">
+<li><p><strong>Hiring subsidy <span class="math notranslate nohighlight">\(\Upsilon &gt; 0\)</span></strong>: for every successful match, the firm
+receives a lump-sum payment <span class="math notranslate nohighlight">\(\Upsilon\)</span> from the government. This reduces
+the effective cost of filling a vacancy.</p></li>
+<li><p><strong>Payroll tax <span class="math notranslate nohighlight">\(\tau \in (0,1)\)</span></strong>: firms pay <span class="math notranslate nohighlight">\((1+\tau)w\)</span> for each employed
+worker, raising the marginal cost of labor.</p></li>
+<li><p><strong>Layoff tax <span class="math notranslate nohighlight">\(T &gt; 0\)</span></strong>: firms pay a penalty <span class="math notranslate nohighlight">\(T\)</span> each time they destroy a
+match, raising the effective separation cost.</p></li>
+</ul>
+<p>The Bellman equations for firms become:</p>
+<div class="math notranslate nohighlight">
+\[rJ_v = -\gamma + q(\theta)(J_\pi + \Upsilon - J_v)\]</div>
+<div class="math notranslate nohighlight">
+\[rJ_\pi = x - w(1+\tau) + s(J_v - T - J_\pi)\]</div>
+<p>Under free entry (<span class="math notranslate nohighlight">\(J_v = 0\)</span>), the value of a filled job is:</p>
+<div class="math notranslate nohighlight">
+\[J_\pi = \frac{x - w(1+\tau) - sT}{r+s} \tag{11}\]</div>
+<p>and the job creation condition for a given wage is:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta)} - \Upsilon = \frac{x - w(1+\tau) - sT}{r+s} 
+\tag{12}\]</div>
+</section>
+<section id="nash-bargained-wage-with-policies">
+<h3>Nash Bargained Wage with Policies<a class="headerlink" href="#nash-bargained-wage-with-policies" title="Link to this heading">#</a></h3>
+<p>The presence of policies changes the Nash bargaining outcome. The payroll tax
+increases the firm’s marginal cost of employing a worker by factor <span class="math notranslate nohighlight">\((1+\tau)\)</span>,
+while the worker’s marginal benefit remains unity. This asymmetry shifts the
+sharing rule: the modified Nash problem yields:</p>
+<div class="math notranslate nohighlight">
+\[(1+\tau)(1-\alpha)(W_n - W_u) = \alpha(J_\pi - J_v)\]</div>
+<p>so that the worker receives fraction <span class="math notranslate nohighlight">\(\alpha/(1+\tau(1-\alpha))\)</span> of the joint
+surplus and the firm receives <span class="math notranslate nohighlight">\((1-\alpha)(1+\tau)/(1+\tau(1-\alpha))\)</span>. The
+Nash bargained wage is:</p>
+<div class="math notranslate nohighlight">
+\[w = \frac{\alpha}{1+\tau}(x - sT) + (1-\alpha)z + 
+\frac{\alpha}{1+\tau}\left[\gamma\theta - f(\theta)\Upsilon\right] \tag{13}\]</div>
+<p>The effects of each policy on wages, holding tightness fixed, are:</p>
+<ul class="simple">
+<li><p><strong>Hiring subsidy <span class="math notranslate nohighlight">\(\Upsilon\)</span></strong>: lowers the wage by improving the firm’s
+bargaining position — the firm saves on search costs upon meeting the worker.</p></li>
+<li><p><strong>Layoff tax <span class="math notranslate nohighlight">\(T\)</span></strong>: lowers the wage by reducing the joint surplus — the
+firm’s share of the surplus must cover the expected future layoff penalty.</p></li>
+<li><p><strong>Payroll tax <span class="math notranslate nohighlight">\(\tau\)</span></strong>: reduces the slope of the wage curve, as the
+effective return to the firm from any wage increase falls.</p></li>
+</ul>
+</section>
+<section id="equilibrium-condition">
+<h3>Equilibrium Condition<a class="headerlink" href="#equilibrium-condition" title="Link to this heading">#</a></h3>
+<p>Substituting the Nash wage (13) into the job creation condition (12) yields
+the <strong>equilibrium condition</strong> with all three policies:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta)} - \Upsilon = 
+\frac{(1-\alpha)[x-(1+\tau)z-sT] - 
+\alpha[\gamma\theta - f(\theta)\Upsilon]}{r+s} \tag{14}\]</div>
+<p>All three policies affect tightness qualitatively in the expected direction
+— subsidies raise <span class="math notranslate nohighlight">\(\theta\)</span>, taxes reduce it — but their quantitative effects
+are moderated by the wage response: policies that reduce firm profitability
+also reduce wages through Nash bargaining, partially offsetting the demand
+effect.</p>
+</section>
+<section id="optimal-policy-instruments">
+<h3>Optimal Policy Instruments<a class="headerlink" href="#optimal-policy-instruments" title="Link to this heading">#</a></h3>
+<p>For each instrument in isolation, we can solve for the value that makes
+equilibrium (14) coincide with the planner’s allocation (5).</p>
+<p><strong>Optimal hiring subsidy</strong> (<span class="math notranslate nohighlight">\(\Upsilon &gt; 0\)</span>, <span class="math notranslate nohighlight">\(T = \tau = 0\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\Upsilon^* = [\alpha - \eta(\theta)]\frac{x - z + \gamma\theta}{r+s+f(\theta)} 
+\tag{15}\]</div>
+<p>A positive subsidy is warranted when <span class="math notranslate nohighlight">\(\alpha &gt; \eta\)</span> — workers capture too
+large a share of the surplus, firms create too few vacancies, and the subsidy
+corrects for the underinvestment in job creation.</p>
+<p><strong>Optimal payroll tax</strong> (<span class="math notranslate nohighlight">\(\tau &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\Upsilon = T = 0\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\tau^* = [\eta(\theta) - \alpha]\frac{x - z + \gamma\theta}{(1-\alpha)z} 
+\tag{16}\]</div>
+<p>A positive tax is warranted when <span class="math notranslate nohighlight">\(\alpha &lt; \eta\)</span> — firms capture too large
+a share of the surplus, create too many vacancies, and the tax corrects for
+excessive job creation. When <span class="math notranslate nohighlight">\(\alpha &gt; \eta\)</span>, the optimal payroll tax is
+negative — a payroll subsidy.</p>
+<p><strong>Optimal layoff tax</strong> (<span class="math notranslate nohighlight">\(T &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\Upsilon = \tau = 0\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[T^* = [\eta(\theta) - \alpha]\frac{x - z + \gamma\theta}{s(1-\alpha)} 
+\tag{17}\]</div>
+<p>The layoff tax has the same qualitative properties as the payroll tax: it
+is positive when firms over-create vacancies (<span class="math notranslate nohighlight">\(\alpha &lt; \eta\)</span>) and negative
+(a layoff subsidy) when firms under-create them (<span class="math notranslate nohighlight">\(\alpha &gt; \eta\)</span>). However,
+the layoff tax is a less desirable instrument when job destruction is
+endogenous — it distorts the separation decision in addition to the vacancy
+creation decision, potentially introducing a new inefficiency while correcting
+the original one.</p>
+</section>
+<section id="id1">
+<h3>Numerical Illustration<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Optimal policy instruments as functions of alpha</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">alpha_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># Equilibrium tightness for each alpha (no policy)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">theta_eq</span><span class="p">(</span><span class="n">alpha_val</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">brentq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">jc_decentralized</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">alpha_val</span><span class="p">),</span>
+                      <span class="mf">1e-4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">theta_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">theta_eq</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">alpha_grid</span><span class="p">])</span>
+
+<span class="c1"># Optimal policies at each alpha</span>
+<span class="c1"># Use theta_pp (planner&#39;s tightness) in the formulae</span>
+<span class="c1"># since optimal policy should deliver theta = theta_pp</span>
+<span class="n">surplus_term</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_pp</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">theta_pp</span><span class="p">))</span>
+
+<span class="n">Upsilon_star</span> <span class="o">=</span> <span class="p">(</span><span class="n">alpha_grid</span> <span class="o">-</span> <span class="n">eta_pp</span><span class="p">)</span> <span class="o">*</span> <span class="n">surplus_term</span>
+<span class="n">tau_star</span>     <span class="o">=</span> <span class="p">(</span><span class="n">eta_pp</span> <span class="o">-</span> <span class="n">alpha_grid</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_pp</span><span class="p">)</span> \
+               <span class="o">/</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha_grid</span><span class="p">)</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<span class="n">T_star</span>       <span class="o">=</span> <span class="p">(</span><span class="n">eta_pp</span> <span class="o">-</span> <span class="n">alpha_grid</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_pp</span><span class="p">)</span> \
+               <span class="o">/</span> <span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha_grid</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ── Panel 1: Optimal hiring subsidy ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">Upsilon_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Hosios: $\eta=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">Upsilon_star</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">Upsilon_star</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Subsidy ($\alpha&gt;\eta$: too few vacancies)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">Upsilon_star</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">Upsilon_star</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Tax ($\alpha&lt;\eta$: too many vacancies)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Bargaining Power $\alpha$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Optimal Hiring Subsidy $\Upsilon^*$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Optimal Hiring Subsidy</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="sa">r</span><span class="s2">&quot;$\Upsilon^* = (\alpha-\eta)\frac{x-z+\gamma\theta}&quot;</span>
+             <span class="sa">r</span><span class="s2">&quot;{r+s+f(\theta)}$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># ── Panel 2: Optimal payroll tax ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># Clip extreme values near alpha=1 where (1-alpha)*z -&gt; 0</span>
+<span class="n">tau_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">tau_star</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">tau_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Hosios: $\eta=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">tau_plot</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">tau_plot</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Tax ($\alpha&lt;\eta$: too many vacancies)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">tau_plot</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">tau_plot</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Subsidy ($\alpha&gt;\eta$: too few vacancies)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Bargaining Power $\alpha$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Optimal Payroll Tax $\tau^*$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Optimal Payroll Tax</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="sa">r</span><span class="s2">&quot;$\tau^* = (\eta-\alpha)\frac{x-z+\gamma\theta}&quot;</span>
+             <span class="sa">r</span><span class="s2">&quot;{(1-\alpha)z}$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># ── Panel 3: All three instruments compared ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">T_plot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">T_star</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">Upsilon_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Hiring subsidy $\Upsilon^*$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">tau_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Payroll tax $\tau^*$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alpha_grid</span><span class="p">,</span> <span class="n">T_plot</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Layoff tax $T^*$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span>
+           <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Hosios $\alpha^*=\eta=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Bargaining Power $\alpha$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Optimal Policy Value&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Optimal Policy Instruments Compared&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Optimal Labor Market Policies&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9277a43719b1be094349e0be50b00936b464af168f9e881c6e641416fe77150a.png" src="_images/9277a43719b1be094349e0be50b00936b464af168f9e881c6e641416fe77150a.png" />
+</div>
+</div>
+<p>All three panels share the same zero-crossing point at <span class="math notranslate nohighlight">\(\alpha = \eta(\theta^{PP})\)</span>
+— the Hosios value — confirming that no policy intervention is needed when the
+Hosios condition holds. The hiring subsidy is positive (a true subsidy) when
+<span class="math notranslate nohighlight">\(\alpha &gt; \eta\)</span> and negative (a tax on job creation) when <span class="math notranslate nohighlight">\(\alpha &lt; \eta\)</span>,
+while the payroll and layoff taxes have the opposite sign pattern. The magnitudes
+differ across instruments: the layoff tax requires a larger absolute value than
+the payroll tax to achieve the same correction, reflecting the fact that the
+layoff tax operates through the separation margin rather than the hiring margin.</p>
+</section>
+</section>
+<section id="competitive-search-equilibrium">
+<h2>Competitive Search Equilibrium<a class="headerlink" href="#competitive-search-equilibrium" title="Link to this heading">#</a></h2>
+<section id="directed-search-and-wage-posting">
+<h3>Directed Search and Wage Posting<a class="headerlink" href="#directed-search-and-wage-posting" title="Link to this heading">#</a></h3>
+<p>The Hosios condition provides a necessary and sufficient condition for the Nash
+bargaining equilibrium to be efficient, but it requires a precise relationship
+between structural parameters that will generally fail to hold. Moen (1997)
+proposes an alternative market structure — <strong>competitive search equilibrium</strong>
+— in which the decentralized equilibrium is <em>always</em> efficient, without any
+restriction on parameters.</p>
+<p>The key departure from the benchmark model is that wages are <strong>posted</strong> before
+matching takes place, rather than bargained after a meeting. This creates a
+fundamentally different strategic environment:</p>
+<ul class="simple">
+<li><p>Firms post a wage <span class="math notranslate nohighlight">\(w_i\)</span> when opening a vacancy, committing to pay this wage
+to any worker they hire.</p></li>
+<li><p>Workers observe posted wages and <strong>direct their search</strong> toward submarkets
+offering the highest expected income.</p></li>
+<li><p>The labor market is segmented into <strong>submarkets</strong>, each defined by a posted
+wage <span class="math notranslate nohighlight">\(w_i\)</span> and an associated tightness <span class="math notranslate nohighlight">\(\theta_i\)</span>.</p></li>
+</ul>
+<p>This structure generates a powerful mechanism: by posting a higher wage, a
+firm attracts more workers and fills its vacancy faster, but at lower profit
+per match. The firm therefore faces a genuine trade-off between wage and
+hiring speed, and internalizes the effect of its wage choice on the arrival
+rate of workers — exactly the externality that Nash bargaining fails to price.</p>
+</section>
+<section id="workers-decision-the-participation-constraint">
+<h3>Workers’ Decision: The Participation Constraint<a class="headerlink" href="#workers-decision-the-participation-constraint" title="Link to this heading">#</a></h3>
+<p>Workers direct their search toward the submarket offering the highest expected
+income. Since all workers are identical, in equilibrium all active submarkets
+must yield the same expected utility <span class="math notranslate nohighlight">\(W_u\)</span>. From the worker’s Bellman equations:</p>
+<div class="math notranslate nohighlight">
+\[rW_u^i = z + f(\theta_i)(W_n^i - W_u^i), \qquad 
+rW_n^i = w_i - s(W_n^i - W_u^i)\]</div>
+<p>solving for <span class="math notranslate nohighlight">\(rW_u^i\)</span> in terms of <span class="math notranslate nohighlight">\(w_i\)</span> and <span class="math notranslate nohighlight">\(\theta_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[rW_u^i = \frac{(r+s)z + w_i f(\theta_i)}{r+s+f(\theta_i)}\]</div>
+<p>Setting <span class="math notranslate nohighlight">\(rW_u^i = rW_u\)</span> for all active submarkets and solving for the
+relationship between <span class="math notranslate nohighlight">\(w_i\)</span> and <span class="math notranslate nohighlight">\(\theta_i\)</span> consistent with worker indifference:</p>
+<div class="math notranslate nohighlight">
+\[f(\theta_i) = \frac{rW_u - z}{w_i - rW_u}(r+s) \tag{18}\]</div>
+<p>This is the <strong>workers’ participation constraint</strong>: it defines the
+wage-tightness frontier along which workers are indifferent between submarkets.
+The frontier slopes downward: submarkets with higher wages have lower tightness
+(fewer workers per vacancy) because workers are willing to endure longer
+search for better-paying jobs. Submarkets offering wages below <span class="math notranslate nohighlight">\(rW_u\)</span> attract
+no workers and shut down.</p>
+</section>
+<section id="firms-decision-optimal-wage-posting">
+<h3>Firms’ Decision: Optimal Wage Posting<a class="headerlink" href="#firms-decision-optimal-wage-posting" title="Link to this heading">#</a></h3>
+<p>Firms choose a wage to maximize the value of opening a vacancy, taking the
+participation constraint (18) as given — they understand that their wage
+choice determines the arrival rate of workers:</p>
+<div class="math notranslate nohighlight">
+\[w_i = \arg\max \; J_v^i = \frac{-\gamma(r+s) + 
+q(\theta_i(w_i))(x-w_i)}{r+s+q(\theta_i(w_i))} \quad 
+\text{s.t. equation (18)}\]</div>
+<p>With free entry and a fixed entry cost <span class="math notranslate nohighlight">\(K\)</span>, the equilibrium requires <span class="math notranslate nohighlight">\(J_v^i = K\)</span>
+for all active firms.</p>
+</section>
+<section id="equilibrium-and-efficiency">
+<h3>Equilibrium and Efficiency<a class="headerlink" href="#equilibrium-and-efficiency" title="Link to this heading">#</a></h3>
+<p>Solving the firm’s constrained optimization problem yields the equilibrium
+job creation condition:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\gamma}{q(\theta)} = \frac{1-\eta(\theta)}{\eta(\theta)} \cdot 
+\frac{w - rW_u}{r+s} \tag{19}\]</div>
+<p>and the equilibrium posted wage:</p>
+<div class="math notranslate nohighlight">
+\[w = (1-\eta(\theta))z + \eta(\theta)(x + \gamma\theta) \tag{20}\]</div>
+<p>Comparing equation (20) to the Nash bargained wage $w = \alpha(x+\gamma\theta)</p>
+<ul class="simple">
+<li><p>(1-\alpha)z<span class="math notranslate nohighlight">\(: the competitive search wage is exactly the Nash bargained wage 
+evaluated at \)</span>\alpha = \eta(\theta)$ — the Hosios condition. The competitive
+search equilibrium always delivers the efficient allocation, for any parameter
+values, because the wage posting mechanism endogenously generates the correct
+sharing rule.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Why Competitive Search is Always Efficient</p>
+<p>In competitive search equilibrium, the firm’s optimal wage posting choice
+internalizes the congestion externality directly. By committing to a wage
+before search takes place, the firm accounts for how its wage affects the
+arrival rate of workers — and therefore the social cost of its vacancy
+creation decision. The equilibrium wage posting formula (20) is exactly
+the Nash bargained wage at the Hosios condition, so the decentralized
+equilibrium coincides with the planner’s allocation for any values of the
+underlying parameters.</p>
+</div>
+<p>The economic mechanism behind this result rests on two features working
+together:</p>
+<ol class="arabic simple">
+<li><p><strong>Submarket segmentation</strong>: workers can freely move between submarkets,
+so firms that post unfavorable wages attract no workers. This mobility
+disciplines firms’ wage posting choices.</p></li>
+<li><p><strong>Pre-commitment</strong>: because wages are posted before search, the firm’s
+wage choice directly determines the probability of meeting a worker.
+The firm therefore cannot treat the arrival rate of workers as
+independent of its wage — it must internalize the link between wages
+and matching rates.</p></li>
+</ol>
+</section>
+<section id="id2">
+<h3>Numerical Illustration<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Competitive search equilibrium</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+
+<span class="c1"># ── Solve for competitive search equilibrium ──</span>
+<span class="c1"># JC condition (19): gamma/q(theta) = (1-eta)/eta * (w-rWu)/(r+s)</span>
+<span class="c1"># Wage (20):         w = (1-eta)*z + eta*(x + gamma*theta)</span>
+<span class="c1"># These two + free entry J_v = K determine (theta, w, W_u)</span>
+<span class="c1"># With K=0 (free entry) we solve JC_planner = competitive search JC</span>
+
+<span class="c1"># Competitive search wage at each theta</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">w_cs</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">eta</span><span class="p">(</span><span class="n">theta</span><span class="p">))</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="n">eta</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta</span><span class="p">)</span>
+
+<span class="c1"># Show that competitive search wage = Nash wage at Hosios alpha</span>
+<span class="n">theta_cs_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">w_cs_vals</span>     <span class="o">=</span> <span class="n">w_cs</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">)</span>
+<span class="n">w_nash_hosios</span> <span class="o">=</span> <span class="n">eta_pp</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_cs_grid</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">eta_pp</span><span class="p">)</span><span class="o">*</span><span class="n">z</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># ── Panel 1: Wage rules comparison ──</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">,</span> <span class="n">w_cs_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Competitive search wage</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="sa">r</span><span class="s2">&quot;$w=(1-\eta)z+\eta(x+\gamma\theta)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">gamma</span><span class="o">*</span><span class="n">theta_cs_grid</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span><span class="o">*</span><span class="n">z</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Nash wage ($\alpha=</span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">$)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">,</span> <span class="n">w_nash_hosios</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Nash wage ($\alpha=\eta=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">$, Hosios)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;$x$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">z</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;$z$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Market Tightness $\theta$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Wage $w$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Competitive Search vs Nash Bargaining Wage&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">z</span> <span class="o">-</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">)</span>
+
+<span class="c1"># ── Panel 2: Surplus division comparison ──</span>
+<span class="c1"># Worker share under each wage rule as function of theta</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">worker_share</span><span class="p">(</span><span class="n">w_val</span><span class="p">,</span> <span class="n">theta_val</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Worker&#39;s share of joint surplus.&quot;&quot;&quot;</span>
+    <span class="n">ws</span> <span class="o">=</span> <span class="p">(</span><span class="n">w_val</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">theta_val</span><span class="p">)</span> <span class="o">+</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">js</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">z</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="n">s</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">theta_val</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">ws</span> <span class="o">/</span> <span class="n">js</span> <span class="k">if</span> <span class="n">js</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">shares_cs</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">eta</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">theta_cs_grid</span><span class="p">])</span>
+<span class="n">shares_nash</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">theta_cs_grid</span><span class="p">,</span> <span class="n">shares_cs</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Competitive search: $\eta(\theta)$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Nash bargaining: $\alpha=</span><span class="si">{</span><span class="n">alpha</span><span class="si">}</span><span class="s2">$ (constant)&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">eta_pp</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+           <span class="n">label</span><span class="o">=</span><span class="sa">rf</span><span class="s2">&quot;Hosios value: $\eta(\theta^</span><span class="se">{{</span><span class="s2">PP</span><span class="se">}}</span><span class="s2">)=</span><span class="si">{</span><span class="n">eta_pp</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">$&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Market Tightness $\theta$&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Worker&#39;s surplus share&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Worker&#39;s Surplus Share</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;Competitive Search vs Nash Bargaining&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Competitive Search Equilibrium&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9c70429aefe34e4f70293bae5f36c22a6f9689a45eb7cab86f6d32309fa42a68.png" src="_images/9c70429aefe34e4f70293bae5f36c22a6f9689a45eb7cab86f6d32309fa42a68.png" />
+</div>
+</div>
+<p>The left panel compares the competitive search wage rule to two Nash bargaining
+wage rules: the benchmark (<span class="math notranslate nohighlight">\(\alpha = 0.5\)</span>) and the Hosios Nash wage
+(<span class="math notranslate nohighlight">\(\alpha = \eta(\theta^{PP})\)</span>). The competitive search wage (blue) coincides
+with the Hosios Nash wage (green) at the equilibrium tightness <span class="math notranslate nohighlight">\(\theta^{PP}\)</span>,
+confirming the efficiency result analytically. The right panel shows the
+worker’s surplus share under each rule: Nash bargaining delivers a constant
+share <span class="math notranslate nohighlight">\(\alpha\)</span> regardless of tightness, while competitive search delivers a
+share equal to <span class="math notranslate nohighlight">\(\eta(\theta)\)</span> — varying with tightness in exactly the way
+required by the Hosios condition. This is the sense in which competitive
+search endogenously generates the efficient sharing rule: the wage posting
+mechanism causes the worker’s share to track the matching elasticity,
+internalizing the congestion externality at every level of tightness.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>This notebook has developed the theory of efficiency in search economies and
+characterized the conditions under which decentralized markets maximize social
+welfare. The main results are as follows.</p>
+<p>The <strong>social planner’s problem</strong> reveals that the constrained efficient
+allocation differs from the decentralized Nash bargaining equilibrium whenever
+<span class="math notranslate nohighlight">\(\alpha_L \neq \eta_L(\theta^{PP})\)</span>. The planner’s job creation condition
+weights the surplus by <span class="math notranslate nohighlight">\(1-\eta_L\)</span> rather than <span class="math notranslate nohighlight">\(1-\alpha_L\)</span>, reflecting the
+social cost of the congestion externalities on each side of the market.</p>
+<p>The <strong>Hosios condition</strong> <span class="math notranslate nohighlight">\(\alpha_L = \eta_L\)</span> is the precise requirement for
+efficiency: it ensures that the worker’s bargaining share correctly prices the
+externalities. When the Hosios condition fails, unemployment is either
+inefficiently high (<span class="math notranslate nohighlight">\(\alpha &gt; \eta\)</span>, too few vacancies) or inefficiently
+low (<span class="math notranslate nohighlight">\(\alpha &lt; \eta\)</span>, too many vacancies). The condition has a welfare
+interpretation: it is also the bargaining power that maximizes the expected
+income of unemployed workers, highlighting the role of the unemployed as
+outsiders whose welfare is ignored in the Nash bargaining between insiders.</p>
+<p><strong>Labor market policies</strong> — hiring subsidies, payroll taxes, and layoff taxes
+— can restore efficiency when the Hosios condition fails. Each instrument has
+a precisely calibrated optimal value that equates the decentralized and
+planner’s allocations. The optimal instruments have opposite signs depending
+on whether the economy suffers from too much or too little vacancy creation.</p>
+<p><strong>Competitive search equilibrium</strong> provides a market structure that is always
+efficient, without requiring the Hosios condition to hold as a restriction on
+primitive parameters. By posting wages before search and allowing workers to
+direct their search toward preferred submarkets, firms internalize the
+congestion externality through their wage posting decision. The equilibrium
+wage is exactly the Nash bargained wage at the Hosios condition — not because
+parameters happen to satisfy it, but because the wage posting mechanism
+endogenously generates the correct sharing rule.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="credit-market.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Frictional Credit Market</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="financial-frictions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Financial Frictions in Macroeconomics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-social-planner-s-problem">The Social Planner’s Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-hamiltonian">Solving the Hamiltonian</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-constrained-efficient-job-creation-condition">The Constrained Efficient Job Creation Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#economic-interpretation">Economic Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-alternative-derivation-maximizing-workers-welfare">An Alternative Derivation: Maximizing Workers’ Welfare</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-illustration">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labor-market-policies">Labor Market Policies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">Motivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-augmented-model">The Augmented Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nash-bargained-wage-with-policies">Nash Bargained Wage with Policies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-condition">Equilibrium Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimal-policy-instruments">Optimal Policy Instruments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#competitive-search-equilibrium">Competitive Search Equilibrium</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-search-and-wage-posting">Directed Search and Wage Posting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#workers-decision-the-participation-constraint">Workers’ Decision: The Participation Constraint</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#firms-decision-optimal-wage-posting">Firms’ Decision: Optimal Wage Posting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equilibrium-and-efficiency">Equilibrium and Efficiency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerical Illustration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

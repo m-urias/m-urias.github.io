@@ -1,0 +1,251 @@
+Traceback (most recent call last):
+  File "C:\Users\XPS\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import brentq
+from scipy.integrate import quad
+
+# ──────────────────────────────────────────────
+# Parameters
+# ──────────────────────────────────────────────
+A      = 1.0     # matching efficiency
+beta   = 0.5     # vacancy elasticity
+r      = 0.004   # monthly discount rate
+mu     = 0.05    # shock arrival rate
+gamma  = 0.5     # vacancy posting cost
+z      = 0.4     # non-employment income
+alpha  = 0.5     # worker bargaining power
+
+# Uniform productivity distribution on [x_min, x_max]
+x_min, x_max = 0.0, 2.0
+
+def G(x):   return (x - x_min) / (x_max - x_min)
+def g(x):   return 1.0 / (x_max - x_min)
+
+def q(theta): return A * theta**(-(1 - beta))
+def f(theta): return A * theta**beta
+
+# ──────────────────────────────────────────────
+# Expected surplus integral: ∫_{xr}^{xmax} (x - xr) dG(x)
+# ──────────────────────────────────────────────
+def expected_surplus(xr):
+    val, _ = quad(lambda x: (x - xr) * g(x), xr, x_max)
+    return val
+
+# ──────────────────────────────────────────────
+# JD condition: z + alpha/(1-alpha)*gamma*theta
+#             = xr + mu/(r+mu) * E[x - xr | x > xr] * (1-G(xr))
+# Rearranged as: JD_lhs(theta) = JD_rhs(xr)
+# => theta as a function of xr from JD
+# ──────────────────────────────────────────────
+def theta_from_JD(xr, z=z):
+    rhs = xr + (mu / (r + mu)) * expected_surplus(xr)
+    lhs_const = rhs - z          # = alpha/(1-alpha)*gamma*theta
+    if lhs_const < 0:
+        return np.nan
+    return lhs_const * (1 - alpha) / (alpha * gamma)
+
+# ──────────────────────────────────────────────
+# JC condition: gamma/q(theta) = (1-alpha)/(r+mu) * E[surplus]
+# => theta as a function of xr from JC
+# ──────────────────────────────────────────────
+def theta_from_JC(xr):
+    es = expected_surplus(xr)
+    if es <= 0:
+        return np.nan
+    rhs = (1 - alpha) / (r + mu) * es
+    # gamma / q(theta) = rhs  =>  theta^(1-beta) = gamma/(A*rhs)
+    return (gamma / (A * rhs))**(1 / (1 - beta))
+
+# ──────────────────────────────────────────────
+# Solve equilibrium
+# ──────────────────────────────────────────────
+def solve_endo(z_val=z):
+    def condition(xr):
+        t_jd = theta_from_JD(xr, z=z_val)
+        t_jc = theta_from_JC(xr)
+        if np.isnan(t_jd) or np.isnan(t_jc):
+            return np.nan
+        return t_jd - t_jc
+    xr_star = brentq(condition, x_min + 0.01, x_max - 0.01)
+    theta_star = theta_from_JC(xr_star)
+    sep_rate   = mu * G(xr_star)
+    U_star     = sep_rate / (sep_rate + f(theta_star) * (1 - G(xr_star)))
+    return xr_star, theta_star, U_star
+
+xr_base, theta_base, U_base = solve_endo()
+
+# ──────────────────────────────────────────────
+# Plot JD and JC loci + productivity shock
+# ──────────────────────────────────────────────
+xr_grid = np.linspace(x_min + 0.01, x_max - 0.3, 200)
+
+fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+
+for ax, z_val, label, color in zip(
+        [axes[0], axes[0]],
+        [z, z],
+        ["JD (baseline)", "JC (baseline)"],
+        ["#2c7bb6", "#d7191c"]):
+    pass   # placeholder — drawn below
+
+# Panel 1: JD and JC loci, baseline vs productivity shock
+scenarios = [
+    (z,     "-",  "Baseline",       "#2c7bb6", "#d7191c"),
+]
+
+for z_val, ls, label, c_jd, c_jc in scenarios:
+    jd_theta = [theta_from_JD(xr, z=z_val) for xr in xr_grid]
+    jc_theta = [theta_from_JC(xr)          for xr in xr_grid]
+
+    axes[0].plot(xr_grid, jd_theta, color=c_jd, lw=2, ls=ls,
+                 label=f"JD ({label})")
+    axes[0].plot(xr_grid, jc_theta, color=c_jc, lw=2, ls=ls,
+                 label=f"JC ({label})")
+
+# Productivity shock: shift x_max up
+x_max_shock = x_max * 1.2
+def expected_surplus_shock(xr):
+    val, _ = quad(lambda x: (x - xr) / (x_max_shock - x_min),
+                  xr, x_max_shock)
+    return val
+
+def theta_from_JD_shock(xr):
+    rhs = xr + (mu / (r + mu)) * expected_surplus_shock(xr)
+    lhs_const = rhs - z
+    if lhs_const < 0: return np.nan
+    return lhs_const * (1 - alpha) / (alpha * gamma)
+
+def theta_from_JC_shock(xr):
+    es = expected_surplus_shock(xr)
+    if es <= 0: return np.nan
+    rhs = (1 - alpha) / (r + mu) * es
+    return (gamma / (A * rhs))**(1 / (1 - beta))
+
+jd_shock = [theta_from_JD_shock(xr) for xr in xr_grid]
+jc_shock = [theta_from_JC_shock(xr) for xr in xr_grid]
+
+axes[0].plot(xr_grid, jd_shock, color="#2c7bb6", lw=2, ls="--",
+             label="JD (productivity shock)")
+axes[0].plot(xr_grid, jc_shock, color="#d7191c", lw=2, ls="--",
+             label="JC (productivity shock)")
+
+# Equilibrium markers
+axes[0].scatter([xr_base], [theta_base], color="black",
+                zorder=6, s=80, marker="*", label="Baseline eq.")
+
+def solve_shock():
+    def cond(xr):
+        t_jd = theta_from_JD_shock(xr)
+        t_jc = theta_from_JC_shock(xr)
+        if np.isnan(t_jd) or np.isnan(t_jc): return np.nan
+        return t_jd - t_jc
+    xr_s = brentq(cond, x_min + 0.01, x_max_shock - 0.3)
+    return xr_s, theta_from_JC_shock(xr_s)
+
+xr_shock, theta_shock = solve_shock()
+axes[0].scatter([xr_shock], [theta_shock], color="darkorange",
+                zorder=6, s=80, marker="o", label="Post-shock eq.")
+
+axes[0].set_xlabel(r"Destruction Threshold $x_r$", fontsize=12)
+axes[0].set_ylabel(r"Market Tightness $\theta$", fontsize=12)
+axes[0].set_title("JD–JC Equilibrium and Productivity Shock", fontsize=12)
+axes[0].legend(fontsize=9)
+axes[0].set_xlim(x_min, x_max - 0.1)
+axes[0].set_ylim(0, None)
+
+# Panel 2: unemployment rate as function of x_max (productivity)
+x_max_vals = np.linspace(1.5, 2.5, 30)
+U_vals     = []
+
+for xm in x_max_vals:
+    def es_xm(xr, xm=xm):
+        val, _ = quad(lambda x: (x - xr) / (xm - x_min), xr, xm)
+        return val
+    def t_jd_xm(xr, xm=xm):
+        rhs = xr + (mu / (r + mu)) * es_xm(xr, xm)
+        lc  = rhs - z
+        if lc < 0: return np.nan
+        return lc * (1 - alpha) / (alpha * gamma)
+    def t_jc_xm(xr, xm=xm):
+        es = es_xm(xr, xm)
+        if es <= 0: return np.nan
+        rhs = (1 - alpha) / (r + mu) * es
+        return (gamma / (A * rhs))**(1 / (1 - beta))
+    try:
+        def cond_xm(xr):
+            return t_jd_xm(xr) - t_jc_xm(xr)
+        xr_s  = brentq(cond_xm, x_min + 0.01, xm - 0.1)
+        th_s  = t_jc_xm(xr_s)
+        sr    = mu * (xr_s - x_min) / (xm - x_min)
+        U_s   = sr / (sr + f(th_s) * (1 - (xr_s - x_min)/(xm - x_min)))
+        U_vals.append(U_s * 100)
+    except Exception:
+        U_vals.append(np.nan)
+
+axes[1].plot(x_max_vals, U_vals, color="#1a9641", lw=2)
+axes[1].axvline(x_max, color="gray", lw=1, ls="--", alpha=0.7,
+                label="Baseline $x_{\\max}$")
+axes[1].set_xlabel(r"Upper Bound of Productivity Distribution $x_{\max}$",
+                   fontsize=11)
+axes[1].set_ylabel(r"Steady-State Unemployment $\mathcal{U}^*$ (%)",
+                   fontsize=11)
+axes[1].set_title("Unemployment and Aggregate Productivity", fontsize=12)
+axes[1].legend(fontsize=10)
+
+fig.suptitle("Endogenous Job Destruction Model", fontsize=13, y=1.02)
+plt.tight_layout()
+plt.show()
+
+# ──────────────────────────────────────────────
+# Print equilibrium summary
+# ──────────────────────────────────────────────
+sep_shock = mu * G.__class__  # placeholder
+print("Baseline equilibrium:")
+print(f"  Destruction threshold:  x_r* = {xr_base:.3f}")
+print(f"  Market tightness:       θ*   = {theta_base:.3f}")
+print(f"  Unemployment rate:      U*   = {U_base*100:.2f}%")
+print(f"\nPost-productivity-shock equilibrium:")
+print(f"  Destruction threshold:  x_r* = {xr_shock:.3f}")
+print(f"  Market tightness:       θ*   = {theta_shock:.3f}")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mTypeError[39m                                 Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 201[39m
+[32m    196[39m plt.show()
+[32m    198[39m [38;5;66;03m# ──────────────────────────────────────────────[39;00m
+[32m    199[39m [38;5;66;03m# Print equilibrium summary[39;00m
+[32m    200[39m [38;5;66;03m# ──────────────────────────────────────────────[39;00m
+[32m--> [39m[32m201[39m sep_shock = [43mmu[49m[43m [49m[43m*[49m[43m [49m[43mG[49m[43m.[49m[34;43m__class__[39;49m  [38;5;66;03m# placeholder[39;00m
+[32m    202[39m [38;5;28mprint[39m([33m"[39m[33mBaseline equilibrium:[39m[33m"[39m)
+[32m    203[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[33m  Destruction threshold:  x_r* = [39m[38;5;132;01m{[39;00mxr_base[38;5;132;01m:[39;00m[33m.3f[39m[38;5;132;01m}[39;00m[33m"[39m)
+
+[31mTypeError[39m: unsupported operand type(s) for *: 'float' and 'type'
+

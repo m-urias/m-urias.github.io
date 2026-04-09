@@ -1,0 +1,1458 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Extracting Business Cycles from Time Series &#8212; My Macroeconomic Analysis Course</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'extracting-business-cycles';</script>
+    <link rel="canonical" href="/macro-analysis-book/extracting-business-cycles.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Labor Search Extensions" href="model-extensions.html" />
+    <link rel="prev" title="Linearization Methods in Macroeconomics" href="linearization.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Macroeconomic Analysis Course</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Labor Market</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="equilibrium-unemployment.html">Equilibrium Unemployment</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="poisson-process.html">Poisson Process and the Value of an Asset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Nash-bargaining.html">Nash Bargaining and Wage Determination</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="labor-dynamics.html">Labor Market Dynamics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linearization.html">Linearization in Macro</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Extracting Business Cycles from Time Series</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="model-extensions.html">Labor Search Extensions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Credit Frictions and Financial Multipliers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="credit-market.html">Frictional Credit Market</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="market-efficiency.html">Efficiency in Search Economies</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/extracting-business-cycles.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Extracting Business Cycles from Time Series</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Extracting Business Cycles from Time Series</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-business-cycles-from-macroeconomic-data">Extracting Business Cycles from Macroeconomic Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-log-transformation">Why the Log Transformation?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-log-linear-and-log-quadratic-detrending">Method 1: Log-Linear and Log-Quadratic Detrending</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-the-hodrick-prescott-filter">Method 2: The Hodrick-Prescott Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-the-hamilton-filter">Method 3: The Hamilton Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-band-pass-filters">Method 4: Band-Pass Filters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-four-methods">Comparing the Four Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-filter-properties">Summary of Filter Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="extracting-business-cycles-from-time-series">
+<h1>Extracting Business Cycles from Time Series<a class="headerlink" href="#extracting-business-cycles-from-time-series" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="extracting-business-cycles-from-macroeconomic-data">
+<h1>Extracting Business Cycles from Macroeconomic Data<a class="headerlink" href="#extracting-business-cycles-from-macroeconomic-data" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>A central challenge in empirical macroeconomics is separating the <strong>trend</strong> component of a time series — its long-run growth path — from the <strong>cyclical</strong> component — the short-run fluctuations around that path. This decomposition is not directly observable: we only see the raw series <span class="math notranslate nohighlight">\(y_t\)</span>, which is the sum of both components:</p>
+<div class="math notranslate nohighlight">
+\[y_t = \tau_t + c_t\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau_t\)</span> is the trend and <span class="math notranslate nohighlight">\(c_t\)</span> is the cycle. The cycle is what macroeconomists mean by the “business cycle”: the periodic booms and busts that drive fluctuations in unemployment, investment, and living standards. To study business cycles empirically — to measure their amplitude, duration, and comovement across variables and countries — we need a method for extracting <span class="math notranslate nohighlight">\(c_t\)</span> from <span class="math notranslate nohighlight">\(y_t\)</span>.</p>
+<p>This notebook develops four widely used methods for doing so, applies each to GDP data from a cross-section of countries, and compares their properties. The methods are:</p>
+<ol class="arabic simple">
+<li><p><strong>Log-linear and log-quadratic detrending</strong>: fit a deterministic polynomial trend and treat the residual as the cycle.</p></li>
+<li><p><strong>Hodrick-Prescott (HP) filter</strong>: choose a smooth time-varying trend by solving a penalized least squares problem.</p></li>
+<li><p><strong>Hamilton filter</strong>: define the cycle as the unpredictable component of an <span class="math notranslate nohighlight">\(h\)</span>-step-ahead forecast.</p></li>
+<li><p><strong>Baxter-King (BK) and Christiano-Fitzgerald (CF) band-pass filters</strong>: isolate fluctuations within the frequency band associated with business cycles.</p></li>
+</ol>
+<section id="why-the-log-transformation">
+<h3>Why the Log Transformation?<a class="headerlink" href="#why-the-log-transformation" title="Link to this heading">#</a></h3>
+<p>Most macroeconomic variables exhibit exponential rather than linear growth. If <span class="math notranslate nohighlight">\(Y_t\)</span> grows at constant rate <span class="math notranslate nohighlight">\(g\)</span> with proportional random deviations:</p>
+<div class="math notranslate nohighlight">
+\[Y_t = (1+g)Y_{t-1} + Y_{t-1}\varepsilon_t\]</div>
+<p>then the percentage change is <span class="math notranslate nohighlight">\(\Delta Y_t / Y_{t-1} = g + \varepsilon_t\)</span> — a constant plus noise. Taking logarithms, <span class="math notranslate nohighlight">\(y_t = \ln Y_t\)</span> transforms the exponential trend into a linear one:</p>
+<div class="math notranslate nohighlight">
+\[y_t \approx y_0 + gt + \text{stationary noise}\]</div>
+<p>We should log-transform variables that grow exponentially over time — GDP, consumption, investment, industrial production — but not variables that are already expressed as rates or shares, such as the unemployment rate, the savings rate, or interest rates. All GDP series in this notebook are log-transformed before filtering.</p>
+</section>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
+<p>We download real GDP data for a cross-section of countries from FRED (Federal Reserve Economic Data). We use quarterly, seasonally adjusted real GDP series where available, standardizing each to an index with base year 2015 = 100 to facilitate comparison across countries.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.dates</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mdates</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="c1"># ── Install/import FRED API client ──</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;pip&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">,</span> <span class="s2">&quot;fredapi&quot;</span><span class="p">,</span> <span class="s2">&quot;-q&quot;</span><span class="p">])</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">fredapi</span><span class="w"> </span><span class="kn">import</span> <span class="n">Fred</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.signal</span><span class="w"> </span><span class="kn">import</span> <span class="n">detrend</span> <span class="k">as</span> <span class="n">scipy_detrend</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">pearsonr</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># FRED API key</span>
+<span class="c1"># Replace with your own key or set environment</span>
+<span class="c1"># variable FRED_API_KEY</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">FRED_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;FRED_API_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;your_fred_api_key_here&quot;</span><span class="p">)</span>
+<span class="n">fred</span> <span class="o">=</span> <span class="n">Fred</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="n">FRED_API_KEY</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Country GDP series on FRED</span>
+<span class="c1"># All are real GDP, seasonally adjusted</span>
+<span class="c1"># Units vary by country; we index to 2015Q1=100</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">gdp_series</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;United States&quot;</span> <span class="p">:</span> <span class="s2">&quot;GDPC1&quot;</span><span class="p">,</span>        <span class="c1"># Billions of Chained 2017 USD</span>
+    <span class="s2">&quot;United Kingdom&quot;</span><span class="p">:</span> <span class="s2">&quot;CLVMNACSCAB1GQUK&quot;</span><span class="p">,</span>   <span class="c1"># Millions of Chained 2019 GBP</span>
+    <span class="s2">&quot;Germany&quot;</span>       <span class="p">:</span> <span class="s2">&quot;CLVMNACSCAB1GQDE&quot;</span><span class="p">,</span>   <span class="c1"># Millions of Chained 2015 EUR</span>
+    <span class="s2">&quot;Japan&quot;</span>         <span class="p">:</span> <span class="s2">&quot;JPNRGDPEXP&quot;</span><span class="p">,</span>    <span class="c1"># Billions of Chained 2015 JPY</span>
+    <span class="s2">&quot;Canada&quot;</span>        <span class="p">:</span> <span class="s2">&quot;NGDPRSAXDCCAQ&quot;</span><span class="p">,</span> <span class="c1"># Millions of Chained 2017 CAD</span>
+    <span class="s2">&quot;Australia&quot;</span>     <span class="p">:</span> <span class="s2">&quot;RGDPNAAUA666NRUG&quot;</span><span class="p">,</span>   <span class="c1"># Millions of 2015 USD</span>
+<span class="p">}</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;United States&quot;</span> <span class="p">:</span> <span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;United Kingdom&quot;</span><span class="p">:</span> <span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Germany&quot;</span>       <span class="p">:</span> <span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Japan&quot;</span>         <span class="p">:</span> <span class="s2">&quot;#f4910a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Canada&quot;</span>        <span class="p">:</span> <span class="s2">&quot;#7b3294&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Australia&quot;</span>     <span class="p">:</span> <span class="s2">&quot;#008080&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Download and process</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;1980-01-01&quot;</span>
+<span class="n">end_date</span>   <span class="o">=</span> <span class="s2">&quot;2023-12-31&quot;</span>
+
+<span class="n">gdp_data</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">ticker</span> <span class="ow">in</span> <span class="n">gdp_series</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">fred</span><span class="o">.</span><span class="n">get_series</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span>
+                                 <span class="n">observation_start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+                                 <span class="n">observation_end</span><span class="o">=</span><span class="n">end_date</span><span class="p">)</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;QS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+        <span class="c1"># Index to 2015Q1 = 100</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;2015-01-01&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="s2">&quot;2015-01-01&quot;</span> <span class="ow">in</span> <span class="n">series</span><span class="o">.</span><span class="n">index</span> \
+               <span class="k">else</span> <span class="n">series</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">series</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">series</span> <span class="o">/</span> <span class="n">base</span>
+        <span class="n">gdp_data</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Downloaded </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span><span class="si">}</span><span class="s2"> quarters &quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">quarter</span><span class="si">}</span><span class="s2">–&quot;</span>
+              <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">Q</span><span class="si">{</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">quarter</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not download </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Plot raw log GDP series</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="c1"># Shade NBER recessions for US; shade 2008Q3-2009Q2 and</span>
+    <span class="c1"># 2020Q1-2020Q2 for all countries as reference</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log Real GDP (2015=100)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">YearLocator</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s2">&quot;%Y&quot;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Log Real GDP: Six Countries (shaded = GFC and COVID)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded United States: 176 quarters (1980Q1–2023Q4)
+Downloaded United Kingdom: 163 quarters (1980Q1–2020Q3)
+Downloaded Germany: 132 quarters (1991Q1–2023Q4)
+Downloaded Japan: 120 quarters (1994Q1–2023Q4)
+Downloaded Canada: 176 quarters (1980Q1–2023Q4)
+Downloaded Australia: 44 quarters (1980Q1–2023Q1)
+</pre></div>
+</div>
+<img alt="_images/39d1ca2ecf366ccccff499f6ff736cf2df88145492ed60ac1f6690d63d5937f7.png" src="_images/39d1ca2ecf366ccccff499f6ff736cf2df88145492ed60ac1f6690d63d5937f7.png" />
+</div>
+</div>
+</section>
+<section id="method-1-log-linear-and-log-quadratic-detrending">
+<h2>Method 1: Log-Linear and Log-Quadratic Detrending<a class="headerlink" href="#method-1-log-linear-and-log-quadratic-detrending" title="Link to this heading">#</a></h2>
+<section id="theory">
+<h3>Theory<a class="headerlink" href="#theory" title="Link to this heading">#</a></h3>
+<p>The simplest detrending method fits a deterministic polynomial time trend by OLS and defines the cycle as the residual. For a log-linear trend:</p>
+<div class="math notranslate nohighlight">
+\[y_t = a + gt + \varepsilon_t\]</div>
+<p>the trend is <span class="math notranslate nohighlight">\(\hat{\tau}_t = \hat{a} + \hat{g}t\)</span> and the cycle is <span class="math notranslate nohighlight">\(\hat{c}_t = y_t - \hat{\tau}_t\)</span>. A log-quadratic extension adds a squared term to allow for curvature in the trend:</p>
+<div class="math notranslate nohighlight">
+\[y_t = a + g_1 t + g_2 t^2 + \varepsilon_t\]</div>
+<p><strong>When is it appropriate?</strong> Log-linear detrending is appropriate when the data-generating process has a constant growth rate — that is, when the underlying trend is genuinely linear in logs. For most developed economies’ GDP, this is a reasonable first approximation over long samples, though it may miss structural breaks in trend growth (such as the productivity slowdown after 1973 or the post-GFC slowdown).</p>
+<p><strong>Limitations.</strong> A deterministic trend assumes that the economy always returns to the same long-run path after a shock — any permanent shift in the level of GDP is attributed to the cycle rather than the trend. If GDP follows a random walk with drift (a stochastic trend), log-linear detrending will produce spuriously persistent cycles.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Log-linear and log-quadratic detrending</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">linear_detrend</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;OLS regression on linear time trend; return cycle.&quot;&quot;&quot;</span>
+    <span class="n">T</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">t</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">X</span>   <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">trend</span>  <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fittedvalues</span>
+    <span class="n">cycle</span>  <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">trend</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> \
+           <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">quadratic_detrend</span><span class="p">(</span><span class="n">series</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;OLS regression on quadratic time trend; return cycle.&quot;&quot;&quot;</span>
+    <span class="n">T</span>   <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">t</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">X</span>   <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">t</span><span class="p">,</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">trend</span>  <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">fittedvalues</span>
+    <span class="n">cycle</span>  <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">trend</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> \
+           <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Plot: trend fit and cycle for each country</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">axes1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">axes1</span> <span class="o">=</span> <span class="n">axes1</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">cycles_linear</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle_lin</span><span class="p">,</span>  <span class="n">trend_lin</span>  <span class="o">=</span> <span class="n">linear_detrend</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">cycle_quad</span><span class="p">,</span> <span class="n">trend_quad</span> <span class="o">=</span> <span class="n">quadratic_detrend</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">cycles_linear</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycle_lin</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log GDP&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">trend_lin</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Linear trend&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">trend_quad</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Quadratic trend&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">trend_lin</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend_lin</span><span class="o">.</span><span class="n">values</span> <span class="o">+</span> <span class="n">cycle_lin</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle_lin</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &gt; 0 (boom)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">trend_lin</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend_lin</span><span class="o">.</span><span class="n">values</span> <span class="o">+</span> <span class="n">cycle_lin</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle_lin</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &lt; 0 (recession)&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log Real GDP&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Log-Linear Detrending: Trend and Cycle</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;(shaded area = deviation of GDP from linear trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Second figure: log deviation from linear trend</span>
+<span class="c1"># Mirrors the HP filter cycle plots exactly</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig2</span><span class="p">,</span> <span class="n">axes2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">axes2</span> <span class="o">=</span> <span class="n">axes2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle</span> <span class="o">=</span> <span class="n">cycles_linear</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+    <span class="n">ax</span>    <span class="o">=</span> <span class="n">axes2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">ev. from trend)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">fig2</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Log-Linear Detrending: Business Cycles</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;(</span><span class="si">% d</span><span class="s2">eviation from linear trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/d007863318abcd619684347aef1ecd4a31161e3027c840aa29bf7d247abda2e5.png" src="_images/d007863318abcd619684347aef1ecd4a31161e3027c840aa29bf7d247abda2e5.png" />
+<img alt="_images/0c336671c4aa2c8d34822bab3385d6996ac58271268746270732cf2158091f8d.png" src="_images/0c336671c4aa2c8d34822bab3385d6996ac58271268746270732cf2158091f8d.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="method-2-the-hodrick-prescott-filter">
+<h2>Method 2: The Hodrick-Prescott Filter<a class="headerlink" href="#method-2-the-hodrick-prescott-filter" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Theory<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Hodrick and Prescott (1981) propose choosing the trend <span class="math notranslate nohighlight">\(\tau_t\)</span> by solving a penalized least squares problem:</p>
+<div class="math notranslate nohighlight">
+\[\min_{\{\tau_t\}} \sum_{t=1}^{T}(y_t - \tau_t)^2 + 
+\lambda\sum_{t=2}^{T-1}[(\tau_{t+1} - \tau_t) - (\tau_t - \tau_{t-1})]^2\]</div>
+<p>The first term penalizes deviations of the trend from the data — if <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, the trend equals the data exactly and the cycle is zero. The second term penalizes changes in the trend’s growth rate — if <span class="math notranslate nohighlight">\(\lambda \to \infty\)</span>, the trend growth rate is forced to be constant and the HP filter converges to a log-linear trend. The parameter <span class="math notranslate nohighlight">\(\lambda\)</span> therefore governs the smoothness of the trend: larger <span class="math notranslate nohighlight">\(\lambda\)</span> produces a smoother trend and a more volatile cycle.</p>
+<p>The first-order conditions <span class="math notranslate nohighlight">\(\partial f/\partial \tau_t = 0\)</span> for all <span class="math notranslate nohighlight">\(t\)</span> reduce to a linear system <span class="math notranslate nohighlight">\(A\tau = y\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is an <span class="math notranslate nohighlight">\(T \times T\)</span> band matrix determined by <span class="math notranslate nohighlight">\(\lambda\)</span>. The solution is:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\tau} = (I + \lambda K'K)^{-1}y\]</div>
+<p>where <span class="math notranslate nohighlight">\(K\)</span> is the second-difference matrix. This can be solved efficiently using sparse linear algebra, and is implemented in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>.</p>
+<p><strong>Choice of <span class="math notranslate nohighlight">\(\lambda\)</span>.</strong> Convention sets <span class="math notranslate nohighlight">\(\lambda = 1600\)</span> for quarterly data, <span class="math notranslate nohighlight">\(\lambda = 100\)</span> for annual data, and <span class="math notranslate nohighlight">\(\lambda = 14400\)</span> for monthly data. These values are calibrated so that the HP filter approximately isolates fluctuations with periodicities between 6 and 32 quarters — the conventional definition of the business cycle frequency band. However, the choice of <span class="math notranslate nohighlight">\(\lambda\)</span> is contested, and we illustrate the sensitivity of the filter to this choice below.</p>
+<p><strong>Known limitations.</strong> The HP filter has been criticized on several grounds, most systematically by Hamilton (2017):</p>
+<ul class="simple">
+<li><p>It produces spurious dynamic relationships in the filtered series that have  no basis in the underlying data-generating process.</p></li>
+<li><p>The filter performs poorly at the endpoints of the sample: the trend estimate near the beginning and end of the series is unreliable because it has fewer observations on one side to anchor it.</p></li>
+<li><p>The conventional <span class="math notranslate nohighlight">\(\lambda = 1600\)</span> is far from the value that would be optimal under a formal statistical criterion.</p></li>
+</ul>
+<p>Despite these criticisms, the HP filter remains the most widely used detrending method in macroeconomics and is the benchmark against which most business cycle models are evaluated.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># HP filter</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hp_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mi">1600</span><span class="p">):</span>
+    <span class="n">cycle</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">hpfilter</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">trend</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
+
+<span class="n">cycles_hp</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">series</span> <span class="ow">in</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">cycle</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">hp_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mi">1600</span><span class="p">)</span>
+    <span class="n">cycles_hp</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycle</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Figure 1: Trend fit and cycle shading</span>
+<span class="c1"># (mirrors log-linear figure 1)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">axes1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">axes1</span> <span class="o">=</span> <span class="n">axes1</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">hp_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="mi">1600</span><span class="p">)</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log GDP&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">trend</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;HP trend&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">values</span> <span class="o">+</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &gt; 0 (boom)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">values</span> <span class="o">+</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &lt; 0 (recession)&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log Real GDP&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;HP Filter: Trend and Cycle ($\lambda = 1600$)&quot;</span>
+              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(shaded area = deviation of GDP from HP trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Figure 2: Log deviation from HP trend</span>
+<span class="c1"># (mirrors log-linear figure 2)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig2</span><span class="p">,</span> <span class="n">axes2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">axes2</span> <span class="o">=</span> <span class="n">axes2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle</span> <span class="o">=</span> <span class="n">cycles_hp</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+    <span class="n">ax</span>    <span class="o">=</span> <span class="n">axes2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">ev. from trend)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">fig2</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;HP Filter Business Cycles ($\lambda = 1600$)&quot;</span>
+              <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(</span><span class="si">% d</span><span class="s2">eviation from HP trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Figure 3: Sensitivity to lambda</span>
+<span class="c1"># (unique to HP filter)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">country_demo</span> <span class="o">=</span> <span class="s2">&quot;United States&quot;</span>
+<span class="n">series_demo</span>  <span class="o">=</span> <span class="n">gdp_data</span><span class="p">[</span><span class="n">country_demo</span><span class="p">]</span>
+<span class="n">lambda_vals</span>  <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1600</span><span class="p">,</span> <span class="mi">6400</span><span class="p">,</span> <span class="mi">25600</span><span class="p">]</span>
+<span class="n">lam_colors</span>   <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="s2">&quot;#f4910a&quot;</span><span class="p">]</span>
+<span class="n">lam_labels</span>   <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\lambda=100$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\lambda=1600$&quot;</span><span class="p">,</span>
+                <span class="sa">r</span><span class="s2">&quot;$\lambda=6400$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\lambda=25600$&quot;</span><span class="p">]</span>
+
+<span class="n">fig3</span><span class="p">,</span> <span class="n">axes3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_demo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">series_demo</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log GDP&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">lv</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lambda_vals</span><span class="p">,</span> <span class="n">lam_colors</span><span class="p">,</span> <span class="n">lam_labels</span><span class="p">):</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">hp_filter</span><span class="p">(</span><span class="n">series_demo</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="n">lv</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_demo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">trend</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HP Trend Sensitivity: </span><span class="si">{</span><span class="n">country_demo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log Real GDP&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes3</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">lv</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">lambda_vals</span><span class="p">,</span> <span class="n">lam_colors</span><span class="p">,</span> <span class="n">lam_labels</span><span class="p">):</span>
+    <span class="n">cycle</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">hp_filter</span><span class="p">(</span><span class="n">series_demo</span><span class="p">,</span> <span class="n">lam</span><span class="o">=</span><span class="n">lv</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_demo</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;HP Cycle Sensitivity: </span><span class="si">{</span><span class="n">country_demo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">eviation from trend)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">fig3</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Sensitivity of HP Filter to $\lambda$&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/32b6484d6c419dde51154c272e155c9aad5c52e155d2d23448ce28874c74dcea.png" src="_images/32b6484d6c419dde51154c272e155c9aad5c52e155d2d23448ce28874c74dcea.png" />
+<img alt="_images/079e30936516d23d952a6bc71889452451c9a536a8d177bf00e68eb7cdb90fd6.png" src="_images/079e30936516d23d952a6bc71889452451c9a536a8d177bf00e68eb7cdb90fd6.png" />
+<img alt="_images/9320d89ac8c7aa4031f78e7500abcad9e1042f6be8159f5ac79be82ba1254c02.png" src="_images/9320d89ac8c7aa4031f78e7500abcad9e1042f6be8159f5ac79be82ba1254c02.png" />
+</div>
+</div>
+<p>The top figure shows the HP-filtered business cycle for all six countries. Positive values (light shading) indicate booms — output above trend; negative values (dark shading) indicate recessions — output below trend. The global financial crisis (2007–2009) and COVID-19 recession (2020) are clearly visible as troughs across all countries, though their depth and duration vary. The bottom figure illustrates the sensitivity of the HP filter to <span class="math notranslate nohighlight">\(\lambda\)</span>: a small <span class="math notranslate nohighlight">\(\lambda\)</span> produces a trend that closely tracks the data, leaving little cyclical variation, while a large <span class="math notranslate nohighlight">\(\lambda\)</span> produces a smooth trend close to the log-linear trend, with a more volatile cycle.</p>
+</section>
+</section>
+<section id="method-3-the-hamilton-filter">
+<h2>Method 3: The Hamilton Filter<a class="headerlink" href="#method-3-the-hamilton-filter" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Theory<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Hamilton (2017) proposes an alternative to the HP filter that avoids its known shortcomings. The key insight is to define the cyclical component as the <strong>unpredictable component</strong> of the series at a horizon <span class="math notranslate nohighlight">\(h\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[y_{t+h} = \alpha + \beta_1 y_t + \beta_2 y_{t-1} + 
+\beta_3 y_{t-2} + \beta_4 y_{t-3} + \varepsilon_{t+h}\]</div>
+<p>The cycle at time <span class="math notranslate nohighlight">\(t+h\)</span> is the OLS residual <span class="math notranslate nohighlight">\(\hat{\varepsilon}_{t+h}\)</span>: the difference between the realized value and the value predicted by the most recent four lags. Hamilton recommends <span class="math notranslate nohighlight">\(h = 8\)</span> quarters (two years) and <span class="math notranslate nohighlight">\(p = 4\)</span> lags for quarterly data — both are multiples of the seasonal frequency, which helps avoid spurious seasonal contamination of the cycle.</p>
+<p><strong>Why <span class="math notranslate nohighlight">\(h = 8\)</span>?</strong> Hamilton argues that a two-year forecast horizon corresponds naturally to the business cycle concept: we want to identify deviations from what the economy was expected to achieve two years ago, based on information available at that time. This definition is robust to a wide class of data-generating processes, including unit root processes, whereas the HP filter requires stationarity assumptions that may not hold.</p>
+<p><strong>Advantages over HP.</strong> The Hamilton filter does not produce spurious autocorrelation in the residuals, performs consistently throughout the sample (including at the endpoints), and has a clear statistical interpretation as a forecast error. Its main disadvantage is that it uses <span class="math notranslate nohighlight">\(h + p = 12\)</span> observations to start the regression, losing observations at the beginning of the sample, and its cycle component may include frequencies outside the conventional business cycle band.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Hamilton filter</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hamilton_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">y</span>      <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">T</span>      <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">cycles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+    <span class="n">n_obs</span> <span class="o">=</span> <span class="n">T</span> <span class="o">-</span> <span class="n">h</span> <span class="o">-</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">n_obs</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_obs</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_obs</span><span class="p">,</span> <span class="n">p</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_obs</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>    <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span> <span class="o">+</span> <span class="n">h</span><span class="p">]</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+            <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="n">j</span><span class="p">]</span>
+
+    <span class="n">res</span>   <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+    <span class="n">resid</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">resid</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">resid</span><span class="p">):</span>
+        <span class="n">t_plus_h</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">p</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">h</span>
+        <span class="n">cycles</span><span class="p">[</span><span class="n">t_plus_h</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycles</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">hamilton_trend</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Hamilton trend = series - cycle.</span>
+<span class="sd">    Defined only where the cycle is non-NaN.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">cycle</span> <span class="o">=</span> <span class="n">hamilton_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+    <span class="n">trend</span> <span class="o">=</span> <span class="n">series</span> <span class="o">-</span> <span class="n">cycle</span>
+    <span class="k">return</span> <span class="n">cycle</span><span class="p">,</span> <span class="n">trend</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Compute cycles and trends for all countries</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">cycles_hamilton</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">trends_hamilton</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">series</span> <span class="ow">in</span> <span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">cycle</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">hamilton_trend</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">cycles_hamilton</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycle</span>
+    <span class="n">trends_hamilton</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">trend</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Figure 1: Trend fit and cycle shading</span>
+<span class="c1"># (mirrors log-linear and HP figure 1)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig1</span><span class="p">,</span> <span class="n">axes1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">axes1</span> <span class="o">=</span> <span class="n">axes1</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle</span> <span class="o">=</span> <span class="n">cycles_hamilton</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+    <span class="n">trend</span> <span class="o">=</span> <span class="n">trends_hamilton</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+
+    <span class="c1"># Only plot where trend is defined (non-NaN)</span>
+    <span class="n">valid</span> <span class="o">=</span> <span class="n">trend</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes1</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log GDP&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="n">trend</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hamilton trend&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="o">+</span> <span class="n">cycle</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &gt; 0 (boom)&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">trend</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+                    <span class="o">+</span> <span class="n">cycle</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">valid</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+                    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cycle &lt; 0 (recession)&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log Real GDP&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+
+<span class="n">fig1</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Hamilton Filter: Trend and Cycle ($h=8$, $p=4$)</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;(shaded area = deviation of GDP from Hamilton trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Figure 2: Log deviation from Hamilton trend</span>
+<span class="c1"># (mirrors log-linear and HP figure 2)</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig2</span><span class="p">,</span> <span class="n">axes2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">axes2</span> <span class="o">=</span> <span class="n">axes2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle</span> <span class="o">=</span> <span class="n">cycles_hamilton</span><span class="p">[</span><span class="n">country</span><span class="p">]</span>
+    <span class="n">ax</span>    <span class="o">=</span> <span class="n">axes2</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+                    <span class="n">cycle</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">where</span><span class="o">=</span><span class="n">cycle</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">ev. from trend)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">fig2</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Hamilton Filter Business Cycles ($h=8$, $p=4$)</span><span class="se">\n</span><span class="s2">&quot;</span>
+              <span class="s2">&quot;(</span><span class="si">% d</span><span class="s2">eviation from Hamilton trend)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/293b6249255f57573410250ed3f89eae7bbbf4406656937481a4079a758ed5a7.png" src="_images/293b6249255f57573410250ed3f89eae7bbbf4406656937481a4079a758ed5a7.png" />
+<img alt="_images/0343bec200ab80108275f07d42e07cc67e19b3dec66285cc3e09972ac8a43f5e.png" src="_images/0343bec200ab80108275f07d42e07cc67e19b3dec66285cc3e09972ac8a43f5e.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="method-4-band-pass-filters">
+<h2>Method 4: Band-Pass Filters<a class="headerlink" href="#method-4-band-pass-filters" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>Theory<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Band-pass filters take a spectral perspective on the trend-cycle decomposition. Any time series can be represented as a sum of sinusoidal components with different frequencies. The business cycle corresponds to fluctuations with periodicities between 6 and 32 quarters — following Burns and Mitchell’s empirical work on US business cycles — while lower-frequency components correspond to the trend and higher-frequency components correspond to irregular noise. A band-pass filter removes all components outside the target frequency band, retaining only the business cycle frequencies.</p>
+<p><strong>The Baxter-King (BK) filter</strong> implements this idea using a symmetric moving average:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y}_t = \sum_{k=-K}^{K} a_k y_{t-k}\]</div>
+<p>where the weights <span class="math notranslate nohighlight">\(a_k\)</span> are chosen to approximate the ideal band-pass filter in the frequency domain. The constraint <span class="math notranslate nohighlight">\(\sum_k a_k = 0\)</span> ensures that any linear trend in the series is eliminated. Following Baxter and King’s recommendations, we use <span class="math notranslate nohighlight">\(P_L = 6\)</span>, <span class="math notranslate nohighlight">\(P_H = 32\)</span>, and <span class="math notranslate nohighlight">\(K = 12\)</span> for quarterly data. The symmetric moving average means the filter loses <span class="math notranslate nohighlight">\(K = 12\)</span> observations at each end of the sample.</p>
+<p><strong>The Christiano-Fitzgerald (CF) filter</strong> generalizes the BK filter by using an asymmetric, time-varying moving average that adapts to the full length of the available data. This avoids the endpoint observation loss of the BK filter and generally provides a closer approximation to the ideal band-pass filter, at the cost of somewhat greater complexity.</p>
+<p>Both filters are implemented in <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code>. We present them together and focus on interpreting the output rather than the technical details of the weight construction.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Baxter-King and Christiano-Fitzgerald filters</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">bk_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mi">12</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cycle</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">bkfilter</span><span class="p">(</span>
+            <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">high</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="n">K</span><span class="p">)</span>
+        <span class="c1"># BK loses K obs at each end</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">K</span><span class="p">:</span><span class="o">-</span><span class="n">K</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">idx</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cf_filter</span><span class="p">(</span><span class="n">series</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cycle</span><span class="p">,</span> <span class="n">trend</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">tsa</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">cffilter</span><span class="p">(</span>
+            <span class="n">series</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">high</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">cycle</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">series</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Plot BK and CF cycles for all countries</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">cycles_bk</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">cycles_cf</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">series</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">cycle_bk</span> <span class="o">=</span> <span class="n">bk_filter</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">cycle_cf</span> <span class="o">=</span> <span class="n">cf_filter</span><span class="p">(</span><span class="n">series</span><span class="p">)</span>
+    <span class="n">cycles_bk</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycle_bk</span>
+    <span class="n">cycles_cf</span><span class="p">[</span><span class="n">country</span><span class="p">]</span> <span class="o">=</span> <span class="n">cycle_cf</span>
+
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cycle_cf</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle_cf</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CF filter&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cycle_bk</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">cycle_bk</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s2">&quot;BK filter&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                          <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+                   <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+                   <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">ev.)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower left&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Band-Pass Filter Business Cycles</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(BK: dashed black; CF: solid color)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/e4fcf77055380c702966cd0dd5aa7ad91d93077a3504ac24bbce5fd13f21dfb3.png" src="_images/e4fcf77055380c702966cd0dd5aa7ad91d93077a3504ac24bbce5fd13f21dfb3.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="comparing-the-four-methods">
+<h2>Comparing the Four Methods<a class="headerlink" href="#comparing-the-four-methods" title="Link to this heading">#</a></h2>
+<p>Having computed cycles using all four methods, we now compare them directly. A good filter should: (i) identify the same broad cyclical turning points across methods; (ii) produce cycles that are uncorrelated with the raw series at long horizons (no trend contamination); and (iii) yield cycles that are synchronized across countries during global recessions. We assess each criterion in turn.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Comparison 1: Overlay all four cycles</span>
+<span class="c1"># for United States</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">country_cmp</span> <span class="o">=</span> <span class="s2">&quot;United States&quot;</span>
+<span class="n">series_cmp</span>  <span class="o">=</span> <span class="n">gdp_data</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+
+<span class="n">c_lin</span>  <span class="o">=</span> <span class="n">cycles_linear</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+<span class="n">c_hp</span>   <span class="o">=</span> <span class="n">cycles_hp</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+<span class="n">c_ham</span>  <span class="o">=</span> <span class="n">cycles_hamilton</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+<span class="n">c_cf</span>   <span class="o">=</span> <span class="n">cycles_cf</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+<span class="n">c_bk</span>   <span class="o">=</span> <span class="n">cycles_bk</span><span class="p">[</span><span class="n">country_cmp</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_cmp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">c_hp</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;HP filter&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_cmp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">c_ham</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hamilton filter&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_cmp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">c_cf</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;CF filter&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">series_cmp</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">c_lin</span><span class="o">.</span><span class="n">values</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#f4910a&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Log-linear&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;1990-07-01&quot;</span><span class="p">,</span> <span class="s2">&quot;1991-04-01&quot;</span><span class="p">),</span>
+                      <span class="p">(</span><span class="s2">&quot;2001-04-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2001-12-01&quot;</span><span class="p">),</span>
+                      <span class="p">(</span><span class="s2">&quot;2007-10-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2009-07-01&quot;</span><span class="p">),</span>
+                      <span class="p">(</span><span class="s2">&quot;2020-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2020-07-01&quot;</span><span class="p">)]:</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start</span><span class="p">),</span>
+               <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">end</span><span class="p">),</span>
+               <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle (</span><span class="si">% d</span><span class="s2">eviation from trend)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Business Cycle Comparison: </span><span class="si">{</span><span class="n">country_cmp</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(shaded = NBER recessions)&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Comparison 2: Cycle volatility across countries</span>
+<span class="c1"># and methods</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">methods</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Log-linear&quot;</span><span class="p">:</span> <span class="n">cycles_linear</span><span class="p">,</span>
+    <span class="s2">&quot;HP&quot;</span>        <span class="p">:</span> <span class="n">cycles_hp</span><span class="p">,</span>
+    <span class="s2">&quot;Hamilton&quot;</span>  <span class="p">:</span> <span class="n">cycles_hamilton</span><span class="p">,</span>
+    <span class="s2">&quot;CF&quot;</span>        <span class="p">:</span> <span class="n">cycles_cf</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">countries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gdp_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">n_methods</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">methods</span><span class="p">)</span>
+<span class="n">n_countries</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+
+<span class="n">vol_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_countries</span><span class="p">,</span> <span class="n">n_methods</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="n">mname</span><span class="p">,</span> <span class="n">cyc_dict</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">methods</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">country</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">countries</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">cyc_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">c</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">c_clean</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+            <span class="n">vol_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">c_clean</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">x</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_countries</span><span class="p">)</span>
+<span class="n">width</span>  <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">mcols</span>  <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="s2">&quot;#1a9641&quot;</span><span class="p">,</span> <span class="s2">&quot;#f4910a&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="n">mname</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">methods</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">mcols</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">width</span><span class="p">,</span> <span class="n">vol_matrix</span><span class="p">[:,</span> <span class="n">j</span><span class="p">],</span>
+           <span class="n">width</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">mname</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">width</span><span class="o">*</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">countries</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cycle std. deviation (%)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Business Cycle Volatility by Country and Method&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="c1"># Comparison 3: International synchronization</span>
+<span class="c1"># Pairwise correlation of HP cycles with US</span>
+<span class="c1"># ──────────────────────────────────────────────</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Cross-correlations with US HP cycle</span>
+<span class="n">us_hp</span> <span class="o">=</span> <span class="n">cycles_hp</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">other_countries</span> <span class="o">=</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">countries</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="s2">&quot;United States&quot;</span><span class="p">]</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">other_countries</span><span class="p">:</span>
+    <span class="n">c_hp_other</span> <span class="o">=</span> <span class="n">cycles_hp</span><span class="p">[</span><span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="c1"># Align on common dates</span>
+    <span class="n">common</span> <span class="o">=</span> <span class="n">us_hp</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">c_hp_other</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="n">lags</span>  <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+    <span class="n">corrs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lag</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">us_hp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span><span class="o">-</span><span class="n">lag</span><span class="p">]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">c_hp_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">lag</span><span class="p">:]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x1</span> <span class="o">=</span> <span class="n">us_hp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="n">lag</span><span class="p">:]</span>
+            <span class="n">x2</span> <span class="o">=</span> <span class="n">c_hp_other</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span><span class="o">+</span><span class="n">lag</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">corrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">corrs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">lags</span><span class="p">),</span> <span class="n">corrs</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">country</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
+            <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">country</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Lag (quarters, + = country leads US)&quot;</span><span class="p">,</span>
+              <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Cross-correlation with US cycle&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;HP Cycle Synchronization with US</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(cross-correlogram)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="c1"># Contemporaneous correlation: HP vs Hamilton</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">corr_hp</span>  <span class="o">=</span> <span class="p">[]</span>
+<span class="n">corr_ham</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">other_countries</span><span class="p">:</span>
+    <span class="c1"># HP</span>
+    <span class="n">c1</span> <span class="o">=</span> <span class="n">cycles_hp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+    <span class="n">c2</span> <span class="o">=</span> <span class="n">cycles_hp</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">c1</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">c2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="n">c1</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+                 <span class="n">c2</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">c1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">],</span> <span class="n">c2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">])</span>
+            <span class="n">corr_hp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">corr_hp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+    <span class="c1"># Hamilton</span>
+    <span class="n">c1h</span> <span class="o">=</span> <span class="n">cycles_hamilton</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+    <span class="n">c2h</span> <span class="o">=</span> <span class="n">cycles_hamilton</span><span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">c1h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">c2h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="n">c1h</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span>
+                 <span class="n">c2h</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">common</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="n">r</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">c1h</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">],</span> <span class="n">c2h</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common</span><span class="p">])</span>
+            <span class="n">corr_ham</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">corr_ham</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+
+<span class="n">x2</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">other_countries</span><span class="p">))</span>
+<span class="n">width2</span> <span class="o">=</span> <span class="mf">0.35</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x2</span> <span class="o">-</span> <span class="n">width2</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">corr_hp</span><span class="p">,</span>  <span class="n">width2</span><span class="p">,</span>
+       <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#2c7bb6&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;HP filter&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x2</span> <span class="o">+</span> <span class="n">width2</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">corr_ham</span><span class="p">,</span> <span class="n">width2</span><span class="p">,</span>
+       <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#d7191c&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Hamilton filter&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">other_countries</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Correlation with US cycle&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Contemporaneous Cycle Correlation with US</span><span class="se">\n</span><span class="s2">&quot;</span>
+             <span class="s2">&quot;(HP vs Hamilton)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;International Business Cycle Synchronization&quot;</span><span class="p">,</span>
+             <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/eae77cce12390f2f9887ba97ecd2d3635f3eac0037c798d79d61bf99d96d278c.png" src="_images/eae77cce12390f2f9887ba97ecd2d3635f3eac0037c798d79d61bf99d96d278c.png" />
+<img alt="_images/356139b5fda527fa8930ec573c4519ea298b6375f4c40d597a3c510811a013a6.png" src="_images/356139b5fda527fa8930ec573c4519ea298b6375f4c40d597a3c510811a013a6.png" />
+<img alt="_images/18b00d6b6a76dca86e36538601f28e308a0bb3f81b83bd4976ff7f5537e9c691.png" src="_images/18b00d6b6a76dca86e36538601f28e308a0bb3f81b83bd4976ff7f5537e9c691.png" />
+</div>
+</div>
+<section id="summary-of-filter-properties">
+<h3>Summary of Filter Properties<a class="headerlink" href="#summary-of-filter-properties" title="Link to this heading">#</a></h3>
+<p>The comparison across methods reveals several consistent patterns and some important differences:</p>
+<p><strong>Agreement on major turning points.</strong> All four methods identify the same broad cyclical turning points — the early 1990s recession, the 2001 dot-com slowdown, the 2008–2009 global financial crisis, and the 2020 COVID recession. This agreement is reassuring: it suggests that the major features of the business cycle are genuine and not artifacts of the filtering method.</p>
+<p><strong>Disagreement on cycle amplitude.</strong> The methods differ substantially in their estimates of cycle volatility (as shown in the bar chart). The HP filter tends to produce a smoother trend and therefore larger cycles; the Hamilton filter, by conditioning on four quarters of lags, assigns more of the variance to the predictable component and produces a less volatile cycle. The log-linear filter produces the most volatile cycles because it fits the smoothest possible trend.</p>
+<p><strong>Endpoint reliability.</strong> The HP filter performs poorly near the end of the sample — the trend estimate for the most recent observations relies heavily on the filter’s endpoint correction and is sensitive to data revisions. The Hamilton filter does not have this problem: the regression residuals are well-defined throughout the sample. This matters in real-time analysis, where the most recent observations are exactly the ones of policy interest.</p>
+<p><strong>International synchronization.</strong> The cross-correlogram confirms that business cycles are highly synchronized internationally, particularly around global events like the GFC and COVID. The UK, Canada, and Australia show the highest contemporaneous correlation with the US cycle; Japan shows a somewhat lower correlation, reflecting structural differences in its business cycle. Both the HP and Hamilton filters tell a broadly similar story about international synchronization, though the Hamilton filter tends to produce slightly lower correlations — consistent with it filtering out some of the common trend component that the HP filter leaves in the cycle.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Extracting business cycles from macroeconomic data requires choosing among several imperfect methods, each of which imposes different implicit assumptions about the nature of trend and cycle. The main lessons from this notebook are:</p>
+<ul class="simple">
+<li><p><strong>Log-transform first</strong>: variables that grow exponentially should be log-transformed before filtering to convert the exponential trend into a linear one.</p></li>
+<li><p><strong>The HP filter</strong> is the standard benchmark and is appropriate for most applications. Its main weaknesses are endpoint unreliability and potential spurious dynamics in the filtered series.</p></li>
+<li><p><strong>The Hamilton filter</strong> is a principled alternative that avoids the HP filter’s statistical shortcomings. Its cycle has a clean interpretation as a forecast error at a two-year horizon.</p></li>
+<li><p><strong>Band-pass filters</strong> (BK and CF) are useful when the goal is specifically to isolate fluctuations within the conventional business cycle frequency band. They are less flexible than the other methods but have the cleanest frequency-domain interpretation.</p></li>
+<li><p><strong>The choice of filter matters for magnitudes but not for qualitative conclusions</strong>: major recessions and the broad pattern of international synchronization are robust across all methods.</p></li>
+</ul>
+<p>In practice, the best approach is to apply multiple methods and check whether the conclusions of interest are robust to the choice of filter. A result that holds only under one specific filtering method should be treated with caution.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="linearization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linearization Methods in Macroeconomics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="model-extensions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Labor Search Extensions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Extracting Business Cycles from Time Series</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-business-cycles-from-macroeconomic-data">Extracting Business Cycles from Macroeconomic Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-the-log-transformation">Why the Log Transformation?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-log-linear-and-log-quadratic-detrending">Method 1: Log-Linear and Log-Quadratic Detrending</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-the-hodrick-prescott-filter">Method 2: The Hodrick-Prescott Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-the-hamilton-filter">Method 3: The Hamilton Filter</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-band-pass-filters">Method 4: Band-Pass Filters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-four-methods">Comparing the Four Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-filter-properties">Summary of Filter Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Marshall Urias
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+# _toc.yml
+format: jb-book
+root: intro
+parts:
+  - caption: The Labor Market
+    chapters:
+      - file: equilibrium-unemployment
+        title: Equilibrium Unemployment
+        sections:
+          - file: poisson-process
+            title: Poisson Process and the Value of an Asset
+          - file: Nash-bargaining
+            title: Nash Bargaining and Wage Determination
+      - file: labor-dynamics
+        title: Labor Market Dynamics
+        sections:
+          - file: linearization
+            title: Linearization in Macro
+          - file: discrete-model
+            title: Discretization
+          - file: extracting-business-cycles
+            title: Extracting Business Cycles
+      - file: model-extensions
+        title: Labor Search Extensions
+
+  - caption: Credit Frictions and Financial Multipliers
+    chapters:
+      - file: credit-market
+        title: Frictional Credit Market
+      - file: market-efficiency
+        title: Efficiency in Search
+      - file: financial-frictions
+        title: Financial Frictions in Macroeconomics
