@@ -1,0 +1,116 @@
+Traceback (most recent call last):
+  File "C:\Users\XPS\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 154, in wrapped
+    asyncio.get_running_loop()
+RuntimeError: no running event loop
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Roaming\Python\Python312\site-packages\jupyter_core\utils\__init__.py", line 158, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\XPS\AppData\Local\Programs\Python\Python312\Lib\site-packages\nbclient\client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from statsmodels.tsa.stattools import coint
+
+coint_t_1987, p_value_1987, _ = coint(long_rate_m_cont_1987, short_rate_alt_m_cont_1987)
+coint_t_1993, p_value_1993, _ = coint(long_rate_m_cont_1993, short_rate_alt_m_cont_1993)
+
+print(f"Engle–Granger test statistic for pre-1987: {coint_t_1987:.3f}, p-value: {p_value_1987:.4f}")
+print(f"Engle–Granger test statistic for post-1993: {coint_t_1993:.3f}, p-value: {p_value_1993:.4f}")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mValueError[39m                                Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[23][39m[32m, line 4[39m
+[32m      1[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mstatsmodels[39;00m[34;01m.[39;00m[34;01mtsa[39;00m[34;01m.[39;00m[34;01mstattools[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m coint
+[32m      3[39m coint_t_1987, p_value_1987, _ = coint(long_rate_m_cont_1987, short_rate_alt_m_cont_1987)
+[32m----> [39m[32m4[39m coint_t_1993, p_value_1993, _ = [43mcoint[49m[43m([49m[43mlong_rate_m_cont_1993[49m[43m,[49m[43m [49m[43mshort_rate_alt_m_cont_1993[49m[43m)[49m
+[32m      6[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[33mEngle–Granger test statistic for pre-1987: [39m[38;5;132;01m{[39;00mcoint_t_1987[38;5;132;01m:[39;00m[33m.3f[39m[38;5;132;01m}[39;00m[33m, p-value: [39m[38;5;132;01m{[39;00mp_value_1987[38;5;132;01m:[39;00m[33m.4f[39m[38;5;132;01m}[39;00m[33m"[39m)
+[32m      7[39m [38;5;28mprint[39m([33mf[39m[33m"[39m[33mEngle–Granger test statistic for post-1993: [39m[38;5;132;01m{[39;00mcoint_t_1993[38;5;132;01m:[39;00m[33m.3f[39m[38;5;132;01m}[39;00m[33m, p-value: [39m[38;5;132;01m{[39;00mp_value_1993[38;5;132;01m:[39;00m[33m.4f[39m[38;5;132;01m}[39;00m[33m"[39m)
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\stattools.py:1814[39m, in [36mcoint[39m[34m(y0, y1, trend, method, maxlag, autolag, return_results)[39m
+[32m   1811[39m [38;5;28;01melse[39;00m:
+[32m   1812[39m     xx = add_trend(y1, trend=trend, prepend=[38;5;28;01mFalse[39;00m)
+[32m-> [39m[32m1814[39m res_co = [43mOLS[49m[43m([49m[43my0[49m[43m,[49m[43m [49m[43mxx[49m[43m)[49m.fit()
+[32m   1816[39m [38;5;28;01mif[39;00m res_co.rsquared < [32m1[39m - [32m100[39m * SQRTEPS:
+[32m   1817[39m     res_adf = adfuller(
+[32m   1818[39m         res_co.resid, maxlag=maxlag, autolag=autolag, regression=[33m"[39m[33mn[39m[33m"[39m
+[32m   1819[39m     )
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\regression\linear_model.py:921[39m, in [36mOLS.__init__[39m[34m(self, endog, exog, missing, hasconst, **kwargs)[39m
+[32m    918[39m     msg = ([33m"[39m[33mWeights are not supported in OLS and will be ignored[39m[33m"[39m
+[32m    919[39m            [33m"[39m[33mAn exception will be raised in the next version.[39m[33m"[39m)
+[32m    920[39m     warnings.warn(msg, ValueWarning)
+[32m--> [39m[32m921[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43mmissing[49m[43m=[49m[43mmissing[49m[43m,[49m
+[32m    922[39m [43m                          [49m[43mhasconst[49m[43m=[49m[43mhasconst[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    923[39m [38;5;28;01mif[39;00m [33m"[39m[33mweights[39m[33m"[39m [38;5;129;01min[39;00m [38;5;28mself[39m._init_keys:
+[32m    924[39m     [38;5;28mself[39m._init_keys.remove([33m"[39m[33mweights[39m[33m"[39m)
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\regression\linear_model.py:746[39m, in [36mWLS.__init__[39m[34m(self, endog, exog, weights, missing, hasconst, **kwargs)[39m
+[32m    744[39m [38;5;28;01melse[39;00m:
+[32m    745[39m     weights = weights.squeeze()
+[32m--> [39m[32m746[39m [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43mmissing[49m[43m=[49m[43mmissing[49m[43m,[49m
+[32m    747[39m [43m                          [49m[43mweights[49m[43m=[49m[43mweights[49m[43m,[49m[43m [49m[43mhasconst[49m[43m=[49m[43mhasconst[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    748[39m nobs = [38;5;28mself[39m.exog.shape[[32m0[39m]
+[32m    749[39m weights = [38;5;28mself[39m.weights
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\regression\linear_model.py:200[39m, in [36mRegressionModel.__init__[39m[34m(self, endog, exog, **kwargs)[39m
+[32m    199[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__init__[39m([38;5;28mself[39m, endog, exog, **kwargs):
+[32m--> [39m[32m200[39m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    201[39m     [38;5;28mself[39m.pinv_wexog: Float64Array | [38;5;28;01mNone[39;00m = [38;5;28;01mNone[39;00m
+[32m    202[39m     [38;5;28mself[39m._data_attr.extend([[33m'[39m[33mpinv_wexog[39m[33m'[39m, [33m'[39m[33mwendog[39m[33m'[39m, [33m'[39m[33mwexog[39m[33m'[39m, [33m'[39m[33mweights[39m[33m'[39m])
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:270[39m, in [36mLikelihoodModel.__init__[39m[34m(self, endog, exog, **kwargs)[39m
+[32m    269[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__init__[39m([38;5;28mself[39m, endog, exog=[38;5;28;01mNone[39;00m, **kwargs):
+[32m--> [39m[32m270[39m     [38;5;28;43msuper[39;49m[43m([49m[43m)[49m[43m.[49m[34;43m__init__[39;49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    271[39m     [38;5;28mself[39m.initialize()
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:95[39m, in [36mModel.__init__[39m[34m(self, endog, exog, **kwargs)[39m
+[32m     93[39m missing = kwargs.pop([33m'[39m[33mmissing[39m[33m'[39m, [33m'[39m[33mnone[39m[33m'[39m)
+[32m     94[39m hasconst = kwargs.pop([33m'[39m[33mhasconst[39m[33m'[39m, [38;5;28;01mNone[39;00m)
+[32m---> [39m[32m95[39m [38;5;28mself[39m.data = [38;5;28;43mself[39;49m[43m.[49m[43m_handle_data[49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43mmissing[49m[43m,[49m[43m [49m[43mhasconst[49m[43m,[49m
+[32m     96[39m [43m                              [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m     97[39m [38;5;28mself[39m.k_constant = [38;5;28mself[39m.data.k_constant
+[32m     98[39m [38;5;28mself[39m.exog = [38;5;28mself[39m.data.exog
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\model.py:135[39m, in [36mModel._handle_data[39m[34m(self, endog, exog, missing, hasconst, **kwargs)[39m
+[32m    134[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_handle_data[39m([38;5;28mself[39m, endog, exog, missing, hasconst, **kwargs):
+[32m--> [39m[32m135[39m     data = [43mhandle_data[49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m,[49m[43m [49m[43mmissing[49m[43m,[49m[43m [49m[43mhasconst[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+[32m    136[39m     [38;5;66;03m# kwargs arrays could have changed, easier to just attach here[39;00m
+[32m    137[39m     [38;5;28;01mfor[39;00m key [38;5;129;01min[39;00m kwargs:
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\data.py:675[39m, in [36mhandle_data[39m[34m(endog, exog, missing, hasconst, **kwargs)[39m
+[32m    672[39m     exog = np.asarray(exog)
+[32m    674[39m klass = handle_data_class_factory(endog, exog)
+[32m--> [39m[32m675[39m [38;5;28;01mreturn[39;00m [43mklass[49m[43m([49m[43mendog[49m[43m,[49m[43m [49m[43mexog[49m[43m=[49m[43mexog[49m[43m,[49m[43m [49m[43mmissing[49m[43m=[49m[43mmissing[49m[43m,[49m[43m [49m[43mhasconst[49m[43m=[49m[43mhasconst[49m[43m,[49m
+[32m    676[39m [43m             [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\data.py:89[39m, in [36mModelData.__init__[39m[34m(self, endog, exog, missing, hasconst, **kwargs)[39m
+[32m     87[39m [38;5;28mself[39m.k_constant = [32m0[39m
+[32m     88[39m [38;5;28mself[39m._handle_constant(hasconst)
+[32m---> [39m[32m89[39m [38;5;28;43mself[39;49m[43m.[49m[43m_check_integrity[49m[43m([49m[43m)[49m
+[32m     90[39m [38;5;28mself[39m._cache = {}
+
+[36mFile [39m[32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\base\data.py:436[39m, in [36mModelData._check_integrity[39m[34m(self)[39m
+[32m    434[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.exog [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m    435[39m     [38;5;28;01mif[39;00m [38;5;28mlen[39m([38;5;28mself[39m.exog) != [38;5;28mlen[39m([38;5;28mself[39m.endog):
+[32m--> [39m[32m436[39m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([33m"[39m[33mendog and exog matrices are different sizes[39m[33m"[39m)
+
+[31mValueError[39m: endog and exog matrices are different sizes
+
